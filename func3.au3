@@ -533,11 +533,11 @@ EndFunc
 			FileCopy('C:\Users\'&@UserName&'\Downloads\tool copy khoi dong va chuong trinh chinh.exe','C:\Users\'&@UserName&'\Desktop',1)
             Sleep(1000)
 
-          ;  FileDelete('C:\Users\'&@UserName&'\Downloads\tool copy khoi dong va chuong trinh chinh.au3')
-			;_GetDOSOutput('start firefox "https://drive.google.com/u/0/uc?id=1pifGknYgQpr0vMJ84XN4ZY6PAvcaxEyo&export=download"')  ; tai file update
-			;Sleep(10000)
-			;FileCopy('C:\Users\'&@UserName&'\Downloads\tool copy khoi dong va chuong trinh chinh.au3','C:\Users\'&@UserName&'\Desktop',1)
-          ;  Sleep(1000)
+            FileDelete('C:\Users\'&@UserName&'\Downloads\tool copy khoi dong va chuong trinh chinh.au3')
+			_GetDOSOutput('start firefox "https://drive.google.com/u/0/uc?id=1pifGknYgQpr0vMJ84XN4ZY6PAvcaxEyo&export=download"')  ; tai file update
+			Sleep(10000)
+			FileCopy('C:\Users\'&@UserName&'\Downloads\tool copy khoi dong va chuong trinh chinh.au3','C:\Users\'&@UserName&'\Desktop',1)
+            Sleep(1000)
 
             _closeTrinhDuyet(1)
 
@@ -600,7 +600,18 @@ EndFunc
 				_GetDOSOutput($linkdownload)
 				Sleep(10000)
 				_closeTrinhDuyet(1)
-				FileCopy('C:\Users\'&@UserName&'\Downloads\emailkhoiphuc2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\emailkhoiphuc2.bmp',1)
+				FileCopy('C:\Users\'&@UserName&'\Downloads\emailkhoiphuc2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+                Sleep(1000)
+
+
+				FileDelete('C:\Users\'&@UserName&'\Downloads\emailkhoiphuc.bmp')
+				Sleep(2000)
+				$linkdownload=FileReadLine(@ScriptDir&'\checkupdategmailkhoiphuc2.txt',3)
+				Sleep(1000)
+				_GetDOSOutput($linkdownload)
+				Sleep(10000)
+				_closeTrinhDuyet(1)
+				FileCopy('C:\Users\'&@UserName&'\Downloads\emailkhoiphuc.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
                 Sleep(1000)
 
 			EndIf
@@ -3720,6 +3731,8 @@ EndFunc
 
 						If $i=3 Then
                            Sleep(2000)
+						   MouseClick('left',920, 160,1,20)
+						   Sleep(2000)
 					       MouseClick('left',1333, 126,1,20)
 						   Sleep(2000)
 						   WinClose('Update successful')
@@ -4068,11 +4081,13 @@ EndFunc
 
 						If $i=3 Then
 					       ControlClick($var[$i10][1],'','','left',1,1333, 126)
-				           Sleep(1000)
+					       Sleep(2000)
+						   MouseClick('left',920, 160,1,20)
+						   Sleep(2000)
 					       MouseClick('left',1333, 126,1,20)
-						   Sleep(1000)
+						   Sleep(2000)
 						   WinClose('Update successful')
-				           Sleep(1000)
+				           Sleep(2000)
 						EndIf
 
 						If $i=2 Then
@@ -4676,7 +4691,7 @@ EndFunc
 				Send('{enter}')
 				Sleep(10000)
 				For $i20=1 to 20
-				    $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+				    $pixcel=PixelSearch(322, 259,1000, 527,0x1A73E8)
 					If IsArray($pixcel) Then
 						$i20=20
 						;Send('^a')
@@ -4707,101 +4722,57 @@ EndFunc
 				Sleep(5000)
 				If $i=6 Then MouseClick('left',380, 225,1,20)
 				Sleep(2000)
+				Sleep(1000)
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,385, 515,912, 705,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,475, 564,916, 688,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
-					Sleep(5000)
-					For $i20=1 to 10
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
-					  If IsArray($pixcel) Then $i20=20
-					  Sleep(1000)
-					Next
-					Sleep(2000)
-				      ClipPut($h)
-					  Sleep(50)
-				      Send('^v')
-					  Sleep(1500)
-				      Send('{enter}')
-				      Sleep(7000)
-				EndIf
-
-				$x3=0
-				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc3.bmp',1,385, 515,912, 705,$x3,$y3,1)
-				If $x3>0 Then
-					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
-					Sleep(5000)
-					For $i20=1 to 10
+					Sleep(1000)
+					For $i20=1 to 20
 				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
 				      Sleep(1000)
-				      ClipPut($h)
-					  Sleep(50)
-				      Send('^v')
-					  Sleep(1500)
+				      Send($h)
+				      Sleep(500)
 				      Send('{enter}')
 				      Sleep(7000)
 				EndIf
 
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,385, 515,912, 705,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,475, 564,916, 688,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
-					Sleep(5000)
-					For $i20=1 to 10
+					Sleep(1000)
+					For $i20=1 to 20
 				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
 				      Sleep(1000)
-				      ClipPut($h)
-					  Sleep(50)
-				      Send('^v')
+				      Send($h)
+				      Sleep(500)
 				      Send('{enter}')
 				      Sleep(7000)
 				EndIf
 
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,375, 504,916, 688,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,475, 504,916, 688,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
-					Sleep(5000)
-					For $i20=1 to 10
+					Sleep(1000)
+					For $i20=1 to 20
 				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
 				      Sleep(1000)
-				      ClipPut($h)
-					  Sleep(50)
-				      Send('^v')
-				      Sleep(1500)
-				      Send('{enter}')
-				      Sleep(7000)
-				EndIf
-
-				$x3=0
-				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc3.bmp',1,375, 504,916, 688,$x3,$y3,1)
-				If $x3>0 Then
-					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
-					Sleep(5000)
-					For $i20=1 to 10
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
-					  If IsArray($pixcel) Then $i20=20
-					  Sleep(1000)
-					Next
-				      Sleep(1000)
-				      ClipPut($h)
-					  Sleep(50)
-				      Send('^v')
-				      Sleep(1500)
+				      Send($h,1)
+				      Sleep(500)
 				      Send('{enter}')
 				      Sleep(7000)
 				EndIf
@@ -4811,123 +4782,56 @@ EndFunc
 				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,475, 504,916, 688,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
-					Sleep(5000)
-					For $i20=1 to 10
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
-					  If IsArray($pixcel) Then $i20=20
-					  Sleep(1000)
-					Next
-				     Sleep(1000)
-				      ClipPut($h)
-					  Sleep(50)
-				      Send('^v')
-				      Sleep(1500)
-				      Send('{enter}')
-				      Sleep(7000)
-				EndIf
-
-
-				$x3=0
-				$y3=0
-				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailkhoiphuc.bmp',1,$x3,$y3,0.5)
-				If $x3>0 Then
-					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
-					Sleep(5000)
-					For $i20=1 to 10
+					Sleep(1000)
+					For $i20=1 to 20
 				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
 				      Sleep(1000)
-				      ClipPut($h)
-					  Sleep(50)
-				      Send('^v')
-				      Sleep(1500)
+				      Send($h,1)
+				      Sleep(500)
 				      Send('{enter}')
 				      Sleep(7000)
 				EndIf
 
+
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,468, 448,583, 555,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailkhoiphuc2.bmp',1,$x3,$y3,1)
 				If $x3>0 Then
-					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
-					Sleep(5000)
-					For $i20=1 to 10
+					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
+					Sleep(1000)
+					For $i20=1 to 20
 				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
-				     Sleep(1000)
-				      ClipPut($h)
-					  Sleep(50)
-				      Send('^v')
-				      Sleep(1500)
+				      Sleep(1000)
+				      Send($h,1)
+				      Sleep(500)
 				      Send('{enter}')
 				      Sleep(7000)
 				EndIf
-
-
 
 				$x3=0
 				$y3=0
 				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailhhoiphuc.bmp',1,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
-					Sleep(5000)
-					For $i20=1 to 10
+					Sleep(1000)
+					For $i20=1 to 20
 				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
 				      Sleep(1000)
-				      ClipPut($h)
-					  Sleep(50)
-				      Send('^v')
-				      Sleep(1500)
+				      Send($h)
+				      Sleep(500)
 				      Send('{enter}')
 				      Sleep(7000)
 				EndIf
-
-				$x3=0
-				$y3=0
-				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailhhoiphuc2.bmp',1,$x3,$y3,1)
-				If $x3>0 Then
-					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
-					Sleep(5000)
-					For $i20=1 to 10
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
-					  If IsArray($pixcel) Then $i20=20
-					  Sleep(1000)
-					Next
-				      Sleep(1000)
-				      ClipPut($h)
-					  Sleep(50)
-				      Send('^v')
-				      Sleep(1500)
-				      Send('{enter}')
-				      Sleep(7000)
-				EndIf
-
-				$x3=0
-				$y3=0
-				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailhhoiphuc3.bmp',1,$x3,$y3,1)
-				If $x3>0 Then
-					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
-					Sleep(5000)
-					For $i20=1 to 10
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
-					  If IsArray($pixcel) Then $i20=20
-					  Sleep(1000)
-					Next
-				     Sleep(1000)
-				      ClipPut($h)
-					  Sleep(50)
-				      Send('^v')
-				      Sleep(1500)
-				      Send('{enter}')
-				      Sleep(7000)
-				EndIf
+               Sleep(3000)
 
 
                    ; MouseClick('left',514,560,1,20)    ; click Email khoi phuc
@@ -4998,32 +4902,37 @@ EndFunc
 							MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
                             Sleep(3000)
 						EndIf
-					    Sleep(1000)
 
-						MouseClick('left',500, 60,1,20)
-					    Sleep(3000)
-					    Send('https://www.youtube.com/account')
+						Sleep(2000)
+						ControlClick('','','','left',1,600, 60)
+					    Sleep(1000)
+						Send('^a')
+						Sleep(500)
+						Sleep(1000)
+						Send('https://myaccount.google.com/')
 						Sleep(2000)
 						Send('{enter}')
-						Sleep(7000)
-						MouseClick('left',600,Random(300,650,1),1,20)     ;chon profile
 						Sleep(5000)
-						MouseClick('left',500, 60,1,20)
-				        ;If $i=8 Then MouseClick('left',800, 75,1,20)
-					    Sleep(3000)
-					    Send('https://www.youtube.com/account')
+						ControlClick('','','','left',1,600, 60)
+					    Sleep(1000)
+						Send('^a')
+						Sleep(500)
+						Sleep(1000)
+						Send('https://myaccount.google.com/')
 						Sleep(2000)
 						Send('{enter}')
-						Sleep(12000)
+						Sleep(5000)
 						For $i20=1 to 10
-				            $pixcel3=PixelSearch(76, 90,200, 360,0xFF0000)
-				            Sleep(1000)
-			                If IsArray($pixcel3) Then
+				           $pixcel=PixelSearch(18, 163,106, 263,0xC2E7FF)
+						   Sleep(1000)
+						   $pixcel2=PixelSearch(18, 163,106, 263,0x1A73E8)
+						   Sleep(1000)
+					        If IsArray($pixcel) or IsArray($pixcel2) Then
 							    $check=1
-						        $i20=20
-						    EndIf
-						    Sleep(1000)
-						Next
+						        $i20=17
+							EndIf
+							Sleep(1000)
+				        Next
 
 				Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
         EndFunc
