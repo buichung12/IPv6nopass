@@ -51,7 +51,7 @@ HotKeySet("{f9}", "AutoRun")
             #ce
 
 			For $i20=0 to 22
-                If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.au3') = 1 Then ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphone nhom '&$i20&' - 20profile.au3')
+                If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.au3') = 1 Then ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.au3')
                 Sleep(100)
 			Next
 
