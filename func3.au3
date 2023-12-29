@@ -525,21 +525,14 @@ EndFunc
 
 		   _resetMang(1)
 
-			ToolTip('download tool tool copy khoi dong va chuong trinh chinh',0,0)
-
-			FileDelete('C:\Users\'&@UserName&'\Downloads\tool copy khoi dong va chuong trinh chinh.exe')
-			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/raw/main/tool%20copy%20khoi%20dong%20va%20chuong%20trinh%20chinh.exe"')  ; tai file update
-			Sleep(15000)
-			FileCopy('C:\Users\'&@UserName&'\Downloads\tool copy khoi dong va chuong trinh chinh.exe','C:\Users\'&@UserName&'\Desktop',1)
-            Sleep(1000)
-
-            FileDelete('C:\Users\'&@UserName&'\Downloads\tool copy khoi dong va chuong trinh chinh.au3')
-			_GetDOSOutput('start firefox "https://drive.google.com/u/0/uc?id=1pifGknYgQpr0vMJ84XN4ZY6PAvcaxEyo&export=download"')  ; tai file update
+		    FileDelete(@ScriptDir&"\ToolCopyKhoiDongVaChuongTrinhChinh.exe")
+			Sleep(1000)
+			FileDelete('C:\Users\'&@UserName&'\Desktop'&'\ToolCopyKhoiDongVaChuongTrinhChinh.exe')
+			Sleep(1000)
+		    _GetDOSOutput('curl -O -L "https://github.com/buichung12/IPv6nopass/raw/main/ToolCopyKhoiDongVaChuongTrinhChinh.exe"')
 			Sleep(10000)
-			FileCopy('C:\Users\'&@UserName&'\Downloads\tool copy khoi dong va chuong trinh chinh.au3','C:\Users\'&@UserName&'\Desktop',1)
-            Sleep(1000)
-
-            _closeTrinhDuyet(1)
+			FileCopy(@ScriptDir&"\ToolCopyKhoiDongVaChuongTrinhChinh.exe",'C:\Users\'&@UserName&'\Desktop',1)
+		    Sleep(1000)
 
 
                 $check=FileExists("C:\Program Files (x86)\Mozilla Firefox\firefox.exe")
@@ -3618,9 +3611,7 @@ EndFunc
 					EndIf
 					If $i=4 Then
 						MouseClick('left',852, 510,1,20)  ;tat thong bao update
-				        Sleep(2000)
-						MouseClick('left',725, 132,1,20)  ;tat thong bao update
-				        Sleep(2000)
+				        Sleep(7000)
 					EndIf
 					If $i=1 Then
 						MouseClick('left',1328, 696,1,20)  ;tat tanh cong cu
@@ -3662,6 +3653,26 @@ EndFunc
 
 						WinMove($var[$i10][1],'',0,0,1366,768)
 						Sleep(2000)
+
+						If  $i=10 Then
+							Sleep(3000)
+							$pixcel=PixelSearch(430, 623,1013, 764,0x1A73E8)
+					        If IsArray($pixcel) Then
+							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
+							     Sleep(3000)
+							EndIf
+							$pixcel=PixelSearch(430, 623,1013, 764,0x1A73E8)
+					        If IsArray($pixcel) Then
+							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
+							     Sleep(3000)
+							EndIf
+							$pixcel=PixelSearch(430, 623,1013, 764,0x1A73E8)
+					        If IsArray($pixcel) Then
+							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
+							     Sleep(3000)
+					        EndIf
+
+						EndIf
 
 
 						If  $i=9 Then
@@ -3734,6 +3745,8 @@ EndFunc
 						   MouseClick('left',920, 160,1,20)
 						   Sleep(2000)
 					       MouseClick('left',1333, 126,1,20)
+						   Sleep(2000)
+						   MouseClick('left',1333, 135,1,20)
 						   Sleep(2000)
 						   WinClose('Update successful')
 				           Sleep(2000)
@@ -3940,6 +3953,26 @@ EndFunc
 						Sleep(2000)
 					EndIf
 
+					If  $i=10 Then
+							Sleep(3000)
+							$pixcel=PixelSearch(430, 623,1013, 764,0x1A73E8)
+					        If IsArray($pixcel) Then
+							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
+							     Sleep(3000)
+							EndIf
+							$pixcel=PixelSearch(430, 623,1013, 764,0x1A73E8)
+					        If IsArray($pixcel) Then
+							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
+							     Sleep(3000)
+							EndIf
+							$pixcel=PixelSearch(430, 623,1013, 764,0x1A73E8)
+					        If IsArray($pixcel) Then
+							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
+							     Sleep(3000)
+					        EndIf
+
+						EndIf
+
 					If  $i=9 Then
 							WinClose('Check Update')
 							Sleep(10000)
@@ -3965,12 +3998,12 @@ EndFunc
 
 					If $i=4 Then
 						MouseClick('left',852, 510,1,20)  ;tat thong bao update
-				        Sleep(2000)
+				        Sleep(7000)
 					EndIf
 
 
 
-						If $i=1 Then
+					If $i=1 Then
 						    MouseClick('left',1328, 696,1,20)  ;tat tanh cong cu
 				            Sleep(1000)
 						    ControlClick('','','','left',1,1330, 103)
@@ -3979,7 +4012,7 @@ EndFunc
 					    	Sleep(1000)
 						    MouseClick('left',1333, 134,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
-					    EndIf
+					EndIf
 
 					Sleep(1000)
 					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
@@ -4085,6 +4118,8 @@ EndFunc
 						   MouseClick('left',920, 160,1,20)
 						   Sleep(2000)
 					       MouseClick('left',1333, 126,1,20)
+						   Sleep(2000)
+						   MouseClick('left',1333, 135,1,20)
 						   Sleep(2000)
 						   WinClose('Update successful')
 				           Sleep(2000)
@@ -4677,6 +4712,18 @@ EndFunc
 				    MouseClick('left',850, 273,1,20)
 					Sleep(2000)
 				EndIf
+				If $i=6  Then
+				    MouseClick('left',990,110,1,20)
+					Sleep(7000)
+                EndIf
+				If $i=9  Then
+				    MouseClick('left',933,150,1,20)
+					Sleep(7000)
+                EndIf
+				If $i=10 or $i=8  Then
+				    MouseClick('left',1039,155,1,20)
+					Sleep(7000)
+                EndIf
 
 				Sleep(3000)
 				MouseClick('left',1016, 363,1,20)
@@ -4725,10 +4772,10 @@ EndFunc
 				Sleep(1000)
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,475, 564,916, 688,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
-					Sleep(1000)
+					Sleep(10000)
 					For $i20=1 to 20
 				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
 					  If IsArray($pixcel) Then $i20=20
@@ -4743,10 +4790,10 @@ EndFunc
 
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,475, 564,916, 688,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
-					Sleep(1000)
+					Sleep(10000)
 					For $i20=1 to 20
 				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
 					  If IsArray($pixcel) Then $i20=20
@@ -4761,10 +4808,10 @@ EndFunc
 
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,475, 504,916, 688,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
-					Sleep(1000)
+					Sleep(10000)
 					For $i20=1 to 20
 				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
 					  If IsArray($pixcel) Then $i20=20
@@ -4779,10 +4826,10 @@ EndFunc
 
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,475, 504,916, 688,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
-					Sleep(1000)
+					Sleep(10000)
 					For $i20=1 to 20
 				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
 					  If IsArray($pixcel) Then $i20=20
@@ -4801,7 +4848,7 @@ EndFunc
 				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailkhoiphuc2.bmp',1,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
-					Sleep(1000)
+					Sleep(10000)
 					For $i20=1 to 20
 				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
 					  If IsArray($pixcel) Then $i20=20
@@ -4819,7 +4866,7 @@ EndFunc
 				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailhhoiphuc.bmp',1,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
-					Sleep(1000)
+					Sleep(10000)
 					For $i20=1 to 20
 				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
 					  If IsArray($pixcel) Then $i20=20
@@ -4833,6 +4880,32 @@ EndFunc
 				EndIf
                Sleep(3000)
 
+			    If $x3=0 Then      ; neu khong tim thay anh
+				   If $i=1 Then MouseClick('left',550,590,1,20)
+				   If $i=2 Then MouseClick('left',550,590,1,20)
+				   If $i=3 Then MouseClick('left',550,630,1,20)
+				   If $i=4 Then MouseClick('left',550,590,1,20)
+				   If $i=5 Then MouseClick('left',550,600,1,20)
+				   If $i=6 Then MouseClick('left',550,590,1,20)
+				   If $i=7 Then MouseClick('left',550,620,1,20)
+				   If $i=8 Then MouseClick('left',550,650,1,20)
+				   If $i=9 Then MouseClick('left',550,650,1,20)
+				   If $i=10 Then MouseClick('left',550,650,1,20)
+				   Sleep(10000)
+				   For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(1000)
+				      Send($h)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
+
+
+				EndIf
+
 
                    ; MouseClick('left',514,560,1,20)    ; click Email khoi phuc
 					;Sleep(5000)
@@ -4844,6 +4917,7 @@ EndFunc
 				If $i=1 Then MouseClick('left',927, 282,1,20)   ;update pass
 				If $i=2 Then MouseClick('left',1000, 248,1,20);update pass
 				If $i=3 Then MouseClick('left',816, 266,1,20);update pass
+				If $i=3 Then MouseClick('left',816, 243,1,20);update pass
 				If $i=4 Then MouseClick('left',1028, 231,1,20);update pass
 				If $i=5 Then
 					Sleep(10000)
