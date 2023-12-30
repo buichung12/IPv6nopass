@@ -229,6 +229,8 @@ $check=0
 		Sleep(2000)
 		MouseClick('left',1268, 465,1,20)
 		Sleep(10000)
+		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\khoidong.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+		Sleep(1000)
 		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\_HttpRequest.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 		Sleep(1000)
 		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\WinHttp.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
@@ -420,7 +422,16 @@ $check=0
 
 		 EndIf
 
-
+		For $i20=0 to 22
+            FileDelete('C:\Users\'&@UserName&'\Downloads\csbphonenhom'&$i20&'.au3')
+			Sleep(200)
+		Next
+		FileDelete('C:\Users\'&@UserName&'\Downloads\khoidong.au3')
+		Sleep(1000)
+		FileDelete('C:\Users\'&@UserName&'\Downloads\tool update code.au3')
+		Sleep(1000)
+        FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
+		Sleep(1000)
 
 
 
