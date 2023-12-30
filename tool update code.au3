@@ -18,18 +18,19 @@ HotKeySet("{f4}", "_Exit")
 
                 ToolTip('update code',0,0)
             For $i21=1 to 3
-				_closeTrinhDuyet($i)
+
 				_resetMang($i)
+				_closeTrinhDuyet($i)
                 For $i20=0 to 22
 					FileDelete('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphone nhom '&$i20&' - 20profile.exe')
 					Sleep(200)
 				Next
 				For $i20=0 to 22
-					FileDelete('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphone nhom '&$i20&' - 20profile.au3')
+					FileDelete('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.au3')
 					Sleep(200)
 				Next
 				For $i20=0 to 22
-					FileDelete('C:\Users\'&@UserName&'\Downloads\csbphone nhom '&$i20&' - 20profile.exe')
+					FileDelete('C:\Users\'&@UserName&'\Downloads\csbphonenhom'&$i20&'.au3')
 					Sleep(200)
 				Next
 				For $i20=0 to 22
@@ -45,8 +46,25 @@ HotKeySet("{f4}", "_Exit")
 
                     If $i21=1 Then
 						_GetDOSOutput($linkdownload)
-						Sleep(5000)
+						Sleep(10000)
+		                WinMove('','',0,0,1366,768)
+		                Sleep(2000)
+		                MouseClick('left',1268, 420,1,20)
+		                Sleep(2000)
+		                MouseClick('left',1268, 465,1,20)
+		                Sleep(5000)
 					    _GetDOSOutput($linkdownloadFunc)
+						Sleep(10000)
+		                WinMove('','',0,0,1366,768)
+		                Sleep(2000)
+		                MouseClick('left',1268, 420,1,20)
+		                Sleep(2000)
+		                MouseClick('left',1268, 465,1,20)
+		                Sleep(5000)
+						For $i20=0 to 22
+		                     FileCopy('C:\Users\'&@UserName&'\Downloads\csbphonenhom'&$i20&'.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		                     Sleep(1000)
+		                Next
 
 					Else
 						$linkdownload=FileReadLine(@ScriptDir&'\checkUpdateCode.txt',4)
@@ -55,7 +73,7 @@ HotKeySet("{f4}", "_Exit")
 						_GetDOSOutput($linkdownload)
 						Sleep(15000)
 
-						MouseClick('left',1269, 416,1,20)  ;click dowload
+						MouseClick('left',1269, 420,1,20)  ;click dowload
 						Sleep(2000)
 						MouseClick('left',1269, 448,1,20)  ;click dowload
 						Sleep(2000)
@@ -63,7 +81,7 @@ HotKeySet("{f4}", "_Exit")
 						Sleep(2000)
 					    _GetDOSOutput($linkdownloadFunc)
 						Sleep(15000)
-						MouseClick('left',1269, 416,1,20)  ;click dowload
+						MouseClick('left',1269, 420,1,20)  ;click dowload
 						Sleep(2000)
 						MouseClick('left',1269, 448,1,20)  ;click dowload
 						Sleep(2000)
@@ -98,7 +116,7 @@ HotKeySet("{f4}", "_Exit")
 
 
 					For $i20=0 to 22
-					    FileCopy('C:\Users\'&@UserName&'\Downloads\csbphone nhom '&$i20&' - 20profile.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphone nhom '&$i20&' - 20profile.au3',1)
+					    FileCopy('C:\Users\'&@UserName&'\Downloads\csbphonenhom'&$i20&'.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
 					    Sleep(200)
 				    Next
 
@@ -108,7 +126,7 @@ HotKeySet("{f4}", "_Exit")
 					Sleep(1000)
 
 					For $i20=0 to 22
-					    If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphone nhom '&$i20&' - 20profile.au3')=1 And FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\func3.au3')=1  Then $i21=3
+					    If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.au3')=1 And FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\func3.au3')=1  Then $i21=3
 					    Sleep(200)
 				    Next
 
@@ -120,109 +138,8 @@ HotKeySet("{f4}", "_Exit")
 					Sleep(1000)
 
 
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong1.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong2.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong3.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong4.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong5.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong6.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong7.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong8.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong9.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong10.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong11.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong12.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong13.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong14.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong15.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong16.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong17.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong18.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong19.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong20.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong21.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong22.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong23.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong24.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong25.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong26.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong27.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong28.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong29.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong30.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong31.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong32.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong33.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong34.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong35.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong36.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong37.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong38.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong39.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong40.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong41.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong42.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong43.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong44.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong45.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong46.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong47.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong48.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong49.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong50.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong51.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong52.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong53.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong54.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong55.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong56.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong57.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong58.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong59.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong60.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong61.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong62.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong63.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong64.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong65.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong66.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong67.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong68.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong69.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong70.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong71.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong72.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong73.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong74.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong75.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong76.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong77.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong78.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong79.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong80.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong81.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong82.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong83.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong84.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong85.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong86.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong87.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong88.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong89.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong90.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong91.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong92.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong93.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong94.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong95.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong96.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong97.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong98.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong99.exe')
-					Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong100.exe')
-					Sleep(2000)
-
-
+					ShellExecute('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong.au3')
+		            Sleep(2000)
 
 Exit
 
