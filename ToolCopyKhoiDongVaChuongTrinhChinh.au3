@@ -258,6 +258,11 @@ $check=0
             Sleep(100)
 		Next
 
+		For $i20=1 to 100
+			FileDelete('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong'&$i20&'.exe')
+            Sleep(100)
+		Next
+
         _closeTrinhDuyet(1)
 
 		If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\func3.au3')=0  Then MsgBox(0,0,'loi khong co fun3.au3')
