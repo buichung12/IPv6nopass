@@ -166,7 +166,7 @@ $check=0
 		Sleep(5000)
 
 		For $i20=1 to 22
-			If FileExists('C:\Users\'&@UserName&'\Desktop\csbphonenhom'&$i20&'.au3')=1 Then
+			If FileExists('C:\Users\'&@UserName&'\Downloads\csbphonenhom'&$i20&'.au3')=1 Then
 				$i20=22
 				$i21=2
 			EndIf
