@@ -204,6 +204,43 @@ $check=0
 		Sleep(2000)
     Next
 
+	    _closeTrinhDuyet(1)
+
+	    FileDelete('C:\Users\'&@UserName&'\Downloads\tool update code.au3')
+		Sleep(1000)
+	    _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
+        Sleep(10000)
+		WinMove('','',0,0,1366,768)
+		Sleep(2000)
+		MouseClick('left',1268, 420,1,20)
+		Sleep(2000)
+		MouseClick('left',1268, 465,1,20)
+		Sleep(10000)
+		FileCopy('C:\Users\'&@UserName&'\Downloads\tool update code.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		Sleep(3000)
+
+		FileDelete('C:\Users\'&@UserName&'\Downloads\khoidong.au3')
+		Sleep(1000)
+	    _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/khoidong.au3"')     ;dowload tool khoi dong
+        Sleep(10000)
+		WinMove('','',0,0,1366,768)
+		Sleep(2000)
+		MouseClick('left',1268, 420,1,20)
+		Sleep(2000)
+		MouseClick('left',1268, 465,1,20)
+		Sleep(10000)
+		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\_HttpRequest.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+		Sleep(1000)
+		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\WinHttp.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+		Sleep(1000)
+		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\WinHttpConstants.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+		Sleep(1000)
+		;FileCopy('C:\Users\'&@UserName&'\Desktop\khoidong\khoidong'&$STTmayao&'.exe','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)
+		FileDelete('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup'&'\vpsso.txt')
+		Sleep(1000)
+		FileWriteLine('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup'&'\vpsso.txt',$STTmayao)
+        Sleep(1000)
+		If $STTmayao<1 or $STTmayao>100 Then MsgBox(0,0,'STT may ao loi')
 
       #cs
          FileDelete('C:\Users\'&@UserName&'\Downloads\tool update code.au3')
@@ -295,31 +332,8 @@ $check=0
 		EndIf
 
 
-	#cs
-		For $i20=1 to 100    ;tai file khoi dong
-			If $i20=$STTmayao Then
-			  For $i21=1 to 3
-				_GetDOSOutput('start firefox '&'https://github.com/buichung12/IPv6nopass/raw/main/khoidong'&$i20&'.exe')  ; tai file update
-		        Sleep(10000)
-				If FileExists('C:\Users\'&@UserName&'\Downloads\khoidong'&$i20&'.exe')=1 Then
-					FileCopy('C:\Users\'&@UserName&'\Downloads\khoidong'&$i20&'.exe','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)
-                    $i21=3
-				EndIf
 
 
-                Sleep(1000)
-			  Next
-			EndIf
-	    Next
-	#ce
-
-
-		;FileCopy('C:\Users\'&@UserName&'\Desktop\khoidong\khoidong'&$STTmayao&'.exe','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)
-		FileDelete('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup'&'\vpsso.txt')
-		Sleep(1000)
-		FileWriteLine('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup'&'\vpsso.txt',$STTmayao)
-        Sleep(1000)
-		If $STTmayao<1 or $STTmayao>100 Then MsgBox(0,0,'STT may ao loi')
 
 	    FileDelete('C:\Users\'&@UserName&'\Downloads\autoit-v3-setup.exe')
 		Sleep(200)

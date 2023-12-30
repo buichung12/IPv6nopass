@@ -1111,12 +1111,15 @@ EndFunc
 				  ToolTip('check dang nhap 	'&$i,0,0)
 				_FakeIPOptionV6($i,$vpsso)
 				_khoidongFireFox($i)
-				MouseClick('left',500,60,1,20)
-				Sleep(2000)
-				Send('https://www.youtube.com/account')
+				ControlClick('','','','left',1,600, 60)
+				Sleep(1000)
+				Send('^a')
+				Sleep(500)
+				Sleep(1000)
+				Send('https://myaccount.google.com/')
 				Sleep(2000)
 				Send('{enter}')
-				Sleep(10000)
+				Sleep(5000)
 
 				If $i=1 Then
 					$pixcel=PixelSearch(18, 125,47, 153,0xFF0000)   ; xoa loi edge
@@ -1129,14 +1132,26 @@ EndFunc
 				EndIf
 				Sleep(2000)
 
+				ControlClick('','','','left',1,600, 60)
+				Sleep(1000)
+				Send('^a')
+				Sleep(500)
+				Sleep(1000)
+				Send('https://myaccount.google.com/')
+				Sleep(2000)
+				Send('{enter}')
+				Sleep(10000)
 				For $i20=1 to 10
-				    $pixcel=PixelSearch(45, 89,380, 183,0xFF0000)
-					If IsArray($pixcel) Then
-						$i20=20
+					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
+					Sleep(1000)
+					$pixcel2=PixelSearch(18, 130,206, 263,0x1A73E8)
+					Sleep(1000)
+					If IsArray($pixcel) or IsArray($pixcel2) Then
 						$check=1
+						$i20=17
 						$i2=2
 					EndIf
-					Sleep(1000)
+						Sleep(1000)
 				Next
 
 				If $i2=2 Then _resetMang($i)
@@ -4977,6 +4992,8 @@ EndFunc
                             Sleep(3000)
 						EndIf
 
+						$check=0
+
 						Sleep(2000)
 						ControlClick('','','','left',1,600, 60)
 					    Sleep(1000)
@@ -4997,9 +5014,9 @@ EndFunc
 						Send('{enter}')
 						Sleep(5000)
 						For $i20=1 to 10
-				           $pixcel=PixelSearch(18, 163,106, 263,0xC2E7FF)
+				           $pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
 						   Sleep(1000)
-						   $pixcel2=PixelSearch(18, 163,106, 263,0x1A73E8)
+						   $pixcel2=PixelSearch(18, 130,206, 263,0x1A73E8)
 						   Sleep(1000)
 					        If IsArray($pixcel) or IsArray($pixcel2) Then
 							    $check=1
@@ -5117,8 +5134,8 @@ EndFunc
 			If $checkupdatecode=1 Then
 				ToolTip('cho update code',0,0)
 				Sleep(1000)
-				Run("C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea\tool update code.au3")
-				Sleep(1000)
+				ShellExecute("C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea\tool update code.au3")
+				Sleep(2000)
 				Exit
 
 			EndIf

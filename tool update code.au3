@@ -71,7 +71,7 @@ HotKeySet("{f4}", "_Exit")
 					    $linkdownloadFunc=FileReadLine(@ScriptDir&'\checkUpdateCode.txt',5)
 						Sleep(1000)
 						_GetDOSOutput($linkdownload)
-						Sleep(15000)
+						Sleep(20000)
 
 						MouseClick('left',1269, 420,1,20)  ;click dowload
 						Sleep(2000)
@@ -80,7 +80,7 @@ HotKeySet("{f4}", "_Exit")
 						MouseClick('left',1269, 469,1,20)  ;click dowload
 						Sleep(2000)
 					    _GetDOSOutput($linkdownloadFunc)
-						Sleep(15000)
+						Sleep(20000)
 						MouseClick('left',1269, 420,1,20)  ;click dowload
 						Sleep(2000)
 						MouseClick('left',1269, 448,1,20)  ;click dowload
@@ -136,8 +136,6 @@ HotKeySet("{f4}", "_Exit")
 
 					MsgBox(0,0,'cho khoi dong chuong trinh',Random(10,60,1))
 					Sleep(1000)
-
-
 					ShellExecute('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong.au3')
 		            Sleep(2000)
 
