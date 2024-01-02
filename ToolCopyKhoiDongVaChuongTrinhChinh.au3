@@ -229,7 +229,7 @@ $check=0
 		Sleep(2000)
 		MouseClick('left',1268, 465,1,20)
 		Sleep(10000)
-		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\khoidong.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+		FileCopy('C:\Users\'&@UserName&'\Downloads\khoidong.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 		Sleep(1000)
 		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\_HttpRequest.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 		Sleep(1000)
