@@ -4713,15 +4713,16 @@ EndFunc
 				Send('https://www.youtube.com/account')
 				Sleep(1000)
 				Send('{enter}')
-				Sleep(5000)
+				Sleep(7000)
 				For $i20=1 to 20
-				    $pixcel=PixelSearch(322, 259,1000, 527,0x1A73E8)
+				    $pixcel=PixelSearch(546, 192,889, 356,0xFBBC05)
 					If IsArray($pixcel) Then
 						$i20=20
 				        Sleep(1000)
 					EndIf
 					Sleep(1000)
 				Next
+            If IsArray($pixcel) Then
 
 				If $i=2 Or $i=4 Then                      ; loi khong load duoc trinh duyet brive
 				    MouseClick('left',850, 273,1,20)
@@ -4747,7 +4748,6 @@ EndFunc
 				Sleep(3000)
 				Send('{tab}')
 				Sleep(2000)
-                ;ClipPut($f)
 				Send($f,1)
 				Sleep(1500)
 				Send('{enter}')
@@ -4756,7 +4756,6 @@ EndFunc
 				    $pixcel=PixelSearch(322, 259,1000, 527,0x1A73E8)
 					If IsArray($pixcel) Then
 						$i20=20
-						;Send('^a')
 				        Sleep(1000)
 					EndIf
 					Sleep(1000)
@@ -4765,13 +4764,11 @@ EndFunc
 				MouseClick('left',1016, 363,1,20)
 				Sleep(2000)
 				MouseClick('left',600, 244,1,20)
-				;ControlClick('','','','left',1,700, 244)
 				Sleep(3000)
 				Send('{tab}')
 				Sleep(2000)
 				Send('{tab}')
 				Sleep(3000)
-				;ClipPut($g)
 				Send($g,1)
 				Sleep(1500)
 				Send('{enter}')
@@ -4894,7 +4891,7 @@ EndFunc
 				      Sleep(7000)
 				EndIf
                Sleep(3000)
-
+               #cs
 			    If $x3=0 Then      ; neu khong tim thay anh
 				   If $i=1 Then MouseClick('left',550,590,1,20)
 				   If $i=2 Then MouseClick('left',550,590,1,20)
@@ -4904,8 +4901,8 @@ EndFunc
 				   If $i=6 Then MouseClick('left',550,590,1,20)
 				   If $i=7 Then MouseClick('left',550,620,1,20)
 				   If $i=8 Then MouseClick('left',550,600,1,20)
-				   If $i=9 Then MouseClick('left',550,650,1,20)
-				   If $i=10 Then MouseClick('left',550,650,1,20)
+				   If $i=9 Then MouseClick('left',550,630,1,20)
+				   If $i=10 Then MouseClick('left',550,600,1,20)
 				   Sleep(10000)
 				   For $i20=1 to 20
 				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
@@ -4918,9 +4915,35 @@ EndFunc
 				      Send('{enter}')
 				      Sleep(7000)
 
+				EndIf
+                #ce
+				If $x3=0 Then      ; neu khong tim thay anh
+				    MouseClick('left',668,270,1,20)
+					Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
+					Send('{enter}')
+				    Sleep(10000)
+				    For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(1000)
+				      Send($h)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
 
 				EndIf
-
 
                    ; MouseClick('left',514,560,1,20)    ; click Email khoi phuc
 					;Sleep(5000)
@@ -4959,73 +4982,106 @@ EndFunc
 				If $i=9 Then MouseClick('left',456, 344,1,20)  ;luu mat khau $1
 
                 Sleep(2000)
-                        If $i=1 Then MouseClick('left',931, 240,1,20)  ;luu mat khau $1
-						If $i=2 Then MouseClick('left',1000, 229,1,20)  ;luu mat khau $1
-						If $i=3 Then MouseClick('left',1193, 347,1,20)  ;luu mat khau $1
-						If $i=4 Then MouseClick('left',1099, 341,1,20)  ;luu mat khau $1
-						If $i=5 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
-						If $i=10 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
-						If $i=9 Then MouseClick('left',385, 320,1,20)  ;luu mat khau $1
-						Sleep(1000)
-						MouseClick('left',385, 320,1,20)
-                        ClipPut($h)
-					    Sleep(50)
-				        Send('^v')
-				        Sleep(1500)
-				        Send('{enter}')
-				        Sleep(6000)
+				If $i=1 Then MouseClick('left',931, 240,1,20)  ;luu mat khau $1
+				If $i=2 Then MouseClick('left',1000, 229,1,20)  ;luu mat khau $1
+				If $i=3 Then MouseClick('left',1193, 347,1,20)  ;luu mat khau $1
+				If $i=4 Then MouseClick('left',1099, 341,1,20)  ;luu mat khau $1
+				If $i=5 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
+				If $i=10 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
+				If $i=9 Then MouseClick('left',385, 320,1,20)  ;luu mat khau $1
+				Sleep(1000)
+				MouseClick('left',385, 320,1,20)
+				ClipPut($h)
+				Sleep(50)
+				Send('^v')
+				Sleep(1500)
+				Send('{enter}')
+				Sleep(6000)
 
+				If $i=1 Then MouseClick('left',929, 235,1,20)  ;luu mat khau $1
+				If $i=2 Then MouseClick('left',1027, 229,1,20)  ;luu mat khau $1
+				If $i=3 Then MouseClick('left',1193, 347,1,20)  ;luu mat khau $1
+				If $i=4 Then MouseClick('left',1099, 341,1,20)  ;luu mat khau $1
+				If $i=5 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
+				If $i=10 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
+				If $i=9 Then MouseClick('left',385, 320,1,20)  ;luu mat khau $1
+				Sleep(2000)
 
-						If $i=1 Then MouseClick('left',929, 235,1,20)  ;luu mat khau $1
-						If $i=2 Then MouseClick('left',1027, 229,1,20)  ;luu mat khau $1
-						If $i=3 Then MouseClick('left',1193, 347,1,20)  ;luu mat khau $1
-						If $i=4 Then MouseClick('left',1099, 341,1,20)  ;luu mat khau $1
-						If $i=5 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
-						If $i=10 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
-						If $i=9 Then MouseClick('left',385, 320,1,20)  ;luu mat khau $1
-					    Sleep(2000)
+				$pixcel=PixelSearch(715, 497,973, 752,0x1A73E8)
+				If IsArray($pixcel) Then
+					$i20=20
+					MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+					Sleep(3000)
+				EndIf
 
-						$pixcel=PixelSearch(715, 497,973, 752,0x1A73E8)
-					    If IsArray($pixcel) Then
-							$i20=20
-							MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-                            Sleep(3000)
-						EndIf
+				$check=0
+				Sleep(2000)
+				ControlClick('','','','left',1,600, 60)
+				Sleep(1000)
+				Send('^a')
+				Sleep(500)
+				Sleep(1000)
+				Send('https://myaccount.google.com/')
+				Sleep(2000)
+				Send('{enter}')
+				Sleep(5000)
+				ControlClick('','','','left',1,600, 60)
+				Sleep(1000)
+				Send('^a')
+				Sleep(500)
+				Sleep(1000)
+				Send('https://myaccount.google.com/')
+				Sleep(2000)
+				Send('{enter}')
+				Sleep(5000)
+				For $i20=1 to 10
+					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
+					Sleep(1000)
+					$pixcel2=PixelSearch(18, 130,206, 263,0x1A73E8)
+					Sleep(1000)
+					If IsArray($pixcel) or IsArray($pixcel2) Then
+						$check=1
+						$i20=17
+					EndIf
+					Sleep(1000)
+				Next
+			Else
 
-						$check=0
+				$check=0
+				Sleep(2000)
+				ControlClick('','','','left',1,600, 60)
+				Sleep(1000)
+				Send('^a')
+				Sleep(500)
+				Sleep(1000)
+				Send('https://myaccount.google.com/')
+				Sleep(2000)
+				Send('{enter}')
+				Sleep(5000)
+				ControlClick('','','','left',1,600, 60)
+				Sleep(1000)
+				Send('^a')
+				Sleep(500)
+				Sleep(1000)
+				Send('https://myaccount.google.com/')
+				Sleep(2000)
+				Send('{enter}')
+				Sleep(5000)
+				For $i20=1 to 10
+					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
+					Sleep(1000)
+					$pixcel2=PixelSearch(19, 226,61, 384,0x1F1F1F)
+					Sleep(1000)
+					If IsArray($pixcel) or IsArray($pixcel2) Then
+						$check=1
+						$i20=17
+					EndIf
+					Sleep(1000)
+				Next
 
-						Sleep(2000)
-						ControlClick('','','','left',1,600, 60)
-					    Sleep(1000)
-						Send('^a')
-						Sleep(500)
-						Sleep(1000)
-						Send('https://myaccount.google.com/')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(5000)
-						ControlClick('','','','left',1,600, 60)
-					    Sleep(1000)
-						Send('^a')
-						Sleep(500)
-						Sleep(1000)
-						Send('https://myaccount.google.com/')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(5000)
-						For $i20=1 to 10
-				           $pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
-						   Sleep(1000)
-						   $pixcel2=PixelSearch(18, 130,206, 263,0x1A73E8)
-						   Sleep(1000)
-					        If IsArray($pixcel) or IsArray($pixcel2) Then
-							    $check=1
-						        $i20=17
-							EndIf
-							Sleep(1000)
-				        Next
+			EndIf
 
-				Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
+			Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
         EndFunc
 
         Func _resetMang($i)
