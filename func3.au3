@@ -3755,6 +3755,10 @@ EndFunc
 					    	Sleep(1000)
 						    MouseClick('left',1333, 134,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
+							MouseClick('left',880, 148,1,20)  ;tat tanh cong cu
+				            Sleep(1000)
+							MouseClick('left',880, 118,1,20)  ;tat tanh cong cu
+				            Sleep(1000)
 					    EndIf
 
 					    If $i=10 Then
@@ -3882,6 +3886,8 @@ EndFunc
 				    Next
 				#ce
 
+                    Sleep(Random(1000,60000,1))
+
 					WinClose('Server Manager')
 
 					If $i=1 Then $linkblu="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
@@ -4007,6 +4013,10 @@ EndFunc
 					    	Sleep(1000)
 						    MouseClick('left',1333, 134,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
+							MouseClick('left',880, 148,1,20)  ;tat tanh cong cu
+				            Sleep(1000)
+							MouseClick('left',880, 118,1,20)  ;tat tanh cong cu
+				            Sleep(1000)
 					EndIf
 
 					Sleep(1000)
