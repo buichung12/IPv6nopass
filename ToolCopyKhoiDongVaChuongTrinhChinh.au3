@@ -431,6 +431,19 @@ $check=0
         FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
 		Sleep(1000)
 
+        ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.au3')
+		Sleep(5000)
+		MouseClick('left',680,336,1,20)
+		Sleep(2000)
+		Send('{tab}')
+		Sleep(2000)
+		Send('{SPACE}')
+		Sleep(2000)
+		Send('{tab}')
+		Sleep(2000)
+		Send('{SPACE}')
+		Sleep(2000)
+
 
 
   MsgBox(0,0,'xong')
