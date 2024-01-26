@@ -57,8 +57,6 @@ $check=0
 		ToolTip('tool copy file stt khoi dong may ao:'&$STTmayao&'	so nhom:'&$sonhom,0,30)
 		Sleep(1000)
 
-
-
         _resetMang()
 		_closeTrinhDuyet(1)
 
@@ -157,7 +155,7 @@ $check=0
 		If $sonhom=22 Then
            _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom22.au3"')
 		EndIf
-		Sleep(10000)
+		Sleep(15000)
 		WinMove('','',0,0,1366,768)
 		Sleep(2000)
 		MouseClick('left',1268, 420,1,20)
@@ -191,7 +189,7 @@ $check=0
     For $i20=1 to 2
 
 		_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
-        Sleep(10000)
+        Sleep(15000)
 		WinMove('','',0,0,1366,768)
 		Sleep(2000)
 		MouseClick('left',1268, 420,1,20)
@@ -209,7 +207,7 @@ $check=0
 	    FileDelete('C:\Users\'&@UserName&'\Downloads\tool update code.au3')
 		Sleep(1000)
 	    _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
-        Sleep(10000)
+        Sleep(15000)
 		WinMove('','',0,0,1366,768)
 		Sleep(2000)
 		MouseClick('left',1268, 420,1,20)
@@ -222,7 +220,7 @@ $check=0
 		FileDelete('C:\Users\'&@UserName&'\Downloads\khoidong.au3')
 		Sleep(1000)
 	    _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/khoidong.au3"')     ;dowload tool khoi dong
-        Sleep(10000)
+        Sleep(15000)
 		WinMove('','',0,0,1366,768)
 		Sleep(2000)
 		MouseClick('left',1268, 420,1,20)
@@ -866,13 +864,9 @@ _VerryGmail()  ; return $check=1 ok. 0 khong verrry duco
                 Sleep(100)
 				Send('{f5}')
 				Sleep(100)
-				MouseClick("left",1000, 500,1,20)   ; tat update
-				Sleep(500)
 				WinClose('Local Area Network (LAN) Settings')
 				Sleep(100)
 				WinClose('Internet Properties')
-				Sleep(100)
-				MouseClick('left',300,455,1,20)   ; thoat loi win
 				Sleep(100)
 				WinClose('[class:CabinetWClass]','')
 				Sleep(100)
