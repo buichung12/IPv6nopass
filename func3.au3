@@ -3098,6 +3098,8 @@ EndFunc
 						    ControlClick($var[$i10][1],'','','left',1,800, 664)
 							Sleep(200)
 						    ControlClick($var[$i10][1],'','','left',1,700,555)
+							Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,844, 646)
 
 							Sleep(2000)
                         EndIf
