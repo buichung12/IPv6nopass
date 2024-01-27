@@ -444,9 +444,16 @@ $check=0
 		Send('{SPACE}')
 		Sleep(2000)
 
+        MsgBox(0,0,'xong')
 
+        Sleep(2000)
+        MouseClick('left',24,881,1,20)
+		Sleep(2000)
+		MouseClick('left',24,835,1,20)
+		Sleep(2000)
+		MouseClick('left',24,785,1,20)
+		Sleep(1000)
 
-  MsgBox(0,0,'xong')
   Exit
 
 
