@@ -610,6 +610,59 @@ EndFunc
 
 			EndIf
 
+
+            FileDelete('C:\Users\'&@UserName&'\Downloads\videos.bmp')
+			Sleep(200)
+			FileDelete('C:\Users\'&@UserName&'\Downloads\videos2.bmp')
+			Sleep(200)
+			FileDelete('C:\Users\'&@UserName&'\Downloads\shorts.bmp')
+			Sleep(200)
+			FileDelete('C:\Users\'&@UserName&'\Downloads\shorts2.bmp')
+			Sleep(200)
+            ToolTip('update videos.BMP',0,0)
+			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/videos.bmp"')
+			Sleep(10000)
+			WinMove('','',0,0,1366,768)
+		    Sleep(2000)
+	    	MouseClick('left',1268, 420,1,20)
+		    Sleep(2000)
+		    MouseClick('left',1268, 465,1,20)
+		    Sleep(5000)
+			ToolTip('update videos2.BMP',0,0)
+			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/videos2.bmp"')
+			Sleep(10000)
+			Sleep(2000)
+	    	MouseClick('left',1268, 420,1,20)
+		    Sleep(2000)
+		    MouseClick('left',1268, 465,1,20)
+		    Sleep(5000)
+			ToolTip('update shorts.BMP',0,0)
+			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/shorts.bmp"')
+			Sleep(10000)
+			Sleep(2000)
+	    	MouseClick('left',1268, 420,1,20)
+		    Sleep(2000)
+		    MouseClick('left',1268, 465,1,20)
+		    Sleep(5000)
+			ToolTip('update shorts2.BMP',0,0)
+			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/shorts2.bmp"')
+			Sleep(10000)
+			Sleep(2000)
+	    	MouseClick('left',1268, 420,1,20)
+		    Sleep(2000)
+		    MouseClick('left',1268, 465,1,20)
+		    Sleep(5000)
+			FileCopy('C:\Users\'&@UserName&'\Downloads\videos.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		    Sleep(1000)
+			FileCopy('C:\Users\'&@UserName&'\Downloads\videos2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		    Sleep(1000)
+			FileCopy('C:\Users\'&@UserName&'\Downloads\shorts.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		    Sleep(1000)
+			FileCopy('C:\Users\'&@UserName&'\Downloads\shorts2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		    Sleep(1000)
+
+
+
 			Sleep(1000)
 			ToolTip('kiem tra trinh duyet',0,0)
 
@@ -2574,7 +2627,7 @@ EndFunc
 						WinClose('Proxy Client Tinsoft')
 						ProcessClose('WerFault.exe')
 				$sosub5=0
-                $linkvideo=0
+                $linkvideo=5
 				Sleep(1000)
 
 				_xoa1NuaFileDasub($i,$i5)
@@ -2668,6 +2721,8 @@ EndFunc
 
 				    Sleep(Random(1000,3000,1))
 
+					$linkvideo=5
+
 					$checklink=StringRight($linkkenh,6)
 				    If $checklink='videos' or $checklink='treams' Then
                          $linkvideo=1
@@ -2686,7 +2741,7 @@ EndFunc
 			    	EndIf
 
 
-                 ; For $i2=1 to 2
+
 					ControlClick($var[$i10][1],'','','left',1,600, 60)
 				    Sleep(2000)
 					ClipPut($linkkenh)
@@ -2702,9 +2757,49 @@ EndFunc
                     WinClose('Manik Ahmed - YouTube - Vivaldi')
 				    WinClose('Restore pages?')
 				    Sleep(1000)
-					;If $i=5 Then ControlClick($var[$i10][1],'','','left',1,1245, 216)
 
-                     $checklink=0
+					If $linkvideo=5 or $linkvideo=0 Then
+
+						$x3=0
+				        $y3=0
+						$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\videos.bmp',1,406, 318,831,610,$x3,$y3,1)
+				        If $x3>0 Then
+					        MouseClick('left',$x3,$y3,1,20)   ; click video
+					        Sleep(7000)
+							$linkvideo=1
+				        Else
+
+					        $emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\shorts.bmp',1,406, 318,831, 610,$x3,$y3,1)
+						    If $x3>0 Then
+					           MouseClick('left',$x3,$y3,1,20)   ; click shorts
+					           Sleep(7000)
+							   $linkvideo=2
+					        Else
+						        $emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\videos2.bmp',1,406, 318,831, 610,$x3,$y3,1)
+					            If $x3>0 Then
+					               MouseClick('left',$x3,$y3,1,20)   ; click shorts
+					               Sleep(7000)
+								   $linkvideo=1
+						        Else
+							        $emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\shorts2.bmp',1,406, 318,831, 610,$x3,$y3,1)
+					                If $x3>0 Then
+					                   MouseClick('left',$x3,$y3,1,20)   ; click shorts
+					                   Sleep(7000)
+									   $linkvideo=2
+							        EndIf
+
+						        EndIf
+
+				            EndIf
+
+				        EndIf
+
+
+
+
+					EndIf
+
+					$checklink=0
 				    For $i20=1 to 10
 				          $pixcel=PixelSearch(76,110,146, 166,0xFF0000)
 						If IsArray($pixcel) Then
@@ -2746,6 +2841,115 @@ EndFunc
 						WinMove($var[$i10][1],'',0,0,1355,800)     ; fix loi nut sub phia duoi
 					EndIf
 
+					If $linkvideo=0 Then
+                         ToolTip("link video "&$iSun2lan&", link trang chu",0,0)
+						;Sleep(5000)
+						For $i20=1 to 10
+				          $pixcel=PixelSearch(76,110,146, 166,0xFF0000)
+					       If IsArray($pixcel) Then
+							  $i20=20
+						   EndIf
+						   Sleep(1000)
+						Next
+
+
+
+                           If $i=5 Then ControlClick($var[$i10][1],'','','left',1,1245, 216)
+							Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,586, 448)
+					        Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,1165, 370)
+					        Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,1165, 390)
+					        Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,1165, 312)
+					        Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,1165, 230)
+					        Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,1245, 207)
+							Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,1165, 215)
+					        Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,1165, 226)
+					        Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,1165, 189)
+					        Sleep(200)
+
+							If $i=7 Then ControlClick($var[$i10][1],'','','left',1,1260,208)
+							Sleep(100)
+
+							ControlClick($var[$i10][1],'','','left',1,1195, 370)
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1195, 390)
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1230, 418)
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1195, 411)
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1195, 312)
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1245, 216)
+                            Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1195, 230)
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1195, 215)
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1195, 226)
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1195, 189)
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1225, 207)
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1290,400 )
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1290,370 )
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1290,350 )
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1290,320 )
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1290,300 )
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1290,270 )
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1290,250 )
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1290,220 )
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1290,200 )
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1290,180 )
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,589, 488)
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,592, 468)
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,666, 479)
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,610,390)
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,610, 270)
+							Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,610, 333)
+					        Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,610, 300)
+					        Sleep(100)
+
+							$pixcel=PixelSearch(631, 170,1246, 606,0x0F0F0F)
+					        If IsArray($pixcel) Then
+							    $i20=20
+							    ControlClick($var[$i10][1],'','','left',1,$pixcel[0]+5,$pixcel[1]+5)
+								Sleep(100)
+						    EndIf
+
+							Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,1165, 148)
+							Sleep(100)
+							ControlClick($var[$i10][1],'','','left',1,997, 147)
+
+					EndIf
+
+
                     If $linkvideo=1 Then
 
 						ToolTip("link video:"&$iSun2lan&", link video",0,0)
@@ -2779,16 +2983,7 @@ EndFunc
 					    Sleep(50)
 						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
 					    Sleep(50)
-					    ;ControlClick($var[$i10][1],'','','left',1,459, 725)  ;xem video
-					   ; Sleep(50)
-					    ;ControlClick($var[$i10][1],'','','left',1,317, 690)  ;xem video
-					    ;Sleep(50)
-						;ControlClick($var[$i10][1],'','','left',1,515, 579)  ;xem video
-					  ;  Sleep(50)
-					  ;  ControlClick($var[$i10][1],'','','left',1,329, 460)  ;xem video
-					  ;  Sleep(20)
-						;ControlClick($var[$i10][1],'','','left',1,450, 460)  ;xem video
-					   ; Sleep(50)
+
 
 					    Sleep(7000)
 					    For $i20=1 to 10
@@ -2892,111 +3087,6 @@ EndFunc
 
 
                     EndIf
-
-                    If $linkvideo=0 Then
-                         ToolTip("link video "&$iSun2lan&", link trang chu",0,0)
-						;Sleep(5000)
-						For $i20=1 to 10
-				          $pixcel=PixelSearch(76,110,146, 166,0xFF0000)
-					       If IsArray($pixcel) Then
-							  $i20=20
-						   EndIf
-						   Sleep(1000)
-						Next
-
-                           If $i=5 Then ControlClick($var[$i10][1],'','','left',1,1245, 216)
-							Sleep(200)
-							ControlClick($var[$i10][1],'','','left',1,586, 448)
-					        Sleep(200)
-							ControlClick($var[$i10][1],'','','left',1,1165, 370)
-					        Sleep(200)
-							ControlClick($var[$i10][1],'','','left',1,1165, 390)
-					        Sleep(200)
-							ControlClick($var[$i10][1],'','','left',1,1165, 312)
-					        Sleep(200)
-							ControlClick($var[$i10][1],'','','left',1,1165, 230)
-					        Sleep(200)
-							ControlClick($var[$i10][1],'','','left',1,1245, 207)
-							Sleep(200)
-							ControlClick($var[$i10][1],'','','left',1,1165, 215)
-					        Sleep(200)
-							ControlClick($var[$i10][1],'','','left',1,1165, 226)
-					        Sleep(200)
-							ControlClick($var[$i10][1],'','','left',1,1165, 189)
-					        Sleep(200)
-
-							If $i=7 Then ControlClick($var[$i10][1],'','','left',1,1260,208)
-							Sleep(100)
-
-							ControlClick($var[$i10][1],'','','left',1,1195, 370)
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1195, 390)
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1230, 418)
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1195, 411)
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1195, 312)
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1245, 216)
-                            Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1195, 230)
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1195, 215)
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1195, 226)
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1195, 189)
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1225, 207)
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1290,400 )
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1290,370 )
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1290,350 )
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1290,320 )
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1290,300 )
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1290,270 )
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1290,250 )
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1290,220 )
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1290,200 )
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1290,180 )
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,589, 488)
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,592, 468)
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,666, 479)
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,610,390)
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,610, 270)
-							Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,610, 333)
-					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,610, 300)
-					        Sleep(100)
-
-							$pixcel=PixelSearch(631, 170,1246, 606,0x0F0F0F)
-					        If IsArray($pixcel) Then
-							    $i20=20
-							    ControlClick($var[$i10][1],'','','left',1,$pixcel[0]+5,$pixcel[1]+5)
-								Sleep(100)
-						    EndIf
-
-							Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1165, 148)
-							Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,997, 147)
-					EndIf
 
                     If $linkvideo=2 Then
                         ToolTip("link video "&$iSun2lan&", link shorts",0,0)
@@ -3178,7 +3268,6 @@ EndFunc
 					EndIf
 
 					Sleep(2000)
-				 ; Next
 
 				EndIf
 			  Next
@@ -4407,7 +4496,7 @@ EndFunc
 				DirRemove('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Crypto',1)
 				MouseClick('left',1263,887,1,20)
 				Sleep(2000)
-				MouseClick('left',1263,830,1,20)
+				MouseMove(1263,830)
 				Sleep(10000)
 			EndIf
 
