@@ -164,7 +164,7 @@ $check=0
 		Sleep(5000)
 
 		For $i20=1 to 22
-			If FileExists('C:\Users\'&@UserName&'\Downloads\csbphonenhom'&$i20&'.au3')=1 Then
+			If FileExists('C:\Users\Administrator\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.au3')=1 or FileExists('C:\Users\admin\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.au3')=1  Then
 				$i20=22
 				$i21=2
 			EndIf
@@ -175,7 +175,9 @@ $check=0
 
 		For $i20=0 to 22
 		    FileCopy('C:\Users\'&@UserName&'\Downloads\csbphonenhom'&$i20&'.au3','C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea',1)
-		    Sleep(1000)
+		    Sleep(500)
+			FileCopy('C:\Users\admin\Downloads\csbphonenhom'&$i20&'.au3','C:\Users\admin\Desktop\cschrome - 10 sea',1)
+		    Sleep(500)
 		Next
 
         Sleep(1000)
@@ -197,8 +199,10 @@ $check=0
 		MouseClick('left',1268, 460,1,20)
 		Sleep(15000)
 		FileCopy('C:\Users\'&@UserName&'\Downloads\func3.au3','C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea',1)
+		Sleep(1000)
+		FileCopy('C:\Users\admin\Downloads\func3.au3','C:\Users\admin\Desktop\cschrome - 10 sea',1)
 		Sleep(3000)
-		If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\func3.au3')=1 Then $i20=3
+		If FileExists('C:\Users\admin\Desktop\csFireFox - 10 sea\func3.au3')=1 or FileExists('C:\Users\buichung\Desktop\csFireFox - 10 sea\func3.au3')=1 Then $i20=3
 		Sleep(2000)
     Next
 
