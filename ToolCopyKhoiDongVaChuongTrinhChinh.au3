@@ -160,7 +160,7 @@ $check=0
 		Sleep(2000)
 		MouseClick('left',1268, 420,1,20)
 		Sleep(2000)
-		MouseClick('left',1268, 465,1,20)
+		MouseClick('left',1268, 460,1,20)
 		Sleep(5000)
 
 		For $i20=1 to 22
@@ -194,7 +194,7 @@ $check=0
 		Sleep(2000)
 		MouseClick('left',1268, 420,1,20)
 		Sleep(2000)
-		MouseClick('left',1268, 465,1,20)
+		MouseClick('left',1268, 460,1,20)
 		Sleep(10000)
 		FileCopy('C:\Users\'&@UserName&'\Downloads\func3.au3','C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea',1)
 		Sleep(3000)
@@ -212,7 +212,7 @@ $check=0
 		Sleep(2000)
 		MouseClick('left',1268, 420,1,20)
 		Sleep(2000)
-		MouseClick('left',1268, 465,1,20)
+		MouseClick('left',1268, 460,1,20)
 		Sleep(10000)
 		FileCopy('C:\Users\'&@UserName&'\Downloads\tool update code.au3','C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea',1)
 		Sleep(3000)
@@ -229,7 +229,7 @@ $check=0
 		Sleep(2000)
 		MouseClick('left',1268, 420,1,20)
 		Sleep(2000)
-		MouseClick('left',1268, 465,1,20)
+		MouseClick('left',1268, 460,1,20)
 		Sleep(10000)
 		FileCopy('C:\Users\'&@UserName&'\Downloads\khoidong.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 		Sleep(1000)
