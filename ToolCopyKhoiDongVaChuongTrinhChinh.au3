@@ -195,7 +195,7 @@ $check=0
 		MouseClick('left',1268, 500,1,20)
 		Sleep(2000)
 		MouseClick('left',1268, 460,1,20)
-		Sleep(10000)
+		Sleep(15000)
 		FileCopy('C:\Users\'&@UserName&'\Downloads\func3.au3','C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea',1)
 		Sleep(3000)
 		If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\func3.au3')=1 Then $i20=3
@@ -213,7 +213,7 @@ $check=0
 		MouseClick('left',1268, 500,1,20)
 		Sleep(2000)
 		MouseClick('left',1268, 460,1,20)
-		Sleep(10000)
+		Sleep(15000)
 		FileCopy('C:\Users\'&@UserName&'\Downloads\tool update code.au3','C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea',1)
 		Sleep(3000)
 
