@@ -219,6 +219,10 @@ $check=0
 
 		FileDelete('C:\Users\'&@UserName&'\Downloads\khoidong.au3')
 		Sleep(1000)
+		For $i20=1 to 100
+			FileDelete('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\'&'khoidong'&$i20&'.exe')
+			Sleep(100)
+		Next
 	    _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/khoidong.au3"')     ;dowload tool khoi dong
         Sleep(15000)
 		WinMove('','',0,0,1366,768)
