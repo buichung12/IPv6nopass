@@ -81,79 +81,79 @@ $check=0
 		Next
 
 		For $i20=0 to 22
-            FileDelete('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.au3')
+            FileDelete('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$i20&'.au3')
 			Sleep(200)
 		Next
     For $i21=1 to 2                           ; tai chuong trinh chinh
 
         If $sonhom=0 Then
-            _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom0.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom0.au3"')
 		EndIf
 		If $sonhom=1 Then
-            _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom1.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom1.au3"')
 		EndIf
 		If $sonhom=2 Then
-            _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom2.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom2.au3"')
 		EndIf
 		If $sonhom=3 Then
-           _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom3.au3"')
+           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom3.au3"')
 		EndIf
 		If $sonhom=4 Then
-            _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom4.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom4.au3"')
 		EndIf
 		If $sonhom=5 Then
-           _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom5.au3"')
+           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom5.au3"')
 		EndIf
 		If $sonhom=6 Then
-            _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom6.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom6.au3"')
 		EndIf
 		If $sonhom=7 Then
-            _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom7.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom7.au3"')
 		EndIf
 		If $sonhom=8 Then
-           _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom8.au3"')
+           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom8.au3"')
 		EndIf
 		If $sonhom=9 Then
-            _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom9.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom9.au3"')
 		EndIf
 		If $sonhom=10 Then
-            _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom10.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom10.au3"')
 		EndIf
 		If $sonhom=11 Then
-           _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom11.au3"')
+           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom11.au3"')
 		EndIf
 		If $sonhom=12 Then
-            _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom12.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom12.au3"')
 		EndIf
 		If $sonhom=13 Then
-            _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom13.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom13.au3"')
 		EndIf
 		If $sonhom=14 Then
-            _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom14.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom14.au3"')
 		EndIf
 		If $sonhom=15 Then
-            _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom015.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom15.au3"')
 		EndIf
 		If $sonhom=16 Then
-            _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom16.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom16.au3"')
 		EndIf
 		If $sonhom=17 Then
-           _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom17.au3"')
+           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom17.au3"')
 		EndIf
 		If $sonhom=18 Then
-           _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom18.au3"')
+           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom18.au3"')
 		EndIf
 		If $sonhom=19 Then
-            _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom19.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom19.au3"')
 		EndIf
 		If $sonhom=20 Then
-            _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom20.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom20.au3"')
 		EndIf
 		If $sonhom=21 Then
-           _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom21.au3"')
+           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom21.au3"')
 		EndIf
 		If $sonhom=22 Then
-           _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom22.au3"')
+           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom22.au3"')
 		EndIf
 		Sleep(15000)
 		WinMove('','',0,0,1366,768)
@@ -174,7 +174,7 @@ $check=0
 	Next
 
 		For $i20=0 to 22
-		    FileCopy('C:\Users\'&@UserName&'\Downloads\csbphonenhom'&$i20&'.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		    FileCopy('C:\Users\'&@UserName&'\Downloads\csbphonenhom'&$i20&'.au3','C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea',1)
 		    Sleep(1000)
 		Next
 
@@ -183,12 +183,12 @@ $check=0
 		Sleep(1000)
 		FileDelete('C:\Users\'&@UserName&'\Desktop\func3.au3')
 		Sleep(1000)
-		FileDelete('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\func3.au3')
+		FileDelete('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\func3.au3')
 		Sleep(1000)
 
     For $i20=1 to 2
 
-		_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
+		_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
         Sleep(15000)
 		WinMove('','',0,0,1366,768)
 		Sleep(2000)
@@ -196,9 +196,9 @@ $check=0
 		Sleep(2000)
 		MouseClick('left',1268, 465,1,20)
 		Sleep(10000)
-		FileCopy('C:\Users\'&@UserName&'\Downloads\func3.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		FileCopy('C:\Users\'&@UserName&'\Downloads\func3.au3','C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea',1)
 		Sleep(3000)
-		If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\func3.au3')=1 Then $i20=3
+		If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\func3.au3')=1 Then $i20=3
 		Sleep(2000)
     Next
 
@@ -206,7 +206,7 @@ $check=0
 
 	    FileDelete('C:\Users\'&@UserName&'\Downloads\tool update code.au3')
 		Sleep(1000)
-	    _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
+	    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
         Sleep(15000)
 		WinMove('','',0,0,1366,768)
 		Sleep(2000)
@@ -214,7 +214,7 @@ $check=0
 		Sleep(2000)
 		MouseClick('left',1268, 465,1,20)
 		Sleep(10000)
-		FileCopy('C:\Users\'&@UserName&'\Downloads\tool update code.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		FileCopy('C:\Users\'&@UserName&'\Downloads\tool update code.au3','C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea',1)
 		Sleep(3000)
 
 		FileDelete('C:\Users\'&@UserName&'\Downloads\khoidong.au3')
@@ -223,7 +223,7 @@ $check=0
 			FileDelete('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\'&'khoidong'&$i20&'.exe')
 			Sleep(100)
 		Next
-	    _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/khoidong.au3"')     ;dowload tool khoi dong
+	    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/khoidong.au3"')     ;dowload tool khoi dong
         Sleep(15000)
 		WinMove('','',0,0,1366,768)
 		Sleep(2000)
@@ -233,17 +233,17 @@ $check=0
 		Sleep(10000)
 		FileCopy('C:\Users\'&@UserName&'\Downloads\khoidong.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 		Sleep(1000)
-		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\_HttpRequest.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+		FileCopy('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\_HttpRequest.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 		Sleep(1000)
-		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\WinHttp.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+		FileCopy('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\WinHttp.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 		Sleep(1000)
-		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\WinHttpConstants.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+		FileCopy('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\WinHttpConstants.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 		Sleep(1000)
-		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\_HttpRequest.au3','C:\Users\'&@UserName&'\Desktop',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+		FileCopy('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\_HttpRequest.au3','C:\Users\'&@UserName&'\Desktop',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 		Sleep(1000)
-		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\WinHttp.au3','C:\Users\'&@UserName&'\Desktop',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+		FileCopy('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\WinHttp.au3','C:\Users\'&@UserName&'\Desktop',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 		Sleep(1000)
-		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\WinHttpConstants.au3','C:\Users\'&@UserName&'\Desktop',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+		FileCopy('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\WinHttpConstants.au3','C:\Users\'&@UserName&'\Desktop',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 		Sleep(1000)
 		;FileCopy('C:\Users\'&@UserName&'\Desktop\khoidong\khoidong'&$STTmayao&'.exe','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)
 		FileDelete('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup'&'\vpsso.txt')
@@ -255,9 +255,9 @@ $check=0
       #cs
          FileDelete('C:\Users\'&@UserName&'\Downloads\tool update code.au3')
 		 Sleep(1000)
-	    _GetDOSOutput('start firefox "https://drive.google.com/u/0/uc?id=1YLYqbMLElQzwL9m9TBLvFLHppQ8aL_AX&export=download"')  ; tai file update
+	    _GetDOSOutput('start chrome "https://drive.google.com/u/0/uc?id=1YLYqbMLElQzwL9m9TBLvFLHppQ8aL_AX&export=download"')  ; tai file update
 		Sleep(10000)
-		FileCopy('C:\Users\'&@UserName&'\Downloads\tool update code.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		FileCopy('C:\Users\'&@UserName&'\Downloads\tool update code.au3','C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea',1)
         Sleep(1000)
         FileCopy('C:\Users\'&@UserName&'\Downloads\tool copy khoi dong va chuong trinh chinh.exe','C:\Users\'&@UserName&'\Desktop',1)
 		Sleep(1000)
@@ -275,75 +275,75 @@ $check=0
 
         _closeTrinhDuyet(1)
 
-		If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\func3.au3')=0  Then MsgBox(0,0,'loi khong co fun3.au3')
+		If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\func3.au3')=0  Then MsgBox(0,0,'loi khong co fun3.au3')
 		If $sonhom=0 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=1 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=2 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=3 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=4 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=5 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=6 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=7 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=8 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=9 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=10 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=11 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=12 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=13 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=14 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=15 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=16 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=17 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=18 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=19 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0 Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0 Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=20 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=21 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=22 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 
 
@@ -358,9 +358,9 @@ $check=0
 	If FileExists("C:\Program Files (x86)\AutoIt3\AutoIt3.exe")=0 Then
 		ToolTip('cai dat autoit',0,30)
 
-		_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
+		_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
 		Sleep(5000)
-		_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/raw/main/SciTE4AutoIt3.exe"')
+		_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/SciTE4AutoIt3.exe"')
 		Sleep(20000)
         _closeTrinhDuyet(1)
 		Sleep(1000)
@@ -441,7 +441,7 @@ $check=0
         FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
 		Sleep(1000)
 
-        ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\func3.au3')
+        ShellExecute('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\func3.au3')
 		Sleep(5000)
 		MouseClick('left',680,336,1,20)
 		Sleep(2000)
@@ -649,10 +649,10 @@ _VerryGmail()  ; return $check=1 ok. 0 khong verrry duco
 					ProcessClose('chrome.exe')
 					Sleep(100)
 				Next
-				$a = WinExists('Firefox')                                                    ;x󡠴o஠b? tap
+				$a = WinExists('chrome')                                                    ;x󡠴o஠b? tap
 				If $a=1 Then
 				    For $i20 = 1 to 100
-					   ControlClick('Firefox','','[CLASS:Button; INSTANCE:1]')
+					   ControlClick('chrome','','[CLASS:Button; INSTANCE:1]')
 					   Sleep(100)
 					Next
 				EndIf
@@ -670,10 +670,10 @@ _VerryGmail()  ; return $check=1 ok. 0 khong verrry duco
 					   Sleep(100)
 					Next
 				EndIf
-				$a = WinExists('Đóng Firefox')                                                    ;x󡠴o஠b? tap
+				$a = WinExists('Đóng chrome')                                                    ;x󡠴o஠b? tap
 				If $a=1 Then
 				    For $i20 = 1 to 100
-					   WinClose('Đóng Firefox')
+					   WinClose('Đóng chrome')
 					   Sleep(100)
 					Next
 				EndIf
@@ -792,7 +792,7 @@ _VerryGmail()  ; return $check=1 ok. 0 khong verrry duco
 				Sleep(100)
 				ProcessClose('Windows Security.exe')
 				Sleep(100)
-				ProcessClose('gfirefox.exe')
+				ProcessClose('gchrome.exe')
 				Sleep(100)
 				ProcessClose('gchrome.exe')
 				Sleep(100)
@@ -807,7 +807,7 @@ _VerryGmail()  ; return $check=1 ok. 0 khong verrry duco
 				Sleep(100)
 				ProcessClose('vivaldi.exe')
 				Sleep(100)
-				ProcessClose('firefox.exe')
+				ProcessClose('chrome.exe')
 				Sleep(100)
 				ProcessClose('launcher.exe')
 				Sleep(100)
@@ -827,7 +827,7 @@ _VerryGmail()  ; return $check=1 ok. 0 khong verrry duco
                 Sleep(100)
 				ProcessClose('gMaxthon.exe')
 				Sleep(100)
-				ProcessClose('gfirefox.exe')
+				ProcessClose('gchrome.exe')
 				Sleep(100)
 				ProcessClose('gchrome.exe')
 				Sleep(100)
@@ -915,12 +915,12 @@ _VerryGmail()  ; return $check=1 ok. 0 khong verrry duco
 	 Func _xoaprofileMOI()
                             Send("#r")
 							Sleep(1000)
-                            Send("firefox.exe -P")
+                            Send("chrome.exe -P")
                             Sleep(500)
                             Send('{enter}')
                             Sleep(3000)
-                            WinWait('Firefox - Chọn hồ sơ người dùng','',10)
-                            ControlClick('Firefox - Chọn hồ sơ người dùng','','','left',1,579, 359)
+                            WinWait('chrome - Chọn hồ sơ người dùng','',10)
+                            ControlClick('chrome - Chọn hồ sơ người dùng','','','left',1,579, 359)
                             Sleep(1000)
 							For $ixoa=1 to 5
                               ControlClick('','','','left',1,586, 359)
@@ -928,7 +928,7 @@ _VerryGmail()  ; return $check=1 ok. 0 khong verrry duco
 							  ControlClick('','','','left',1,822, 418)
 							  Sleep(2000)
 							Next
-							WinClose('Firefox - Chọn hồ sơ người dùng')
+							WinClose('chrome - Chọn hồ sơ người dùng')
 							Sleep(3000)
 
 	EndFunc
