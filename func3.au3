@@ -533,6 +533,22 @@ EndFunc
 			Sleep(10000)
 			FileCopy("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe",'C:\Users\'&@UserName&'\Desktop',1)
 		    Sleep(1000)
+
+			FileDelete("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe")
+			Sleep(1000)
+			;FileDelete('C:\Users\'&@UserName&'\Desktop\ToolCopyKhoiDongVaChuongTrinhChinh.exe')
+			;Sleep(1000)
+		    _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
+			Sleep(10000)
+			WinMove('','',0,0,1366,768)
+		    Sleep(2000)
+		    MouseClick('left',1268, 420,1,20)
+		    Sleep(2000)
+	     	MouseClick('left',1268, 465,1,20)
+		    Sleep(10000)
+
+			FileCopy("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.au3",'C:\Users\'&@UserName&'\Desktop',1)
+		    Sleep(1000)
 			_closeTrinhDuyet(1)
 
 

@@ -235,6 +235,12 @@ $check=0
 		Sleep(1000)
 		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\WinHttpConstants.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 		Sleep(1000)
+		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\_HttpRequest.au3','C:\Users\'&@UserName&'\Desktop',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+		Sleep(1000)
+		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\WinHttp.au3','C:\Users\'&@UserName&'\Desktop',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+		Sleep(1000)
+		FileCopy('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\WinHttpConstants.au3','C:\Users\'&@UserName&'\Desktop',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+		Sleep(1000)
 		;FileCopy('C:\Users\'&@UserName&'\Desktop\khoidong\khoidong'&$STTmayao&'.exe','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)
 		FileDelete('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup'&'\vpsso.txt')
 		Sleep(1000)
