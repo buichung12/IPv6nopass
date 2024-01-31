@@ -2662,20 +2662,22 @@ EndFunc
 					        $sodong=_FileCountLines(@ScriptDir&"\linkkenhchaySUB2.txt")
                             $linkkenhtho=FileReadLine(@ScriptDir&"\linkkenhchaySUB2.txt",Random(1,$sodong,1))    ; chu y thay doi
 				            Sleep(1000)
-					    	$datalink=StringSplit($linkkenhtho,'	')
-				            If IsArray($datalink) Then $linkkenh=$datalink[1]
-							If FileExists(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt")=0 Then  FileWriteLine(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt",'khoi tao')
-							Sleep(1000)
-						    $sodonglinkdasub=_FileCountLines(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt")
-						    For $i22=1 to $sodonglinkdasub
-                                $linkdasub=FileReadLine(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt",$i22)
-                                If $linkkenh=$linkdasub Then
-								    $i22=$sodonglinkdasub
-							    EndIf
-						    Next
+						    If 	StringLen($linkkenhtho)>35 Then
+					    	    $datalink=StringSplit($linkkenhtho,'	')
+				                If IsArray($datalink) Then $linkkenh=$datalink[1]
+							    If FileExists(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt")=0 Then  FileWriteLine(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt",'khoi tao')
+							    Sleep(1000)
+						        $sodonglinkdasub=_FileCountLines(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt")
+						        For $i22=1 to $sodonglinkdasub
+                                    $linkdasub=FileReadLine(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt",$i22)
+                                    If $linkkenh=$linkdasub Then
+								        $i22=$sodonglinkdasub
+							        EndIf
+						        Next
 
-						    If $linkkenh <> $linkdasub Then
-							    $i23=5
+						        If $linkkenh <> $linkdasub Then
+							        $i23=5
+						        EndIf
 						    EndIf
 						Next
 
@@ -3804,6 +3806,8 @@ EndFunc
 							Sleep(2000)
 							ControlClick($var[$i10][1],'','','left',1,834, 242)
 							Sleep(2000)
+							MouseClick('left',1260,208 ,1,20)
+							Sleep(1000)
 						EndIf
 
 						If $i=6 Then
