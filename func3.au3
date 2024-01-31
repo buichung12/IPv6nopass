@@ -531,14 +531,15 @@ EndFunc
 			;Sleep(1000)
 		    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/ToolCopyKhoiDongVaChuongTrinhChinh.exe"')
 			Sleep(10000)
+			MouseClick('left',700, 505,1,20)  ;xoa loi
+		    Sleep(4000)
 			FileCopy("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe",'C:\Users\'&@UserName&'\Desktop',1)
 		    Sleep(1000)
-
 			FileDelete("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe")
 			Sleep(1000)
 			;FileDelete('C:\Users\'&@UserName&'\Desktop\ToolCopyKhoiDongVaChuongTrinhChinh.exe')
 			;Sleep(1000)
-		    _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
+		    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
 			Sleep(10000)
 			WinMove('','',0,0,1366,768)
 		    Sleep(2000)
@@ -639,6 +640,8 @@ EndFunc
 			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/videos.bmp"')
 			Sleep(10000)
 			WinMove('','',0,0,1366,768)
+		    Sleep(2000)
+			MouseClick('left',700, 505,1,20)  ;xoa loi
 		    Sleep(2000)
 	    	MouseClick('left',1305, 415,1,20)
 		    Sleep(2000)
