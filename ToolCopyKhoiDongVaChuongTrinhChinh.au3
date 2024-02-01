@@ -81,7 +81,7 @@ $check=0
 		Next
 
 		For $i20=0 to 22
-            FileDelete('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$i20&'.au3')
+            FileDelete('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.au3')
 			Sleep(200)
 		Next
     For $i21=1 to 2                           ; tai chuong trinh chinh
@@ -160,11 +160,11 @@ $check=0
 		Sleep(2000)
 		MouseClick('left',1268, 500,1,20)
 		Sleep(2000)
-		MouseClick('left',1268, 460,1,20)
+		MouseClick('left',1204, 340,1,20)
 		Sleep(5000)
 
 		For $i20=1 to 22
-			If FileExists('C:\Users\Administrator\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.au3')=1 or FileExists('C:\Users\admin\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.au3')=1  Then
+			If FileExists('C:\Users\'&@UserName&'\Downloads\csbphonenhom'&$i20&'.au3')=1 Then
 				$i20=22
 				$i21=2
 			EndIf
@@ -174,18 +174,14 @@ $check=0
 	Next
 
 		For $i20=0 to 22
-		    FileCopy('C:\Users\'&@UserName&'\Downloads\csbphonenhom'&$i20&'.au3','C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea',1)
-		    Sleep(500)
-			FileCopy('C:\Users\admin\Downloads\csbphonenhom'&$i20&'.au3','C:\Users\admin\Desktop\cschrome - 10 sea',1)
-		    Sleep(500)
+			FileCopy("C:\Users\"&@UserName&"\Downloads\csbphonenhom"&$i20&".au3","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea", 1)
+			Sleep(200)
 		Next
 
         Sleep(1000)
 		FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
 		Sleep(1000)
-		FileDelete('C:\Users\'&@UserName&'\Desktop\func3.au3')
-		Sleep(1000)
-		FileDelete('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\func3.au3')
+		FileDelete('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\func3.au3')
 		Sleep(1000)
 
     For $i20=1 to 2
@@ -196,13 +192,13 @@ $check=0
 		Sleep(2000)
 		MouseClick('left',1268, 500,1,20)
 		Sleep(2000)
-		MouseClick('left',1268, 460,1,20)
+		MouseClick('left',1204, 340,1,20)
 		Sleep(15000)
-		FileCopy('C:\Users\'&@UserName&'\Downloads\func3.au3','C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea',1)
-		Sleep(1000)
-		FileCopy('C:\Users\admin\Downloads\func3.au3','C:\Users\admin\Desktop\cschrome - 10 sea',1)
-		Sleep(3000)
-		If FileExists('C:\Users\admin\Desktop\csFireFox - 10 sea\func3.au3')=1 or FileExists('C:\Users\buichung\Desktop\csFireFox - 10 sea\func3.au3')=1 Then $i20=3
+
+		FileCopy("C:\Users\"&@UserName&"\Downloads\func3.au3","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea", 1)
+
+
+		If FileExists('C:\Users\admin\Downloads\csFireFox - 10 sea\func3.au3')=1 or FileExists('C:\Users\buichung\Desktop\csFireFox - 10 sea\func3.au3')=1 Then $i20=3
 		Sleep(2000)
     Next
 
@@ -216,9 +212,9 @@ $check=0
 		Sleep(2000)
 		MouseClick('left',1268, 500,1,20)
 		Sleep(2000)
-		MouseClick('left',1268, 460,1,20)
+		MouseClick('left',1204, 340,1,20)
 		Sleep(15000)
-		FileCopy('C:\Users\'&@UserName&'\Downloads\tool update code.au3','C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea',1)
+		FileCopy('C:\Users\'&@UserName&'\Downloads\tool update code.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
 		Sleep(3000)
 
 		FileDelete('C:\Users\'&@UserName&'\Downloads\khoidong.au3')
@@ -233,22 +229,44 @@ $check=0
 		Sleep(2000)
 		MouseClick('left',1268, 500,1,20)
 		Sleep(2000)
-		MouseClick('left',1268, 460,1,20)
+		MouseClick('left',1204, 340,1,20)
 		Sleep(10000)
 		FileCopy('C:\Users\'&@UserName&'\Downloads\khoidong.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 		Sleep(1000)
-		FileCopy('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\_HttpRequest.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+
+		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\_HttpRequest.au3"
+        Local $sDestinationFile = "C:\Users\"&@UserName&"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup" & "\_HttpRequest.au3"
+        FileCopy($sSourceFile, $sDestinationFile, 1)
+
 		Sleep(1000)
-		FileCopy('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\WinHttp.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+
+		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\WinHttp.au3"
+        Local $sDestinationFile = "C:\Users\"&@UserName&"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup" & "\WinHttp.au3"
+        FileCopy($sSourceFile, $sDestinationFile, 1)
+
 		Sleep(1000)
-		FileCopy('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\WinHttpConstants.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+
+		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\WinHttpConstants.au3"
+        Local $sDestinationFile = "C:\Users\"&@UserName&"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup" & "\WinHttpConstants.au3"
+        FileCopy($sSourceFile, $sDestinationFile, 1)
+
 		Sleep(1000)
-		FileCopy('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\_HttpRequest.au3','C:\Users\'&@UserName&'\Desktop',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+
+		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\_HttpRequest.au3"
+        Local $sDestinationFile = "C:\Users\'&@UserName&'\Desktop" & "\_HttpRequest.au3"
+        FileCopy($sSourceFile, $sDestinationFile, 1)
+
+
 		Sleep(1000)
-		FileCopy('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\WinHttp.au3','C:\Users\'&@UserName&'\Desktop',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+
+		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\WinHttp.au3"
+        Local $sDestinationFile = "C:\Users\'&@UserName&'\Desktop" & "\WinHttp.au3"
+        FileCopy($sSourceFile, $sDestinationFile, 1)
 		Sleep(1000)
-		FileCopy('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\WinHttpConstants.au3','C:\Users\'&@UserName&'\Desktop',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
-		Sleep(1000)
+		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\WinHttpConstants.au3"
+        Local $sDestinationFile = "C:\Users\'&@UserName&'\Desktop" & "\WinHttpConstants.au3"
+        FileCopy($sSourceFile, $sDestinationFile, 1)
+
 		;FileCopy('C:\Users\'&@UserName&'\Desktop\khoidong\khoidong'&$STTmayao&'.exe','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)
 		FileDelete('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup'&'\vpsso.txt')
 		Sleep(1000)
@@ -261,7 +279,7 @@ $check=0
 		 Sleep(1000)
 	    _GetDOSOutput('start chrome "https://drive.google.com/u/0/uc?id=1YLYqbMLElQzwL9m9TBLvFLHppQ8aL_AX&export=download"')  ; tai file update
 		Sleep(10000)
-		FileCopy('C:\Users\'&@UserName&'\Downloads\tool update code.au3','C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea',1)
+		FileCopy('C:\Users\'&@UserName&'\Downloads\tool update code.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
         Sleep(1000)
         FileCopy('C:\Users\'&@UserName&'\Downloads\tool copy khoi dong va chuong trinh chinh.exe','C:\Users\'&@UserName&'\Desktop',1)
 		Sleep(1000)
@@ -279,75 +297,75 @@ $check=0
 
         _closeTrinhDuyet(1)
 
-		If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\func3.au3')=0  Then MsgBox(0,0,'loi khong co fun3.au3')
+		If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\func3.au3')=0  Then MsgBox(0,0,'loi khong co fun3.au3')
 		If $sonhom=0 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=1 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 seaa\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=2 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=3 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=4 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=5 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=6 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=7 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=8 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=9 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=10 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=11 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=12 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=13 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=14 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=15 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=16 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=17 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=18 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=19 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0 Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0 Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=20 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=21 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=22 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 
 
@@ -445,7 +463,7 @@ $check=0
         FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
 		Sleep(1000)
 
-        ShellExecute('C:\Users\'&@UserName&'\Desktop\cschrome - 10 sea\func3.au3')
+        ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\func3.au3')
 		Sleep(5000)
 		MouseClick('left',680,336,1,20)
 		Sleep(2000)
