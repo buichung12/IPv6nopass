@@ -3965,6 +3965,11 @@ EndFunc
 							Sleep(2000)
 					    EndIf
 
+						If $i=10 Then
+							MouseClick('left',1325,112,1,20)  ; tat khoi phuc
+							Sleep(2000)
+					    EndIf
+
 						WinMove($var[$i10][1],'',0,0,1366,768)
 						Sleep(2000)
 
@@ -3990,6 +3995,8 @@ EndFunc
 		                    Sleep(2000)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
 							Sleep(2000)
+							MouseClick('left',1300,720,1,20)
+							Sleep(3000)
 
 						EndIf
 
@@ -4110,6 +4117,8 @@ EndFunc
 		                    Sleep(2000)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
 							Sleep(2000)
+							MouseClick('left',1300,720,1,20)
+							Sleep(3000)
 						EndIf
 					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
 					    If $i=8 Then ControlClick($var[$i10][1],'','','left',1,478, 26)    ; tat tab thua
@@ -4311,6 +4320,8 @@ EndFunc
 		                    Sleep(2000)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
 							Sleep(2000)
+							MouseClick('left',1325,112,1,20)
+							Sleep(3000)
 
 						EndIf
 
@@ -4511,6 +4522,8 @@ EndFunc
 		                    Sleep(2000)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
 							Sleep(2000)
+							MouseClick('left',1300,720,1,20)
+							Sleep(3000)
 
 						EndIf
 					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
@@ -5634,6 +5647,7 @@ Func AutoRun()
     Func _Exit()
 	   Exit
 	EndFunc   ;==>_Exit
+
 
 
 
