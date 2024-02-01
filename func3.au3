@@ -543,9 +543,11 @@ EndFunc
 			Sleep(10000)
 			WinMove('','',0,0,1366,768)
 		    Sleep(2000)
-		    MouseClick('left',1268, 420,1,20)
+		    MouseClick('left',1265, 460,1,20)
 		    Sleep(2000)
-	     	MouseClick('left',1204, 340,1,20)
+		    MouseClick('left',1265, 421,1,20)
+		    Sleep(2000)
+		    MouseClick('left',1204, 340,1,20)
 		    Sleep(10000)
 
 			FileCopy("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.au3",'C:\Users\'&@UserName&'\Desktop',1)
