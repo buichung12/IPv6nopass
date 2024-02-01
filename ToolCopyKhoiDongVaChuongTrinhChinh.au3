@@ -202,7 +202,7 @@ $check=0
 		FileCopy("C:\Users\"&@UserName&"\Downloads\func3.au3","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea", 1)
 
 
-		If FileExists('C:\Users\admin\Downloads\csFireFox - 10 sea\func3.au3')=1 or FileExists('C:\Users\buichung\Desktop\csFireFox - 10 sea\func3.au3')=1 Then $i20=3
+		If FileExists("C:\Users\"&@UserName&"\Downloads\csFireFox - 10 sea\func3.au3")=1 Then $i20=3
 		Sleep(2000)
     Next
 
