@@ -11,11 +11,9 @@
 #include <File.au3>
 #include <Array.au3>
 #include <String.au3>
-
-
-;#include <HTTP.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
+
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -554,8 +552,111 @@ EndFunc
 		    Sleep(1000)
 			_closeTrinhDuyet(1)
 
+			ToolTip('update gmailkhoiphuc2',0,0)
 
-                $check=FileExists("C:\Program Files (x86)\Mozilla Firefox\firefox.exe")
+			_requetGooGleDOC('https://docs.google.com/document/d/12jqqyD2hSCnRMrUar2axLIVR4sYbftEKsA0IO5c2Yi0/export?format=txt','checkupdategmailkhoiphuc2.txt')
+			Sleep(1000)
+			$checkupdategmailkhoiphuc2=FileReadLine(@ScriptDir&'\checkupdategmailkhoiphuc2.txt',1)
+			If $checkupdategmailkhoiphuc2=1 Then
+                FileDelete('C:\Users\'&@UserName&'\Downloads\emailkhoiphuc2.bmp')
+				Sleep(2000)
+				$linkdownload=FileReadLine(@ScriptDir&'\checkupdategmailkhoiphuc2.txt',2)
+				Sleep(1000)
+				_GetDOSOutput($linkdownload)
+				Sleep(10000)
+				FileCopy('C:\Users\'&@UserName&'\Downloads\emailkhoiphuc2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+                Sleep(1000)
+
+				FileDelete('C:\Users\'&@UserName&'\Downloads\emailkhoiphuc.bmp')
+				Sleep(2000)
+				$linkdownload=FileReadLine(@ScriptDir&'\checkupdategmailkhoiphuc2.txt',3)
+				Sleep(1000)
+				_GetDOSOutput($linkdownload)
+				Sleep(10000)
+				_closeTrinhDuyet(1)
+				FileCopy('C:\Users\'&@UserName&'\Downloads\emailkhoiphuc.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+                Sleep(1000)
+
+			EndIf
+
+
+            FileDelete('C:\Users\'&@UserName&'\Downloads\videos.bmp')
+			Sleep(200)
+			FileDelete('C:\Users\'&@UserName&'\Downloads\videos2.bmp')
+			Sleep(200)
+			FileDelete('C:\Users\'&@UserName&'\Downloads\shorts.bmp')
+			Sleep(200)
+			FileDelete('C:\Users\'&@UserName&'\Downloads\shorts2.bmp')
+			Sleep(200)
+            ToolTip('update videos.BMP',0,0)
+			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/videos.bmp"')
+			Sleep(10000)
+			WinMove('','',0,0,1366,768)
+		    Sleep(2000)
+			MouseClick('left',700, 505,1,20)  ;xoa loi
+		    Sleep(2000)
+	    	MouseClick('left',1305, 415,1,20)
+		    Sleep(2000)
+		    MouseClick('left',1305, 445,1,20)
+		    Sleep(5000)
+			ToolTip('update videos2.BMP',0,0)
+			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/videos2.bmp"')
+			Sleep(10000)
+			Sleep(2000)
+	    	MouseClick('left',1305, 415,1,20)
+		    Sleep(2000)
+		    MouseClick('left',1305, 445,1,20)
+		    Sleep(5000)
+			_closeTrinhDuyet(2)
+
+			ToolTip('update shorts.BMP',0,0)
+			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/shorts.bmp"')
+			Sleep(10000)
+			Sleep(2000)
+	    	MouseClick('left',1305, 415,1,20)
+		    Sleep(2000)
+		    MouseClick('left',1305, 445,1,20)
+		    Sleep(5000)
+			ToolTip('update shorts2.BMP',0,0)
+			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/shorts2.bmp"')
+			Sleep(10000)
+			Sleep(2000)
+	    	MouseClick('left',1305, 415,1,20)
+		    Sleep(2000)
+		    MouseClick('left',1305, 445,1,20)
+		    Sleep(5000)
+			FileCopy('C:\Users\'&@UserName&'\Downloads\videos.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		    Sleep(1000)
+			FileCopy('C:\Users\'&@UserName&'\Downloads\videos2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		    Sleep(1000)
+			FileCopy('C:\Users\'&@UserName&'\Downloads\shorts.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		    Sleep(1000)
+			FileCopy('C:\Users\'&@UserName&'\Downloads\shorts2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		    Sleep(1000)
+
+
+			FileDelete('C:\Users\'&@UserName&'\Downloads\tool update code.au3')
+		    Sleep(1000)
+	        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
+            Sleep(15000)
+		    WinMove('','',0,0,1366,768)
+		    Sleep(2000)
+		    MouseClick('left',1265, 460,1,20)
+		    Sleep(2000)
+		    MouseClick('left',1265, 421,1,20)
+		    Sleep(2000)
+		    MouseClick('left',1204, 340,1,20)
+		    Sleep(15000)
+		    FileCopy('C:\Users\'&@UserName&'\Downloads\tool update code.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		    Sleep(3000)
+
+            _closeTrinhDuyet(1)
+
+			Sleep(1000)
+			ToolTip('kiem tra trinh duyet',0,0)
+
+
+				$check=FileExists("C:\Program Files (x86)\Mozilla Firefox\firefox.exe")
 				$check2=FileExists("C:\Program Files\Mozilla Firefox\firefox.exe")
 			If $check=0 And $check2=0 Then
 
@@ -600,92 +701,6 @@ EndFunc
 				$check13=1
             EndIf
 
-			ToolTip('update gmailkhoiphuc2',0,0)
-
-			_requetGooGleDOC('https://docs.google.com/document/d/12jqqyD2hSCnRMrUar2axLIVR4sYbftEKsA0IO5c2Yi0/export?format=txt','checkupdategmailkhoiphuc2.txt')
-			Sleep(1000)
-			$checkupdategmailkhoiphuc2=FileReadLine(@ScriptDir&'\checkupdategmailkhoiphuc2.txt',1)
-			If $checkupdategmailkhoiphuc2=1 Then
-                FileDelete('C:\Users\'&@UserName&'\Downloads\emailkhoiphuc2.bmp')
-				Sleep(2000)
-				$linkdownload=FileReadLine(@ScriptDir&'\checkupdategmailkhoiphuc2.txt',2)
-				Sleep(1000)
-				_GetDOSOutput($linkdownload)
-				Sleep(10000)
-				_closeTrinhDuyet(1)
-				FileCopy('C:\Users\'&@UserName&'\Downloads\emailkhoiphuc2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
-                Sleep(1000)
-
-
-				FileDelete('C:\Users\'&@UserName&'\Downloads\emailkhoiphuc.bmp')
-				Sleep(2000)
-				$linkdownload=FileReadLine(@ScriptDir&'\checkupdategmailkhoiphuc2.txt',3)
-				Sleep(1000)
-				_GetDOSOutput($linkdownload)
-				Sleep(10000)
-				_closeTrinhDuyet(1)
-				FileCopy('C:\Users\'&@UserName&'\Downloads\emailkhoiphuc.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
-                Sleep(1000)
-
-			EndIf
-
-
-            FileDelete('C:\Users\'&@UserName&'\Downloads\videos.bmp')
-			Sleep(200)
-			FileDelete('C:\Users\'&@UserName&'\Downloads\videos2.bmp')
-			Sleep(200)
-			FileDelete('C:\Users\'&@UserName&'\Downloads\shorts.bmp')
-			Sleep(200)
-			FileDelete('C:\Users\'&@UserName&'\Downloads\shorts2.bmp')
-			Sleep(200)
-            ToolTip('update videos.BMP',0,0)
-			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/videos.bmp"')
-			Sleep(10000)
-			WinMove('','',0,0,1366,768)
-		    Sleep(2000)
-			MouseClick('left',700, 505,1,20)  ;xoa loi
-		    Sleep(2000)
-	    	MouseClick('left',1305, 415,1,20)
-		    Sleep(2000)
-		    MouseClick('left',1305, 445,1,20)
-		    Sleep(5000)
-			ToolTip('update videos2.BMP',0,0)
-			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/videos2.bmp"')
-			Sleep(10000)
-			Sleep(2000)
-	    	MouseClick('left',1305, 415,1,20)
-		    Sleep(2000)
-		    MouseClick('left',1305, 445,1,20)
-		    Sleep(5000)
-			ToolTip('update shorts.BMP',0,0)
-			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/shorts.bmp"')
-			Sleep(10000)
-			Sleep(2000)
-	    	MouseClick('left',1305, 415,1,20)
-		    Sleep(2000)
-		    MouseClick('left',1305, 445,1,20)
-		    Sleep(5000)
-			ToolTip('update shorts2.BMP',0,0)
-			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/shorts2.bmp"')
-			Sleep(10000)
-			Sleep(2000)
-	    	MouseClick('left',1305, 415,1,20)
-		    Sleep(2000)
-		    MouseClick('left',1305, 445,1,20)
-		    Sleep(5000)
-			FileCopy('C:\Users\'&@UserName&'\Downloads\videos.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
-		    Sleep(1000)
-			FileCopy('C:\Users\'&@UserName&'\Downloads\videos2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
-		    Sleep(1000)
-			FileCopy('C:\Users\'&@UserName&'\Downloads\shorts.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
-		    Sleep(1000)
-			FileCopy('C:\Users\'&@UserName&'\Downloads\shorts2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
-		    Sleep(1000)
-
-
-
-			Sleep(1000)
-			ToolTip('kiem tra trinh duyet',0,0)
 
 		        _resetMang($i)
 	                $check=FileExists('C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe')
@@ -3746,6 +3761,11 @@ EndFunc
 							Sleep(2000)
 					    EndIf
 
+						If $i=10 Then
+							MouseClick('left',1325,112,1,20)  ; tat khoi phuc
+							Sleep(2000)
+					    EndIf
+
 						WinMove($var[$i10][1],'',0,0,1366,768)
 						Sleep(2000)
 
@@ -3771,6 +3791,8 @@ EndFunc
 		                    Sleep(2000)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
 							Sleep(2000)
+							MouseClick('left',1300,720,1,20)
+							Sleep(3000)
 
 						EndIf
 
@@ -3891,6 +3913,8 @@ EndFunc
 		                    Sleep(2000)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
 							Sleep(2000)
+							MouseClick('left',1300,720,1,20)
+							Sleep(3000)
 						EndIf
 					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
 					    If $i=8 Then ControlClick($var[$i10][1],'','','left',1,478, 26)    ; tat tab thua
@@ -4092,6 +4116,8 @@ EndFunc
 		                    Sleep(2000)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
 							Sleep(2000)
+							MouseClick('left',1325,112,1,20)
+							Sleep(3000)
 
 						EndIf
 
@@ -4292,6 +4318,8 @@ EndFunc
 		                    Sleep(2000)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
 							Sleep(2000)
+							MouseClick('left',1300,720,1,20)
+							Sleep(3000)
 
 						EndIf
 					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
@@ -5102,7 +5130,6 @@ EndFunc
 				If $i=9 Then MouseClick('left',656, 434,1,20);update pass
 				If $i=10 Then MouseClick('left',456, 344,1,20);update pass
                 Sleep(2000)
-
 				If $i=1 Then MouseClick('left',936, 312,1,20)
 				If $i=2 Then MouseClick('left',980, 248,1,20)
 				If $i=3 Then MouseClick('left',823, 262,1,20)
@@ -5137,6 +5164,7 @@ EndFunc
 				If $i=10 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
 				If $i=9 Then MouseClick('left',385, 320,1,20)  ;luu mat khau $1
 				Sleep(2000)
+				If $i=4 Then MouseClick('left',1036, 226,1,20)
 
 				$pixcel=PixelSearch(715, 497,973, 752,0x1A73E8)
 				If IsArray($pixcel) Then
