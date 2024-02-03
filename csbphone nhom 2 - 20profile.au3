@@ -784,10 +784,17 @@ EndFunc
             Sleep(15000)
 		    ;WinMove('','',0,0,1366,768)
 		    ;Sleep(2000)
-
 		    Sleep(10000)
 		    FileCopy('C:\Users\'&@UserName&'\Downloads\khoidong'&$vpsso&'.exe','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
-		    Sleep(1000)
+		    Sleep(3000)
+			Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong'&$vpsso&'.exe')   ; xoa loi yeu cau chya file
+			Sleep(5000)
+			ControlClick('Open File - Security Warning','','[CLASS:Button; INSTANCE:4]')
+			Sleep(3000)
+			ControlClick('Open File - Security Warning','','[CLASS:Button; INSTANCE:1]')
+			Sleep(5000)
+			ProcessClose('khoidong'&$vpsso&'.exe')
+			Sleep(2000)
 
 			ToolTip('update gmailkhoiphuc2',0,0)
 
