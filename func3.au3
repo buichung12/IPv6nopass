@@ -51,8 +51,6 @@ _subFFLaiIP($ThuTukenh,$vpsso,$i)
 _randomprofilr($i)
 #ce
 
-
-
 Func _ChinhDoPhanGiai($i)
 
 
