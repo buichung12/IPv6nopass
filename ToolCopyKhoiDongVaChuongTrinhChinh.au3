@@ -156,7 +156,21 @@ $check=0
            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom22.au3"')
 		EndIf
 		Sleep(15000)
-		WinMove('','',0,0,1366,768)
+		MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
+		Sleep(3000)
+		If $i21=1 Then
+			MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
+		    Sleep(3000)
+		    $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+			    Sleep(1000)
+		    If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
+		    Sleep(1000)
+		    For $i10 = 1 to $var[0][0]
+			    If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
+		            WinMove($var[$i10][1],'',0,0,1366,768)
+			    EndIf
+		    Next
+        EndIf
 		Sleep(2000)
 		MouseClick('left',1265, 460,1,20)
 		Sleep(2000)
@@ -190,8 +204,8 @@ $check=0
 
 		_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
         Sleep(15000)
-		WinMove('','',0,0,1366,768)
-		Sleep(2000)
+		;WinMove('','',0,0,1366,768)
+		;Sleep(2000)
 		MouseClick('left',1265, 460,1,20)
 		Sleep(2000)
 		MouseClick('left',1265, 421,1,20)
@@ -212,8 +226,8 @@ $check=0
 		Sleep(1000)
 	    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
         Sleep(15000)
-		WinMove('','',0,0,1366,768)
-		Sleep(2000)
+		;WinMove('','',0,0,1366,768)
+		;Sleep(2000)
 		MouseClick('left',1265, 460,1,20)
 		Sleep(2000)
 		MouseClick('left',1265, 421,1,20)
@@ -231,8 +245,8 @@ $check=0
 		Next
 	    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/khoidong.au3"')     ;dowload tool khoi dong
         Sleep(15000)
-		WinMove('','',0,0,1366,768)
-		Sleep(2000)
+		;WinMove('','',0,0,1366,768)
+		;Sleep(2000)
 		MouseClick('left',1265, 460,1,20)
 		Sleep(2000)
 		MouseClick('left',1265, 421,1,20)
