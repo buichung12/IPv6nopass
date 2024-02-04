@@ -756,8 +756,20 @@ EndFunc
 			;Sleep(1000)
 		    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
 			Sleep(10000)
-			WinMove('','',0,0,1366,768)
-		    Sleep(2000)
+			MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
+		     Sleep(3000)
+			MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
+		    Sleep(3000)
+		    $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+			    Sleep(1000)
+		    If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
+		    Sleep(1000)
+		    For $i10 = 1 to $var[0][0]
+			    If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
+		            WinMove($var[$i10][1],'',0,0,1366,768)
+			    EndIf
+		    Next
+
 		    MouseClick('left',1265, 460,1,20)
 		    Sleep(2000)
 		    MouseClick('left',1265, 421,1,20)
@@ -774,10 +786,6 @@ EndFunc
 				Sleep(50)
 			Next
 		    Sleep(1000)
-		    For $i20=1 to 100
-			    FileDelete('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\'&'khoidong'&$i20&'.exe')
-			    Sleep(100)
-		    Next
 	        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/khoidong'&$vpsso&'.exe"')     ;dowload tool khoi dong
             Sleep(5000)
 			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/raw/main/khoidong'&$vpsso&'.exe"')     ;dowload tool khoi dong
