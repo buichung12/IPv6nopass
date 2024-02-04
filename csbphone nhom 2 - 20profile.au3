@@ -781,7 +781,12 @@ EndFunc
 		    Sleep(1000)
 			_closeTrinhDuyet(1)
 
+
             For $i20=1 to 100
+			    FileDelete('C:\Users\'&@UserName&'\Downloads\khoidong'&$i20&'.exe')
+				Sleep(50)
+			Next
+			For $i20=1 to 100
 			    FileDelete('C:\Users\'&@UserName&'\Downloads\khoidong'&$i20&'.exe')
 				Sleep(50)
 			Next
@@ -790,9 +795,8 @@ EndFunc
             Sleep(5000)
 			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/raw/main/khoidong'&$vpsso&'.exe"')     ;dowload tool khoi dong
             Sleep(15000)
-		    ;WinMove('','',0,0,1366,768)
-		    ;Sleep(2000)
-		    Sleep(10000)
+			_closeTrinhDuyet(1)
+		    Sleep(1000)
 		    FileCopy('C:\Users\'&@UserName&'\Downloads\khoidong'&$vpsso&'.exe','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 		    Sleep(3000)
 			Run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong'&$vpsso&'.exe')   ; xoa loi yeu cau chya file
@@ -803,7 +807,6 @@ EndFunc
 			Sleep(5000)
 			ProcessClose('khoidong'&$vpsso&'.exe')
 			Sleep(2000)
-
 			ToolTip('update gmailkhoiphuc2',0,0)
 
 			_requetGooGleDOC('https://docs.google.com/document/d/12jqqyD2hSCnRMrUar2axLIVR4sYbftEKsA0IO5c2Yi0/export?format=txt','checkupdategmailkhoiphuc2.txt')
