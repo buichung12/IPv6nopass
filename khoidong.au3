@@ -6,7 +6,11 @@
 #include <StaticConstants.au3>
 #include <File.au3>
 #include <String.au3>
-#include <_HttpRequest.au3>
+#include <FileConstants.au3>
+
+; Lấy đường dẫn tuyệt đối đến thư mục chứa script hiện tại
+Local $sScriptDir = @ScriptDir
+
 Opt("SendKeyDelay",20)
 HotKeySet("{esc}", "_Exit")
 HotKeySet("{f9}", "AutoRun")
@@ -24,13 +28,15 @@ HotKeySet("{f9}", "AutoRun")
 				Sleep(40000)
 				ProcessClose('browser.exe')
 				Sleep(100)
-				$vpsso=FileReadLine(@ScriptDir&"\vpsso.txt",1)   ; khoi dong vps so
+				If FileExists(@ScriptDir&"\vpsso.txt")=1 Then $vpsso=FileReadLine(@ScriptDir&"\vpsso.txt",1)   ; khoi dong vps so
 				Sleep(1000)
-                _requetTextDoc('https://textdoc.co/index.php/S3gXRHqyD8rhd9lt','trangthaikhoidong.txt')
-                Sleep(1000)
-				$check=FileReadLine(@ScriptDir&'\trangthaikhoidong.txt',1)
+                ;_requetTextDoc('https://textdoc.co/index.php/S3gXRHqyD8rhd9lt','trangthaikhoidong.txt')
+                ;Sleep(1000)
+				;$check=FileReadLine(@ScriptDir&'\trangthaikhoidong.txt',1)
+				$check=1
 				WinClose('Server Manager')
 				Sleep(1000)
+
 			#cs
 				Run('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphone nhom 0 - 20profile.exe')
 				Run('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphone nhom 1 - 20profile.exe')
@@ -49,11 +55,35 @@ HotKeySet("{f9}", "AutoRun")
 				Run('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphone nhom 14 - 20profile.exe')
 				Run('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphone nhom 15 - 20profile.exe')
             #ce
-
+            #cs
 			For $i20=0 to 22
+                If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.exe') = 1 Then
+					ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.exe')
+                    Sleep(100)
+					ExitLoop
+				Else
+
+					If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphone nhom '&$i20&' - 20profile.au3') = 1 Then
+						ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphone nhom '&$i20&' - 20profile.au3')
+						Sleep(100)
+						ExitLoop
+					EndIf
+
+				EndIf
+
+			Next
+            #ce
+            For $i20=0 to 22
                 If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.au3') = 1 Then ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.au3')
                 Sleep(100)
 			Next
+
+			    Sleep(5000)
+
+                ControlClick('Open File - Security Warning','','[CLASS:Button; INSTANCE:4]')
+			    Sleep(3000)
+		     	ControlClick('Open File - Security Warning','','[CLASS:Button; INSTANCE:1]')
+			    Sleep(5000)
 
 				Sleep(10000)
 				Send('{enter}')
@@ -103,6 +133,7 @@ _FAKEip($vpsso)
 _requetanotepad($link,$tenTXT)
 #ce
 
+#cs
 			Func _requetTextDoc($link,$tenTXT)
 				$checkrequet=0
 				$kq=''
@@ -143,8 +174,7 @@ _requetanotepad($link,$tenTXT)
 				Return $checkrequet
 			EndFunc
 
-
-
+#ce
 
    Func AutoRun()
 
