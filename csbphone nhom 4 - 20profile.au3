@@ -758,7 +758,7 @@ EndFunc
 		    Sleep(1000)
 		    FileCopy('C:\Users\'&@UserName&'\Downloads\khoidong'&$vpsso&'.exe','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 		    Sleep(3000)
-			ShellExecute('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong'&$vpsso&'.exe')   ; xoa loi yeu cau chya file
+			run('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\khoidong'&$vpsso&'.exe')   ; xoa loi yeu cau chya file
 			Sleep(7000)
 			ControlClick('Open File - Security Warning','','[CLASS:Button; INSTANCE:4]')
 			Sleep(3000)
