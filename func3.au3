@@ -3800,6 +3800,8 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',1300,720,1,20)
 							Sleep(3000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 
 						EndIf
 
@@ -4125,6 +4127,8 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',1325,112,1,20)
 							Sleep(3000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 
 						EndIf
 
