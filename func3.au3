@@ -4974,14 +4974,18 @@ EndFunc
 				    MouseClick('left',1039,155,1,20)
 					Sleep(7000)
                 EndIf
+				If $i=1  Then
+				    MouseClick('left',650,270,1,20)
+					Sleep(7000)
+                EndIf
 
 				MouseClick('left',1280,163,1,20)  ;tat thong bao update
 				Sleep(2000)
-
+				MouseClick('left',1280,120,1,20)  ;tat thong bao update
 				Sleep(3000)
 				MouseClick('left',1016, 363,1,20)
 				Sleep(2000)
-				MouseClick('left',648,270,1,20)
+				MouseClick('left',650,270,1,20)
 				Sleep(3000)
 				Send('{tab}')
 				Sleep(2000)
@@ -5000,7 +5004,7 @@ EndFunc
 				Sleep(5000)
 				MouseClick('left',1016, 363,1,20)
 				Sleep(2000)
-				MouseClick('left',600, 244,1,20)
+				MouseClick('left',650, 244,1,20)
 				Sleep(3000)
 				Send('{tab}')
 				Sleep(2000)
