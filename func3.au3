@@ -4975,10 +4975,13 @@ EndFunc
 					Sleep(7000)
                 EndIf
 
+				MouseClick('left',1280,163,1,20)  ;tat thong bao update
+				Sleep(2000)
+
 				Sleep(3000)
 				MouseClick('left',1016, 363,1,20)
 				Sleep(2000)
-				MouseClick('left',648, 223,1,20)
+				MouseClick('left',648,270,1,20)
 				Sleep(3000)
 				Send('{tab}')
 				Sleep(2000)
