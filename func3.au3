@@ -3746,6 +3746,8 @@ EndFunc
 						Sleep(1000)
 						MouseClick('left',1333, 134,1,20)  ;tat tanh cong cu
 						Sleep(1000)
+						MouseClick('left',1300,700,1,20)  ;tat tanh cong cu
+						Sleep(1000)
 					EndIf
 
 
@@ -3941,6 +3943,8 @@ EndFunc
 				            Sleep(1000)
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
+							MouseClick('left',1300,700,1,20)  ;tat tanh cong cu
+						    Sleep(1000)
 					    EndIf
 
 					    If $i=10 Then
@@ -4212,6 +4216,8 @@ EndFunc
 				            Sleep(1000)
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
+							MouseClick('left',1300,700,1,20)  ;tat tanh cong cu
+						    Sleep(1000)
 					EndIf
 
 					Sleep(1000)
@@ -4375,6 +4381,8 @@ EndFunc
 						    Sleep(1000)
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
+							MouseClick('left',1300,700,1,20)  ;tat tanh cong cu
+						    Sleep(1000)
 					    EndIf
 
 
