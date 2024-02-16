@@ -269,7 +269,6 @@ _randomprofilr($i)
 #ce
 
 
-
 Func _ChinhDoPhanGiai($i)
 
 
@@ -4048,6 +4047,8 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',1300,720,1,20)
 							Sleep(3000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 
 						EndIf
 
@@ -4065,6 +4066,8 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',831, 237,1,20)
 							Sleep(2000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 						EndIf
 
 						If $i=8 Then
@@ -4078,6 +4081,9 @@ EndFunc
 							MouseClick('left',1333, 102,1,20)
 							Sleep(2000)
 							MouseClick('left',1333, 102,1,20)
+							Sleep(2000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 
 						EndIf
 
@@ -4090,6 +4096,8 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',1260,208 ,1,20)
 							Sleep(1000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 						EndIf
 
 						If $i=6 Then
@@ -4099,9 +4107,13 @@ EndFunc
 							Sleep(2000)
 							ControlClick($var[$i10][1],'','','left',1,834, 242)
 							Sleep(2000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 						EndIf
 
 						If $i=5 Then
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 							MouseClick('left',500,60 ,1,20)    ; tat zoom
 							Sleep(2000)
 							Send('^a')
@@ -4116,6 +4128,8 @@ EndFunc
 						If $i=4 Then
 						   MouseClick('left',725, 132,1,20)  ;tat thong bao update
 				           Sleep(2000)
+						   MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 					    EndIf
 
 
@@ -4129,6 +4143,8 @@ EndFunc
 						   Sleep(2000)
 						   WinClose('Update successful')
 				           Sleep(2000)
+						   MouseClick('left',1280,163,1,20)
+						   Sleep(2000)
 						EndIf
 
 						If $i=2 Then
@@ -4142,6 +4158,8 @@ EndFunc
 						   MouseClick('left',1333, 97,1,20)
 						   Sleep(2000)
 					       ControlClick($var[$i10][1],'','','left',1,1333, 130)
+						   MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 						EndIf
 
 						If $i=1 Then
@@ -4161,6 +4179,8 @@ EndFunc
 				            Sleep(1000)
 							MouseClick('left',880, 118,1,20)  ;tat tanh cong cu
 				            Sleep(1000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 					    EndIf
 
 					    If $i=10 Then
@@ -4373,6 +4393,9 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',1325,112,1,20)
 							Sleep(3000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
+
 
 						EndIf
 
@@ -4397,11 +4420,15 @@ EndFunc
 							Sleep(2000)
 							ControlClick('','','','left',1,834, 242)
 							Sleep(2000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 					EndIf
 
 					If $i=4 Then
 						MouseClick('left',852, 510,1,20)  ;tat thong bao update
 				        Sleep(7000)
+						MouseClick('left',1280,163,1,20)
+						Sleep(2000)
 					EndIf
 
 
@@ -4423,6 +4450,8 @@ EndFunc
 				            Sleep(1000)
 							MouseClick('left',880, 118,1,20)  ;tat tanh cong cu
 				            Sleep(1000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 					EndIf
 
 					Sleep(1000)
@@ -4447,6 +4476,8 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',1333,99,1,20)  ;tat tanh cong cu
 				            Sleep(1000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 						EndIf
 
 						If $i=2 Then
@@ -4454,6 +4485,8 @@ EndFunc
 							Sleep(1000)
 							ControlClick('','','','left',1,789, 266)
 							Sleep(1000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 					    EndIf
 
 						WinMove($var[$i10][1],'',0,0,1366,768)
@@ -4473,6 +4506,8 @@ EndFunc
 							Sleep(1000)
 							MouseClick('left',831, 237,1,20)
 							Sleep(1000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 						EndIf
 
 
@@ -4487,6 +4522,8 @@ EndFunc
 							MouseClick('left',1333, 102,1,20)
 							Sleep(1000)
 							MouseClick('left',1333, 102,1,20)
+							Sleep(2000)
+							MouseClick('left',1280,163,1,20)
 
 						EndIf
 
@@ -4499,6 +4536,8 @@ EndFunc
 							Sleep(1000)
 							ControlClick($var[$i10][1],'','','left',1,1300, 200)
 							Sleep(1000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 						EndIf
 
 					    If $i=6 Then
@@ -4512,15 +4551,20 @@ EndFunc
 							Sleep(1000)
 							MouseClick('left',1187, 195,1,20)
 							Sleep(1000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 						EndIf
 						If $i=4 Then
 					       ControlClick($var[$i10][1],'','','left',1,725,100)
 				           Sleep(1000)
+						   MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 						EndIf
 
 						If $i=4 Then
 						   MouseClick('left',725, 132,1,20)  ;tat thong bao update
 				           Sleep(1000)
+
 					    EndIf
 
 						If $i=3 Then
@@ -4534,6 +4578,8 @@ EndFunc
 						   Sleep(2000)
 						   WinClose('Update successful')
 				           Sleep(2000)
+						   MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 						EndIf
 
 						If $i=2 Then
@@ -4546,6 +4592,8 @@ EndFunc
 						    MouseClick('left',1333, 97,1,20)
 						   Sleep(1000)
 					       ControlClick($var[$i10][1],'','','left',1,1333, 130)
+						   MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 						EndIf
 
 						If $i=1 Then
@@ -4565,6 +4613,8 @@ EndFunc
 					    	Sleep(1000)
 						    MouseClick('left',1333, 134,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 					    EndIf
 
 
@@ -4575,6 +4625,8 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',1300,720,1,20)
 							Sleep(3000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 
 						EndIf
 					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
@@ -5698,5 +5750,3 @@ Func AutoRun()
     Func _Exit()
 	   Exit
 	EndFunc   ;==>_Exit
-
-
