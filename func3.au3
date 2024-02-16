@@ -602,6 +602,8 @@ EndFunc
 		    Sleep(2000)
 			MouseClick('left',700, 505,1,20)  ;xoa loi
 		    Sleep(2000)
+			MouseClick('left',700, 555,1,20)  ;xoa loi
+		    Sleep(2000)
 	    	MouseClick('left',1305, 415,1,20)
 		    Sleep(2000)
 		    MouseClick('left',1305, 445,1,20)
@@ -620,6 +622,8 @@ EndFunc
 			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/shorts.bmp"')
 			Sleep(10000)
 			Sleep(2000)
+			MouseClick('left',700, 555,1,20)  ;xoa loi
+		    Sleep(2000)
 	    	MouseClick('left',1305, 415,1,20)
 		    Sleep(2000)
 		    MouseClick('left',1305, 445,1,20)
@@ -628,6 +632,8 @@ EndFunc
 			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/shorts2.bmp"')
 			Sleep(10000)
 			Sleep(2000)
+			MouseClick('left',700, 555,1,20)  ;xoa loi
+		    Sleep(2000)
 	    	MouseClick('left',1305, 415,1,20)
 		    Sleep(2000)
 		    MouseClick('left',1305, 445,1,20)
