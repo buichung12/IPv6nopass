@@ -537,7 +537,7 @@ EndFunc
 			;Sleep(1000)
 		    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
 			Sleep(10000)
-			MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
+			;MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
 		    Sleep(3000)
 		    $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
 			    Sleep(1000)
@@ -3799,7 +3799,8 @@ EndFunc
 							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
 							     Sleep(3000)
 							EndIf
-
+							MouseClick('left',1325,112,1,20)  ; tat khoi phuc
+							Sleep(2000)
 							ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,291, 635)
 		                    Sleep(2000)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
