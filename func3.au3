@@ -5195,6 +5195,7 @@ EndFunc
 
 				If $i=1 Then MouseClick('left',927, 282,1,20)   ;update pass
 				If $i=2 Then MouseClick('left',1000, 248,1,20);update pass
+				If $i=2 Then MouseClick('left',940, 280,1,20);update pass
 				If $i=3 Then MouseClick('left',816, 266,1,20);update pass
 				If $i=3 Then MouseClick('left',816, 243,1,20);update pass
 				If $i=4 Then MouseClick('left',1028, 231,1,20);update pass
