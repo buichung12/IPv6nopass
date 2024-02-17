@@ -159,6 +159,9 @@ $check=0
 		If $i21=1 Then
 			MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
 		    Sleep(3000)
+			Sleep(2000)
+		    MouseClick('left',515, 696,1,20)   ; xoa loi
+			Sleep(1000)
 		    $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
 			    Sleep(1000)
 		    If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
