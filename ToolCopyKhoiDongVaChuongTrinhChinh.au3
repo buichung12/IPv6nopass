@@ -156,8 +156,6 @@ $check=0
            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom22.au3"')
 		EndIf
 		Sleep(15000)
-		MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
-		Sleep(3000)
 		If $i21=1 Then
 			MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
 		    Sleep(3000)
