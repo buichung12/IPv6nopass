@@ -4981,7 +4981,7 @@ EndFunc
 
 				MouseClick('left',1280,163,1,20)  ;tat thong bao update
 				Sleep(2000)
-				MouseClick('left',1280,120,1,20)  ;tat thong bao update
+				MouseClick('left',1280,125,1,20)  ;tat thong bao update
 				Sleep(3000)
 				MouseClick('left',1016, 363,1,20)
 				Sleep(2000)
