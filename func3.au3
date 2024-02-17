@@ -4981,7 +4981,7 @@ EndFunc
 
 				MouseClick('left',1280,163,1,20)  ;tat thong bao update
 				Sleep(2000)
-				MouseClick('left',1280,125,1,20)  ;tat thong bao update
+				MouseClick('left',1280,120,1,20)  ;tat thong bao update
 				Sleep(3000)
 				MouseClick('left',1016, 363,1,20)
 				Sleep(2000)
@@ -5195,7 +5195,7 @@ EndFunc
 
 				If $i=1 Then MouseClick('left',927, 282,1,20)   ;update pass
 				If $i=2 Then MouseClick('left',1000, 248,1,20);update pass
-				If $i=2 Then MouseClick('left',940, 280,1,20);update pass
+				If $i=2 Then MouseClick('left',980, 262,1,20);update pass
 				If $i=3 Then MouseClick('left',816, 266,1,20);update pass
 				If $i=3 Then MouseClick('left',816, 243,1,20);update pass
 				If $i=4 Then MouseClick('left',1028, 231,1,20);update pass
@@ -5225,6 +5225,7 @@ EndFunc
                 Sleep(2000)
 				If $i=1 Then MouseClick('left',931, 240,1,20)  ;luu mat khau $1
 				If $i=2 Then MouseClick('left',1000, 229,1,20)  ;luu mat khau $1
+				If $i=2 Then MouseClick('left',980, 262,1,20);update pass
 				If $i=3 Then MouseClick('left',1193, 347,1,20)  ;luu mat khau $1
 				If $i=4 Then MouseClick('left',1099, 341,1,20)  ;luu mat khau $1
 				If $i=5 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
