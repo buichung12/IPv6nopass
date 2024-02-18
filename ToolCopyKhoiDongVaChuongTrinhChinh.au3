@@ -327,7 +327,7 @@ $check=0
                If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=1 Then
-               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 seaa\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
+               If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
 		EndIf
 		If $sonhom=2 Then
                If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$sonhom&'.au3')=0  Then MsgBox(0,0,'loi khong csbphonenhom'&$sonhom&'.au3')
