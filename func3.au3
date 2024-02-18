@@ -2678,21 +2678,27 @@ EndFunc
 				$sosub5=0
                 $linkvideo=5
 				Sleep(1000)
-
+				ToolTip("check loi 0",0,0)
 				_xoa1NuaFileDasub($i,$i5)
-
+                ToolTip("check loi 1",0,0)
 				$sokenhsub1luot=FileReadLine(@ScriptDir&"\sokenhsub1luot.txt",1)
-
+                $linkkenhtho=1
+				$sodonglinkkenhto=1
+				$checkchaykenhto=0
+				$sodong=1
 		  For $iSun2lan=1 to $sokenhsub1luot
 
-			        $checkchaykenhto=0
+					Sleep(1000)
 					$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
+					Sleep(500)
 					$checkchaykenhto=FileReadLine(@ScriptDir&'\linkkenhto.txt',1)
+					ToolTip("check loi 2",0,0)
 
 			  For $i21=1 to 7
 
 						For $i23=1 to 5
 					        $sodong=_FileCountLines(@ScriptDir&"\linkkenhchaySUB2.txt")
+							Sleep(500)
                             $linkkenhtho=FileReadLine(@ScriptDir&"\linkkenhchaySUB2.txt",Random(1,$sodong,1))    ; chu y thay doi
 				            Sleep(1000)
 						    If 	StringLen($linkkenhtho)>35 Then
@@ -2701,6 +2707,7 @@ EndFunc
 							    If FileExists(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt")=0 Then  FileWriteLine(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt",'khoi tao')
 							    Sleep(1000)
 						        $sodonglinkdasub=_FileCountLines(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt")
+								Sleep(500)
 						        For $i22=1 to $sodonglinkdasub
                                     $linkdasub=FileReadLine(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt",$i22)
                                     If $linkkenh=$linkdasub Then
@@ -2713,6 +2720,8 @@ EndFunc
 						        EndIf
 						    EndIf
 						Next
+
+						ToolTip("check loi 3",0,0)
 
 
 				        If IsArray($datalink) Then
@@ -2736,7 +2745,9 @@ EndFunc
 								    $sosub5=$sosub2
 							    EndIf
                             EndIf
-					      EndIf
+						  EndIf
+
+						  ToolTip("check loi 4",0,0)
 
 						  If $datalink[0]>2 Then
 								If $sosub5<1000 Then $datalink[2]=$datalink[2]+100
@@ -2753,6 +2764,8 @@ EndFunc
 						  EndIf
 
                         EndIf
+
+						ToolTip("check loi 5",0,0)
 
 			  Next
 
@@ -2791,7 +2804,7 @@ EndFunc
 					    $linkvideo=3
 			    	EndIf
 
-
+                    ToolTip("check loi 6",0,0)
 
 					ControlClick($var[$i10][1],'','','left',1,600, 60)
 				    Sleep(2000)
@@ -3330,8 +3343,10 @@ EndFunc
 	    EndFunc
 
         Func _xoa1NuaFileDasub($i,$i5)
-
+            $sodonglinkdasub=1
+			$i20=50
 			FileDelete(@ScriptDir&"\LinkTam.txt")
+			Sleep(1000)
             $sodonglinkdasub=_FileCountLines(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt")
 			If $sodonglinkdasub>100 Then
 				For $i20=50 to $sodonglinkdasub
