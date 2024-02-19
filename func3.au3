@@ -2686,6 +2686,7 @@ EndFunc
 				$sodonglinkkenhto=1
 				$checkchaykenhto=0
 				$sodong=1
+				$linkdasub='1'
 		  For $iSun2lan=1 to $sokenhsub1luot
 
 					Sleep(1000)
@@ -2710,6 +2711,7 @@ EndFunc
 								Sleep(500)
 						        For $i22=1 to $sodonglinkdasub
                                     $linkdasub=FileReadLine(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt",$i22)
+									Sleep(100)
                                     If $linkkenh=$linkdasub Then
 								        $i22=$sodonglinkdasub
 							        EndIf
