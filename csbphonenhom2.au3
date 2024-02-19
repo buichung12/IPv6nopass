@@ -1,3 +1,4 @@
+#include <func3.au3>
 #RequireAdmin
 #include <ImageSearch.au3>
 #include <MsgBoxConstants.au3>
@@ -10,7 +11,6 @@
 #include <AutoItConstants.au3>
 #include <File.au3>
 #include <String.au3>
-#include <func3.au3>
 HotKeySet("{f2}", "_Exit")
 #Region ### START Koda GUI section ### Form=
 $Form1 = GUICreate("nhom 2", 615, 437, 192, 124)
