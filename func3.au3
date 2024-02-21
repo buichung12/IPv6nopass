@@ -2678,9 +2678,9 @@ EndFunc
 				$sosub5=0
                 $linkvideo=5
 				Sleep(1000)
-				ToolTip("check loi 0",0,0)
+				;ToolTip("check loi 0",0,0)
 				_xoa1NuaFileDasub($i,$i5)
-                ToolTip("check loi 1",0,0)
+               ; ToolTip("check loi 1",0,0)
 				$sokenhsub1luot=FileReadLine(@ScriptDir&"\sokenhsub1luot.txt",1)
                 $linkkenhtho=1
 				$sodonglinkkenhto=1
@@ -2693,7 +2693,7 @@ EndFunc
 					$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
 					Sleep(500)
 					$checkchaykenhto=FileReadLine(@ScriptDir&'\linkkenhto.txt',1)
-					ToolTip("check loi 2",0,0)
+					;ToolTip("check loi 2",0,0)
 
 			  For $i21=1 to 7
 
@@ -2723,7 +2723,7 @@ EndFunc
 						    EndIf
 						Next
 
-						ToolTip("check loi 3",0,0)
+						;ToolTip("check loi 3",0,0)
 
 
 				        If IsArray($datalink) Then
@@ -2749,7 +2749,7 @@ EndFunc
                             EndIf
 						  EndIf
 
-						  ToolTip("check loi 4",0,0)
+						 ; ToolTip("check loi 4",0,0)
 
 						  If $datalink[0]>2 Then
 								If $sosub5<1000 Then $datalink[2]=$datalink[2]+100
@@ -2767,7 +2767,7 @@ EndFunc
 
                         EndIf
 
-						ToolTip("check loi 5",0,0)
+						;ToolTip("check loi 5",0,0)
 
 			  Next
 
@@ -2806,7 +2806,7 @@ EndFunc
 					    $linkvideo=3
 			    	EndIf
 
-                    ToolTip("check loi 6",0,0)
+                    ;ToolTip("check loi 6",0,0)
 
 					ControlClick($var[$i10][1],'','','left',1,600, 60)
 				    Sleep(2000)
