@@ -161,7 +161,6 @@ $check=0
 		    Sleep(3000)
 			MouseClick('left',1300,720,1,20)  ; xoa khoi phuc
 		    Sleep(3000)
-			Sleep(2000)
 		    MouseClick('left',515, 696,1,20)   ; xoa loi
 			Sleep(1000)
 		    $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
