@@ -7,6 +7,7 @@
 #include <File.au3>
 #include <String.au3>
 #include <FileConstants.au3>
+#include <_HttpRequest.au3>
 
 ; Lấy đường dẫn tuyệt đối đến thư mục chứa script hiện tại
 Local $sScriptDir = @ScriptDir
@@ -30,10 +31,10 @@ HotKeySet("{f9}", "AutoRun")
 				Sleep(100)
 				If FileExists(@ScriptDir&"\vpsso.txt")=1 Then $vpsso=FileReadLine(@ScriptDir&"\vpsso.txt",1)   ; khoi dong vps so
 				Sleep(1000)
-                ;_requetTextDoc('https://textdoc.co/index.php/S3gXRHqyD8rhd9lt','trangthaikhoidong.txt')
-                ;Sleep(1000)
-				;$check=FileReadLine(@ScriptDir&'\trangthaikhoidong.txt',1)
-				$check=1
+                _requetTextDoc('https://textdoc.co/index.php/S3gXRHqyD8rhd9lt','trangthaikhoidong.txt')
+                Sleep(1000)
+				$check=FileReadLine(@ScriptDir&'\trangthaikhoidong.txt',1)
+				;$check=1
 				WinClose('Server Manager')
 				Sleep(1000)
 
@@ -121,6 +122,10 @@ HotKeySet("{f9}", "AutoRun")
 
 
 
+
+
+
+
 #cs
 _loginGmail($f,$g,$h,$i)   ;;return 1 la ok. 0 la that bai
 _xoaprofileMOI()
@@ -133,7 +138,7 @@ _FAKEip($vpsso)
 _requetanotepad($link,$tenTXT)
 #ce
 
-#cs
+
 			Func _requetTextDoc($link,$tenTXT)
 				$checkrequet=0
 				$kq=''
@@ -174,7 +179,6 @@ _requetanotepad($link,$tenTXT)
 				Return $checkrequet
 			EndFunc
 
-#ce
 
    Func AutoRun()
 
