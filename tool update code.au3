@@ -17,7 +17,7 @@ $i=10
 HotKeySet("{f4}", "_Exit")
 
                 ToolTip('update code',0,0)
-            For $i21=1 to 3
+            For $i21=1 to 2
 
 				_resetMang($i)
 				_closeTrinhDuyet($i)
@@ -47,57 +47,56 @@ HotKeySet("{f4}", "_Exit")
                     If $i21=1 Then
 						_GetDOSOutput($linkdownload)
 						Sleep(10000)
-		                If $i21=1 Then
-			                MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
-		                    Sleep(3000)
-							MouseClick('left',1300,720,1,20)  ; xoa khoi phuc
-		                    Sleep(3000)
-		                    MouseClick('left',515, 696,1,20)   ; xoa loi
-		                	Sleep(1000)
-		                    $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
-			                Sleep(1000)
-		                    If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
-		                    Sleep(1000)
-		                    For $i10 = 1 to $var[0][0]
-			                    If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
-		                             WinMove($var[$i10][1],'',0,0,1366,768)
-			                    EndIf
-		                    Next
-						EndIf
-		                    Sleep(2000)
-		                    MouseClick('left',1265, 460,1,20)
-	                    	Sleep(2000)
-		                    MouseClick('left',1265, 421,1,20)
-		                    Sleep(2000)
-		                    MouseClick('left',1204, 340,1,20)
-		                    Sleep(5000)
-		                    Sleep(5000)
+
+			            MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
+		                Sleep(3000)
+			            MouseClick('left',1300,720,1,20)  ; xoa khoi phuc
+		                Sleep(3000)
+		                MouseClick('left',515, 696,1,20)   ; xoa loi
+			            Sleep(1000)
+		                $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+			            Sleep(1000)
+		                If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
+		                Sleep(1000)
+		                For $i10 = 1 to $var[0][0]
+						    If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
+		                         WinMove($var[$i10][1],'',0,0,1366,768)
+						    EndIf
+		                Next
+		                Sleep(2000)
+	                 	MouseClick('left',1265, 460,1,20)
+		                Sleep(2000)
+		                MouseClick('left',1265, 421,1,20)
+		                Sleep(2000)
+		                MouseClick('left',1204, 340,1,20)
+		                Sleep(5000)
+
+
 					    _GetDOSOutput($linkdownloadFunc)
 						Sleep(10000)
-		                If $i21=1 Then
-			                MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
-		                    Sleep(3000)
-							MouseClick('left',1300,720,1,20)  ; xoa khoi phuc
-		                    Sleep(3000)
-		                    MouseClick('left',515, 696,1,20)   ; xoa loi
-		                	Sleep(1000)
-		                    $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
-			                Sleep(1000)
-		                    If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
-		                    Sleep(1000)
-		                    For $i10 = 1 to $var[0][0]
-			                    If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
-		                             WinMove($var[$i10][1],'',0,0,1366,768)
-			                    EndIf
-		                    Next
-						EndIf
-		                    Sleep(2000)
-		                    MouseClick('left',1265, 460,1,20)
-	                    	Sleep(2000)
-		                    MouseClick('left',1265, 421,1,20)
-		                    Sleep(2000)
-		                    MouseClick('left',1204, 340,1,20)
-		                    Sleep(5000)
+		                MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
+		                Sleep(3000)
+			            MouseClick('left',1300,720,1,20)  ; xoa khoi phuc
+		                Sleep(3000)
+		                MouseClick('left',515, 696,1,20)   ; xoa loi
+			            Sleep(1000)
+		                $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+			            Sleep(1000)
+		                If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
+		                Sleep(1000)
+		                For $i10 = 1 to $var[0][0]
+						    If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
+		                         WinMove($var[$i10][1],'',0,0,1366,768)
+						    EndIf
+		                Next
+		                Sleep(2000)
+	                 	MouseClick('left',1265, 460,1,20)
+		                Sleep(2000)
+		                MouseClick('left',1265, 421,1,20)
+		                Sleep(2000)
+		                MouseClick('left',1204, 340,1,20)
+		                Sleep(5000)
+
 						For $i20=0 to 22
 		                     FileCopy('C:\Users\'&@UserName&'\Downloads\csbphonenhom'&$i20&'.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
 		                     Sleep(1000)
@@ -171,7 +170,6 @@ HotKeySet("{f4}", "_Exit")
 
 
             Next
-
 
 					MsgBox(0,0,'cho khoi dong chuong trinh',Random(10,60,1))
 					Sleep(1000)
