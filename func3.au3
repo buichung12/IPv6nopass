@@ -51,6 +51,8 @@ _subFFLaiIP($ThuTukenh,$vpsso,$i)
 _randomprofilr($i)
 #ce
 
+
+
 Func _ChinhDoPhanGiai($i)
 
 
@@ -2704,7 +2706,9 @@ EndFunc
 				            Sleep(1000)
 						    If 	StringLen($linkkenhtho)>35 Then
 					    	    $datalink=StringSplit($linkkenhtho,'	')
+								Sleep(100)
 				                If IsArray($datalink) Then $linkkenh=$datalink[1]
+								Sleep(100)
 							    If FileExists(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt")=0 Then  FileWriteLine(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt",'khoi tao')
 							    Sleep(1000)
 						        $sodonglinkdasub=_FileCountLines(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt")
@@ -2716,7 +2720,7 @@ EndFunc
 								        $i22=$sodonglinkdasub
 							        EndIf
 						        Next
-
+								Sleep(100)
 						        If $linkkenh <> $linkdasub Then
 							        $i23=5
 						        EndIf
@@ -3845,8 +3849,11 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',831, 237,1,20)
 							Sleep(2000)
+							MouseClick('left',1338,131,1,20)
+							Sleep(2000)
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
+
 						EndIf
 
 						If $i=8 Then
@@ -4200,6 +4207,8 @@ EndFunc
 							ControlClick('','','','left',1,505, 200)
 							Sleep(2000)
 							ControlClick('','','','left',1,834, 242)
+							Sleep(2000)
+							MouseClick('left',1338,131,1,20)
 							Sleep(2000)
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
@@ -4957,6 +4966,8 @@ EndFunc
 						   FileDelete(@ScriptDir&'\Gmailtest.txt')
 
 
+                MouseClick('left',1280, 129,1,20)
+
 			    $check=0
                 MouseClick('left',500, 60,1,20)
 				;If $i=8 Then MouseClick('left',800, 75,1,20)
@@ -4964,19 +4975,24 @@ EndFunc
 				Send('^a')
 				Sleep(2000)
 				ClipPut('https://www.youtube.com/account')
-			    Sleep(1000)
+			    Sleep(200)
 			    Send('^v')
-				Sleep(2000)
+				Sleep(1000)
 				Send('{enter}')
 				Sleep(7000)
-				For $i20=1 to 20
-				    $pixcel=PixelSearch(546, 192,889, 356,0xFBBC05)
-					If IsArray($pixcel) Then
-						$i20=20
-				        Sleep(1000)
-					EndIf
+				MouseClick('left',1280, 129,1,20)
+				Sleep(1000)
+				MouseClick('left',600,300,1,20)
+				Sleep(1000)
+				Send('{tab}')
+				Sleep(2000)
+
+				For $i20=1 to 10
+				    $pixcel=PixelSearch(322, 259,1000, 627,0x1A73E8)
+					If IsArray($pixcel) Then $i20=20
 					Sleep(1000)
 				Next
+				Sleep(1000)
             If IsArray($pixcel) Then
 
 				If $i=2 Or $i=4 Then                      ; loi khong load duoc trinh duyet brive
@@ -5006,7 +5022,7 @@ EndFunc
 				Sleep(3000)
 				MouseClick('left',1016, 363,1,20)
 				Sleep(2000)
-				MouseClick('left',650,270,1,20)
+				MouseClick('left',650,300,1,20)
 				Sleep(3000)
 				Send('{tab}')
 				Sleep(2000)
@@ -5137,7 +5153,7 @@ EndFunc
 
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailhhoiphuc.bmp',1,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailhoiphuc.bmp',1,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
 					Sleep(10000)
@@ -5153,6 +5169,18 @@ EndFunc
 				      Sleep(7000)
 				EndIf
                Sleep(3000)
+
+			    If $x3=0 Then
+					MouseClick('left',718, 518,1,20)
+					Sleep(5000)
+					Sleep(1000)
+					Send($h)
+					Sleep(500)
+					Send('{enter}')
+					Sleep(7000)
+
+				EndIf
+
                #cs
 			    If $x3=0 Then      ; neu khong tim thay anh
 				   If $i=1 Then MouseClick('left',550,590,1,20)
