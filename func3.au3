@@ -2798,10 +2798,6 @@ EndFunc
                          $linkvideo=1
 				    EndIf
 
-				    If $checklink='shorts' Then
-					    $linkvideo=2
-				    EndIf
-
 					If $checklink='atured' Then
 					     $linkvideo=0
 				    EndIf
@@ -2838,29 +2834,14 @@ EndFunc
 					        Sleep(7000)
 							$linkvideo=1
 				        Else
+							$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\videos2.bmp',1,406, 318,831, 610,$x3,$y3,1)
+							If $x3>0 Then
+								MouseClick('left',$x3,$y3,1,20)   ; click shorts
+								Sleep(7000)
+								$linkvideo=1
 
-					        $emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\shorts.bmp',1,406, 318,831, 610,$x3,$y3,1)
-						    If $x3>0 Then
-					           MouseClick('left',$x3,$y3,1,20)   ; click shorts
-					           Sleep(7000)
-							   $linkvideo=2
-					        Else
-						        $emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\videos2.bmp',1,406, 318,831, 610,$x3,$y3,1)
-					            If $x3>0 Then
-					               MouseClick('left',$x3,$y3,1,20)   ; click shorts
-					               Sleep(7000)
-								   $linkvideo=1
-						        Else
-							        $emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\shorts2.bmp',1,406, 318,831, 610,$x3,$y3,1)
-					                If $x3>0 Then
-					                   MouseClick('left',$x3,$y3,1,20)   ; click shorts
-					                   Sleep(7000)
-									   $linkvideo=2
-							        EndIf
+							EndIf
 
-						        EndIf
-
-				            EndIf
 
 				        EndIf
 
@@ -3157,113 +3138,6 @@ EndFunc
 
 
                     EndIf
-
-                    If $linkvideo=2 Then
-                        ToolTip("link video "&$iSun2lan&", link shorts",0,0)
-						MouseMove(742,Random(440,600,1))
-						Sleep(1000)
-						For $i20=1 to Random(4,20,1)
-						   MouseWheel($MOUSE_WHEEL_DOWN,1)
-						   Sleep(500)
-						Next
-						Sleep(2000)
-						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
-					    Sleep(50)
-						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
-					    Sleep(50)
-						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
-					    Sleep(50)
-						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
-					    Sleep(50)
-						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
-					    Sleep(50)
-						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
-					    Sleep(50)
-						ControlClick($var[$i10][1],'','','left',1,507, 347)  ;xem video
-					    Sleep(50)
-						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
-					    Sleep(50)
-						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
-					    Sleep(50)
-						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
-					    Sleep(50)
-						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
-					    Sleep(50)
-					    Sleep(10000)
-						For $i20=1 to 10
-				          $pixcel=PixelSearch(76,110,146, 166,0xFF0000)
-					       If IsArray($pixcel) Then
-							  $i20=20
-						   EndIf
-						   Sleep(1000)
-						Next
-
-						$x=0
-		                $y=0
-		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,665,600,950,768,$x,$y,1,1)
-
-						If $x>0 Then
-							MouseClick('left',$x,$y,1,20)
-							Sleep(10000)
-						EndIf
-
-						If $x=0 Then
-
-							_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,700,600,940,720,$x,$y,1,1)
-							If $x>0 Then
-							    MouseClick('left',$x,$y,1,20)
-							    Sleep(5000)
-							EndIf
-
-						EndIf
-
-						If $x=0 Then
-							_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,700,600,955,720,$x,$y,1,1)
-							If $x>0 Then
-							    MouseClick('left',$x,$y,1,20)
-							    Sleep(5000)
-							EndIf
-
-						EndIf
-
-
-                        If $x=0 Then
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,919, 718)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,923, 730)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,907, 705)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,896, 718)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,899, 678)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,906, 689)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,899, 685)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,899, 677)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,700,555)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,1165, 230)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,1165, 411)
-							Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,1165, 312)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,1165, 148)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,800, 664)
-							Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,700,555)
-							Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,844, 646)
-
-							Sleep(2000)
-                        EndIf
-					EndIf
 
 					If $linkvideo=3 Then
                         ToolTip("link video truc tiep "&$iSun2lan&", link truc tiep",0,0)
@@ -3739,17 +3613,22 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',831, 237,1,20)
 							Sleep(2000)
+							MouseClick('left',1304,190,1,20)
+							Sleep(2000)
 							MouseClick('left',1260,208 ,1,20)
 							Sleep(1000)
 							ControlClick('','','','left',1,505, 200)
 							Sleep(2000)
 							ControlClick('','','','left',1,834, 242)
 							Sleep(2000)
+
 					EndIf
 
 					If $i=6 Then
 						MouseClick('left',1185, 192,1,20)  ;tat thong bao update
 				        Sleep(2000)
+						MouseClick('left',1260,200,1,20)
+						Sleep(1000)
 					EndIf
 					If $i=4 Then
 						MouseClick('left',852, 510,1,20)  ;tat thong bao update
@@ -3849,6 +3728,8 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',831, 237,1,20)
 							Sleep(2000)
+							MouseClick('left',1304,190,1,20)
+							Sleep(2000)
 							MouseClick('left',1338,131,1,20)
 							Sleep(2000)
 							MouseClick('left',1280,163,1,20)
@@ -3893,6 +3774,8 @@ EndFunc
 							Sleep(2000)
 							ControlClick($var[$i10][1],'','','left',1,834, 242)
 							Sleep(2000)
+							MouseClick('left',1260,200,1,20)
+							Sleep(1000)
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
 						EndIf
@@ -4208,6 +4091,8 @@ EndFunc
 							Sleep(2000)
 							ControlClick('','','','left',1,834, 242)
 							Sleep(2000)
+							MouseClick('left',1304,190,1,20)
+							Sleep(2000)
 							MouseClick('left',1338,131,1,20)
 							Sleep(2000)
 							MouseClick('left',1280,163,1,20)
@@ -4298,6 +4183,8 @@ EndFunc
 							Sleep(1000)
 							MouseClick('left',831, 237,1,20)
 							Sleep(1000)
+							MouseClick('left',1304,190,1,20)
+							Sleep(2000)
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
 						EndIf
@@ -4340,6 +4227,8 @@ EndFunc
 							ControlClick($var[$i10][1],'','','left',1,1332, 123); tat thong bao
 					        Sleep(1000)
 							MouseClick('left',1330, 101,1,20)
+							Sleep(1000)
+							MouseClick('left',1260,200,1,20)
 							Sleep(1000)
 							MouseClick('left',1187, 195,1,20)
 							Sleep(1000)
