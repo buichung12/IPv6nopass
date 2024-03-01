@@ -858,6 +858,7 @@ EndFunc
 				$check13=1
             EndIf
 
+#cs
 		        $check=FileExists('C:\Users\'&@UserName&'\AppData\Local\Maxthon\Application\Maxthon.exe')
 			If $check=0 Then
 
@@ -911,7 +912,38 @@ EndFunc
 
 			Else
 				$check14=1
-			EndIf
+            EndIf
+#ce
+
+
+	        $check=FileExists('C:\Users\'&@UserName&'\AppData\Local\Epic Privacy Browser\Application\epic.exe"')
+			If $check=0 Then
+
+				$i=3
+                Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\CocCocSetup.exe')
+				Sleep(15000)
+				ControlClick('Đang chạy..., Trình cài đặt Cốc Cốc','Cài đặt','[CLASS:Button; INSTANCE:2]')
+				Sleep(60000)
+
+				For $i20=1 to 30
+					$check2=WinExists('Thẻ mới - Cốc Cốc')
+					If $check2=1 Then
+						Sleep(2000)
+						$i20=30
+					EndIf
+
+				Next
+
+				WinClose('Thẻ mới - Cốc Cốc')
+				Sleep(3000)
+				WinClose('Thẻ mới - Cốc Cốc')
+				Sleep(2000)
+				_closeTrinhDuyet($i)
+
+			Else
+				$check14=1
+            EndIf
+
 
 			 $check=FileExists('C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\launcher.exe')
 			If $check=0 Then
@@ -1326,6 +1358,7 @@ EndFunc
 					EndIf
 
 					If $i=3 Then
+					  #cs    ;Maxthon
 						MouseClick('left',600,60,1,20)
 						Sleep(2000)
 						Send('mx://settings/clearBrowserData',1)
@@ -1350,6 +1383,37 @@ EndFunc
 						Sleep(2000)
 						MouseClick('left',900, 633,1,20)
 						Sleep(5000)
+						_closeTrinhDuyet($i)
+                      #ce
+						MouseClick('left',600,60,1,20)   ;coc coc
+						Sleep(2000)
+						Send('coccoc://settings/clearBrowserData',1)
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(4000)
+						MouseClick('left',823, 254,1,20)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(2000)
+						Send('{DOWN}')
+						Sleep(2000)
+						Send('{DOWN}')
+						Sleep(2000)
+						Send('{DOWN}')
+						Sleep(2000)
+						Send('{DOWN}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(2000)
+					    $pixcel=PixelSearch(457, 544,498, 588,0x4FBA69)
+					    If not IsArray($pixcel) Then
+							    MouseClick('left',477, 563,1,20)
+						        Sleep(2000)
+						EndIf
+						MouseClick('left',885, 631,1,20)
+						Sleep(4000)
 						_closeTrinhDuyet($i)
 
 					EndIf
@@ -3559,7 +3623,8 @@ EndFunc
                     WinClose('Proxy Client Tinsoft')
 					If $i=1 Then $linkblu="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 					If $i=2 Then $linkblu="C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
-					If $i=3 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Maxthon\Application\Maxthon.exe'
+					;If $i=3 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Maxthon\Application\Maxthon.exe'
+					If $i=3 Then $linkblu="C:\Program Files (x86)\CocCoc\Browser\Application\browser.exe"
 					If $i=4 Then $linkblu='C:\portapps\brave-portable\brave-portable.exe'
 					;If $i=4 Then $linkblu='C:\Program Files (x86)\AVAST Software\Browser\Application\AvastBrowser.exe'
 					If $i=5 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\launcher.exe'
@@ -3597,6 +3662,7 @@ EndFunc
 					WinClose('Check Update')
 					WinClose('Bright VPN - Secure Private & Free VPN Proxy is disabled')
 				    WinClose('Remove "Bright VPN - Secure Private & Free VPN Proxy"?')
+					WinClose('Restore pages?')
 					Sleep(1000)
 					If  $i=9 Then
 							WinClose('Check Update')
@@ -3803,17 +3869,11 @@ EndFunc
 
 
 						If $i=3 Then
-                           Sleep(2000)
-						   MouseClick('left',920, 160,1,20)
-						   Sleep(2000)
-					       MouseClick('left',1333, 126,1,20)
-						   Sleep(2000)
-						   MouseClick('left',1333, 135,1,20)
-						   Sleep(2000)
+
 						   WinClose('Update successful')
 				           Sleep(2000)
-						   MouseClick('left',1280,163,1,20)
-						   Sleep(2000)
+						   WinClose('Bạn có muốn khôi phục trang không?')
+
 						EndIf
 
 						If $i=2 Then
@@ -3868,7 +3928,7 @@ EndFunc
 					    If $i=6 Then ControlClick($var[$i10][1],'','','left',1,479, 26)    ; tat tab thua
 					    If $i=5 Then ControlClick($var[$i10][1],'','','left',1,426, 30)    ; tat tab thua
 					    If $i=4 Then ControlClick($var[$i10][1],'','','left',1,479, 25)    ; tat tab thua
-					    If $i=3 Then ControlClick($var[$i10][1],'','','left',1,515, 24)    ; tat tab thua
+					    If $i=3 Then ControlClick($var[$i10][1],'','','left',1,573, 25)    ; tat tab thua
 					    If $i=2 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
 					    If $i=1 Then ControlClick($var[$i10][1],'','','left',1,427, 26)    ; tat tab thua
                         If $i=1 Then ControlClick($var[$i10][1],'','','left',1,512, 27)   ; tat thong bao
@@ -3887,7 +3947,7 @@ EndFunc
 						If $i=5 Then ControlClick($var[$i10][1],'','','left',1,426, 30)    ; tat tab thua
 						Sleep(1000)
 					    If $i=4 Then ControlClick($var[$i10][1],'','','left',1,479, 25)    ; tat tab thua
-					    If $i=3 Then ControlClick($var[$i10][1],'','','left',1,515, 24)    ; tat tab thua
+					    If $i=3 Then ControlClick($var[$i10][1],'','','left',1,573, 25)    ; tat tab thua
 					    If $i=2 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
 					    If $i=1 Then ControlClick($var[$i10][1],'','','left',1,427, 26)    ; tat tab thua
                         If $i=1 Then ControlClick($var[$i10][1],'','','left',1,512, 27)   ; tat thong bao
@@ -3987,7 +4047,8 @@ EndFunc
 
 					If $i=1 Then $linkblu="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 					If $i=2 Then $linkblu="C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
-					If $i=3 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Maxthon\Application\Maxthon.exe'
+					;If $i=3 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Maxthon\Application\Maxthon.exe'
+					If $i=3 Then $linkblu="C:\Program Files (x86)\CocCoc\Browser\Application\browser.exe"
 					If $i=4 Then $linkblu='C:\portapps\brave-portable\brave-portable.exe'
 					;If $i=4 Then $linkblu='C:\Program Files (x86)\AVAST Software\Browser\Application\AvastBrowser.exe'
 					If $i=5 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\launcher.exe'
@@ -4249,18 +4310,22 @@ EndFunc
 					    EndIf
 
 						If $i=3 Then
-					       ControlClick($var[$i10][1],'','','left',1,1333, 126)
-					       Sleep(2000)
-						   MouseClick('left',920, 160,1,20)
-						   Sleep(2000)
-					       MouseClick('left',1333, 126,1,20)
-						   Sleep(2000)
-						   MouseClick('left',1333, 135,1,20)
-						   Sleep(2000)
+						   ;MouseClick('left',1333, 135,1,20)
+						  ; Sleep(2000)
+					      ; ControlClick($var[$i10][1],'','','left',1,1333, 126)
+					      ; Sleep(2000)
+						  ; MouseClick('left',920, 160,1,20)
+						 ;  Sleep(2000)
+					     ;  MouseClick('left',1333, 126,1,20)
+						 ;  Sleep(2000)
+						  ; MouseClick('left',1333, 135,1,20)
+						  ; Sleep(2000)
 						   WinClose('Update successful')
 				           Sleep(2000)
-						   MouseClick('left',1280,163,1,20)
-							Sleep(2000)
+						   Sleep(2000)
+						   WinClose('Bạn có muốn khôi phục trang không?')
+						 ;  MouseClick('left',1280,163,1,20)
+							;Sleep(2000)
 						EndIf
 
 						If $i=2 Then
@@ -4319,7 +4384,7 @@ EndFunc
 					    If $i=5 Then ControlClick($var[$i10][1],'','','left',1,428, 27)    ; tat tab thua
 						If $i=5 Then ControlClick($var[$i10][1],'','','left',1,426, 30)    ; tat tab thua
 					    If $i=4 Then ControlClick($var[$i10][1],'','','left',1,479, 25)    ; tat tab thua
-					    If $i=3 Then ControlClick($var[$i10][1],'','','left',1,515, 24)    ; tat tab thua
+					    If $i=3 Then ControlClick($var[$i10][1],'','','left',1,573, 25)    ; tat tab thua
 					    If $i=2 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
 					    If $i=1 Then ControlClick($var[$i10][1],'','','left',1,518, 25)    ; tat tab thua
                         If $i=1 Then ControlClick($var[$i10][1],'','','left',1,515, 27)   ; tat thong bao
@@ -4551,6 +4616,8 @@ EndFunc
 				Sleep(100)
 				ProcessClose('chrome.exe')
 				Sleep(100)
+				ProcessClose('browser.exe')
+				Sleep(100)
 				ProcessClose('brave.exe')
 				Sleep(100)
 				ProcessClose('browser_assistant.exe')
@@ -4610,6 +4677,8 @@ EndFunc
 				ProcessClose('AvastBrowserCrashHandler.exe')
 				Sleep(100)
 				ProcessClose('msedge.exe')
+				Sleep(100)
+				ProcessClose('browser.exe')
 				Sleep(100)
 				ProcessClose('BraveCrashHandler.exe')
 				Sleep(100)
@@ -5096,6 +5165,17 @@ EndFunc
 
 				EndIf
                 #ce
+
+				If $x3=0 Then
+				    MouseClick('left',385, 320,1,20)
+				    ClipPut($h)
+				    Sleep(50)
+				    Send('^v')
+				    Sleep(1500)
+			     	Send('{enter}')
+			    	Sleep(6000)
+			    EndIf
+
 				If $x3=0 Then      ; neu khong tim thay anh
 				    MouseClick('left',668,270,1,20)
 					Sleep(2000)
@@ -5123,6 +5203,8 @@ EndFunc
 				      Sleep(7000)
 
 				EndIf
+
+
 
                    ; MouseClick('left',514,560,1,20)    ; click Email khoi phuc
 					;Sleep(5000)
@@ -5170,13 +5252,6 @@ EndFunc
 				If $i=10 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
 				If $i=9 Then MouseClick('left',385, 320,1,20)  ;luu mat khau $1
 				Sleep(1000)
-				MouseClick('left',385, 320,1,20)
-				ClipPut($h)
-				Sleep(50)
-				Send('^v')
-				Sleep(1500)
-				Send('{enter}')
-				Sleep(6000)
 
 				If $i=1 Then MouseClick('left',929, 235,1,20)  ;luu mat khau $1
 				If $i=2 Then MouseClick('left',1027, 229,1,20)  ;luu mat khau $1
