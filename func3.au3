@@ -925,15 +925,14 @@ EndFunc
 				ControlClick('Đang chạy..., Trình cài đặt Cốc Cốc','Cài đặt','[CLASS:Button; INSTANCE:2]')
 				Sleep(30000)
 				MouseClick('left',725,560,1,20)
-				Sleep(30000)
-
+				Sleep(90000)
 				For $i20=1 to 30
-					$check2=WinExists('Thẻ mới - Cốc Cốc')
+					$check2=WinExists('[class:Chrome_WidgetWin_1]')
 					If $check2=1 Then
 						Sleep(2000)
 						$i20=30
 					EndIf
-
+                    Sleep(2000)
 				Next
 
 				WinClose('Thẻ mới - Cốc Cốc')
