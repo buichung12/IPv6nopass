@@ -2861,6 +2861,10 @@ EndFunc
 					$checklink=StringRight($linkkenh,6)
 				    If $checklink='videos' or $checklink='treams' Then
                          $linkvideo=1
+					EndIf
+
+					If $checklink='shorts' Then
+					    $linkvideo=2
 				    EndIf
 
 					If $checklink='atured' Then
@@ -3065,6 +3069,110 @@ EndFunc
 
 					EndIf
 
+                    If $linkvideo=2 Then
+                        ToolTip("link video "&$iSun2lan&", link shorts",0,0)
+						MouseMove(742,Random(440,600,1))
+						Sleep(1000)
+						For $i20=1 to Random(4,20,1)
+						   MouseWheel($MOUSE_WHEEL_DOWN,1)
+						   Sleep(500)
+						Next
+						Sleep(2000)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,507, 347)  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+					    Sleep(10000)
+						For $i20=1 to 10
+				          $pixcel=PixelSearch(76,110,146, 166,0xFF0000)
+					       If IsArray($pixcel) Then
+							  $i20=20
+						   EndIf
+						   Sleep(1000)
+						Next
+
+						$x=0
+		                $y=0
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,665,600,950,768,$x,$y,1,1)
+
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(10000)
+						EndIf
+
+						If $x=0 Then
+
+							_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,700,600,940,720,$x,$y,1,1)
+							If $x>0 Then
+							    MouseClick('left',$x,$y,1,20)
+							    Sleep(5000)
+							EndIf
+
+						EndIf
+
+						If $x=0 Then
+							_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,700,600,955,720,$x,$y,1,1)
+							If $x>0 Then
+							    MouseClick('left',$x,$y,1,20)
+							    Sleep(5000)
+							EndIf
+
+						EndIf
+
+
+                        If $x=0 Then
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,919, 718)
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,923, 730)
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,907, 705)
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,896, 718)
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,899, 678)
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,906, 689)
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,899, 685)
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,899, 677)
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,700,555)
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,1165, 230)
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,1165, 411)
+							Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,1165, 312)
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,1165, 148)
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,800, 664)
+							Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,700,555)
+
+							Sleep(2000)
+                        EndIf
+					EndIf
 
                     If $linkvideo=1 Then
 
