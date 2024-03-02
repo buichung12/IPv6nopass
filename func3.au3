@@ -923,7 +923,9 @@ EndFunc
                 Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\CocCocSetup.exe')
 				Sleep(15000)
 				ControlClick('Đang chạy..., Trình cài đặt Cốc Cốc','Cài đặt','[CLASS:Button; INSTANCE:2]')
-				Sleep(60000)
+				Sleep(30000)
+				MouseClick('left',725,560,1,20)
+				Sleep(30000)
 
 				For $i20=1 to 30
 					$check2=WinExists('Thẻ mới - Cốc Cốc')
