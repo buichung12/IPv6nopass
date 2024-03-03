@@ -156,6 +156,23 @@ $check=0
            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom22.au3"')
 		EndIf
 		Sleep(15000)
+
+					WinClose('Install Google Translate extension to translate this page?')
+					WinClose('Restore pages?')
+					WinClose('Khôi phục trang')
+					WinClose('Bạn có muốn khôi phục trang không?')
+					WinClose('Default Client')
+					WinClose('Update successful')
+					Sleep(1000)
+					WinClose('Restore pages?')
+					WinClose('Default Client')
+					WinClose('UC Browser')
+					WinClose('Check Update')
+					WinClose('Bright VPN - Secure Private & Free VPN Proxy is disabled')
+				    WinClose('Remove "Bright VPN - Secure Private & Free VPN Proxy"?')
+					WinClose('Restore pages?')
+
+
 		If $i21=1 Then
 			MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
 		    Sleep(3000)
