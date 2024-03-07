@@ -2905,20 +2905,31 @@ EndFunc
 				        $y3=0
 						$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\videos.bmp',1,406, 318,831,610,$x3,$y3,1)
 				        If $x3>0 Then
-					        MouseClick('left',$x3,$y3,1,20)   ; click video
-					        Sleep(7000)
-							$linkvideo=1
+				         	MouseClick('left',$x3,$y3,1,20)   ; click video
+					        Sleep(3000)
 				        Else
-							$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\videos2.bmp',1,406, 318,831, 610,$x3,$y3,1)
+
+					        $emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\shorts.bmp',1,406, 318,831, 610,$x3,$y3,1)
+					        If $x3>0 Then
+					            MouseClick('left',$x3,$y3,1,20)   ; click shorts
+					            Sleep(3000)
+					        Else
+						        $emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\videos2.bmp',1,406, 318,831, 610,$x3,$y3,1)
 							If $x3>0 Then
 								MouseClick('left',$x3,$y3,1,20)   ; click shorts
-								Sleep(7000)
-								$linkvideo=1
+					            Sleep(3000)
+						    Else
+							    $emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\shorts2.bmp',1,406, 318,831, 610,$x3,$y3,1)
+					            If $x3>0 Then
+					                MouseClick('left',$x3,$y3,1,20)   ; click shorts
+					                Sleep(3000)
+							    EndIf
 
-							EndIf
-
+						    EndIf
 
 				        EndIf
+
+					EndIf
 
 
 
@@ -4027,6 +4038,8 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',1300,700,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
+							MouseClick('left',1280,102,1,20)  ;tat tanh cong cu
+						    Sleep(1000)
 					    EndIf
 
 					    If $i=10 Then
@@ -4305,6 +4318,8 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',1300,700,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
+							MouseClick('left',1280,102,1,20)  ;tat tanh cong cu
+						    Sleep(1000)
 					EndIf
 
 					Sleep(1000)
@@ -4425,22 +4440,10 @@ EndFunc
 					    EndIf
 
 						If $i=3 Then
-						   ;MouseClick('left',1333, 135,1,20)
-						  ; Sleep(2000)
-					      ; ControlClick($var[$i10][1],'','','left',1,1333, 126)
-					      ; Sleep(2000)
-						  ; MouseClick('left',920, 160,1,20)
-						 ;  Sleep(2000)
-					     ;  MouseClick('left',1333, 126,1,20)
-						 ;  Sleep(2000)
-						  ; MouseClick('left',1333, 135,1,20)
-						  ; Sleep(2000)
 						   WinClose('Update successful')
 				           Sleep(2000)
 						   Sleep(2000)
 						   WinClose('Bạn có muốn khôi phục trang không?')
-						 ;  MouseClick('left',1280,163,1,20)
-							;Sleep(2000)
 						EndIf
 
 						If $i=2 Then
@@ -4477,6 +4480,8 @@ EndFunc
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
 							MouseClick('left',1300,700,1,20)  ;tat tanh cong cu
+						    Sleep(1000)
+							MouseClick('left',1280,102,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
 					    EndIf
 
@@ -4519,6 +4524,52 @@ EndFunc
 					WinClose('Bạn có muốn khôi phục trang không?')
 					WinClose('Default Client')
 					ProcessClose('WerFault.exe')
+
+					MouseClick('left',600,60,1,20)
+					Sleep(2000)
+					Send('youtube.com')
+					Sleep(2000)
+					Send('{enter}')
+					Sleep(7000)
+					$pixcel=PixelSearch(382, 267,934, 585,0xEA8600)
+					If IsArray($pixcel) Then
+						MouseClick('left',600,300,1,20)
+					    Sleep(2000)
+						For $i20=1 to 8
+							Send('{tab}')
+							Sleep(1000)
+						Next
+                        Send('{enter}')
+						Sleep(7000)
+						MouseClick('left',600,300,1,20)
+					    Sleep(2000)
+						For $i20=1 to 2
+							Send('{tab}')
+							Sleep(1000)
+						Next
+                        Send('{enter}')
+						Sleep(7000)
+						MouseClick('left',600,300,1,20)
+					    Sleep(2000)
+						For $i20=1 to 2
+							Send('{tab}')
+							Sleep(1000)
+						Next
+                        Send('{enter}')
+						Sleep(7000)
+						MouseClick('left',600,300,1,20)
+					    Sleep(2000)
+						For $i20=1 to 5
+							Send('{tab}')
+							Sleep(1000)
+						Next
+                        Send('{enter}')
+						Sleep(7000)
+
+					EndIf
+
+
+
 				Return $dangnhap
 	    EndFunc
 
