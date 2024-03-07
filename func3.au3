@@ -3975,6 +3975,8 @@ EndFunc
 						If $i=5 Then
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
+							MouseClick('left',1322,99,1,20)
+							Sleep(2000)
 							MouseClick('left',500,60 ,1,20)    ; tat zoom
 							Sleep(2000)
 							Send('^a')
@@ -3987,9 +3989,9 @@ EndFunc
 
 
 						If $i=4 Then
-						   MouseClick('left',725, 132,1,20)  ;tat thong bao update
-				           Sleep(2000)
-						   MouseClick('left',1280,163,1,20)
+						    MouseClick('left',725, 132,1,20)  ;tat thong bao update
+				            Sleep(2000)
+						    MouseClick('left',1280,163,1,20)
 							Sleep(2000)
 					    EndIf
 
@@ -4438,6 +4440,15 @@ EndFunc
 				           Sleep(1000)
 
 					    EndIf
+						If $i=5 Then
+						   MouseClick('left',1322,99,1,20)
+						   Sleep(2000)
+						   MouseClick('left',1280,163,1,20)
+						   Sleep(2000)
+					    EndIf
+
+						MouseClick('left',1322,99,1,20)
+						Sleep(2000)
 
 						If $i=3 Then
 						   WinClose('Update successful')
