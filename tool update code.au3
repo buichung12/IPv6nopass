@@ -21,14 +21,6 @@ HotKeySet("{f4}", "_Exit")
 
 				_resetMang($i)
 				_closeTrinhDuyet($i)
-                For $i20=0 to 22
-					FileDelete('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphone nhom '&$i20&' - 20profile.exe')
-					Sleep(200)
-				Next
-				For $i20=0 to 22
-					FileDelete('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\csbphonenhom'&$i20&'.au3')
-					Sleep(200)
-				Next
 				For $i20=0 to 22
 					FileDelete('C:\Users\'&@UserName&'\Downloads\csbphonenhom'&$i20&'.au3')
 					Sleep(200)
