@@ -655,6 +655,30 @@ EndFunc
 			FileCopy('C:\Users\'&@UserName&'\Downloads\shorts2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
 		    Sleep(1000)
 
+		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\_HttpRequest.au3"
+        Local $sDestinationFile = "C:\Users\"&@UserName&"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup" & "\_HttpRequest.au3"
+        FileCopy($sSourceFile, $sDestinationFile, 1)
+
+		Sleep(1000)
+
+		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\WinHttp.au3"
+        Local $sDestinationFile = "C:\Users\"&@UserName&"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup" & "\WinHttp.au3"
+        FileCopy($sSourceFile, $sDestinationFile, 1)
+
+		Sleep(1000)
+
+		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\WinHttpConstants.au3"
+        Local $sDestinationFile = "C:\Users\"&@UserName&"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup" & "\WinHttpConstants.au3"
+        FileCopy($sSourceFile, $sDestinationFile, 1)
+
+		Sleep(1000)
+
+		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\_HttpRequest.au3"
+        Local $sDestinationFile = "C:\Users\'&@UserName&'\Desktop" & "\_HttpRequest.au3"
+        FileCopy($sSourceFile, $sDestinationFile, 1)
+
+
+
 
 			FileDelete('C:\Users\'&@UserName&'\Downloads\tool update code.au3')
 		    Sleep(1000)
