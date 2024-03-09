@@ -87,46 +87,46 @@ $check=0
     For $i21=1 to 2                           ; tai chuong trinh chinh
 
         If $sonhom=0 Then
-            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom0.au3"')
+            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom0.au3"')
 		EndIf
 		If $sonhom=1 Then
-            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom1.au3"')
+            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom1.au3"')
 		EndIf
 		If $sonhom=2 Then
-            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom2.au3"')
+            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom2.au3"')
 		EndIf
 		If $sonhom=3 Then
-           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom3.au3"')
+           _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom3.au3"')
 		EndIf
 		If $sonhom=4 Then
-            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom4.au3"')
+            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom4.au3"')
 		EndIf
 		If $sonhom=5 Then
-           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom5.au3"')
+           _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom5.au3"')
 		EndIf
 		If $sonhom=6 Then
-            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom6.au3"')
+            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom6.au3"')
 		EndIf
 		If $sonhom=7 Then
-            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom7.au3"')
+            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom7.au3"')
 		EndIf
 		If $sonhom=8 Then
-           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom8.au3"')
+           _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom8.au3"')
 		EndIf
 		If $sonhom=9 Then
-            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom9.au3"')
+            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom9.au3"')
 		EndIf
 		If $sonhom=10 Then
-            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom10.au3"')
+            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom10.au3"')
 		EndIf
 		If $sonhom=11 Then
-           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom11.au3"')
+           _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom11.au3"')
 		EndIf
 		If $sonhom=12 Then
-            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom12.au3"')
+            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom12.au3"')
 		EndIf
 		If $sonhom=13 Then
-            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom13.au3"')
+            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom13.au3"')
 		EndIf
 		If $sonhom=14 Then
             _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom14.au3"')
@@ -221,7 +221,7 @@ $check=0
 
     For $i20=1 to 2
 
-		_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
+		_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
         Sleep(15000)
 		;WinMove('','',0,0,1366,768)
 		;Sleep(2000)
@@ -243,7 +243,7 @@ $check=0
 
 	    FileDelete('C:\Users\'&@UserName&'\Downloads\tool update code.au3')
 		Sleep(1000)
-	    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
+	    _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
         Sleep(15000)
 		;WinMove('','',0,0,1366,768)
 		;Sleep(2000)
@@ -262,7 +262,7 @@ $check=0
 			FileDelete('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\'&'khoidong'&$i20&'.exe')
 			Sleep(100)
 		Next
-	    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/khoidong.au3"')     ;dowload tool khoi dong
+	    _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/khoidong.au3"')     ;dowload tool khoi dong
         Sleep(15000)
 		;WinMove('','',0,0,1366,768)
 		;Sleep(2000)
@@ -297,9 +297,7 @@ $check=0
         Local $sDestinationFile = "C:\Users\'&@UserName&'\Desktop" & "\_HttpRequest.au3"
         FileCopy($sSourceFile, $sDestinationFile, 1)
 
-
 		Sleep(1000)
-
 		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\WinHttp.au3"
         Local $sDestinationFile = "C:\Users\'&@UserName&'\Desktop" & "\WinHttp.au3"
         FileCopy($sSourceFile, $sDestinationFile, 1)
@@ -426,7 +424,7 @@ $check=0
 		Sleep(5000)
 		_GetDOSOutput('start chrome "https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.zip"')  ; tai autoit
 		Sleep(5000)
-		_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/SciTE4AutoIt3.exe"')
+		_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/raw/main/SciTE4AutoIt3.exe"')
 		Sleep(20000)
 		_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
 		Sleep(5000)
@@ -495,10 +493,10 @@ $check=0
 			Send('Antidetect Machine')
 			Sleep(1000)
 			Send('{enter}')
-			Sleep(15000)
-			WinSetState('Antidetect Machine v4.7.0','',@SW_RESTORE)
+			Sleep(20000)
+			WinSetState('Antidetect Machine v4.8','',@SW_RESTORE)
 			Sleep(2000)
-            WinMove('Antidetect Machine v4.7.0','',0,0,1366,768)
+            WinMove('Antidetect Machine v4.8','',0,0,1366,768)
 			Sleep(2000)
 			Send('1')
 			Sleep(1000)
