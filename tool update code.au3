@@ -12,7 +12,7 @@
 #include <MsgBoxConstants.au3>
 #include <WinAPIFiles.au3>
 #RequireAdmin
-$i=10
+$i=1
 
 HotKeySet("{f4}", "_Exit")
 
