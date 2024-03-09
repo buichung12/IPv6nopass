@@ -522,33 +522,16 @@ EndFunc
 			EndIf
 
 		   _resetMang(1)
-
+		#cs
 		    FileDelete("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe")
 			Sleep(1000)
-			;FileDelete('C:\Users\'&@UserName&'\Desktop\ToolCopyKhoiDongVaChuongTrinhChinh.exe')
-			;Sleep(1000)
-		    _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.exe"')
+		    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/ToolCopyKhoiDongVaChuongTrinhChinh.exe"')
 			Sleep(10000)
-			MouseClick('left',700, 505,1,20)  ;xoa loi
-		    Sleep(3000)
-			MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
-		    Sleep(3000)
-			MouseClick('left',1265, 460,1,20)
-		    Sleep(2000)
-		    MouseClick('left',1265, 421,1,20)
-		    Sleep(2000)
-		    MouseClick('left',1204, 340,1,20)
-		    Sleep(10000)
-
-
 
 			FileCopy("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe",'C:\Users\'&@UserName&'\Desktop',1)
 		    Sleep(1000)
-			FileDelete("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe")
-			Sleep(1000)
-			;FileDelete('C:\Users\'&@UserName&'\Desktop\ToolCopyKhoiDongVaChuongTrinhChinh.exe')
-			;Sleep(1000)
-		    _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
+		#ce
+		    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
 			Sleep(10000)
 			MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
 		    Sleep(3000)
@@ -615,7 +598,7 @@ EndFunc
 			FileDelete('C:\Users\'&@UserName&'\Downloads\shorts2.bmp')
 			Sleep(200)
             ToolTip('update videos.BMP',0,0)
-			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/videos.bmp"')
+			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/videos.bmp"')
 			Sleep(10000)
 			WinMove('','',0,0,1366,768)
 		    Sleep(2000)
@@ -628,7 +611,7 @@ EndFunc
 		    MouseClick('left',1305, 445,1,20)
 		    Sleep(5000)
 			ToolTip('update videos2.BMP',0,0)
-			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/videos2.bmp"')
+			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/videos2.bmp"')
 			Sleep(10000)
 			Sleep(2000)
 	    	MouseClick('left',1305, 415,1,20)
@@ -638,7 +621,7 @@ EndFunc
 			_closeTrinhDuyet(2)
 
 			ToolTip('update shorts.BMP',0,0)
-			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/shorts.bmp"')
+			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/shorts.bmp"')
 			Sleep(10000)
 			Sleep(2000)
 			MouseClick('left',700, 555,1,20)  ;xoa loi
@@ -648,7 +631,7 @@ EndFunc
 		    MouseClick('left',1305, 445,1,20)
 		    Sleep(5000)
 			ToolTip('update shorts2.BMP',0,0)
-			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/shorts2.bmp"')
+			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/shorts2.bmp"')
 			Sleep(10000)
 			Sleep(2000)
 			MouseClick('left',700, 555,1,20)  ;xoa loi
@@ -669,31 +652,35 @@ EndFunc
 		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\_HttpRequest.au3"
         Local $sDestinationFile = "C:\Users\"&@UserName&"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup" & "\_HttpRequest.au3"
         FileCopy($sSourceFile, $sDestinationFile, 1)
+		FileCopy($sSourceFile,'C:\Users\'&@UserName&'\Desktop', 1)
 
 		Sleep(1000)
 
 		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\WinHttp.au3"
         Local $sDestinationFile = "C:\Users\"&@UserName&"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup" & "\WinHttp.au3"
         FileCopy($sSourceFile, $sDestinationFile, 1)
+		FileCopy($sSourceFile,'C:\Users\'&@UserName&'\Desktop', 1)
 
 		Sleep(1000)
 
 		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\WinHttpConstants.au3"
         Local $sDestinationFile = "C:\Users\"&@UserName&"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup" & "\WinHttpConstants.au3"
         FileCopy($sSourceFile, $sDestinationFile, 1)
+		FileCopy($sSourceFile, 'C:\Users\'&@UserName&'\Desktop', 1)
 
 		Sleep(1000)
 
 		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\_HttpRequest.au3"
         Local $sDestinationFile = "C:\Users\'&@UserName&'\Desktop" & "\_HttpRequest.au3"
         FileCopy($sSourceFile, $sDestinationFile, 1)
+		FileCopy($sSourceFile, 'C:\Users\'&@UserName&'\Desktop', 1)
 
 
 
 
 			FileDelete('C:\Users\'&@UserName&'\Downloads\tool update code.au3')
 		    Sleep(1000)
-	        _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
+	        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
             Sleep(15000)
 		    WinMove('','',0,0,1366,768)
 		    Sleep(2000)
