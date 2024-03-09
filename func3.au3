@@ -1023,7 +1023,7 @@ EndFunc
 						Sleep(2000)
 						$i20=30
 					EndIf
-                    Sleep(2000)
+                    Sleep(3000)
 				Next
 
 				WinClose('Thẻ mới - Cốc Cốc')
