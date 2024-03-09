@@ -129,31 +129,31 @@ $check=0
             _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom13.au3"')
 		EndIf
 		If $sonhom=14 Then
-            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom14.au3"')
+            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom14.au3"')
 		EndIf
 		If $sonhom=15 Then
-            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom15.au3"')
+            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom15.au3"')
 		EndIf
 		If $sonhom=16 Then
-            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom16.au3"')
+            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom16.au3"')
 		EndIf
 		If $sonhom=17 Then
-           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom17.au3"')
+           _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom17.au3"')
 		EndIf
 		If $sonhom=18 Then
-           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom18.au3"')
+           _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom18.au3"')
 		EndIf
 		If $sonhom=19 Then
-            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom19.au3"')
+            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom19.au3"')
 		EndIf
 		If $sonhom=20 Then
-            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom20.au3"')
+            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom20.au3"')
 		EndIf
 		If $sonhom=21 Then
-           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom21.au3"')
+           _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom21.au3"')
 		EndIf
 		If $sonhom=22 Then
-           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom22.au3"')
+           _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom22.au3"')
 		EndIf
 		Sleep(15000)
 
@@ -420,14 +420,14 @@ $check=0
 		ToolTip('cai dat autoit',0,30)
 
 
-		_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
-		Sleep(5000)
-		_GetDOSOutput('start chrome "https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.zip"')  ; tai autoit
-		Sleep(5000)
+		;_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
+		;Sleep(5000)
+		;_GetDOSOutput('start chrome "https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.zip"')  ; tai autoit
+		;Sleep(5000)
 		_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/raw/main/SciTE4AutoIt3.exe"')
 		Sleep(20000)
 		_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
-		Sleep(5000)
+		Sleep(20000)
 
         _closeTrinhDuyet(1)
 
