@@ -531,7 +531,7 @@ EndFunc
 			FileCopy("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe",'C:\Users\'&@UserName&'\Desktop',1)
 		    Sleep(1000)
 		#ce
-		    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
+		    _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
 			Sleep(10000)
 			MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
 		    Sleep(3000)
@@ -598,7 +598,7 @@ EndFunc
 			FileDelete('C:\Users\'&@UserName&'\Downloads\shorts2.bmp')
 			Sleep(200)
             ToolTip('update videos.BMP',0,0)
-			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/videos.bmp"')
+			_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/videos.bmp"')
 			Sleep(10000)
 			WinMove('','',0,0,1366,768)
 		    Sleep(2000)
@@ -611,7 +611,7 @@ EndFunc
 		    MouseClick('left',1305, 445,1,20)
 		    Sleep(5000)
 			ToolTip('update videos2.BMP',0,0)
-			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/videos2.bmp"')
+			_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/videos2.bmp"')
 			Sleep(10000)
 			Sleep(2000)
 	    	MouseClick('left',1305, 415,1,20)
@@ -621,7 +621,7 @@ EndFunc
 			_closeTrinhDuyet(2)
 
 			ToolTip('update shorts.BMP',0,0)
-			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/shorts.bmp"')
+			_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/shorts.bmp"')
 			Sleep(10000)
 			Sleep(2000)
 			MouseClick('left',700, 555,1,20)  ;xoa loi
@@ -631,7 +631,7 @@ EndFunc
 		    MouseClick('left',1305, 445,1,20)
 		    Sleep(5000)
 			ToolTip('update shorts2.BMP',0,0)
-			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/shorts2.bmp"')
+			_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/shorts2.bmp"')
 			Sleep(10000)
 			Sleep(2000)
 			MouseClick('left',700, 555,1,20)  ;xoa loi
@@ -680,7 +680,7 @@ EndFunc
 
 			FileDelete('C:\Users\'&@UserName&'\Downloads\tool update code.au3')
 		    Sleep(1000)
-	        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
+	        _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
             Sleep(15000)
 		    WinMove('','',0,0,1366,768)
 		    Sleep(2000)
@@ -699,9 +699,9 @@ EndFunc
 		       ; Sleep(5000)
 		       ; _GetDOSOutput('start chrome "https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.zip"')  ; tai autoit
 		      ;  Sleep(5000)
-		        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/SciTE4AutoIt3.exe"')
+		        _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/raw/main/SciTE4AutoIt3.exe"')
 		        Sleep(20000)
-		        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
+		        _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
 		        Sleep(20000)
                 _closeTrinhDuyet(1)
 
