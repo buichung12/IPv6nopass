@@ -527,17 +527,28 @@ EndFunc
 			Sleep(1000)
 			;FileDelete('C:\Users\'&@UserName&'\Desktop\ToolCopyKhoiDongVaChuongTrinhChinh.exe')
 			;Sleep(1000)
-		    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/ToolCopyKhoiDongVaChuongTrinhChinh.exe"')
+		    _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.exe"')
 			Sleep(10000)
 			MouseClick('left',700, 505,1,20)  ;xoa loi
-		    Sleep(4000)
+		    Sleep(3000)
+			MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
+		    Sleep(3000)
+			MouseClick('left',1265, 460,1,20)
+		    Sleep(2000)
+		    MouseClick('left',1265, 421,1,20)
+		    Sleep(2000)
+		    MouseClick('left',1204, 340,1,20)
+		    Sleep(10000)
+
+
+
 			FileCopy("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe",'C:\Users\'&@UserName&'\Desktop',1)
 		    Sleep(1000)
 			FileDelete("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe")
 			Sleep(1000)
 			;FileDelete('C:\Users\'&@UserName&'\Desktop\ToolCopyKhoiDongVaChuongTrinhChinh.exe')
 			;Sleep(1000)
-		    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
+		    _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
 			Sleep(10000)
 			MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
 		    Sleep(3000)
@@ -682,7 +693,7 @@ EndFunc
 
 			FileDelete('C:\Users\'&@UserName&'\Downloads\tool update code.au3')
 		    Sleep(1000)
-	        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
+	        _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
             Sleep(15000)
 		    WinMove('','',0,0,1366,768)
 		    Sleep(2000)
