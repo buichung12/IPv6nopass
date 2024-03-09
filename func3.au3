@@ -693,6 +693,69 @@ EndFunc
 		    FileCopy('C:\Users\'&@UserName&'\Downloads\tool update code.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
 		    Sleep(3000)
 
+	        If FileExists("C:\Program Files (x86)\AutoIt3\AutoIt3.exe")=0 Then
+				ToolTip('cai dat autoit',0,30)
+		       ; _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
+		       ; Sleep(5000)
+		       ; _GetDOSOutput('start chrome "https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.zip"')  ; tai autoit
+		      ;  Sleep(5000)
+		        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/SciTE4AutoIt3.exe"')
+		        Sleep(20000)
+		        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
+		        Sleep(20000)
+                _closeTrinhDuyet(1)
+
+		        If FileExists("C:\Users\"&@UserName&"\Downloads\autoit-v3-setup.zip") Then
+                    ShellExecute("C:\Users\"&@UserName&"\Downloads\autoit-v3-setup.zip")
+					Sleep(6000)
+			        WinClose('Please purchase WinRAR license')
+			        Sleep(2000)
+			        WinClose('WinRAR 6.24 Expired Notification | Your free trial period has ended!')
+			        Sleep(2000)
+			        WinMove('','',0,0,1366,768)
+			        Sleep(2000)
+		            MouseClick('left',95, 82,1,20)
+			        Sleep(4000)
+			        Send('{enter}')
+			        Sleep(4000)
+			        FileCopy("C:\Users\"&@UserName&"\Downloads\autoit-v3-setup\autoit-v3-setup.exe","C:\Users\"&@UserName&"\Downloads\autoit-v3-setup.exe")
+			        Sleep(1000)
+					WinClose('autoit-v3-setup.zip (evaluation copy)')
+		        EndIf
+
+				Sleep(5000)
+                Run('C:\Users\'&@UserName&'\Downloads\autoit-v3-setup.exe')
+				Sleep(10000)
+		        ;WinMove('','',0,0)
+		        Send('{enter}')
+		        Sleep(3000)
+		        Send('{enter}')
+		        Sleep(3000)
+		        Send('{enter}')
+		        Sleep(3000)
+		        Send('{enter}')
+		        Sleep(3000)
+	         	Send('{enter}')
+		        Sleep(3000)
+		        Send('{enter}')
+				Sleep(60000)
+		        Send('{enter}')
+		        Sleep(3000)
+		        WinClose('AutoIt Help (v3.3.14.5)')
+		        Sleep(1000)
+				Run('C:\Users\'&@UserName&'\Downloads\SciTE4AutoIt3.exe')
+		        Sleep(10000)
+	        	Send('{enter}')
+		        Sleep(3000)
+		        Send('{enter}')
+		        Sleep(30000)
+		        Send('{enter}')
+		        Sleep(3000)
+
+             EndIf
+
+
+
             _closeTrinhDuyet(1)
 
 			Sleep(1000)
