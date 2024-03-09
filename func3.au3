@@ -1007,9 +1007,9 @@ EndFunc
 #ce
 
 
-	        $check=FileExists('C:\Users\'&@UserName&'\AppData\Local\Epic Privacy Browser\Application\epic.exe"')
+	        $check=FileExists("C:\Program Files (x86)\CocCoc\Browser\Application\browser.exe")
+			Sleep(1000)
 			If $check=0 Then
-
 				$i=3
                 Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\CocCocSetup.exe')
 				Sleep(15000)
