@@ -174,7 +174,7 @@ $check=0
 
 
 		If $i21=1 Then
-			MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
+			MouseClick('left',1330,112,1,20)  ; xoa khoi phuc
 		    Sleep(3000)
 			MouseClick('left',1300,720,1,20)  ; xoa khoi phuc
 		    Sleep(3000)
