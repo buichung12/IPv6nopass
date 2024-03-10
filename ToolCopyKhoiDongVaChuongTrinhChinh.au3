@@ -419,10 +419,9 @@ $check=0
 	If FileExists("C:\Program Files (x86)\AutoIt3\AutoIt3.exe")=0 Then
 		ToolTip('cai dat autoit',0,30)
 
-
 		_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
 		Sleep(5000)
-		_GetDOSOutput('start chrome "https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.zip"')  ; tai autoit
+		_GetDOSOutput('start chrome "https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.exe"')  ; tai autoit
 		Sleep(5000)
 		_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/raw/main/SciTE4AutoIt3.exe"')
 		Sleep(20000)
