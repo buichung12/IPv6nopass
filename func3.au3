@@ -533,7 +533,7 @@ EndFunc
 		#ce
 		    _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
 			Sleep(10000)
-			MouseClick('left',1325,112,1,20)  ; xoa khoi phuc
+			MouseClick('left',1330,112,1,20)  ; xoa khoi phuc
 		    Sleep(3000)
 			MouseClick('left',1265, 460,1,20)
 		    Sleep(2000)
