@@ -106,18 +106,6 @@ While 1   ; vong tra lai gia tr
 					FileDelete(@ScriptDir&'\Gmail.txt')
 				FileDelete(@ScriptDir&'\Gmailtho.txt')
 
-				 $checkrequet=_requetGooGleDOC('https://docs.google.com/document/d/1FVuqyStJx2qg55egvW8keDDtiMZclqbdtyf47O-qvB4/export?format=txt','Gmailtho.txt')
-                 _LayGmail($vpsso)
-				 $checkUC=0
-				 _requetGooGleDOC('https://docs.google.com/document/d/1H0qnU_hNkvS-uSTL9AZKx6zGHr5EpBjnlAqT8HX0ACo/export?format=txt','trangthaikhoidong.txt')
-                Sleep(1000)
-				$kiemtratrinhduyet=FileReadLine(@ScriptDir&'\trangthaikhoidong.txt',1)
-
-				If $kiemtratrinhduyet=1 Then $checkUC=_kiemtratrinhduyet($i5,$i,$vpsso,$trusomaybandau)
-				If $vpsso='' Then
-					MsgBox(0,0,'loi khong dien so may')
-					Exit
-                EndIf
 
 	            $i6=Mod($vpsso,5)
 				If $i6=0 Then $i6=5
