@@ -155,7 +155,9 @@ $check=0
 		If $sonhom=22 Then
            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom22.au3"')
 		EndIf
-		Sleep(15000)
+		Sleep(7000)
+		Send('{enter}')
+		Sleep(8000)
 
 					WinClose('Install Google Translate extension to translate this page?')
 					WinClose('Restore pages?')
@@ -222,7 +224,9 @@ $check=0
     For $i20=1 to 2
 
 		_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
-        Sleep(15000)
+        Sleep(7000)
+		Send('{enter}')
+		Sleep(8000)
 		;WinMove('','',0,0,1366,768)
 		;Sleep(2000)
 		MouseClick('left',1265, 460,1,20)
@@ -244,7 +248,9 @@ $check=0
 	    FileDelete('C:\Users\'&@UserName&'\Downloads\tool update code.au3')
 		Sleep(1000)
 	    _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
-        Sleep(15000)
+        Sleep(7000)
+		Send('{enter}')
+		Sleep(8000)
 		;WinMove('','',0,0,1366,768)
 		;Sleep(2000)
 		MouseClick('left',1265, 460,1,20)
@@ -263,7 +269,9 @@ $check=0
 			Sleep(100)
 		Next
 	    _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/khoidong.au3"')     ;dowload tool khoi dong
-        Sleep(15000)
+        Sleep(7000)
+		Send('{enter}')
+		Sleep(8000)
 		;WinMove('','',0,0,1366,768)
 		;Sleep(2000)
 		MouseClick('left',1265, 460,1,20)
@@ -420,7 +428,9 @@ $check=0
 		ToolTip('cai dat autoit',0,30)
 
 		_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
-		Sleep(5000)
+		Sleep(7000)
+		Send('{enter}')
+		Sleep(8000)
 		_GetDOSOutput('start chrome "https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.exe"')  ; tai autoit
 		Sleep(5000)
 		_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/raw/main/SciTE4AutoIt3.exe"')

@@ -522,15 +522,14 @@ EndFunc
 			EndIf
 
 		   _resetMang(1)
-		#cs
+
 		    FileDelete("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe")
 			Sleep(1000)
 		    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/ToolCopyKhoiDongVaChuongTrinhChinh.exe"')
 			Sleep(10000)
-
 			FileCopy("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe",'C:\Users\'&@UserName&'\Desktop',1)
 		    Sleep(1000)
-		#ce
+
 		    _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
 			Sleep(10000)
 			MouseClick('left',1330,112,1,20)  ; xoa khoi phuc
@@ -3858,8 +3857,11 @@ EndFunc
 						$linkblu='C:\Program Files\Mozilla Firefox\firefox.exe'
 						Run( $linkblu,'')
 					EndIf
-					Sleep(15000)
-
+					Sleep(8000)
+					If $i=6 or 7 Then
+						Send('{enter}')
+					EndIf
+					Sleep(7000)
 					WinClose('Install Google Translate extension to translate this page?')
 					WinClose('Restore pages?')
 					WinClose('Khôi phục trang')
@@ -4293,7 +4295,11 @@ EndFunc
 		        	    Run( $linkblu,'')
 					EndIf
 
-					Sleep(10000)
+					Sleep(8000)
+					If $i=6 or 7 Then
+						Send('{enter}')
+					EndIf
+					Sleep(7000)
 
 					WinClose('Install Google Translate extension to translate this page?')
 					WinClose('Restore pages?')
@@ -5200,6 +5206,8 @@ EndFunc
 				Sleep(1000)
 				Send('{enter}')
 				Sleep(7000)
+				MouseClick('left',1280, 160,1,20)
+				Sleep(1000)
 				MouseClick('left',1280, 129,1,20)
 				Sleep(1000)
 				MouseClick('left',600,300,1,20)
