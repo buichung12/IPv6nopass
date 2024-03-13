@@ -25,10 +25,29 @@ HotKeySet("{f9}", "AutoRun")
 				ProcessClose('browser.exe')
 				Sleep(100)
 				ProcessClose('browser.exe')
-				Sleep(100)
-				Sleep(40000)
+				Sleep(20000)
 				ProcessClose('browser.exe')
 				Sleep(100)
+
+
+                $checkinternet=_kiemtraMangInternet()
+				If $checkinternet=0 Then
+					FileWrite(@ScriptDir&'\checkinternet.txt',1)
+					Sleep(1000)
+					$checkinternet=FileReadLine(@ScriptDir&'\checkinternet.txt')
+					If $checkinternet<1111111111 Then
+                        _GetDOSOutput('shutdown -r -t 0')
+					Else
+						FileDelete(@ScriptDir&'\checkinternet.txt')
+						Sleep(1000)
+					    _GetDOSOutput('shutdown -s -t 0')
+					EndIf
+					Sleep(1000)
+					Exit
+                    Sleep(10000)
+				EndIf
+
+
 				If FileExists(@ScriptDir&"\vpsso.txt")=1 Then $vpsso=FileReadLine(@ScriptDir&"\vpsso.txt",1)   ; khoi dong vps so
 				Sleep(1000)
                 _requetTextDoc('https://textdoc.co/index.php/S3gXRHqyD8rhd9lt','trangthaikhoidong.txt')
@@ -137,6 +156,30 @@ _VerryGmail()
 _FAKEip($vpsso)
 _requetanotepad($link,$tenTXT)
 #ce
+
+Func _kiemtraMangInternet()
+         $cmd=_GetDOSOutput('ping google.com.vn')
+      If StringLen($cmd)>100 Then
+	     $Mang=1
+      Else
+	     $Mang=0
+	  EndIf
+	  Return $Mang
+EndFunc
+
+
+Func _GetDOSOutput($sCommand)
+   Local $iPID, $sOutput = ''
+   $iPID = Run('"cmd"' & @ComSpec & '" /c' & $sCommand, "",@SW_HIDE, 2)
+   While 1
+      $sOutput &= StdoutRead($iPID,False, False)
+      If @error Then
+         ExitLoop
+      EndIf
+      Sleep(10)
+   WEnd
+   Return $sOutput
+EndFunc
 
 
 			Func _requetTextDoc($link,$tenTXT)
