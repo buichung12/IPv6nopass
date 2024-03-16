@@ -2561,7 +2561,7 @@ EndFunc
 					EndIf
 
                 Sleep(3000)
-				If $i=1 Then MouseClick('left',936, 312,1,20)
+				If $i=1 Then MouseClick('left',845, 255,1,20)
 				If $i=2 Then MouseClick('left',980, 248,1,20)
 				If $i=3 Then MouseClick('left',1000, 297,1,20)
 				If $i=4 Then MouseClick('left',1030, 250,1,20)
