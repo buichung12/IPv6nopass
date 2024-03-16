@@ -1334,8 +1334,9 @@ EndFunc
                 $check=0
 
 				  ToolTip('check dang nhap 	'&$i,0,0)
-				_FakeIPOptionV6($i,$vpsso)
 				_khoidongFireFox($i)
+				_FakeIPOptionV6($i,$vpsso)
+				_dienIpPort($i)
 				_loginGmail($i)
 
 				ControlClick('','','','left',1,600, 60)
@@ -2364,9 +2365,6 @@ EndFunc
 
 					EndIf
 
-
-
-
 					If $i=1  Then
 						Sleep(1000)
 						Send('^a')
@@ -2519,6 +2517,57 @@ EndFunc
 						Send('{enter}')
 						Sleep(5000)
 					EndIf
+
+				If $i=1 Then MouseClick('left',927, 282,1,20)   ;update pass
+				If $i=2 Then MouseClick('left',1000, 248,1,20);update pass
+				If $i=2 Then MouseClick('left',980, 262,1,20);update pass
+				If $i=3 Then MouseClick('left',816, 266,1,20);update pass
+				If $i=3 Then MouseClick('left',816, 243,1,20);update pass
+				If $i=4 Then MouseClick('left',1028, 231,1,20);update pass
+				If $i=5 Then
+					Sleep(10000)
+					MouseClick('left',1277, 104,1,20)
+				EndIf
+
+				If $i=6 Then MouseClick('left',582, 304 ,1,20);update pass
+				If $i=7 Then MouseClick('left',757, 436,1,20);update pass
+				;If $i=8 Then MouseClick('left',757, 436,1,20)
+				If $i=9 Then MouseClick('left',430, 343,1,20);update pass
+				If $i=9 Then MouseClick('left',460, 343,1,20);update pass
+				Sleep(1000)
+				If $i=9 Then MouseClick('left',656, 434,1,20);update pass
+				If $i=10 Then MouseClick('left',456, 344,1,20);update pass
+                Sleep(2000)
+				If $i=1 Then MouseClick('left',936, 312,1,20)
+				If $i=2 Then MouseClick('left',980, 248,1,20)
+				If $i=3 Then MouseClick('left',823, 262,1,20)
+				If $i=4 Then MouseClick('left',1030, 228,1,20)
+				If $i=5 Then MouseClick('left',1219, 101,1,20)
+				If $i=6 Then MouseClick('left',390,224 ,1,20)
+				If $i=7 Then MouseClick('left',555,340,1,20)
+				If $i=9 Then MouseClick('left',456, 344,1,20)  ;luu mat khau $1
+
+                Sleep(2000)
+				If $i=1 Then MouseClick('left',931, 240,1,20)  ;luu mat khau $1
+				If $i=2 Then MouseClick('left',1000, 229,1,20)  ;luu mat khau $1
+				If $i=2 Then MouseClick('left',980, 262,1,20);update pass
+				If $i=3 Then MouseClick('left',1193, 347,1,20)  ;luu mat khau $1
+				If $i=4 Then MouseClick('left',1099, 341,1,20)  ;luu mat khau $1
+				If $i=5 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
+				If $i=10 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
+				If $i=9 Then MouseClick('left',385, 320,1,20)  ;luu mat khau $1
+				Sleep(1000)
+
+				If $i=1 Then MouseClick('left',929, 235,1,20)  ;luu mat khau $1
+				If $i=2 Then MouseClick('left',1027, 229,1,20)  ;luu mat khau $1
+				If $i=3 Then MouseClick('left',1193, 347,1,20)  ;luu mat khau $1
+				If $i=4 Then MouseClick('left',1099, 341,1,20)  ;luu mat khau $1
+				If $i=5 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
+				If $i=10 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
+				If $i=9 Then MouseClick('left',385, 320,1,20)  ;luu mat khau $1
+				Sleep(2000)
+				If $i=4 Then MouseClick('left',1036, 226,1,20)
+
 
 
 		EndFunc
