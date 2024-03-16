@@ -2693,7 +2693,9 @@ EndFunc
 						Send('^v')
 						Sleep(2000)
 						Send('{enter}')
-						Sleep(10000)
+						Sleep(5000)
+						_dienIpPort($i)
+						Sleep(5000)
 					EndIf
 
 					If $checkload=0 Then
@@ -2702,7 +2704,9 @@ EndFunc
 						Send('https://www.youtube.com/channel_switcher?next=%2Faccount&feature=settings')
 						Sleep(2000)
 						Send('{enter}')
-						Sleep(10000)
+						Sleep(5000)
+						_dienIpPort($i)
+						Sleep(5000)
 
 					EndIf
 
