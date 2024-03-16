@@ -2560,6 +2560,26 @@ EndFunc
 						Send('{enter}')
 						Sleep(5000)
 					EndIf
+					If $i=9  Then
+						MouseClick('left',528,411,1,20)
+						Sleep(1000)
+						Send('^a')
+						Sleep(2000)
+						Send($ID,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send($Pass,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(5000)
+					EndIf
 					If $i=10  Then
 						Sleep(1000)
 						Send('^a')
