@@ -2283,29 +2283,17 @@ EndFunc
 						$IPtho=FileReadLine(@ScriptDir&'\Keytinsoft2.txt',$i)    ; da loc lay 10 IP-- dung có doi file .txt
 						$IP=1
 						$port=1
-
 						Sleep(100)
-	                    For $i20=1 to 2
-						    $IPtho2=StringSplit($IPtho,':')
-					        If IsArray($IPtho2) Then
-						        If $IPtho2[0]=4 Then
-                                    $i20=2
-							        $ID=$IPtho2[3]
-							        $Pass=$IPtho2[4]
-							        $IP=$IPtho2[1]
-							        $port=$IPtho2[2]
+						$IPtho2=StringSplit($IPtho,':')
+						If IsArray($IPtho2) Then
+							If $IPtho2[0]=4 Then
+								$ID=$IPtho2[3]
+								$Pass=$IPtho2[4]
+								$IP=$IPtho2[1]
+								$port=$IPtho2[2]
+							EndIf
 
-								Else
-									$sodong2=_FileCountLines(@ScriptDir&'\Keytinsoft0.txt')
-						            Sleep(100)
-						            $IPtho=FileReadLine(@ScriptDir&'\Keytinsoft0.txt',Random(1,$sodong2,1))
-						        EndIf
-					        Else
-						        $sodong2=_FileCountLines(@ScriptDir&'\Keytinsoft0.txt')
-						        Sleep(100)
-						        $IPtho=FileReadLine(@ScriptDir&'\Keytinsoft0.txt',Random(1,$sodong2,1))
-						    EndIf
-                        Next
+						EndIf
 
 					    If IsArray($IPtho2) Then
 
@@ -2341,368 +2329,196 @@ EndFunc
 
 		EndFunc
 
-        Func _dienIpPort($i,$ID,$Pass)
-			               Sleep(1000)
-					       $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
-                           Sleep(1000)
-
-					  For $i10 = 1 to $var[0][0]
+        Func _dienIpPort($i)
+					Sleep(1000)
+					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+                    Sleep(1000)
+					If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
+					Sleep(1000)
+					If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
+					For $i10 = 1 to $var[0][0]
 					    If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
-							If $i<>9 and $i<>7 and $i<>6 Then
-						      Sleep(2000)
-							  ControlClick($var[$i10][1],'','','left',1,200, 175)
-							  Sleep(2000)
-						      ControlClick($var[$i10][1],'','','left',1,500, 60)
-						      Sleep(2000)
-						      ControlSend($var[$i10][1],'','','google.com')
-						      Sleep(1000)
-						      ControlSend($var[$i10][1],'','','{enter}')
-						      Sleep(5000)
-
-							EndIf
-						EndIf
-					  Next
-
-
-					   If $i=1 Then
-						  MouseClick('left',600,60,1,20)
-						  Sleep(2000)
-                          Send('google.com')
-						  Sleep(2000)
-						  Send('{enter}')
-						  Sleep(5000)
-				 	    EndIf
-
-
-						If $i=1 Then
-								Sleep(1000)
-								Send('^a')
-								Sleep(2000)
-							    Send($ID,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-							    Send($Pass,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-								Send('{enter}')
-						        Sleep(5000)
-						EndIf
-						If $i=2 Then
-								Sleep(1000)
-								Send('^a')
-								Sleep(2000)
-							    Send($ID,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-							    Send($Pass,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-								Send('{enter}')
-						        Sleep(5000)
-						EndIf
-						If $i=3 Then
-								Sleep(1000)
-								Send('^a')
-								Sleep(2000)
-							    Send($ID,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-							    Send($Pass,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-								Send('{enter}')
-						        Sleep(5000)
-						EndIf
-						If $i=4 Then
-								Sleep(1000)
-								Send('^a')
-								Sleep(2000)
-							    Send($ID,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-							    Send($Pass,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-								Send('{enter}')
-						        Sleep(5000)
-						EndIf
-						If $i=5 Then
-								Sleep(1000)
-								Send('^a')
-								Sleep(2000)
-							    Send($ID,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-							    Send($Pass,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-								Send('{enter}')
-						        Sleep(5000)
-								;ControlClick($var[$i10][1],'','','left',1,1265, 345)   ; khong luu MK
-								;Sleep(2000)
-						EndIf
-						If $i=6 Then
-							    MouseClick('left',759, 418,1,20)
-								Sleep(1000)
-								Send('^a')
-								Sleep(2000)
-							    Send($ID,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-							    Send($Pass,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-								MouseClick('left',644, 462,1,20)    ;ok
-						        Sleep(15000)
-								MouseClick('left',759, 418,1,20)
-								Sleep(2000)
-								Send('^a')
-								Sleep(2000)
-							    Send($ID,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-							    Send($Pass,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-								Send('{enter}')
-								Sleep(2000)
-								MouseClick('left',559,60,1,20)
-								Sleep(1000)
-								Send('^a')
-								Sleep(1000)
-								Send('youtube.com')
-								Sleep(1000)
-								Send('{enter}')
-								Sleep(2000)
-								MouseClick('left',672, 177,1,20)
-								Sleep(1000)
-								Send($ID,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-							    Send($Pass,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-								Send('{enter}')
-								Sleep(2000)
-								MouseClick('left',559,60,1,20)
-								Sleep(1000)
-								Send('^a')
-								Sleep(1000)
-								Send('youtube.com')
-								Sleep(1000)
-								Send('{enter}')
-								Sleep(2000)
-								MouseClick('left',672, 177,1,20)
-								Sleep(1000)
-								Send($ID,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-							    Send($Pass,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-								Send('{enter}')
-								Sleep(2000)
-
-								;ControlClick($var[$i10][1],'','','left',1,1129, 413)   ; khong luu MK
-								;Sleep(2000)
-						EndIf
-						If $i=7 Then
-							    Send($ID,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-							    Send($Pass,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-								Send('{enter}')
-						        Sleep(5000)
-								MouseClick('left',657, 387,1,20)
-								Sleep(1000)
-								Send($ID,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-							    Send($Pass,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-								Send('{enter}')
-						        Sleep(5000)
-								Sleep(1000)
-							    MouseClick('left',505, 200,1,20)
-							    Sleep(2000)
-							    MouseClick('left',834, 242,1,20)
-							    Sleep(2000)
+							Sleep(2000)
+							ControlClick($var[$i10][1],'','','left',1,600, 60)
+							Sleep(2000)
+							ControlSend($var[$i10][1],'','','google.com')
+							Sleep(1000)
+							ControlSend($var[$i10][1],'','','{enter}')
+							Sleep(5000)
 
 						EndIf
-						If $i=8 Then
-								Sleep(1000)
-								Send('^a')
-								Sleep(2000)
-							    Send($ID,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-							    Send($Pass,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-								Send('{enter}')
-						        Sleep(5000)
-								;ControlClick($var[$i10][1],'','','left',1,1165, 368)   ; khong luu MK
-								;Sleep(2000)
-						EndIf
-						If $i=9 Then
-							    MouseClick('left',657, 387,1,20)
-								Sleep(1000)
-								Send('^a')
-								Sleep(1000)
-							    Send($ID,1)
-							    Sleep(1000)
-							    Send('{tab}')
-							    Sleep(1000)
-							    Send($Pass,1)
-							    Sleep(1000)
-							    Send('{tab}')
-							    Sleep(1000)
-								Send('{enter}')
-						        Sleep(13000)
-								WinClose('Check Update')
-							    Sleep(1000)
-								MouseClick('left',700, 246,1,20)
-								Sleep(2000)
-								Send('^a')
-								Sleep(2000)
-							    Send($ID,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-							    Send($Pass,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-								Send('{tab}')
-							    Sleep(2000)
-								Send('{enter}')
-								Sleep(2000)
-								MouseClick('left',559,60,1,20)
-								Sleep(1000)
-								Send('^a')
-								Sleep(1000)
-								Send('youtube.com')
-								Sleep(1000)
-								Send('{enter}')
-								Sleep(2000)
-								MouseClick('left',700, 246,1,20)
-								Sleep(2000)
-								Send($ID,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-							    Send($Pass,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-								Send('{enter}')
-								Sleep(2000)
-								WinClose('Check Update')
-							    Sleep(1000)
-								MouseClick('left',657, 387,1,20)
-								Sleep(1000)
-								Send('^a')
-								Sleep(1000)
-							    Send($ID,1)
-							    Sleep(1000)
-							    Send('{tab}')
-							    Sleep(1000)
-							    Send($Pass,1)
-							    Sleep(1000)
-							    Send('{tab}')
-							    Sleep(1000)
-								Send('{enter}')
-						        Sleep(13000)
-								MouseClick('left',559,60,1,20)
-								Sleep(1000)
-								Send('^a')
-								Sleep(1000)
-								Send('youtube.com')
-								Sleep(1000)
-								Send('{enter}')
-								Sleep(2000)
-								MouseClick('left',700, 246,1,20)
-								Sleep(2000)
-								Send($ID,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-							    Send($Pass,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-								Send('{enter}')
-								Sleep(12000)
-								MouseClick('left',657, 387,1,20)
-								Sleep(1000)
-								Send('^a')
-								Sleep(1000)
-							    Send($ID,1)
-							    Sleep(1000)
-							    Send('{tab}')
-							    Sleep(1000)
-							    Send($Pass,1)
-							    Sleep(1000)
-							    Send('{tab}')
-							    Sleep(1000)
-								Send('{enter}')
-						        Sleep(3000)
+					Next
 
-								WinClose('Check Update')
-							    Sleep(10000)
-							    MouseClick('left',805,437,1,20)
-							    Sleep(2000)
-							    MouseClick('left',844, 317,1,20)
-							    Sleep(2000)
-                                ControlClick('','','','left',1,475, 200)
-                                Sleep(2000)
-								ControlClick('','','','left',1,800, 243)
-	                            Sleep(2000)
-							    MouseClick('left',503, 200,1,20)
-							    Sleep(2000)
-							    MouseClick('left',831, 237,1,20)
-							    Sleep(2000)
+					$IPtho=FileReadLine(@ScriptDir&'\Keytinsoft2.txt',$i)    ; da loc lay 10 IP-- dung có doi file .txt
+					$IP=1
+					$port=1
+					Sleep(100)
+					$IPtho2=StringSplit($IPtho,':')
+					If IsArray($IPtho2) Then
+						If $IPtho2[0]=4 Then
+								$ID=$IPtho2[3]
+								$Pass=$IPtho2[4]
+								$IP=$IPtho2[1]
+								$port=$IPtho2[2]
+						EndIf
 
-						EndIf
-						If $i=10 Then
-							    Send($ID,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-							    Send($Pass,1)
-							    Sleep(2000)
-							    Send('{tab}')
-							    Sleep(2000)
-								Send('{enter}')
-						        Sleep(5000)
-						EndIf
+					EndIf
+
+
+
+
+					If $i=1  Then
+						Sleep(1000)
+						Send('^a')
+						Sleep(2000)
+						Send($ID,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send($Pass,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(5000)
+					EndIf
+					If $i=2  Then
+						Sleep(1000)
+						Send('^a')
+						Sleep(2000)
+						Send($ID,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send($Pass,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(5000)
+					EndIf
+					If $i=3  Then
+						Sleep(1000)
+						Send('^a')
+						Sleep(2000)
+						Send($ID,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send($Pass,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(5000)
+					EndIf
+					If $i=4  Then
+						Sleep(1000)
+						Send('^a')
+						Sleep(2000)
+						Send($ID,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send($Pass,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(5000)
+					EndIf
+					If $i=5  Then
+						Sleep(1000)
+						Send('^a')
+						Sleep(2000)
+						Send($ID,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send($Pass,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(5000)
+					EndIf
+					If $i=6  Then
+						Sleep(1000)
+						Send('^a')
+						Sleep(2000)
+						Send($ID,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send($Pass,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(5000)
+					EndIf
+					If $i=7  Then
+						Sleep(1000)
+						Send('^a')
+						Sleep(2000)
+						Send($ID,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send($Pass,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(5000)
+					EndIf
+					If $i=8  Then
+						Sleep(1000)
+						Send('^a')
+						Sleep(2000)
+						Send($ID,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send($Pass,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(5000)
+					EndIf
+					If $i=9  Then
+						Sleep(1000)
+						Send('^a')
+						Sleep(2000)
+						Send($ID,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send($Pass,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(5000)
+					EndIf
+					If $i=10  Then
+						Sleep(1000)
+						Send('^a')
+						Sleep(2000)
+						Send($ID,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send($Pass,1)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(5000)
+					EndIf
 
 
 		EndFunc
@@ -2710,6 +2526,9 @@ EndFunc
 		Func _chonProFileFFv6($i5,$i,$vpsso)
                 $check=0
 	           ; $check2=0
+
+			   _dienIpPort($i)
+
 				ProcessClose('WerFault.exe')
           For $i2=1 TO 2
 					WinClose('Server Manager')
@@ -5191,9 +5010,8 @@ EndFunc
 						   $h=FileReadLine(@ScriptDir&'\Gmailtest.txt',3)
 						   FileDelete(@ScriptDir&'\Gmailtest.txt')
 
-
+				_dienIpPort($i)
                 MouseClick('left',1280, 129,1,20)
-
 			    $check=0
                 MouseClick('left',500, 60,1,20)
 				;If $i=8 Then MouseClick('left',800, 75,1,20)

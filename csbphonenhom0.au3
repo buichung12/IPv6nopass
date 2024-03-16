@@ -171,35 +171,30 @@ While 1   ; vong tra lai gia tr
 	  For $i=$Gmailso To 10
                  ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 0'&'	vpsso:'&$vpsso,0,0)
 				$checkTG=1
-                 $checkchonprofile=0
-            ;If $i<>5 Then
-				; $idangnhap=_khoidongFireaFox2($i,$vpsso)
-				 $check=_FakeIPOptionV6($i,$vpsso)
+				$checkchonprofile=0
 
-				If $check=1 Then
-						ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 0'&'	vpsso:'&$vpsso,0,0)
-						_khoidongFireFox2($i,$vpsso)
-					    $checkchonprofile=_chonProFileFFv6($i5,$i,$vpsso)
-                        $ThuTukenh=$i+$vongxoaytho
-				        If $ThuTukenh=11 Then $ThuTukenh=1
-						If $ThuTukenh=12 Then $ThuTukenh=2
-				        If $ThuTukenh=13 Then $ThuTukenh=3
-				        If $ThuTukenh=14 Then $ThuTukenh=4
-				        If $ThuTukenh=15 Then $ThuTukenh=5
-				        If $ThuTukenh=16 Then $ThuTukenh=6
-				        If $ThuTukenh=17 Then $ThuTukenh=7
-				        If $ThuTukenh=18 Then $ThuTukenh=8
-				        If $ThuTukenh=19 Then $ThuTukenh=9
-				        If $ThuTukenh=20 Then $ThuTukenh=10
 
-			            If 	$checkchonprofile=1 Then
-							_subIpv6($ThuTukenh,$vpsso,$i,$i5)
-						EndIf
+				_khoidongFireFox2($i,$vpsso)
+				_FakeIPOptionV6($i,$vpsso)
+				$checkchonprofile=_chonProFileFFv6($i5,$i,$vpsso)
+				$ThuTukenh=$i+$vongxoaytho
+				If $ThuTukenh=11 Then $ThuTukenh=1
+				If $ThuTukenh=12 Then $ThuTukenh=2
+				If $ThuTukenh=13 Then $ThuTukenh=3
+				If $ThuTukenh=14 Then $ThuTukenh=4
+				If $ThuTukenh=15 Then $ThuTukenh=5
+				If $ThuTukenh=16 Then $ThuTukenh=6
+				If $ThuTukenh=17 Then $ThuTukenh=7
+				If $ThuTukenh=18 Then $ThuTukenh=8
+				If $ThuTukenh=19 Then $ThuTukenh=9
+				If $ThuTukenh=20 Then $ThuTukenh=10
 
-						_closeTrinhDuyet($i)
-
+				If 	$checkchonprofile=1 Then
+					_subIpv6($ThuTukenh,$vpsso,$i,$i5)
 				EndIf
-			;EndIf
+
+				_closeTrinhDuyet($i)
+
 
 	  Next     ;ket thuc vong xem cac kenh phu
 
