@@ -1337,6 +1337,7 @@ EndFunc
 				_khoidongFireFox($i)
 				_FakeIPOptionV6($i,$vpsso)
 				_dienIpPort($i)
+				WinSetState('Windows Security','',@SW_HIDE)
 				_loginGmail($i)
 
 				ControlClick('','','','left',1,600, 60)
@@ -2364,7 +2365,8 @@ EndFunc
 						EndIf
 
 					EndIf
-
+					WinSetState('Windows Security','',@SW_HIDE)
+					Sleep(1000)
 					If $i=1  Then
 						Sleep(1000)
 						Send('^a')
@@ -2618,7 +2620,7 @@ EndFunc
 		Func _chonProFileFFv6($i5,$i,$vpsso)
                 $check=0
 	           ; $check2=0
-
+               WinSetState('Windows Security','',@SW_HIDE)
 			   _dienIpPort($i)
 
 				ProcessClose('WerFault.exe')
