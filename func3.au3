@@ -2570,6 +2570,7 @@ EndFunc
 				If $i=7 Then MouseClick('left',555,340,1,20)
 				If $i=9 Then MouseClick('left',456, 344,1,20)  ;luu mat khau $1
 				If $i=10 Then MouseClick('left',1080, 372,1,20)  ;luu mat khau $10
+				If $i=10 Then MouseClick('left',1090, 382,1,20)  ;luu mat khau $10
 
                 Sleep(1000)
 			#cs
