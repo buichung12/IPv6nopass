@@ -2569,9 +2569,10 @@ EndFunc
 				If $i=6 Then MouseClick('left',390,224 ,1,20)
 				If $i=7 Then MouseClick('left',555,340,1,20)
 				If $i=9 Then MouseClick('left',456, 344,1,20)  ;luu mat khau $1
-				If $i=10 Then MouseClick('left',1080, 372,1,20)  ;luu mat khau $1
+				If $i=10 Then MouseClick('left',1080, 372,1,20)  ;luu mat khau $10
 
-                Sleep(2000)
+                Sleep(1000)
+			#cs
 				If $i=1 Then MouseClick('left',931, 240,1,20)  ;luu mat khau $1
 				If $i=2 Then MouseClick('left',1000, 229,1,20)  ;luu mat khau $1
 				If $i=2 Then MouseClick('left',980, 262,1,20);update pass
@@ -2612,7 +2613,7 @@ EndFunc
 				If $i=9 Then MouseClick('left',656, 434,1,20);update pass
 				If $i=10 Then MouseClick('left',456, 344,1,20);update pass
                 Sleep(2000)
-
+            #ce
 
 
 		EndFunc
