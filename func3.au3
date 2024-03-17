@@ -1336,7 +1336,7 @@ EndFunc
 				  ToolTip('check dang nhap 	'&$i,0,0)
 				_khoidongFireFox($i)
 				_FakeIPOptionV6($i,$vpsso)
-				_dienIpPort($i)
+				;_dienIpPort($i)
 				WinSetState('Windows Security','',@SW_HIDE)
 				_loginGmail($i)
 
@@ -2330,7 +2330,7 @@ EndFunc
 			Return $check
 
 		EndFunc
-
+#cs
         Func _dienIpPort($i)
 					Sleep(1000)
 					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
@@ -2654,12 +2654,12 @@ EndFunc
 
 
 		EndFunc
-
+#ce
 		Func _chonProFileFFv6($i5,$i,$vpsso)
                 $check=0
 	           ; $check2=0
                WinSetState('Windows Security','',@SW_HIDE)
-			   _dienIpPort($i)
+			 ;  _dienIpPort($i)
 
 				ProcessClose('WerFault.exe')
           For $i2=1 TO 2
@@ -2714,7 +2714,7 @@ EndFunc
 						Sleep(2000)
 						Send('{enter}')
 						Sleep(5000)
-						_dienIpPort($i)
+						;_dienIpPort($i)
 						Sleep(5000)
 					EndIf
 
@@ -2725,7 +2725,7 @@ EndFunc
 						Sleep(2000)
 						Send('{enter}')
 						Sleep(5000)
-						_dienIpPort($i)
+						;_dienIpPort($i)
 						Sleep(5000)
 
 					EndIf
@@ -2814,7 +2814,7 @@ EndFunc
 							Sleep(500)
                             $linkkenhtho=FileReadLine(@ScriptDir&"\linkkenhchaySUB2.txt",Random(1,$sodong,1))    ; chu y thay doi
 				            Sleep(1000)
-						    If 	StringLen($linkkenhtho)>35 Then
+						    If 	StringLen($linkkenhtho)>10 Then
 					    	    $datalink=StringSplit($linkkenhtho,'	')
 								Sleep(100)
 				                If IsArray($datalink) Then $linkkenh=$datalink[1]
@@ -5152,7 +5152,7 @@ EndFunc
 						   $h=FileReadLine(@ScriptDir&'\Gmailtest.txt',3)
 						   FileDelete(@ScriptDir&'\Gmailtest.txt')
 
-				_dienIpPort($i)
+				;_dienIpPort($i)
                 MouseClick('left',1280, 129,1,20)
 			    $check=0
                 MouseClick('left',500, 60,1,20)

@@ -169,27 +169,34 @@ While 1   ; vong tra lai gia tr
                  ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 9'&'	vpsso:'&$vpsso,0,0)
 				 $checkTG=1
                  $checkchonprofile=0
+				 $check=_FakeIPOptionV6($i,$vpsso)
 
-				_khoidongFireFox2($i,$vpsso)
-				_FakeIPOptionV6($i,$vpsso)
-				$checkchonprofile=_chonProFileFFv6($i5,$i,$vpsso)
-				$ThuTukenh=$i+$vongxoaytho
-				If $ThuTukenh=11 Then $ThuTukenh=1
-				If $ThuTukenh=12 Then $ThuTukenh=2
-				If $ThuTukenh=13 Then $ThuTukenh=3
-				If $ThuTukenh=14 Then $ThuTukenh=4
-				If $ThuTukenh=15 Then $ThuTukenh=5
-				If $ThuTukenh=16 Then $ThuTukenh=6
-				If $ThuTukenh=17 Then $ThuTukenh=7
-				If $ThuTukenh=18 Then $ThuTukenh=8
-				If $ThuTukenh=19 Then $ThuTukenh=9
-				If $ThuTukenh=20 Then $ThuTukenh=10
+				If $check=1 Then
 
-				If 	$checkchonprofile=1 Then
-					_subIpv6($ThuTukenh,$vpsso,$i,$i5)
+					    ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 9'&'	vpsso:'&$vpsso,0,0)
+					     _khoidongFireFox2($i,$vpsso)
+
+					    $checkchonprofile=_chonProFileFFv6($i5,$i,$vpsso)
+                        $ThuTukenh=$i+$vongxoaytho
+				        If $ThuTukenh=11 Then $ThuTukenh=1
+						If $ThuTukenh=12 Then $ThuTukenh=2
+				        If $ThuTukenh=13 Then $ThuTukenh=3
+				        If $ThuTukenh=14 Then $ThuTukenh=4
+				        If $ThuTukenh=15 Then $ThuTukenh=5
+				        If $ThuTukenh=16 Then $ThuTukenh=6
+				        If $ThuTukenh=17 Then $ThuTukenh=7
+				        If $ThuTukenh=18 Then $ThuTukenh=8
+				        If $ThuTukenh=19 Then $ThuTukenh=9
+				        If $ThuTukenh=20 Then $ThuTukenh=10
+
+			           If 	$checkchonprofile=1 Then
+							_subIpv6($ThuTukenh,$vpsso,$i,$i5)
+					   EndIf
+
+						_closeTrinhDuyet($i)
+
 				EndIf
-
-				_closeTrinhDuyet($i)
+			;EndIf
 
 	  Next     ;ket thuc vong xem cac kenh phu
 
