@@ -1334,9 +1334,8 @@ EndFunc
                 $check=0
 
 				  ToolTip('check dang nhap 	'&$i,0,0)
+				;_FakeIPOptionV6($i,$vpsso)
 				_khoidongFireFox($i)
-				_FakeIPOptionV6($i,$vpsso)
-				;_dienIpPort($i)
 				WinSetState('Windows Security','',@SW_HIDE)
 				_loginGmail($i)
 
