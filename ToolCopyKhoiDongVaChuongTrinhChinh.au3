@@ -102,7 +102,7 @@ $check=0
             _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom4.au3"')
 		EndIf
 		If $sonhom=5 Then
-           _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom5.au3"')
+            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom5.au3"')
 		EndIf
 		If $sonhom=6 Then
             _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom6.au3"')
