@@ -4580,7 +4580,7 @@ EndFunc
 					WinClose('Bạn có muốn khôi phục trang không?')
 					WinClose('Default Client')
 					ProcessClose('WerFault.exe')
-
+                #cs
 					MouseClick('left',600,60,1,20)
 					Sleep(2000)
 					Send('youtube.com')
@@ -4624,7 +4624,7 @@ EndFunc
 
 					EndIf
 
-
+                  #ce
 
 				Return $dangnhap
 	    EndFunc
