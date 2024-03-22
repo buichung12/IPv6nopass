@@ -5194,6 +5194,8 @@ EndFunc
 				Sleep(1000)
 				MouseClick('left',1280, 129,1,20)
 				Sleep(1000)
+				MouseClick('left',1280, 160,1,20)
+				Sleep(1000)
 				MouseClick('left',600,300,1,20)
 				Sleep(1000)
 				Send('{tab}')
