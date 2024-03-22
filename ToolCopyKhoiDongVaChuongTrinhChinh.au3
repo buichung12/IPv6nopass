@@ -218,9 +218,6 @@ $check=0
         Sleep(1000)
 		FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
 		Sleep(1000)
-		FileDelete('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\func3.au3')
-		Sleep(1000)
-
     For $i20=1 to 2
 
 		_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
