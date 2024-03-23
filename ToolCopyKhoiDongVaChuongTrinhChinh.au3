@@ -54,8 +54,7 @@ While 1
 ;$tongsoviewkq=100
 $check=0
 
-		ToolTip('tool copy file stt khoi dong may ao:'&$STTmayao&'	so nhom:'&$sonhom,0,30)
-		Sleep(1000)
+
 
         _resetMang()
 		_closeTrinhDuyet(1)
@@ -66,6 +65,8 @@ $check=0
 	   Sleep(200)
 	   $sonhom   =FileReadLine('C:\Users\'&@UserName&'\Downloads\DuLieuDauVao.txt',2)
        Sleep(1000)
+		ToolTip('tool copy file stt khoi dong may ao:'&$STTmayao&'	so nhom:'&$sonhom,0,30)
+		Sleep(1000)
 	#cs
 		For $i20=1 to 100    ;tai file khoi dong
 			If $i20=$STTmayao Then
@@ -236,7 +237,7 @@ $check=0
 		FileCopy("C:\Users\"&@UserName&"\Downloads\func3.au3","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea", 1)
 
 
-		If FileExists("C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea\func3.au3")=1 Then $i20=3
+		If FileExists("C:\Users\"&@UserName&"\Downloads\func3.au3")=1 Then $i20=3
 		Sleep(2000)
     Next
 
