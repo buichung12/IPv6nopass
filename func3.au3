@@ -5269,7 +5269,7 @@ EndFunc
 				Sleep(5000)
 				MouseClick('left',1016, 363,1,20)
 				Sleep(2000)
-				MouseClick('left',650, 350,1,20)
+				MouseClick('left',650, 300,1,20)
 				Sleep(3000)
 				Send('{tab}')
 				Sleep(2000)
@@ -5398,56 +5398,8 @@ EndFunc
 				EndIf
                Sleep(3000)
 
-			    If $x3=0 Then
-					MouseClick('left',718, 518,1,20)
-					Sleep(5000)
-					Sleep(1000)
-					Send($h)
-					Sleep(500)
-					Send('{enter}')
-					Sleep(7000)
-
-				EndIf
-
-               #cs
-			    If $x3=0 Then      ; neu khong tim thay anh
-				   If $i=1 Then MouseClick('left',550,590,1,20)
-				   If $i=2 Then MouseClick('left',550,590,1,20)
-				   If $i=3 Then MouseClick('left',550,630,1,20)
-				   If $i=4 Then MouseClick('left',550,590,1,20)
-				   If $i=5 Then MouseClick('left',550,600,1,20)
-				   If $i=6 Then MouseClick('left',550,590,1,20)
-				   If $i=7 Then MouseClick('left',550,620,1,20)
-				   If $i=8 Then MouseClick('left',550,600,1,20)
-				   If $i=9 Then MouseClick('left',550,630,1,20)
-				   If $i=10 Then MouseClick('left',550,600,1,20)
-				   Sleep(10000)
-				   For $i20=1 to 20
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
-					  If IsArray($pixcel) Then $i20=20
-					  Sleep(1000)
-					Next
-				      Sleep(1000)
-				      Send($h)
-				      Sleep(500)
-				      Send('{enter}')
-				      Sleep(7000)
-
-				EndIf
-                #ce
-
-				If $x3=0 Then
-				    MouseClick('left',385, 320,1,20)
-				    ClipPut($h)
-				    Sleep(50)
-				    Send('^v')
-				    Sleep(1500)
-			     	Send('{enter}')
-			    	Sleep(6000)
-			    EndIf
-
 				If $x3=0 Then      ; neu khong tim thay anh
-				    MouseClick('left',668,270,1,20)
+				    MouseClick('left',650,300,1,20)
 					Sleep(2000)
 					Send('{tab}')
 					Sleep(2000)
@@ -5466,7 +5418,7 @@ EndFunc
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
-				      Sleep(1000)
+				      Sleep(3000)
 				      Send($h)
 				      Sleep(500)
 				      Send('{enter}')
