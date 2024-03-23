@@ -529,28 +529,8 @@ EndFunc
 			Sleep(10000)
 			FileCopy("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe",'C:\Users\'&@UserName&'\Desktop',1)
 		    Sleep(1000)
-		    _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
+		    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
 			Sleep(1000)
-		    FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
-		    Sleep(1000)
-            For $i20=1 to 2
-
-		         _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
-                Sleep(7000)
-		        Send('{enter}')
-		        Sleep(8000)
-		       ;WinMove('','',0,0,1366,768)
-		       ;Sleep(2000)
-		        MouseClick('left',1265, 460,1,20)
-		        Sleep(2000)
-	         	MouseClick('left',1265, 421,1,20)
-		        Sleep(2000)
-		        MouseClick('left',1204, 340,1,20)
-		        Sleep(15000)
-		         FileCopy("C:\Users\"&@UserName&"\Downloads\func3.au3","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea", 1)
-				If FileExists("C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea\func3.au3")=1 Then $i20=3
-		         Sleep(2000)
-            Next
 
 			Sleep(10000)
 			MouseClick('left',1330,112,1,20)  ; xoa khoi phuc
@@ -581,8 +561,28 @@ EndFunc
 		    Sleep(1000)
 			_closeTrinhDuyet(1)
 
-			ToolTip('update gmailkhoiphuc2',0,0)
 
+					    FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
+		    Sleep(1000)
+            For $i20=1 to 2
+		         _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
+                Sleep(7000)
+		        Send('{enter}')
+		        Sleep(8000)
+		       ;WinMove('','',0,0,1366,768)
+		       ;Sleep(2000)
+		        MouseClick('left',1265, 460,1,20)
+		        Sleep(2000)
+	         	MouseClick('left',1265, 421,1,20)
+		        Sleep(2000)
+		        MouseClick('left',1204, 340,1,20)
+		        Sleep(15000)
+		         FileCopy("C:\Users\"&@UserName&"\Downloads\func3.au3","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea", 1)
+				If FileExists("C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea\func3.au3")=1 Then $i20=3
+		         Sleep(2000)
+            Next
+
+			ToolTip('update gmailkhoiphuc2',0,0)
 			_requetGooGleDOC('https://docs.google.com/document/d/12jqqyD2hSCnRMrUar2axLIVR4sYbftEKsA0IO5c2Yi0/export?format=txt','checkupdategmailkhoiphuc2.txt')
 			Sleep(1000)
 			$checkupdategmailkhoiphuc2=FileReadLine(@ScriptDir&'\checkupdategmailkhoiphuc2.txt',1)
@@ -608,7 +608,7 @@ EndFunc
 
 			EndIf
 
-
+        #cs
             FileDelete('C:\Users\'&@UserName&'\Downloads\videos.bmp')
 			Sleep(200)
 			FileDelete('C:\Users\'&@UserName&'\Downloads\videos2.bmp')
@@ -660,6 +660,7 @@ EndFunc
 		    Sleep(2000)
 		    MouseClick('left',1305, 445,1,20)
 		    Sleep(5000)
+		#ce
 			FileCopy('C:\Users\'&@UserName&'\Downloads\videos.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
 		    Sleep(1000)
 			FileCopy('C:\Users\'&@UserName&'\Downloads\videos2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
@@ -700,7 +701,7 @@ EndFunc
 
 			FileDelete('C:\Users\'&@UserName&'\Downloads\tool update code.au3')
 		    Sleep(1000)
-	        _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
+	        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
             Sleep(15000)
 		    WinMove('','',0,0,1366,768)
 		    Sleep(2000)
@@ -719,9 +720,9 @@ EndFunc
 		       ; Sleep(5000)
 		       ; _GetDOSOutput('start chrome "https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.zip"')  ; tai autoit
 		      ;  Sleep(5000)
-		        _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/raw/main/SciTE4AutoIt3.exe"')
+		        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/SciTE4AutoIt3.exe"')
 		        Sleep(20000)
-		        _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
+		        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
 		        Sleep(20000)
                 _closeTrinhDuyet(1)
 
