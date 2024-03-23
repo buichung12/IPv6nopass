@@ -1393,7 +1393,7 @@ EndFunc
 				For $i20=1 to 10
 					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
 					Sleep(1000)
-					$pixcel2=PixelSearch(18, 130,206, 263,0x1A73E8)
+					$pixcel2=PixelSearch(18, 130,206, 263,0x0B57D0)
 					Sleep(1000)
 					If IsArray($pixcel) or IsArray($pixcel2) Then
 						$check=1
@@ -1712,7 +1712,7 @@ EndFunc
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(2000)
-						$pixcel=PixelSearch(432, 522,477, 567,0x1A73E8)
+						$pixcel=PixelSearch(432, 522,477, 567,0x0B57D0)
 					    If not IsArray($pixcel) Then
 							    MouseClick('left',455, 540,1,20)
 						        Sleep(2000)
@@ -1780,7 +1780,7 @@ EndFunc
 						Sleep(500)
 						Send("{enter}")
 						Sleep(2000)
-						$pixcel=PixelSearch(434, 522,477, 567,0x1A73E8)
+						$pixcel=PixelSearch(434, 522,477, 567,0x0B57D0)
 					    If not IsArray($pixcel) Then
 							    MouseClick('left',454, 541,1,20)
 						        Sleep(2000)
@@ -2109,7 +2109,7 @@ EndFunc
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(2000)
-						$pixcel=PixelSearch(432, 522,477, 567,0x1A73E8)
+						$pixcel=PixelSearch(432, 522,477, 567,0x0B57D0)
 					    If not IsArray($pixcel) Then
 							    MouseClick('left',455, 540,1,20)
 						        Sleep(2000)
@@ -2211,7 +2211,7 @@ EndFunc
 						Sleep(500)
 						Send("{enter}")
 						Sleep(2000)
-						$pixcel=PixelSearch(434, 522,477, 567,0x1A73E8)
+						$pixcel=PixelSearch(434, 522,477, 567,0x0B57D0)
 					    If not IsArray($pixcel) Then
 							    MouseClick('left',454, 541,1,20)
 						        Sleep(2000)
@@ -3940,17 +3940,17 @@ EndFunc
 
 						If  $i=10 Then
 							Sleep(3000)
-							$pixcel=PixelSearch(430, 623,1013, 764,0x1A73E8)
+							$pixcel=PixelSearch(430, 623,1013, 764,0x0B57D0)
 					        If IsArray($pixcel) Then
 							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
 							     Sleep(3000)
 							EndIf
-							$pixcel=PixelSearch(430, 623,1013, 764,0x1A73E8)
+							$pixcel=PixelSearch(430, 623,1013, 764,0x0B57D0)
 					        If IsArray($pixcel) Then
 							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
 							     Sleep(3000)
 							EndIf
-							$pixcel=PixelSearch(430, 623,1013, 764,0x1A73E8)
+							$pixcel=PixelSearch(430, 623,1013, 764,0x0B57D0)
 					        If IsArray($pixcel) Then
 							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
 							     Sleep(3000)
@@ -4301,17 +4301,17 @@ EndFunc
 
 					If  $i=10 Then
 							Sleep(3000)
-							$pixcel=PixelSearch(430, 623,1013, 764,0x1A73E8)
+							$pixcel=PixelSearch(430, 623,1013, 764,0x0B57D0)
 					        If IsArray($pixcel) Then
 							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
 							     Sleep(3000)
 							EndIf
-							$pixcel=PixelSearch(430, 623,1013, 764,0x1A73E8)
+							$pixcel=PixelSearch(430, 623,1013, 764,0x0B57D0)
 					        If IsArray($pixcel) Then
 							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
 							     Sleep(3000)
 							EndIf
-							$pixcel=PixelSearch(430, 623,1013, 764,0x1A73E8)
+							$pixcel=PixelSearch(430, 623,1013, 764,0x0B57D0)
 					        If IsArray($pixcel) Then
 							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
 							     Sleep(3000)
@@ -5201,8 +5201,8 @@ EndFunc
 				Send('{tab}')
 				Sleep(2000)
 
-				For $i20=1 to 10
-				    $pixcel=PixelSearch(322, 259,1000, 627,0x1A73E8)
+				For $i20=1 to 20
+				    $pixcel=PixelSearch(616, 326,1218, 679,0x0B57D0)
 					If IsArray($pixcel) Then $i20=20
 					Sleep(1000)
 				Next
@@ -5245,7 +5245,7 @@ EndFunc
 				Send('{enter}')
 				Sleep(10000)
 				For $i20=1 to 20
-				    $pixcel=PixelSearch(322, 259,1000, 527,0x1A73E8)
+				    $pixcel=PixelSearch(322, 259,1000, 527,0x0B57D0)
 					If IsArray($pixcel) Then
 						$i20=20
 				        Sleep(1000)
@@ -5265,8 +5265,8 @@ EndFunc
 				Sleep(1500)
 				Send('{enter}')
                 Sleep(4000)
-                For $i20=1 to 10
-				    $pixcel=PixelSearch(12, 289,1000, 713,0x1A73E8)
+                For $i20=1 to 20
+				    $pixcel=PixelSearch(12, 289,1000, 713,0x0B57D0)
 					If IsArray($pixcel) Then $i20=20
 					Sleep(1000)
 				Next
@@ -5281,7 +5281,7 @@ EndFunc
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
 					Sleep(10000)
 					For $i20=1 to 20
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
@@ -5299,7 +5299,7 @@ EndFunc
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
 					Sleep(10000)
 					For $i20=1 to 20
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
@@ -5317,7 +5317,7 @@ EndFunc
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
 					Sleep(10000)
 					For $i20=1 to 20
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
@@ -5335,7 +5335,7 @@ EndFunc
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
 					Sleep(10000)
 					For $i20=1 to 20
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
@@ -5354,7 +5354,7 @@ EndFunc
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
 					Sleep(10000)
 					For $i20=1 to 20
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
@@ -5372,7 +5372,7 @@ EndFunc
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
 					Sleep(10000)
 					For $i20=1 to 20
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
@@ -5409,7 +5409,7 @@ EndFunc
 				   If $i=10 Then MouseClick('left',550,600,1,20)
 				   Sleep(10000)
 				   For $i20=1 to 20
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
@@ -5448,7 +5448,7 @@ EndFunc
 					Send('{enter}')
 				    Sleep(10000)
 				    For $i20=1 to 20
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
@@ -5519,7 +5519,7 @@ EndFunc
 				Sleep(2000)
 				If $i=4 Then MouseClick('left',1036, 226,1,20)
 
-				$pixcel=PixelSearch(715, 497,973, 752,0x1A73E8)
+				$pixcel=PixelSearch(715, 497,973, 752,0x0B57D0)
 				If IsArray($pixcel) Then
 					$i20=20
 					MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
@@ -5553,7 +5553,7 @@ EndFunc
 				For $i20=1 to 10
 					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
 					Sleep(1000)
-					$pixcel2=PixelSearch(18, 130,206, 263,0x1A73E8)
+					$pixcel2=PixelSearch(18, 130,206, 263,0x0B57D0)
 					Sleep(1000)
 					If IsArray($pixcel) or IsArray($pixcel2) Then
 						$check=1
