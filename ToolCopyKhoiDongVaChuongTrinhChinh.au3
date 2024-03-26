@@ -88,73 +88,73 @@ $check=0
     For $i21=1 to 2                           ; tai chuong trinh chinh
 
         If $sonhom=0 Then
-            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom0.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom0.au3"')
 		EndIf
 		If $sonhom=1 Then
-            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom1.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom1.au3"')
 		EndIf
 		If $sonhom=2 Then
-            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom2.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom2.au3"')
 		EndIf
 		If $sonhom=3 Then
-           _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom3.au3"')
+           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom3.au3"')
 		EndIf
 		If $sonhom=4 Then
-            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom4.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom4.au3"')
 		EndIf
 		If $sonhom=5 Then
-            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom5.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom5.au3"')
 		EndIf
 		If $sonhom=6 Then
-            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom6.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom6.au3"')
 		EndIf
 		If $sonhom=7 Then
-            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom7.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom7.au3"')
 		EndIf
 		If $sonhom=8 Then
-           _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom8.au3"')
+           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom8.au3"')
 		EndIf
 		If $sonhom=9 Then
-            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom9.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom9.au3"')
 		EndIf
 		If $sonhom=10 Then
-            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom10.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom10.au3"')
 		EndIf
 		If $sonhom=11 Then
-           _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom11.au3"')
+           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom11.au3"')
 		EndIf
 		If $sonhom=12 Then
-            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom12.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom12.au3"')
 		EndIf
 		If $sonhom=13 Then
-            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom13.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom13.au3"')
 		EndIf
 		If $sonhom=14 Then
-            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom14.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom14.au3"')
 		EndIf
 		If $sonhom=15 Then
-            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom15.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom15.au3"')
 		EndIf
 		If $sonhom=16 Then
-            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom16.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom16.au3"')
 		EndIf
 		If $sonhom=17 Then
-           _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom17.au3"')
+           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom17.au3"')
 		EndIf
 		If $sonhom=18 Then
-           _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom18.au3"')
+           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom18.au3"')
 		EndIf
 		If $sonhom=19 Then
-            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom19.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom19.au3"')
 		EndIf
 		If $sonhom=20 Then
-            _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom20.au3"')
+            _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom20.au3"')
 		EndIf
 		If $sonhom=21 Then
-           _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom21.au3"')
+           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom21.au3"')
 		EndIf
 		If $sonhom=22 Then
-           _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom22.au3"')
+           _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/csbphonenhom22.au3"')
 		EndIf
 		Sleep(7000)
 		Send('{enter}')
@@ -221,7 +221,7 @@ $check=0
 		Sleep(1000)
     For $i20=1 to 2
 
-		_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
+		_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
         Sleep(7000)
 		Send('{enter}')
 		Sleep(8000)
@@ -245,7 +245,7 @@ $check=0
 
 	    FileDelete('C:\Users\'&@UserName&'\Downloads\tool update code.au3')
 		Sleep(1000)
-	    _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
+	    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
         Sleep(7000)
 		Send('{enter}')
 		Sleep(8000)
@@ -266,7 +266,7 @@ $check=0
 			FileDelete('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\'&'khoidong'&$i20&'.exe')
 			Sleep(100)
 		Next
-	    _GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/khoidong.au3"')     ;dowload tool khoi dong
+	    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/khoidong.au3"')     ;dowload tool khoi dong
         Sleep(7000)
 		Send('{enter}')
 		Sleep(8000)
