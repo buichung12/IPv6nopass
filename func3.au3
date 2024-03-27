@@ -2714,7 +2714,9 @@ EndFunc
 				    Send("^v")
 				    Sleep(2000)
 				    ControlSend($var[$i10][1],'','','{enter}')
-				    Sleep(10000)
+				    Sleep(7000)
+					;If $i=5 Then MouseClick('left',706, 300,1,20)
+					Sleep(3000)
 					$checkload=0
 
 					For $i20=1 to 20
@@ -5566,6 +5568,22 @@ EndFunc
 				Next
 
 			EndIf
+
+                MouseClick('left',500, 60,1,20)
+				;If $i=8 Then MouseClick('left',800, 75,1,20)
+                Sleep(2000)
+				Send('^a')
+				Sleep(2000)
+				ClipPut('https://www.youtube.com/channel_switcher?next=%2Faccount&feature=settings')
+			    Sleep(200)
+			    Send('^v')
+				Sleep(1000)
+				Send('{enter}')
+				Sleep(7000)
+				MouseClick('left',700,300,1,20)
+				Sleep(5000)
+
+
 
 			Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
         EndFunc
