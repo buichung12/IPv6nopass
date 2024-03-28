@@ -2779,7 +2779,7 @@ EndFunc
 					If $i=9 Then ControlClick($var[$i10][1],'','','left',1,590, 213)
 					If $i=10 Then ControlClick($var[$i10][1],'','','left',1,500, 180)
 					If $i=10 Then MouseClick('left',500, 190,1,20)
-					Select(2000)
+					Sleep(2000)
 					If $i=1 Then ControlClick($var[$i10][1],'','','left',1,581, 191)
 					If $i=2 Then ControlClick($var[$i10][1],'','','left',1,594, 182)
 					If $i=3 Then ControlClick($var[$i10][1],'','','left',1,518, 210)
@@ -2814,8 +2814,8 @@ EndFunc
 			Next
           Next
 
-		Return $check
-   EndFunc
+		   Return $check
+        EndFunc
 
         Func _subIpv6($ThuTukenh,$vpsso,$i,$i5)
 				        WinClose('trinh duyet')
@@ -4347,7 +4347,7 @@ EndFunc
 
 					If  $i=9 Then
 							WinClose('Check Update')
-							Sleep(10000)
+							Sleep(1000)
 							MouseClick('left',805,437,1,20)
 							Sleep(2000)
 							MouseClick('left',844, 317,1,20)
@@ -4381,32 +4381,6 @@ EndFunc
 						Sleep(2000)
 					EndIf
 
-
-
-					If $i=1 Then
-						    MouseClick('left',880, 118,1,20)  ;tat tanh cong cu
-				            Sleep(1000)
-							MouseClick('left',1320, 113,1,20)  ;tat tanh cong cu
-				            Sleep(1000)
-						    MouseClick('left',1328, 696,1,20)  ;tat tanh cong cu
-				            Sleep(1000)
-						    ControlClick('','','','left',1,1330, 103)
-						    Sleep(2000)
-						    MouseClick('left',1333,99,1,20)  ;tat tanh cong cu
-					    	Sleep(1000)
-						    MouseClick('left',1333, 134,1,20)  ;tat tanh cong cu
-						    Sleep(1000)
-							MouseClick('left',880, 148,1,20)  ;tat tanh cong cu
-				            Sleep(1000)
-							MouseClick('left',880, 118,1,20)  ;tat tanh cong cu
-				            Sleep(1000)
-							MouseClick('left',1280,163,1,20)
-							Sleep(2000)
-							MouseClick('left',1300,700,1,20)  ;tat tanh cong cu
-						    Sleep(1000)
-							MouseClick('left',1280,102,1,20)  ;tat tanh cong cu
-						    Sleep(1000)
-					EndIf
 
 					Sleep(1000)
 					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
@@ -4451,16 +4425,26 @@ EndFunc
 							WinClose('Check Update')
 							Sleep(1000)
 							MouseClick('left',805,437,1,20)
-							Sleep(1000)
+							Sleep(2000)
+							MouseClick('left',844, 317,1,20)
+							Sleep(2000)
                             ControlClick('','','','left',1,475, 200)
-                            Sleep(1000)
+                            Sleep(2000)
                             ControlClick('','','','left',1,800, 243)
-	                        Sleep(1000)
+	                        Sleep(2000)
 							MouseClick('left',503, 200,1,20)
-							Sleep(1000)
+							Sleep(2000)
 							MouseClick('left',831, 237,1,20)
+							Sleep(2000)
+							MouseClick('left',1260,208 ,1,20)
 							Sleep(1000)
+							ControlClick('','','','left',1,505, 200)
+							Sleep(2000)
+							ControlClick('','','','left',1,834, 242)
+							Sleep(2000)
 							MouseClick('left',1304,190,1,20)
+							Sleep(2000)
+							MouseClick('left',1338,131,1,20)
 							Sleep(2000)
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
