@@ -5517,7 +5517,7 @@ EndFunc
 				For $i20=1 to 10
 					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
 					Sleep(1000)
-					$pixcel2=PixelSearch(18, 130,206, 263,0x0B57D0)
+					$pixcel2=PixelSearch(13, 224,70, 345,0x1F1F1F)
 					Sleep(1000)
 					If IsArray($pixcel) or IsArray($pixcel2) Then
 						$check=1
@@ -5554,7 +5554,7 @@ EndFunc
 				For $i20=1 to 10
 					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
 					Sleep(1000)
-					$pixcel2=PixelSearch(19, 226,61, 384,0x1F1F1F)
+					$pixcel2=PixelSearch(13, 224,70, 345,0x1F1F1F)
 					Sleep(1000)
 					If IsArray($pixcel) or IsArray($pixcel2) Then
 						$check=1
