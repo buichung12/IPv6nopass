@@ -4342,9 +4342,9 @@ EndFunc
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
 
-
 						EndIf
 
+                #cs
 					If  $i=9 Then
 							WinClose('Check Update')
 							Sleep(1000)
@@ -4372,7 +4372,8 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
-					EndIf
+				    EndIf
+				#ce
 
 					If $i=4 Then
 						MouseClick('left',852, 510,1,20)  ;tat thong bao update
@@ -5482,6 +5483,8 @@ EndFunc
 				If $i=9 Then MouseClick('left',385, 320,1,20)  ;luu mat khau $1
 				Sleep(2000)
 				If $i=4 Then MouseClick('left',1036, 226,1,20)
+				;If $i=5 Then MouseClick('left',850,60,1,20)
+
 
 				$pixcel=PixelSearch(715, 497,973, 752,0x0B57D0)
 				If IsArray($pixcel) Then
@@ -5502,18 +5505,7 @@ EndFunc
 				Send('^v')
 				Sleep(2000)
 				Send('{enter}')
-				Sleep(5000)
-				ControlClick('','','','left',1,600, 60)
-				Sleep(1000)
-				Send('^a')
-				Sleep(500)
-				Sleep(1000)
-				ClipPut('https://myaccount.google.com/')
-				Sleep(1000)
-				Send('^v')
-				Sleep(2000)
-				Send('{enter}')
-				Sleep(5000)
+				Sleep(10000)
 				For $i20=1 to 10
 					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
 					Sleep(1000)
@@ -5525,6 +5517,28 @@ EndFunc
 					EndIf
 					Sleep(1000)
 				Next
+				If $check=0 Then
+				    ControlClick('','','','left',1,600, 60)
+				    Sleep(1000)
+				    Send('^a')
+				    Sleep(1000)
+				    ClipPut('https://www.youtube.com/account')
+				    Sleep(1000)
+				    Send('^v')
+				    Sleep(2000)
+				    Send('{enter}')
+				    Sleep(10000)
+				    For $i20=1 to 10
+					    $pixcel=PixelSearch(51, 96,206, 263,0xFF0000)
+					    Sleep(1000)
+					    If IsArray($pixcel) Then
+						    $check=1
+						    $i20=17
+					    EndIf
+					    Sleep(1000)
+				    Next
+				EndIf
+
 			Else
 
 				$check=0
@@ -5539,18 +5553,7 @@ EndFunc
 				Send('^v')
 				Sleep(2000)
 				Send('{enter}')
-				Sleep(5000)
-				ControlClick('','','','left',1,600, 60)
-				Sleep(1000)
-				Send('^a')
-				Sleep(500)
-				Sleep(1000)
-				ClipPut('https://myaccount.google.com/')
-				Sleep(1000)
-				Send('^v')
-				Sleep(2000)
-				Send('{enter}')
-				Sleep(5000)
+				Sleep(10000)
 				For $i20=1 to 10
 					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
 					Sleep(1000)
@@ -5562,6 +5565,27 @@ EndFunc
 					EndIf
 					Sleep(1000)
 				Next
+				If $check=0 Then
+				    ControlClick('','','','left',1,600, 60)
+				    Sleep(1000)
+				    Send('^a')
+				    Sleep(1000)
+				    ClipPut('https://www.youtube.com/account')
+				    Sleep(1000)
+				    Send('^v')
+				    Sleep(2000)
+				    Send('{enter}')
+				    Sleep(10000)
+				    For $i20=1 to 10
+					    $pixcel=PixelSearch(51, 96,206, 263,0xFF0000)
+					    Sleep(1000)
+					    If IsArray($pixcel) Then
+						    $check=1
+						    $i20=17
+					    EndIf
+					    Sleep(1000)
+				    Next
+				EndIf
 
 			EndIf
 
