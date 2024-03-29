@@ -123,6 +123,8 @@ HotKeySet("{f4}", "_Exit")
 					Sleep(30000)
                     $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
                     Sleep(1000)
+					If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
+		                Sleep(1000)
 
 					For $i10 = 1 to $var[0][0]
 					    If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
