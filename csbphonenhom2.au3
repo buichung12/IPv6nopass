@@ -71,31 +71,13 @@ While 1
 				 $checkrequet=_requetGooGleDOC('https://docs.google.com/document/d/14EXqbMY3q4g1h-FByQ4WA_oV_GkrvKwx8FgKjGoc0Hk/export?format=txt','Gmailtho.txt')
                  _LayGmail($vpsso)
 
-				_requetGooGleDOC('https://docs.google.com/document/d/1vyi_wXrFCSpsxuamD6K9KbItkQgs1BAKtBoCtPsVVL4/export?format=txt','Keytinsoft0.txt')  ; IP du phong
-				Sleep(2000)
-
-				_requetGooGleDOC('https://docs.google.com/document/d/1-rZlnR76tWVTXprY27yqKAv4ZuskOv9_krQD1PVSRDw/export?format=txt','Keytinsoft.txt')
-				Sleep(2000)
-				$sodongIP0=_FileCountLines(@ScriptDir&"\Keytinsoft.txt")
-				If $sodongIP0<999 Then _requetGooGleDOC('https://docs.google.com/document/d/1-rZlnR76tWVTXprY27yqKAv4ZuskOv9_krQD1PVSRDw/export?format=txt','Keytinsoft.txt')
-
-				$STTIP=($vpsso-1)*10+1
-				FileDelete(@ScriptDir&'\Keytinsoft2.txt')
-				Sleep(1000)
-				For $i20=0 to 9
-					$Iptho=FileReadLine(@ScriptDir&'\Keytinsoft.txt',$STTIP+$i20)
-					Sleep(100)
-					FileWriteLine(@ScriptDir&'\Keytinsoft2.txt',$Iptho)
-					Sleep(100)
-				Next
-
-
-				 $checkUC=0
+				$checkUC=0
 				If $kiemtratrinhduyet=1 Then $checkUC=_kiemtratrinhduyet($i5,$i,$vpsso,$trusomaybandau)
 				If $vpsso='' Then
 					MsgBox(0,0,'loi khong dien so may')
 					Exit
                 EndIf
+
 
                 $kiemtratrinhduyet2=1
 				$checkprofile=1
@@ -134,6 +116,22 @@ While 1   ; vong tra lai gia tr
 
 			$checkprofile=0    ; de profile dau tien random conf lan sau bang 1
 
+			_requetGooGleDOC('https://docs.google.com/document/d/1-rZlnR76tWVTXprY27yqKAv4ZuskOv9_krQD1PVSRDw/export?format=txt','Keytinsoft.txt')
+				Sleep(2000)
+				$sodongIP0=_FileCountLines(@ScriptDir&"\Keytinsoft.txt")
+				If $sodongIP0<999 Then _requetGooGleDOC('https://docs.google.com/document/d/1oaZMcJZU2VOGzpgBKfy-XiAeVoQOCi6TnhXm_-oRv_I/export?format=txt','Keytinsoft.txt')
+
+				$STTIP=($vpsso-1)*10+1
+				FileDelete(@ScriptDir&'\Keytinsoft2.txt')
+				Sleep(1000)
+				For $i20=0 to 9
+					$Iptho=FileReadLine(@ScriptDir&'\Keytinsoft.txt',$STTIP+$i20)
+					Sleep(100)
+					FileWriteLine(@ScriptDir&'\Keytinsoft2.txt',$Iptho)
+					Sleep(100)
+				Next
+
+
             ;If $checkchonprofile=1 Then $profileso
  For $i5=$profileso to $i7
 	            HotKeySet("{esc}", "_Exit")
@@ -151,7 +149,6 @@ While 1   ; vong tra lai gia tr
 				_requetGooGleDOC('https://docs.google.com/document/d/1shp29rO6RbDVagu_XNDVON07AALpNOxxKke4-Bgma6M/export?format=txt','sokenhsub1luot.txt')
                 Sleep(2000)
 				_requetGooGleDOC('https://docs.google.com/document/d/1W7_gFyfDBhRYkCJw5v1hukJu5PwKpy2brANwWX-wHQQ/export?format=txt','linkkenhchaySUB2.txt')
-
 
 
 				For $i20=1 to 10
