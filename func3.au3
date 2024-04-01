@@ -4038,12 +4038,16 @@ EndFunc
 							MouseClick('left',680,550,1,20)
 							Sleep(2000)
 
-							If WinExists('firefox.exe - Bad Image')=1 Then    ; loi khong khoi dong
+							If WinExists('firefox.exe - Bad Image')=1 or WinExists('Firefox')=1 Then    ; loi khong khoi dong
 								FileDelete('C:\Program Files\Mozilla Firefox\vcruntime140.dll')
 								Sleep(1000)
 								FileDelete('C:\Program Files\Mozilla Firefox\vcruntime140_1.dll')
 								Sleep(1000)
-
+								Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\Firefox Installer.exe')
+				                Sleep(15000)
+				                MouseClick('left',523, 543,1,20)
+								ControlClick('Open File - Security Warning','&Run','[CLASS:Button; INSTANCE:1]','left',1,40, 12)
+				                Sleep(15000)
 							EndIf
 
 						EndIf
