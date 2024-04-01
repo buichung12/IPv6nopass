@@ -4035,6 +4035,17 @@ EndFunc
 							Sleep(1000)
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
+
+							If WinExists('firefox.exe - Bad Image')=1 Then    ; loi khong khoi dong
+								FileDelete('C:\Program Files\Mozilla Firefox\vcruntime140.dll')
+								Sleep(1000)
+								FileDelete('C:\Program Files\Mozilla Firefox\vcruntime140_1.dll')
+								Sleep(1000)
+
+							EndIf
+
+
+
 						EndIf
 
 						If $i=6 Then
