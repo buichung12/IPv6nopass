@@ -4047,7 +4047,9 @@ EndFunc
 				                Sleep(15000)
 				                MouseClick('left',523, 543,1,20)
 								ControlClick('Open File - Security Warning','&Run','[CLASS:Button; INSTANCE:1]','left',1,40, 12)
-				                Sleep(15000)
+				                Sleep(60000)
+
+
 							EndIf
 
 						EndIf
