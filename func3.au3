@@ -3981,6 +3981,8 @@ EndFunc
 							Sleep(3000)
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
+							MouseClick('left',1317,112,1,20)
+							Sleep(2000)
 
 						EndIf
 
@@ -4148,6 +4150,8 @@ EndFunc
 							Sleep(3000)
 							MouseClick('left',1322,114,1,20)
 							Sleep(3000)
+							MouseClick('left',1317,112,1,20)
+							Sleep(2000)
 						EndIf
 					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
 					    If $i=8 Then ControlClick($var[$i10][1],'','','left',1,478, 26)    ; tat tab thua
@@ -4596,7 +4600,8 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',1322,114,1,20)
 							Sleep(3000)
-
+							MouseClick('left',1317,112,1,20)
+							Sleep(2000)
 						EndIf
 					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
 					    If $i=8 Then ControlClick($var[$i10][1],'','','left',1,478, 26)    ; tat tab thua
