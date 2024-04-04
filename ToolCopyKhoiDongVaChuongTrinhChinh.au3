@@ -59,12 +59,21 @@ $check=0
         _resetMang()
 		_closeTrinhDuyet(1)
 
-       _requetGooGleDOC('https://docs.google.com/document/d/1QioeFifQFHiJxdXueMenDHvGcFIJBzhjULs6oyhHIUU/export?format=txt','DuLieuDauVao.txt')     ; luu y Link phai co duoi /export?format=txt
-       Sleep(4000)
-	   $IPmaythat=FileReadLine('C:\Users\'&@UserName&'\Downloads\DuLieuDauVao.txt',1)
-	   Sleep(200)
-	   $sonhom   =FileReadLine('C:\Users\'&@UserName&'\Downloads\DuLieuDauVao.txt',2)
-       Sleep(1000)
+        _requetGooGleDOC('https://docs.google.com/document/d/1QioeFifQFHiJxdXueMenDHvGcFIJBzhjULs6oyhHIUU/export?format=txt','DuLieuDauVao.txt')     ; luu y Link phai co duoi /export?format=txt
+        Sleep(8000)
+	    If FileExists('C:\Users\'&@UserName&'\Downloads\DuLieuDauVao.txt') =0 Then
+			_requetGooGleDOC('https://docs.google.com/document/d/1QioeFifQFHiJxdXueMenDHvGcFIJBzhjULs6oyhHIUU/export?format=txt','DuLieuDauVao.txt')     ; luu y Link phai co duoi /export?format=txt
+			Sleep(6000)
+
+		EndIf
+		If FileExists('C:\Users\'&@UserName&'\Downloads\DuLieuDauVao.txt') =0 Then
+			_requetGooGleDOC('https://docs.google.com/document/d/1QioeFifQFHiJxdXueMenDHvGcFIJBzhjULs6oyhHIUU/export?format=txt','DuLieuDauVao.txt')     ; luu y Link phai co duoi /export?format=txt
+			Sleep(6000)
+		EndIf
+	    $IPmaythat=FileReadLine('C:\Users\'&@UserName&'\Downloads\DuLieuDauVao.txt',1)
+	    Sleep(200)
+	    $sonhom   =FileReadLine('C:\Users\'&@UserName&'\Downloads\DuLieuDauVao.txt',2)
+        Sleep(1000)
 		ToolTip('tool copy file stt khoi dong may ao:'&$STTmayao&'	so nhom:'&$sonhom,0,30)
 		Sleep(1000)
 	#cs
