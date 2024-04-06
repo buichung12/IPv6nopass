@@ -4917,6 +4917,8 @@ EndFunc
 				Sleep(100)
 				ProcessClose('firefox.exe')
 				Sleep(100)
+				ProcessClose('BingChatInstaller.exe')
+				Sleep(100)
 				ProcessClose('clipboard.exe')
 				Sleep(100)
 				WinClose('Đang chạy..., Trình cài đặt Cốc Cốc')
