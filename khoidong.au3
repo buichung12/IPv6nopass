@@ -28,7 +28,8 @@ HotKeySet("{f9}", "AutoRun")
 				Sleep(20000)
 				ProcessClose('browser.exe')
 				Sleep(100)
-
+				ProcessClose('notepad.exe')
+				Sleep(1000)
 
                 $checkinternet=_kiemtraMangInternet()
 				If $checkinternet=0 Then
