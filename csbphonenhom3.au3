@@ -147,7 +147,6 @@ While 1   ; vong tra lai gia tr
 				EndIf
 				FileDelete(@ScriptDir&'\checkUpdateCode.txt')
 				Sleep(1000)
-
 				_requetGooGleDOC('https://docs.google.com/document/d/1N9pD9fzhjrRs1tG-LXOklmNXX0LuS13rgrRwmZmOx7k/export?format=txt','linkkenhto.txt')
 				Sleep(2000)
 				_requetGooGleDOC('https://docs.google.com/document/d/1shp29rO6RbDVagu_XNDVON07AALpNOxxKke4-Bgma6M/export?format=txt','sokenhsub1luot.txt')
@@ -168,14 +167,14 @@ While 1   ; vong tra lai gia tr
 				$sodong2=_FileCountLines(@ScriptDir&'\linkBlu.txt')
 	           $thoigianDau=0
 	  For $i=$Gmailso To 10
-                 ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 3'&'	vpsso:'&$vpsso,0,0)
+                 ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 3'&'	vpsso:'&$vpsso&'	phien ban:'&$phienban,0,0)
 				$checkTG=1
                  $checkchonprofile=0
 
 				 $check=_FakeIPOptionV6($i,$vpsso)
 
 				If $check=1 Then
-                         ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 3'&'	vpsso:'&$vpsso,0,0)
+                         ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 3'&'	vpsso:'&$vpsso&'	phien ban:'&$phienban,0,0)
 					    _khoidongFireFox2($i,$vpsso)
 
 					    $checkchonprofile=_chonProFileFFv6($i5,$i,$vpsso)

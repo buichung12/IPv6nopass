@@ -14,6 +14,8 @@
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
 
+$phienban='1.0.0'
+
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -485,7 +487,7 @@ EndFunc
 
     Func _LayIDvaDangnhap($i5,$i)
 		;For $icheck2=1 to 2
-			ToolTip('Gmailso:'&$i,0,0)
+			ToolTip('Gmailso:'&$i&'	phien ban:'&$phienban,0,0)
             $vpsso=Random(1,100,1)
 		    Sleep(2000)
 			$check=0
@@ -507,12 +509,12 @@ EndFunc
             If $chochay<>0 Then
                 For $i20=1 to $chochay
 					$hieuso=($chochay-$i20)*5
-		            ToolTip('cho cai dat '&$hieuso,0,0)
+		            ToolTip('cho cai dat '&$hieuso&'	phien ban:'&$phienban,0,0)
                     MsgBox(0,0,'cho cai dat',5*60)
 		       Next
 			EndIf
 
-			ToolTip('Xoa DaTa trinh duyet',0,0)
+			ToolTip('Xoa DaTa trinh duyet'&'	phien ban:'&$phienban,0,0)
 
 			_requetGooGleDOC('https://docs.google.com/document/d/1yzcRSbBRVzByEp7UKusrhl_AMQZATzRzcrk-eAhKS6w/export?format=txt','checkxoadatatrinhduyet.txt')
 			Sleep(1000)
@@ -596,7 +598,7 @@ EndFunc
 			_closeTrinhDuyet(1)
 
 
-					    FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
+			FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
 		    Sleep(1000)
             For $i20=1 to 2
 		         _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
@@ -611,12 +613,12 @@ EndFunc
 		        Sleep(2000)
 		        MouseClick('left',1204, 340,1,20)
 		        Sleep(15000)
-		         FileCopy("C:\Users\"&@UserName&"\Downloads\func3.au3","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea", 1)
+				FileCopy("C:\Users\"&@UserName&"\Downloads\func3.au3","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea", 1)
 				If FileExists("C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea\func3.au3")=1 Then $i20=3
 		         Sleep(2000)
             Next
         #cs
-			ToolTip('update gmailkhoiphuc2',0,0)
+			ToolTip('update gmailkhoiphuc2&'	phien ban:'&$phienban',0,0)
 			_requetGooGleDOC('https://docs.google.com/document/d/12jqqyD2hSCnRMrUar2axLIVR4sYbftEKsA0IO5c2Yi0/export?format=txt','checkupdategmailkhoiphuc2.txt')
 			Sleep(1000)
 			$checkupdategmailkhoiphuc2=FileReadLine(@ScriptDir&'\checkupdategmailkhoiphuc2.txt',1)
@@ -651,7 +653,7 @@ EndFunc
 			Sleep(200)
 			FileDelete('C:\Users\'&@UserName&'\Downloads\shorts2.bmp')
 			Sleep(200)
-            ToolTip('update videos.BMP',0,0)
+            ToolTip('update videos.BMP'&'	phien ban:'&$phienban,0,0)
 			_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/videos.bmp"')
 			Sleep(10000)
 			WinMove('','',0,0,1366,768)
@@ -664,7 +666,7 @@ EndFunc
 		    Sleep(2000)
 		    MouseClick('left',1305, 445,1,20)
 		    Sleep(5000)
-			ToolTip('update videos2.BMP',0,0)
+			ToolTip('update videos2.BMP'&'	phien ban:'&$phienban,0,0)
 			_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/videos2.bmp"')
 			Sleep(10000)
 			Sleep(2000)
@@ -674,7 +676,7 @@ EndFunc
 		    Sleep(5000)
 			_closeTrinhDuyet(2)
 
-			ToolTip('update shorts.BMP',0,0)
+			ToolTip('update shorts.BMP'&'	phien ban:'&$phienban,0,0)
 			_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/shorts.bmp"')
 			Sleep(10000)
 			Sleep(2000)
@@ -684,7 +686,7 @@ EndFunc
 		    Sleep(2000)
 		    MouseClick('left',1305, 445,1,20)
 		    Sleep(5000)
-			ToolTip('update shorts2.BMP',0,0)
+			ToolTip('update shorts2.BMP'&'	phien ban:'&$phienban,0,0)
 			_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/shorts2.bmp"')
 			Sleep(10000)
 			Sleep(2000)
@@ -749,7 +751,7 @@ EndFunc
 		    Sleep(3000)
 
 	        If FileExists("C:\Program Files (x86)\AutoIt3\AutoIt3.exe")=0 Then
-				ToolTip('cai dat autoit',0,30)
+				ToolTip('cai dat autoit'&'	phien ban:'&$phienban,0,30)
 		       ; _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
 		       ; Sleep(5000)
 		       ; _GetDOSOutput('start chrome "https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.zip"')  ; tai autoit
@@ -814,7 +816,7 @@ EndFunc
             _closeTrinhDuyet(1)
 
 			Sleep(1000)
-			ToolTip('kiem tra trinh duyet',0,0)
+			ToolTip('kiem tra trinh duyet'&'	phien ban:'&$phienban,0,0)
 
 
 				$check=FileExists("C:\Program Files (x86)\Mozilla Firefox\firefox.exe")
@@ -1389,7 +1391,7 @@ EndFunc
 		For $i=1 to 10
                 $check=0
 
-				  ToolTip('check dang nhap 	'&$i,0,0)
+				  ToolTip('check dang nhap 	'&$i&'	phien ban:'&$phienban,0,0)
 				;_FakeIPOptionV6($i,$vpsso)
 				_resetMang($i)
 				_khoidongFireFox($i)
@@ -1858,7 +1860,7 @@ EndFunc
 			For $i=1 to 10
 				_resetMang($i)
 				_khoidongFireFox($i)
-				  ToolTip('xoa data'&$i,0,0)
+				  ToolTip('xoa data'&$i&'	phien ban:'&$phienban,0,0)
 
 				    If $i=1 Then
 					;	_khoidongFireFox(1)
@@ -2860,9 +2862,7 @@ EndFunc
 				$sosub5=0
                 $linkvideo=5
 				Sleep(1000)
-				;ToolTip("check loi 0",0,0)
 				_xoa1NuaFileDasub($i,$i5)
-               ; ToolTip("check loi 1",0,0)
 				$sokenhsub1luot=FileReadLine(@ScriptDir&"\sokenhsub1luot.txt",1)
                 $linkkenhtho=1
 				$sodonglinkkenhto=1
@@ -2875,7 +2875,6 @@ EndFunc
 					$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
 					Sleep(500)
 					$checkchaykenhto=FileReadLine(@ScriptDir&'\linkkenhto.txt',1)
-					;ToolTip("check loi 2",0,0)
 
 			  For $i21=1 to 7
 
@@ -2907,7 +2906,6 @@ EndFunc
 						    EndIf
 						Next
 
-						;ToolTip("check loi 3",0,0)
 
 
 				        If IsArray($datalink) Then
@@ -2933,7 +2931,6 @@ EndFunc
                             EndIf
 						  EndIf
 
-						 ; ToolTip("check loi 4",0,0)
 
 						  If $datalink[0]>2 Then
 								If $sosub5<1000 Then $datalink[2]=$datalink[2]+100
@@ -2951,7 +2948,6 @@ EndFunc
 
                         EndIf
 
-						;ToolTip("check loi 5",0,0)
 
 			  Next
 
@@ -2990,7 +2986,6 @@ EndFunc
 					    $linkvideo=3
 			    	EndIf
 
-                    ;ToolTip("check loi 6",0,0)
 
 					ControlClick($var[$i10][1],'','','left',1,600, 60)
 				    Sleep(2000)
@@ -3088,7 +3083,7 @@ EndFunc
 					EndIf
 
 					If $linkvideo=0 Then
-                         ToolTip("link video "&$iSun2lan&", link trang chu",0,0)
+                         ToolTip("link video "&$iSun2lan&", link trang chu"&'	phien ban:'&$phienban,0,0)
 						;Sleep(5000)
 						For $i20=1 to 10
 				          $pixcel=PixelSearch(76,110,146, 166,0xFF0000)
@@ -3196,7 +3191,7 @@ EndFunc
 					EndIf
 
                     If $linkvideo=2 Then
-                        ToolTip("link video "&$iSun2lan&", link shorts",0,0)
+                        ToolTip("link video "&$iSun2lan&", link shorts"&'	phien ban:'&$phienban,0,0)
 						MouseMove(742,Random(440,600,1))
 						Sleep(1000)
 						For $i20=1 to Random(4,20,1)
@@ -3302,7 +3297,7 @@ EndFunc
 
                     If $linkvideo=1 Then
 
-						ToolTip("link video:"&$iSun2lan&", link video",0,0)
+						ToolTip("link video:"&$iSun2lan&", link video"&'	phien ban:'&$phienban,0,0)
                         Sleep(1000)
 						MouseMove(742,Random(440,600,1))
 						Sleep(1000)
@@ -3439,7 +3434,7 @@ EndFunc
                     EndIf
 
 					If $linkvideo=3 Then
-                        ToolTip("link video truc tiep "&$iSun2lan&", link truc tiep",0,0)
+                        ToolTip("link video truc tiep "&$iSun2lan&", link truc tiep"&'	phien ban:'&$phienban,0,0)
 					    Sleep(5000)
 					    For $i20=1 to 20
 				          $pixcel=PixelSearch(76,110,146, 166,0xFF0000)
@@ -5234,7 +5229,7 @@ EndFunc
 		EndFunc
 
         Func _loginGmail($i)
-	                       ToolTip('dang nhap Gmail so:'&$i,0,0)
+	                       ToolTip('dang nhap Gmail so:'&$i&'	phien ban:'&$phienban,0,0)
 						   $e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
 						   If not IsString($e) Then
 							FileWriteLine(@ScriptDir&'\kenhkhongdangnhapduoc.txt','het gmail roiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii')
@@ -5772,7 +5767,7 @@ EndFunc
 			_requetGooGleDOC($linknhom,'checkUpdateCode.txt')
 			$checkupdatecode=FileReadLine(@ScriptDir&'\checkUpdateCode.txt',1)
 			If $checkupdatecode=1 Then
-				ToolTip('cho update code',0,0)
+				ToolTip('cho update code'&'	phien ban:'&$phienban,0,0)
 				Sleep(1000)
 				ShellExecute("C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea\tool update code.au3")
 				Sleep(2000)
@@ -5787,7 +5782,7 @@ EndFunc
 			Sleep(2000)
 			$checkupdatecode=FileReadLine(@ScriptDir&'\CheckUpdateToolupdate.txt',1)
 			If $checkupdatecode=1 Then
-				ToolTip('update tool update',0,0)
+				ToolTip('update tool update'&'	phien ban:'&$phienban,0,0)
                 For $i20=1 to 3
 				    _closeTrinhDuyet(1)
 				    _resetMang(1)
