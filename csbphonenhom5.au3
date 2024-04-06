@@ -171,14 +171,14 @@ While 1   ; vong tra lai gia tr
 				$sodong2=_FileCountLines(@ScriptDir&'\linkBlu.txt')
 	           $thoigianDau=0
 	  For $i=$Gmailso To 10
-                 ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 5'&'	vpsso:'&$vpsso,0,0)
+                 ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 5'&'	vpsso:'&$vpsso&'	phien ban:'&$phienban,0,0)
 				 $checkTG=1
                  $checkchonprofile=0
 				 $check=_FakeIPOptionV6($i,$vpsso)
 
 				If $check=1 Then
 
-					    ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 5'&'	vpsso:'&$vpsso,0,0)
+					    ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 5'&'	vpsso:'&$vpsso&'	phien ban:'&$phienban,0,0)
 					     _khoidongFireFox2($i,$vpsso)
 
 					    $checkchonprofile=_chonProFileFFv6($i5,$i,$vpsso)
