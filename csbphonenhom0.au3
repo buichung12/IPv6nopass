@@ -71,6 +71,11 @@ While 1
 
 
 				$checkrequet=_requetGooGleDOC('https://docs.google.com/document/d/1gAGMJMKIIqJaA8TkoHWHreKaF_cGFZ_cU9dLu537RNM/export?format=txt','Gmailtho.txt')
+				$checkgmail=FileReadLine(@ScriptDir&'\Gmailtho.txt',1)
+				If StringLen($checkgmail)<10 Then
+					Sleep(60000)
+					$checkrequet=_requetGooGleDOC('https://docs.google.com/document/d/1gAGMJMKIIqJaA8TkoHWHreKaF_cGFZ_cU9dLu537RNM/export?format=txt','Gmailtho.txt')
+				EndIf
 				_LayGmail($vpsso)
 
 				If $kiemtratrinhduyet=1 Then $checkUC=_kiemtratrinhduyet($i5,$i,$vpsso,$trusomaybandau)

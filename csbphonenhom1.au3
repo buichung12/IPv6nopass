@@ -68,7 +68,13 @@ While 1
 				_CheckUpdateToolupdate('https://docs.google.com/document/d/1Bp2Dfajh16hcjmhgR1GR4Fmqu3KZJMC-7jdfqUR4c08/export?format=txt')
 				_CheckUpdateToolupdate('https://docs.google.com/document/d/1PStUUV13AuRmTXwykdKNy4iEaeW3gktWXn56zrUehfQ/export?format=txt')
 
-				 $checkrequet=_requetGooGleDOC('https://docs.google.com/document/d/1gAGMJMKIIqJaA8TkoHWHreKaF_cGFZ_cU9dLu537RNM/export?format=txt','Gmailtho.txt')
+				$checkrequet=_requetGooGleDOC('https://docs.google.com/document/d/1gAGMJMKIIqJaA8TkoHWHreKaF_cGFZ_cU9dLu537RNM/export?format=txt','Gmailtho.txt')
+				$checkgmail=FileReadLine(@ScriptDir&'\Gmailtho.txt',1)
+				If StringLen($checkgmail)<10 Then
+					Sleep(60000)
+					$checkrequet=_requetGooGleDOC('https://docs.google.com/document/d/1gAGMJMKIIqJaA8TkoHWHreKaF_cGFZ_cU9dLu537RNM/export?format=txt','Gmailtho.txt')
+				EndIf
+
                  _LayGmail($vpsso)
 
 				$checkUC=0

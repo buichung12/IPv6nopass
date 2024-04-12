@@ -5337,8 +5337,8 @@ EndFunc
         Func _loginGmail($i)
 	                       ToolTip('dang nhap Gmail so:'&$i&'	phien ban:'&$phienban,0,0)
 						   $e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
-						   If not IsString($e) Then
-							FileWriteLine(@ScriptDir&'\kenhkhongdangnhapduoc.txt','het gmail roiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii')
+						   If StringLen($e)<10 Then
+							   MsgBox(0,0,'khong co gmail')
 						   EndIf
 						   $cacgiatri=StringSplit($e,'	')
 	                   For $i11=1 to $cacgiatri[0]

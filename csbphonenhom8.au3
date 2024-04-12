@@ -69,7 +69,13 @@ While 1
 				_CheckUpdateToolupdate('https://docs.google.com/document/d/1Bp2Dfajh16hcjmhgR1GR4Fmqu3KZJMC-7jdfqUR4c08/export?format=txt')
 				_CheckUpdateToolupdate('https://docs.google.com/document/d/1PStUUV13AuRmTXwykdKNy4iEaeW3gktWXn56zrUehfQ/export?format=txt')
 
-				 $checkrequet=_requetGooGleDOC('https://docs.google.com/document/d/1FVuqyStJx2qg55egvW8keDDtiMZclqbdtyf47O-qvB4/export?format=txt','Gmailtho.txt')
+				$checkrequet=_requetGooGleDOC('https://docs.google.com/document/d/1FVuqyStJx2qg55egvW8keDDtiMZclqbdtyf47O-qvB4/export?format=txt','Gmailtho.txt')
+				$checkgmail=FileReadLine(@ScriptDir&'\Gmailtho.txt',1)
+				If StringLen($checkgmail)<10 Then
+					Sleep(60000)
+					$checkrequet=_requetGooGleDOC('https://docs.google.com/document/d/1FVuqyStJx2qg55egvW8keDDtiMZclqbdtyf47O-qvB4/export?format=txt','Gmailtho.txt')
+				EndIf
+
                  _LayGmail($vpsso)
 
 				$checkUC=0
@@ -82,9 +88,6 @@ While 1
                 $kiemtratrinhduyet2=1
 				$checkprofile=1
 While 1   ; vong tra lai gia tr
-					FileDelete(@ScriptDir&'\Gmail.txt')
-				FileDelete(@ScriptDir&'\Gmailtho.txt')
-
 
 	            $i6=Mod($vpsso,5)
 				If $i6=0 Then $i6=5
