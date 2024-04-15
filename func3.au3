@@ -3013,30 +3013,13 @@ EndFunc
 					        Sleep(3000)
 				        Else
 
-					        $emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\shorts.bmp',1,406, 318,831, 610,$x3,$y3,1)
-					        If $x3>0 Then
-					            MouseClick('left',$x3,$y3,1,20)   ; click shorts
-					            Sleep(3000)
-					        Else
-						        $emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\videos2.bmp',1,406, 318,831, 610,$x3,$y3,1)
+							$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\videos2.bmp',1,406, 318,831, 610,$x3,$y3,1)
 							If $x3>0 Then
 								MouseClick('left',$x3,$y3,1,20)   ; click shorts
 					            Sleep(3000)
-						    Else
-							    $emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\shorts2.bmp',1,406, 318,831, 610,$x3,$y3,1)
-					            If $x3>0 Then
-					                MouseClick('left',$x3,$y3,1,20)   ; click shorts
-					                Sleep(3000)
-							    EndIf
-
 						    EndIf
 
 				        EndIf
-
-					EndIf
-
-
-
 
 					EndIf
 
