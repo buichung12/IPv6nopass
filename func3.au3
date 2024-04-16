@@ -5418,6 +5418,14 @@ EndFunc
 				Sleep(5000)
 				MouseClick('left',1016, 363,1,20)
 				Sleep(2000)
+				$pixcel=PixelSearch(1050, 462,1157, 611,0x0B57D0)
+					If IsArray($pixcel) Then
+						$i20=20
+				        Sleep(1000)
+						MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+				        Sleep(7000)
+					EndIf
+				Sleep(2000)
 				MouseClick('left',650, 300,1,20)
 				Sleep(3000)
 				Send('{tab}')
