@@ -2750,9 +2750,9 @@ EndFunc
 				    Send("^v")
 				    Sleep(2000)
 				    ControlSend($var[$i10][1],'','','{enter}')
-				    Sleep(7000)
-					;If $i=5 Then MouseClick('left',706, 300,1,20)
-					Sleep(3000)
+				    Sleep(10000)
+					Send('^0')
+					Sleep(2000)
 					$checkload=0
 
 					For $i20=1 to 20
@@ -2776,6 +2776,8 @@ EndFunc
 						Sleep(5000)
 						;_dienIpPort($i)
 						Sleep(5000)
+						Send('^0')
+					    Sleep(2000)
 					EndIf
 
 					If $checkload=0 Then
@@ -2787,6 +2789,8 @@ EndFunc
 						Sleep(5000)
 						;_dienIpPort($i)
 						Sleep(5000)
+						Send('^0')
+					    Sleep(2000)
 
 					EndIf
 
@@ -5347,6 +5351,8 @@ EndFunc
 				Sleep(1000)
 				Send('{enter}')
 				Sleep(7000)
+				Send('^0')
+				Sleep(2000)
 				MouseClick('left',1280, 160,1,20)
 				Sleep(1000)
 				MouseClick('left',1280, 129,1,20)
