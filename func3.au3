@@ -5368,15 +5368,23 @@ EndFunc
 				Send('{tab}')
 				Sleep(2000)
 
-				For $i20=1 to 20
+				For $i20=1 to 10
 				    $pixcel=PixelSearch(616, 326,1218, 679,0x0B57D0)
-					$pixcel2=PixelSearch(616, 326,1218, 679,0x114AA7)
-					Sleep(1000)
-					If IsArray($pixcel) or IsArray($pixcel2) Then $i20=20
+					If IsArray($pixcel) Then $i20=20
 					Sleep(1000)
 				Next
+
+				If not IsArray($pixcel) Then
+					MouseClick('left',650,350,1,20)
+				    Sleep(3000)
+					For $i20=1 to 20
+				        $pixcel=PixelSearch(616, 326,1218, 679,0x0B57D0)
+					    If IsArray($pixcel) Then $i20=20
+					    Sleep(1000)
+				    Next
+				EndIf
 				Sleep(1000)
-            If IsArray($pixcel) or IsArray($pixcel2) Then
+            If IsArray($pixcel) Then
 
 				If $i=2 Or $i=4 Then                      ; loi khong load duoc trinh duyet brive
 				    MouseClick('left',850, 273,1,20)
