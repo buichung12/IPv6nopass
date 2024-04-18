@@ -5337,6 +5337,8 @@ EndFunc
 						   $h=FileReadLine(@ScriptDir&'\Gmailtest.txt',3)
 						   FileDelete(@ScriptDir&'\Gmailtest.txt')
 
+	            WinMove('','',0,0,1366,768)
+				Sleep(2000)
 				;_dienIpPort($i)
                 MouseClick('left',1280, 129,1,20)
 			    $check=0
@@ -5368,11 +5370,13 @@ EndFunc
 
 				For $i20=1 to 20
 				    $pixcel=PixelSearch(616, 326,1218, 679,0x0B57D0)
-					If IsArray($pixcel) Then $i20=20
+					$pixcel2=PixelSearch(616, 326,1218, 679,0x114AA7)
+					Sleep(1000)
+					If IsArray($pixcel) or IsArray($pixcel2) Then $i20=20
 					Sleep(1000)
 				Next
 				Sleep(1000)
-            If IsArray($pixcel) Then
+            If IsArray($pixcel) or IsArray($pixcel2) Then
 
 				If $i=2 Or $i=4 Then                      ; loi khong load duoc trinh duyet brive
 				    MouseClick('left',850, 273,1,20)
@@ -5419,7 +5423,7 @@ EndFunc
 				Next
 				Sleep(5000)
 				MouseClick('left',1016, 363,1,20)
-				Sleep(2000)
+				Sleep(3000)
 				$pixcel=PixelSearch(1050, 462,1157, 611,0x0B57D0)
 					If IsArray($pixcel)  Then
 						$i20=20
