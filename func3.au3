@@ -706,6 +706,18 @@ EndFunc
 			;FileCopy('C:\Users\'&@UserName&'\Downloads\shorts2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
 		    ;Sleep(1000)
 
+            FileDelete('C:\Users\'&@UserName&'\Downloads\sub3.bmp')
+			Sleep(200)
+            ToolTip('update sub3.BMP'&'	phien ban:'&$phienban,0,0)
+			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/sub3.bmp"')
+			Sleep(10000)
+			MouseClick('left',1265, 460,1,20)
+			Sleep(2000)
+			MouseClick('left',1265, 421,1,20)
+			Sleep(2000)
+			MouseClick('left',1204, 340,1,20)
+
+
 		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\_HttpRequest.au3"
         Local $sDestinationFile = "C:\Users\"&@UserName&"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup" & "\_HttpRequest.au3"
         FileCopy($sSourceFile, $sDestinationFile, 1)
@@ -3015,12 +3027,14 @@ EndFunc
 				        If $x3>0 Then
 				         	MouseClick('left',$x3,$y3,1,20)   ; click video
 					        Sleep(3000)
+							$linkvideo=1
 				        Else
 
 							$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\videos2.bmp',1,406, 318,831, 610,$x3,$y3,1)
 							If $x3>0 Then
 								MouseClick('left',$x3,$y3,1,20)   ; click shorts
 					            Sleep(3000)
+								$linkvideo=1
 						    EndIf
 
 				        EndIf
@@ -3329,7 +3343,7 @@ EndFunc
 				        Sleep(4000)     ;thoi gian nghi
 						$x=0
 		                $y=0
-		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,600,700,768,$x,$y,1,1)
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,500,900,900,$x,$y,1,1)
                         Sleep(1000)
 
 						If $x>0 Then
@@ -3339,11 +3353,25 @@ EndFunc
 
 						If $x=0 Then
 							Sleep(2000)
+							WinMove($var[$i10][1],'',0,0,1366,900)     ; fix loi nut sub phia duoi
+				            Sleep(4000)     ;thoi gian nghi
+						    $x=0
+		                    $y=0
+		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,500,900,900,$x,$y,1,1)
+                            Sleep(1000)
+
+						    If $x>0 Then
+							    MouseClick('left',$x,$y,1,20)
+							    Sleep(5000)
+						    EndIf
+						EndIf
+						If $x=0 Then
+							Sleep(2000)
 							WinMove($var[$i10][1],'',0,0,1366,800)     ; fix loi nut sub phia duoi
 				            Sleep(4000)     ;thoi gian nghi
 						    $x=0
 		                    $y=0
-		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,600,700,800,$x,$y,1,1)
+		                    _ImageSearchArea(@ScriptDir&'\sub3.bmp',1,75,500,900,900,$x,$y,1,1)
                             Sleep(1000)
 
 						    If $x>0 Then
@@ -3920,19 +3948,19 @@ EndFunc
 						MouseClick('left',852, 510,1,20)  ;tat thong bao update
 				        Sleep(7000)
 					EndIf
+
 					If $i=1 Then
 						MouseClick('left',1328, 696,1,20)  ;tat tanh cong cu
 				        Sleep(1000)
 						MouseClick('left',880, 118,1,20)  ;tat tanh cong cu
 						Sleep(1000)
-						Sleep(1000)
 						ControlClick('','','','left',1,1330, 103)
-						Sleep(2000)
+						Sleep(1000)
 						MouseClick('left',1333,99,1,20)  ;tat tanh cong cu
 						Sleep(1000)
 						MouseClick('left',1333, 134,1,20)  ;tat tanh cong cu
 						Sleep(1000)
-						MouseClick('left',1300,700,1,20)  ;tat tanh cong cu
+						MouseClick('left',1285,100,1,20) ;tat tanh cong cu
 						Sleep(1000)
 					EndIf
 
@@ -4155,10 +4183,10 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',1300,700,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
-							MouseClick('left',1280,102,1,20)  ;tat tanh cong cu
-						    Sleep(1000)
 							MouseClick('left',910,133,1,20)  ;tat tanh cong cu
-						Sleep(1000)
+						    Sleep(1000)
+							MouseClick('left',1285,100,1,20)  ;tat tanh cong cu
+						    Sleep(1000)
 					    EndIf
 
 					    If $i=10 Then
@@ -4449,6 +4477,7 @@ EndFunc
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
 
+
 						EndIf
 
 						If $i=2 Then
@@ -4608,6 +4637,8 @@ EndFunc
 							MouseClick('left',1280,102,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
 							MouseClick('left',910,133,1,20)  ;tat tanh cong cu
+						    Sleep(1000)
+							MouseClick('left',1285,100,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
 					    EndIf
 
@@ -5443,14 +5474,14 @@ EndFunc
 						$i20=20
 				        Sleep(1000)
 						MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-				        Sleep(7000)
+				        Sleep(10000)
 					EndIf
 				$pixcel=PixelSearch(1050, 462,1157, 611,0x114AA7)
 					If IsArray($pixcel)  Then
 						$i20=20
 				        Sleep(1000)
 						MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-				        Sleep(7000)
+				        Sleep(10000)
 					EndIf
 				Sleep(2000)
 				MouseClick('left',650, 300,1,20)
