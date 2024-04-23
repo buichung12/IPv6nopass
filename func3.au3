@@ -3122,9 +3122,6 @@ EndFunc
 
 						EndIf
 
-
-                        If $x<>0 Then
-
                            If $i=5 Then ControlClick($var[$i10][1],'','','left',1,1245, 216)
 							Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,586, 448)
@@ -3216,8 +3213,7 @@ EndFunc
 							Sleep(100)
 							ControlClick($var[$i10][1],'','','left',1,1165, 148)
 							Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,997, 147)
-                        EndIf
+
 
 					EndIf
 
