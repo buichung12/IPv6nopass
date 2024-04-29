@@ -4502,6 +4502,8 @@ EndFunc
 				            Sleep(1000)
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
+							Sleep(1000)
+							MouseClick('left',1280,100,1,20)
 
 
 						EndIf
