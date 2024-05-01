@@ -4659,14 +4659,14 @@ EndFunc
 						    MouseClick('left',1333, 134,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
 							MouseClick('left',1280,163,1,20)
-							Sleep(2000)
+							Sleep(1000)
 							MouseClick('left',1300,700,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
 							MouseClick('left',1280,102,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
 							MouseClick('left',910,133,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
-							MouseClick('left',1285,100,1,20)  ;tat tanh cong cu
+							MouseClick('left',1290,105,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
 					    EndIf
 
@@ -4705,7 +4705,6 @@ EndFunc
 					If $i=9 Then MouseClick('left',1290,200 ,1,20)   ;tat thong bao
 					If $i=6 Then MouseClick('left',1260,200 ,1,20)
 					If $i=7 Then MouseClick('left',1260,200 ,1,20)
-					If $i=1 Then MouseClick('left',1333,99 ,1,20)
 					WinClose('Install Google Translate extension to translate this page?')
 					WinClose('Restore pages?')
 					WinClose('Khôi phục trang')
