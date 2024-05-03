@@ -203,12 +203,8 @@ $check=0
 		    Next
         EndIf
 		Sleep(2000)
-		MouseClick('left',1265, 460,1,20)
-		Sleep(2000)
-		MouseClick('left',1265, 421,1,20)
-		Sleep(2000)
-		MouseClick('left',1204, 340,1,20)
-		Sleep(5000)
+		Send('^+s')
+		Sleep(7000)
 
 		For $i20=1 to 22
 			If FileExists('C:\Users\'&@UserName&'\Downloads\csbphonenhom'&$i20&'.au3')=1 Then
@@ -234,13 +230,8 @@ $check=0
         Sleep(7000)
 		Send('{enter}')
 		Sleep(8000)
-		;WinMove('','',0,0,1366,768)
-		;Sleep(2000)
-		MouseClick('left',1265, 460,1,20)
-		Sleep(2000)
-		MouseClick('left',1265, 421,1,20)
-		Sleep(2000)
-		MouseClick('left',1204, 340,1,20)
+		Send('^+s')
+		Sleep(7000)
 		Sleep(15000)
 
 		FileCopy("C:\Users\"&@UserName&"\Downloads\func3.au3","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea", 1)
@@ -258,13 +249,7 @@ $check=0
         Sleep(7000)
 		Send('{enter}')
 		Sleep(8000)
-		;WinMove('','',0,0,1366,768)
-		;Sleep(2000)
-		MouseClick('left',1265, 460,1,20)
-		Sleep(2000)
-		MouseClick('left',1265, 421,1,20)
-		Sleep(2000)
-		MouseClick('left',1204, 340,1,20)
+		Send('^+s')
 		Sleep(15000)
 		FileCopy('C:\Users\'&@UserName&'\Downloads\tool update code.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
 		Sleep(3000)
@@ -279,13 +264,7 @@ $check=0
         Sleep(7000)
 		Send('{enter}')
 		Sleep(8000)
-		;WinMove('','',0,0,1366,768)
-		;Sleep(2000)
-		MouseClick('left',1265, 460,1,20)
-		Sleep(2000)
-		MouseClick('left',1265, 421,1,20)
-		Sleep(2000)
-		MouseClick('left',1204, 340,1,20)
+		Send('^+s')
 		Sleep(10000)
 		FileCopy('C:\Users\'&@UserName&'\Downloads\khoidong.au3','C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup',1)    ;C:\Users\buichung\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 		Sleep(1000)
@@ -558,13 +537,7 @@ $check=0
 
         MsgBox(0,0,'xong')
 
-        Sleep(2000)
-        MouseClick('left',24,881,1,20)
-		Sleep(2000)
-		MouseClick('left',24,835,1,20)
-		Sleep(2000)
-		MouseClick('left',24,785,1,20)
-		Sleep(1000)
+
 
   Exit
 
