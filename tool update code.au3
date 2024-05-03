@@ -56,11 +56,7 @@ HotKeySet("{f4}", "_Exit")
 						    EndIf
 		                Next
 		                Sleep(2000)
-	                 	MouseClick('left',1265, 460,1,20)
-		                Sleep(2000)
-		                MouseClick('left',1265, 421,1,20)
-		                Sleep(2000)
-		                MouseClick('left',1204, 340,1,20)
+	                 	Send('^+s')
 		                Sleep(5000)
 
 
@@ -82,11 +78,7 @@ HotKeySet("{f4}", "_Exit")
 						    EndIf
 		                Next
 		                Sleep(2000)
-	                 	MouseClick('left',1265, 460,1,20)
-		                Sleep(2000)
-		                MouseClick('left',1265, 421,1,20)
-		                Sleep(2000)
-		                MouseClick('left',1204, 340,1,20)
+	                 	Send('^+s')
 		                Sleep(5000)
 
 						For $i20=0 to 22
@@ -102,20 +94,11 @@ HotKeySet("{f4}", "_Exit")
 						Sleep(20000)
 
 						Sleep(2000)
-						MouseClick('left',1265, 460,1,20)
-						Sleep(2000)
-						MouseClick('left',1265, 421,1,20)
-						Sleep(2000)
-						MouseClick('left',1204, 340,1,20)
+						Send('^+s')
 						Sleep(5000)
 					    _GetDOSOutput($linkdownloadFunc)
 						Sleep(20000)
-						Sleep(2000)
-						MouseClick('left',1265, 460,1,20)
-						Sleep(2000)
-						MouseClick('left',1265, 421,1,20)
-						Sleep(2000)
-						MouseClick('left',1204, 340,1,20)
+						Send('^+s')
 						Sleep(5000)
 
 					EndIf
