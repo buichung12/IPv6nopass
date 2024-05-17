@@ -14,7 +14,7 @@
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
 
-$phienban='1.0.0'
+$phienban='1.0.1'
 
 #cs
 _caidatOmni()
@@ -3155,7 +3155,7 @@ EndFunc
 					        Sleep(100)
 							ControlClick($var[$i10][1],'','','left',1,1290,200 )
 					        Sleep(100)
-							ControlClick($var[$i10][1],'','','left',1,1290,180 )
+							ControlClick($var[$i10][1],'','','left',1,585, 429 )
 					        Sleep(100)
 							ControlClick($var[$i10][1],'','','left',1,589, 488)
 					        Sleep(100)
@@ -3228,7 +3228,7 @@ EndFunc
 
 						$x=0
 		                $y=0
-		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,665,600,950,768,$x,$y,1,1)
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,665,500,950,768,$x,$y,1,1)
 
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
@@ -3237,7 +3237,7 @@ EndFunc
 
 						If $x=0 Then
 
-							_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,700,600,940,720,$x,$y,1,1)
+							_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,700,500,940,720,$x,$y,1,1)
 							If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
@@ -3246,7 +3246,7 @@ EndFunc
 						EndIf
 
 						If $x=0 Then
-							_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,700,600,955,720,$x,$y,1,1)
+							_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,700,500,955,720,$x,$y,1,1)
 							If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
@@ -3255,7 +3255,35 @@ EndFunc
 						EndIf
 
 
-                        If $x=0 Then
+                       ; If $x=0 Then
+							ControlClick($var[$i10][1],'','','left',1,886, 622)
+							Sleep(200)
+                            ControlClick($var[$i10][1],'','','left',1,867, 642)
+							Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,800, 664)
+							Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,859, 663)
+							Sleep(200)
+
+							ControlClick($var[$i10][1],'','','left',1,859, 608)
+							Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,837, 626)
+							Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,700,555)
+							Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,849, 586)
+							Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,836, 663)
+						    Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,899, 678)
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,906, 689)
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,899, 685)
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,899, 677)
+						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,865, 674)
 						    Sleep(200)
 						    ControlClick($var[$i10][1],'','','left',1,919, 718)
 						    Sleep(200)
@@ -3264,31 +3292,8 @@ EndFunc
 						    ControlClick($var[$i10][1],'','','left',1,907, 705)
 						    Sleep(200)
 						    ControlClick($var[$i10][1],'','','left',1,896, 718)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,899, 678)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,906, 689)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,899, 685)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,899, 677)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,700,555)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,1165, 230)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,1165, 411)
-							Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,1165, 312)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,1165, 148)
-						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,800, 664)
-							Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,700,555)
-
 							Sleep(2000)
-                        EndIf
+                       ; EndIf
 					EndIf
 
                     If $linkvideo=1 Then
@@ -3360,6 +3365,7 @@ EndFunc
 							    Sleep(5000)
 						    EndIf
 						EndIf
+
 						If $x=0 Then
 							Sleep(2000)
 							WinMove($var[$i10][1],'',0,0,1366,800)     ; fix loi nut sub phia duoi
@@ -4024,6 +4030,8 @@ EndFunc
 							Sleep(3000)
 							MouseClick('left',1317,112,1,20)
 							Sleep(2000)
+							MouseClick('left',1327, 102,1,20)
+							Sleep(1000)
 
 						EndIf
 
@@ -4195,6 +4203,8 @@ EndFunc
 							Sleep(3000)
 							MouseClick('left',1317,112,1,20)
 							Sleep(2000)
+							MouseClick('left',1327, 102,1,20)
+							Sleep(1000)
 						EndIf
 					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
 					    If $i=8 Then ControlClick($var[$i10][1],'','','left',1,478, 26)    ; tat tab thua
@@ -4646,13 +4656,15 @@ EndFunc
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
 							Sleep(2000)
 							MouseClick('left',1300,720,1,20)
-							Sleep(3000)
+							Sleep(1000)
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
 							MouseClick('left',1322,114,1,20)
-							Sleep(3000)
+							Sleep(1000)
 							MouseClick('left',1317,112,1,20)
-							Sleep(2000)
+							Sleep(1000)
+							MouseClick('left',1327, 102,1,20)
+							Sleep(1000)
 						EndIf
 					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
 					    If $i=8 Then ControlClick($var[$i10][1],'','','left',1,478, 26)    ; tat tab thua
@@ -4680,51 +4692,6 @@ EndFunc
 					WinClose('Bạn có muốn khôi phục trang không?')
 					WinClose('Default Client')
 					ProcessClose('WerFault.exe')
-                #cs
-					MouseClick('left',600,60,1,20)
-					Sleep(2000)
-					Send('youtube.com')
-					Sleep(2000)
-					Send('{enter}')
-					Sleep(7000)
-					$pixcel=PixelSearch(382, 267,934, 585,0xEA8600)
-					If IsArray($pixcel) Then
-						MouseClick('left',600,300,1,20)
-					    Sleep(2000)
-						For $i20=1 to 8
-							Send('{tab}')
-							Sleep(1000)
-						Next
-                        Send('{enter}')
-						Sleep(7000)
-						MouseClick('left',600,300,1,20)
-					    Sleep(2000)
-						For $i20=1 to 2
-							Send('{tab}')
-							Sleep(1000)
-						Next
-                        Send('{enter}')
-						Sleep(7000)
-						MouseClick('left',600,300,1,20)
-					    Sleep(2000)
-						For $i20=1 to 2
-							Send('{tab}')
-							Sleep(1000)
-						Next
-                        Send('{enter}')
-						Sleep(7000)
-						MouseClick('left',600,300,1,20)
-					    Sleep(2000)
-						For $i20=1 to 5
-							Send('{tab}')
-							Sleep(1000)
-						Next
-                        Send('{enter}')
-						Sleep(7000)
-
-					EndIf
-
-                  #ce
 
 				Return $dangnhap
 	    EndFunc
@@ -4834,6 +4801,7 @@ EndFunc
 				  Next
 
 			If $i=1 Then
+				ProcessClose('conhost.exe')
 				WinClose('Settings')
 				Sleep(100)
 				ProcessClose('launcher.exe')
