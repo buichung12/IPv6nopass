@@ -3971,7 +3971,7 @@ EndFunc
 						MouseClick('left',852, 510,1,20)  ;tat thong bao update
 				        Sleep(7000)
 					EndIf
-
+#cs
 					If $i=1 Then
 						MouseClick('left',1328, 696,1,20)  ;tat tanh cong cu
 				        Sleep(1000)
@@ -3986,7 +3986,7 @@ EndFunc
 						MouseClick('left',1285,100,1,20) ;tat tanh cong cu
 						Sleep(1000)
 					EndIf
-
+#ce
 
 
 					Sleep(1000)
@@ -4186,7 +4186,7 @@ EndFunc
 						   MouseClick('left',1280,163,1,20)
 							Sleep(2000)
 						EndIf
-
+#cs
 						If $i=1 Then
 							MouseClick('left',880, 113,1,20)  ;tat tanh cong cu
 				            Sleep(1000)
@@ -4213,7 +4213,7 @@ EndFunc
 							MouseClick('left',1285,100,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
 					    EndIf
-
+#ce
 					    If $i=10 Then
 							ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,291, 635)
 		                    Sleep(2000)
@@ -4492,7 +4492,7 @@ EndFunc
 
 						WinSetState($var[$i10][1],'',@SW_RESTORE)
 						Sleep(1000)
-
+#cs
 						If $i=1 Then
 						   MouseClick('left',1333,99,1,20)  ;tat tanh cong cu
 				           Sleep(1000)
@@ -4508,7 +4508,7 @@ EndFunc
 
 
 						EndIf
-
+#ce
 						If $i=2 Then
 						    ControlClick('','','','left',1,528, 202)
 							Sleep(1000)
@@ -4641,7 +4641,7 @@ EndFunc
 						   MouseClick('left',1280,163,1,20)
 							Sleep(2000)
 						EndIf
-
+#cs
 						If $i=1 Then
 							 MouseClick('left',880, 118,1,20)  ;tat tanh cong cu
 				            Sleep(1000)
@@ -4671,7 +4671,7 @@ EndFunc
 						    Sleep(1000)
 					    EndIf
 
-
+#ce
 					    If $i=10 Then
 							ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,291, 635)
 		                    Sleep(2000)
