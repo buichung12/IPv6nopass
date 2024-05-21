@@ -3988,6 +3988,11 @@ EndFunc
 					EndIf
 #ce
 
+                    If $i=1 Then
+						MouseClick('left',1280,700,1,20)  ;tat thong bao update
+				        Sleep(7000)
+					EndIf
+
 
 					Sleep(1000)
 					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
@@ -4214,6 +4219,11 @@ EndFunc
 						    Sleep(1000)
 					    EndIf
 #ce
+
+                        If $i=1 Then
+						    MouseClick('left',1280,700,1,20)  ;tat thong bao update
+				            Sleep(7000)
+					    EndIf
 					    If $i=10 Then
 							ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,291, 635)
 		                    Sleep(2000)
@@ -4688,6 +4698,11 @@ EndFunc
 							MouseClick('left',1327, 102,1,20)
 							Sleep(1000)
 						EndIf
+
+						If $i=1 Then
+						    MouseClick('left',1280,700,1,20)  ;tat thong bao update
+				            Sleep(2000)
+					    EndIf
 					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
 					    If $i=8 Then ControlClick($var[$i10][1],'','','left',1,478, 26)    ; tat tab thua
 					    If $i=7 Then ControlClick($var[$i10][1],'','','left',1,478, 22)    ; tat tab thua
