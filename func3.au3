@@ -4224,6 +4224,7 @@ EndFunc
 						    MouseClick('left',1280,700,1,20)  ;tat thong bao update
 				            Sleep(7000)
 					    EndIf
+
 					    If $i=10 Then
 							ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,291, 635)
 		                    Sleep(2000)
@@ -4231,12 +4232,12 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',1300,720,1,20)
 							Sleep(3000)
-							MouseClick('left',1322,114,1,20)
-							Sleep(3000)
-							MouseClick('left',1317,112,1,20)
-							Sleep(2000)
-							MouseClick('left',1327, 102,1,20)
-							Sleep(1000)
+							;MouseClick('left',1322,114,1,20)
+							;Sleep(3000)
+							;MouseClick('left',1317,112,1,20)
+							;Sleep(2000)
+							;MouseClick('left',1327, 102,1,20)
+							;Sleep(1000)
 						EndIf
 					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
 					    If $i=8 Then ControlClick($var[$i10][1],'','','left',1,478, 26)    ; tat tab thua
@@ -4443,10 +4444,10 @@ EndFunc
 		                    Sleep(2000)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
 							Sleep(2000)
-							MouseClick('left',1325,112,1,20)
-							Sleep(3000)
-							MouseClick('left',1280,163,1,20)
-							Sleep(2000)
+						;	MouseClick('left',1325,112,1,20)
+						;	Sleep(3000)
+						;	MouseClick('left',1280,163,1,20)
+						;	Sleep(2000)
 
 						EndIf
 
@@ -4628,8 +4629,8 @@ EndFunc
 						   Sleep(2000)
 					    EndIf
 
-						MouseClick('left',1322,99,1,20)
-						Sleep(2000)
+					;	MouseClick('left',1322,99,1,20)
+					;	Sleep(2000)
 
 						If $i=3 Then
 						   WinClose('Update successful')
@@ -4687,16 +4688,16 @@ EndFunc
 		                    Sleep(2000)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
 							Sleep(2000)
-							MouseClick('left',1300,720,1,20)
-							Sleep(1000)
-							MouseClick('left',1280,163,1,20)
-							Sleep(2000)
-							MouseClick('left',1322,114,1,20)
-							Sleep(1000)
-							MouseClick('left',1317,112,1,20)
-							Sleep(1000)
-							MouseClick('left',1327, 102,1,20)
-							Sleep(1000)
+						;	MouseClick('left',1300,720,1,20)
+							;Sleep(1000)
+							;MouseClick('left',1280,163,1,20)
+							;Sleep(2000)
+							;MouseClick('left',1322,114,1,20)
+							;Sleep(1000)
+							;MouseClick('left',1317,112,1,20)
+							;Sleep(1000)
+							;MouseClick('left',1327, 102,1,20)
+							;Sleep(1000)
 						EndIf
 
 						If $i=1 Then
