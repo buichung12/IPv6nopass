@@ -3373,6 +3373,21 @@ EndFunc
 							Sleep(5000)
 						EndIf
 
+
+						If $x=0 Then
+							Sleep(2000)
+						    $x=0
+		                    $y=0
+		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,1000,220,1340,600,$x,$y,1,1)
+                            Sleep(1000)
+
+						    If $x>0 Then
+							    MouseClick('left',$x,$y,1,20)
+							    Sleep(5000)
+						    EndIf
+						EndIf
+
+
 						If $x=0 Then
 							Sleep(2000)
 							WinMove($var[$i10][1],'',0,0,1366,900)     ; fix loi nut sub phia duoi
