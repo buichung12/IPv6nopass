@@ -3942,6 +3942,7 @@ EndFunc
 					WinClose('Default Client')
 					WinClose('Update successful')
 					WinClose('Translated page')
+					WinClose('Translated page from Vietnamses?')
 					Sleep(1000)
 					WinClose('Restore pages?')
 					WinClose('Default Client')
@@ -4297,6 +4298,7 @@ EndFunc
 					WinClose('Default Client')
 					ProcessClose('WerFault.exe')
 					WinClose('Translated page')
+					WinClose('Translated page from Vietnamses?')
 				Return $dangnhap
 	    EndFunc
 
@@ -4424,7 +4426,7 @@ EndFunc
 					WinClose('Bạn có muốn khôi phục trang không?')
 					WinClose('Default Client')
 					WinClose('Update successful')
-					WinClose('Translated page')
+					WinClose('Translated page from Vietnamses?')
 					Sleep(1000)
 					WinClose('Restore pages?')
 					WinClose('Default Client')
@@ -4748,7 +4750,7 @@ EndFunc
 					WinClose('Bạn có muốn khôi phục trang không?')
 					WinClose('Default Client')
 					ProcessClose('WerFault.exe')
-					WinClose('Translated page')
+					WinClose('Translated page from Vietnamses?')
 
 				Return $dangnhap
 	    EndFunc
