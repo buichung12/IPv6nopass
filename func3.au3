@@ -14,7 +14,7 @@
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
 
-$phienban='1.0.2'
+$phienban='1.0.3'
 
 #cs
 _caidatOmni()
@@ -2833,21 +2833,25 @@ EndFunc
 					If $i=10 Then MouseClick('left',500, 190,1,20)
 
 					Sleep(2000)
+                    For $i20=1 to 2
+					    $pixcel=PixelSearch(55,110,245, 170,0xFF0000)   ; xoa loi edge
+					    $pixcel2=PixelSearch(545, 347,1151, 744,0x606060)   ; xoa loi edge
+					    If IsArray($pixcel) and IsArray($pixcel2) Then
+						    Sleep(4000)
+					        For $i20=1 to $i5+2
+						       ControlSend($var[$i10][1],'','','{tab}')
+						       Sleep(500)
+					        Next
 
-					$pixcel=PixelSearch(55,110,245, 170,0xFF0000)   ; xoa loi edge
-					If IsArray($pixcel) Then
-						Sleep(4000)
-					    For $i20=1 to $i5+2
-						    ControlSend($var[$i10][1],'','','{tab}')
-						    Sleep(500)
-					    Next
-
-					    Sleep(1000)
-					    ControlSend($var[$i10][1],'','','{enter}')
-					    Sleep(10000)
+					        Sleep(1000)
+					        ControlSend($var[$i10][1],'','','{enter}')
+					        Sleep(10000)
 							$i2=2
 							$check=1
-					EndIf
+							$i20=2
+					    EndIf
+						Sleep(20000)
+					Next
 
 
 				EndIf
