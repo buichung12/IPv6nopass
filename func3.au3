@@ -3382,7 +3382,7 @@ EndFunc
 							Sleep(2000)
 						    $x=0
 		                    $y=0
-		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,1000,220,1340,600,$x,$y,1,1)
+		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,1000,220,1360,700,$x,$y,1,1)
                             Sleep(1000)
 
 						    If $x>0 Then
