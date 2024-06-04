@@ -14,7 +14,7 @@
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
 
-$phienban='1.0.4'
+$phienban='1.0.5'
 
 #cs
 _caidatOmni()
@@ -2385,7 +2385,14 @@ EndFunc
 							  $icheck=2
 						EndIf
 
-
+						;WinClose('Windows Security')
+				        Sleep(100)
+				        WinClose('Authentication Required - Mozilla Firefox')
+				        Sleep(100)
+				        WinClose('Authentication Required - FlashPeak SlimBrowser')
+				        Sleep(100)
+				        WinClose('Yêu cầu xác minh - Mozilla Firefox')
+                        ;Sleep(5000)
 						Sleep(1000)
 					    $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
                         Sleep(1000)
@@ -2417,10 +2424,78 @@ EndFunc
 						Sleep(2000)
 						Send('{tab}')
 						Sleep(2000)
-						If $i=6 Then Send('{tab}')
-						Sleep(1000)
+						If $i=6  Then Send('{tab}')
+						Sleep(2000)
 						Send('{enter}')
-						Sleep(4000)
+						Sleep(5000)
+						If $i=1 Then
+							MouseClick('left',858, 241,1,20)
+							Sleep(2000)
+							WinClose('Save password for '&$ip&':'&$port&'?')
+							Sleep(2000)
+						EndIf
+						If $i=2 Then
+							MouseClick('left',981, 262 ,1,20)
+							Sleep(2000)
+							WinClose('Save password for '&$ip&':'&$port&'?')
+							Sleep(2000)
+						EndIf
+						If $i=4 Then
+							MouseClick('left',1030, 226 ,1,20)
+							Sleep(2000)
+							WinClose('Save password for '&$ip&':'&$port&'?')
+							Sleep(2000)
+						EndIf
+						If $i=5 Then
+							MouseClick('left',1217, 102 ,1,20)
+							Sleep(2000)
+							WinClose('Save password for '&$ip&':'&$port&'?')
+							Sleep(2000)
+						EndIf
+						If $i=8 Then
+							MouseClick('left',1090, 368,1,20)
+							Sleep(2000)
+							WinClose('Save password for '&$ip&':'&$port&'?')
+							Sleep(2000)
+						EndIf
+						If $i=10 Then
+							MouseClick('left',1090, 392,1,20)
+							Sleep(2000)
+							WinClose('Bạn có muốn lưu mật khẩu cho '&$ip&':'&$port&' không?')
+							Sleep(2000)
+						EndIf
+						WinClose('Save password for '&$ip&':'&$port&'?')
+						Sleep(2000)
+
+
+						If  $i=9 Then
+							WinClose('Check Update')
+							Sleep(1000)
+							MouseClick('left',805,437,1,20)
+							Sleep(2000)
+							MouseClick('left',844, 317,1,20)
+							Sleep(2000)
+                            ControlClick('','','','left',1,475, 200)
+                            Sleep(2000)
+                            ControlClick('','','','left',1,800, 243)
+	                        Sleep(2000)
+							MouseClick('left',503, 200,1,20)
+							Sleep(2000)
+							MouseClick('left',831, 237,1,20)
+							Sleep(2000)
+							MouseClick('left',1260,208 ,1,20)
+							Sleep(1000)
+							ControlClick('','','','left',1,505, 200)
+							Sleep(2000)
+							ControlClick('','','','left',1,834, 242)
+							Sleep(2000)
+							MouseClick('left',1304,190,1,20)
+							Sleep(2000)
+							MouseClick('left',1338,131,1,20)
+							Sleep(2000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
+						EndIf
 
 					Next
 			Return $check
@@ -4793,6 +4868,13 @@ EndFunc
 					WinClose('Default Client')
 					ProcessClose('WerFault.exe')
 					WinClose('Translated page from Vietnamses?')
+					WinClose('Windows Security')
+				    Sleep(100)
+				    WinClose('Authentication Required - Mozilla Firefox')
+				    Sleep(100)
+				    WinClose('Authentication Required - FlashPeak SlimBrowser')
+				    Sleep(100)
+				    WinClose('Yêu cầu xác minh - Mozilla Firefox')
 
 					_FakeIPOptionV6($i,$vpsso)
 
@@ -5219,6 +5301,19 @@ EndFunc
 				Sleep(100)
 				_ReduceMemory()
 				Sleep(200)
+				WinClose('Windows Security')
+				Sleep(100)
+				WinClose('Authentication Required - Mozilla Firefox')
+				Sleep(100)
+				WinClose('Authentication Required - FlashPeak SlimBrowser')
+				Sleep(100)
+				WinClose('Yêu cầu xác minh - Mozilla Firefox')
+				_resetMang(1)
+
+				WinClose('Windows Security')
+				Sleep(100)
+				WinClose('Windows Security')
+				WinClose('Windows Security')
 
 
 	EndFunc

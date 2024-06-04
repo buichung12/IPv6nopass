@@ -171,9 +171,9 @@ While 1   ; vong tra lai gia tr
                  ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 9'&'	vpsso:'&$vpsso&'	phien ban:'&$phienban,0,0)
 				 $checkTG=1
                  $checkchonprofile=0
-				 $check=_FakeIPOptionV6($i,$vpsso)
+				; $check=_FakeIPOptionV6($i,$vpsso)
 
-				If $check=1 Then
+				;If $check=1 Then
 
 					    ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 9'&'	vpsso:'&$vpsso&'	phien ban:'&$phienban,0,0)
 					     _khoidongFireFox2($i,$vpsso)
@@ -197,7 +197,7 @@ While 1   ; vong tra lai gia tr
 
 						_closeTrinhDuyet($i)
 
-				EndIf
+				;EndIf
 			;EndIf
 
 	  Next     ;ket thuc vong xem cac kenh phu
