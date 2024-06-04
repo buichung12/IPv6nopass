@@ -2384,6 +2384,44 @@ EndFunc
                               $check=1
 							  $icheck=2
 						EndIf
+
+
+						Sleep(1000)
+					    $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+                        Sleep(1000)
+					    If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
+					    Sleep(1000)
+					    If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
+
+
+					    For $i10 = 1 to $var[0][0]
+					        If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
+
+							    WinActivate($var[$i10][1])
+							    Sleep(2000)
+
+						    EndIf
+						Next
+
+						MouseClick('left',600,60,1,20)
+						Sleep(2000)
+						Send('google.com')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(5000)
+						Send($ID)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send($Pass)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						If $i=6 Then Send('{tab}')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(4000)
+
 					Next
 			Return $check
 
@@ -4755,6 +4793,8 @@ EndFunc
 					WinClose('Default Client')
 					ProcessClose('WerFault.exe')
 					WinClose('Translated page from Vietnamses?')
+
+					_FakeIPOptionV6($i,$vpsso)
 
 				Return $dangnhap
 	    EndFunc
