@@ -14,7 +14,7 @@
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
 
-$phienban='1.0.3'
+$phienban='1.0.4'
 
 #cs
 _caidatOmni()
