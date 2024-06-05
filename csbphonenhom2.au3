@@ -172,9 +172,9 @@ While 1   ; vong tra lai gia tr
                  $checkchonprofile=0
 			;If $i<>5 Then
 				; $idangnhap=_khoidongFireaFox2($i,$vpsso)
-				 $check=_FakeIPOptionV6($i,$vpsso)
+				; $check=_FakeIPOptionV6($i,$vpsso)
 
-				If $check=1 Then
+				;If $check=1 Then
                         ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 2'&'	vpsso:'&$vpsso&'	phien ban:'&$phienban,0,0)
 					    _khoidongFireFox2($i,$vpsso)
 
@@ -197,7 +197,7 @@ While 1   ; vong tra lai gia tr
 
 						_closeTrinhDuyet($i)
 
-				EndIf
+				;EndIf
 			;EndIf
 
 

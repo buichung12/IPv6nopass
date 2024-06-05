@@ -14,7 +14,7 @@
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
 
-$phienban='1.0.5'
+$phienban='1.0.6'
 
 #cs
 _caidatOmni()
@@ -2424,8 +2424,6 @@ EndFunc
 						Sleep(2000)
 						Send('{tab}')
 						Sleep(2000)
-						If $i=6  Then Send('{tab}')
-						Sleep(2000)
 						Send('{enter}')
 						Sleep(5000)
 						If $i=1 Then
@@ -2438,6 +2436,12 @@ EndFunc
 							MouseClick('left',981, 262 ,1,20)
 							Sleep(2000)
 							WinClose('Save password for '&$ip&':'&$port&'?')
+							Sleep(2000)
+						EndIf
+						If $i=3 Then
+							MouseClick('left',990, 300 ,1,20)
+							Sleep(2000)
+							WinClose('Bạn có muốn lưu mật khẩu cho '&$ip&':'&$port&' không?')
 							Sleep(2000)
 						EndIf
 						If $i=4 Then
@@ -2465,7 +2469,11 @@ EndFunc
 							Sleep(2000)
 						EndIf
 						WinClose('Save password for '&$ip&':'&$port&'?')
-						Sleep(2000)
+						Sleep(1000)
+						WinClose('Bạn có muốn lưu mật khẩu cho '&$ip&':'&$port&' không?')
+						Sleep(1000)
+						WinClose('Bạn có muốn lưu mật khẩu cho '&$ip&':'&$port&' không?')
+						Sleep(1000)
 
 
 						If  $i=9 Then
@@ -2856,13 +2864,13 @@ EndFunc
 					EndIf
 
 					Sleep(1000)
-				    ControlClick($var[$i10][1],'','','left',1,600, 60)
-				    Sleep(3000)
+				    MouseClick('left',600, 60,1,20)
+				    Sleep(2000)
 					ClipPut('https://www.youtube.com/channel_switcher?next=%2Faccount&feature=settings')
 					Sleep(1000)
 				    Send("^v")
 				    Sleep(2000)
-				    ControlSend($var[$i10][1],'','','{enter}')
+				    Send('{enter}')
 				    Sleep(10000)
 					Send('^0')
 					Sleep(2000)
