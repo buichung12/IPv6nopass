@@ -14,7 +14,7 @@
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
 
-$phienban='1.0.6'
+$phienban='1.0.7'
 
 #cs
 _caidatOmni()
@@ -2415,8 +2415,19 @@ EndFunc
 						Send('google.com')
 						Sleep(1000)
 						Send('{enter}')
-						Sleep(5000)
+						Sleep(10000)
 						Send($ID)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send($Pass)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(5000)
+
+						Send($ID)  ; send lan 2
 						Sleep(2000)
 						Send('{tab}')
 						Sleep(2000)
@@ -3192,9 +3203,9 @@ EndFunc
 
 				    Sleep(3000)     ;thoi gian nghi
 
-					If $i=9 Then
-						WinMove($var[$i10][1],'',0,0,1355,800)     ; fix loi nut sub phia duoi
-					EndIf
+					;If $i=9 Then
+					;	WinMove($var[$i10][1],'',0,0,1355,800)     ; fix loi nut sub phia duoi
+					;EndIf
 
 					If $linkvideo=0 Then
                          ToolTip("link video "&$iSun2lan&", link trang chu"&'	phien ban:'&$phienban,0,0)
@@ -3515,8 +3526,8 @@ EndFunc
 
 						If $x=0 Then
 							Sleep(2000)
-							WinMove($var[$i10][1],'',0,0,1366,900)     ; fix loi nut sub phia duoi
-				            Sleep(4000)     ;thoi gian nghi
+							;WinMove($var[$i10][1],'',0,0,1366,850)     ; fix loi nut sub phia duoi
+				            ;Sleep(4000)     ;thoi gian nghi
 						    $x=0
 		                    $y=0
 		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,500,900,900,$x,$y,1,1)
@@ -3530,8 +3541,8 @@ EndFunc
 
 						If $x=0 Then
 							Sleep(2000)
-							WinMove($var[$i10][1],'',0,0,1366,800)     ; fix loi nut sub phia duoi
-				            Sleep(4000)     ;thoi gian nghi
+							;WinMove($var[$i10][1],'',0,0,1366,800)     ; fix loi nut sub phia duoi
+				           ; Sleep(4000)     ;thoi gian nghi
 						    $x=0
 		                    $y=0
 		                    _ImageSearchArea(@ScriptDir&'\sub3.bmp',1,75,500,900,900,$x,$y,1,1)
@@ -3602,7 +3613,6 @@ EndFunc
 						     Sleep(200)
 						     ControlClick($var[$i10][1],'','','left',1,278, 630)    ;sub
 						     Sleep(200)
-
 						     ControlClick($var[$i10][1],'','','left',1,440, 700) ;sub
 						     Sleep(100)
 
@@ -4165,7 +4175,7 @@ EndFunc
 							Sleep(2000)
 					    EndIf
 
-						WinMove($var[$i10][1],'',0,0,1366,768)
+						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(2000)
 
 						If  $i=10 Then
@@ -4563,7 +4573,7 @@ EndFunc
 					Sleep(1000)
 
 					If $i=5 Then
-                        WinMove('','',0,0,1366,768)
+                        WinMove('','',0,0,1366,850)
 						Sleep(2000)
 					EndIf
 
@@ -4674,7 +4684,7 @@ EndFunc
 							Sleep(2000)
 					    EndIf
 
-						WinMove($var[$i10][1],'',0,0,1366,768)
+						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(2000)
 
 
@@ -4721,7 +4731,9 @@ EndFunc
 							MouseClick('left',1333, 102,1,20)
 							Sleep(2000)
 							MouseClick('left',1280,163,1,20)
-
+							Sleep(1000)
+							MouseClick('left',1230,700,1,20)
+							Sleep(1000)
 						EndIf
 
 
