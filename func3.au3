@@ -14,7 +14,7 @@
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
 
-$phienban='1.0.7'
+$phienban='1.0.8'
 
 #cs
 _caidatOmni()
@@ -686,6 +686,7 @@ EndFunc
 			Sleep(10000)
 			Send('^+s')
 			Sleep(10000)
+
 			FileDelete('C:\Users\'&@UserName&'\Downloads\sub2.bmp')
 			Sleep(200)
             ToolTip('update sub3.BMP'&'	phien ban:'&$phienban,0,0)
@@ -701,11 +702,11 @@ EndFunc
 			Send('^+s')
 			Sleep(10000)
 			FileCopy('C:\Users\'&@UserName&'\Downloads\sub.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
-		    Sleep(2000)
+		    Sleep(1000)
 			FileCopy('C:\Users\'&@UserName&'\Downloads\sub2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
-		    Sleep(2000)
+		    Sleep(1000)
 			FileCopy('C:\Users\'&@UserName&'\Downloads\sub3.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
-		    Sleep(2000)
+		    Sleep(1000)
 
 
 
@@ -3552,16 +3553,36 @@ EndFunc
 						Next
 
 				        Sleep(4000)     ;thoi gian nghi
+
 						$x=0
 		                $y=0
-		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,500,900,850,$x,$y,1,1)
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,160, 760,500, 850,$x,$y,1,1)
                         Sleep(1000)
-
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
 							Sleep(5000)
 						EndIf
+						Sleep(1000)
 
+						$x=0
+		                $y=0
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,115, 690,500, 850,$x,$y,1,1)
+                        Sleep(1000)
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(5000)
+						EndIf
+						Sleep(1000)
+
+						$x=0
+		                $y=0
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,115, 620,500, 850,$x,$y,1,1)
+                        Sleep(1000)
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(5000)
+						EndIf
+						Sleep(1000)
 
 						If $x=0 Then
 							Sleep(2000)
@@ -3574,6 +3595,17 @@ EndFunc
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
 						    EndIf
+						EndIf
+						Sleep(1000)
+
+						$x=0
+		                $y=0
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,500,900,850,$x,$y,1,1)
+                        Sleep(1000)
+
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(5000)
 						EndIf
 
 
@@ -3616,7 +3648,7 @@ EndFunc
 						    Sleep(200)
 					        ControlClick($var[$i10][1],'','','left',1,368, 685) ;sub
 						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,310, 685) ;sub
+						    ControlClick($var[$i10][1],'','','left',1,344, 800) ;sub
 						    Sleep(200)
 						    ControlClick($var[$i10][1],'','','left',1,262, 685) ;sub
 						    Sleep(200)
@@ -3624,7 +3656,7 @@ EndFunc
 						    Sleep(200)
 						    ControlClick($var[$i10][1],'','','left',1,310, 630) ;sub
 						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,262, 630) ;sub
+						    ControlClick($var[$i10][1],'','','left',1,260, 655) ;sub
 						    Sleep(200)
 						    ControlClick($var[$i10][1],'','','left',1,368, 700) ;sub
 						    Sleep(200)
@@ -3636,13 +3668,13 @@ EndFunc
 						    Sleep(200)
 						    ControlClick($var[$i10][1],'','','left',1,310, 750) ;sub
 						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,262, 770) ;sub
+						    ControlClick($var[$i10][1],'','','left',1,262, 800) ;sub
 						    Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,280, 760) ;sub
 						    Sleep(200)
 						    ControlClick($var[$i10][1],'','','left',1,368, 760) ;sub
 						    Sleep(200)
-						    ControlClick($var[$i10][1],'','','left',1,423, 760) ;sub
+						    ControlClick($var[$i10][1],'','','left',1,423, 800) ;sub
 						    Sleep(200)
 						    ControlClick($var[$i10][1],'','','left',1,400, 622) ;sub
 						     Sleep(200)
@@ -3650,7 +3682,7 @@ EndFunc
 						     Sleep(200)
 						     ControlClick($var[$i10][1],'','','left',1,280, 688)    ;sub
 						     Sleep(200)
-						     ControlClick($var[$i10][1],'','','left',1,279, 722)    ;sub
+						     ControlClick($var[$i10][1],'','','left',1,268, 719)    ;sub
 						     Sleep(200)
 						     ControlClick($var[$i10][1],'','','left',1,320 ,722)    ;sub
 						     Sleep(200)
@@ -3660,7 +3692,7 @@ EndFunc
 						     Sleep(200)
 						     ControlClick($var[$i10][1],'','','left',1,320 ,662)    ;sub
 						     Sleep(200)
-						     ControlClick($var[$i10][1],'','','left',1,279, 700)    ;sub
+						     ControlClick($var[$i10][1],'','','left',1,279, 800)    ;sub
 						     Sleep(200)
 						     ControlClick($var[$i10][1],'','','left',1,284, 650)    ;sub
 						     Sleep(200)
@@ -3687,7 +3719,7 @@ EndFunc
 
 						$x=0
 		                $y=0
-		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,600,1000,768,$x,$y,1,1)
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,600,1000,850,$x,$y,1,1)
 
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
