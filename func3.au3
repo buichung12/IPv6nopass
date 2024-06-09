@@ -2427,13 +2427,66 @@ EndFunc
 						Send('{enter}')
 						Sleep(5000)
 
-						Send($ID)  ; send lan 2
+						If $i=1 Then
+							MouseClick('left',858, 241,1,20)
+							Sleep(2000)
+							WinClose('Save password for '&$ip&':'&$port&'?')
+							Sleep(2000)
+						EndIf
+						If $i=2 Then
+							MouseClick('left',981, 262 ,1,20)
+							Sleep(2000)
+							WinClose('Save password for '&$ip&':'&$port&'?')
+							Sleep(2000)
+						EndIf
+						If $i=3 Then
+							MouseClick('left',990, 300 ,1,20)
+							Sleep(2000)
+							WinClose('Bạn có muốn lưu mật khẩu cho '&$ip&':'&$port&' không?')
+							Sleep(2000)
+						EndIf
+						If $i=4 Then
+							MouseClick('left',1030, 226 ,1,20)
+							Sleep(2000)
+							WinClose('Save password for '&$ip&':'&$port&'?')
+							Sleep(2000)
+						EndIf
+						If $i=5 Then
+							MouseClick('left',1217, 102 ,1,20)
+							Sleep(2000)
+							WinClose('Save password for '&$ip&':'&$port&'?')
+							Sleep(2000)
+						EndIf
+						If $i=8 Then
+							MouseClick('left',1090, 368,1,20)
+							Sleep(2000)
+							WinClose('Save password for '&$ip&':'&$port&'?')
+							Sleep(2000)
+						EndIf
+						If $i=10 Then
+							MouseClick('left',1090, 392,1,20)
+							Sleep(2000)
+							WinClose('Bạn có muốn lưu mật khẩu cho '&$ip&':'&$port&' không?')
+							Sleep(2000)
+						EndIf
+
+						MouseClick('left',600,60,1,20); send lan 2
+						Sleep(2000)
+						Send('google.com')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(10000)
+						Send('^a')
+						Sleep(1000)
+						Send($ID)
 						Sleep(2000)
 						Send('{tab}')
 						Sleep(2000)
 						Send($Pass)
 						Sleep(2000)
 						Send('{tab}')
+						Sleep(1000)
+						If $i=6 Then Send('{tab}')
 						Sleep(2000)
 						Send('{enter}')
 						Sleep(5000)
@@ -3501,7 +3554,7 @@ EndFunc
 				        Sleep(4000)     ;thoi gian nghi
 						$x=0
 		                $y=0
-		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,500,900,900,$x,$y,1,1)
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,500,900,850,$x,$y,1,1)
                         Sleep(1000)
 
 						If $x>0 Then
@@ -3530,7 +3583,7 @@ EndFunc
 				            ;Sleep(4000)     ;thoi gian nghi
 						    $x=0
 		                    $y=0
-		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,500,900,900,$x,$y,1,1)
+		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,500,900,850,$x,$y,1,1)
                             Sleep(1000)
 
 						    If $x>0 Then
@@ -3545,7 +3598,7 @@ EndFunc
 				           ; Sleep(4000)     ;thoi gian nghi
 						    $x=0
 		                    $y=0
-		                    _ImageSearchArea(@ScriptDir&'\sub3.bmp',1,75,500,900,900,$x,$y,1,1)
+		                    _ImageSearchArea(@ScriptDir&'\sub3.bmp',1,75,500,900,850,$x,$y,1,1)
                             Sleep(1000)
 
 						    If $x>0 Then
