@@ -14,7 +14,7 @@
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
 
-$phienban='1.0.8'
+$phienban='1.0.9'
 
 #cs
 _caidatOmni()
@@ -3547,6 +3547,7 @@ EndFunc
 
 
 						$pixcel=PixelSearch(80,720,200,800,0xFF0000)  ; loi hien bang thong bao đăng ký pre 1 tháng
+						Sleep(1000)
 						If IsArray($pixcel) Then
 							$i20=20
 							MouseClick('left',$pixcel[0],$pixcel[1],1,20)
