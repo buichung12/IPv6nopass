@@ -3549,7 +3549,7 @@ EndFunc
 						$pixcel=PixelSearch(80,720,200,800,0xFF0000)  ; loi hien bang thong bao đăng ký pre 1 tháng
 						If IsArray($pixcel) Then
 							$i20=20
-							MouseClick('left',$x,$y,1,20)
+							MouseClick('left',$pixcel[0],$pixcel[1],1,20)
 							Sleep(2000)
 							Send('{tab}')
 							Sleep(2000)
