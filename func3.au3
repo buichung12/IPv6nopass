@@ -1706,7 +1706,7 @@ EndFunc
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(6000)
-						For $i20=1 to 11
+						For $i20=1 to 13
 							Send('{tab}')
 							Sleep(1000)
 						Next
@@ -3281,24 +3281,20 @@ EndFunc
 							Sleep(10000)
 						EndIf
 
-						If $x=0 Then
 
-							_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,309, 139,1327, 599,$x,$y,1,1)
-							If $x>0 Then
+						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,309, 139,1327, 599,$x,$y,1,1)
+						If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
-							EndIf
-
 						EndIf
 
-						If $x=0 Then
-							_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,309, 139,1327, 599,$x,$y,1,1)
-							If $x>0 Then
-							    MouseClick('left',$x,$y,1,20)
-							    Sleep(5000)
-							EndIf
 
+						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,309, 139,1327, 599,$x,$y,1,1)
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(5000)
 						EndIf
+
 
                            If $i=5 Then ControlClick($var[$i10][1],'','','left',1,1245, 216)
 							Sleep(200)
@@ -3447,23 +3443,19 @@ EndFunc
 							Sleep(10000)
 						EndIf
 
-						If $x=0 Then
 
-							_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,700,500,940,720,$x,$y,1,1)
-							If $x>0 Then
+						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,700,500,940,720,$x,$y,1,1)
+						If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
-							EndIf
-
 						EndIf
 
-						If $x=0 Then
-							_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,700,500,955,720,$x,$y,1,1)
-							If $x>0 Then
-							    MouseClick('left',$x,$y,1,20)
-							    Sleep(5000)
-							EndIf
 
+
+						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,700,500,955,720,$x,$y,1,1)
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(5000)
 						EndIf
 
 
@@ -3551,8 +3543,20 @@ EndFunc
 						   EndIf
 						   Sleep(1000)
 						Next
+				        Sleep(2000)     ;thoi gian nghi
 
-				        Sleep(4000)     ;thoi gian nghi
+
+						$pixcel=PixelSearch(80,720,200,800,0xFF0000)  ; loi hien bang thong bao đăng ký pre 1 tháng
+						If IsArray($pixcel) Then
+							$i20=20
+							MouseClick('left',$x,$y,1,20)
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+							Sleep(2000)
+						EndIf
+
 
 						$x=0
 		                $y=0
@@ -3564,8 +3568,6 @@ EndFunc
 						EndIf
 						Sleep(1000)
 
-						$x=0
-		                $y=0
 		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,115, 690,500, 850,$x,$y,1,1)
                         Sleep(1000)
 						If $x>0 Then
@@ -3574,8 +3576,6 @@ EndFunc
 						EndIf
 						Sleep(1000)
 
-						$x=0
-		                $y=0
 		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,115, 620,500, 850,$x,$y,1,1)
                         Sleep(1000)
 						If $x>0 Then
@@ -3584,22 +3584,14 @@ EndFunc
 						EndIf
 						Sleep(1000)
 
-						If $x=0 Then
-							Sleep(2000)
-						    $x=0
-		                    $y=0
-		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,1000,220,1360,700,$x,$y,1,1)
-                            Sleep(1000)
-
-						    If $x>0 Then
-							    MouseClick('left',$x,$y,1,20)
-							    Sleep(5000)
-						    EndIf
+						_ImageSearchArea(@ScriptDir&'\sub.bmp',1,1000,220,1360,700,$x,$y,1,1)
+						Sleep(1000)
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(5000)
 						EndIf
 						Sleep(1000)
 
-						$x=0
-		                $y=0
 		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,500,900,850,$x,$y,1,1)
                         Sleep(1000)
 
@@ -3609,37 +3601,35 @@ EndFunc
 						EndIf
 
 
-						If $x=0 Then
-							Sleep(2000)
-							;WinMove($var[$i10][1],'',0,0,1366,850)     ; fix loi nut sub phia duoi
-				            ;Sleep(4000)     ;thoi gian nghi
-						    $x=0
-		                    $y=0
-		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,500,900,850,$x,$y,1,1)
-                            Sleep(1000)
-
-						    If $x>0 Then
+						_ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,500,900,850,$x,$y,1,1)
+						Sleep(1000)
+						If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
-						    EndIf
 						EndIf
 
-						If $x=0 Then
-							Sleep(2000)
-							;WinMove($var[$i10][1],'',0,0,1366,800)     ; fix loi nut sub phia duoi
-				           ; Sleep(4000)     ;thoi gian nghi
-						    $x=0
-		                    $y=0
-		                    _ImageSearchArea(@ScriptDir&'\sub3.bmp',1,75,500,900,850,$x,$y,1,1)
-                            Sleep(1000)
 
-						    If $x>0 Then
+						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,75,500,900,850,$x,$y,1,1)
+						Sleep(1000)
+						If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
-						    EndIf
 						EndIf
 
+
 						If $x=0 Then
+							ControlClick($var[$i10][1],'','','left',1,272, 655) ;sub
+						    Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,355, 659) ;sub
+						    Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,278, 718) ;sub
+						    Sleep(1000)
+							ControlClick($var[$i10][1],'','','left',1,354, 719) ;sub
+						    Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,270,800) ;sub
+						    Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,355,800) ;sub
+						    Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,415, 714) ;sub
 						    Sleep(200)
 					    	ControlClick($var[$i10][1],'','','left',1,413, 671) ;sub
