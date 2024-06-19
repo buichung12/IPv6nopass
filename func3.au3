@@ -5215,6 +5215,8 @@ EndFunc
 				Sleep(100)
 				ProcessClose('clipboard.exe')
 				Sleep(100)
+				ProcessClose('UniKeyNT.exe')
+				Sleep(100)
 				WinClose('Đang chạy..., Trình cài đặt Cốc Cốc')
                 Sleep(3000)
                 ControlClick('Cài đặt bị dừng.','Hủy Cài đặt','[CLASS:Button; INSTANCE:2]')
