@@ -13,9 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-
-$phienban='1.0.9'
-
+$phienban='1.0.10'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -52,8 +50,6 @@ _FakeIPOption($vpsso)
 _subFFLaiIP($ThuTukenh,$vpsso,$i)
 _randomprofilr($i)
 #ce
-
-
 
 Func _ChinhDoPhanGiai($i)
 
@@ -1787,7 +1783,7 @@ EndFunc
 
 					EndIf
 
-				   If $i=10 Then
+				    If $i=10 Then
 
                         ControlClick('','','','left',1,1333, 102)
 						Sleep(1000)
@@ -1844,6 +1840,7 @@ EndFunc
 
 					_resetMang($i)
 					_khoidongFireFox($i)
+					_FakeIPOptionV6($i,$vpsso)
                     _loginGmail($i)
 
 				EndIf
@@ -3546,17 +3543,7 @@ EndFunc
 				        Sleep(2000)     ;thoi gian nghi
 
 
-						$pixcel=PixelSearch(80,720,200,800,0xFF0000)  ; loi hien bang thong bao đăng ký pre 1 tháng
-						Sleep(1000)
-						If IsArray($pixcel) Then
-							$i20=20
-							MouseClick('left',$pixcel[0],$pixcel[1],1,20)
-							Sleep(2000)
-							Send('{tab}')
-							Sleep(2000)
-							Send('{enter}')
-							Sleep(2000)
-						EndIf
+
 
 
 						$x=0
@@ -3585,13 +3572,52 @@ EndFunc
 						EndIf
 						Sleep(1000)
 
+
+						$pixcel=PixelSearch(80,720,200,800,0xFF0000)  ; loi hien bang thong bao đăng ký pre 1 tháng
+						Sleep(1000)
+						If IsArray($pixcel) Then
+							$i20=20
+							MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+							Sleep(2000)
+						EndIf
+
+						$x=0
+		                $y=0
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,160, 760,500, 850,$x,$y,1,1)
+                        Sleep(1000)
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(5000)
+						EndIf
+						;Sleep(1000)
+
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,115, 690,500, 850,$x,$y,1,1)
+                        Sleep(1000)
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(5000)
+						EndIf
+						;Sleep(1000)
+
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,115, 620,500, 850,$x,$y,1,1)
+                        Sleep(1000)
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(5000)
+						EndIf
+						;Sleep(1000)
+
 						_ImageSearchArea(@ScriptDir&'\sub.bmp',1,1000,220,1360,700,$x,$y,1,1)
 						Sleep(1000)
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
 							Sleep(5000)
 						EndIf
-						Sleep(1000)
+						;Sleep(1000)
 
 		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,75,500,900,850,$x,$y,1,1)
                         Sleep(1000)
@@ -5614,7 +5640,10 @@ EndFunc
 	                       ToolTip('dang nhap Gmail so:'&$i&'	phien ban:'&$phienban,0,0)
 						   $e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
 						   If StringLen($e)<10 Then
-							   MsgBox(0,0,'khong co gmail')
+							   MsgBox(0,0,'khong co gmail',1)
+							   _GetDOSOutput('shutdown -r -t 0')
+
+
 						   EndIf
 						   $cacgiatri=StringSplit($e,'	')
 	                   For $i11=1 to $cacgiatri[0]
