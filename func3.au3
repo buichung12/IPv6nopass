@@ -1389,9 +1389,9 @@ EndFunc
                 $check=0
 
 				  ToolTip('check dang nhap 	'&$i&'	phien ban:'&$phienban,0,0)
-				;_FakeIPOptionV6($i,$vpsso)
 				_resetMang($i)
 				_khoidongFireFox($i)
+				_FakeIPOptionV6($i,$vpsso)
 				WinSetState('Windows Security','',@SW_HIDE)
 				_loginGmail($i)
 
