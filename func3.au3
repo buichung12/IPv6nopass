@@ -1903,7 +1903,7 @@ EndFunc
 				EndIf
 
 
-				If $check=1 and $check2=1 Then
+				If $check=1 Then
 
 					$TrangThaiDangNhap="1"
 				    $e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
