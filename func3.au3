@@ -511,7 +511,7 @@ EndFunc
 			EndIf
 
 			ToolTip('Xoa DaTa trinh duyet'&'	phien ban:'&$phienban,0,0)
-
+            $TrangThaiDangNhap='1'
 			_requetGooGleDOC('https://docs.google.com/document/d/1yzcRSbBRVzByEp7UKusrhl_AMQZATzRzcrk-eAhKS6w/export?format=txt','checkxoadatatrinhduyet.txt')
 			Sleep(1000)
 			$checkxoadatatrinhduyet=FileReadLine(@ScriptDir&'\checkxoadatatrinhduyet.txt',1)
@@ -1438,6 +1438,7 @@ EndFunc
 						Sleep(1000)
 				Next
 
+                $check2=1
 
 				If $check=0 Then
 
@@ -1837,13 +1838,145 @@ EndFunc
 						_closeTrinhDuyet($i)
 
 					EndIf
-
+					_closeTrinhDuyet($i)
 					_resetMang($i)
 					_khoidongFireFox($i)
 					_FakeIPOptionV6($i,$vpsso)
                     _loginGmail($i)
 
+					ControlClick('','','','left',1,600, 60)
+				    Sleep(1000)
+				    Send('^a')
+				    Sleep(500)
+				    Sleep(1000)
+				    Send('https://myaccount.google.com/')
+				    Sleep(2000)
+				    Send('{enter}')
+				    Sleep(10000)
+				    For $i20=1 to 10
+					    $pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
+					    Sleep(1000)
+					    $pixcel2=PixelSearch(18, 130,206, 263,0x0B57D0)
+					    Sleep(1000)
+					    If IsArray($pixcel) or IsArray($pixcel2) Then
+						    $check=1
+						    $i20=17
+						    $i2=2
+					    EndIf
+						Sleep(1000)
+				    Next
+
+					$check2=1
+					If $check=0 Then
+						_closeTrinhDuyet($i)
+						_resetMang($i)
+					    _khoidongFireFox($i)
+					    _FakeIPOptionV6($i,$vpsso)
+                        _loginGmailToday($i)          ; dang nhap mk ngay hoim nay
+						ControlClick('','','','left',1,600, 60)
+				        Sleep(1000)
+				        Send('^a')
+				        Sleep(500)
+				        Sleep(1000)
+				        Send('https://myaccount.google.com/')
+				        Sleep(2000)
+				        Send('{enter}')
+				        Sleep(10000)
+				        For $i20=1 to 10
+					        $pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
+					        Sleep(1000)
+					        $pixcel2=PixelSearch(18, 130,206, 263,0x0B57D0)
+					        Sleep(1000)
+					        If IsArray($pixcel) or IsArray($pixcel2) Then
+						        $check=1
+								$check2=0
+						        $i20=17
+						        $i2=2
+					        EndIf
+						    Sleep(1000)
+				        Next
+
+
+
+					EndIf
+
 				EndIf
+
+
+				If $check=1 and $check2=1 Then
+
+					$TrangThaiDangNhap="1"
+				    $e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
+						$cacgiatri=StringSplit($e,'	')
+				    For $i11=1 to $cacgiatri[0]
+					    If IsString($cacgiatri[$i11]) Then FileWriteLine(@ScriptDir&'\Gmailtest.txt',$cacgiatri[$i11])
+						   ;MsgBox(0,0,'ok')
+				    Next
+				    Sleep(1000)
+				    If _FileCountLines(@ScriptDir&'\Gmailtest.txt')>3 Then
+						$f=FileReadLine(@ScriptDir&'\Gmailtest.txt',1)
+						$g=FileReadLine(@ScriptDir&'\Gmailtest.txt',2)
+						$h=FileReadLine(@ScriptDir&'\Gmailtest.txt',3)
+						$TrangThaiDangNhap=FileReadLine(@ScriptDir&'\Gmailtest.txt',4)
+						Sleep(1000)
+						FileDelete(@ScriptDir&'\Gmailtest.txt')
+				    EndIf
+
+					If $TrangThaiDangNhap="Verry that bai" Or $TrangThaiDangNhap="dang nhap that bai" Then
+                        Sleep(500)
+						ControlClick('','','','left',1,600, 60)  ;doi email khoi phuc
+						Sleep(1000)
+						Send('https://myaccount.google.com/signinoptions/rescuephone')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(4000)
+						MouseClick('left',774, 65,1,20)
+						Sleep(1000)
+						Send('^a')
+						Sleep(1000)
+						Send('^c')
+						Sleep(500)
+						$cooktho=ClipGet()
+						Sleep(1000)
+						$cook=StringTrimLeft($cooktho,66)
+						Sleep(1000)
+						MouseClick('left',1255, 197,1,20)
+						Sleep(2000)
+						ControlClick('','','','left',1,600, 60)  ;doi MK
+						Sleep(1000)
+						Send('https://myaccount.google.com/signinoptions/password?rapt='&$cook)
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(4000)
+						For $i20=1 to 10
+									$pixcel=PixelSearch(714, 631,802, 759,0x1A73E8)
+								If IsArray($pixcel) Then
+										Sleep(1000)
+										$i20=10
+								EndIf
+								Sleep(1000)
+						Next
+
+						Sleep(2000)
+						$MK="Buichung"&@MDAY&@MON
+						Sleep(1000)
+						Send($MK)
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send($MK)
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(6000)
+
+					EndIf
+
+				EndIf
+
 
 				_closeTrinhDuyet($i)
 
@@ -6112,6 +6245,476 @@ EndFunc
 
 			Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
         EndFunc
+
+        Func _loginGmailToday($i)
+	                       ToolTip('dang nhap Gmail so:'&$i&'	phien ban:'&$phienban,0,0)
+						   $e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
+						   $cacgiatri=StringSplit($e,'	')
+	                   For $i11=1 to $cacgiatri[0]
+	                       If IsString($cacgiatri[$i11]) Then FileWriteLine(@ScriptDir&'\Gmailtest.txt',$cacgiatri[$i11])
+						   ;MsgBox(0,0,'ok')
+						Next
+                           $f=FileReadLine(@ScriptDir&'\Gmailtest.txt',1)
+                           $g=FileReadLine(@ScriptDir&'\Gmailtest.txt',2)
+						   $h=FileReadLine(@ScriptDir&'\Gmailtest.txt',3)
+						   FileDelete(@ScriptDir&'\Gmailtest.txt')
+
+	            WinMove('','',0,0,1366,768)
+				Sleep(2000)
+				;_dienIpPort($i)
+                MouseClick('left',1280, 129,1,20)
+			    $check=0
+                MouseClick('left',500, 60,1,20)
+				;If $i=8 Then MouseClick('left',800, 75,1,20)
+                Sleep(2000)
+				Send('^a')
+				Sleep(2000)
+				ClipPut('https://www.youtube.com/account')
+			    Sleep(200)
+			    Send('^v')
+				Sleep(1000)
+				Send('{enter}')
+				Sleep(7000)
+				Send('^0')
+				Sleep(2000)
+				MouseClick('left',1280, 160,1,20)
+				Sleep(1000)
+				MouseClick('left',1280, 129,1,20)
+				Sleep(1000)
+				MouseClick('left',1280, 118,20)
+				Sleep(1000)
+				MouseClick('left',1280, 160,1,20)
+				Sleep(1000)
+				MouseClick('left',650,350,1,20)
+				Sleep(1000)
+				Send('{tab}')
+				Sleep(2000)
+
+				For $i20=1 to 10
+				    $pixcel=PixelSearch(616, 326,1218, 679,0x0F49A6)  ;0x114AA7
+					If IsArray($pixcel) Then $i20=20
+					Sleep(1000)
+				Next
+
+				If not IsArray($pixcel) Then
+					$pixcel=PixelSearch(616, 326,1218, 679,0x114AA7)  ;0x114AA7
+					If IsArray($pixcel) Then $i20=20
+					Sleep(1000)
+				EndIf
+
+				If not IsArray($pixcel) Then
+					MouseClick('left',650,350,1,20)
+				    Sleep(3000)
+					For $i20=1 to 20
+				        $pixcel=PixelSearch(616, 326,1218, 679,0x0B57D0)
+					    If IsArray($pixcel) Then $i20=20
+					    Sleep(1000)
+				    Next
+				EndIf
+				Sleep(1000)
+            If IsArray($pixcel) Then
+
+				If $i=2 Or $i=4 Then                      ; loi khong load duoc trinh duyet brive
+				    MouseClick('left',850, 273,1,20)
+					Sleep(2000)
+				EndIf
+				If $i=6  Then
+				    MouseClick('left',990,110,1,20)
+					Sleep(7000)
+                EndIf
+				If $i=9  Then
+				    MouseClick('left',933,150,1,20)
+					Sleep(7000)
+                EndIf
+				If $i=10 or $i=8  Then
+				    MouseClick('left',1039,155,1,20)
+					Sleep(7000)
+                EndIf
+				If $i=1  Then
+				    MouseClick('left',650,270,1,20)
+					Sleep(7000)
+                EndIf
+
+				MouseClick('left',1280,163,1,20)  ;tat thong bao update
+				Sleep(2000)
+				MouseClick('left',1280,120,1,20)  ;tat thong bao update
+				Sleep(3000)
+				MouseClick('left',1016, 363,1,20)
+				Sleep(2000)
+				MouseClick('left',650,350,1,20)
+				Sleep(3000)
+				Send('{tab}')
+				Sleep(2000)
+				Send($f,1)
+				Sleep(1500)
+				Send('{enter}')
+				Sleep(10000)
+				For $i20=1 to 20
+				    $pixcel=PixelSearch(322, 259,1000, 527,0x0B57D0)
+					If IsArray($pixcel) Then
+						$i20=20
+				        Sleep(1000)
+					EndIf
+					Sleep(1000)
+				Next
+				Sleep(5000)
+				MouseClick('left',1016, 363,1,20)
+				Sleep(3000)
+				$pixcel=PixelSearch(1050, 462,1157, 611,0x0B57D0)
+					If IsArray($pixcel)  Then
+						$i20=20
+				        Sleep(1000)
+						MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+				        Sleep(10000)
+					EndIf
+				$pixcel=PixelSearch(1050, 462,1157, 611,0x114AA7)
+					If IsArray($pixcel)  Then
+						$i20=20
+				        Sleep(1000)
+						MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+				        Sleep(10000)
+					EndIf
+				Sleep(2000)
+				MouseClick('left',650, 300,1,20)
+				Sleep(3000)
+				Send('{tab}')
+				Sleep(2000)
+				Send('{tab}')
+				Sleep(3000)
+				Send("Buichung"&@MDAY&@MON,1)
+				Sleep(1500)
+				Send('{enter}')
+                Sleep(4000)
+                For $i20=1 to 20
+				    $pixcel=PixelSearch(12, 289,1000, 713,0x0B57D0)
+					If IsArray($pixcel) Then $i20=20
+					Sleep(1000)
+				Next
+				Sleep(5000)
+				If $i=6 Then MouseClick('left',380, 225,1,20)
+				Sleep(2000)
+				Sleep(1000)
+				$x3=0
+				$y3=0
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
+					Sleep(10000)
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(1000)
+				      Send($h)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
+				EndIf
+
+				$x3=0
+				$y3=0
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
+					Sleep(10000)
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(1000)
+				      Send($h)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
+				EndIf
+
+				$x3=0
+				$y3=0
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
+					Sleep(10000)
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(1000)
+				      Send($h,1)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
+				EndIf
+
+				$x3=0
+				$y3=0
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
+					Sleep(10000)
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(1000)
+				      Send($h,1)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
+				EndIf
+
+
+				$x3=0
+				$y3=0
+				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailkhoiphuc2.bmp',1,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
+					Sleep(10000)
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(1000)
+				      Send($h,1)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
+				EndIf
+
+				$x3=0
+				$y3=0
+				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailhoiphuc.bmp',1,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
+					Sleep(10000)
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(1000)
+				      Send($h)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
+				EndIf
+               Sleep(3000)
+
+				If $x3=0 Then      ; neu khong tim thay anh
+				    MouseClick('left',650,300,1,20)
+					Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
+					Send('{enter}')
+				    Sleep(10000)
+				    For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(3000)
+				      Send($h)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
+
+				EndIf
+
+
+
+                   ; MouseClick('left',514,560,1,20)    ; click Email khoi phuc
+					;Sleep(5000)
+					;Send($h,1)
+					;Sleep(1500)
+					;Send('{enter}')
+					;Sleep(7000)
+
+				If $i=1 Then MouseClick('left',927, 282,1,20)   ;update pass
+				If $i=2 Then MouseClick('left',1000, 248,1,20);update pass
+				If $i=2 Then MouseClick('left',980, 262,1,20);update pass
+				If $i=3 Then MouseClick('left',816, 266,1,20);update pass
+				If $i=3 Then MouseClick('left',816, 243,1,20);update pass
+				If $i=4 Then MouseClick('left',1028, 231,1,20);update pass
+				If $i=5 Then
+					Sleep(10000)
+					MouseClick('left',1277, 104,1,20)
+				EndIf
+
+				If $i=6 Then MouseClick('left',582, 304 ,1,20);update pass
+				If $i=7 Then MouseClick('left',757, 436,1,20);update pass
+				;If $i=8 Then MouseClick('left',757, 436,1,20)
+				If $i=9 Then MouseClick('left',430, 343,1,20);update pass
+				If $i=9 Then MouseClick('left',460, 343,1,20);update pass
+				Sleep(1000)
+				If $i=9 Then MouseClick('left',656, 434,1,20);update pass
+				If $i=10 Then MouseClick('left',456, 344,1,20);update pass
+                Sleep(2000)
+				If $i=1 Then MouseClick('left',936, 312,1,20)
+				If $i=2 Then MouseClick('left',980, 248,1,20)
+				If $i=3 Then MouseClick('left',823, 262,1,20)
+				If $i=4 Then MouseClick('left',1030, 228,1,20)
+				If $i=5 Then MouseClick('left',1219, 101,1,20)
+				If $i=6 Then MouseClick('left',390,224 ,1,20)
+				If $i=7 Then MouseClick('left',555,340,1,20)
+				If $i=9 Then MouseClick('left',456, 344,1,20)  ;luu mat khau $1
+
+                Sleep(2000)
+				If $i=1 Then MouseClick('left',931, 240,1,20)  ;luu mat khau $1
+				If $i=2 Then MouseClick('left',1000, 229,1,20)  ;luu mat khau $1
+				If $i=2 Then MouseClick('left',980, 262,1,20);update pass
+				If $i=3 Then MouseClick('left',1193, 347,1,20)  ;luu mat khau $1
+				If $i=4 Then MouseClick('left',1099, 341,1,20)  ;luu mat khau $1
+				If $i=5 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
+				If $i=10 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
+				If $i=9 Then MouseClick('left',385, 320,1,20)  ;luu mat khau $1
+				Sleep(1000)
+
+				If $i=1 Then MouseClick('left',929, 235,1,20)  ;luu mat khau $1
+				If $i=2 Then MouseClick('left',1027, 229,1,20)  ;luu mat khau $1
+				If $i=3 Then MouseClick('left',1193, 347,1,20)  ;luu mat khau $1
+				If $i=4 Then MouseClick('left',1099, 341,1,20)  ;luu mat khau $1
+				If $i=5 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
+				If $i=10 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
+				If $i=9 Then MouseClick('left',385, 320,1,20)  ;luu mat khau $1
+				Sleep(2000)
+				If $i=4 Then MouseClick('left',1036, 226,1,20)
+				;If $i=5 Then MouseClick('left',850,60,1,20)
+
+
+				$pixcel=PixelSearch(715, 497,973, 752,0x0B57D0)
+				If IsArray($pixcel) Then
+					$i20=20
+					MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+					Sleep(3000)
+				EndIf
+
+				$check=0
+				Sleep(2000)
+				ControlClick('','','','left',1,600, 60)
+				Sleep(1000)
+				Send('^a')
+				Sleep(500)
+				Sleep(1000)
+				ClipPut('https://myaccount.google.com/')
+				Sleep(1000)
+				Send('^v')
+				Sleep(2000)
+				Send('{enter}')
+				Sleep(10000)
+				For $i20=1 to 10
+					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
+					Sleep(1000)
+					$pixcel2=PixelSearch(13, 224,70, 345,0x1F1F1F)
+					Sleep(1000)
+					If IsArray($pixcel) or IsArray($pixcel2) Then
+						$check=1
+						$i20=17
+					EndIf
+					Sleep(1000)
+				Next
+				If $check=0 Then
+				    ControlClick('','','','left',1,600, 60)
+				    Sleep(1000)
+				    Send('^a')
+				    Sleep(1000)
+				    ClipPut('https://www.youtube.com/account')
+				    Sleep(1000)
+				    Send('^v')
+				    Sleep(2000)
+				    Send('{enter}')
+				    Sleep(10000)
+				    For $i20=1 to 10
+					    $pixcel=PixelSearch(51, 96,206, 263,0xFF0000)
+					    Sleep(1000)
+					    If IsArray($pixcel) Then
+						    $check=1
+						    $i20=17
+					    EndIf
+					    Sleep(1000)
+				    Next
+				EndIf
+
+			Else
+
+				$check=0
+				Sleep(2000)
+				ControlClick('','','','left',1,600, 60)
+				Sleep(1000)
+				Send('^a')
+				Sleep(500)
+				Sleep(1000)
+				ClipPut('https://myaccount.google.com/')
+				Sleep(1000)
+				Send('^v')
+				Sleep(2000)
+				Send('{enter}')
+				Sleep(10000)
+				For $i20=1 to 10
+					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
+					Sleep(1000)
+					$pixcel2=PixelSearch(13, 224,70, 345,0x1F1F1F)
+					Sleep(1000)
+					If IsArray($pixcel) or IsArray($pixcel2) Then
+						$check=1
+						$i20=17
+					EndIf
+					Sleep(1000)
+				Next
+				If $check=0 Then
+				    ControlClick('','','','left',1,600, 60)
+				    Sleep(1000)
+				    Send('^a')
+				    Sleep(1000)
+				    ClipPut('https://www.youtube.com/account')
+				    Sleep(1000)
+				    Send('^v')
+				    Sleep(2000)
+				    Send('{enter}')
+				    Sleep(10000)
+				    For $i20=1 to 10
+					    $pixcel=PixelSearch(51, 96,206, 263,0xFF0000)
+					    Sleep(1000)
+					    If IsArray($pixcel) Then
+						    $check=1
+						    $i20=17
+					    EndIf
+					    Sleep(1000)
+				    Next
+				EndIf
+
+			EndIf
+
+                MouseClick('left',500, 60,1,20)
+				;If $i=8 Then MouseClick('left',800, 75,1,20)
+                Sleep(2000)
+				Send('^a')
+				Sleep(2000)
+				ClipPut('https://www.youtube.com/channel_switcher?next=%2Faccount&feature=settings')
+			    Sleep(200)
+			    Send('^v')
+				Sleep(1000)
+				Send('{enter}')
+				Sleep(7000)
+				MouseClick('left',700,300,1,20)
+				Sleep(5000)
+
+
+
+			Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
+        EndFunc
+
 
         Func _resetMang($i)
 					ProcessClose('Proxy Client Tinsoft.exe')
