@@ -1921,6 +1921,8 @@ EndFunc
 						FileDelete(@ScriptDir&'\Gmailtest.txt')
 				    EndIf
 
+					MsgBox(0,0,$TrangThaiDangNhap)
+
 					If $TrangThaiDangNhap="Verry that bai" Or $TrangThaiDangNhap="dang nhap that bai" Then
                         Sleep(500)
 						ControlClick('','','','left',1,600, 60)  ;doi email khoi phuc
