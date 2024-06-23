@@ -1869,40 +1869,6 @@ EndFunc
 						Sleep(1000)
 				    Next
 
-					$check2=1
-					If $check=0 Then
-						_closeTrinhDuyet($i)
-						_resetMang($i)
-					    _khoidongFireFox($i)
-					    _FakeIPOptionV6($i,$vpsso)
-                        _loginGmailToday($i)          ; dang nhap mk ngay hoim nay
-						ControlClick('','','','left',1,600, 60)
-				        Sleep(1000)
-				        Send('^a')
-				        Sleep(500)
-				        Sleep(1000)
-				        Send('https://myaccount.google.com/')
-				        Sleep(2000)
-				        Send('{enter}')
-				        Sleep(10000)
-				        For $i20=1 to 10
-					        $pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
-					        Sleep(1000)
-					        $pixcel2=PixelSearch(18, 130,206, 263,0x0B57D0)
-					        Sleep(1000)
-					        If IsArray($pixcel) or IsArray($pixcel2) Then
-						        $check=1
-								$check2=0
-						        $i20=17
-						        $i2=2
-					        EndIf
-						    Sleep(1000)
-				        Next
-
-
-
-					EndIf
-
 				EndIf
 
 
@@ -5926,6 +5892,10 @@ EndFunc
 				Send('{tab}')
 				Sleep(3000)
 				Send($g,1)
+				Sleep(1500)
+				Send('{enter}')
+                Sleep(5000)
+				Send("Buichung"&@MDAY&@MON)
 				Sleep(1500)
 				Send('{enter}')
                 Sleep(4000)
