@@ -1384,6 +1384,9 @@ EndFunc
 			$check8=0
 			$check9=0
 			$check10=0
+			MsgBox(0,0,'ok1')
+
+
 		For $i=1 to 10
                 $check=0
 
@@ -1436,6 +1439,8 @@ EndFunc
 					EndIf
 						Sleep(1000)
 				Next
+
+				MsgBox(0,0,$check)
 
                 $check2=1
 
