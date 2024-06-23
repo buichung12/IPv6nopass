@@ -1384,7 +1384,7 @@ EndFunc
 			$check8=0
 			$check9=0
 			$check10=0
-			MsgBox(0,0,'ok1')
+			;MsgBox(0,0,'ok1')
 
 
 		For $i=1 to 10
@@ -1417,7 +1417,6 @@ EndFunc
 				        Sleep(1000)
 				EndIf
 				Sleep(2000)
-
 				ControlClick('','','','left',1,600, 60)
 				Sleep(1000)
 				Send('^a')
@@ -1440,7 +1439,7 @@ EndFunc
 						Sleep(1000)
 				Next
 
-				MsgBox(0,0,$check)
+				;MsgBox(0,0,$check)
 
                 $check2=1
 
@@ -1926,9 +1925,9 @@ EndFunc
 						FileDelete(@ScriptDir&'\Gmailtest.txt')
 				    EndIf
 
-					MsgBox(0,0,$TrangThaiDangNhap)
+					;MsgBox(0,0,$TrangThaiDangNhap)
 
-					If $TrangThaiDangNhap="Verry that bai" Or $TrangThaiDangNhap="dang nhap that bai" Then
+					If $TrangThaiDangNhap="VerryThatBai" Or $TrangThaiDangNhap="DangNhapThatBai" Then
                         Sleep(500)
 						ControlClick('','','','left',1,600, 60)  ;doi email khoi phuc
 						Sleep(1000)
