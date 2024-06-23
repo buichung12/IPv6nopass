@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.10'
+$phienban='1.0.11'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -1934,12 +1934,12 @@ EndFunc
 						Send('https://myaccount.google.com/signinoptions/rescuephone')
 						Sleep(1000)
 						Send('{enter}')
-						Sleep(5000)
+						Sleep(15000)
 						Send($g)
 						Sleep(2000)
 						Send('{enter}')
 						Sleep(7000)
-						MouseClick('left',774, 65,1,20)
+						MouseClick('left',600, 60,1,20)
 						Sleep(1000)
 						Send('^a')
 						Sleep(1000)
