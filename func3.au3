@@ -53,8 +53,6 @@ _randomprofilr($i)
 
 Func _ChinhDoPhanGiai($i)
 
-
-
 	    If $i=1 Then
 			MouseClick('left',499, 87,1,20)
 			Sleep(1000)
@@ -303,7 +301,6 @@ Func _ChinhDoPhanGiai($i)
 
 
 EndFunc
-
     Func _LayGmail($vpsso)
 				If 0<$vpsso and $vpsso<6 Then
 					For $i20=1 to 10
@@ -1929,7 +1926,11 @@ EndFunc
 						Send('https://myaccount.google.com/signinoptions/rescuephone')
 						Sleep(1000)
 						Send('{enter}')
-						Sleep(4000)
+						Sleep(5000)
+						Send($g)
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(7000)
 						MouseClick('left',774, 65,1,20)
 						Sleep(1000)
 						Send('^a')
@@ -1938,16 +1939,20 @@ EndFunc
 						Sleep(500)
 						$cooktho=ClipGet()
 						Sleep(1000)
-						$cook=StringTrimLeft($cooktho,66)
+						$cook=StringSplit($cooktho,'=')
 						Sleep(1000)
 						MouseClick('left',1255, 197,1,20)
 						Sleep(2000)
 						ControlClick('','','','left',1,600, 60)  ;doi MK
 						Sleep(1000)
-						Send('https://myaccount.google.com/signinoptions/password?rapt='&$cook)
+						If IsArray($cook) Then
+							If $cook[0]= 2 Then
+							    Send('https://myaccount.google.com/signinoptions/password?rapt='&$cook[2])
+							EndIf
+						EndIf
 						Sleep(1000)
 						Send('{enter}')
-						Sleep(4000)
+						Sleep(10000)
 						For $i20=1 to 10
 									$pixcel=PixelSearch(714, 631,802, 759,0x1A73E8)
 								If IsArray($pixcel) Then
