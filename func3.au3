@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.11'
+$phienban='1.0.12'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -806,8 +806,6 @@ EndFunc
 		        Sleep(3000)
 
              EndIf
-
-
 
             _closeTrinhDuyet(1)
 
@@ -1920,8 +1918,8 @@ EndFunc
 						ControlClick('','','','left',1,600, 60)  ;doi MK
 						Sleep(1000)
 						If IsArray($cook) Then
-							If $cook[0]= 2 Then
-							    Send('https://myaccount.google.com/signinoptions/password?rapt='&$cook[2])
+							If $cook[0]= 3 Then
+							    Send('https://myaccount.google.com/signinoptions/password?rapt='&$cook[3])
 							EndIf
 						EndIf
 						Sleep(1000)
@@ -6697,7 +6695,6 @@ EndFunc
 
 			Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
         EndFunc
-
 
         Func _resetMang($i)
 					ProcessClose('Proxy Client Tinsoft.exe')
