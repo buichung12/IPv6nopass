@@ -1918,6 +1918,11 @@ EndFunc
 						ControlClick('','','','left',1,600, 60)  ;doi MK
 						Sleep(1000)
 						If IsArray($cook) Then
+							If $cook[0]= 2 Then
+							    Send('https://myaccount.google.com/signinoptions/password?rapt='&$cook[2])
+							EndIf
+						EndIf
+						If IsArray($cook) Then
 							If $cook[0]= 3 Then
 							    Send('https://myaccount.google.com/signinoptions/password?rapt='&$cook[3])
 							EndIf
