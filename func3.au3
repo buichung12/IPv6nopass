@@ -746,6 +746,19 @@ EndFunc
 		    FileCopy('C:\Users\'&@UserName&'\Downloads\tool update code.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
 		    Sleep(3000)
 
+
+			FileDelete('C:\Users\'&@UserName&'\Downloads\ToolKhoiDong.exe')
+		    Sleep(1000)
+	        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/ToolKhoiDong.exe"')     ;dowload tool up date
+            Sleep(15000)
+		    WinMove('','',0,0,1366,768)
+		    Sleep(2000)
+		    Send('^+s')
+		    Sleep(15000)
+		    FileCopy('C:\Users\'&@UserName&'\Downloads\ToolKhoiDong.exe','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		    Sleep(3000)
+
+
 	        If FileExists("C:\Program Files (x86)\AutoIt3\AutoIt3.exe")=0 Then
 				ToolTip('cai dat autoit'&'	phien ban:'&$phienban,0,30)
 		       ; _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
@@ -5547,6 +5560,8 @@ EndFunc
 				WinClose('Authentication Required - FlashPeak SlimBrowser')
 				Sleep(100)
 				WinClose('Yêu cầu xác minh - Mozilla Firefox')
+				Sleep(100)
+				WinClose('Microsoft Store')
 				_resetMang(1)
 
 				WinClose('Windows Security')
