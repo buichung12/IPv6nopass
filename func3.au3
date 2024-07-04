@@ -508,6 +508,7 @@ EndFunc
 			EndIf
 
 			ToolTip('Xoa DaTa trinh duyet'&'	phien ban:'&$phienban,0,0)
+
             $TrangThaiDangNhap='1'
 			_requetGooGleDOC('https://docs.google.com/document/d/1yzcRSbBRVzByEp7UKusrhl_AMQZATzRzcrk-eAhKS6w/export?format=txt','checkxoadatatrinhduyet.txt')
 			Sleep(1000)
@@ -522,11 +523,11 @@ EndFunc
 			Sleep(1000)
 			FileDelete("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.au3")
 			Sleep(1000)
-		    _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/raw/main/ToolCopyKhoiDongVaChuongTrinhChinh.exe"')
+		    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/ToolCopyKhoiDongVaChuongTrinhChinh.exe"')
 			Sleep(10000)
 			FileCopy("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe",'C:\Users\'&@UserName&'\Desktop',1)
 		    Sleep(1000)
-		    _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
+		    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/ToolCopyKhoiDongVaChuongTrinhChinh.au3"')
 			Sleep(10000)
 			Send('^+s')
 		    Sleep(10000)
@@ -549,7 +550,7 @@ EndFunc
 
             FileDelete('C:\Users\'&@UserName&'\Downloads\khoidong.au3')
 		    Sleep(1000)
-			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/khoidong.au3"')     ;dowload tool khoi dong
+			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/khoidong.au3"')     ;dowload tool khoi dong
             Sleep(7000)
 		    Send('{enter}')
 			Sleep(10000)
@@ -575,7 +576,7 @@ EndFunc
 			FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
 		    Sleep(1000)
             For $i20=1 to 2
-		         _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
+		         _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
                 Sleep(7000)
 		        Send('{enter}')
 		        Sleep(8000)
@@ -677,7 +678,7 @@ EndFunc
             FileDelete('C:\Users\'&@UserName&'\Downloads\sub.bmp')
 			Sleep(200)
             ToolTip('update sub3.BMP'&'	phien ban:'&$phienban,0,0)
-			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/sub.bmp"')
+			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/sub.bmp"')
 			Sleep(10000)
 			Send('^+s')
 			Sleep(10000)
@@ -685,14 +686,14 @@ EndFunc
 			FileDelete('C:\Users\'&@UserName&'\Downloads\sub2.bmp')
 			Sleep(200)
             ToolTip('update sub3.BMP'&'	phien ban:'&$phienban,0,0)
-			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/sub2.bmp"')
+			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/sub2.bmp"')
 			Sleep(10000)
 			Send('^+s')
 			Sleep(10000)
 			FileDelete('C:\Users\'&@UserName&'\Downloads\sub3.bmp')
 			Sleep(200)
             ToolTip('update sub3.BMP'&'	phien ban:'&$phienban,0,0)
-			_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/sub3.bmp"')
+			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/sub3.bmp"')
 			Sleep(10000)
 			Send('^+s')
 			Sleep(10000)
@@ -737,7 +738,7 @@ EndFunc
 
 			FileDelete('C:\Users\'&@UserName&'\Downloads\tool update code.au3')
 		    Sleep(1000)
-	        _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
+	        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/tool%20update%20code.au3"')     ;dowload tool up date
             Sleep(15000)
 		    WinMove('','',0,0,1366,768)
 		    Sleep(2000)
@@ -749,7 +750,7 @@ EndFunc
 
 			FileDelete('C:\Users\'&@UserName&'\Downloads\ToolKhoiDong.exe')
 		    Sleep(1000)
-	        _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/raw/main/ToolKhoiDong.exe"')     ;dowload tool up date
+	        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/ToolKhoiDong.exe"')     ;dowload tool up date
             Sleep(15000)
 		    WinMove('','',0,0,1366,768)
 		    Sleep(2000)
@@ -765,9 +766,9 @@ EndFunc
 		       ; Sleep(5000)
 		       ; _GetDOSOutput('start chrome "https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.zip"')  ; tai autoit
 		      ;  Sleep(5000)
-		        _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/raw/main/SciTE4AutoIt3.exe"')
+		        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/SciTE4AutoIt3.exe"')
 		        Sleep(20000)
-		        _GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
+		        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
 		        Sleep(20000)
                 _closeTrinhDuyet(1)
 

@@ -76,6 +76,28 @@ While 1
 				EndIf
                  _LayGmail($vpsso)
 
+				 FileDelete(@ScriptDir&'\Keytinsoft.txt')
+				FileDelete("C:\Users\"&@UserName&"\Downloads\IpV6Nhom6.txt")
+				FileDelete("C:\Users\"&@UserName&"\Downloads\IpV6Nhom6")
+				Sleep(1000)
+				_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/IpV6Nhom6"')
+				Sleep(10000)
+			    Send('^+s')
+		        Sleep(10000)
+                FileMove("C:\Users\"&@UserName&"\Downloads\IpV6Nhom6","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea\Keytinsoft.txt")
+				Sleep(2000)
+
+				$STTIP=($vpsso-1)*10+1
+				FileDelete(@ScriptDir&'\Keytinsoft2.txt')
+				Sleep(1000)
+				For $i20=0 to 9
+					$Iptho=FileReadLine(@ScriptDir&'\Keytinsoft.txt',$STTIP+$i20)
+					Sleep(100)
+					FileWriteLine(@ScriptDir&'\Keytinsoft2.txt',$Iptho)
+					Sleep(100)
+				Next
+
+
 
 				$checkUC=0
 				If $kiemtratrinhduyet=1 Then $checkUC=_kiemtratrinhduyet($i5,$i,$vpsso,$trusomaybandau)
@@ -133,7 +155,7 @@ While 1   ; vong tra lai gia tr
 				FileDelete("C:\Users\"&@UserName&"\Downloads\IpV6Nhom6.txt")
 				FileDelete("C:\Users\"&@UserName&"\Downloads\IpV6Nhom6")
 				Sleep(1000)
-				_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/IpV6Nhom6"')
+				_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/IpV6Nhom6"')
 				Sleep(10000)
 			    Send('^+s')
 		        Sleep(10000)
