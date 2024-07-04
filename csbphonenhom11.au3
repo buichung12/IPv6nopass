@@ -77,6 +77,21 @@ While 1
 				EndIf
                  _LayGmail($vpsso)
 
+				 _requetGooGleDOC('https://docs.google.com/document/d/1aiTa6zc4uelXe2eTg_oKZ6VNBC6X-YpYfowcDp51hWk/export?format=txt','Keytinsoft.txt')
+				Sleep(2000)
+				$sodongIP0=_FileCountLines(@ScriptDir&"\Keytinsoft.txt")
+				If $sodongIP0<999 Then _requetGooGleDOC('https://docs.google.com/document/d/1WSj9rvy4_eIePNylxsbjBrFwMnZC5S2P7EgbeGOYwJg/export?format=txt','Keytinsoft.txt')
+
+				$STTIP=($vpsso-1)*10+1
+				FileDelete(@ScriptDir&'\Keytinsoft2.txt')
+				Sleep(1000)
+				For $i20=0 to 9
+					$Iptho=FileReadLine(@ScriptDir&'\Keytinsoft.txt',$STTIP+$i20)
+					Sleep(100)
+					FileWriteLine(@ScriptDir&'\Keytinsoft2.txt',$Iptho)
+					Sleep(100)
+				Next
+
 
 				 $checkUC=0
 
