@@ -124,10 +124,21 @@ While 1   ; vong tra lai gia tr
 
 			$checkprofile=0    ; de profile dau tien random conf lan sau bang 1
 
-			_requetGooGleDOC('https://docs.google.com/document/d/1uJ60_uNbaaaG2Fs7gQC5v-EihcaVX4vBpWdaFjqPumE/export?format=txt','Keytinsoft.txt')
+			    ;_requetGooGleDOC('https://docs.google.com/document/d/1uJ60_uNbaaaG2Fs7gQC5v-EihcaVX4vBpWdaFjqPumE/export?format=txt','Keytinsoft.txt')
+				;Sleep(2000)
+				;$sodongIP0=_FileCountLines(@ScriptDir&"\Keytinsoft.txt")
+				;If $sodongIP0<999 Then _requetGooGleDOC('https://docs.google.com/document/d/1kJIjqEt-UUgb5QTaRKJvtVXiwioPciDpXV6s7CoKW-E/export?format=txt','Keytinsoft.txt')
+
+				FileDelete(@ScriptDir&'\Keytinsoft.txt')
+				FileDelete("C:\Users\"&@UserName&"\Downloads\IpV6Nhom6.txt")
+				FileDelete("C:\Users\"&@UserName&"\Downloads\IpV6Nhom6")
+				Sleep(1000)
+				_GetDOSOutput('start firefox "https://github.com/buichung12/IPv6nopass/blob/main/IpV6Nhom6"')
+				Sleep(10000)
+			    Send('^+s')
+		        Sleep(10000)
+                FileMove("C:\Users\"&@UserName&"\Downloads\IpV6Nhom6","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea\Keytinsoft.txt")
 				Sleep(2000)
-				$sodongIP0=_FileCountLines(@ScriptDir&"\Keytinsoft.txt")
-				If $sodongIP0<999 Then _requetGooGleDOC('https://docs.google.com/document/d/1kJIjqEt-UUgb5QTaRKJvtVXiwioPciDpXV6s7CoKW-E/export?format=txt','Keytinsoft.txt')
 
 				$STTIP=($vpsso-1)*10+1
 				FileDelete(@ScriptDir&'\Keytinsoft2.txt')
