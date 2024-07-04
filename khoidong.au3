@@ -51,7 +51,7 @@ HotKeySet("{f9}", "AutoRun")
 
 				If FileExists(@ScriptDir&"\vpsso.txt")=1 Then $vpsso=FileReadLine(@ScriptDir&"\vpsso.txt",1)   ; khoi dong vps so
 				Sleep(1000)
-                _requetTextDoc('https://textdoc.co/index.php/S3gXRHqyD8rhd9lt','trangthaikhoidong.txt')
+                _requetGooGleDOC('https://docs.google.com/document/d/1wwJcPN1NzADljC0GRWAbRfsnhGf_3BfeUiWRkX6Pfts/export?format=txt','trangthaikhoidong.txt')
                 Sleep(1000)
 				$check=FileReadLine(@ScriptDir&'\trangthaikhoidong.txt',1)
 				;$check=1
@@ -222,6 +222,56 @@ EndFunc
 
 				Return $checkrequet
 			EndFunc
+
+Func _requetGooGleDOC($link,$tenTXT)     ; luu y Link phai co duoi /export?format=txt
+				$checkrequet=0
+				$kq=''
+                         $kq=_HttpRequest(2,$link,'','','','','')        ;lay link kenh va kiem tra view gio
+				         Sleep(1000)
+                If StringLen($kq)<>0 Then
+
+						FileDelete(@ScriptDir&'\'&$tenTXT)
+						FileDelete(@ScriptDir&"\data.txt")
+						Sleep(100)
+						FileWriteLine(@ScriptDir&"\data.txt",$kq)
+						$sodong=_FileCountLines(@ScriptDir&"\data.txt")
+                       ; MsgBox(0,0,$sodong)
+					    $data=FileReadLine(@ScriptDir&"\data.txt",1)
+						$arry=StringSplit($data,' ')
+					If   $arry[0]=1 Then
+
+                        FileWriteLine(@ScriptDir&'\'&$tenTXT,$kq)
+                        $checkrequet=1
+					Else
+
+
+						For $i=1 to $sodong
+	                         $data=FileReadLine(@ScriptDir&"\data.txt",$i)
+	                         $arry=StringSplit($data,' ')
+                            If IsArray($arry) Then
+		                        For $i20=1 to $arry[0]
+			                        If StringLen($arry[$i20])>1 or IsInt($arry[$i20]) Then
+				                        FileWrite(@ScriptDir&'\'&$tenTXT,$arry[$i20]&"	")
+										;FileWrite(@ScriptDir&'\'&$tenTXT,"	")
+										;MsgBox(0,0,'ok')
+			                        EndIf
+		                        Next
+
+								FileWriteLine(@ScriptDir&'\'&$tenTXT,"	")
+
+                            EndIf
+						Next
+
+					    ;FileWriteLine(@ScriptDir&'/'&$tenTXT,$kq)
+						$checkrequet=1
+
+					EndIf
+                EndIf
+
+				FileDelete(@ScriptDir&"\data.txt")
+
+			Return $checkrequet
+		EndFunc
 
 
    Func AutoRun()
