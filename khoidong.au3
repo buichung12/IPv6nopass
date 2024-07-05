@@ -51,7 +51,8 @@ HotKeySet("{f9}", "AutoRun")
 
 				If FileExists(@ScriptDir&"\vpsso.txt")=1 Then $vpsso=FileReadLine(@ScriptDir&"\vpsso.txt",1)   ; khoi dong vps so
 				Sleep(1000)
-                _requetGooGleDOC('https://docs.google.com/document/d/1wwJcPN1NzADljC0GRWAbRfsnhGf_3BfeUiWRkX6Pfts/export?format=txt','trangthaikhoidong.txt')
+               ; _requetGooGleDOC('https://docs.google.com/document/d/1wwJcPN1NzADljC0GRWAbRfsnhGf_3BfeUiWRkX6Pfts/export?format=txt','trangthaikhoidong.txt')
+                _requetTextDoc('https://textdoc.co/index.php/S3gXRHqyD8rhd9lt','trangthaikhoidong.txt')
                 Sleep(1000)
 				$check=FileReadLine(@ScriptDir&'\trangthaikhoidong.txt',1)
 				;$check=1
