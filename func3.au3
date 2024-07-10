@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.13'
+$phienban='1.0.14'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -4454,17 +4454,19 @@ EndFunc
                             ControlClick('','','','left',1,475, 200)
                             Sleep(2000)
                             ControlClick('','','','left',1,800, 243)
-	                        Sleep(2000)
+	                        Sleep(1000)
 							MouseClick('left',503, 200,1,20)
-							Sleep(2000)
+							Sleep(1000)
 							MouseClick('left',831, 237,1,20)
-							Sleep(2000)
+							Sleep(1000)
 							MouseClick('left',1304,190,1,20)
-							Sleep(2000)
+							Sleep(1000)
 							MouseClick('left',1338,131,1,20)
-							Sleep(2000)
+							Sleep(1000)
 							MouseClick('left',1280,163,1,20)
-							Sleep(2000)
+							Sleep(1000)
+							MouseClick('left',1325,147,1,20)
+							Sleep(1000)
 
 						EndIf
 
@@ -4923,29 +4925,31 @@ EndFunc
 							WinClose('Check Update')
 							Sleep(1000)
 							MouseClick('left',805,437,1,20)
-							Sleep(2000)
+							Sleep(1000)
 							MouseClick('left',844, 317,1,20)
-							Sleep(2000)
+							Sleep(1000)
                             ControlClick('','','','left',1,475, 200)
-                            Sleep(2000)
+                            Sleep(1000)
                             ControlClick('','','','left',1,800, 243)
-	                        Sleep(2000)
+	                        Sleep(1000)
 							MouseClick('left',503, 200,1,20)
-							Sleep(2000)
+							Sleep(1000)
 							MouseClick('left',831, 237,1,20)
-							Sleep(2000)
+							Sleep(1000)
 							MouseClick('left',1260,208 ,1,20)
 							Sleep(1000)
 							ControlClick('','','','left',1,505, 200)
-							Sleep(2000)
+							Sleep(1000)
 							ControlClick('','','','left',1,834, 242)
-							Sleep(2000)
+							Sleep(1000)
 							MouseClick('left',1304,190,1,20)
-							Sleep(2000)
+							Sleep(1000)
 							MouseClick('left',1338,131,1,20)
-							Sleep(2000)
+							Sleep(1000)
 							MouseClick('left',1280,163,1,20)
-							Sleep(2000)
+							Sleep(1000)
+							MouseClick('left',1325,147,1,20)
+							Sleep(1000)
 						EndIf
 
 
@@ -5775,7 +5779,6 @@ EndFunc
 						   If StringLen($e)<10 Then
 							   MsgBox(0,0,'khong co gmail',1)
 							   _GetDOSOutput('shutdown -r -t 0')
-
 
 						   EndIf
 						   $cacgiatri=StringSplit($e,'	')
