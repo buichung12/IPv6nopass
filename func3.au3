@@ -748,18 +748,6 @@ EndFunc
 		    Sleep(3000)
 
 
-			FileDelete('C:\Users\'&@UserName&'\Downloads\ToolKhoiDong.exe')
-		    Sleep(1000)
-	        _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/ToolKhoiDong.exe"')     ;dowload tool up date
-            Sleep(15000)
-		    WinMove('','',0,0,1366,768)
-		    Sleep(2000)
-		    Send('^+s')
-		    Sleep(15000)
-		    FileCopy('C:\Users\'&@UserName&'\Downloads\ToolKhoiDong.exe','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
-		    Sleep(3000)
-
-
 	        If FileExists("C:\Program Files (x86)\AutoIt3\AutoIt3.exe")=0 Then
 				ToolTip('cai dat autoit'&'	phien ban:'&$phienban,0,30)
 		       ; _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
@@ -4023,7 +4011,14 @@ EndFunc
                         EndIf
 					EndIf
 
+					Sleep(5000)
+
+					MouseClick('left',600,60,1,20)
 					Sleep(2000)
+					Send('google.com')
+					Sleep(1000)
+					Send('{enter}')
+					Sleep(5000)
 
 				EndIf
 			  Next
@@ -4541,6 +4536,8 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',1327, 102,1,20)
 							Sleep(1000)
+							MouseClick('left',1327, 145,1,20)
+							Sleep(1000)
 
 						EndIf
 
@@ -4931,8 +4928,8 @@ EndFunc
 		                    Sleep(2000)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
 							Sleep(2000)
-						;	MouseClick('left',1325,112,1,20)
-						;	Sleep(3000)
+							MouseClick('left',1328,145,1,20)
+							Sleep(3000)
 						;	MouseClick('left',1280,163,1,20)
 						;	Sleep(2000)
 
