@@ -49,6 +49,7 @@ _loginGmail($i)
 _FakeIPOption($vpsso)
 _subFFLaiIP($ThuTukenh,$vpsso,$i)
 _randomprofilr($i)
+_requetanotepad1dong($LinkNhanCode)
 #ce
 
 Func _ChinhDoPhanGiai($i)
@@ -3511,7 +3512,7 @@ EndFunc
 
                            If $i=5 Then ControlClick($var[$i10][1],'','','left',1,1245, 216)
 							Sleep(200)
-							ControlClick($var[$i10][1],'','','left',1,576, 300)
+							ControlClick($var[$i10][1],'','','left',1,651, 297)
 					        Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,586, 448)
 					        Sleep(200)
@@ -5673,35 +5674,6 @@ EndFunc
 
 	EndFunc
 
-		Func _requetanotepad($link,$tenTXT)
-				$checkrequet=0
-					For $i12=1 To 10
-                         $kq=_HttpRequest(2,$link,'','','','','')        ;lay link kenh va kiem tra view gio
-				         Sleep(1000)
-						 If StringLen($kq)<2 Then
-							     $kq=_HttpRequest(2,$link,'','','','','')        ;lay link kenh va kiem tra view gio
-								 Sleep(10000)
-						 Else
-								 $i12=500
-						 EndIf
-					Next
-			             $data=_StringBetween($kq,'<div class="plaintext ">','</div>')
-					If IsArray($data) Then
-						$arrydata=StringSplit($data[0],@CRLF)
-						FileDelete(@ScriptDir&'/'&$tenTXT)
-						Sleep(1000)
-						For $i20=1 to $arrydata[0]
-							FileWriteLine(@ScriptDir&'/'&$tenTXT,$arrydata[$i20])
-						Next
-						$checkrequet=1
-
-					Else
-						$checkrequet=0
-
-					EndIf
-				Return $checkrequet
-			EndFunc
-
 		Func _requetTextDoc($link,$tenTXT)
 				$checkrequet=0
 				$kq=''
@@ -5885,7 +5857,39 @@ EndFunc
                            $f=FileReadLine(@ScriptDir&'\Gmailtest.txt',1)
                            $g=FileReadLine(@ScriptDir&'\Gmailtest.txt',2)
 						   $h=FileReadLine(@ScriptDir&'\Gmailtest.txt',3)
+						   $sdt=FileReadLine(@ScriptDir&'\Gmailtest.txt',4)
 						   FileDelete(@ScriptDir&'\Gmailtest.txt')
+
+
+
+						If $sdt='782035219' Then
+                            $LinkNhanCode='https://anotepad.com/notes/wdxiyse5'
+						EndIf
+						If $sdt='336218009' Then
+                            $LinkNhanCode='https://anotepad.com/notes/wdxiyse5'
+						EndIf
+						If $sdt='822019816' Then
+                            $LinkNhanCode='https://anotepad.com/notes/cyymw9rk'
+						EndIf
+						If $sdt='822518798' Then
+                            $LinkNhanCode='https://anotepad.com/notes/cyymw9rk'
+						EndIf
+						If $sdt='359148172' Then
+                            $LinkNhanCode='https://anotepad.com/notes/ce5h4sp3'
+						EndIf
+						If $sdt='787290226' Then
+                            $LinkNhanCode='https://anotepad.com/notes/ce5h4sp3'
+						EndIf
+						If $sdt='865530605' Then
+                            $LinkNhanCode='https://anotepad.com/notes/6hxy76br'
+						EndIf
+						If $sdt='367849963' Then
+                            $LinkNhanCode='https://anotepad.com/notes/mk6ym2g3'
+						EndIf
+						If $sdt='855783235' Then
+                            $LinkNhanCode='https://anotepad.com/notes/mk6ym2g3'
+						EndIf
+
 
 	            WinMove('','',0,0,1366,768)
 				Sleep(2000)
@@ -6012,17 +6016,48 @@ EndFunc
 				Send($g,1)
 				Sleep(1500)
 				Send('{enter}')
-                Sleep(5000)
-				Send("Buichung"&@MDAY&@MON)
-				Sleep(1500)
-				Send('{enter}')
                 Sleep(4000)
-                For $i20=1 to 20
+                For $i20=1 to 10
 				    $pixcel=PixelSearch(12, 289,1000, 713,0x0B57D0)
 					If IsArray($pixcel) Then $i20=20
 					Sleep(1000)
 				Next
-				Sleep(5000)
+				Sleep(3000)
+				MouseClick('left',900, 424,1,20)
+				Sleep(2000)
+				Send('{tab}')
+				Sleep(1000)
+				Send('{tab}')
+				Sleep(2000)
+				Send('+84',1)
+				Sleep(3000)
+				$pixcel=PixelSearch(642, 509,842, 697,0xFDF406)  ; dien sdt nhan code
+				If IsArray($pixcel) Then
+					Send($sdt)
+					Sleep(1000)
+					Send('{enter}')
+					Sleep(15000)
+					$checkaddsdt=0
+					For $i21=1 to 7
+					        $code=_requetanotepad1dong($LinkNhanCode)
+					        Sleep(1000)
+							MouseClick('left',881, 292,1,20)
+							Sleep(1000)
+							Send('{tab}')
+							Sleep(1000)
+				            Send($code)
+					        Sleep(1000)
+					        Send('{enter}')
+						    Sleep(5000)
+							$pixcel=PixelSearch(673, 290,977, 447,0xB3261E ) ; kiem tra code
+				            If not IsArray($pixcel) Then
+								$i21=7
+							EndIf
+					Next
+
+				EndIf
+
+				Sleep(10000)
 				If $i=6 Then MouseClick('left',380, 225,1,20)
 				Sleep(2000)
 				Sleep(1000)
@@ -6335,8 +6370,6 @@ EndFunc
 				Sleep(7000)
 				MouseClick('left',700,300,1,20)
 				Sleep(5000)
-
-
 
 			Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
         EndFunc
@@ -6885,30 +6918,6 @@ EndFunc
              Return $sOutput
         EndFunc
 
-		Func _postdataIP($dataIP,$linkketqua,$linkdulieu)                                            ; gui IP len anotebad.com
-            _requetanotepad($linkdulieu,'testdata.txt')
-			FileWriteLine(@ScriptDir&'\testdata.txt',$dataIP)
-			$sodog=_FileCountLines(@ScriptDir&'\testdata.txt')
-			For $i20=1 to $sodog
-				$IdPass=FileReadLine(@ScriptDir&'\testdata.txt',$i20)
-				If StringLen($IdPass)>10 Then FileWriteLine(@ScriptDir&'\testdata2.txt',$IdPass)
-			Next
-			Sleep(100)
-			$dataIP2=FileRead(@ScriptDir&'\testdata2.txt')
-			;$dataIP=_bigdataIP($dataIP)
-			$ref=$linkketqua
-			$url=$linkketqua
-			$code=StringRight($linkketqua,8)
-			$datalogin='postback=true&accesscode=123456'
-			$cookie=''
-            $kq=_HttpRequest(1,$url,$datalogin,$cookie,$ref,'Connection: keep-alive|Upgrade-Insecure-Requests: 1')
-            $url2='https://anotepad.com/note/quickeditsave'
-            $ref2='https://anotepad.com/note/quickedit/'&$code
-            $datalogin2='number='&$code&'&notecontent='&$dataIP2
-            $cookie2=''
-            $kq2=_HttpRequest(1,$url2,$datalogin2,$cookie2,$ref2,'Connection: keep-alive|Upgrade-Insecure-Requests: 1')
-        EndFunc
-
         Func _CheckUpdateCode($linknhom)
 
 			_requetGooGleDOC($linknhom,'checkUpdateCode.txt')
@@ -6989,6 +6998,122 @@ EndFunc
 
 			EndIf
         EndFunc
+
+
+		Func _requetanotepad($link,$tenTXT)
+				$checkrequet=0
+					For $i12=1 To 10
+                         $kq=_HttpRequest(2,$link,'','','','','')        ;lay link kenh va kiem tra view gio
+				         Sleep(1000)
+						 If StringLen($kq)<2 Then
+							     $kq=_HttpRequest(2,$link,'','','','','')        ;lay link kenh va kiem tra view gio
+								 Sleep(10000)
+						 Else
+								 $i12=500
+						 EndIf
+					Next
+			             $data=_StringBetween($kq,'<div class="plaintext ">','</div>')
+					If IsArray($data) Then
+						$arrydata=StringSplit($data[0],@CRLF)
+						FileDelete(@ScriptDir&'/'&$tenTXT)
+						Sleep(1000)
+						For $i20=1 to $arrydata[0]
+							FileWriteLine(@ScriptDir&'/'&$tenTXT,$arrydata[$i20])
+						Next
+						$checkrequet=1
+
+					Else
+						$checkrequet=0
+
+					EndIf
+				Return $checkrequet
+		EndFunc
+
+        Func _postdataNew($dataIP,$linkketqua,$linkdulieu)                                            ; gui IP len anotebad.com
+			;$dataIP=_bigdataIP($dataIP)
+			$ref=$linkketqua
+			$url=$linkketqua
+			$code=StringRight($linkketqua,8)
+			$datalogin='postback=true&accesscode=123456'
+			$cookie=''
+            $kq=_HttpRequest(1,$url,$datalogin,$cookie,$ref,'Connection: keep-alive|Upgrade-Insecure-Requests: 1')
+            $url2='https://anotepad.com/note/quickeditsave'
+            $ref2='https://anotepad.com/note/quickedit/'&$code
+            $datalogin2='number='&$code&'&notecontent='&$dataIP
+            $cookie2=''
+            $kq2=_HttpRequest(1,$url2,$datalogin2,$cookie2,$ref2,'Connection: keep-alive|Upgrade-Insecure-Requests: 1')
+        EndFunc
+
+        Func _postdataIP($dataIP,$linkketqua,$linkdulieu)                                            ; gui IP len anotebad.com
+            _requetanotepad($linkdulieu,'testdata.txt')
+			FileWriteLine(@ScriptDir&'\testdata.txt',$dataIP)
+			$sodog=_FileCountLines(@ScriptDir&'\testdata.txt')
+			For $i20=1 to $sodog
+				$IdPass=FileReadLine(@ScriptDir&'\testdata.txt',$i20)
+				If StringLen($IdPass)>10 Then FileWriteLine(@ScriptDir&'\testdata2.txt',$IdPass)
+			Next
+			Sleep(100)
+			$dataIP2=FileRead(@ScriptDir&'\testdata2.txt')
+			;$dataIP=_bigdataIP($dataIP)
+			$ref=$linkketqua
+			$url=$linkketqua
+			$code=StringRight($linkketqua,8)
+			$datalogin='postback=true&accesscode=123456'
+			$cookie=''
+            $kq=_HttpRequest(1,$url,$datalogin,$cookie,$ref,'Connection: keep-alive|Upgrade-Insecure-Requests: 1')
+            $url2='https://anotepad.com/note/quickeditsave'
+            $ref2='https://anotepad.com/note/quickedit/'&$code
+            $datalogin2='number='&$code&'&notecontent='&$dataIP2
+            $cookie2=''
+            $kq2=_HttpRequest(1,$url2,$datalogin2,$cookie2,$ref2,'Connection: keep-alive|Upgrade-Insecure-Requests: 1')
+        EndFunc
+
+        Func _requetanotepad1dong($LinkNhanCode)
+				$checkrequet=0
+
+				For $i21=1 to 20
+					For $i12=1 To 10
+                         $kq=_HttpRequest(2,$LinkNhanCode,'','','','','')        ;lay link kenh va kiem tra view gio
+				         Sleep(1000)
+						 If StringLen($kq)<2 Then
+							     $kq=_HttpRequest(2,$LinkNhanCode,'','','','','')        ;lay link kenh va kiem tra view gio
+								 Sleep(10000)
+						 Else
+								 $i12=500
+						 EndIf
+					Next
+			             $data=_StringBetween($kq,'<div class="plaintext ">','</div>')
+					If IsArray($data) Then
+						$arrydata=StringSplit($data[0],@CRLF)
+						;FileDelete(@ScriptDir&'/'&$tenTXT)
+						Sleep(1000)
+						For $i20=1 to $arrydata[0]
+							;FileWriteLine(@ScriptDir&'/'&$tenTXT,$arrydata[$i20])
+							$check=FileReadLine(@ScriptDir&'/data.txt')
+							If $arrydata[$i20]=$check Then
+
+
+
+
+                            Else
+								$i21=20
+								FileDelete(@ScriptDir&'/data.txt')
+								Sleep(1000)
+								FileWriteLine(@ScriptDir&'/data.txt',$arrydata[$i20])
+
+							EndIf
+
+
+							Return $arrydata[$i20]
+						Next
+
+					EndIf
+
+					Sleep(5000)
+				Next
+
+		EndFunc
+
 
 Func _ReduceMemory()
 	DllCall("psapi.dll", "int", "EmptyWorkingSet", "long", -1)
