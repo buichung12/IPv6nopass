@@ -5883,10 +5883,13 @@ EndFunc
 						If $sdt='865530605' Then
                             $LinkNhanCode='https://anotepad.com/notes/6hxy76br'
 						EndIf
-						If $sdt='367849963' Then
+						If $sdt='765068962' Then
+                            $LinkNhanCode='https://anotepad.com/notes/6hxy76br'
+						EndIf
+						If $sdt='372886428' Then
                             $LinkNhanCode='https://anotepad.com/notes/mk6ym2g3'
 						EndIf
-						If $sdt='855783235' Then
+						If $sdt='583682483' Then
                             $LinkNhanCode='https://anotepad.com/notes/mk6ym2g3'
 						EndIf
 
