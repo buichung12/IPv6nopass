@@ -6039,7 +6039,7 @@ EndFunc
 					Send($sdt)
 					Sleep(1000)
 					Send('{enter}')
-					Sleep(15000)
+					Sleep(20000)
 					$checkaddsdt=0
 					For $i21=1 to 7
 					        $code=_requetanotepad1dong($LinkNhanCode)
