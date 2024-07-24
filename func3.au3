@@ -6034,7 +6034,7 @@ EndFunc
 				Sleep(2000)
 				Send('+84',1)
 				Sleep(3000)
-				$pixcel=PixelSearch(642, 509,842,850,0xFDF406)  ; dien sdt nhan code
+				$pixcel=PixelSearch(642, 509,842,850,0xD9271C)  ; dien sdt nhan code
 				If IsArray($pixcel) Then
 					Send($sdt)
 					Sleep(1000)
