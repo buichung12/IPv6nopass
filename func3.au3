@@ -6034,11 +6034,8 @@ EndFunc
 				Sleep(2000)
 				Send('+84',1)
 				Sleep(3000)
-				$pixcel=PixelSearch(550, 500,842,850,0xD9271C)  ; dien sdt nhan code
-				$pixcel2=PixelSearch(550, 500,842,850,0xE2251E)  ; dien sdt nhan code
-				$pixcel3=PixelSearch(550, 500,842,850,0xE02420)  ; dien sdt nhan code
-				Sleep(1000)
-				If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
+				$checksdt=Number($sdt)
+				If $checksdt>99999 Then
 					Sleep(1000)
 					Send($sdt)
 					Sleep(1000)
