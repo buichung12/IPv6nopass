@@ -6034,12 +6034,12 @@ EndFunc
 				Sleep(2000)
 				Send('+84',1)
 				Sleep(3000)
-				$pixcel=PixelSearch(642, 509,842, 697,0xFDF406)  ; dien sdt nhan code
+				$pixcel=PixelSearch(642, 509,842,850,0xFDF406)  ; dien sdt nhan code
 				If IsArray($pixcel) Then
 					Send($sdt)
 					Sleep(1000)
 					Send('{enter}')
-					Sleep(20000)
+					Sleep(25000)
 					$checkaddsdt=0
 					For $i21=1 to 7
 					        $code=_requetanotepad1dong($LinkNhanCode)
