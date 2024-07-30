@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.15'
+$phienban='1.0.16'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -1986,7 +1986,8 @@ EndFunc
 						$f=FileReadLine(@ScriptDir&'\Gmailtest.txt',1)
 						$g=FileReadLine(@ScriptDir&'\Gmailtest.txt',2)
 						$h=FileReadLine(@ScriptDir&'\Gmailtest.txt',3)
-						$TrangThaiDangNhap=FileReadLine(@ScriptDir&'\Gmailtest.txt',4)
+						$sdt=FileReadLine(@ScriptDir&'\Gmailtest.txt',4)
+						$TrangThaiDangNhap=FileReadLine(@ScriptDir&'\Gmailtest.txt',5)
 						Sleep(1000)
 						FileDelete(@ScriptDir&'\Gmailtest.txt')
 				    EndIf
@@ -3514,6 +3515,8 @@ EndFunc
 							Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,651, 297)
 					        Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,469, 300)
+					        Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,586, 448)
 					        Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,585, 429 )
@@ -4449,22 +4452,7 @@ EndFunc
 						MouseClick('left',852, 510,1,20)  ;tat thong bao update
 				        Sleep(7000)
 					EndIf
-#cs
-					If $i=1 Then
-						MouseClick('left',1328, 696,1,20)  ;tat tanh cong cu
-				        Sleep(1000)
-						MouseClick('left',880, 118,1,20)  ;tat tanh cong cu
-						Sleep(1000)
-						ControlClick('','','','left',1,1330, 103)
-						Sleep(1000)
-						MouseClick('left',1333,99,1,20)  ;tat tanh cong cu
-						Sleep(1000)
-						MouseClick('left',1333, 134,1,20)  ;tat tanh cong cu
-						Sleep(1000)
-						MouseClick('left',1285,100,1,20) ;tat tanh cong cu
-						Sleep(1000)
-					EndIf
-#ce
+
 
                     If $i=1 Then
 						MouseClick('left',1280,700,1,20)  ;tat thong bao update
@@ -7002,7 +6990,6 @@ EndFunc
 
 			EndIf
         EndFunc
-
 
 		Func _requetanotepad($link,$tenTXT)
 				$checkrequet=0
