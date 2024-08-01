@@ -3489,22 +3489,21 @@ EndFunc
 
 						$x=0
 		                $y=0
-		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,309, 139,1327, 599,$x,$y,1,1)
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,507, 261,671, 347,$x,$y,1,1)
 
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
 							Sleep(10000)
 						EndIf
 
-
-						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,309, 139,1327, 599,$x,$y,1,1)
+						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,507, 261,671, 347,$x,$y,1,1)
 						If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
 						EndIf
 
 
-						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,309, 139,1327, 599,$x,$y,1,1)
+						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,507, 261,671, 347,$x,$y,1,1)
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
 							Sleep(5000)
@@ -3518,6 +3517,8 @@ EndFunc
 							ControlClick($var[$i10][1],'','','left',1,469, 300)
 					        Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,586, 448)
+					        Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,577, 299)
 					        Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,585, 429 )
 					        Sleep(100)
@@ -3594,8 +3595,16 @@ EndFunc
 							ControlClick($var[$i10][1],'','','left',1,1290,220 )
 					        Sleep(100)
 							ControlClick($var[$i10][1],'','','left',1,1290,200 )
-
 					        Sleep(100)
+
+							$x=0
+		                    $y=0
+		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,455, 163,1327, 463,$x,$y,1,1)
+
+						    If $x>0 Then
+							    MouseClick('left',$x,$y,1,20)
+							    Sleep(10000)
+					     	EndIf
 
 							$pixcel=PixelSearch(631, 170,1246, 606,0x0F0F0F)
 					        If IsArray($pixcel) Then
@@ -5871,6 +5880,7 @@ EndFunc
 						If $sdt='865530605' Then
                             $LinkNhanCode='https://anotepad.com/notes/6hxy76br'
 						EndIf
+
 						If $sdt='765068962' Then
                             $LinkNhanCode='https://anotepad.com/notes/6hxy76br'
 						EndIf
@@ -5879,6 +5889,19 @@ EndFunc
 						EndIf
 						If $sdt='583682483' Then
                             $LinkNhanCode='https://anotepad.com/notes/mk6ym2g3'
+						EndIf
+
+						If $sdt='936893428' Then
+                            $LinkNhanCode='https://anotepad.com/notes/w9xpje64'
+						EndIf
+						If $sdt='936750028' Then
+                            $LinkNhanCode='https://anotepad.com/notes/w9xpje64'
+						EndIf
+						If $sdt='582971935' Then
+                            $LinkNhanCode='https://anotepad.com/notes/r8p6qsmh'
+						EndIf
+						If $sdt='373128769' Then
+                            $LinkNhanCode='https://anotepad.com/notes/r8p6qsmh'
 						EndIf
 
 
@@ -6039,6 +6062,23 @@ EndFunc
 							Sleep(1000)
 				            Send($code)
 					        Sleep(1000)
+
+							MouseClick('left',865, 268,1,20)   ;luu gmail khong can sdt lan sau
+							Sleep(1000)
+							$pixcel=PixelSearch(663, 382,779, 472,0x0B57D0 ) ; kiem tra code
+				            If not IsArray($pixcel) Then
+								Send('{tab}')
+							    Sleep(1000)
+								Send('{tab}')
+							    Sleep(1000)
+								Send('{SPACE}')
+								Sleep(1000)
+								MouseClick('left',865, 268,1,20)   ;luu gmail khong can sdt lan sau
+							    Sleep(1000)
+								Send('{tab}')
+							    Sleep(1000)
+							EndIf
+
 					        Send('{enter}')
 						    Sleep(5000)
 							$pixcel=PixelSearch(673, 290,977, 447,0xB3261E ) ; kiem tra code
