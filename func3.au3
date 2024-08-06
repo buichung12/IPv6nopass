@@ -704,6 +704,7 @@ EndFunc
 		    Sleep(1000)
 			FileCopy('C:\Users\'&@UserName&'\Downloads\sub3.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
 		    Sleep(1000)
+			_closeTrinhDuyet(1)
 
 
 
