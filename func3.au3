@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.17'
+$phienban='1.0.18'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -6080,6 +6080,13 @@ EndFunc
 							    Sleep(1000)
 								Send('{tab}')
 							    Sleep(1000)
+							Else
+
+								MouseClick('left',865, 268,1,20)   ;luu gmail khong can sdt lan sau
+							    Sleep(1000)
+								Send('{tab}')
+							    Sleep(1000)
+
 							EndIf
 
 					        Send('{enter}')
