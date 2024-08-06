@@ -4931,8 +4931,8 @@ EndFunc
 							Sleep(2000)
 							MouseClick('left',1328,145,1,20)
 							Sleep(3000)
-						;	MouseClick('left',1280,163,1,20)
-						;	Sleep(2000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
 
 						EndIf
 
@@ -5177,16 +5177,16 @@ EndFunc
 		                    Sleep(2000)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
 							Sleep(2000)
-						;	MouseClick('left',1300,720,1,20)
-							;Sleep(1000)
-							;MouseClick('left',1280,163,1,20)
-							;Sleep(2000)
-							;MouseClick('left',1322,114,1,20)
-							;Sleep(1000)
-							;MouseClick('left',1317,112,1,20)
-							;Sleep(1000)
-							;MouseClick('left',1327, 102,1,20)
-							;Sleep(1000)
+							MouseClick('left',1300,720,1,20)
+							Sleep(1000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
+							MouseClick('left',1322,114,1,20)
+							Sleep(1000)
+							MouseClick('left',1317,112,1,20)
+							Sleep(1000)
+							MouseClick('left',1327, 102,1,20)
+							Sleep(1000)
 						EndIf
 
 						If $i=1 Then
