@@ -3513,7 +3513,11 @@ EndFunc
 
                            If $i=5 Then ControlClick($var[$i10][1],'','','left',1,1245, 216)
 							Sleep(200)
-							ControlClick($var[$i10][1],'','','left',1,651, 297)
+							ControlClick($var[$i10][1],'','','left',1,651, 310)
+					        Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,579, 310)
+					        Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,582, 329)
 					        Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,469, 300)
 					        Sleep(200)
