@@ -3523,6 +3523,8 @@ EndFunc
 					        Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,577, 299)
 					        Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,585, 456)
+					        Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,586, 448)
 					        Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,585, 429 )
