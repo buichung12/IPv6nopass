@@ -6061,9 +6061,9 @@ EndFunc
 				$checksdt=Number($sdt)
 				Sleep(1000)
 				If $checksdt>99999 Then
-					Sleep(1000)
+					Sleep(2000)
 					Send($sdt)
-					Sleep(1000)
+					Sleep(2000)
 					Send('{enter}')
 					Sleep(25000)
 					$checkaddsdt=0
@@ -6071,32 +6071,32 @@ EndFunc
 					        $code=_requetanotepad1dong($LinkNhanCode)
 					        Sleep(1000)
 							MouseClick('left',881, 292,1,20)
-							Sleep(1000)
+							Sleep(2000)
 							Send('{tab}')
-							Sleep(1000)
+							Sleep(2000)
 				            Send($code)
-					        Sleep(1000)
+					        Sleep(2000)
 
 							MouseClick('left',865, 268,1,20)   ;luu gmail khong can sdt lan sau
 							Sleep(3000)
 							$pixcel=PixelSearch(663, 382,779, 472,0x0B57D0 ) ; kiem tra code
 				            If not IsArray($pixcel) Then
 								Send('{tab}')
-							    Sleep(1000)
+							    Sleep(2000)
 								Send('{tab}')
-							    Sleep(1000)
+							    Sleep(2000)
 								Send('{SPACE}')
-								Sleep(1000)
+								Sleep(2000)
 								MouseClick('left',865, 268,1,20)   ;luu gmail khong can sdt lan sau
-							    Sleep(1000)
+							    Sleep(2000)
 								Send('{tab}')
-							    Sleep(1000)
+							    Sleep(2000)
 							Else
 
 								MouseClick('left',865, 268,1,20)   ;luu gmail khong can sdt lan sau
-							    Sleep(1000)
+							    Sleep(2000)
 								Send('{tab}')
-							    Sleep(1000)
+							    Sleep(2000)
 
 							EndIf
 
