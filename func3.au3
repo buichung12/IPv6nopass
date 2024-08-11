@@ -6059,6 +6059,7 @@ EndFunc
 				Send('+84',1)
 				Sleep(3000)
 				$checksdt=Number($sdt)
+				Sleep(1000)
 				If $checksdt>99999 Then
 					Sleep(1000)
 					Send($sdt)
@@ -6077,7 +6078,7 @@ EndFunc
 					        Sleep(1000)
 
 							MouseClick('left',865, 268,1,20)   ;luu gmail khong can sdt lan sau
-							Sleep(1000)
+							Sleep(3000)
 							$pixcel=PixelSearch(663, 382,779, 472,0x0B57D0 ) ; kiem tra code
 				            If not IsArray($pixcel) Then
 								Send('{tab}')
