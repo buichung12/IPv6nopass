@@ -532,7 +532,19 @@ EndFunc
 				FileCopy("C:\Users\"&@UserName&"\Downloads\func3.au3","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea", 1)
 				If FileExists("C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea\func3.au3")=1 Then $i20=3
 		         Sleep(2000)
-            Next
+			Next
+
+
+
+
+			;check phien ban
+			                            FileDelete(@ScriptDir&'\KiemTraPhienBan.txt')
+			                            Sleep(1000)
+			                            _requetTextDoc('https://textdoc.co/index.php/ypJxUFiaBrWjohGS','KiemTraPhienBan.txt')
+			                            Sleep(3000)
+			                            $PhienBanMoi=FileReadLine(@ScriptDir&'\KiemTraPhienBan.txt',1)
+			                            If $PhienBanMoi<>$phienban Then _GetDOSOutput('shutdown -r -t 0')
+										Sleep(10000)
 
 		    FileDelete("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe")
 			Sleep(1000)
