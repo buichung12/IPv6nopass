@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.18'
+$phienban='1.0.19'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -520,6 +520,20 @@ EndFunc
 
 		   _resetMang(1)
 
+		    FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
+		    Sleep(1000)
+            For $i20=1 to 2
+		         _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
+                Sleep(7000)
+		        Send('{enter}')
+		        Sleep(8000)
+		        Send('^+s')
+		        Sleep(15000)
+				FileCopy("C:\Users\"&@UserName&"\Downloads\func3.au3","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea", 1)
+				If FileExists("C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea\func3.au3")=1 Then $i20=3
+		         Sleep(2000)
+            Next
+
 		    FileDelete("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe")
 			Sleep(1000)
 			FileDelete("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.au3")
@@ -574,19 +588,7 @@ EndFunc
 			_closeTrinhDuyet(1)
 
 
-			FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
-		    Sleep(1000)
-            For $i20=1 to 2
-		         _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
-                Sleep(7000)
-		        Send('{enter}')
-		        Sleep(8000)
-		        Send('^+s')
-		        Sleep(15000)
-				FileCopy("C:\Users\"&@UserName&"\Downloads\func3.au3","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea", 1)
-				If FileExists("C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea\func3.au3")=1 Then $i20=3
-		         Sleep(2000)
-            Next
+
         #cs
 			ToolTip('update gmailkhoiphuc2&'	phien ban:'&$phienban',0,0)
 			_requetGooGleDOC('https://docs.google.com/document/d/12jqqyD2hSCnRMrUar2axLIVR4sYbftEKsA0IO5c2Yi0/export?format=txt','checkupdategmailkhoiphuc2.txt')
@@ -3158,8 +3160,10 @@ EndFunc
 					$checkload=0
 
 					For $i20=1 to 20
-					        $pixcel=PixelSearch(58,110,245, 170,0xFF0000)   ; xoa loi edge
-					    If IsArray($pixcel) Then
+					        $pixcel=PixelSearch(58,110,245, 170,0xFF0033)   ; xoa loi edge
+							$pixcel2=PixelSearch(58,110,245, 170,0xFF0000)   ; xoa loi edge
+							$pixcel3=PixelSearch(58,110,245, 170,0xFF0100)   ; xoa loi edge
+					    If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
 						    $i20=20
 							$checkload=1
 						EndIf
@@ -3198,8 +3202,10 @@ EndFunc
 
 
 					If $i=1 Then
-							$pixcel=PixelSearch(20, 130,40, 245,0xFF0000)   ; xoa loi edge
-					    If IsArray($pixcel) Then
+							$pixcel=PixelSearch(20, 130,40, 245,0xFF0033)   ; xoa loi edge
+							$pixcel2=PixelSearch(20, 130,40, 245,0xFF0000)   ; xoa loi edge
+							$pixcel3=PixelSearch(20, 130,40, 245,0xFF0100)   ; xoa loi edge
+					    If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
 						    Sleep(2000)
 							Send('^+,')
 							Sleep(1000)
@@ -3236,9 +3242,9 @@ EndFunc
 
 					Sleep(2000)
                     For $i20=1 to 2
-					    $pixcel=PixelSearch(55,110,245, 170,0xFF0000)   ; xoa loi edge
+					    ;$pixcel=PixelSearch(55,110,245, 170,0xFF0033)   ; xoa loi edge
 					    $pixcel2=PixelSearch(545, 347,1151, 744,0x606060)   ; xoa loi edge
-					    If IsArray($pixcel) and IsArray($pixcel2) Then
+					    If IsArray($pixcel2) Then
 						    Sleep(4000)
 					        For $i20=1 to $i5+2
 						       ControlSend($var[$i10][1],'','','{tab}')
@@ -3437,8 +3443,10 @@ EndFunc
 
 					$checklink=0
 				    For $i20=1 to 10
-				          $pixcel=PixelSearch(76,110,146, 166,0xFF0000)
-						If IsArray($pixcel) Then
+				          $pixcel=PixelSearch(76,110,146, 166,0xFF0033)
+						  $pixcel2=PixelSearch(76,110,146, 166,0xFF00100)
+						  $pixcel3=PixelSearch(76,110,146, 166,0xFF0000)
+						If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
 							$i20=20
 							$checklink=1
 						EndIf
@@ -3481,11 +3489,13 @@ EndFunc
                          ToolTip("link video "&$iSun2lan&", link trang chu"&'	phien ban:'&$phienban,0,0)
 						;Sleep(5000)
 						For $i20=1 to 10
-				          $pixcel=PixelSearch(76,110,146, 166,0xFF0000)
-					       If IsArray($pixcel) Then
-							  $i20=20
-						   EndIf
-						   Sleep(1000)
+				           $pixcel=PixelSearch(76,110,146, 166,0xFF0033)
+						   $pixcel2=PixelSearch(76,110,146, 166,0xFF0000)
+						   $pixcel3=PixelSearch(76,110,146, 166,0xFF0100)
+					        If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
+							   $i20=20
+						    EndIf
+						    Sleep(1000)
 						Next
 
 						$x=0
@@ -3663,10 +3673,12 @@ EndFunc
 					    Sleep(50)
 					    Sleep(10000)
 						For $i20=1 to 10
-				          $pixcel=PixelSearch(76,110,146, 166,0xFF0000)
-					       If IsArray($pixcel) Then
-							  $i20=20
-						   EndIf
+				            $pixcel=PixelSearch(76,110,146, 166,0xFF0033)
+							$pixcel2=PixelSearch(76,110,146, 166,0xFF0000)
+							$pixcel3=PixelSearch(76,110,146, 166,0xFF0100)
+					        If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
+							    $i20=20
+						    EndIf
 						   Sleep(1000)
 						Next
 
@@ -3773,16 +3785,15 @@ EndFunc
 
 					    Sleep(7000)
 					    For $i20=1 to 10
-				          $pixcel=PixelSearch(76,90,146, 166,0xFF0000)
-					       If IsArray($pixcel) Then
+				          $pixcel=PixelSearch(76,90,146, 166,0xFF0033)
+						  $pixcel2=PixelSearch(76,90,146, 166,0xFF0000)
+						  $pixcel3=PixelSearch(76,90,146, 166,0xFF0100)
+					       If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
 							  $i20=20
 						   EndIf
 						   Sleep(1000)
 						Next
 				        Sleep(2000)     ;thoi gian nghi
-
-
-
 
 
 						$x=0
@@ -3812,9 +3823,11 @@ EndFunc
 						Sleep(1000)
 
 
-						$pixcel=PixelSearch(80,720,200,800,0xFF0000)  ; loi hien bang thong bao đăng ký pre 1 tháng
+						$pixcel=PixelSearch(80,720,200,800,0xFF0033)  ; loi hien bang thong bao đăng ký pre 1 tháng
+						$pixcel2=PixelSearch(80,720,200,800,0xFF0000)  ; loi hien bang thong bao đăng ký pre 1 tháng
+						$pixcel3=PixelSearch(80,720,200,800,0xFF0100)  ; loi hien bang thong bao đăng ký pre 1 tháng
 						Sleep(1000)
-						If IsArray($pixcel) Then
+						If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
 							$i20=20
 							MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							Sleep(2000)
@@ -3966,8 +3979,10 @@ EndFunc
                         ToolTip("link video truc tiep "&$iSun2lan&", link truc tiep"&'	phien ban:'&$phienban,0,0)
 					    Sleep(5000)
 					    For $i20=1 to 20
-				          $pixcel=PixelSearch(76,110,146, 166,0xFF0000)
-					       If IsArray($pixcel) Then
+				          $pixcel=PixelSearch(76,110,146, 166,0xFF0033)
+						  $pixcel2=PixelSearch(76,110,146, 166,0xFF0000)
+						  $pixcel3=PixelSearch(76,110,146, 166,0xFF00100)
+					       If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
 							  $i20=20
 						   EndIf
 						   Sleep(1000)
@@ -6087,19 +6102,13 @@ EndFunc
 							    Sleep(2000)
 								Send('{SPACE}')
 								Sleep(2000)
-								MouseClick('left',865, 268,1,20)   ;luu gmail khong can sdt lan sau
-							    Sleep(2000)
-								Send('{tab}')
-							    Sleep(2000)
-							Else
-
-								MouseClick('left',865, 268,1,20)   ;luu gmail khong can sdt lan sau
-							    Sleep(2000)
-								Send('{tab}')
-							    Sleep(2000)
 
 							EndIf
 
+							MouseClick('left',865, 268,1,20)   ;luu gmail khong can sdt lan sau
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
 					        Send('{enter}')
 						    Sleep(5000)
 							$pixcel=PixelSearch(673, 290,977, 447,0xB3261E ) ; kiem tra code
