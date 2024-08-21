@@ -6052,7 +6052,7 @@ EndFunc
 				Send($f,1)
 				Sleep(1500)
 				Send('{enter}')
-				Sleep(10000)
+				Sleep(15000)
 				For $i20=1 to 20
 				    $pixcel=PixelSearch(322, 259,1000, 527,0x0B57D0)
 					If IsArray($pixcel) Then
