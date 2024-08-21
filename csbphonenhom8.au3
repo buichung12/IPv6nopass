@@ -81,7 +81,10 @@ While 1
 				 _requetGooGleDOC('https://docs.google.com/document/d/1T61mEx-oN8kAoQUDempOB7ySkv1O6cF_RlU7d5MDwjw/export?format=txt','Keytinsoft.txt')
 				Sleep(2000)
 				$sodongIP0=_FileCountLines(@ScriptDir&"\Keytinsoft.txt")
-				If $sodongIP0<999 Then _requetGooGleDOC('https://docs.google.com/document/d/16Gd53lsU4_Yc4hxoy5n0XIaYLDjfGeKp19zTqONPT4Y/export?format=txt','Keytinsoft.txt')
+				If $sodongIP0<100 Then
+					Sleep(60000)
+					_requetGooGleDOC('https://docs.google.com/document/d/16Gd53lsU4_Yc4hxoy5n0XIaYLDjfGeKp19zTqONPT4Y/export?format=txt','Keytinsoft.txt')
+				EndIf
 
 				$STTIP=($vpsso-1)*10+1
 				FileDelete(@ScriptDir&'\Keytinsoft2.txt')

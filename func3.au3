@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.19'
+$phienban='1.0.20'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -3839,9 +3839,27 @@ EndFunc
 						$pixcel2=PixelSearch(80,720,200,800,0xFF0000)  ; loi hien bang thong bao đăng ký pre 1 tháng
 						$pixcel3=PixelSearch(80,720,200,800,0xFF0100)  ; loi hien bang thong bao đăng ký pre 1 tháng
 						Sleep(1000)
-						If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
+						If IsArray($pixcel) Then
 							$i20=20
 							MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+							Sleep(2000)
+						EndIf
+						If IsArray($pixcel2) Then
+							$i20=20
+							MouseClick('left',$pixcel2[0]+5,$pixcel2[1]+5,1,20)
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+							Sleep(2000)
+						EndIf
+						If IsArray($pixcel3) Then
+							$i20=20
+							MouseClick('left',$pixcel3[0]+5,$pixcel3[1]+5,1,20)
 							Sleep(2000)
 							Send('{tab}')
 							Sleep(2000)
@@ -6070,7 +6088,7 @@ EndFunc
 				Send($g,1)
 				Sleep(1500)
 				Send('{enter}')
-                Sleep(4000)
+                Sleep(10000)
                 For $i20=1 to 10
 				    $pixcel=PixelSearch(12, 289,1000, 713,0x0B57D0)
 					If IsArray($pixcel) Then $i20=20
@@ -6431,7 +6449,7 @@ EndFunc
 
 			EndIf
 
-                MouseClick('left',500, 60,1,20)
+                MouseClick('left',600, 60,1,20)
 				;If $i=8 Then MouseClick('left',800, 75,1,20)
                 Sleep(2000)
 				Send('^a')
