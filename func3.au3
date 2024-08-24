@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.20'
+$phienban='1.0.21'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -5932,9 +5932,9 @@ EndFunc
 						If $sdt='359148172' Then
                             $LinkNhanCode='https://anotepad.com/notes/ce5h4sp3'
 						EndIf
-						If $sdt='787290226' Then
-                            $LinkNhanCode='https://anotepad.com/notes/ce5h4sp3'
-						EndIf
+						;If $sdt='787290226' Then
+                         ;   $LinkNhanCode='https://anotepad.com/notes/ce5h4sp3'
+						;EndIf
 						If $sdt='865530605' Then
                             $LinkNhanCode='https://anotepad.com/notes/6hxy76br'
 						EndIf
@@ -5945,7 +5945,7 @@ EndFunc
 						If $sdt='372886428' Then
                             $LinkNhanCode='https://anotepad.com/notes/mk6ym2g3'
 						EndIf
-						If $sdt='583682483' Then
+						If $sdt='855783235' Then
                             $LinkNhanCode='https://anotepad.com/notes/mk6ym2g3'
 						EndIf
 
@@ -5955,7 +5955,7 @@ EndFunc
 						If $sdt='936750028' Then
                             $LinkNhanCode='https://anotepad.com/notes/w9xpje64'
 						EndIf
-						If $sdt='582971935' Then
+						If $sdt='787290226' Then
                             $LinkNhanCode='https://anotepad.com/notes/r8p6qsmh'
 						EndIf
 						If $sdt='373128769' Then
