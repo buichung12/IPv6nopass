@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.21'
+$phienban='1.0.22'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -2658,6 +2658,72 @@ EndFunc
 						Send('{enter}')
 						Sleep(5000)
 
+						If $i=7 Then
+							MouseClick('left',600,60,1,20)
+						    Sleep(3000)
+						    Send('google.com')
+							Sleep(7000)
+							MouseClick('left',590,425,1,20)
+							Sleep(2000)
+							Send('^a')
+						    Sleep(1000)
+						    Send($ID)
+						    Sleep(2000)
+						    Send('{tab}')
+						    Sleep(2000)
+						    Send($Pass)
+						    Sleep(2000)
+						    Send('{tab}')
+						    Sleep(2000)
+                            Send('{enter}')
+							Sleep(5000)
+
+						EndIf
+						If $i=6 Then
+							MouseClick('left',600,60,1,20)
+						    Sleep(3000)
+						    Send('google.com')
+							Sleep(7000)
+							MouseClick('left',551, 413,1,20)
+							Sleep(2000)
+							Send('^a')
+						    Sleep(1000)
+						    Send($ID)
+						    Sleep(2000)
+						    Send('{tab}')
+						    Sleep(2000)
+						    Send($Pass)
+						    Sleep(2000)
+                            Send('{tab}')
+						    Sleep(2000)
+							Send('{tab}')
+						    Sleep(2000)
+                            Send('{enter}')
+							Sleep(5000)
+
+						EndIf
+						If $i=9 Then
+							MouseClick('left',600,60,1,20)
+						    Sleep(3000)
+						    Send('google.com')
+							Sleep(7000)
+							MouseClick('left',645, 425,1,20)
+							Sleep(2000)
+							Send('^a')
+						    Sleep(1000)
+						    Send($ID)
+						    Sleep(2000)
+						    Send('{tab}')
+						    Sleep(2000)
+						    Send($Pass)
+						    Sleep(2000)
+                            Send('{tab}')
+						    Sleep(2000)
+                            Send('{enter}')
+							Sleep(5000)
+
+						EndIf
+
 						If $i=1 Then
 							MouseClick('left',858, 241,1,20)
 							Sleep(2000)
@@ -2799,6 +2865,7 @@ EndFunc
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
 						EndIf
+
 
 					Next
 			Return $check
