@@ -5607,6 +5607,10 @@ EndFunc
 				Sleep(10000)
 			EndIf
 
+			    WinClose('opera - Bad Image.exe')
+				Sleep(100)
+				ProcessClose('opera - Bad Image.exe')
+				Sleep(100)
 				ProcessClose('msdt.exe')
 				Sleep(100)
 				ProcessClose('firefox.exe')
