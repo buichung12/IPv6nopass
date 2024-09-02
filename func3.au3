@@ -2658,24 +2658,8 @@ EndFunc
 						    EndIf
 						Next
 
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('google.com')
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(10000)
-						Send($ID)
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send($Pass)
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(5000)
 
-						If $i=7 Then
+												If $i=7 Then
 							MouseClick('left',600,60,1,20)
 						    Sleep(3000)
 						    Send('google.com')
@@ -2740,6 +2724,25 @@ EndFunc
 							Sleep(5000)
 
 						EndIf
+
+
+						MouseClick('left',600,60,1,20)
+						Sleep(2000)
+						Send('google.com')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(10000)
+						Send($ID)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send($Pass)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(5000)
+
 
 						If $i=1 Then
 							MouseClick('left',858, 241,1,20)
