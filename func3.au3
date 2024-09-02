@@ -535,8 +535,6 @@ EndFunc
 			Next
 
 
-
-
 			;check phien ban
 			                            FileDelete(@ScriptDir&'\KiemTraPhienBan.txt')
 			                            Sleep(1000)
@@ -545,6 +543,15 @@ EndFunc
 			                            $PhienBanMoi=FileReadLine(@ScriptDir&'\KiemTraPhienBan.txt',1)
 			                            If $PhienBanMoi<>$phienban Then _GetDOSOutput('shutdown -r -t 0')
 										Sleep(10000)
+
+
+			Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\Firefox Installer.exe')
+			Sleep(30000)
+			Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\OperaSetup.exe')
+			Sleep(10000)
+			Send('{enter}')
+			Sleep(60000)
+
 
 		    FileDelete("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe")
 			Sleep(1000)
