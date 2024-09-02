@@ -552,6 +552,8 @@ EndFunc
 			Sleep(60000)
 			MouseClick('left',940,580,1,20)
 			Sleep(5000)
+			Send('{enter}')
+			Sleep(2000)
 			Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\Firefox Installer.exe')
 			Sleep(30000)
 			Send('{enter}')
