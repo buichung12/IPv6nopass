@@ -78,23 +78,32 @@ While 1
 				EndIf
 				_LayGmail($vpsso)
 
-				 _requetGooGleDOC('https://docs.google.com/document/d/1fNISPX2uU1JRefEBzX07EqUrn9wdFo7ALOSZe7ltzPk/export?format=txt','Keytinsoft.txt')
-				Sleep(2000)
-				$sodongIP0=_FileCountLines(@ScriptDir&"\Keytinsoft.txt")
-				If $sodongIP0<100 Then
-					Sleep(60000)
-					_requetGooGleDOC('https://docs.google.com/document/d/1vSxY8GS2LhmgHwEkPFLSAhm4iLu6KA2IDvCU-zmvjx4/export?format=txt','Keytinsoft.txt')
-				EndIf
+				For  $i21=1 to 3
 
-				$STTIP=($vpsso-1)*10+1
-				FileDelete(@ScriptDir&'\Keytinsoft2.txt')
-				Sleep(1000)
-				For $i20=0 to 9
-					$Iptho=FileReadLine(@ScriptDir&'\Keytinsoft.txt',$STTIP+$i20)
-					Sleep(100)
-					FileWriteLine(@ScriptDir&'\Keytinsoft2.txt',$Iptho)
-					Sleep(100)
+				     _requetGooGleDOC('https://docs.google.com/document/d/1fNISPX2uU1JRefEBzX07EqUrn9wdFo7ALOSZe7ltzPk/export?format=txt','Keytinsoft.txt')
+				    Sleep(2000)
+				    $sodongIP0=_FileCountLines(@ScriptDir&"\Keytinsoft.txt")
+				    If $sodongIP0<500 Then
+					    Sleep(60000)
+					    _requetGooGleDOC('https://docs.google.com/document/d/1vSxY8GS2LhmgHwEkPFLSAhm4iLu6KA2IDvCU-zmvjx4/export?format=txt','Keytinsoft.txt')
+				    EndIf
+
+				    $STTIP=($vpsso-1)*10+1
+				    FileDelete(@ScriptDir&'\Keytinsoft2.txt')
+				    Sleep(1000)
+				    For $i20=0 to 9
+					    $Iptho=FileReadLine(@ScriptDir&'\Keytinsoft.txt',$STTIP+$i20)
+					    Sleep(100)
+				    	FileWriteLine(@ScriptDir&'\Keytinsoft2.txt',$Iptho)
+					    Sleep(100)
+					Next
+
+					 $check=_FileCountLines(@ScriptDir&"\Keytinsoft2.txt")
+					If $check >8 Then $i21=3
+
 				Next
+
+
 
 
 				If $kiemtratrinhduyet=1 Then $checkUC=_kiemtratrinhduyet($i5,$i,$vpsso,$trusomaybandau)

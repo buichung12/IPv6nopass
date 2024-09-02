@@ -76,11 +76,11 @@ While 1
 					$checkrequet=_requetGooGleDOC('https://docs.google.com/document/d/1fkYnaUDL8Jx7cyuXWqPhok7a56NGKM0kVBL5rglKVx4/export?format=txt','Gmailtho.txt')
 				EndIf
                  _LayGmail($vpsso)
-
+            For  $i21=1 to 3
 				 _requetGooGleDOC('https://docs.google.com/document/d/1vsP-AkEticxp6EQGlU_S-er5sa3oXXc_M83P4SPsERg/export?format=txt','Keytinsoft.txt')
 				Sleep(2000)
 				$sodongIP0=_FileCountLines(@ScriptDir&"\Keytinsoft.txt")
-				If $sodongIP0<100 Then
+				If $sodongIP0<500 Then
 					Sleep(60000)
 					_requetGooGleDOC('https://docs.google.com/document/d/162AR09nrA55lkY9x7Q0mcybKQ_xTgjMmvOx4NhlJ8wY/export?format=txt','Keytinsoft.txt')
 				EndIf
@@ -102,7 +102,7 @@ While 1
 					MsgBox(0,0,'loi khong dien so may')
 					Exit
                 EndIf
-
+            Next
 
                 $kiemtratrinhduyet2=1
 				$checkprofile=1

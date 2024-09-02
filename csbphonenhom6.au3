@@ -75,12 +75,12 @@ While 1
 					$checkrequet=_requetGooGleDOC('https://docs.google.com/document/d/12uNfacfJLTPJsOdGleoy84QSFix2pquxcbITRMRufTM/export?format=txt','Gmailtho.txt')
 				EndIf
                  _LayGmail($vpsso)
-
+			For  $i21=1 to 3
 				FileDelete(@ScriptDir&'\Keytinsoft.txt')
 				_requetGooGleDOC('https://docs.google.com/document/d/1uJ60_uNbaaaG2Fs7gQC5v-EihcaVX4vBpWdaFjqPumE/export?format=txt','Keytinsoft.txt')
 				Sleep(2000)
 				$sodongIP0=_FileCountLines(@ScriptDir&"\Keytinsoft.txt")
-				If $sodongIP0<100 Then
+				If $sodongIP0<500 Then
 					Sleep(60000)
 					_requetGooGleDOC('https://docs.google.com/document/d/1kJIjqEt-UUgb5QTaRKJvtVXiwioPciDpXV6s7CoKW-E/export?format=txt','Keytinsoft.txt')
 				EndIf
@@ -104,7 +104,7 @@ While 1
 					Exit
                 EndIf
 
-
+            Next
 
                 $kiemtratrinhduyet2=1
 				$checkprofile=1

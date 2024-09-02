@@ -77,13 +77,16 @@ While 1
 
                  _LayGmail($vpsso)
 
+
+            For  $i21=1 to 3
 				 _requetGooGleDOC('https://docs.google.com/document/d/1GKwvWUPSL3Hz9eGEqv-wcxEO7nmHEI6WkChBhPFkOXk/export?format=txt','Keytinsoft.txt')
 				Sleep(2000)
 				$sodongIP1=_FileCountLines(@ScriptDir&"\Keytinsoft.txt")
-				If $sodongIP1<100 Then
+				If $sodongIP1<500 Then
 					Sleep(60000)
 					_requetGooGleDOC('https://docs.google.com/document/d/1eJ_aOeZ38yytg_bRjHgfFdjLzh_P1698uTVrx5MSAZA/export?format=txt','Keytinsoft.txt')
 				EndIf
+
 
 				$STTIP=($vpsso-1)*10+1
 				FileDelete(@ScriptDir&'\Keytinsoft2.txt')
@@ -101,6 +104,8 @@ While 1
 					MsgBox(0,0,'loi khong dien so may')
 					Exit
                 EndIf
+            Next
+
 
 				$checkprofile=1
 While 1   ; vong tra lai gia tr
