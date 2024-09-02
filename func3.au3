@@ -545,12 +545,18 @@ EndFunc
 										Sleep(10000)
 
 
-			Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\Firefox Installer.exe')
-			Sleep(30000)
+
 			Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\OperaSetup.exe')
 			Sleep(10000)
 			Send('{enter}')
 			Sleep(60000)
+			Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\Firefox Installer.exe')
+			Sleep(30000)
+			Send('{enter}')
+			Sleep(5000)
+			Send('{enter}')
+			Sleep(5000)
+			_closeTrinhDuyet(1)
 
 
 		    FileDelete("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe")
