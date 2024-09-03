@@ -156,14 +156,15 @@ While 1   ; vong tra lai gia tr
 				EndIf
 				FileDelete(@ScriptDir&'\checkUpdateCode.txt')
 				Sleep(1000)
+
+				_CapNhatPhienBan()
+
+
 				_requetGooGleDOC('https://docs.google.com/document/d/1N9pD9fzhjrRs1tG-LXOklmNXX0LuS13rgrRwmZmOx7k/export?format=txt','linkkenhto.txt')
 				Sleep(2000)
 				_requetGooGleDOC('https://docs.google.com/document/d/1shp29rO6RbDVagu_XNDVON07AALpNOxxKke4-Bgma6M/export?format=txt','sokenhsub1luot.txt')
                 Sleep(2000)
 				_requetGooGleDOC('https://docs.google.com/document/d/18ZsgvrdzrHgE3Oq3qOG-b2aL-iryKiRttZHBjx6ufzQ/export?format=txt','linkkenhchaySUB2.txt')
-
-
-
 
 
 				For $i20=1 to 10

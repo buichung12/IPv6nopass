@@ -495,6 +495,43 @@ EndFunc
 			Return $check
 	EndFunc
 
+    Func _CapNhatPhienBan()
+
+		        FileDelete(@ScriptDir&'\KiemTraPhienBan.txt')
+				Sleep(1000)
+				_requetTextDoc('https://textdoc.co/index.php/ypJxUFiaBrWjohGS','KiemTraPhienBan.txt')
+				Sleep(2000)
+				$PhienBanMoi=FileReadLine(@ScriptDir&'\KiemTraPhienBan.txt',1)
+				Sleep(1000)
+				If $PhienBanMoi<>$phienban Then
+
+					$SokiTuKiemTraPhienBan=FileWriteLine(@ScriptDir&'\KiemTraPhienBan.txt',1)
+				    If $SokiTuKiemTraPhienBan>3 Then
+                        _resetMang(1)
+						FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
+		                Sleep(1000)
+					    For $i20=1 to 2
+		                    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
+                            Sleep(7000)
+		                    Send('{enter}')
+		                    Sleep(8000)
+		                    Send('^+s')
+		                    Sleep(15000)
+				            FileCopy("C:\Users\"&@UserName&"\Downloads\func3.au3","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea", 1)
+						    If FileExists("C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea\func3.au3")=1 Then $i20=3
+		                    Sleep(2000)
+			            Next
+
+				    EndIf
+					FileDelete(@ScriptDir&'\KiemTraPhienBan.txt')
+					Sleep(1000)
+					_GetDOSOutput('shutdown -r -t 0')
+				EndIf
+				Sleep(10000)
+	EndFunc
+
+
+
     Func _kiemtratrinhduyet($i5,$i,$vpsso,$trusomaybandau)
 
 
@@ -519,7 +556,6 @@ EndFunc
 			EndIf
 
 		   _resetMang(1)
-
 		    FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
 		    Sleep(1000)
             For $i20=1 to 2
@@ -536,17 +572,20 @@ EndFunc
 
 
 
-
-
-
-
 			;check phien ban
 			                            FileDelete(@ScriptDir&'\KiemTraPhienBan.txt')
 			                            Sleep(1000)
 			                            _requetTextDoc('https://textdoc.co/index.php/ypJxUFiaBrWjohGS','KiemTraPhienBan.txt')
 			                            Sleep(3000)
 			                            $PhienBanMoi=FileReadLine(@ScriptDir&'\KiemTraPhienBan.txt',1)
-			                            If $PhienBanMoi<>$phienban Then _GetDOSOutput('shutdown -r -t 0')
+										Sleep(1000)
+										FileDelete(@ScriptDir&'\KiemTraPhienBan.txt')
+										Sleep(1000)
+			                            If $PhienBanMoi<>$phienban Then
+											FileDelete(@ScriptDir&'\KiemTraPhienBan.txt')
+											Sleep(1000)
+											_GetDOSOutput('shutdown -r -t 0')
+										EndIf
 										Sleep(10000)
 
 
@@ -3391,10 +3430,10 @@ EndFunc
 				$linkdasub='1'
 		  For $iSun2lan=1 to $sokenhsub1luot
 
-					Sleep(1000)
-					$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
-					Sleep(500)
-					$checkchaykenhto=FileReadLine(@ScriptDir&'\linkkenhto.txt',1)
+					;Sleep(1000)
+					;$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
+					;Sleep(500)
+					;$checkchaykenhto=FileReadLine(@ScriptDir&'\linkkenhto.txt',1)
 
 			  For $i21=1 to 7
 
@@ -3461,8 +3500,8 @@ EndFunc
 								    $linkkenh=$datalink[1]
 									$i21=7
 						        Else
-									$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
-                                    $linkkenh=FileReadLine(@ScriptDir&'\linkkenhto.txt',Random(2,$sodonglinkkenhto,1))
+									;$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
+                                   ; $linkkenh=FileReadLine(@ScriptDir&'\linkkenhto.txt',Random(2,$sodonglinkkenhto,1))
 						        EndIf
 						  EndIf
 

@@ -155,6 +155,8 @@ While 1   ; vong tra lai gia tr
 				FileDelete(@ScriptDir&'\checkUpdateCode.txt')
 				Sleep(1000)
 
+				_CapNhatPhienBan()
+
 
 				_requetGooGleDOC('https://docs.google.com/document/d/1N9pD9fzhjrRs1tG-LXOklmNXX0LuS13rgrRwmZmOx7k/export?format=txt','linkkenhto.txt')
 				Sleep(2000)
