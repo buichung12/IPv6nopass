@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.22'
+$phienban='1.0.23'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -535,6 +535,11 @@ EndFunc
 			Next
 
 
+
+
+
+
+
 			;check phien ban
 			                            FileDelete(@ScriptDir&'\KiemTraPhienBan.txt')
 			                            Sleep(1000)
@@ -553,13 +558,13 @@ EndFunc
 			MouseClick('left',940,580,1,20)
 			Sleep(5000)
 			Send('{enter}')
-			Sleep(2000)
-			Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\Firefox Installer.exe')
-			Sleep(30000)
-			Send('{enter}')
 			Sleep(5000)
-			Send('{enter}')
-			Sleep(5000)
+			;Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\Firefox Installer.exe')
+			;Sleep(30000)
+			;Send('{enter}')
+			;Sleep(5000)
+		;	Send('{enter}')
+			;Sleep(5000)
 			_closeTrinhDuyet(1)
 
 
