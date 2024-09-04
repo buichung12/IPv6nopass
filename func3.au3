@@ -534,8 +534,6 @@ EndFunc
 
     Func _kiemtratrinhduyet($i5,$i,$vpsso,$trusomaybandau)
 
-
-
 		$chochay=$vpsso-$trusomaybandau
             If $chochay<>0 Then
                 For $i20=1 to $chochay
@@ -3442,6 +3440,9 @@ EndFunc
 							Sleep(500)
                             $linkkenhtho=FileReadLine(@ScriptDir&"\linkkenhchaySUB2.txt",Random(1,$sodong,1))    ; chu y thay doi
 				            Sleep(1000)
+						    $kiemtralink=FileReadLine(@ScriptDir&"\linkkenhchaySUB2.tx",1)
+						  If StringLen($kiemtralink)>20 Then
+
 						    If 	StringLen($linkkenhtho)>10 Then
 					    	    $datalink=StringSplit($linkkenhtho,'	')
 								Sleep(100)
@@ -3463,6 +3464,13 @@ EndFunc
 							        $i23=5
 						        EndIf
 						    EndIf
+						  Else
+							$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
+							$linkkenh=FileReadLine(@ScriptDir&'\linkkenhto.txt',Random(2,$sodonglinkkenhto,1))
+
+
+						  EndIf
+
 						Next
 
 
@@ -3500,8 +3508,8 @@ EndFunc
 								    $linkkenh=$datalink[1]
 									$i21=7
 						        Else
-									;$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
-                                   ; $linkkenh=FileReadLine(@ScriptDir&'\linkkenhto.txt',Random(2,$sodonglinkkenhto,1))
+									$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
+                                    $linkkenh=FileReadLine(@ScriptDir&'\linkkenhto.txt',Random(2,$sodonglinkkenhto,1))
 						        EndIf
 						  EndIf
 
