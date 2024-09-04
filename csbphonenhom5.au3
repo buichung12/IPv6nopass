@@ -99,13 +99,20 @@ While 1
 					Sleep(100)
 				Next
 
+				$check=_FileCountLines(@ScriptDir&"\Keytinsoft2.txt")
+				If $check >8 Then $i21=3
+
+			Next
+
+			    If $check < 8 Then _GetDOSOutput('shutdown -s -t 0')
+
 				$checkUC=0
 				If $kiemtratrinhduyet=1 Then $checkUC=_kiemtratrinhduyet($i5,$i,$vpsso,$trusomaybandau)
 				If $vpsso='' Then
 					MsgBox(0,0,'loi khong dien so may')
 					Exit
                 EndIf
-            Next
+
 
 
 

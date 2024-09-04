@@ -104,6 +104,7 @@ While 1
 				Next
 
 
+				If $check < 8 Then _GetDOSOutput('shutdown -s -t 0')
 
 
 				If $kiemtratrinhduyet=1 Then $checkUC=_kiemtratrinhduyet($i5,$i,$vpsso,$trusomaybandau)
