@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.24'
+$phienban='1.0.25'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -3426,6 +3426,7 @@ EndFunc
 				$checkchaykenhto=0
 				$sodong=1
 				$linkdasub='1'
+				$datalink="1"
 		  For $iSun2lan=1 to $sokenhsub1luot
 
 					;Sleep(1000)
