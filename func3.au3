@@ -3670,6 +3670,28 @@ EndFunc
 							Sleep(5000)
 						EndIf
 
+						$x=0
+		                $y=0
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,207, 261,671, 747,$x,$y,1,1)
+
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(10000)
+						EndIf
+
+						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,207, 261,671, 747,$x,$y,1,1)
+						If $x>0 Then
+							    MouseClick('left',$x,$y,1,20)
+							    Sleep(5000)
+						EndIf
+
+
+						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,207, 261,671, 747,$x,$y,1,1)
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(5000)
+						EndIf
+
 
                            If $i=5 Then ControlClick($var[$i10][1],'','','left',1,1245, 216)
 							Sleep(200)
