@@ -530,8 +530,6 @@ EndFunc
 				Sleep(10000)
 	EndFunc
 
-
-
     Func _kiemtratrinhduyet($i5,$i,$vpsso,$trusomaybandau)
 
 		$chochay=$vpsso-$trusomaybandau
@@ -3967,6 +3965,27 @@ EndFunc
 						Sleep(1000)
 
 		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,115, 620,500, 850,$x,$y,1,1)
+                        Sleep(1000)
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(5000)
+						EndIf
+						Sleep(1000)
+						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,160, 760,500, 850,$x,$y,1,1)
+                        Sleep(1000)
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(5000)
+						EndIf
+						Sleep(1000)
+						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,115, 620,500, 850,$x,$y,1,1)
+                        Sleep(1000)
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(5000)
+						EndIf
+						Sleep(1000)
+						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,115, 690,500, 850,$x,$y,1,1)
                         Sleep(1000)
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
