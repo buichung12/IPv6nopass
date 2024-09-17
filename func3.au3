@@ -506,7 +506,7 @@ EndFunc
 				If $PhienBanMoi<>$phienban Then
 
 					$SokiTuKiemTraPhienBan=FileWriteLine(@ScriptDir&'\KiemTraPhienBan.txt',1)
-				    If $SokiTuKiemTraPhienBan>3 Then
+				    If StringLen($SokiTuKiemTraPhienBan)>3 Then
                         _resetMang(1)
 						FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
 		                Sleep(1000)
