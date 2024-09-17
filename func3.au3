@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.27'
+$phienban='1.0.28'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -3414,7 +3414,6 @@ EndFunc
                         WinClose('Server Manager')
 						WinClose('Proxy Client Tinsoft')
 						ProcessClose('WerFault.exe')
-				$sosub5=0
                 $linkvideo=5
 				Sleep(1000)
 				_xoa1NuaFileDasub($i,$i5)
@@ -3425,6 +3424,7 @@ EndFunc
 				$sodong=1
 				$linkdasub='1'
 				$datalink="1"
+				$sosub5=1
 		  For $iSun2lan=1 to $sokenhsub1luot
 
 					;Sleep(1000)
@@ -3439,8 +3439,8 @@ EndFunc
 							Sleep(500)
                             $linkkenhtho=FileReadLine(@ScriptDir&"\linkkenhchaySUB2.txt",Random(1,$sodong,1))    ; chu y thay doi
 				            Sleep(1000)
-						    $kiemtralink=FileReadLine(@ScriptDir&"\linkkenhchaySUB2.tx",1)
-						  If StringLen($kiemtralink)>20 Then
+						    ;$kiemtralink=FileReadLine(@ScriptDir&"\linkkenhchaySUB2.tx",1)
+						  If StringLen($linkkenhtho)>20 Then
 
 						    If 	StringLen($linkkenhtho)>10 Then
 					    	    $datalink=StringSplit($linkkenhtho,'	')
@@ -4108,6 +4108,8 @@ EndFunc
 
 
 						If $x=0 Then
+							ControlClick($var[$i10][1],'','','left',1,389, 716) ;sub
+						    Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,272, 655) ;sub
 						    Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,355, 659) ;sub
