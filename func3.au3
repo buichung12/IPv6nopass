@@ -4106,6 +4106,7 @@ EndFunc
 							    Sleep(5000)
 						EndIf
 
+                        Sleep(5000)
 
 						If $x=0 Then
 							ControlClick($var[$i10][1],'','','left',1,389, 716) ;sub
