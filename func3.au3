@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.26'
+$phienban='1.0.27'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -3464,8 +3464,8 @@ EndFunc
 						        EndIf
 						    EndIf
 						  Else
-							$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
-							$linkkenh=FileReadLine(@ScriptDir&'\linkkenhto.txt',Random(2,$sodonglinkkenhto,1))
+							;$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
+							;$linkkenh=FileReadLine(@ScriptDir&'\linkkenhto.txt',Random(2,$sodonglinkkenhto,1))
 
 
 						  EndIf
@@ -3507,8 +3507,8 @@ EndFunc
 								    $linkkenh=$datalink[1]
 									$i21=7
 						        Else
-									$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
-                                    $linkkenh=FileReadLine(@ScriptDir&'\linkkenhto.txt',Random(2,$sodonglinkkenhto,1))
+									;$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
+                                   ; $linkkenh=FileReadLine(@ScriptDir&'\linkkenhto.txt',Random(2,$sodonglinkkenhto,1))
 						        EndIf
 						  EndIf
 
