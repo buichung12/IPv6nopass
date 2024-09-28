@@ -144,7 +144,7 @@ While 1   ; vong tra lai gia tr
 			If $i6=5 Then
 				$profileso=81
 			;	If $checkprofile=1 Then $profileso=88
-				$i7=97
+				$i7=100
 			EndIf
 
 			$checkprofile=0    ; de profile dau tien random conf lan sau bang 1
