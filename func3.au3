@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.28'
+$phienban='1.0.29'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -3677,7 +3677,7 @@ EndFunc
 
 						$x=0
 		                $y=0
-		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,507, 261,671, 347,$x,$y,1,1)
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,528, 342,726, 540,$x,$y,1,1)
 
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
@@ -3699,7 +3699,7 @@ EndFunc
 
 						$x=0
 		                $y=0
-		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,207, 261,671, 747,$x,$y,1,1)
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,531, 246,671, 747,$x,$y,1,1)
 
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
@@ -3720,17 +3720,23 @@ EndFunc
 						EndIf
 
 
-                           If $i=5 Then ControlClick($var[$i10][1],'','','left',1,1245, 216)
+						If $i=5 Then ControlClick($var[$i10][1],'','','left',1,1245, 216)
 							Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,582, 458)
+					        Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,651, 310)
+					        Sleep(200)
+							ControlClick($var[$i10][1],'','','left',1,651, 310)
+					        Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,651, 310)
 					        Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,579, 310)
 					        Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,582, 329)
 					        Sleep(200)
-							ControlClick($var[$i10][1],'','','left',1,469, 300)
+							ControlClick($var[$i10][1],'','','left',1,579, 325)
 					        Sleep(200)
-							ControlClick($var[$i10][1],'','','left',1,577, 299)
+							ControlClick($var[$i10][1],'','','left',1,584, 297)
 					        Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,585, 456)
 					        Sleep(200)
