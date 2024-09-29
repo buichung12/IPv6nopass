@@ -3452,7 +3452,7 @@ EndFunc
 				$linkdasub='1'
 				$datalink="1"
 				$sosub5=1
-		  For $iSun2lan=1 to $sokenhsub1luot
+		  ;For $iSun2lan=1 to $sokenhsub1luot
 
 					;Sleep(1000)
 					;$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
@@ -3652,9 +3652,8 @@ EndFunc
 				        Send('^v')
 						Sleep(2000)
 						Send('{enter}')
-						Sleep(10000)
+						Sleep(20000)
 					EndIf
-
 
 				    Sleep(3000)     ;thoi gian nghi
 
@@ -3663,7 +3662,7 @@ EndFunc
 					;EndIf
 
 					If $linkvideo=0 Then
-                         ToolTip("link video "&$iSun2lan&", link trang chu"&'	phien ban:'&$phienban,0,0)
+                         ToolTip("link trang chu"&'	phien ban:'&$phienban,0,0)
 						;Sleep(5000)
 						For $i20=1 to 10
 				           $pixcel=PixelSearch(76,110,146, 166,0xFF0033)
@@ -3846,7 +3845,7 @@ EndFunc
 					EndIf
 
                     If $linkvideo=2 Then
-                        ToolTip("link video "&$iSun2lan&", link shorts"&'	phien ban:'&$phienban,0,0)
+                        ToolTip("link shorts"&'	phien ban:'&$phienban,0,0)
 						MouseMove(742,Random(440,600,1))
 						Sleep(1000)
 						For $i20=1 to Random(4,20,1)
@@ -3955,7 +3954,7 @@ EndFunc
 
                     If $linkvideo=1 Then
 
-						ToolTip("link video:"&$iSun2lan&", link video"&'	phien ban:'&$phienban,0,0)
+						ToolTip("link video"&'	phien ban:'&$phienban,0,0)
                         Sleep(1000)
 						MouseMove(742,Random(440,600,1))
 						Sleep(1000)
@@ -4247,7 +4246,7 @@ EndFunc
                     EndIf
 
 					If $linkvideo=3 Then
-                        ToolTip("link video truc tiep "&$iSun2lan&", link truc tiep"&'	phien ban:'&$phienban,0,0)
+                        ToolTip("link truc tiep"&'	phien ban:'&$phienban,0,0)
 					    Sleep(5000)
 					    For $i20=1 to 20
 				          $pixcel=PixelSearch(76,110,146, 166,0xFF0033)
@@ -4516,7 +4515,7 @@ EndFunc
 
               FileWriteLine(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt",$linkkenh)
 
-		  Next
+		  ;Next
 
 	    EndFunc
 
