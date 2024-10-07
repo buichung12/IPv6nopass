@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.29'
+$phienban='1.0.30'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -1465,8 +1465,9 @@ EndFunc
 
 				  ToolTip('check dang nhap 	'&$i&'	phien ban:'&$phienban,0,0)
 				_resetMang($i)
-				_khoidongFireFox($i)
 				_FakeIPOptionV6($i,$vpsso)
+				_khoidongFireFox($i)
+
 				WinSetState('Windows Security','',@SW_HIDE)
 				_loginGmail($i)
 
@@ -2015,8 +2016,9 @@ EndFunc
 					EndIf
 					_closeTrinhDuyet($i)
 					_resetMang($i)
-					_khoidongFireFox($i)
 					_FakeIPOptionV6($i,$vpsso)
+					_khoidongFireFox($i)
+
                     _loginGmail($i)
 
 					ControlClick('','','','left',1,600, 60)
@@ -2567,7 +2569,7 @@ EndFunc
 
         Func _FakeIPOptionV6($i,$vpsso)
 
-                    For $icheck=1 to 2
+				For $icheck=1 to 2
 					  For $i20=1 to 2
 			            ProcessClose('WerFault.exe')
                          $check=0
@@ -2682,6 +2684,8 @@ EndFunc
 				        WinClose('Yêu cầu xác minh - Mozilla Firefox')
                         ;Sleep(5000)
 						Sleep(1000)
+
+					#cs
 					    $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
                         Sleep(1000)
 					    If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
@@ -2952,9 +2956,9 @@ EndFunc
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
 						EndIf
+                    #ce
 
-
-					Next
+				Next
 			Return $check
 
 		EndFunc
@@ -3676,47 +3680,65 @@ EndFunc
 
 						$x=0
 		                $y=0
-		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,528, 342,726, 540,$x,$y,1,1)
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,526, 228,724, 377,$x,$y,1,1)
 
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
 							Sleep(10000)
 						EndIf
 
-						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,507, 261,671, 347,$x,$y,1,1)
+						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,526, 228,724, 377,$x,$y,1,1)
 						If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
 						EndIf
 
 
-						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,507, 261,671, 347,$x,$y,1,1)
+						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,526, 228,724, 377,$x,$y,1,1)
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
 							Sleep(5000)
 						EndIf
 
-						$x=0
-		                $y=0
-		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,531, 246,671, 747,$x,$y,1,1)
+		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,524, 388,739, 508,$x,$y,1,1)
 
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
 							Sleep(10000)
 						EndIf
 
-						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,207, 261,671, 747,$x,$y,1,1)
+						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,524, 388,739, 508,$x,$y,1,1)
 						If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
 						EndIf
 
-
-						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,207, 261,671, 747,$x,$y,1,1)
+						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,524, 388,739, 508,$x,$y,1,1)
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
 							Sleep(5000)
 						EndIf
+
+						MouseClick('left',760, 196,1,20)
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(5000)
+						MouseClick('left',760, 196,1,20)
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(3000)
 
 
 						If $i=5 Then ControlClick($var[$i10][1],'','','left',1,1245, 216)
@@ -3886,6 +3908,89 @@ EndFunc
 						   Sleep(1000)
 						Next
 
+						Sleep(3000)
+						MouseClick('left',760, 196,1,20)
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(5000)
+						Sleep(1000)
+                        ControlClick($var[$i10][1],'','','left',1,600, 60)
+				        Sleep(2000)
+						ClipPut($linkkenh)
+					    Sleep(1000)
+				        Send('^v')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(150000)
+						MouseMove(742,Random(440,600,1))
+						Sleep(1000)
+						For $i20=1 to Random(4,20,1)
+						   MouseWheel($MOUSE_WHEEL_DOWN,1)
+						   Sleep(500)
+						Next
+						Sleep(2000)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,507, 347)  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+						ControlClick($var[$i10][1],'','','left',1,Random(380,1190,1),Random(215,750,1))  ;xem video
+					    Sleep(50)
+					    Sleep(10000)
+						For $i20=1 to 10
+				            $pixcel=PixelSearch(76,110,146, 166,0xFF0033)
+							$pixcel2=PixelSearch(76,110,146, 166,0xFF0000)
+							$pixcel3=PixelSearch(76,110,146, 166,0xFF0100)
+					        If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
+							    $i20=20
+						    EndIf
+						   Sleep(1000)
+						Next
+						Sleep(3000)
+						MouseClick('left',760, 196,1,20)
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(5000)
+
+						#cs
+
 						$x=0
 		                $y=0
 		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,665,500,950,768,$x,$y,1,1)
@@ -3909,6 +4014,7 @@ EndFunc
 							MouseClick('left',$x,$y,1,20)
 							Sleep(5000)
 						EndIf
+						#ce
 
 
                        ; If $x=0 Then
@@ -4163,6 +4269,8 @@ EndFunc
 						EndIf
 
                         Sleep(5000)
+
+
 
 						If $x=0 Then
 							ControlClick($var[$i10][1],'','','left',1,389, 716) ;sub
@@ -5319,10 +5427,11 @@ EndFunc
 				    Next
 				#ce
 
+
+                    _FakeIPOptionV6($i,$vpsso)
+
                     Sleep(Random(1000,60000,1))
-
 					WinClose('Server Manager')
-
 					If $i=1 Then $linkblu="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 					If $i=2 Then $linkblu="C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
 					;If $i=3 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Maxthon\Application\Maxthon.exe'
@@ -5705,7 +5814,7 @@ EndFunc
 				    Sleep(100)
 				    WinClose('Yêu cầu xác minh - Mozilla Firefox')
 
-					_FakeIPOptionV6($i,$vpsso)
+
 
 				Return $dangnhap
 	    EndFunc
@@ -6601,8 +6710,6 @@ EndFunc
 				      Sleep(7000)
 				EndIf
 
-				$x3=0
-				$y3=0
 				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
@@ -6619,8 +6726,6 @@ EndFunc
 				      Sleep(7000)
 				EndIf
 
-				$x3=0
-				$y3=0
 				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
@@ -6637,8 +6742,7 @@ EndFunc
 				      Sleep(7000)
 				EndIf
 
-				$x3=0
-				$y3=0
+
 				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
@@ -6656,8 +6760,6 @@ EndFunc
 				EndIf
 
 
-				$x3=0
-				$y3=0
 				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailkhoiphuc2.bmp',1,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
@@ -6674,8 +6776,6 @@ EndFunc
 				      Sleep(7000)
 				EndIf
 
-				$x3=0
-				$y3=0
 				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailhoiphuc.bmp',1,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
