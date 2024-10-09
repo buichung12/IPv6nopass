@@ -36,6 +36,8 @@ HotKeySet("{f9}", "AutoRun")
 					FileWrite(@ScriptDir&'\checkinternet.txt',1)
 					Sleep(1000)
 					$checkinternet=FileReadLine(@ScriptDir&'\checkinternet.txt')
+					$checkinternet=Number($checkinternet)
+					Sleep(1000)
 					If $checkinternet<1111111111 Then
                         _GetDOSOutput('shutdown -r -t 0')
 					Else
