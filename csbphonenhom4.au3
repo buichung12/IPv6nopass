@@ -84,6 +84,7 @@ While 1
 				Sleep(2000)
 				$sodongIP0=_FileCountLines(@ScriptDir&"\Keytinsoft.txt")
 				If $sodongIP0<500 Then
+					Sleep(60000)
 					_requetGooGleDOC('https://docs.google.com/document/d/1eNL4J-YsBTp_cUpsWvYMpCxQShePT-d9NW2rtP_Uuv8/export?format=txt','Keytinsoft.txt')
 				EndIf
 
