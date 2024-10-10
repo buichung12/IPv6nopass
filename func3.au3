@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.30'
+$phienban='1.0.31'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -505,7 +505,7 @@ EndFunc
 				Sleep(1000)
 				If $PhienBanMoi<>$phienban Then
 
-					$SokiTuKiemTraPhienBan=FileWriteLine(@ScriptDir&'\KiemTraPhienBan.txt',1)
+					$SokiTuKiemTraPhienBan=FileReadLine(@ScriptDir&'\KiemTraPhienBan.txt',1)
 				    If StringLen($SokiTuKiemTraPhienBan)>3 Then
                         _resetMang(1)
 						FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
@@ -522,10 +522,11 @@ EndFunc
 		                    Sleep(2000)
 			            Next
 
+					    Sleep(1000)
+					    _GetDOSOutput('shutdown -r -t 0')
+
 				    EndIf
-					FileDelete(@ScriptDir&'\KiemTraPhienBan.txt')
-					Sleep(1000)
-					_GetDOSOutput('shutdown -r -t 0')
+
 				EndIf
 				Sleep(10000)
 	EndFunc
