@@ -2166,14 +2166,22 @@ EndFunc
 
 				$e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
 				If $check=1 Then
-
-				    $pixcel=PixelSearch(302, 281,1201, 815,0xEA4335)  ; kiem tra bao mat k\ngiem trong
+					Sleep(1000)
+				    ControlClick('','','','left',1,600, 60)
+					Sleep(1000)
+				    Send('^a')
 				    Sleep(1000)
-				    $pixcel2=PixelSearch(302, 281,1201, 815,0xB31412)
+				    Send('https://myaccount.google.com/?utm_source=sign_in_no_continue')
+				    Sleep(2000)
+			    	Send('{enter}')
+				    Sleep(15000)
+					$pixcel=PixelSearch(302, 281,1201, 850,0xB3261E)  ; kiem tra bao mat k\ngiem trong
 				    Sleep(1000)
-				    If IsArray($pixcel) or IsArray($pixcel2) Then
+					$pixcel2=PixelSearch(302, 281,1201, 850,0xB31412)
+				    Sleep(1000)
+					If IsArray($pixcel2) or IsArray($pixcel) Then
 
-						FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&"	Kiem tra bao mat")
+					     FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&"	Kiem tra bao mat")
 
 				    EndIf
 
@@ -7808,7 +7816,9 @@ EndFunc
 			FileDelete(@ScriptDir&'\testdata2.txt')
 			Sleep(500)
             _requetanotepad($linkdulieu,'testdata.txt')
+			Sleep(500)
 			FileWriteLine(@ScriptDir&'\testdata.txt',$dataIP)
+			Sleep(500)
 			$sodog=_FileCountLines(@ScriptDir&'\testdata.txt')
 			For $i20=1 to $sodog
 				$IdPass=FileReadLine(@ScriptDir&'\testdata.txt',$i20)
