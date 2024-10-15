@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.32'
+$phienban='1.0.33'
 #cs
 _caidatOmni()
  _FakeIPPC()
