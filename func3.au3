@@ -1514,7 +1514,7 @@ EndFunc
                 $check2=1
 
 				If $check=0 Then
-
+                    #cs    ; xoa lich su trinh  duyet
 					If $i=1 Then
 			         	MouseClick('left',600,60,1,20)
 				        Sleep(2000)
@@ -2010,6 +2010,10 @@ EndFunc
 						_closeTrinhDuyet($i)
 
 					EndIf
+
+				#ce
+
+
 					_closeTrinhDuyet($i)
 					_resetMang($i)
 					_FakeIPOptionV6($i,$vpsso)
@@ -2202,94 +2206,6 @@ EndFunc
 					  Next
 
 					  If IsArray($pixcel) Then $h=$h&'	Kiem tra bao mat'
-
-
-					  For $i21=1 to 11
-						MouseClick('left',600,60,1,20)
-						Sleep(1000)
-						Send('https://myaccount.google.com/notifications?origin=5')
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(6000)
-						For $i20=1 to 5
-					        $pixcel=PixelSearch(10, 99,297, 371,0xC2E7FF)
-					        If IsArray($pixcel) Then
-							   $i20=5
-							EndIf
-							Sleep(1000)
-						Next
-						Sleep(2000)
-
-						If $i21=1 Then MouseClick('left',735, 410,1,20)
-						If $i21=2 Then MouseClick('left',721, 493,1,20)
-						If $i21=3 Then MouseClick('left',719, 568,1,20)
-						If $i21=4 Then MouseClick('left',715, 652,1,20)
-						If $i21=5 Then MouseClick('left',723, 735,1,20)
-						If $i21=6 Then MouseClick('left',722, 806,1,20)
-
-                        Sleep(5000)
-						$pixcel=PixelSearch(555, 538,945, 850,0x1A73E8)
-						If IsArray($pixcel) Then
-							   MouseClick('left',$pixcel[0]+5,$pixcel[1]+5)
-							    Sleep(5000)
-						EndIf
-						Sleep(1000)
-
-						If $i21=11 Or $i21=7 Or $i21=8 or $i21=9 Or $i21=10 Then
-
-
-							if $i21=11 Then
-								For $i20=1 to 12
-                                   Send('{DOWN}')
-                                   Sleep(500)
-							    Next
-								MouseClick('left',720, 804,1,20)
-							EndIf
-							if $i21=7 Then
-								For $i20=1 to 4
-                                   Send('{DOWN}')
-                                   Sleep(500)
-							    Next
-								MouseClick('left',727, 795,1,20)
-							EndIf
-							if $i21=8 Then
-								For $i20=1 to 6
-                                   Send('{DOWN}')
-                                   Sleep(500)
-							    Next
-								MouseClick('left',743, 787,1,20)
-							EndIf
-							if $i21=9 Then
-								For $i20=1 to 8
-                                   Send('{DOWN}')
-                                   Sleep(500)
-							    Next
-								MouseClick('left',720, 804,1,20)
-							EndIf
-							if $i21=10 Then
-								For $i20=1 to 10
-                                   Send('{DOWN}')
-                                   Sleep(500)
-							    Next
-								MouseClick('left',720, 804,1,20)
-							EndIf
-
-							Sleep(5000)
-							MouseMove(200,200)
-							Sleep(1000)
-							$pixcel=PixelSearch(555, 538,945, 850,0x1A73E8)
-						    If IsArray($pixcel) Then
-							    MouseClick('left',$pixcel[0]+5,$pixcel[1]+5)
-							    Sleep(5000)
-						    EndIf
-							Sleep(1000)
-
-                        EndIf
-
-
-						MouseClick('left',502, 20,1,20)
-
-					  Next
 
 				    ControlClick('','','','left',1,600, 60)
 					Sleep(1000)
@@ -6826,15 +6742,16 @@ EndFunc
 
 				If not IsArray($pixcel) Then
 					MouseClick('left',650,350,1,20)
-				    Sleep(3000)
-					For $i20=1 to 20
+				    Sleep(1000)
+					Send('{tab}')
+				    Sleep(2000)
+					For $i20=1 to 10
 				        $pixcel=PixelSearch(616, 326,1218, 679,0x0B57D0)
-					    If IsArray($pixcel) Then $i20=20
+					    If IsArray($pixcel) Then $i20=10
 					    Sleep(1000)
 				    Next
 				EndIf
 				Sleep(1000)
-            If IsArray($pixcel) Then
 
 				If $i=2 Or $i=4 Then                      ; loi khong load duoc trinh duyet brive
 				    MouseClick('left',850, 273,1,20)
@@ -7207,70 +7124,6 @@ EndFunc
 					    Sleep(1000)
 				    Next
 				EndIf
-
-			Else
-
-				$check=0
-				Sleep(2000)
-				ControlClick('','','','left',1,600, 60)
-				Sleep(1000)
-				Send('^a')
-				Sleep(500)
-				Sleep(1000)
-				ClipPut('https://myaccount.google.com/')
-				Sleep(1000)
-				Send('^v')
-				Sleep(2000)
-				Send('{enter}')
-				Sleep(10000)
-				For $i20=1 to 10
-					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
-					Sleep(1000)
-					$pixcel2=PixelSearch(13, 224,70, 345,0x1F1F1F)
-					Sleep(1000)
-					If IsArray($pixcel) or IsArray($pixcel2) Then
-						$check=1
-						$i20=17
-					EndIf
-					Sleep(1000)
-				Next
-				If $check=0 Then
-				    ControlClick('','','','left',1,600, 60)
-				    Sleep(1000)
-				    Send('^a')
-				    Sleep(1000)
-				    ClipPut('https://www.youtube.com/account')
-				    Sleep(1000)
-				    Send('^v')
-				    Sleep(2000)
-				    Send('{enter}')
-				    Sleep(10000)
-				    For $i20=1 to 10
-					    $pixcel=PixelSearch(51, 96,206, 263,0xFF0000)
-					    Sleep(1000)
-					    If IsArray($pixcel) Then
-						    $check=1
-						    $i20=17
-					    EndIf
-					    Sleep(1000)
-				    Next
-				EndIf
-
-			EndIf
-
-                MouseClick('left',600, 60,1,20)
-				;If $i=8 Then MouseClick('left',800, 75,1,20)
-                Sleep(2000)
-				Send('^a')
-				Sleep(2000)
-				ClipPut('https://www.youtube.com/channel_switcher?next=%2Faccount&feature=settings')
-			    Sleep(200)
-			    Send('^v')
-				Sleep(1000)
-				Send('{enter}')
-				Sleep(7000)
-				MouseClick('left',700,300,1,20)
-				Sleep(5000)
 
 			Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
         EndFunc
