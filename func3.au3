@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.31'
+$phienban='1.0.32'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -595,12 +595,6 @@ EndFunc
 			Sleep(5000)
 			Send('{enter}')
 			Sleep(5000)
-			;Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\Firefox Installer.exe')
-			;Sleep(30000)
-			;Send('{enter}')
-			;Sleep(5000)
-		;	Send('{enter}')
-			;Sleep(5000)
 			_closeTrinhDuyet(1)
 
 
@@ -2167,6 +2161,136 @@ EndFunc
 				$e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
 				If $check=1 Then
 					Sleep(1000)
+                    WinMove('','',0,0,1366,850)
+					Sleep(1000)
+					For $i21=1 to 7
+						MouseClick('left',600,60,1,20)
+						Sleep(1000)
+						Send('https://myaccount.google.com/notifications?origin=5')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(6000)
+						For $i20=1 to 5
+					        $pixcel=PixelSearch(10, 99,265, 295,0xC2E7FF)
+					        If IsArray($pixcel) Then
+							   $i20=5
+							EndIf
+							Sleep(1000)
+						Next
+						Sleep(2000)
+
+						$pixcel=PixelSearch(236, 309,988,850,0xB3261E) ; kiem tra bao mat
+						If IsArray($pixcel) Then
+							MouseClick('left',$pixcel[0]+5,$pixcel[1]+45)
+							Sleep(5000)
+							$pixcel=PixelSearch(375, 397,1184, 850,0xB3261E) ; kiem tra bao mat lan 2
+							If IsArray($pixcel) Then
+                                MouseClick('left',$pixcel[0]+5,$pixcel[1]+45)
+							    Sleep(5000)
+							EndIf
+							$pixcel=PixelSearch(401, 622,966, 850,0x1A73EB)
+							If IsArray($pixcel) Then
+							    MouseClick('left',$pixcel[0]+5,$pixcel[1]+5)
+							    Sleep(5000)
+							EndIf
+						Else
+
+							$i21=7
+
+
+						EndIf
+					  Next
+
+					  If IsArray($pixcel) Then $h=$h&'	Kiem tra bao mat'
+
+
+					  For $i21=1 to 11
+						MouseClick('left',600,60,1,20)
+						Sleep(1000)
+						Send('https://myaccount.google.com/notifications?origin=5')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(6000)
+						For $i20=1 to 5
+					        $pixcel=PixelSearch(10, 99,297, 371,0xC2E7FF)
+					        If IsArray($pixcel) Then
+							   $i20=5
+							EndIf
+							Sleep(1000)
+						Next
+						Sleep(2000)
+
+						If $i21=1 Then MouseClick('left',735, 410,1,20)
+						If $i21=2 Then MouseClick('left',721, 493,1,20)
+						If $i21=3 Then MouseClick('left',719, 568,1,20)
+						If $i21=4 Then MouseClick('left',715, 652,1,20)
+						If $i21=5 Then MouseClick('left',723, 735,1,20)
+						If $i21=6 Then MouseClick('left',722, 806,1,20)
+
+                        Sleep(5000)
+						$pixcel=PixelSearch(555, 538,945, 850,0x1A73E8)
+						If IsArray($pixcel) Then
+							   MouseClick('left',$pixcel[0]+5,$pixcel[1]+5)
+							    Sleep(5000)
+						EndIf
+						Sleep(1000)
+
+						If $i21=11 Or $i21=7 Or $i21=8 or $i21=9 Or $i21=10 Then
+
+
+							if $i21=11 Then
+								For $i20=1 to 12
+                                   Send('{DOWN}')
+                                   Sleep(500)
+							    Next
+								MouseClick('left',720, 804,1,20)
+							EndIf
+							if $i21=7 Then
+								For $i20=1 to 4
+                                   Send('{DOWN}')
+                                   Sleep(500)
+							    Next
+								MouseClick('left',727, 795,1,20)
+							EndIf
+							if $i21=8 Then
+								For $i20=1 to 6
+                                   Send('{DOWN}')
+                                   Sleep(500)
+							    Next
+								MouseClick('left',743, 787,1,20)
+							EndIf
+							if $i21=9 Then
+								For $i20=1 to 8
+                                   Send('{DOWN}')
+                                   Sleep(500)
+							    Next
+								MouseClick('left',720, 804,1,20)
+							EndIf
+							if $i21=10 Then
+								For $i20=1 to 10
+                                   Send('{DOWN}')
+                                   Sleep(500)
+							    Next
+								MouseClick('left',720, 804,1,20)
+							EndIf
+
+							Sleep(5000)
+							MouseMove(200,200)
+							Sleep(1000)
+							$pixcel=PixelSearch(555, 538,945, 850,0x1A73E8)
+						    If IsArray($pixcel) Then
+							    MouseClick('left',$pixcel[0]+5,$pixcel[1]+5)
+							    Sleep(5000)
+						    EndIf
+							Sleep(1000)
+
+                        EndIf
+
+
+						MouseClick('left',502, 20,1,20)
+
+					  Next
+
 				    ControlClick('','','','left',1,600, 60)
 					Sleep(1000)
 				    Send('^a')
@@ -3791,6 +3915,16 @@ EndFunc
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(5000)
+						MouseClick('left',760, 196,1,20)
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(3000)
 						MouseClick('left',760, 196,1,20)
 						Sleep(1000)
 						Send('{tab}')
@@ -6602,48 +6736,47 @@ EndFunc
 
 
 
-						If $sdt='782035219' Then
+						 If $sdt='936893428' Then
                             $LinkNhanCode='https://anotepad.com/notes/wdxiyse5'
 						EndIf
-						If $sdt='336218009' Then
+						If $sdt='936750028' Then
                             $LinkNhanCode='https://anotepad.com/notes/wdxiyse5'
-						EndIf
-						If $sdt='822019816' Then
-                            $LinkNhanCode='https://anotepad.com/notes/cyymw9rk'
 						EndIf
 						If $sdt='822518798' Then
+                            $LinkNhanCode='https://anotepad.com/notes/cyymw9rk'
+						EndIf
+						If $sdt='822019816' Then
                             $LinkNhanCode='https://anotepad.com/notes/cyymw9rk'
 						EndIf
 						If $sdt='359148172' Then
                             $LinkNhanCode='https://anotepad.com/notes/ce5h4sp3'
 						EndIf
 						;If $sdt='787290226' Then
-                         ;   $LinkNhanCode='https://anotepad.com/notes/ce5h4sp3'
+                          ;  $LinkNhanCode='https://anotepad.com/notes/ce5h4sp3'
 						;EndIf
-						If $sdt='865530605' Then
+						If $sdt='787290226' Then
                             $LinkNhanCode='https://anotepad.com/notes/6hxy76br'
 						EndIf
 
-						If $sdt='765068962' Then
+						If $sdt='865530605' Then
                             $LinkNhanCode='https://anotepad.com/notes/6hxy76br'
-						EndIf
-						If $sdt='372886428' Then
-                            $LinkNhanCode='https://anotepad.com/notes/mk6ym2g3'
 						EndIf
 						If $sdt='855783235' Then
                             $LinkNhanCode='https://anotepad.com/notes/mk6ym2g3'
 						EndIf
-
-						If $sdt='936893428' Then
+						If $sdt='372886428' Then
+                            $LinkNhanCode='https://anotepad.com/notes/mk6ym2g3'
+						EndIf
+						If $sdt='336218009' Then
                             $LinkNhanCode='https://anotepad.com/notes/w9xpje64'
 						EndIf
-						If $sdt='936750028' Then
+						If $sdt='782035219' Then
                             $LinkNhanCode='https://anotepad.com/notes/w9xpje64'
-						EndIf
-						If $sdt='787290226' Then
-                            $LinkNhanCode='https://anotepad.com/notes/r8p6qsmh'
 						EndIf
 						If $sdt='373128769' Then
+                            $LinkNhanCode='https://anotepad.com/notes/r8p6qsmh'
+						EndIf
+						If $sdt='765068962' Then
                             $LinkNhanCode='https://anotepad.com/notes/r8p6qsmh'
 						EndIf
 
