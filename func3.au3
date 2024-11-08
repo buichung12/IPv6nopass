@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.34'
+$phienban='1.0.35'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -6655,51 +6655,6 @@ EndFunc
 
 
 
-						 If $sdt='936893428' Then
-                            $LinkNhanCode='https://anotepad.com/notes/wdxiyse5'
-						EndIf
-						If $sdt='936750028' Then
-                            $LinkNhanCode='https://anotepad.com/notes/wdxiyse5'
-						EndIf
-						If $sdt='822518798' Then
-                            $LinkNhanCode='https://anotepad.com/notes/cyymw9rk'
-						EndIf
-						If $sdt='822019816' Then
-                            $LinkNhanCode='https://anotepad.com/notes/cyymw9rk'
-						EndIf
-						If $sdt='359148172' Then
-                            $LinkNhanCode='https://anotepad.com/notes/ce5h4sp3'
-						EndIf
-						;If $sdt='787290226' Then
-                          ;  $LinkNhanCode='https://anotepad.com/notes/ce5h4sp3'
-						;EndIf
-						If $sdt='787290226' Then
-                            $LinkNhanCode='https://anotepad.com/notes/6hxy76br'
-						EndIf
-
-						If $sdt='865530605' Then
-                            $LinkNhanCode='https://anotepad.com/notes/6hxy76br'
-						EndIf
-						If $sdt='855783235' Then
-                            $LinkNhanCode='https://anotepad.com/notes/mk6ym2g3'
-						EndIf
-						If $sdt='372886428' Then
-                            $LinkNhanCode='https://anotepad.com/notes/mk6ym2g3'
-						EndIf
-						If $sdt='336218009' Then
-                            $LinkNhanCode='https://anotepad.com/notes/w9xpje64'
-						EndIf
-						If $sdt='782035219' Then
-                            $LinkNhanCode='https://anotepad.com/notes/w9xpje64'
-						EndIf
-						If $sdt='373128769' Then
-                            $LinkNhanCode='https://anotepad.com/notes/r8p6qsmh'
-						EndIf
-						If $sdt='765068962' Then
-                            $LinkNhanCode='https://anotepad.com/notes/r8p6qsmh'
-						EndIf
-
-
 	            WinMove('','',0,0,1366,768)
 				Sleep(2000)
 				;_dienIpPort($i)
@@ -6832,62 +6787,8 @@ EndFunc
 					If IsArray($pixcel) Then $i20=20
 					Sleep(1000)
 				Next
-				Sleep(3000)
-				MouseClick('left',900, 424,1,20)
-				Sleep(2000)
-				Send('{tab}')
-				Sleep(1000)
-				Send('{tab}')
-				Sleep(2000)
-				Send('+84',1)
-				Sleep(3000)
-				$checksdt=Number($sdt)
-				Sleep(1000)
-				If $checksdt>99999 Then
-					Sleep(2000)
-					Send($sdt)
-					Sleep(2000)
-					Send('{enter}')
-					Sleep(25000)
-					$checkaddsdt=0
-					For $i21=1 to 7
-					        $code=_requetanotepad1dong($LinkNhanCode)
-					        Sleep(1000)
-							MouseClick('left',881, 292,1,20)
-							Sleep(2000)
-							Send('{tab}')
-							Sleep(2000)
-				            Send($code)
-					        Sleep(2000)
+				Sleep(5000)
 
-							MouseClick('left',865, 268,1,20)   ;luu gmail khong can sdt lan sau
-							Sleep(3000)
-							$pixcel=PixelSearch(663, 382,779, 472,0x0B57D0 ) ; kiem tra code
-				            If not IsArray($pixcel) Then
-								Send('{tab}')
-							    Sleep(2000)
-								Send('{tab}')
-							    Sleep(2000)
-								Send('{SPACE}')
-								Sleep(2000)
-
-							EndIf
-
-							MouseClick('left',865, 268,1,20)   ;luu gmail khong can sdt lan sau
-							Sleep(2000)
-							Send('{tab}')
-							Sleep(2000)
-					        Send('{enter}')
-						    Sleep(5000)
-							$pixcel=PixelSearch(673, 290,977, 447,0xB3261E ) ; kiem tra code
-				            If not IsArray($pixcel) Then
-								$i21=7
-							EndIf
-					Next
-
-				EndIf
-
-				Sleep(10000)
 				If $i=6 Then MouseClick('left',380, 225,1,20)
 				Sleep(2000)
 				Sleep(1000)
@@ -7068,6 +6969,7 @@ EndFunc
 				If $i=3 Then MouseClick('left',1193, 347,1,20)  ;luu mat khau $1
 				If $i=4 Then MouseClick('left',1099, 341,1,20)  ;luu mat khau $1
 				If $i=5 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
+				If $i=5 Then MouseClick('left',1190, 101,1,20)  ;luu mat khau $1
 				If $i=10 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
 				If $i=9 Then MouseClick('left',385, 320,1,20)  ;luu mat khau $1
 				Sleep(2000)
@@ -7817,7 +7719,7 @@ EndFunc
 
 			$sodong=_FileCountLines(@ScriptDir&'\testdata.txt')
 
-			If $sodong<10 Then
+			If $sodong>10 Then
 			    FileWriteLine(@ScriptDir&'\testdata.txt',$dataIP)
 			    Sleep(500)
 			    $sodog=_FileCountLines(@ScriptDir&'\testdata.txt')
