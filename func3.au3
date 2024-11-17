@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.35'
+$phienban='1.0.36'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -7743,7 +7743,6 @@ EndFunc
                 $kq2=_HttpRequest(1,$url2,$datalogin2,$cookie2,$ref2,'Connection: keep-alive|Upgrade-Insecure-Requests: 1')
 			EndIf
         EndFunc
-
 
     #cs
         Func _postdataIP($dataIP,$linkketqua,$linkdulieu)                                            ; gui IP len anotebad.com
