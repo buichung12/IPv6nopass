@@ -38,6 +38,11 @@ HotKeySet("{f9}", "AutoRun")
 					$checkinternet=FileReadLine(@ScriptDir&'\checkinternet.txt')
 					$checkinternet=Number($checkinternet)
 					Sleep(1000)
+
+					Sleep(100)
+				    ProcessClose('notepad.exe')
+				    Sleep(1000)
+
 					If $checkinternet<1111 Then
                         _GetDOSOutput('shutdown -r -t 0')
 					Else
