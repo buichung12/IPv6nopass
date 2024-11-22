@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.37'
+$phienban='1.0.38'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -7668,20 +7668,25 @@ EndFunc
 					For $i12=1 To 10
                          $kq=_HttpRequest(2,$link,'','','','','')        ;lay link kenh va kiem tra view gio
 				         Sleep(1000)
-						 If StringLen($kq)<2 Then
+						 If StringLen($kq)<1 Then
 							     $kq=_HttpRequest(2,$link,'','','','','')        ;lay link kenh va kiem tra view gio
 								 Sleep(10000)
 						 Else
 								 $i12=500
 						 EndIf
 					Next
+
+					;FileWrite(@ScriptDir&'\data.txt',$kq)
+
 			             $data=_StringBetween($kq,'<div class="plaintext ">','</div>')
 					If IsArray($data) Then
 						$arrydata=StringSplit($data[0],@CRLF)
 						FileDelete(@ScriptDir&'/'&$tenTXT)
 						Sleep(1000)
 						For $i20=1 to $arrydata[0]
-							FileWriteLine(@ScriptDir&'/'&$tenTXT,$arrydata[$i20])
+                            $dataTinh=StringReplace($arrydata[$i20],"&#x9;","	")
+			                $dataTinh2=StringReplace($dataTinh,'&#xA;',@CRLF)
+							FileWriteLine(@ScriptDir&'/'&$tenTXT,$dataTinh2)
 						Next
 						$checkrequet=1
 
@@ -7715,7 +7720,7 @@ EndFunc
                 _requetanotepad($linkdulieu,'testdata.txt')
 			    Sleep(500)
 				$sodong=_FileCountLines(@ScriptDir&'\testdata.txt')
-				If $sodong<10 Then
+				If $sodong<1 Then
 					FileDelete(@ScriptDir&'\testdata.txt')
 					Sleep(50000)
 					_requetanotepad($linkdulieu,'testdata.txt')
