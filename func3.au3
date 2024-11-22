@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.36'
+$phienban='1.0.37'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -3764,10 +3764,6 @@ EndFunc
 
 				    Sleep(3000)     ;thoi gian nghi
 
-					;If $i=9 Then
-					;	WinMove($var[$i10][1],'',0,0,1355,800)     ; fix loi nut sub phia duoi
-					;EndIf
-
 					If $linkvideo=0 Then
                          ToolTip("link trang chu"&'	phien ban:'&$phienban,0,0)
 						;Sleep(5000)
@@ -3854,9 +3850,18 @@ EndFunc
 						Sleep(3000)
 
 
-						If $i=5 Then ControlClick($var[$i10][1],'','','left',1,1245, 216)
+                        Sleep(1000)
+                        ControlClick($var[$i10][1],'','','left',1,700, 60)
+				        Sleep(2000)
+						ClipPut($linkkenh)
+					    Sleep(1000)
+				        Send('^v')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(10000)
+
 							Sleep(200)
-							ControlClick($var[$i10][1],'','','left',1,582, 458)
+							ControlClick($var[$i10][1],'','','left',1,579, 442)
 					        Sleep(200)
 							ControlClick($var[$i10][1],'','','left',1,651, 310)
 					        Sleep(200)
