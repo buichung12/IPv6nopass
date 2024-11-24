@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.37'
+$phienban='1.0.38'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -3785,12 +3785,16 @@ EndFunc
 							MouseClick('left',$x,$y,1,20)
 							Sleep(10000)
 						EndIf
+						$x=0
+		                $y=0
 
 						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,526, 228,724, 377,$x,$y,1,1)
 						If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
 						EndIf
+						$x=0
+		                $y=0
 
 
 						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,526, 228,724, 377,$x,$y,1,1)
@@ -3798,6 +3802,8 @@ EndFunc
 							MouseClick('left',$x,$y,1,20)
 							Sleep(5000)
 						EndIf
+						$x=0
+		                $y=0
 
 		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,524, 388,739, 508,$x,$y,1,1)
 
@@ -3805,12 +3811,16 @@ EndFunc
 							MouseClick('left',$x,$y,1,20)
 							Sleep(10000)
 						EndIf
+						$x=0
+		                $y=0
 
 						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,524, 388,739, 508,$x,$y,1,1)
 						If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
 						EndIf
+						$x=0
+		                $y=0
 
 						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,524, 388,739, 508,$x,$y,1,1)
 						If $x>0 Then
@@ -5163,8 +5173,7 @@ EndFunc
 					Sleep(1000)
                     WinClose('Server Manager')
 					Sleep(2000)
-					_closeTrinhDuyet($i)
-					;_resetMang($i)
+
                     WinClose('Proxy Client Tinsoft')
 					If $i=1 Then $linkblu="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 					If $i=2 Then $linkblu="C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
@@ -6462,8 +6471,6 @@ EndFunc
 				WinClose('Yêu cầu xác minh - Mozilla Firefox')
 				Sleep(100)
 				WinClose('Microsoft Store')
-				_resetMang(1)
-
 				WinClose('Windows Security')
 				Sleep(100)
 				WinClose('Windows Security')
