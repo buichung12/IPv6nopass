@@ -7732,9 +7732,9 @@ EndFunc
 			        Sleep(500)
 				EndIf
 
-			$sodong=_FileCountLines(@ScriptDir&'\testdata.txt')
+			;$sodong=_FileCountLines(@ScriptDir&'\testdata.txt')
 
-			If $sodong>10 Then
+			;If $sodong>10 Then
 			    FileWriteLine(@ScriptDir&'\testdata.txt',$dataIP)
 			    Sleep(500)
 			    $sodog=_FileCountLines(@ScriptDir&'\testdata.txt')
@@ -7756,7 +7756,7 @@ EndFunc
                 $datalogin2='number='&$code&'&notecontent='&$dataIP2
                 $cookie2=''
                 $kq2=_HttpRequest(1,$url2,$datalogin2,$cookie2,$ref2,'Connection: keep-alive|Upgrade-Insecure-Requests: 1')
-			EndIf
+			;EndIf
         EndFunc
 
     #cs
