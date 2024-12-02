@@ -1514,505 +1514,6 @@ EndFunc
                 $check2=1
 
 				If $check=0 Then
-                    #cs    ; xoa lich su trinh  duyet
-					If $i=1 Then
-			         	MouseClick('left',600,60,1,20)
-				        Sleep(2000)
-			        	Send('edge://settings/siteData',1)
-				        Sleep(1000)
-				        Send('{enter}')
-				        Sleep(10000)
-				        Send('{tab}')
-						Sleep(2000)
-				        Send('{tab}')
-						Sleep(1000)
-				        Send('{enter}')
-				        Sleep(5000)
-						Send('{enter}')
-				        Sleep(6000)
-				        _closeTrinhDuyet($i)
-
-					EndIf
-
-					If $i=2 Then
-
-			        	MouseClick('left',847, 266,1,20)
-			        	Sleep(2000)
-			        	MouseClick('left',600,60,1,20)
-			         	Sleep(2000)
-			        	Send('brave://settings/clearBrowserData',1)
-			        	Sleep(1000)
-			        	Send('{enter}')
-			         	Sleep(10000)
-						Send('{tab}')
-			         	Sleep(2000)
-						Send('{tab}')
-			         	Sleep(2000)
-						Send('{enter}')
-						Sleep(2000)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send("{enter}")
-						Sleep(2000)
-						For $i20=1 to 6
-							Send('{tab}')
-			         	    Sleep(2000)
-                        Next
-						Send('{enter}')
-						Sleep(4000)
-
-						$pixcel=PixelSearch(435, 521,474, 562,0xFF4530)
-					    If not IsArray($pixcel) Then
-							    MouseClick('left',455, 539,1,20)
-						        Sleep(3000)
-				    	EndIf
-
-						MouseClick('left',872, 625,1,20)
-			         	Sleep(1000)
-						MouseClick('left',872, 655,1,20)
-			         	Sleep(4000)
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('brave://settings/resetProfileSettings?origin=userclick',1)
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(10000)
-						MouseClick('left',853, 520,1,20)
-						Sleep(1000)
-						MouseClick('left',853, 550,1,20)
-			        	Sleep(5000)
-			        	_closeTrinhDuyet($i)
-					EndIf
-
-					If $i=3 Then
-					  #cs    ;Maxthon
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('mx://settings/clearBrowserData',1)
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(4000)
-						MouseClick('left',641, 343,1,20)
-						Sleep(2000)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{enter}')
-						Sleep(2000)
-						MouseClick('left',479, 502,1,20)
-						Sleep(2000)
-						MouseClick('left',477, 529,1,20)
-						Sleep(2000)
-						MouseClick('left',900, 633,1,20)
-						Sleep(5000)
-						_closeTrinhDuyet($i)
-                      #ce
-						MouseClick('left',600,60,1,20)   ;coc coc
-						Sleep(2000)
-						Send('coccoc://settings/clearBrowserData',1)
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(10000)
-						MouseClick('left',823, 254,1,20)
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(2000)
-						Send('{DOWN}')
-						Sleep(2000)
-						Send('{DOWN}')
-						Sleep(2000)
-						Send('{DOWN}')
-						Sleep(2000)
-						Send('{DOWN}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(2000)
-					    $pixcel=PixelSearch(457, 544,498, 588,0x4FBA69)
-					    If not IsArray($pixcel) Then
-							    MouseClick('left',477, 563,1,20)
-						        Sleep(2000)
-						EndIf
-						MouseClick('left',885, 631,1,20)
-						Sleep(4000)
-						_closeTrinhDuyet($i)
-
-					EndIf
-
-					If $i=4 Then
-
-						Sleep(2000)
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('brave://settings/clearBrowserData',1)
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(10000)
-						MouseClick('left',676, 243,1,20)
-						Sleep(2000)
-						MouseClick('left',617, 292,1,20)
-						Sleep(2000)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send("{enter}")
-						Sleep(2000)
-						 $pixcel=PixelSearch(433, 520,482, 559,0xFF4530)
-					    If not IsArray($pixcel) Then
-							    MouseClick('left',455, 537,1,20)
-						        Sleep(2000)
-								MouseClick('left',870, 626,1,20)
-				            Sleep(1000)
-				    	EndIf
-						Sleep(5000)
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('brave://settings/reset')
-						Sleep(1000)
-						Send("{enter}")
-						Sleep(10000)
-						MouseClick('left',690, 227,1,20)
-						Sleep(2000)
-						MouseClick('left',858, 522,1,20)
-						Sleep(4000)
-						MouseClick('left',858, 520,1,20)
-						Sleep(4000)
-						Send('{enter}')
-						Sleep(2000)
-
-
-
-						Sleep(2000)
-			        	MouseClick('left',600,60,1,20)
-			         	Sleep(2000)
-			        	Send('brave://settings/clearBrowserData',1)
-			        	Sleep(1000)
-			        	Send('{enter}')
-			         	Sleep(10000)
-						Send('{tab}')
-			         	Sleep(2000)
-						Send('{tab}')
-			         	Sleep(2000)
-						Send('{enter}')
-						Sleep(2000)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send("{enter}")
-						Sleep(2000)
-						For $i20=1 to 6
-							Send('{tab}')
-			         	    Sleep(2000)
-                        Next
-						Send('{enter}')
-						Sleep(4000)
-
-						_closeTrinhDuyet($i)
-
-
-					EndIf
-
-					If $i=5 Then
-
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('opera://settings/clearBrowserData',1)
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(10000)
-						MouseClick('left',569,265,1,20)
-						Sleep(2000)
-						Send('{tab}')
-			         	Sleep(2000)
-						Send('{enter}')
-						Sleep(2000)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{enter}')
-						Sleep(3000)
-						For $i20=1 to 5
-							Send('{tab}')
-			         	    Sleep(2000)
-                        Next
-						Send('{enter}')
-						Sleep(4000)
-
-
-						_closeTrinhDuyet($i)
-
-
-					EndIf
-
-					If $i=6 Then
-
-						MouseClick('left',1268, 191,1,20)
-						Sleep(2000)
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('about:preferences#privacy',1)
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(10000)
-						For $i20=1 to 10
-							Send('{tab}')
-							Sleep(1000)
-						Next
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(2000)
-						MouseClick('left',801, 545,1,20)
-						Sleep(2000)
-						MouseClick('left',636, 415,1,20)
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(5000)
-
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('about:preferences#privacy',1)
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(10000)
-						For $i20=1 to 13
-							Send('{tab}')
-							Sleep(1000)
-						Next
-						Send('{enter}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(5000)
-
-						_closeTrinhDuyet($i)
-
-					EndIf
-
-					If $i=7 Then
-
-						MouseClick('left',847, 266,1,20)
-						Sleep(2000)
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('about:preferences#privacy',1)
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(10000)
-						For $i20=1 to 13
-							Send('{tab}')
-							Sleep(1000)
-						Next
-						Send('{enter}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(5000)
-
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('about:preferences#privacy',1)
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(10000)
-						For $i20=1 to 10
-							Send('{tab}')
-							Sleep(1000)
-						Next
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(2000)
-						MouseClick('left',801, 545,1,20)
-						Sleep(2000)
-						MouseClick('left',636, 415,1,20)
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(5000)
-
-						_closeTrinhDuyet($i)
-
-
-					EndIf
-
-					If $i=8 Then
-
-						MouseClick('left',1334, 136,1,20)
-						Sleep(2000)
-						MouseClick('left',1334, 101,1,20)
-						Sleep(2000)
-						MouseClick('left',1333, 102,1,20)
-						Sleep(2000)
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('chrome://settings/clearBrowserData',1)
-						Sleep(1000)
-						Send('{enter}')
-			         	Sleep(10000)
-						Send('{tab}')
-			         	Sleep(2000)
-						Send('{tab}')
-			         	Sleep(2000)
-						Send('{enter}')
-						Sleep(2000)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send("{enter}")
-						Sleep(2000)
-						For $i20=1 to 5
-							Send('{tab}')
-			         	    Sleep(2000)
-                        Next
-						Send('{enter}')
-						Sleep(4000)
-						$pixcel=PixelSearch(432, 522,477, 567,0x0B57D0)
-					    If not IsArray($pixcel) Then
-							    MouseClick('left',455, 540,1,20)
-						        Sleep(2000)
-				    	EndIf
-					     Sleep(1000)
-						MouseClick('left',871, 627,1,20)
-						Sleep(5000)
-						_closeTrinhDuyet($i)
-
-
-					EndIf
-
-					If $i=9 Then
-
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('about:preferences#privacy',1)
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(6000)
-						For $i20=1 to 16
-							Send('{tab}')
-							Sleep(1000)
-						Next
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(3000)
-						Send('{enter}')
-						Sleep(3000)
-						Send('{enter}')
-						Sleep(4000)
-						_closeTrinhDuyet($i)
-
-					EndIf
-
-				    If $i=10 Then
-
-                        ControlClick('','','','left',1,1333, 102)
-						Sleep(1000)
-						MouseClick('left',1335, 134,1,20)
-						Sleep(1000)
-						MouseClick('left',1333, 102,1,20)
-						Sleep(1000)
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('chrome://settings/clearBrowserData',1)
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(10000)
-						MouseClick('left',1333, 102,1,20)
-						Sleep(1000)
-						MouseClick('left',806, 245,1,20)
-						Sleep(2000)
-						MouseClick('left',540, 281,1,20)
-						Sleep(2000)
-						Send('{tab}')
-			         	Sleep(2000)
-						Send('{enter}')
-						Sleep(2000)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send('{DOWN}')
-						Sleep(500)
-						Send("{enter}")
-						Sleep(2000)
-						For $i20=1 to 7
-							Send('{tab}')
-			         	    Sleep(2000)
-                        Next
-						Send('{enter}')
-						Sleep(5000)
-
-						MouseClick('left',873, 630,1,20)
-						Sleep(5000)
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('chrome://settings/resetProfileSettings',1)
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(4000)
-						MouseClick('left',830, 506,1,20)
-						Sleep(4000)
-						MouseClick('left',830, 536,1,20)
-						Sleep(5000)
-						_closeTrinhDuyet($i)
-
-					EndIf
-
-				#ce
-
 
 					_closeTrinhDuyet($i)
 					_resetMang($i)
@@ -2732,6 +2233,9 @@ EndFunc
                       Next
 
 						$IPtho=FileReadLine(@ScriptDir&'\Keytinsoft2.txt',$i)    ; da loc lay 10 IP-- dung có doi file .txt
+						$kiemtraProxy=_kiemtraProxy($IPtho)
+						If $kiemtraProxy=0 Then $IPtho=FileReadLine(@ScriptDir&'\Keytinsoft4.txt',$i)  ;ip du phong
+
 						$IP=1
 						$port=1
 						Sleep(100)
@@ -3063,6 +2567,7 @@ EndFunc
 			Return $check
 
 		EndFunc
+
 #cs
         Func _dienIpPort($i)
 					Sleep(1000)
@@ -3397,6 +2902,7 @@ EndFunc
 				ProcessClose('WerFault.exe')
           For $i2=1 TO 2
 					WinClose('Server Manager')
+					WinClose('Restore pages')
 				    ProcessClose('WerFault.exe')
                     Sleep(1000)
 
@@ -3416,6 +2922,7 @@ EndFunc
 						ControlClick($var[$i10][1],'','','left',1,426, 30)    ; tat tab thua
 						Sleep(1000)
 					EndIf
+					WinClose('Restore pages')
 
 					Sleep(1000)
 				    MouseClick('left',600, 60,1,20)
@@ -5214,6 +4721,7 @@ EndFunc
 					WinClose('Translated page from Vietnamses?')
 					Sleep(1000)
 					WinClose('Restore pages?')
+					WinClose('Restore pages')
 					WinClose('Default Client')
 					WinClose('UC Browser')
 					WinClose('Check Update')
@@ -5221,6 +4729,7 @@ EndFunc
 				    WinClose('Remove "Bright VPN - Secure Private & Free VPN Proxy"?')
 					WinClose('Restore pages?')
 					Sleep(1000)
+					WinClose('Check Update')
 					If  $i=9 Then
 							WinClose('Check Update')
 							Sleep(10000)
@@ -5293,6 +4802,8 @@ EndFunc
 							MouseClick('left',1325,112,1,20)  ; tat khoi phuc
 							Sleep(2000)
 					    EndIf
+						WinClose('Restore pages?')
+					    WinClose('Restore pages')
 
 						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(2000)
@@ -5691,6 +5202,7 @@ EndFunc
 					WinClose('Translated page from Vietnamses?')
 					Sleep(1000)
 					WinClose('Restore pages?')
+					WinClose('Restore pages')
 					WinClose('Default Client')
 					WinClose('UC Browser')
 					WinClose('Check Update')
@@ -5698,6 +5210,7 @@ EndFunc
 					WinClose('Bright VPN - Secure Private & Free VPN Proxy is disabled')
 				    WinClose('Remove "Bright VPN - Secure Private & Free VPN Proxy"?')
 					Sleep(1000)
+					WinClose('Check Update')
 
 					If $i=5 Then
                         WinMove('','',0,0,1366,850)
@@ -6663,7 +6176,8 @@ EndFunc
 						   $sdt=FileReadLine(@ScriptDir&'\Gmailtest.txt',4)
 						   FileDelete(@ScriptDir&'\Gmailtest.txt')
 
-
+				WinClose('Restore pages?')
+				WinClose('Restore pages')
 
 	            WinMove('','',0,0,1366,768)
 				Sleep(2000)
@@ -7030,9 +6544,13 @@ EndFunc
 				    Send('{enter}')
 				    Sleep(10000)
 				    For $i20=1 to 10
-					    $pixcel=PixelSearch(51, 96,206, 263,0xFF0000)
+					    $pixcel=PixelSearch(58,110,245, 170,0xFF0033)   ; xoa loi edge
+						$pixcel2=PixelSearch(58,110,245, 170,0xFF0000)   ; xoa loi edge
+						$pixcel3=PixelSearch(58,110,245, 170,0xFF0100)   ; xoa loi edge
+
+
 					    Sleep(1000)
-					    If IsArray($pixcel) Then
+					    If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3)  Then
 						    $check=1
 						    $i20=17
 					    EndIf
@@ -7829,6 +7347,51 @@ EndFunc
 				Next
 
 		EndFunc
+
+        Func _kiemtraProxy($Proxy)
+				Local $sResult = RunCMD("curl -x "&$Proxy&" http://www.google.com")
+				Sleep(1000)
+                $sochuketqua=StringLen($sResult)
+                Sleep(1000)
+
+				If $sochuketqua<300 Then
+
+					Sleep(30000)
+                    Local $sResult = RunCMD("curl -x "&$Proxy&" http://www.google.com")
+				    Sleep(1000)
+                    $sochuketqua=StringLen($sResult)
+                    Sleep(1000)
+				    If $sochuketqua<300 Then
+						$ketqua=0
+						;ToolTip('kiem tra proxy nhà mạng:'&$Tenmang&'  proxy '&$Proxy&' die',0,0)
+
+                    Else
+                       ; ToolTip('kiem tra proxy nhà mạng:'&$Tenmang&'  proxy '&$Proxy&' live 1',0,0)
+					    $ketqua=1
+					EndIf
+				Else
+					;ToolTip('kiem tra proxy nhà mạng:'&$Tenmang&'  proxy '&$Proxy&' live 2',0,0)
+                    $ketqua=1
+				EndIf
+			Return $ketqua
+
+		EndFunc
+
+		Func RunCMD($sCmd)
+                    ; Chạy CMD ở chế độ ẩn và đọc kết quả
+				    Local $hCmd = Run("cmd.exe /c " & $sCmd, "", @SW_HIDE, $STDOUT_CHILD)
+				    Local $sOutput = ""
+
+                    ; Đọc kết quả dòng lệnh
+					While 1
+				         Local $sLine = StdoutRead($hCmd)
+                         If @error Then ExitLoop
+                         $sOutput &= $sLine
+                    WEnd
+
+                    Return $sOutput
+		EndFunc
+
 
 
 Func _ReduceMemory()
