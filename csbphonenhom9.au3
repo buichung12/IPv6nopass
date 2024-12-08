@@ -82,7 +82,7 @@ While 1
 				$sodongIP0=_FileCountLines(@ScriptDir&"\Keytinsoft.txt")
 				If $sodongIP0<500 Then
 					Sleep(60000)
-					_requetGooGleDOC('https://docs.google.com/document/d/1CLivNgut-fLUCGJqqXZhAKE2wxKlwI6s1t0ZbinM4hw/export?format=txt','Keytinsoft.txt')
+					_requetGooGleDOC('https://docs.google.com/document/d/1iiBohSkxpacCFKmueVTuuj2jktzoquZGI_6IJ_iffII/export?format=txt','Keytinsoft.txt')
 				EndIf
 
 				$STTIP=($vpsso-1)*10+1
@@ -96,6 +96,30 @@ While 1
 				Next
 
 				$check=_FileCountLines(@ScriptDir&"\Keytinsoft2.txt")
+				If $check >8 Then $i21=3
+
+			Next
+
+			For  $i21=1 to 3
+				 _requetGooGleDOC('https://docs.google.com/document/d/1CLivNgut-fLUCGJqqXZhAKE2wxKlwI6s1t0ZbinM4hw/export?format=txt','Keytinsoft3.txt')
+				Sleep(2000)
+				$sodongIP0=_FileCountLines(@ScriptDir&"\Keytinsoft3.txt")
+				If $sodongIP0<500 Then
+					Sleep(60000)
+					_requetGooGleDOC('https://docs.google.com/document/d/1CLivNgut-fLUCGJqqXZhAKE2wxKlwI6s1t0ZbinM4hw/export?format=txt','Keytinsoft3.txt')
+				EndIf
+
+				$STTIP=($vpsso-1)*10+1
+				FileDelete(@ScriptDir&'\Keytinsoft4.txt')
+				Sleep(1000)
+				For $i20=0 to 9
+					$Iptho=FileReadLine(@ScriptDir&'\Keytinsoft3.txt',$STTIP+$i20)
+					Sleep(100)
+					FileWriteLine(@ScriptDir&'\Keytinsoft4.txt',$Iptho)
+					Sleep(100)
+				Next
+
+				$check=_FileCountLines(@ScriptDir&"\Keytinsoft4.txt")
 				If $check >8 Then $i21=3
 
 			Next
