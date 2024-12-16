@@ -69,6 +69,7 @@ While 1
 				FileDelete(@ScriptDir&'\Gmailtest.txt')
 
                 _FakeIPOptionV6($i,$vpsso)
+				ToolTip('khoi dong:'&$i&'	profile:'&$profile,0,0)
                 _khoidongFireFox($i,$profile)
 				$check=_loginGmail($i)
                 $sokenhtaoduoc=0
@@ -262,10 +263,10 @@ _VerryGmail()  ; return $check=1 ok. 0 khong verrry duco
 					If $i=8 Then $linkblu='C:\Users\buichung\AppData\Local\Chromium\Application\chrome.exe --user-data-dir="C:\ChromiumProfiles\Profile"'&$profile
 
 
-
 					If $i=9 Then
 						If FileExists('C:\Program Files (x86)\SlimBrowser'&$profile)=0 Then
 						   ; DirCopy("C:\Users\"&@UserName&"\Desktop\SlimBrowser",'C:\Program Files (x86)\SlimBrowser'&$profile,1)
+						    MsgBox(0,0,'chuan bi copy SlimBrowser',10)
 							DirCopy("C:\Users\admin\Desktop\SlimBrowser",'C:\Program Files (x86)\SlimBrowser'&$profile,1)
 							DirCopy("C:\Users\buichung\Desktop\SlimBrowser",'C:\Program Files (x86)\SlimBrowser'&$profile,1)
 						    Sleep(20000)
