@@ -6862,7 +6862,11 @@ EndFunc
 					ProcessClose('Proxy Client Tinsoft.exe')
 					Sleep(2000)
 
-					ShellExecute(@ScriptDir&'\Internet Options - Shortcut.lnk')
+					If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\Internet Options - Shortcut.lnk')=1 Then
+							ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\Internet Options - Shortcut.lnk')
+						Else
+                            ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\Internet Options - Shortcut.url')
+						EndIf
 					Sleep(4000)
 					WinMove('Internet Properties','',0,0)
 					Sleep(3000)
