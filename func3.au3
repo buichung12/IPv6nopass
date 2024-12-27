@@ -1196,7 +1196,7 @@ EndFunc
 				$i=1
 
                 Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\MicrosoftEdgeSetup (1).exe')
-				Sleep(60000)
+				Sleep(90000)
 				For $i20=1 to 50
 					        $pixcel=PixelSearch(600, 569,808, 758,0x0078D4,5)
 					    If IsArray($pixcel) Then                     ; tat trang
