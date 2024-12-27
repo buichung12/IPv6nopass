@@ -816,7 +816,7 @@ EndFunc
 		    Sleep(3000)
 
 
-	        If FileExists("C:\Program Files (x86)\AutoIt3\AutoIt3.exe")=0 Then
+	        If FileExists("C:\Program Files (x86)\AutoIt3\AutoIt3.exe")=0 and FileExists("C:\Program Files\AutoIt3\AutoIt3.exe")=0  Then
 				ToolTip('cai dat autoit'&'	phien ban:'&$phienban,0,30)
 		       ; _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
 		       ; Sleep(5000)
@@ -1129,8 +1129,9 @@ EndFunc
 
 
 	        $check=FileExists("C:\Program Files (x86)\CocCoc\Browser\Application\browser.exe")
+			$check1=FileExists("C:\Program Files\CocCoc\Browser\Application\browser.exe")
 			Sleep(1000)
-			If $check=0 Then
+			If $check=0 and $check1=0 Then
 				$i=3
                 Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\CocCocSetup.exe')
 				Sleep(15000)
@@ -1190,7 +1191,8 @@ EndFunc
             EndIf
 
                  $check=FileExists('C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe')
-			If $check=0 Then
+				 $check1=FileExists('C:\Program Files\Microsoft\Edge\Application\msedge.exe')
+			If $check=0 and $check1=0 Then
 				$i=1
 
                 Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\MicrosoftEdgeSetup (1).exe')
@@ -1262,7 +1264,8 @@ EndFunc
 
 
                 $check=FileExists("C:\Program Files (x86)\SlimBrowser\slimbrowser.exe")
-			If $check=0 Then
+				$check1=FileExists("C:\Program Files\SlimBrowser\slimbrowser.exe")
+			If $check=0 and $check1=0 Then
 
 				$i=9
 				Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\sbsetup_x86.exe')
@@ -4483,23 +4486,37 @@ EndFunc
 					Sleep(2000)
 
                     WinClose('Proxy Client Tinsoft')
-					If $i=1 Then $linkblu="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+					If $i=1 Then
+						$linkblu="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+						$linkblu2="C:\Program Files\Microsoft\Edge\Application\msedge.exe"
+					EndIf
 					If $i=2 Then $linkblu="C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
 					;If $i=3 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Maxthon\Application\Maxthon.exe'
-					If $i=3 Then $linkblu="C:\Program Files (x86)\CocCoc\Browser\Application\browser.exe"
+					If $i=3 Then
+						$linkblu="C:\Program Files (x86)\CocCoc\Browser\Application\browser.exe"
+						$linkblu2="C:\Program Files\CocCoc\Browser\Application\browser.exe"
+					EndIf
 					If $i=4 Then $linkblu='C:\portapps\brave-portable\brave-portable.exe'
 					;If $i=4 Then $linkblu='C:\Program Files (x86)\AVAST Software\Browser\Application\AvastBrowser.exe'
 					If $i=5 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\launcher.exe'
 					;If $i=5 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Yandex\YandexBrowser\Application\browser.exe'
 					If $i=6 Then $linkblu="C:\Users\"&@UserName&"\Desktop\trinh duyet\FirefoxPortable\FirefoxPortable.exe"
-					If $i=7 Then $linkblu="C:\Program Files (x86)\Mozilla Firefox\firefox.exe"
+					If $i=7 Then
+						$linkblu="C:\Program Files (x86)\Mozilla Firefox\firefox.exe"
+						$linkblu2="C:\Program Files\Mozilla Firefox\firefox.exe"
+					EndIf
 					;If $i=8 Then $linkblu="C:\Program Files (x86)\SeaMonkey\seamonkey.exe"
 					If $i=8 Then $linkblu="C:\Users\"&@UserName&"\AppData\Local\Chromium\Application\chrome.exe"
-					If $i=9 Then $linkblu="C:\Program Files (x86)\SlimBrowser\slimbrowser.exe"
+					If $i=9 Then
+						$linkblu="C:\Program Files (x86)\SlimBrowser\slimbrowser.exe"
+						$linkblu2="C:\Program Files\SlimBrowser\slimbrowser.exe"
+					EndIf
 					;If $i=10 Then $linkblu="C:\Program Files (x86)\Globus\PrivacyBrowser\GlobusPrivacyBrowser.exe"
 					If $i=10 Then $linkblu="C:\Program Files\Google\Chrome\Application\chrome.exe"
 					Sleep(2000)
 					Run( $linkblu,'')
+					Sleep(2000)
+					Run( $linkblu2,'')
 					Sleep(2000)
 	                If $i=1 Then
 						$linkblu='C:\Program Files\Microsoft\Edge\Application\msedge.exe'
@@ -4957,24 +4974,38 @@ EndFunc
 
                     Sleep(Random(1000,60000,1))
 					WinClose('Server Manager')
-					If $i=1 Then $linkblu="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+					If $i=1 Then
+						$linkblu="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+						$linkblu2="C:\Program Files\Microsoft\Edge\Application\msedge.exe"
+					EndIf
 					If $i=2 Then $linkblu="C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
 					;If $i=3 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Maxthon\Application\Maxthon.exe'
-					If $i=3 Then $linkblu="C:\Program Files (x86)\CocCoc\Browser\Application\browser.exe"
+					If $i=3 Then
+						$linkblu="C:\Program Files (x86)\CocCoc\Browser\Application\browser.exe"
+						$linkblu2="C:\Program Files\CocCoc\Browser\Application\browser.exe"
+					EndIf
 					If $i=4 Then $linkblu='C:\portapps\brave-portable\brave-portable.exe'
 					;If $i=4 Then $linkblu='C:\Program Files (x86)\AVAST Software\Browser\Application\AvastBrowser.exe'
 					If $i=5 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\launcher.exe'
 					;If $i=5 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Yandex\YandexBrowser\Application\browser.exe'
 					If $i=6 Then $linkblu="C:\Users\"&@UserName&"\Desktop\trinh duyet\FirefoxPortable\FirefoxPortable.exe"
-					If $i=7 Then $linkblu="C:\Program Files (x86)\Mozilla Firefox\firefox.exe"
+					If $i=7 Then
+						$linkblu="C:\Program Files (x86)\Mozilla Firefox\firefox.exe"
+						$linkblu2="C:\Program Files\Mozilla Firefox\firefox.exe"
+					EndIf
 					;If $i=8 Then $linkblu="C:\Program Files (x86)\SeaMonkey\seamonkey.exe"
 					If $i=8 Then $linkblu="C:\Users\"&@UserName&"\AppData\Local\Chromium\Application\chrome.exe"
-					If $i=9 Then $linkblu="C:\Program Files (x86)\SlimBrowser\slimbrowser.exe"
-					If $i=10 Then $linkblu="C:\Program Files\Google\Chrome\Application\chrome.exe"
+					If $i=9 Then
+						$linkblu="C:\Program Files (x86)\SlimBrowser\slimbrowser.exe"
+						$linkblu2="C:\Program Files\SlimBrowser\slimbrowser.exe"
+					EndIf
 					;If $i=10 Then $linkblu="C:\Program Files (x86)\Globus\PrivacyBrowser\GlobusPrivacyBrowser.exe"
+					If $i=10 Then $linkblu="C:\Program Files\Google\Chrome\Application\chrome.exe"
 
 					Sleep(1000)
 					Run( $linkblu,'')
+					Sleep(2000)
+					Run( $linkblu2,'')
 					Sleep(1000)
 
 	                If $i=1 Then
