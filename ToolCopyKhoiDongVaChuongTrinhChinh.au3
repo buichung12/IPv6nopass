@@ -57,7 +57,102 @@ $check=0
 
 
         _resetMang()
-		_closeTrinhDuyet(1)
+
+
+
+		     $check=FileExists("C:\Program Files (x86)\Mozilla Firefox\firefox.exe")
+				$check2=FileExists("C:\Program Files\Mozilla Firefox\firefox.exe")
+			If $check=0 And $check2=0 Then
+
+				$i=7
+				Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\Firefox Installer.exe')
+				Sleep(15000)
+				MouseClick('left',523, 543,1,20)
+				ControlClick('Open File - Security Warning','&Run','[CLASS:Button; INSTANCE:1]','left',1,40, 12)
+				Sleep(15000)
+
+				For $i20=1 to 50
+					$check=WinExists('Chào mừng đến với Firefox - Mozilla Firefox')
+					If $check=1 Then
+						Sleep(2000)
+						$i20=50
+						$check=1
+					EndIf
+					Sleep(1000)
+	              Next
+	            Sleep(2000)
+				WinMove('','',0,0,1366,768)
+				Sleep(1000)
+				_closeTrinhDuyet($i)
+				Sleep(2000)
+
+				$i=7
+				 _khoidongFireFox($i)
+				 Sleep(2000)
+				 If $i=7 Then
+					     $pixcel=PixelSearch(537, 263,735, 300,0x0061E0,5)
+					    If IsArray($pixcel) Then                     ; tat trang
+						    Sleep(1000)
+							MouseClick('left',505, 244,1,20)
+							Sleep(1000)
+							MouseClick('left',804, 285,1,20)
+							Sleep(1000)
+					    EndIf
+				 EndIf
+				 _closeTrinhDuyet($i)
+
+			Else
+				$check13=1
+            EndIf
+
+			$check=FileExists("C:\Program Files\Google\Chrome\Application\chrome.exe")
+		    If $check=0 Then
+				$i=10
+				Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\ChromeSetup.exe')
+				Sleep(40000)
+				For $i20=1 to 50
+					$check=WinExists('Thẻ mới - Google Chrome')
+					If $check=1 Then
+						Sleep(2000)
+						$i20=50
+						$check=1
+					EndIf
+					$check=WinExists('Google Chrome')
+					If $check=1 Then
+						Sleep(2000)
+						$i20=50
+						$check=1
+					EndIf
+					Sleep(1000)
+	            Next
+	            Sleep(2000)
+
+				MouseClick('left',710,266,1,20)
+				Sleep(2000)
+				Send('{tab}')
+				Sleep(2000)
+				Send('{enter}')
+				Sleep(5000)
+				MouseClick('left',510,228,1,20)
+				Sleep(2000)
+				Send('{tab}')
+				Sleep(2000)
+				Send('{tab}')
+				Sleep(2000)
+				Send('{tab}')
+				Sleep(2000)
+				Send('{enter}')
+				Sleep(5000)
+				WinMove('','',0,0,1366,768)
+				Sleep(1000)
+				_closeTrinhDuyet($i)
+			Else
+				$check20=1
+		    EndIf
+
+        _closeTrinhDuyet(1)
+
+
 
         _requetGooGleDOC('https://docs.google.com/document/d/1QioeFifQFHiJxdXueMenDHvGcFIJBzhjULs6oyhHIUU/export?format=txt','DuLieuDauVao.txt')     ; luu y Link phai co duoi /export?format=txt
         Sleep(8000)
@@ -555,6 +650,412 @@ _GetDOSOutput($sCommand)
 _kiemtraMangInternetVonglap240s()
 _VerryGmail()  ; return $check=1 ok. 0 khong verrry duco
 #ce
+
+	    Func _khoidongFireFox($i)
+			        $dangnhap=0
+
+			        WinClose('trinh duyet')
+					WinClose('csFireFox - 10 sea')
+			        WinClose('Proxy Client Tinsoft')
+				    Send('^w')
+					Sleep(1000)
+                    WinClose('Server Manager')
+					Sleep(2000)
+
+                    WinClose('Proxy Client Tinsoft')
+					If $i=1 Then $linkblu="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+					If $i=2 Then $linkblu="C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
+					;If $i=3 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Maxthon\Application\Maxthon.exe'
+					If $i=3 Then $linkblu="C:\Program Files (x86)\CocCoc\Browser\Application\browser.exe"
+					If $i=4 Then $linkblu='C:\portapps\brave-portable\brave-portable.exe'
+					;If $i=4 Then $linkblu='C:\Program Files (x86)\AVAST Software\Browser\Application\AvastBrowser.exe'
+					If $i=5 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\launcher.exe'
+					;If $i=5 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Yandex\YandexBrowser\Application\browser.exe'
+					If $i=6 Then $linkblu="C:\Users\"&@UserName&"\Desktop\trinh duyet\FirefoxPortable\FirefoxPortable.exe"
+					If $i=7 Then $linkblu="C:\Program Files (x86)\Mozilla Firefox\firefox.exe"
+					;If $i=8 Then $linkblu="C:\Program Files (x86)\SeaMonkey\seamonkey.exe"
+					If $i=8 Then $linkblu="C:\Users\"&@UserName&"\AppData\Local\Chromium\Application\chrome.exe"
+					If $i=9 Then $linkblu="C:\Program Files (x86)\SlimBrowser\slimbrowser.exe"
+					;If $i=10 Then $linkblu="C:\Program Files (x86)\Globus\PrivacyBrowser\GlobusPrivacyBrowser.exe"
+					If $i=10 Then $linkblu="C:\Program Files\Google\Chrome\Application\chrome.exe"
+					Sleep(2000)
+					Run( $linkblu,'')
+					Sleep(2000)
+	                If $i=1 Then
+						$linkblu='C:\Program Files\Microsoft\Edge\Application\msedge.exe'
+						Run( $linkblu,'')
+					EndIf
+					If $i=7 Then
+						$linkblu='C:\Program Files\Mozilla Firefox\firefox.exe'
+						Run( $linkblu,'')
+					EndIf
+					Sleep(8000)
+					If $i=6 or 7 Then
+						Send('{enter}')
+					EndIf
+					Sleep(7000)
+					WinClose('Install Google Translate extension to translate this page?')
+					WinClose('Restore pages?')
+					WinClose('Khôi phục trang')
+					WinClose('Bạn có muốn khôi phục trang không?')
+					WinClose('Default Client')
+					WinClose('Update successful')
+					WinClose('Translated page')
+					WinClose('Translated page from Vietnamses?')
+					Sleep(1000)
+					WinClose('Restore pages?')
+					WinClose('Restore pages')
+					WinClose('Default Client')
+					WinClose('UC Browser')
+					WinClose('Check Update')
+					WinClose('Bright VPN - Secure Private & Free VPN Proxy is disabled')
+				    WinClose('Remove "Bright VPN - Secure Private & Free VPN Proxy"?')
+					WinClose('Restore pages?')
+					Sleep(1000)
+					WinClose('Check Update')
+					If  $i=9 Then
+							WinClose('Check Update')
+							Sleep(10000)
+							MouseClick('left',805,437,1,20)
+							Sleep(2000)
+							MouseClick('left',844, 317,1,20)
+							Sleep(2000)
+                            ControlClick('','','','left',1,475, 200)
+                            Sleep(2000)
+                            ControlClick('','','','left',1,800, 243)
+	                        Sleep(2000)
+							MouseClick('left',503, 200,1,20)
+							Sleep(2000)
+							MouseClick('left',831, 237,1,20)
+							Sleep(2000)
+							MouseClick('left',1304,190,1,20)
+							Sleep(2000)
+							MouseClick('left',1260,208 ,1,20)
+							Sleep(1000)
+							ControlClick('','','','left',1,505, 200)
+							Sleep(2000)
+							ControlClick('','','','left',1,834, 242)
+							Sleep(2000)
+
+					EndIf
+
+					If $i=6 Then
+						MouseClick('left',1185, 192,1,20)  ;tat thong bao update
+				        Sleep(2000)
+						MouseClick('left',1260,200,1,20)
+						Sleep(1000)
+					EndIf
+					If $i=4 Then
+						MouseClick('left',852, 510,1,20)  ;tat thong bao update
+				        Sleep(7000)
+					EndIf
+
+
+                    If $i=1 Then
+						MouseClick('left',1280,700,1,20)  ;tat thong bao update
+				        Sleep(7000)
+					EndIf
+
+
+					Sleep(1000)
+					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+                    Sleep(1000)
+					If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
+					Sleep(1000)
+					If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
+
+
+				  If $var[0][0]<>0 Then
+					For $i10 = 1 to $var[0][0]
+					  If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
+
+						WinSetState($var[$i10][1],'',@SW_RESTORE)
+						Sleep(1000)
+
+						If $i=2 Then
+							MouseClick('left',1334, 981,1,20)
+							Sleep(2000)
+						    ControlClick('','','','left',1,528, 202)
+							Sleep(2000)
+							ControlClick('','','','left',1,789, 266)
+							Sleep(2000)
+					    EndIf
+
+						If $i=10 Then
+							MouseClick('left',1325,112,1,20)  ; tat khoi phuc
+							Sleep(2000)
+					    EndIf
+						WinClose('Restore pages?')
+					    WinClose('Restore pages')
+
+						WinMove($var[$i10][1],'',0,0,1366,850)
+						Sleep(2000)
+
+						If  $i=10 Then
+							Sleep(3000)
+							$pixcel=PixelSearch(430, 623,1013, 764,0x0B57D0)
+					        If IsArray($pixcel) Then
+							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
+							     Sleep(3000)
+							EndIf
+							$pixcel=PixelSearch(430, 623,1013, 764,0x0B57D0)
+					        If IsArray($pixcel) Then
+							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
+							     Sleep(3000)
+							EndIf
+							$pixcel=PixelSearch(430, 623,1013, 764,0x0B57D0)
+					        If IsArray($pixcel) Then
+							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
+							     Sleep(3000)
+							EndIf
+							MouseClick('left',1325,112,1,20)  ; tat khoi phuc
+							Sleep(2000)
+							ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,291, 635)
+		                    Sleep(2000)
+		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
+							Sleep(2000)
+							MouseClick('left',1300,720,1,20)
+							Sleep(3000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
+							MouseClick('left',1322,114,1,20)
+							Sleep(3000)
+							MouseClick('left',1317,112,1,20)
+							Sleep(2000)
+							MouseClick('left',1327, 102,1,20)
+							Sleep(1000)
+							MouseClick('left',1327, 145,1,20)
+							Sleep(1000)
+
+						EndIf
+
+
+						If  $i=9 Then
+							WinClose('Check Update')
+							Sleep(1000)
+							MouseClick('left',805,437,1,20)
+							Sleep(2000)
+                            ControlClick('','','','left',1,475, 200)
+                            Sleep(2000)
+                            ControlClick('','','','left',1,800, 243)
+	                        Sleep(1000)
+							MouseClick('left',503, 200,1,20)
+							Sleep(1000)
+							MouseClick('left',831, 237,1,20)
+							Sleep(1000)
+							MouseClick('left',1304,190,1,20)
+							Sleep(1000)
+							MouseClick('left',1338,131,1,20)
+							Sleep(1000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(1000)
+							MouseClick('left',1325,147,1,20)
+							Sleep(1000)
+
+						EndIf
+
+						If $i=8 Then
+							Sleep(1000)
+							ControlClick($var[$i10][1],'','','left',1,1333, 102)
+							Sleep(2000)
+							ControlClick($var[$i10][1],'','','left',1,1333, 102)
+							Sleep(2000)
+							MouseClick('left',1333, 102,1,20)
+							Sleep(2000)
+							MouseClick('left',1333, 102,1,20)
+							Sleep(2000)
+							MouseClick('left',1333, 102,1,20)
+							Sleep(2000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
+
+						EndIf
+
+						If $i=7 Then
+							MouseClick('left',1260,208 ,1,20)
+							Sleep(1000)
+							ControlClick($var[$i10][1],'','','left',1,505, 200)
+							Sleep(2000)
+							ControlClick($var[$i10][1],'','','left',1,834, 242)
+							Sleep(2000)
+							MouseClick('left',1260,208 ,1,20)
+							Sleep(1000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
+							MouseClick('left',680,550,1,20)
+							Sleep(2000)
+
+							If WinExists('firefox.exe - Bad Image')=1 or WinExists('Firefox')=1 Then    ; loi khong khoi dong
+								FileDelete('C:\Program Files\Mozilla Firefox\vcruntime140.dll')
+								Sleep(1000)
+								FileDelete('C:\Program Files\Mozilla Firefox\vcruntime140_1.dll')
+								Sleep(1000)
+								Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\Firefox Installer.exe')
+				                Sleep(15000)
+				                MouseClick('left',523, 543,1,20)
+								ControlClick('Open File - Security Warning','&Run','[CLASS:Button; INSTANCE:1]','left',1,40, 12)
+				                Sleep(60000)
+
+
+							EndIf
+
+						EndIf
+
+						If $i=6 Then
+							MouseClick('left',1260,208 ,1,20)
+							Sleep(1000)
+							ControlClick($var[$i10][1],'','','left',1,505, 200)
+							Sleep(2000)
+							ControlClick($var[$i10][1],'','','left',1,834, 242)
+							Sleep(2000)
+							MouseClick('left',1260,200,1,20)
+							Sleep(1000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
+						EndIf
+
+						If $i=5 Then
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
+							MouseClick('left',1322,99,1,20)
+							Sleep(2000)
+							MouseClick('left',500,60 ,1,20)    ; tat zoom
+							Sleep(2000)
+							Send('^a')
+							Sleep(2000)
+							Send('https://www.youtube.com')
+							Sleep(2000)
+							Send('{enter}')
+							Sleep(10000)
+						EndIf
+
+
+						If $i=4 Then
+						    MouseClick('left',725, 132,1,20)  ;tat thong bao update
+				            Sleep(2000)
+						    MouseClick('left',1280,163,1,20)
+							Sleep(2000)
+					    EndIf
+
+
+						If $i=3 Then
+
+						   WinClose('Update successful')
+				           Sleep(2000)
+						   WinClose('Bạn có muốn khôi phục trang không?')
+
+						EndIf
+
+						If $i=2 Then
+						   Sleep(2000)
+					       MouseClick('left',1333, 130,1,20)
+						   Sleep(2000)
+						   MouseClick('left',1333, 97,1,20)
+						   Sleep(2000)
+					       MouseClick('left',1333, 130,1,20)
+						   Sleep(2000)
+						   MouseClick('left',1333, 97,1,20)
+						   Sleep(2000)
+					       ControlClick($var[$i10][1],'','','left',1,1333, 130)
+						   MouseClick('left',1280,163,1,20)
+							Sleep(2000)
+						EndIf
+#cs
+						If $i=1 Then
+							MouseClick('left',880, 113,1,20)  ;tat tanh cong cu
+				            Sleep(1000)
+							MouseClick('left',1320, 113,1,20)  ;tat tanh cong cu
+				            Sleep(1000)
+						    MouseClick('left',1328, 696,1,20)  ;tat tanh cong cu
+				            Sleep(1000)
+						    ControlClick('','','','left',1,1330, 103)
+						    Sleep(2000)
+						    MouseClick('left',1333,99,1,20)  ;tat tanh cong cu
+					    	Sleep(1000)
+						    MouseClick('left',1333, 134,1,20)  ;tat tanh cong cu
+						    Sleep(1000)
+							MouseClick('left',880, 148,1,20)  ;tat tanh cong cu
+				            Sleep(1000)
+							MouseClick('left',880, 118,1,20)  ;tat tanh cong cu
+				            Sleep(1000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
+							MouseClick('left',1300,700,1,20)  ;tat tanh cong cu
+						    Sleep(1000)
+							MouseClick('left',910,133,1,20)  ;tat tanh cong cu
+						    Sleep(1000)
+							MouseClick('left',1285,100,1,20)  ;tat tanh cong cu
+						    Sleep(1000)
+					    EndIf
+#ce
+
+
+                        If $i=1 Then
+						    MouseClick('left',1280,700,1,20)  ;tat thong bao update
+				            Sleep(7000)
+					    EndIf
+
+					    If $i=10 Then
+							ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,291, 635)
+		                    Sleep(2000)
+		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
+							Sleep(2000)
+							MouseClick('left',1300,720,1,20)
+							Sleep(1000)
+							MouseClick('left',1280,163,1,20)
+							Sleep(2000)
+							MouseClick('left',1322,114,1,20)
+							Sleep(1000)
+							MouseClick('left',1317,112,1,20)
+							Sleep(1000)
+							MouseClick('left',1327, 102,1,20)
+							Sleep(1000)
+						EndIf
+					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
+					    If $i=8 Then ControlClick($var[$i10][1],'','','left',1,478, 26)    ; tat tab thua
+					    If $i=7 Then ControlClick($var[$i10][1],'','','left',1,478, 22)    ; tat tab thua
+					    If $i=6 Then ControlClick($var[$i10][1],'','','left',1,479, 26)    ; tat tab thua
+					    If $i=5 Then ControlClick($var[$i10][1],'','','left',1,426, 30)    ; tat tab thua
+					    If $i=4 Then ControlClick($var[$i10][1],'','','left',1,479, 25)    ; tat tab thua
+					    If $i=3 Then ControlClick($var[$i10][1],'','','left',1,573, 25)    ; tat tab thua
+					    If $i=2 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
+					    If $i=1 Then ControlClick($var[$i10][1],'','','left',1,427, 26)    ; tat tab thua
+                        If $i=1 Then ControlClick($var[$i10][1],'','','left',1,512, 27)   ; tat thong bao
+					    Sleep(1000)
+					   ; If $i=10 Then ControlClick($var[$i10][1],'','','left',1,389, 33)    ; tat tab thua
+					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
+					    If $i=8 Then ControlClick($var[$i10][1],'','','left',1,478, 26)    ; tat tab thua
+					    If $i=7 Then ControlClick($var[$i10][1],'','','left',1,478, 22)    ; tat tab thua
+					    If $i=6 Then ControlClick($var[$i10][1],'','','left',1,479, 26)    ; tat tab thua
+					    If $i=5 Then ControlClick($var[$i10][1],'','','left',1,426, 30)    ; tat tab thua
+						Sleep(1000)
+						If $i=5 Then ControlClick($var[$i10][1],'','','left',1,426, 30)    ; tat tab thua
+						Sleep(1000)
+						If $i=5 Then ControlClick($var[$i10][1],'','','left',1,426, 30)    ; tat tab thua
+						Sleep(1000)
+						If $i=5 Then ControlClick($var[$i10][1],'','','left',1,426, 30)    ; tat tab thua
+						Sleep(1000)
+					    If $i=4 Then ControlClick($var[$i10][1],'','','left',1,479, 25)    ; tat tab thua
+					    If $i=3 Then ControlClick($var[$i10][1],'','','left',1,573, 25)    ; tat tab thua
+					    If $i=2 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
+					    If $i=1 Then ControlClick($var[$i10][1],'','','left',1,427, 26)    ; tat tab thua
+                        If $i=1 Then ControlClick($var[$i10][1],'','','left',1,512, 27)   ; tat thong bao
+					    Sleep(1000)
+                      EndIf
+					Next
+				  EndIf
+
+					WinClose('Install Google Translate extension to translate this page?')
+					WinClose('Restore pages?')
+					WinClose('Khôi phục trang')
+					WinClose('Bạn có muốn khôi phục trang không?')
+					Sleep(2000)
+					WinClose('Default Client')
+					ProcessClose('WerFault.exe')
+					WinClose('Translated page')
+					WinClose('Translated page from Vietnamses?')
+				Return $dangnhap
+	    EndFunc
 
 
      Func _requetGooGleDOC($link,$tenTXT)     ; luu y Link phai co duoi /export?format=txt
