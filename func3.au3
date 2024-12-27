@@ -1356,9 +1356,32 @@ EndFunc
 						$i20=50
 						$check=1
 					EndIf
+					$check=WinExists('Google Chrome')
+					If $check=1 Then
+						Sleep(2000)
+						$i20=50
+						$check=1
+					EndIf
 					Sleep(1000)
 	            Next
 	            Sleep(2000)
+
+				MouseClick('left',710,266,1,20)
+				Sleep(2000)
+				Send('{tab}')
+				Sleep(2000)
+				Send('{enter}')
+				Sleep(5000)
+				MouseClick('left',510,228,1,20)
+				Sleep(2000)
+				Send('{tab}')
+				Sleep(2000)
+				Send('{tab}')
+				Sleep(2000)
+				Send('{tab}')
+				Sleep(2000)
+				Send('{enter}')
+				Sleep(5000)
 				WinMove('','',0,0,1366,768)
 				Sleep(1000)
 				_closeTrinhDuyet($i)
@@ -2170,65 +2193,77 @@ EndFunc
 	EndFunc
 
         Func _FakeIPOptionV6($i,$vpsso)
-
+				$a=0
+				$b=0
 				For $icheck=1 to 2
 					  For $i20=1 to 2
 			            ProcessClose('WerFault.exe')
                          $check=0
-				        ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\Internet Options - Shortcut.lnk')
+				        If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\Internet Options - Shortcut.lnk')=1 Then
+							ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\Internet Options - Shortcut.lnk')
+						Else
+                            ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\Internet Options - Shortcut.url')
+						EndIf
 				        Sleep(4000)
 						$a=WinExists('Internet Properties')
-		                If $a<>1 Then
-							ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\Internet Options - Shortcut.lnk')
-							Sleep(3000)
+						$b=WinExists('Settings')
+		                If $a=0 and $b=0  Then
+							If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\Internet Options - Shortcut.lnk')=1 Then
+							    ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\Internet Options - Shortcut.lnk')
+						    Else
+                                ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\Internet Options - Shortcut.url')
+							EndIf
 						EndIf
 
-						WinMove('Internet Properties','',0,0)
-						Sleep(2000)
-						ControlClick('Internet Properties','',"[CLASS:SysTabControl32; INSTANCE:1]",'left',1,231, 12)
-				        Sleep(3000)
-						ControlClick('Internet Properties','',"[CLASS:Button; INSTANCE:10]")
-				        Sleep(3000)
-						WinMove('Local Area Network (LAN) Settings','',0,0)
-						Sleep(3000)
+						If $a=1 Then
 
-						$pixcel=ControlCommand('Local Area Network (LAN) Settings','Use a pro&xy server for your LAN (These settings will not apply to dial-up or VPN connections).','Button6',"IsChecked", "")
-						If $pixcel=0 Then
-							ControlClick('Local Area Network (LAN) Settings','',"[CLASS:Button; INSTANCE:6]")
-							Sleep(2000)
-						EndIf
-						Sleep(3000)
-						$pixcel=ControlCommand('Local Area Network (LAN) Settings','Use a pro&xy server for your LAN (These settings will not apply to dial-up or VPN connections).','Button8',"IsChecked", "")
-						If $pixcel=0 Then
-							ControlClick('Local Area Network (LAN) Settings','',"[CLASS:Button; INSTANCE:8]")
-							Sleep(2000)
-						EndIf
-						Sleep(3000)
-						$pixcel=ControlCommand('Local Area Network (LAN) Settings','Use a pro&xy server for your LAN (These settings will not apply to dial-up or VPN connections).','Button6',"IsChecked", "")
-						If $pixcel=0 Then
-							ControlClick('Local Area Network (LAN) Settings','',"[CLASS:Button; INSTANCE:6]")
-							Sleep(2000)
-						EndIf
-						Sleep(3000)
-						$pixcel=ControlCommand('Local Area Network (LAN) Settings','Use a pro&xy server for your LAN (These settings will not apply to dial-up or VPN connections).','Button8',"IsChecked", "")
-						If $pixcel=0 Then
-							ControlClick('Local Area Network (LAN) Settings','',"[CLASS:Button; INSTANCE:8]")
-							Sleep(2000)
-						EndIf
+						    WinMove('Internet Properties','',0,0)
+						    Sleep(2000)
+						    ControlClick('Internet Properties','',"[CLASS:SysTabControl32; INSTANCE:1]",'left',1,231, 12)
+				            Sleep(3000)
+						    ControlClick('Internet Properties','',"[CLASS:Button; INSTANCE:10]")
+				            Sleep(3000)
+						    WinMove('Local Area Network (LAN) Settings','',0,0)
+						    Sleep(3000)
 
-						If WinExists("Tabbed Browsing Settings") Or WinExists("Colors") Then
-                            WinClose('Local Area Network (LAN) Settings')
-				            WinClose('Internet Properties')
-							WinClose('Colors')
-							WinClose('Tabbed Browsing Settings')
-							WinClose('Local Area Network (LAN) Settings')
-				            WinClose('Internet Properties')
-							WinClose('Colors')
-							WinClose('Tabbed Browsing Settings')
+						    $pixcel=ControlCommand('Local Area Network (LAN) Settings','Use a pro&xy server for your LAN (These settings will not apply to dial-up or VPN connections).','Button6',"IsChecked", "")
+						    If $pixcel=0 Then
+							   ControlClick('Local Area Network (LAN) Settings','',"[CLASS:Button; INSTANCE:6]")
+							    Sleep(2000)
+						    EndIf
+						    Sleep(3000)
+							$pixcel=ControlCommand('Local Area Network (LAN) Settings','Use a pro&xy server for your LAN (These settings will not apply to dial-up or VPN connections).','Button8',"IsChecked", "")
+						    If $pixcel=0 Then
+							   ControlClick('Local Area Network (LAN) Settings','',"[CLASS:Button; INSTANCE:8]")
+							   Sleep(2000)
+						    EndIf
+						    Sleep(3000)
+						    $pixcel=ControlCommand('Local Area Network (LAN) Settings','Use a pro&xy server for your LAN (These settings will not apply to dial-up or VPN connections).','Button6',"IsChecked", "")
+						    If $pixcel=0 Then
+							   ControlClick('Local Area Network (LAN) Settings','',"[CLASS:Button; INSTANCE:6]")
+							   Sleep(2000)
+						    EndIf
+						    Sleep(3000)
+						    $pixcel=ControlCommand('Local Area Network (LAN) Settings','Use a pro&xy server for your LAN (These settings will not apply to dial-up or VPN connections).','Button8',"IsChecked", "")
+						    If $pixcel=0 Then
+							    ControlClick('Local Area Network (LAN) Settings','',"[CLASS:Button; INSTANCE:8]")
+							    Sleep(2000)
+						    EndIf
 
-						Else
-							$i20=2
+						    If WinExists("Tabbed Browsing Settings") Or WinExists("Colors") Then
+                                WinClose('Local Area Network (LAN) Settings')
+				                WinClose('Internet Properties')
+							    WinClose('Colors')
+							    WinClose('Tabbed Browsing Settings')
+							    WinClose('Local Area Network (LAN) Settings')
+				                WinClose('Internet Properties')
+							    WinClose('Colors')
+							    WinClose('Tabbed Browsing Settings')
 
+						    Else
+							    $i20=2
+
+						    EndIf
 						EndIf
                       Next
 
@@ -2241,9 +2276,9 @@ EndFunc
 						Sleep(100)
 						$IPtho2=StringSplit($IPtho,':')
 						If IsArray($IPtho2) Then
-							If $IPtho2[0]=4 Then
-								$ID=$IPtho2[3]
-								$Pass=$IPtho2[4]
+							If $IPtho2[0]>1 Then
+								;$ID=$IPtho2[3]
+								;$Pass=$IPtho2[4]
 								$IP=$IPtho2[1]
 								$port=$IPtho2[2]
 							EndIf
@@ -2251,27 +2286,69 @@ EndFunc
 						EndIf
 
 					    If IsArray($IPtho2) Then
+						    If $a=1 Then
+						        ProcessClose('WerFault.exe')
+                                Sleep(1000)
+						        ControlClick('Local Area Network (LAN) Settings','',"[CLASS:Edit; INSTANCE:2]")
+						        Sleep(2000)
+						        ControlSend('Local Area Network (LAN) Settings','','','^a')
+                                Sleep(2000)
+						        ControlSend('Local Area Network (LAN) Settings','','',$IP)
+						        Sleep(2000)
+						        ControlClick('Local Area Network (LAN) Settings','',"[CLASS:Edit; INSTANCE:3]")
+						        Sleep(2000)
+						        ControlSend('Local Area Network (LAN) Settings','','','^a')
+						        Sleep(2000)
+						        ControlSend('Local Area Network (LAN) Settings','','',$port)
+						        Sleep(2000)
+					            ControlClick('Local Area Network (LAN) Settings','',"[CLASS:Button; INSTANCE:12]")
+				                Sleep(2000)
+						        WinClose('Local Area Network (LAN) Settings')
+				                WinClose('Internet Properties')
+						        ProcessClose('WerFault.exe')
+							EndIf
+							If $b=1 Then
+                                WinMove('Settings','',900,700)
+								Sleep(3000)
+								MouseClick('left',500,160,1,20)
+								Sleep(2000)
+								Send('{tab}')
+								Sleep(2000)
+								Send('{tab}')
+								Sleep(2000)
+								Send('{SPACE}')
+								Sleep(3000)
+								Send('{tab}')
+								Sleep(2000)
+								Send('^a')
+								Sleep(2000)
+								Send($IP)
+								Sleep(2000)
+								Send('{tab}')
+								Sleep(2000)
+								Send('^a')
+								Sleep(2000)
+								Send($port)
+								Sleep(2000)
+								Send('{tab}')
+								Sleep(2000)
+								Send('{tab}')
+								Sleep(2000)
+								$pixcel=PixelSearch(160,520,600,700,0x0078D7)
+								If IsArray($pixcel) Then
+                                    Send('{SPACE}')
+									Sleep(2000)
+                                EndIf
+								Send('{tab}')
+								Sleep(2000)
+								Send('{SPACE}')
+								Sleep(2000)
+								WinClose('Settings')
+								Sleep(2000)
 
-						   ProcessClose('WerFault.exe')
-                           Sleep(1000)
-						   ControlClick('Local Area Network (LAN) Settings','',"[CLASS:Edit; INSTANCE:2]")
-						   Sleep(2000)
-						   ControlSend('Local Area Network (LAN) Settings','','','^a')
-                           Sleep(2000)
-						   ControlSend('Local Area Network (LAN) Settings','','',$IP)
-						   Sleep(2000)
-						   ControlClick('Local Area Network (LAN) Settings','',"[CLASS:Edit; INSTANCE:3]")
-						   Sleep(2000)
-						   ControlSend('Local Area Network (LAN) Settings','','','^a')
-						   Sleep(2000)
-						   ControlSend('Local Area Network (LAN) Settings','','',$port)
-						   Sleep(2000)
-					       ControlClick('Local Area Network (LAN) Settings','',"[CLASS:Button; INSTANCE:12]")
-				           Sleep(2000)
-						   WinClose('Local Area Network (LAN) Settings')
-				           WinClose('Internet Properties')
 
-						   ProcessClose('WerFault.exe')
+
+							EndIf
 
 					    EndIf
 
@@ -2280,288 +2357,14 @@ EndFunc
 							  $icheck=2
 						EndIf
 
-						;WinClose('Windows Security')
 				        Sleep(100)
 				        WinClose('Authentication Required - Mozilla Firefox')
 				        Sleep(100)
 				        WinClose('Authentication Required - FlashPeak SlimBrowser')
 				        Sleep(100)
 				        WinClose('Yêu cầu xác minh - Mozilla Firefox')
-                        ;Sleep(5000)
 						Sleep(1000)
 
-					#cs
-					    $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
-                        Sleep(1000)
-					    If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
-					    Sleep(1000)
-					    If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
-
-
-					    For $i10 = 1 to $var[0][0]
-					        If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
-
-							    WinActivate($var[$i10][1])
-							    Sleep(2000)
-
-						    EndIf
-						Next
-
-
-						If $i=7 Then
-							MouseClick('left',600,60,1,20)
-						    Sleep(3000)
-						    Send('google.com')
-							Sleep(1000)
-							Send('{enter}')
-							Sleep(7000)
-							Send('google.com')
-							Sleep(1000)
-							MouseClick('left',590,425,1,20)
-							Sleep(2000)
-							Send('^a')
-						    Sleep(1000)
-						    Send($ID)
-						    Sleep(2000)
-						    Send('{tab}')
-						    Sleep(2000)
-						    Send($Pass)
-						    Sleep(2000)
-						    Send('{tab}')
-						    Sleep(2000)
-                            Send('{enter}')
-							Sleep(5000)
-							MouseClick('left',660,220,1,20)
-							Sleep(2000)
-							Send('^a')
-						    Sleep(1000)
-						    Send($ID)
-						    Sleep(2000)
-						    Send('{tab}')
-						    Sleep(2000)
-						    Send($Pass)
-						    Sleep(2000)
-						    Send('{tab}')
-						    Sleep(2000)
-                            Send('{enter}')
-							Sleep(2000)
-
-
-						EndIf
-						If $i=6 Then
-							MouseClick('left',600,60,1,20)
-						    Sleep(3000)
-						    Send('google.com')
-							Sleep(7000)
-							Send('{enter}')
-							Sleep(7000)
-							Send('google.com')
-							Sleep(1000)
-							MouseClick('left',551, 413,1,20)
-							Sleep(2000)
-							Send('^a')
-						    Sleep(1000)
-						    Send($ID)
-						    Sleep(2000)
-						    Send('{tab}')
-						    Sleep(2000)
-						    Send($Pass)
-						    Sleep(2000)
-                            Send('{tab}')
-						    Sleep(2000)
-							Send('{tab}')
-						    Sleep(2000)
-                            Send('{enter}')
-							Sleep(5000)
-
-						EndIf
-						If $i=9 Then
-							MouseClick('left',600,60,1,20)
-						    Sleep(3000)
-						    Send('google.com')
-							Sleep(7000)
-							Send('{enter}')
-							Sleep(7000)
-							Send('google.com')
-							Sleep(1000)
-							MouseClick('left',645, 425,1,20)
-							Sleep(2000)
-							Send('^a')
-						    Sleep(1000)
-						    Send($ID)
-						    Sleep(2000)
-						    Send('{tab}')
-						    Sleep(2000)
-						    Send($Pass)
-						    Sleep(2000)
-                            Send('{tab}')
-						    Sleep(2000)
-                            Send('{enter}')
-							Sleep(5000)
-
-						EndIf
-
-
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('google.com')
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(10000)
-						Send($ID)
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send($Pass)
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(5000)
-
-
-						If $i=1 Then
-							MouseClick('left',858, 241,1,20)
-							Sleep(2000)
-							WinClose('Save password for '&$ip&':'&$port&'?')
-							Sleep(2000)
-						EndIf
-						If $i=2 Then
-							MouseClick('left',981, 262 ,1,20)
-							Sleep(2000)
-							WinClose('Save password for '&$ip&':'&$port&'?')
-							Sleep(2000)
-						EndIf
-						If $i=3 Then
-							MouseClick('left',990, 300 ,1,20)
-							Sleep(2000)
-							WinClose('Bạn có muốn lưu mật khẩu cho '&$ip&':'&$port&' không?')
-							Sleep(2000)
-						EndIf
-						If $i=4 Then
-							MouseClick('left',1030, 226 ,1,20)
-							Sleep(2000)
-							WinClose('Save password for '&$ip&':'&$port&'?')
-							Sleep(2000)
-						EndIf
-						If $i=5 Then
-							MouseClick('left',1217, 102 ,1,20)
-							Sleep(2000)
-							WinClose('Save password for '&$ip&':'&$port&'?')
-							Sleep(2000)
-						EndIf
-						If $i=8 Then
-							MouseClick('left',1090, 368,1,20)
-							Sleep(2000)
-							WinClose('Save password for '&$ip&':'&$port&'?')
-							Sleep(2000)
-						EndIf
-						If $i=10 Then
-							MouseClick('left',1090, 392,1,20)
-							Sleep(2000)
-							WinClose('Bạn có muốn lưu mật khẩu cho '&$ip&':'&$port&' không?')
-							Sleep(2000)
-						EndIf
-
-						MouseClick('left',600,60,1,20); send lan 2
-						Sleep(2000)
-						Send('google.com')
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(10000)
-						Send('^a')
-						Sleep(1000)
-						Send($ID)
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send($Pass)
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(1000)
-						If $i=6 Then Send('{tab}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(5000)
-						If $i=1 Then
-							MouseClick('left',858, 241,1,20)
-							Sleep(2000)
-							WinClose('Save password for '&$ip&':'&$port&'?')
-							Sleep(2000)
-						EndIf
-						If $i=2 Then
-							MouseClick('left',981, 262 ,1,20)
-							Sleep(2000)
-							WinClose('Save password for '&$ip&':'&$port&'?')
-							Sleep(2000)
-						EndIf
-						If $i=3 Then
-							MouseClick('left',990, 300 ,1,20)
-							Sleep(2000)
-							WinClose('Bạn có muốn lưu mật khẩu cho '&$ip&':'&$port&' không?')
-							Sleep(2000)
-						EndIf
-						If $i=4 Then
-							MouseClick('left',1030, 226 ,1,20)
-							Sleep(2000)
-							WinClose('Save password for '&$ip&':'&$port&'?')
-							Sleep(2000)
-						EndIf
-						If $i=5 Then
-							MouseClick('left',1217, 102 ,1,20)
-							Sleep(2000)
-							WinClose('Save password for '&$ip&':'&$port&'?')
-							Sleep(2000)
-						EndIf
-						If $i=8 Then
-							MouseClick('left',1090, 368,1,20)
-							Sleep(2000)
-							WinClose('Save password for '&$ip&':'&$port&'?')
-							Sleep(2000)
-						EndIf
-						If $i=10 Then
-							MouseClick('left',1090, 392,1,20)
-							Sleep(2000)
-							WinClose('Bạn có muốn lưu mật khẩu cho '&$ip&':'&$port&' không?')
-							Sleep(2000)
-						EndIf
-						WinClose('Save password for '&$ip&':'&$port&'?')
-						Sleep(1000)
-						WinClose('Bạn có muốn lưu mật khẩu cho '&$ip&':'&$port&' không?')
-						Sleep(1000)
-						WinClose('Bạn có muốn lưu mật khẩu cho '&$ip&':'&$port&' không?')
-						Sleep(1000)
-
-
-						If  $i=9 Then
-							WinClose('Check Update')
-							Sleep(1000)
-							MouseClick('left',805,437,1,20)
-							Sleep(2000)
-							MouseClick('left',844, 317,1,20)
-							Sleep(2000)
-                            ControlClick('','','','left',1,475, 200)
-                            Sleep(2000)
-                            ControlClick('','','','left',1,800, 243)
-	                        Sleep(2000)
-							MouseClick('left',503, 200,1,20)
-							Sleep(2000)
-							MouseClick('left',831, 237,1,20)
-							Sleep(2000)
-							MouseClick('left',1260,208 ,1,20)
-							Sleep(1000)
-							ControlClick('','','','left',1,505, 200)
-							Sleep(2000)
-							ControlClick('','','','left',1,834, 242)
-							Sleep(2000)
-							MouseClick('left',1304,190,1,20)
-							Sleep(2000)
-							MouseClick('left',1338,131,1,20)
-							Sleep(2000)
-							MouseClick('left',1280,163,1,20)
-							Sleep(2000)
-						EndIf
-                    #ce
 
 				Next
 			Return $check
@@ -6553,10 +6356,19 @@ EndFunc
 					    If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3)  Then
 						    $check=1
 						    $i20=17
+							Sleep(10000)
+							MouseClick('left',600, 320,1,20)
+							Sleep(5000)
 					    EndIf
 					    Sleep(1000)
 				    Next
+
+
+
 				EndIf
+
+				MouseClick('left',600, 320,1,20)  ; cho ngẫu nhiên 1 kênh ytb
+				Sleep(5000)
 
 			Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
         EndFunc
