@@ -202,7 +202,7 @@ While 1   ; vong tra lai gia tr
 				Sleep(2000)
 				_requetGooGleDOC('https://docs.google.com/document/d/1ZS2m1HKZb67HRd6F6SHmuIwO3SJhx5WJm-HL3ivvtYM/export?format=txt','sokenhsub1luot.txt')
                 Sleep(2000)
-				_requetGooGleDOC('https://docs.google.com/document/d/1IOc72x-SKn44ScD_Zl1OmopcJCVbVWfkWMM9GS9n8_w/export?format=txt','linkkenhchaySUB2.txt') ;thay doi theo nhom
+				_requetGooGleDOC('https://docs.google.com/document/d/1XkICV-XHosJJKaI0LMnaGv5ADSaVlKFEIMHZA-ki_y8/export?format=txt','linkkenhchaySUB2.txt') ;thay doi theo nhom
 
 
 				For $i20=1 to 10
