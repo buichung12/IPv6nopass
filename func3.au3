@@ -2256,6 +2256,7 @@ EndFunc
 						    If WinExists("Tabbed Browsing Settings") Or WinExists("Colors") Then
                                 WinClose('Local Area Network (LAN) Settings')
 				                WinClose('Internet Properties')
+								WinClose('Settings')
 							    WinClose('Colors')
 							    WinClose('Tabbed Browsing Settings')
 							    WinClose('Local Area Network (LAN) Settings')
@@ -2308,6 +2309,7 @@ EndFunc
 				                Sleep(2000)
 						        WinClose('Local Area Network (LAN) Settings')
 				                WinClose('Internet Properties')
+								WinClose('Settings')
 						        ProcessClose('WerFault.exe')
 							EndIf
 							If $b=1 Then
@@ -2367,6 +2369,7 @@ EndFunc
 				        Sleep(100)
 				        WinClose('Yêu cầu xác minh - Mozilla Firefox')
 						Sleep(1000)
+						WinClose('Settings')
 
 
 				Next
@@ -5699,6 +5702,7 @@ EndFunc
 				Sleep(100)
 				WinClose('Internet Properties')
 				Sleep(100)
+				WinClose('Settings')
 				MouseClick('left',300,455,1,20)   ; thoat loi win
 				Sleep(100)
 				WinClose('[class:CabinetWClass]','')
@@ -5792,6 +5796,7 @@ EndFunc
 				Sleep(100)
 				WinClose('Internet Properties')
 				Sleep(100)
+				WinClose('Settings')
 				MouseClick('left',300,455,1,20)   ; thoat loi win
 				Sleep(100)
 				WinClose('[class:CabinetWClass]','')
@@ -6917,6 +6922,7 @@ EndFunc
 					WinClose('Local Area Network (LAN) Settings')
 					Sleep(1000)
 					WinClose('Internet Properties')
+					WinClose('Settings')
 					Sleep(1000)
 
 					WinClose('Server Manager')
