@@ -1418,9 +1418,9 @@ EndFunc
             Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\OperaSetup.exe')
 			Sleep(10000)
 			Send('{enter}')
-			Sleep(30000)
+			Sleep(20000)
 			MouseClick('left',940,580,1,20)
-			Sleep(60000)
+			Sleep(90000)
 			Send('{enter}')
 			Sleep(5000)
 			_closeTrinhDuyet(1)
@@ -4483,6 +4483,7 @@ EndFunc
 					Sleep(1000)
                     WinClose('Server Manager')
 					Sleep(2000)
+					$linkblu2=''
 
                     WinClose('Proxy Client Tinsoft')
 					If $i=1 Then
