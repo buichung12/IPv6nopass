@@ -2309,7 +2309,7 @@ EndFunc
 						        ProcessClose('WerFault.exe')
 							EndIf
 							If $b=1 Then
-                                WinMove('Settings','',900,700)
+                                WinMove('Settings','',0,0,900,700)
 								Sleep(3000)
 								MouseClick('left',500,160,1,20)
 								Sleep(2000)
@@ -5620,6 +5620,8 @@ EndFunc
 				ProcessClose('chrome.exe')
 				Sleep(100)
 				ProcessClose('browser.exe')
+				Sleep(100)
+				WinClose('Settings')
 				Sleep(100)
 				ProcessClose('brave.exe')
 				Sleep(100)
