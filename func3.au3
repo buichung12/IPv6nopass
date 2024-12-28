@@ -934,7 +934,7 @@ EndFunc
 			If $check=0 Then
 				$i=2
 				Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\BraveBrowserSetup.exe')
-				Sleep(15000)
+				Sleep(60000)
 				For $i20=1 to 50
 
 					$check=WinExists('Welcome to Brave - Brave')
@@ -1164,20 +1164,20 @@ EndFunc
 
 				$i=5
                 Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\OperaSetup.exe')
-				Sleep(40000)
+				Sleep(30000)
 				WinMove('','',0,0)
 				Sleep(1000)
 				MouseClick('left',963, 582,1,20)
 				ControlClick('Opera Installer','Install','[CLASS:Button; INSTANCE:6]','left',1,50, 16)
 				Sleep(5000)
 				MouseClick('left',550, 355,1,20)
-				Sleep(30000)
+				Sleep(360000)
 				For $i20=1 to 50
 					$checktd= WinExists('[class:Chrome_WidgetWin_1]')
 					Sleep(1000)
 					If $checktd=1 Then $i20=50
 					$checktd= WinExists('Speed Dial - Opera')
-					Sleep(1000)
+					Sleep(2000)
 					If $checktd=1 Then $i20=50
 				Next
 				Sleep(3000)
