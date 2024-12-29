@@ -60,7 +60,7 @@ $check=0
 
 
 
-		     $check=FileExists("C:\Program Files (x86)\Mozilla Firefox\firefox.exe")
+		        $check=FileExists("C:\Program Files (x86)\Mozilla Firefox\firefox.exe")
 				$check2=FileExists("C:\Program Files\Mozilla Firefox\firefox.exe")
 			If $check=0 And $check2=0 Then
 
@@ -505,7 +505,7 @@ $check=0
 		FileDelete('C:\Users\'&@UserName&'\Downloads\SciTE4AutoIt3.exe')
 		Sleep(200)
 
-	If FileExists("C:\Program Files (x86)\AutoIt3\AutoIt3.exe")=0 Then
+	If FileExists("C:\Program Files (x86)\AutoIt3\AutoIt3.exe")=0 and FileExists("C:\Program Files\AutoIt3\AutoIt3.exe")=0  Then
 		ToolTip('cai dat autoit',0,30)
 
 		_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
@@ -631,8 +631,6 @@ $check=0
 		Sleep(2000)
 
         MsgBox(0,0,'xong')
-
-
 
   Exit
 
