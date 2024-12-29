@@ -4629,6 +4629,14 @@ EndFunc
 						Sleep(2000)
 
 						If  $i=10 Then
+							Sleep(2000)
+			            	Send('{tab}')
+				            Sleep(2000)
+				            Send('{tab}')
+				            Sleep(2000)
+				            Send('{tab}')
+				            Sleep(2000)
+				            Send('{enter}')
 							Sleep(3000)
 							$pixcel=PixelSearch(430, 623,1013, 764,0x0B57D0)
 					        If IsArray($pixcel) Then
