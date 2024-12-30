@@ -4911,6 +4911,7 @@ EndFunc
 			        Sleep(2000)
                     WinClose('Server Manager')
 					ProcessClose('WerFault.exe')
+					$linkblu2=''
 
 					_closeTrinhDuyet($i)
 					Sleep(2000)
