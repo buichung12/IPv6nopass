@@ -1147,18 +1147,19 @@ EndFunc
             EndIf
 
 
-			 $check=FileExists('C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\launcher.exe')
+			 $check=FileExists('C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\opera.exe')
 			If $check=0 Then
-
 				$i=5
                 Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\OperaSetup.exe')
-				Sleep(30000)
-				WinMove('','',0,0)
+				Sleep(20000)
+
+				MouseClick('left',949, 588,1,20)
 				Sleep(1000)
-				MouseClick('left',963, 582,1,20)
 				ControlClick('Opera Installer','Install','[CLASS:Button; INSTANCE:6]','left',1,50, 16)
-				Sleep(5000)
-				MouseClick('left',550, 355,1,20)
+				;Sleep(5000)
+				;WinMove('','',0,0)
+				;Sleep(1000)
+				;MouseClick('left',550, 355,1,20)
 				Sleep(360000)
 				For $i20=1 to 50
 					$checktd= WinExists('[class:Chrome_WidgetWin_1]')
@@ -1169,6 +1170,8 @@ EndFunc
 					If $checktd=1 Then $i20=50
 				Next
 				Sleep(3000)
+				MouseClick('left',1218,219,1,20)
+				Sleep(1000)
 				Sleep(2000)
 				WinMove('','',0,0,1366,768)
 				Sleep(1000)
@@ -1418,14 +1421,12 @@ EndFunc
             Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\OperaSetup.exe')
 			Sleep(10000)
 			Send('{enter}')
-			Sleep(20000)
-			MouseClick('left',940,580,1,20)
-			Sleep(90000)
+			Sleep(5000)
+			Send('{enter}')
+			Sleep(120000)
 			Send('{enter}')
 			Sleep(5000)
 			_closeTrinhDuyet(1)
-
-
 
 
           	$check=FileExists('C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe')
@@ -4785,6 +4786,8 @@ EndFunc
 
 						If $i=3 Then
 
+
+                           MouseClick('left',1324,109,1,20)
 						   WinClose('Update successful')
 				           Sleep(2000)
 						   WinClose('Bạn có muốn khôi phục trang không?')
@@ -5275,10 +5278,10 @@ EndFunc
 					;	Sleep(2000)
 
 						If $i=3 Then
-						   WinClose('Update successful')
-				           Sleep(2000)
-						   Sleep(2000)
-						   WinClose('Bạn có muốn khôi phục trang không?')
+							 MouseClick('left',1324,109,1,20)
+						    WinClose('Update successful')
+				            Sleep(2000)
+						    WinClose('Bạn có muốn khôi phục trang không?')
 						EndIf
 
 						If $i=2 Then
