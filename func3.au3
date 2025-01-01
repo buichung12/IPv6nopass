@@ -2209,9 +2209,10 @@ EndFunc
 						$b=WinExists('Settings')
 		                If $a=0 and $b=0  Then
 							If FileExists('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\Internet Options - Shortcut.lnk')=1 Then
-							    ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\Internet Options - Shortcut.lnk')
+							    ;ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\Internet Options - Shortcut.lnk')
 						    Else
                                 ShellExecute('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea\Internet Options - Shortcut.url')
+								Sleep(4000)
 							EndIf
 						EndIf
 
@@ -2310,15 +2311,27 @@ EndFunc
 						        ProcessClose('WerFault.exe')
 							EndIf
 							If $b=1 Then
-                                WinMove('Settings','',0,0,900,700)
+                                WinMove('Settings','',0,0,900,900)
 								Sleep(3000)
+								$pixcel=PixelSearch(331, 189,488, 290,0x0078D7)
+								If not IsArray($pixcel) Then
+                                    MouseClick('left',366, 236,1,20)
+									Sleep(2000)
+                                EndIf
+
+
+
 								MouseClick('left',500,160,1,20)
 								Sleep(2000)
 								Send('{tab}')
 								Sleep(2000)
 								Send('{tab}')
 								Sleep(2000)
-								Send('{SPACE}')
+								$pixcel=PixelSearch(331, 589,600,700,0x0078D7)
+								If not IsArray($pixcel) Then
+                                    Send('{SPACE}')
+									Sleep(2000)
+                                EndIf
 								Sleep(3000)
 								Send('{tab}')
 								Sleep(2000)
@@ -2336,8 +2349,8 @@ EndFunc
 								Sleep(2000)
 								Send('{tab}')
 								Sleep(2000)
-								$pixcel=PixelSearch(160,520,600,700,0x0078D7)
-								If IsArray($pixcel) Then
+								$pixcel=PixelSearch(327, 822,475, 889,0x0078D7)
+								If not IsArray($pixcel) Then
                                     Send('{SPACE}')
 									Sleep(2000)
                                 EndIf
@@ -2347,8 +2360,6 @@ EndFunc
 								Sleep(2000)
 								WinClose('Settings')
 								Sleep(2000)
-
-
 
 							EndIf
 
