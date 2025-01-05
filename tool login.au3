@@ -1,4 +1,5 @@
 ﻿
+#RequireAdmin
 #include <ImageSearch.au3>
 #include <MsgBoxConstants.au3>
 #include <ButtonConstants.au3>
@@ -52,6 +53,41 @@ While 1
 			  ; $somay=GUICtrlRead($giatriA)
                 $i2=0
 				$vpsso=1
+				FileDelete(@ScriptDir&'\Gmail.txt')
+				FileDelete(@ScriptDir&'\Gmailtho.txt')
+
+                $link='https://docs.google.com/document/d/1RZy_O7PsCXejKTDkZoHe5D93tMGxJVUtoKqPPNN03Ac/export?format=txt'
+				$tenTXT='gmailtho.txt'
+                 _requetGooGleDOC($link,$tenTXT)
+
+                FileDelete(@ScriptDir&'\Keytinsoft.txt')
+				 $link='https://docs.google.com/document/d/1HbZzFoHVUbFGN0RUgJG1w01vTNNrQS3xqPzPWlmui24/export?format=txt'
+				$tenTXT='Keytinsoft.txt'
+                 _requetGooGleDOC($link,$tenTXT)
+
+				$mayso=FileReadLine(@ScriptDir&'\mayso.txt',1)
+
+				$STTIP=($mayso-1)*10+1
+				FileDelete(@ScriptDir&'\Keytinsoft2.txt')
+				Sleep(1000)
+				For $i20=0 to 9
+					$Iptho=FileReadLine(@ScriptDir&'\Keytinsoft.txt',$STTIP+$i20)
+					Sleep(100)
+					FileWriteLine(@ScriptDir&'\Keytinsoft2.txt',$Iptho)
+					Sleep(100)
+				Next
+
+				$STTIP=($mayso-1)*10+1
+				FileDelete(@ScriptDir&'\Gmail.txt')
+				Sleep(1000)
+				For $i20=0 to 9
+					$Iptho=FileReadLine(@ScriptDir&'\Gmailtho.txt',$STTIP+$i20)
+					Sleep(100)
+					FileWriteLine(@ScriptDir&'\Gmail.txt',$Iptho)
+					Sleep(100)
+				Next
+
+
 			For $i=$b to 10
 
                 ToolTip('dang nhap gmail:'&$i&'	profile:'&$profile,0,0)
@@ -68,7 +104,7 @@ While 1
 				$sokenh=FileReadLine(@ScriptDir&'\Gmailtest.txt',4)
 				FileDelete(@ScriptDir&'\Gmailtest.txt')
 
-                _FakeIPOptionV6($i,$vpsso)
+                _FakeIPOptionV6($i,$mayso)
 				ToolTip('khoi dong:'&$i&'	profile:'&$profile,0,0)
                 _khoidongFireFox($i,$profile)
 				$check=_loginGmail($i)
@@ -281,6 +317,9 @@ _VerryGmail()  ; return $check=1 ok. 0 khong verrry duco
 					Sleep(2000)
 					Run( $linkblu,'')
 					Sleep(5000)
+					If $i=9 Then
+						Sleep(60000)
+					EndIf
 
 
 	                If $i=1 Then
@@ -1526,6 +1565,48 @@ Func _taokenhphu($i,$sokenh)
 
             ToolTip('nhan ban tab '&$i,0,0)
 			$check=1
+			$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+			            Sleep(1000)
+			            If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
+			            Sleep(1000)
+			            If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
+				For $i10 = 1 to $var[0][0]
+					If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
+						WinActivate($var[$i10][1],'')
+						Sleep(200)
+						MouseClick('left',600,60,1,20)
+				        Sleep(200)
+				        ClipPut('https://www.youtube.com/channel_switcher?next=%2Faccount&feature=settings')   ;https://www.youtube.com/?channel_creation_token=GiKqucG9ARwKGi9wcm9maWxlP2NoYW5uZWxfY3JlYXRlZD0xaAE%3D
+				        Sleep(100)
+				        Send('^v')
+				        Sleep(200)
+				        Send('{enter}')
+						Sleep(7000)
+                        MouseClick('left',679, 250,1,20)
+				        Sleep(7000)
+				        MouseClick('left',569, 349,1,20)
+				        Sleep(2000)
+				        Send('{tab}')
+				        Sleep(1000)
+				        Send('{enter}')
+						Sleep(5000)
+				        MouseClick('left',999, 707,1,20)
+				        Sleep(5000)
+
+                        MouseClick('left',600,60,1,20)
+						Sleep(200)
+						ClipPut('https://www.youtube.com/channel_switcher?next=%2Faccount&feature=settings')   ;https://www.youtube.com/?channel_creation_token=GiKqucG9ARwKGi9wcm9maWxlP2NoYW5uZWxfY3JlYXRlZD0xaAE%3D
+						Sleep(100)
+						Send('^v')
+						Sleep(200)
+						Send('{enter}')
+						Sleep(2000)
+
+					EndIf
+				Next
+
+
+
 			If $check=1 Then
                 For $i20=1 to 100-$sokenh
                     Sleep(500)
@@ -1569,10 +1650,9 @@ Func _taokenhphu($i,$sokenh)
 						Send('^v')
 						Sleep(200)
 						Send('{enter}')
-						Sleep(200)
+						Sleep(2000)
 
 					EndIf
-
 				Next
 				Sleep(5000)
 
@@ -1596,15 +1676,28 @@ Func _taokenhphu($i,$sokenh)
 					If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
 							WinActivate($var[$i10][1],'')
 							Sleep(200)
+							MouseClick("left",672, 479,1,20)
+				            Sleep(100)
+							Send('^a')
+							Sleep(100)
 							$a=_FileCountLines(@ScriptDir&'\ten.txt')
 							$tenkenh=FileReadLine(@ScriptDir&'\ten.txt',Random(1,$a,1))
-							Sleep(200)
-							Send($tenkenh&' ')
-							Sleep(200)
+							Sleep(100)
+							Send($tenkenh)
+							Sleep(100)
 							$a=_FileCountLines(@ScriptDir&'\ho.txt')
 							$tenkenh=FileReadLine(@ScriptDir&'\ten.txt',Random(1,$a,1))
 							Send($tenkenh)
-							Sleep(200)
+							Sleep(100)
+							Send(Chr(Random(97,122,1)))
+							Send(Chr(Random(97,122,1)))
+							Send(Chr(Random(65,90,1)))
+							Send(Chr(Random(97,122,1)))
+							Send(Chr(Random(65,90,1)))
+							Send(Chr(Random(97,122,1)))
+							Send(Chr(Random(65,90,1)))
+							Send(Random(1,999,1))
+							Sleep(100)
 					EndIf
 				Next
 
@@ -1612,41 +1705,44 @@ Func _taokenhphu($i,$sokenh)
 
 				For $i10 = 1 to $var[0][0]
 					If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
-						    ControlClick($var[$i10][1],'','','left',1,583, 600) ;tick
-						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,978, 710) ;tick
 					EndIf
 				Next
-
-				Sleep(5000)
-
-				$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+				Sleep(1000)
 				For $i10 = 1 to $var[0][0]
 					If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
-						    ;WinMove($var[$i10][1],'',0,0,1366,768)
-							ControlClick($var[$i10][1],'','','left',1,706, 645)
+						    ControlClick($var[$i10][1],'','','left',1,978, 710) ;tick
 					EndIf
 				Next
-
-				Sleep(5000)
-
+				Sleep(1000)
 				For $i10 = 1 to $var[0][0]
 					If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
-						    ControlClick($var[$i10][1],'','','left',1,583, 625) ;tick
-						    Sleep(200)
+						    ControlClick($var[$i10][1],'','','left',1,978, 710) ;tick
 					EndIf
 				Next
-				Sleep(2000)
-
-				 $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+				Sleep(1000)
 				For $i10 = 1 to $var[0][0]
 					If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
-						    ;WinMove($var[$i10][1],'',0,0,1366,768)
-							ControlClick($var[$i10][1],'','','left',1,706, 694)
+						    ControlClick($var[$i10][1],'','','left',1,978, 710) ;tick
 					EndIf
 				Next
-				Sleep(500)
+				Sleep(1000)
+				For $i10 = 1 to $var[0][0]
+					If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
+						    WinActivate($var[$i10][1])
+							Sleep(50)
+						    ControlClick($var[$i10][1],'','','left',1,978, 710) ;tick
+							Sleep(50)
+					EndIf
+				Next
+				For $i10 = 1 to $var[0][0]
+					If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
+						    ControlClick($var[$i10][1],'','','left',1,978, 710) ;tick
+					EndIf
+				Next
+				Sleep(1000)
 
-                For $i20=1 to 100
+				For $i20=1 to 100
 				    MsgBox(0,0,'Cho tao kenh:'&$i20,3)
 				Next
 
@@ -1655,7 +1751,7 @@ Func _taokenhphu($i,$sokenh)
 					If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
 						    ;WinMove($var[$i10][1],'',0,0,1366,768)
 							WinClose($var[$i10][1],'')
-							Sleep(100)
+							Sleep(10)
 					EndIf
 				Next
 
@@ -1718,9 +1814,55 @@ Func _Demkenhphu()
 				Return 	$sokenhtaoduoc
 	EndFunc
 
+ Func _requetGooGleDOC($link,$tenTXT)     ; luu y Link phai co duoi /export?format=txt
+				$checkrequet=0
+				$kq=''
+                         $kq=_HttpRequest(2,$link,'','','','','')        ;lay link kenh va kiem tra view gio
+				         Sleep(1000)
+                If StringLen($kq)<>0 Then
+
+						FileDelete(@ScriptDir&'\'&$tenTXT)
+						FileDelete(@ScriptDir&"\data.txt")
+						Sleep(100)
+						FileWriteLine(@ScriptDir&"\data.txt",$kq)
+						$sodong=_FileCountLines(@ScriptDir&"\data.txt")
+                       ; MsgBox(0,0,$sodong)
+					    $data=FileReadLine(@ScriptDir&"\data.txt",1)
+						$arry=StringSplit($data,' ')
+					If   $arry[0]=1 Then
+
+                        FileWriteLine(@ScriptDir&'\'&$tenTXT,$kq)
+                        $checkrequet=1
+					Else
 
 
+						For $i=1 to $sodong
+	                         $data=FileReadLine(@ScriptDir&"\data.txt",$i)
+	                         $arry=StringSplit($data,' ')
+                            If IsArray($arry) Then
+		                        For $i20=1 to $arry[0]
+			                        If StringLen($arry[$i20])>1 or IsInt($arry[$i20]) Then
+				                        FileWrite(@ScriptDir&'\'&$tenTXT,$arry[$i20]&"	")
+										;FileWrite(@ScriptDir&'\'&$tenTXT,"	")
+										;MsgBox(0,0,'ok')
+			                        EndIf
+		                        Next
 
+								FileWriteLine(@ScriptDir&'\'&$tenTXT,"	")
+
+                            EndIf
+						Next
+
+					    ;FileWriteLine(@ScriptDir&'/'&$tenTXT,$kq)
+						$checkrequet=1
+
+					EndIf
+                EndIf
+
+				FileDelete(@ScriptDir&"\data.txt")
+
+			Return $checkrequet
+		EndFunc
 
 
 Func AutoRun()
