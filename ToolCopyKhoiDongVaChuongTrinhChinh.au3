@@ -355,6 +355,8 @@ $check=0
 			FileDelete('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\'&'khoidong'&$i20&'.exe')
 			Sleep(100)
 		Next
+		 FileDelete('C:\Users\'&@UserName&'\Downloads\khoidong.au3')
+		Sleep(1000)
 	    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/khoidong.au3"')     ;dowload tool khoi dong
         Sleep(7000)
 		Send('{enter}')
