@@ -68,22 +68,20 @@ $check=0
 		Sleep(15000)
 		FileCopy('C:\Users\'&@UserName&'\Downloads\tool login.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
 		Sleep(3000)
-
 		FileDelete('C:\Users\'&@UserName&'\Downloads\tool login.au3')
 		Sleep(1000)
-		For $i20=1 to 100
-			FileDelete('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\'&'khoidong'&$i20&'.au3')
-			Sleep(100)
-		Next
+
+
+		FileDelete('C:\Users\'&@UserName&'\Downloads\tool login.exe')
+		Sleep(1000)
 	    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/refs/heads/main/tool%20login.exe"')     ;dowload tool khoi dong
         Sleep(7000)
 		Send('{enter}')
 		Sleep(8000)
-		Send('^+s')
-		Sleep(10000)
 		FileCopy('C:\Users\'&@UserName&'\Downloads\tool login.exe','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
 		Sleep(3000)
-		FileOpen('C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea')
+		ProcessClose('chrome.exe')
+		Sleep(1000)
 
   Exit
 
