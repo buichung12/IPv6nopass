@@ -4690,6 +4690,7 @@ EndFunc
 						If  $i=9 Then
 							WinClose('Check Update')
 							Sleep(1000)
+
 							MouseClick('left',805,437,1,20)
 							Sleep(2000)
                             ControlClick('','','','left',1,475, 200)
@@ -4700,6 +4701,8 @@ EndFunc
 							Sleep(1000)
 							MouseClick('left',831, 237,1,20)
 							Sleep(1000)
+							MouseClick('left',830,280,1,20)
+							Sleep(2000)
 							MouseClick('left',1304,190,1,20)
 							Sleep(1000)
 							MouseClick('left',1338,131,1,20)
@@ -5206,6 +5209,8 @@ EndFunc
 							Sleep(1000)
 							ControlClick('','','','left',1,834, 242)
 							Sleep(1000)
+							MouseClick('left',830,280,1,20)
+							Sleep(2000)
 							MouseClick('left',1304,190,1,20)
 							Sleep(1000)
 							MouseClick('left',1338,131,1,20)
