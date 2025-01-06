@@ -90,7 +90,7 @@ While 1
 
 			For $i=$b to 10
 
-                ToolTip('dang nhap gmail:'&$i&'	profile:'&$profile,0,0)
+                ToolTip('dang nhap gmail:'&$i&'	profile:'&$profile&'	may so:'&$mayso,0,0)
 
 				$e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)
 				$cacgiatri=StringSplit($e,'	')
@@ -105,7 +105,7 @@ While 1
 				FileDelete(@ScriptDir&'\Gmailtest.txt')
 
                 _FakeIPOptionV6($i,$mayso)
-				ToolTip('khoi dong:'&$i&'	profile:'&$profile,0,0)
+				ToolTip('khoi dong:'&$i&'	profile:'&$profile&'	may so:'&$mayso,0,0)
                 _khoidongFireFox($i,$profile)
 				$check=_loginGmail($i)
                 $sokenhtaoduoc=0
