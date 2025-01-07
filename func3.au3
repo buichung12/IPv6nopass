@@ -1169,6 +1169,9 @@ EndFunc
 					Sleep(2000)
 					If $checktd=1 Then $i20=50
 				Next
+
+				Send('{enter}')
+				Sleep(20000)
 				Sleep(3000)
 				MouseClick('left',1218,219,1,20)
 				Sleep(1000)
