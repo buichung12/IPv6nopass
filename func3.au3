@@ -2867,7 +2867,7 @@ EndFunc
                 $linkvideo=5
 				Sleep(1000)
 				_xoa1NuaFileDasub($i,$i5)
-				$sokenhsub1luot=FileReadLine(@ScriptDir&"\sokenhsub1luot.txt",1)
+
                 $linkkenhtho=1
 				$sodonglinkkenhto=1
 				$checkchaykenhto=0
@@ -2875,12 +2875,6 @@ EndFunc
 				$linkdasub='1'
 				$datalink="1"
 				$sosub5=1
-		  ;For $iSun2lan=1 to $sokenhsub1luot
-
-					;Sleep(1000)
-					;$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
-					;Sleep(500)
-					;$checkchaykenhto=FileReadLine(@ScriptDir&'\linkkenhto.txt',1)
 
 			  For $i21=1 to 7
 

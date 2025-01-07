@@ -198,10 +198,6 @@ While 1   ; vong tra lai gia tr
 
 				_CapNhatPhienBan()
 
-				_requetGooGleDOC('https://docs.google.com/document/d/1N9pD9fzhjrRs1tG-LXOklmNXX0LuS13rgrRwmZmOx7k/export?format=txt','linkkenhto.txt')
-				Sleep(2000)
-				_requetGooGleDOC('https://docs.google.com/document/d/1ZS2m1HKZb67HRd6F6SHmuIwO3SJhx5WJm-HL3ivvtYM/export?format=txt','sokenhsub1luot.txt')
-                Sleep(2000)
 				_requetGooGleDOC('https://docs.google.com/document/d/1XkICV-XHosJJKaI0LMnaGv5ADSaVlKFEIMHZA-ki_y8/export?format=txt','linkkenhchaySUB2.txt') ;thay doi theo nhom
 
 

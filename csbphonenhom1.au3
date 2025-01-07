@@ -176,23 +176,7 @@ While 1   ; vong tra lai gia tr
 
 			$checkprofile=0    ; de profile dau tien random conf lan sau bang 1
 
-			   ; _requetGooGleDOC('https://docs.google.com/document/d/1GKwvWUPSL3Hz9eGEqv-wcxEO7nmHEI6WkChBhPFkOXk/export?format=txt','Keytinsoft.txt')
-				;Sleep(2000)
-				;$sodongIP1=_FileCountLines(@ScriptDir&"\Keytinsoft.txt")
-				;If $sodongIP1<999 Then _requetGooGleDOC('https://docs.google.com/document/d/1eJ_aOeZ38yytg_bRjHgfFdjLzh_P1698uTVrx5MSAZA/export?format=txt','Keytinsoft.txt')
-#cs
-				$STTIP=($vpsso-1)*10+1
-				FileDelete(@ScriptDir&'\Keytinsoft2.txt')
-				Sleep(1000)
-				For $i20=0 to 9
-					$Iptho=FileReadLine(@ScriptDir&'\Keytinsoft.txt',$STTIP+$i20)
-					Sleep(100)
-					FileWriteLine(@ScriptDir&'\Keytinsoft2.txt',$Iptho)
-					Sleep(100)
-				Next
 
-#ce
-            ;If $checkchonprofile=1 Then $profileso
  For $i5=$profileso to $i7
 	            HotKeySet("{esc}", "_Exit")
 
@@ -208,10 +192,10 @@ While 1   ; vong tra lai gia tr
 
 				_CapNhatPhienBan()
 
-				_requetGooGleDOC('https://docs.google.com/document/d/1N9pD9fzhjrRs1tG-LXOklmNXX0LuS13rgrRwmZmOx7k/export?format=txt','linkkenhto.txt')
-				Sleep(2000)
-				_requetGooGleDOC('https://docs.google.com/document/d/1shp29rO6RbDVagu_XNDVON07AALpNOxxKke4-Bgma6M/export?format=txt','sokenhsub1luot.txt')
-               Sleep(2000)
+			;	_requetGooGleDOC('https://docs.google.com/document/d/1N9pD9fzhjrRs1tG-LXOklmNXX0LuS13rgrRwmZmOx7k/export?format=txt','linkkenhto.txt')
+			;	Sleep(2000)
+			;	_requetGooGleDOC('https://docs.google.com/document/d/1shp29rO6RbDVagu_XNDVON07AALpNOxxKke4-Bgma6M/export?format=txt','sokenhsub1luot.txt')
+             ;  Sleep(2000)
 				_requetGooGleDOC('https://docs.google.com/document/d/1xeBxK9evfG5CbXoUJXFCR2KJGev8Hwt7h4HvjLb4WvU/export?format=txt','linkkenhchaySUB2.txt')
 
 
