@@ -2319,20 +2319,14 @@ EndFunc
 									Sleep(2000)
                                 EndIf
 
-
-
-								MouseClick('left',500,160,1,20)
+								MouseClick('left',500,180,1,20)
 								Sleep(2000)
 								Send('{tab}')
 								Sleep(2000)
 								Send('{tab}')
 								Sleep(2000)
-								$pixcel=PixelSearch(331, 589,600,700,0x0078D7)
-								If not IsArray($pixcel) Then
-                                    Send('{SPACE}')
-									Sleep(2000)
-                                EndIf
-								Sleep(3000)
+								Send('{SPACE}')
+								Sleep(2000)
 								Send('{tab}')
 								Sleep(2000)
 								Send('^a')
