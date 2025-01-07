@@ -862,6 +862,8 @@ EndFunc
 			    If $check=0 Then
 				    $i=2
 				    Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\brave-portable-win32-0.24.0-39-setup.exe')
+				    Sleep(2000)
+					Run('C:\Users\'&@UserName&'\Downloads\brave-portable-win32-0.24.0-39-setup.exe')
 				    Sleep(10000)
 					Send('{enter}')
 					Sleep(5000)
