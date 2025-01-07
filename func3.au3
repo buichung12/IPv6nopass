@@ -1417,15 +1417,6 @@ EndFunc
 
 			EndIf
 
-
-            Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\OperaSetup.exe')
-			Sleep(10000)
-			Send('{enter}')
-			Sleep(5000)
-			Send('{enter}')
-			Sleep(120000)
-			Send('{enter}')
-			Sleep(5000)
 			_closeTrinhDuyet(1)
 
 
