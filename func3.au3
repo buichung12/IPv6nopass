@@ -640,96 +640,6 @@ EndFunc
 			_closeTrinhDuyet(1)
 
 
-
-        #cs
-			ToolTip('update gmailkhoiphuc2&'	phien ban:'&$phienban',0,0)
-			_requetGooGleDOC('https://docs.google.com/document/d/12jqqyD2hSCnRMrUar2axLIVR4sYbftEKsA0IO5c2Yi0/export?format=txt','checkupdategmailkhoiphuc2.txt')
-			Sleep(1000)
-			$checkupdategmailkhoiphuc2=FileReadLine(@ScriptDir&'\checkupdategmailkhoiphuc2.txt',1)
-			If $checkupdategmailkhoiphuc2=1 Then
-                FileDelete('C:\Users\'&@UserName&'\Downloads\emailkhoiphuc2.bmp')
-				Sleep(2000)
-				$linkdownload=FileReadLine(@ScriptDir&'\checkupdategmailkhoiphuc2.txt',2)
-				Sleep(1000)
-				_GetDOSOutput($linkdownload)
-				Sleep(10000)
-				FileCopy('C:\Users\'&@UserName&'\Downloads\emailkhoiphuc2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
-                Sleep(1000)
-
-				FileDelete('C:\Users\'&@UserName&'\Downloads\emailkhoiphuc.bmp')
-				Sleep(2000)
-				$linkdownload=FileReadLine(@ScriptDir&'\checkupdategmailkhoiphuc2.txt',3)
-				Sleep(1000)
-				_GetDOSOutput($linkdownload)
-				Sleep(10000)
-				_closeTrinhDuyet(1)
-				FileCopy('C:\Users\'&@UserName&'\Downloads\emailkhoiphuc.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
-                Sleep(1000)
-
-			EndIf
-        #ce
-        #cs
-            FileDelete('C:\Users\'&@UserName&'\Downloads\videos.bmp')
-			Sleep(200)
-			FileDelete('C:\Users\'&@UserName&'\Downloads\videos2.bmp')
-			Sleep(200)
-			FileDelete('C:\Users\'&@UserName&'\Downloads\shorts.bmp')
-			Sleep(200)
-			FileDelete('C:\Users\'&@UserName&'\Downloads\shorts2.bmp')
-			Sleep(200)
-            ToolTip('update videos.BMP'&'	phien ban:'&$phienban,0,0)
-			_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/videos.bmp"')
-			Sleep(10000)
-			WinMove('','',0,0,1366,768)
-		    Sleep(2000)
-			MouseClick('left',700, 505,1,20)  ;xoa loi
-		    Sleep(2000)
-			MouseClick('left',700, 555,1,20)  ;xoa loi
-		    Sleep(2000)
-	    	MouseClick('left',1305, 415,1,20)
-		    Sleep(2000)
-		    MouseClick('left',1305, 445,1,20)
-		    Sleep(5000)
-			ToolTip('update videos2.BMP'&'	phien ban:'&$phienban,0,0)
-			_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/videos2.bmp"')
-			Sleep(10000)
-			Sleep(2000)
-	    	MouseClick('left',1305, 415,1,20)
-		    Sleep(2000)
-		    MouseClick('left',1305, 445,1,20)
-		    Sleep(5000)
-			_closeTrinhDuyet(2)
-
-			ToolTip('update shorts.BMP'&'	phien ban:'&$phienban,0,0)
-			_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/shorts.bmp"')
-			Sleep(10000)
-			Sleep(2000)
-			MouseClick('left',700, 555,1,20)  ;xoa loi
-		    Sleep(2000)
-	    	MouseClick('left',1305, 415,1,20)
-		    Sleep(2000)
-		    MouseClick('left',1305, 445,1,20)
-		    Sleep(5000)
-			ToolTip('update shorts2.BMP'&'	phien ban:'&$phienban,0,0)
-			_GetDOSOutput('start Firefox "https://github.com/buichung12/IPv6nopass/blob/main/shorts2.bmp"')
-			Sleep(10000)
-			Sleep(2000)
-			MouseClick('left',700, 555,1,20)  ;xoa loi
-		    Sleep(2000)
-	    	MouseClick('left',1305, 415,1,20)
-		    Sleep(2000)
-		    MouseClick('left',1305, 445,1,20)
-		    Sleep(5000)
-		#ce
-			;FileCopy('C:\Users\'&@UserName&'\Downloads\videos.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
-		   ; Sleep(1000)
-			;FileCopy('C:\Users\'&@UserName&'\Downloads\videos2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
-		   ; Sleep(1000)
-			;FileCopy('C:\Users\'&@UserName&'\Downloads\shorts.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
-		   ; Sleep(1000)
-			;FileCopy('C:\Users\'&@UserName&'\Downloads\shorts2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
-		    ;Sleep(1000)
-
             FileDelete('C:\Users\'&@UserName&'\Downloads\sub.bmp')
 			Sleep(200)
             ToolTip('update sub3.BMP'&'	phien ban:'&$phienban,0,0)
@@ -918,30 +828,63 @@ EndFunc
 
 
 		        _resetMang($i)
+
+
+			$checkbrave=FileExists('C:\Users\buichung\Desktop\Wub\Wub.exe')
+			If $checkbrave=0 Then
+
 	                $check=FileExists('C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe')
-			If $check=0 Then
-				$i=2
-				Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\BraveBrowserSetup.exe')
-				Sleep(60000)
-				For $i20=1 to 50
+			    If $check=0 Then
+				    $i=2
+				    Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\BraveBrowserSetup.exe')
+				    Sleep(60000)
+				    For $i20=1 to 50
 
-					$check=WinExists('Welcome to Brave - Brave')
-					If $check=1 Then
-						Sleep(2000)
-						$i20=50
-						$check=1
-					EndIf
-					Sleep(3000)
-				Next
+					    $check=WinExists('Welcome to Brave - Brave')
+					    If $check=1 Then
+						    Sleep(2000)
+						    $i20=50
+						    $check=1
+					    EndIf
+					    Sleep(3000)
+				    Next
 
-				MouseClick('left',200,200,1,20)
-				Sleep(5000)
-				WinMove('','',0,0,1366,768)
-				Sleep(1000)
-				_closeTrinhDuyet($i)
+				     MouseClick('left',200,200,1,20)
+				    Sleep(5000)
+				    WinMove('','',0,0,1366,768)
+				    Sleep(1000)
+				    _closeTrinhDuyet($i)
+			    Else
+				    $check11=1
+		        EndIf
 			Else
-				$check11=1
-		    EndIf
+                    $check=FileExists('C:\portapps\brave-portable\brave-portable.exe')
+			    If $check=0 Then
+				    $i=2
+				    Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\brave-portable-win32-0.24.0-39-setup.exe')
+				    Sleep(10000)
+					Send('{enter}')
+					Sleep(5000)
+					WinMove('','',0,0,500,385)
+					Sleep(3000)
+					MouseClick('left',49, 302,1,20)
+				    Sleep(5000)
+					Send('{enter}')
+					Sleep(5000)
+					Send('{enter}')
+					Sleep(5000)
+					Send('{enter}')
+					Sleep(90000)
+					Send('{enter}')
+					Sleep(5000)
+				    _closeTrinhDuyet($i)
+			    Else
+				    $check11=1
+		        EndIf
+
+
+			EndIf
+
 
 
 
@@ -1421,6 +1364,13 @@ EndFunc
 			EndIf
 
 			_closeTrinhDuyet(1)
+
+			Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\OperaSetup.exe')
+			Sleep(10000)
+			Send('{enter}')
+			Sleep(90000)
+			_closeTrinhDuyet(1)
+
 
 
           	$check=FileExists('C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe')
@@ -4584,8 +4534,16 @@ EndFunc
 						Sleep(1000)
 					EndIf
 					If $i=4 Then
+						MouseClick('left',600, 102,1,20)
+						Sleep(2000)
+						MouseClick('left',800, 155,1,20)
+						Sleep(2000)
+						MouseClick('left',842, 104,1,20)
+						Sleep(2000)
+						MouseClick('left',842, 104,1,20)
+						Sleep(2000)
 						MouseClick('left',852, 510,1,20)  ;tat thong bao update
-				        Sleep(7000)
+				        Sleep(3000)
 					EndIf
 
 
@@ -4628,6 +4586,8 @@ EndFunc
 
 						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(2000)
+						If $i=4 Then WinMove($var[$i10][1],'',0,30,1366,850)
+
 
 						If  $i=10 Then
 							Sleep(2000)
@@ -4780,10 +4740,19 @@ EndFunc
 
 
 						If $i=4 Then
+							MouseClick('left',600, 102,1,20)
+						    Sleep(2000)
+						    MouseClick('left',800, 155,1,20)
+						    Sleep(2000)
+							MouseClick('left',842, 104,1,20)
+						    Sleep(2000)
+						    MouseClick('left',842, 104,1,20)
+						    Sleep(2000)
+						    MouseClick('left',852, 510,1,20)  ;tat thong bao update
+				            Sleep(7000)
 						    MouseClick('left',725, 132,1,20)  ;tat thong bao update
 				            Sleep(2000)
-						    MouseClick('left',1280,163,1,20)
-							Sleep(2000)
+
 					    EndIf
 
 
@@ -5130,6 +5099,10 @@ EndFunc
 				#ce
 
 					If $i=4 Then
+						MouseClick('left',600, 102,1,20)
+						Sleep(2000)
+						MouseClick('left',800, 155,1,20)
+						Sleep(2000)
 						MouseClick('left',852, 510,1,20)  ;tat thong bao update
 				        Sleep(7000)
 						MouseClick('left',1280,163,1,20)
@@ -5150,23 +5123,7 @@ EndFunc
 
 						WinSetState($var[$i10][1],'',@SW_RESTORE)
 						Sleep(1000)
-#cs
-						If $i=1 Then
-						   MouseClick('left',1333,99,1,20)  ;tat tanh cong cu
-				           Sleep(1000)
-						   Sleep(1000)
-							ControlClick($var[$i10][1],'','','left',1,1330, 103)
-							Sleep(2000)
-							MouseClick('left',1333,99,1,20)  ;tat tanh cong cu
-				            Sleep(1000)
-							MouseClick('left',1280,163,1,20)
-							Sleep(2000)
-							Sleep(1000)
-							MouseClick('left',1280,100,1,20)
 
-
-						EndIf
-#ce
 						If $i=2 Then
 						    ControlClick('','','','left',1,528, 202)
 							Sleep(1000)
@@ -5178,6 +5135,7 @@ EndFunc
 
 						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(2000)
+						If $i=4 then WinMove($var[$i10][1],'',0,30,1366,850)
 
 
 						If  $i=9 Then
@@ -5263,27 +5221,27 @@ EndFunc
 							MouseClick('left',1280,163,1,20)
 							Sleep(2000)
 						EndIf
-						If $i=4 Then
-					       ControlClick($var[$i10][1],'','','left',1,725,100)
-				           Sleep(1000)
-						   MouseClick('left',1280,163,1,20)
-							Sleep(2000)
+
+                        If $i=4 Then
+
+							MouseClick('left',600, 102,1,20)
+						    Sleep(2000)
+						    MouseClick('left',800, 155,1,20)
+						    Sleep(2000)
+						    MouseClick('left',852, 510,1,20)  ;tat thong bao update
+				            Sleep(7000)
+						    MouseClick('left',1280,163,1,20)
+						    Sleep(2000)
+
 						EndIf
 
-						If $i=4 Then
-						   MouseClick('left',725, 132,1,20)  ;tat thong bao update
-				           Sleep(1000)
 
-					    EndIf
 						If $i=5 Then
 						   MouseClick('left',1322,99,1,20)
 						   Sleep(2000)
 						   MouseClick('left',1280,163,1,20)
 						   Sleep(2000)
 					    EndIf
-
-					;	MouseClick('left',1322,99,1,20)
-					;	Sleep(2000)
 
 						If $i=3 Then
 							 MouseClick('left',1324,109,1,20)
@@ -5399,9 +5357,17 @@ EndFunc
 
 	    Func _closeTrinhDuyet($i)
 
-			    Sleep(100)
+			    Sleep(1000)
+				Send('^w')
+				Sleep(1000)
 				Send('^w')
 				If $i=5 Then
+					For $i20=1 to 3
+						Send('^w')
+						Sleep(100)
+					Next
+				EndIf
+				If $i=4 Then
 					For $i20=1 to 3
 						Send('^w')
 						Sleep(100)
@@ -6039,6 +6005,7 @@ EndFunc
 
 	            WinMove('','',0,0,1366,768)
 				Sleep(2000)
+				If $i=4 Then WinMove('','',0,30,1366,768)
 				;_dienIpPort($i)
                 MouseClick('left',1280, 129,1,20)
 			    $check=0
