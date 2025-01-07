@@ -2305,6 +2305,10 @@ EndFunc
 						        ProcessClose('WerFault.exe')
 							EndIf
 							If $b=1 Then
+
+
+								WinSetState('Settings','',@SW_RESTORE)
+								Sleep(2000)
                                 WinMove('Settings','',0,0,900,900)
 								Sleep(3000)
 								$pixcel=PixelSearch(331, 189,488, 290,0x0078D7)
@@ -4492,7 +4496,10 @@ EndFunc
 					EndIf
 					If $i=4 Then $linkblu='C:\portapps\brave-portable\brave-portable.exe'
 					;If $i=4 Then $linkblu='C:\Program Files (x86)\AVAST Software\Browser\Application\AvastBrowser.exe'
-					If $i=5 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\launcher.exe'
+					If $i=5 Then
+						$linkblu='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\launcher.exe'
+						$linkblu2='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\opera.exe'
+					EndIf
 					;If $i=5 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Yandex\YandexBrowser\Application\browser.exe'
 					If $i=6 Then $linkblu="C:\Users\"&@UserName&"\Desktop\trinh duyet\FirefoxPortable\FirefoxPortable.exe"
 					If $i=7 Then
@@ -4994,7 +5001,10 @@ EndFunc
 					EndIf
 					If $i=4 Then $linkblu='C:\portapps\brave-portable\brave-portable.exe'
 					;If $i=4 Then $linkblu='C:\Program Files (x86)\AVAST Software\Browser\Application\AvastBrowser.exe'
-					If $i=5 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\launcher.exe'
+					If $i=5 Then
+						$linkblu='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\launcher.exe'
+						$linkblu2='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\opera.exe'
+					EndIf
 					;If $i=5 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Yandex\YandexBrowser\Application\browser.exe'
 					If $i=6 Then $linkblu="C:\Users\"&@UserName&"\Desktop\trinh duyet\FirefoxPortable\FirefoxPortable.exe"
 					If $i=7 Then
