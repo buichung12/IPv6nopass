@@ -830,7 +830,7 @@ EndFunc
 		        _resetMang($i)
 
 
-			$checkbrave=FileExists('C:\Users\buichung\Desktop\Wub\Wub.exe')
+			$checkbrave=FileExists('C:\Users\'&@UserName&'\Desktop\Wub\Wub.exe')
 			If $checkbrave=0 Then
 
 	                $check=FileExists('C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe')
@@ -888,37 +888,6 @@ EndFunc
 			EndIf
 
 
-
-
-					        $check=FileExists("C:\portapps\brave-portable\brave-portable.exe")
-			If $check=0 Then
-
-				$i=4
-				Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\brave-portable-win64-1.43.89-84-setup.exe')
-				Sleep(20000)
-				ControlClick('Open File - Security Warning','','[CLASS:Button; INSTANCE:1]')
-				Sleep(10000)
-				ControlClick('Setup - Brave™ Portable','','[CLASS:TNewButton; INSTANCE:1]')
-				Sleep(3000)
-				ControlClick('Setup - Brave™ Portable','','[CLASS:TRadioButton; INSTANCE:2]')
-				Sleep(3000)
-				ControlClick('Setup - Brave™ Portable','','[CLASS:TNewButton; INSTANCE:2]')
-				Sleep(3000)
-				ControlClick('Setup - Brave™ Portable','','[CLASS:TNewButton; INSTANCE:3]')
-				Sleep(3000)
-				ControlClick('Setup - Brave™ Portable','','[CLASS:TNewButton; INSTANCE:3]')
-				Sleep(50000)
-				For $i20=1 to 120
-					$check=WinExists('Setup - Brave™ Portable')
-					If $check=1 Then $i20=120
-                    Sleep(1000)
-				Next
-				ControlClick('Setup - Brave™ Portable','','[CLASS:TNewButton; INSTANCE:3]')
-                Sleep(3000)
-				;_closeTrinhDuyet($i)
-			Else
-				$check18=1
-		    EndIf
 
 			$check=FileExists("C:\Users\"&@UserName&"\Desktop\trinh duyet\FirefoxPortable\FirefoxPortable.exe")
 		    If $check=0 Then
@@ -4588,7 +4557,9 @@ EndFunc
 
 						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(2000)
-						;If $i=4 Then WinMove($var[$i10][1],'',0,30,1366,850)
+						If FileExists('C:\Users\'&@UserName&'\Desktop\Wub\Wub.exe')=1 Then
+							If $i=4 Then WinMove($var[$i10][1],'',0,30,1366,850)
+						EndIf
 
 
 						If  $i=10 Then
@@ -5137,7 +5108,9 @@ EndFunc
 
 						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(2000)
-						;If $i=4 then WinMove($var[$i10][1],'',0,30,1366,850)
+						If FileExists('C:\Users\'&@UserName&'\Desktop\Wub\Wub.exe')=1 Then
+							If $i=4 then WinMove($var[$i10][1],'',0,30,1366,850)
+						EndIf
 
 
 						If  $i=9 Then
@@ -6007,7 +5980,9 @@ EndFunc
 
 	            WinMove('','',0,0,1366,768)
 				Sleep(2000)
-				;If $i=4 Then WinMove('','',0,30,1366,768)
+				If FileExists('C:\Users\'&@UserName&'\Desktop\Wub\Wub.exe')=1 Then
+					If $i=4 Then WinMove('','',0,30,1366,768)
+				EndIf
 				;_dienIpPort($i)
                 MouseClick('left',1280, 129,1,20)
 			    $check=0
