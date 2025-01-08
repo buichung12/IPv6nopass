@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.38'
+$phienban='1.0.39'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -4588,7 +4588,7 @@ EndFunc
 
 						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(2000)
-						If $i=4 Then WinMove($var[$i10][1],'',0,30,1366,850)
+						;If $i=4 Then WinMove($var[$i10][1],'',0,30,1366,850)
 
 
 						If  $i=10 Then
@@ -5137,7 +5137,7 @@ EndFunc
 
 						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(2000)
-						If $i=4 then WinMove($var[$i10][1],'',0,30,1366,850)
+						;If $i=4 then WinMove($var[$i10][1],'',0,30,1366,850)
 
 
 						If  $i=9 Then
@@ -6007,7 +6007,7 @@ EndFunc
 
 	            WinMove('','',0,0,1366,768)
 				Sleep(2000)
-				If $i=4 Then WinMove('','',0,30,1366,768)
+				;If $i=4 Then WinMove('','',0,30,1366,768)
 				;_dienIpPort($i)
                 MouseClick('left',1280, 129,1,20)
 			    $check=0
