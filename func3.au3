@@ -2244,7 +2244,12 @@ EndFunc
 								Sleep(2000)
 								Send('{tab}')
 								Sleep(2000)
-								Send('{SPACE}')
+								$pixcel=PixelSearch(222, 499,462, 725,0x0078D7)
+								If not IsArray($pixcel) Then
+                                    Send('{SPACE}')
+									Sleep(2000)
+                                EndIf
+
 								Sleep(2000)
 								Send('{tab}')
 								Sleep(2000)
@@ -7169,9 +7174,7 @@ EndFunc
 				Sleep(1000)
                 $sochuketqua=StringLen($sResult)
                 Sleep(1000)
-
 				If $sochuketqua<300 Then
-
 					Sleep(30000)
                     Local $sResult = RunCMD("curl -x "&$Proxy&" http://www.google.com")
 				    Sleep(1000)
