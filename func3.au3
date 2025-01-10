@@ -1484,6 +1484,8 @@ EndFunc
 
 				EndIf
 
+				If $check=0 Then FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&"	Kiem tra dang nhap")
+
 
 				If $check=1 Then
 
