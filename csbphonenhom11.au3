@@ -198,7 +198,7 @@ While 1   ; vong tra lai gia tr
 
 				_CapNhatPhienBan()
 
-				_requetGooGleDOC('https://docs.google.com/document/d/1XkICV-XHosJJKaI0LMnaGv5ADSaVlKFEIMHZA-ki_y8/export?format=txt','linkkenhchaySUB2.txt') ;thay doi theo nhom
+				_requetGooGleDOC('https://docs.google.com/document/d/1IOc72x-SKn44ScD_Zl1OmopcJCVbVWfkWMM9GS9n8_w/export?format=txt','linkkenhchaySUB2.txt') ;thay doi theo nhom
 
 
 				For $i20=1 to 10
