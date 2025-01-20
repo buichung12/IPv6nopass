@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.39'
+$phienban='1.0.40'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -1484,6 +1484,8 @@ EndFunc
 
 				EndIf
 
+
+                $e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
 				If $check=0 Then FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&"	Kiem tra dang nhap")
 
 
@@ -1507,73 +1509,7 @@ EndFunc
 						FileDelete(@ScriptDir&'\Gmailtest.txt')
 				    EndIf
 
-					;MsgBox(0,0,$TrangThaiDangNhap)
 
-					If $TrangThaiDangNhap="VerryThatBai" Or $TrangThaiDangNhap="DangNhapThatBai" Then
-                        Sleep(500)
-						ControlClick('','','','left',1,600, 60)  ;doi email khoi phuc
-						Sleep(1000)
-						Send('https://myaccount.google.com/signinoptions/rescuephone')
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(15000)
-						Send($g)
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(7000)
-						MouseClick('left',600, 60,1,20)
-						Sleep(1000)
-						Send('^a')
-						Sleep(1000)
-						Send('^c')
-						Sleep(500)
-						$cooktho=ClipGet()
-						Sleep(1000)
-						$cook=StringSplit($cooktho,'=')
-						Sleep(1000)
-						MouseClick('left',1255, 197,1,20)
-						Sleep(2000)
-						ControlClick('','','','left',1,600, 60)  ;doi MK
-						Sleep(1000)
-						If IsArray($cook) Then
-							If $cook[0]= 2 Then
-							    Send('https://myaccount.google.com/signinoptions/password?rapt='&$cook[2])
-							EndIf
-						EndIf
-						If IsArray($cook) Then
-							If $cook[0]= 3 Then
-							    Send('https://myaccount.google.com/signinoptions/password?rapt='&$cook[3])
-							EndIf
-						EndIf
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(10000)
-						For $i20=1 to 10
-									$pixcel=PixelSearch(714, 631,802, 759,0x1A73E8)
-								If IsArray($pixcel) Then
-										Sleep(1000)
-										$i20=10
-								EndIf
-								Sleep(1000)
-						Next
-
-						Sleep(2000)
-						$MK="Buichung"&@MDAY&@MON
-						Sleep(1000)
-						Send($MK)
-						Sleep(1000)
-						Send('{tab}')
-						Sleep(1000)
-						Send('{tab}')
-						Sleep(1000)
-						Send('{tab}')
-						Sleep(1000)
-						Send($MK)
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(6000)
-
-					EndIf
 
 				EndIf
 
@@ -2232,12 +2168,21 @@ EndFunc
 
 								WinSetState('Settings','',@SW_RESTORE)
 								Sleep(2000)
+								WinActivate('Settings')
+								Sleep(2000)
                                 WinMove('Settings','',0,0,900,900)
 								Sleep(3000)
 								$pixcel=PixelSearch(331, 189,488, 290,0x0078D7)
 								If not IsArray($pixcel) Then
                                     MouseClick('left',366, 236,1,20)
-									Sleep(2000)
+									Sleep(4000)
+                                EndIf
+								MouseMove(500,180)
+								Sleep(2000)
+								$pixcel=PixelSearch(331, 189,488, 290,0x0078D7)
+								If not IsArray($pixcel) Then
+                                    MouseClick('left',381, 256,1,20)
+									Sleep(4000)
                                 EndIf
 
 								MouseClick('left',500,180,1,20)
@@ -2267,6 +2212,8 @@ EndFunc
 								Sleep(2000)
 								Send('{tab}')
 								Sleep(2000)
+								Send('{DELETE}')
+								Sleep(2000)
 								Send('{tab}')
 								Sleep(2000)
 								$pixcel=PixelSearch(327, 822,475, 889,0x0078D7)
@@ -2280,6 +2227,8 @@ EndFunc
 								Sleep(2000)
 								WinClose('Settings')
 								Sleep(2000)
+								ProcessClose('SystemSettings.exe')
+								Sleep(1000)
 
 							EndIf
 
