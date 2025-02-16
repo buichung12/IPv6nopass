@@ -1255,7 +1255,9 @@ EndFunc
 
 				Sleep(60000)
 				MouseClick('left',767,488,1,20)
-				Sleep(2000)
+				Sleep(5000)
+				MouseClick('left',831,600,1,20)
+				Sleep(15000)
 
 				MouseClick('left',719, 376,1,20)
 				Sleep(2000)
