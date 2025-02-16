@@ -62,13 +62,19 @@ $check=0
 
 		        $check=FileExists("C:\Program Files (x86)\Mozilla Firefox\firefox.exe")
 				$check2=FileExists("C:\Program Files\Mozilla Firefox\firefox.exe")
+
 			If $check=0 And $check2=0 Then
 
 				$i=7
 				Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\Firefox Installer.exe')
 				Sleep(15000)
-				MouseClick('left',523, 543,1,20)
+				MouseClick('left',780,460,1,20)
+				Sleep(5000)
+				MouseClick('left',493,543,1,20)
+				Sleep(3000)
 				ControlClick('Open File - Security Warning','&Run','[CLASS:Button; INSTANCE:1]','left',1,40, 12)
+				Sleep(60000)
+				MouseClick('left',856,51,1,20)
 				Sleep(15000)
 
 				For $i20=1 to 50
@@ -79,7 +85,10 @@ $check=0
 						$check=1
 					EndIf
 					Sleep(1000)
-	              Next
+				Next
+
+				MouseClick('left',1263,112,1,20)
+				Sleep(5000)
 	            Sleep(2000)
 				WinMove('','',0,0,1366,768)
 				Sleep(1000)
@@ -88,7 +97,7 @@ $check=0
 
 				$i=7
 				 _khoidongFireFox($i)
-				 Sleep(2000)
+				 Sleep(10000)
 				 If $i=7 Then
 					     $pixcel=PixelSearch(537, 263,735, 300,0x0061E0,5)
 					    If IsArray($pixcel) Then                     ; tat trang
@@ -109,40 +118,35 @@ $check=0
 		    If $check=0 Then
 				$i=10
 				Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\ChromeSetup.exe')
-				Sleep(40000)
+				Sleep(5000)
+				MouseClick('left',780,460,1,20)
+				Sleep(90000)
 				For $i20=1 to 50
-					$check=WinExists('Thẻ mới - Google Chrome')
-					If $check=1 Then
-						Sleep(2000)
-						$i20=50
-						$check=1
+					$pixcel=PixelSearch(600, 150,800, 350,0x1A73E8,5)
+					If IsArray($pixcel) Then                     ; tat trang
+						    Sleep(1000)
+							MouseClick('left',720,257,1,20)
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+				            Sleep(5000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+				            Sleep(10000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+				            Sleep(10000)
 					EndIf
-					$check=WinExists('Google Chrome')
-					If $check=1 Then
-						Sleep(2000)
-						$i20=50
-						$check=1
-					EndIf
-					Sleep(1000)
+					Sleep(5000)
 	            Next
 	            Sleep(2000)
-
-				MouseClick('left',710,266,1,20)
-				Sleep(2000)
-				Send('{tab}')
-				Sleep(2000)
-				Send('{enter}')
-				Sleep(5000)
-				MouseClick('left',510,228,1,20)
-				Sleep(2000)
-				Send('{tab}')
-				Sleep(2000)
-				Send('{tab}')
-				Sleep(2000)
-				Send('{tab}')
-				Sleep(2000)
-				Send('{enter}')
-				Sleep(5000)
 				WinMove('','',0,0,1366,768)
 				Sleep(1000)
 				_closeTrinhDuyet($i)

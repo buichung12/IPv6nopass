@@ -788,8 +788,13 @@ EndFunc
 				$i=7
 				Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\Firefox Installer.exe')
 				Sleep(15000)
-				MouseClick('left',523, 543,1,20)
+				MouseClick('left',780,460,1,20)
+				Sleep(5000)
+				MouseClick('left',493,543,1,20)
+				Sleep(3000)
 				ControlClick('Open File - Security Warning','&Run','[CLASS:Button; INSTANCE:1]','left',1,40, 12)
+				Sleep(60000)
+				MouseClick('left',856,51,1,20)
 				Sleep(15000)
 
 				For $i20=1 to 50
@@ -800,7 +805,10 @@ EndFunc
 						$check=1
 					EndIf
 					Sleep(1000)
-	              Next
+				Next
+
+				MouseClick('left',1263,112,1,20)
+				Sleep(5000)
 	            Sleep(2000)
 				WinMove('','',0,0,1366,768)
 				Sleep(1000)
@@ -809,7 +817,7 @@ EndFunc
 
 				$i=7
 				 _khoidongFireFox($i)
-				 Sleep(2000)
+				 Sleep(10000)
 				 If $i=7 Then
 					     $pixcel=PixelSearch(537, 263,735, 300,0x0061E0,5)
 					    If IsArray($pixcel) Then                     ; tat trang
@@ -830,14 +838,13 @@ EndFunc
 		        _resetMang($i)
 
 
-			$checkbrave=FileExists('C:\Users\'&@UserName&'\Desktop\Wub\Wub.exe')
-			If $checkbrave=0 Then
-
-	                $check=FileExists('C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe')
-			    If $check=0 Then
+			$check=FileExists('C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe')
+			If $check=0 Then
 				    $i=2
 				    Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\BraveBrowserSetup.exe')
-				    Sleep(60000)
+					Sleep(5000)
+					MouseClick('left',782, 463,1,20)
+				    Sleep(120000)
 				    For $i20=1 to 50
 
 					    $check=WinExists('Welcome to Brave - Brave')
@@ -849,27 +856,35 @@ EndFunc
 					    Sleep(3000)
 				    Next
 
-				     MouseClick('left',200,200,1,20)
+				     MouseClick('left',536,606,1,20)
+				    Sleep(5000)
+					MouseClick('left',471,662,1,20)
+				    Sleep(5000)
+					MouseClick('left',528,69,1,20)
+				    Sleep(5000)
+					MouseClick('left',540,572,1,20)
 				    Sleep(5000)
 				    WinMove('','',0,0,1366,768)
 				    Sleep(1000)
 				    _closeTrinhDuyet($i)
-			    Else
-				    $check11=1
-		        EndIf
 			Else
-                    $check=FileExists('C:\portapps\brave-portable\brave-portable.exe')
+				    $check11=1
+			EndIf
+
+
+
+			$check=FileExists('C:\portapps\brave-portable\brave-portable.exe')
 			    If $check=0 Then
 				    $i=2
 				    Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\brave-portable-win32-0.24.0-39-setup.exe')
 				    Sleep(2000)
 					Run('C:\Users\'&@UserName&'\Downloads\brave-portable-win32-0.24.0-39-setup.exe')
 				    Sleep(10000)
-					Send('{enter}')
-					Sleep(5000)
-					WinMove('','',0,0,500,385)
+					MouseClick('left',782, 463,1,20)
+					Sleep(7000)
+					WinMove('','',0,0)
 					Sleep(3000)
-					MouseClick('left',49, 302,1,20)
+					MouseClick('left',50, 300,1,20)
 				    Sleep(5000)
 					Send('{enter}')
 					Sleep(5000)
@@ -885,43 +900,21 @@ EndFunc
 		        EndIf
 
 
-			EndIf
-
-
 
 			$check=FileExists("C:\Users\"&@UserName&"\Desktop\trinh duyet\FirefoxPortable\FirefoxPortable.exe")
 		    If $check=0 Then
 
 				$i=6
 				Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\FirefoxPortable-87-0-English-paf.exe')
-				Sleep(15000)
-
-				ControlClick('Mozilla Firefox, Portable Edition | PortableApps.com Installer','&Next >','[CLASS:Button; INSTANCE:2]','left',1,33, 12)
-				Sleep(2000)
-				ControlClick('Open File - Security Warning','','[CLASS:Button; INSTANCE:1]')
-				Sleep(3000)
-				ControlClick('Mozilla Firefox, Portable Edition | PortableApps.com Installer','','[CLASS:Button; INSTANCE:2]')
-				Sleep(3000)
-				ControlClick('Mozilla Firefox, Portable Edition | PortableApps.com Installer ','','[CLASS:Button; INSTANCE:2]')
-				Sleep(40000)
-				For $i20=1 to 50
-
-					$check=WinExists('Mozilla Firefox, Portable Edition | PortableApps.com Installer ')
-					If $check=1 Then
-						Sleep(2000)
-						ControlClick('Mozilla Firefox, Portable Edition | PortableApps.com Installer ','','[CLASS:Button; INSTANCE:2]')
-						Sleep(2000)
-						MouseClick('left',831, 601,1,20)
-			            Sleep(2000)
-						$i20=50
-						$check=1
-					EndIf
-					Sleep(2000)
-	            Next
-	            Sleep(2000)
-				MouseClick('left',831, 601,1,20)
-				Sleep(2000)
-				WinClose('Mozilla Firefox, Portable Edition | PortableApps.com Installer ')
+				Sleep(5000)
+				MouseClick('left',781,462,1,20)
+				Sleep(10000)
+				Send('{enter}')
+				Sleep(5000)
+				Send('{enter}')
+				Sleep(90000)
+				Send('{enter}')
+				Sleep(5000)
 
 			Else
 				$check12=1
@@ -1036,18 +1029,33 @@ EndFunc
 			If $check=0 and $check1=0 Then
 				$i=3
                 Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\CocCocSetup.exe')
-				Sleep(15000)
+				Sleep(5000)
+				MouseClick('left',780,462,1,20)
+				Sleep(10000)
+				MouseClick('left',720,566,1,20)
+				Sleep(1000)
 				ControlClick('Đang chạy..., Trình cài đặt Cốc Cốc','Cài đặt','[CLASS:Button; INSTANCE:2]')
-				Sleep(30000)
-				MouseClick('left',725,560,1,20)
 				Sleep(90000)
 				For $i20=1 to 30
-					$check2=WinExists('[class:Chrome_WidgetWin_1]')
-					If $check2=1 Then
-						Sleep(2000)
-						$i20=30
+					$pixcel=PixelSearch(585,164,880,360,0xF16037,5)
+					If IsArray($pixcel) Then                     ; tat trang
+						    Sleep(1000)
+							MouseClick('left',720,257,1,20)
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+				            Sleep(5000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+				            Sleep(10000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+				            Sleep(10000)
 					EndIf
-                    Sleep(3000)
+					Sleep(5000)
 				Next
 
 				WinClose('Thẻ mới - Cốc Cốc')
@@ -1065,16 +1073,14 @@ EndFunc
 			If $check=0 Then
 				$i=5
                 Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\OperaSetup.exe')
-				Sleep(20000)
-
-				MouseClick('left',949, 588,1,20)
-				Sleep(1000)
-				ControlClick('Opera Installer','Install','[CLASS:Button; INSTANCE:6]','left',1,50, 16)
-				;Sleep(5000)
-				;WinMove('','',0,0)
-				;Sleep(1000)
-				;MouseClick('left',550, 355,1,20)
-				Sleep(360000)
+				Sleep(10000)
+				MouseClick('left',780,460,1,20)
+				Sleep(5000)
+				MouseClick('left',958,587,1,20)
+				Sleep(5000)
+				Send('{enter}')
+				;ControlClick('Opera Installer','Install','[CLASS:Button; INSTANCE:6]','left',1,50, 16)
+				Sleep(120000)
 				For $i20=1 to 50
 					$checktd= WinExists('[class:Chrome_WidgetWin_1]')
 					Sleep(1000)
@@ -1083,12 +1089,38 @@ EndFunc
 					Sleep(2000)
 					If $checktd=1 Then $i20=50
 				Next
-
-				Send('{enter}')
-				Sleep(20000)
-				Sleep(3000)
-				MouseClick('left',1218,219,1,20)
+				WinClose('Setting')
+				Sleep(2000)
+				WinMove('','',0,0,1366,768)
 				Sleep(1000)
+				_closeTrinhDuyet($i)
+				Sleep(10000)
+
+			Else
+				$check15=1
+            EndIf
+
+			 $check=FileExists('C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\opera.exe')
+			If $check=0 Then
+				$i=5
+                Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\OperaSetup.exe')
+				Sleep(10000)
+				MouseClick('left',780,460,1,20)
+				Sleep(5000)
+				MouseClick('left',958,587,1,20)
+				Sleep(5000)
+				Send('{enter}')
+				;ControlClick('Opera Installer','Install','[CLASS:Button; INSTANCE:6]','left',1,50, 16)
+				Sleep(120000)
+				For $i20=1 to 50
+					$checktd= WinExists('[class:Chrome_WidgetWin_1]')
+					Sleep(1000)
+					If $checktd=1 Then $i20=50
+					$checktd= WinExists('Speed Dial - Opera')
+					Sleep(2000)
+					If $checktd=1 Then $i20=50
+				Next
+				WinClose('Setting')
 				Sleep(2000)
 				WinMove('','',0,0,1366,768)
 				Sleep(1000)
@@ -1160,7 +1192,9 @@ EndFunc
 
 				$i=8
 				Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\chromium (1).exe')
-				Sleep(30000)
+				Sleep(5000)
+				MouseClick('left',780,460,1,20)
+				Sleep(120000)
 				WinMove('','',0,0,1366,768)
 				Sleep(2000)
 				_closeTrinhDuyet($i)
@@ -1177,7 +1211,9 @@ EndFunc
 
 				$i=9
 				Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\sbsetup_x86.exe')
-				Sleep(15000)
+				Sleep(5000)
+				MouseClick('left',780,460,1,20)
+				Sleep(60000)
 				ControlClick('Installer Language','OK','[CLASS:Button; INSTANCE:1]')
 				Sleep(30000)
 				ControlClick('SlimBrowser 16.0.0.0 (32 bit) Setup ','I &Agree','[CLASS:Button; INSTANCE:2]')
@@ -1217,7 +1253,9 @@ EndFunc
 					Sleep(1000)
 				Next
 
-				Sleep(15000)
+				Sleep(60000)
+				MouseClick('left',767,488,1,20)
+				Sleep(2000)
 
 				MouseClick('left',719, 376,1,20)
 				Sleep(2000)
@@ -1259,40 +1297,35 @@ EndFunc
 		    If $check=0 Then
 				$i=10
 				Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\ChromeSetup.exe')
-				Sleep(40000)
+				Sleep(5000)
+				MouseClick('left',780,460,1,20)
+				Sleep(90000)
 				For $i20=1 to 50
-					$check=WinExists('Thẻ mới - Google Chrome')
-					If $check=1 Then
-						Sleep(2000)
-						$i20=50
-						$check=1
+					$pixcel=PixelSearch(600, 150,800, 350,0x1A73E8,5)
+					If IsArray($pixcel) Then                     ; tat trang
+						    Sleep(1000)
+							MouseClick('left',720,257,1,20)
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+				            Sleep(5000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+				            Sleep(10000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+				            Sleep(10000)
 					EndIf
-					$check=WinExists('Google Chrome')
-					If $check=1 Then
-						Sleep(2000)
-						$i20=50
-						$check=1
-					EndIf
-					Sleep(1000)
+					Sleep(5000)
 	            Next
 	            Sleep(2000)
-
-				MouseClick('left',710,266,1,20)
-				Sleep(2000)
-				Send('{tab}')
-				Sleep(2000)
-				Send('{enter}')
-				Sleep(5000)
-				MouseClick('left',510,228,1,20)
-				Sleep(2000)
-				Send('{tab}')
-				Sleep(2000)
-				Send('{tab}')
-				Sleep(2000)
-				Send('{tab}')
-				Sleep(2000)
-				Send('{enter}')
-				Sleep(5000)
 				WinMove('','',0,0,1366,768)
 				Sleep(1000)
 				_closeTrinhDuyet($i)
