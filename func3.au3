@@ -872,13 +872,16 @@ EndFunc
 			EndIf
 
 
+			$check=FileExists('C:\Users\'&@UserName&'\AppData\Local\Maxthon\Application\Maxthon.exe')
+
+
 
 			$check=FileExists('C:\portapps\brave-portable\brave-portable.exe')
 			    If $check=0 Then
 				    $i=2
-				    Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\brave-portable-win32-0.24.0-39-setup.exe')
+				    Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\brave-portable-win64-1.43.89-84-setup')
 				    Sleep(2000)
-					Run('C:\Users\'&@UserName&'\Downloads\brave-portable-win32-0.24.0-39-setup.exe')
+					;Run('C:\Users\'&@UserName&'\Downloads\brave-portable-win32-0.24.0-39-setup.exe')
 				    Sleep(10000)
 					MouseClick('left',782, 463,1,20)
 					Sleep(7000)
@@ -4556,10 +4559,6 @@ EndFunc
 
 						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(2000)
-						If FileExists('C:\Users\'&@UserName&'\Desktop\Wub\Wub.exe')=1 Then
-							If $i=4 Then WinMove($var[$i10][1],'',0,30,1366,850)
-						EndIf
-
 
 						If  $i=10 Then
 							Sleep(2000)
@@ -5107,10 +5106,6 @@ EndFunc
 
 						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(2000)
-						If FileExists('C:\Users\'&@UserName&'\Desktop\Wub\Wub.exe')=1 Then
-							If $i=4 then WinMove($var[$i10][1],'',0,30,1366,850)
-						EndIf
-
 
 						If  $i=9 Then
 							WinClose('Check Update')
@@ -5983,9 +5978,7 @@ EndFunc
 
 	            WinMove('','',0,0,1366,768)
 				Sleep(2000)
-				If FileExists('C:\Users\'&@UserName&'\Desktop\Wub\Wub.exe')=1 Then
-					If $i=4 Then WinMove('','',0,30,1366,768)
-				EndIf
+
 				;_dienIpPort($i)
                 MouseClick('left',1280, 129,1,20)
 			    $check=0
