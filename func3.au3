@@ -5967,7 +5967,7 @@ EndFunc
                            $f=FileReadLine(@ScriptDir&'\Gmailtest.txt',1)
                            $g=FileReadLine(@ScriptDir&'\Gmailtest.txt',2)
 						   $h=FileReadLine(@ScriptDir&'\Gmailtest.txt',3)
-						   $sdt=FileReadLine(@ScriptDir&'\Gmailtest.txt',4)
+						   $Key2fa=FileReadLine(@ScriptDir&'\Gmailtest.txt',4)
 						   FileDelete(@ScriptDir&'\Gmailtest.txt')
 
 				WinClose('Restore pages?')
@@ -6108,11 +6108,85 @@ EndFunc
 					If IsArray($pixcel) Then $i20=20
 					Sleep(1000)
 				Next
+
+               If StringLen($Key2fa)>30	Then
+				Sleep(2000)
+                Run('C:\Users\'&@UserName&'\Desktop\WinAuth')
 				Sleep(5000)
+				WinMove('','',0,0)
+				Sleep(2000)
+
+				For $i20=1 to 3
+				    $pixcel=PixelSearch(10,52,110,180,0x00ABDA)  ; xoa Auth cu
+				    If IsArray($pixcel) Then
+					    MouseClick('right',64,91,1,20)
+				        Sleep(2000)
+					    Send('{tab}')
+				        Sleep(2000)
+					    Send('{tab}')
+				        Sleep(2000)
+						Send('{tab}')
+				        Sleep(2000)
+					    Send('{tab}')
+				        Sleep(2000)
+					    Send('{tab}')
+				        Sleep(2000)
+					    Send('{enter}')
+				        Sleep(2000)
+						Send('{tab}')
+				        Sleep(2000)
+					    Send('{enter}')
+						Sleep(4000)
+					Else
+						$i20=3
+					EndIf
+				Next
+
+				Sleep(1000)
+				MouseClick('left',50,150,1,20)
+				Sleep(3000)
+				Send('{tab}')
+				Sleep(3000)
+				Send('{enter}')
+                Sleep(5000)
+				Send('{tab}')
+				Sleep(3000)
+				Send($Key2fa)
+				Sleep(3000)
+				Send('{enter}')
+				Sleep(10000)
+				MouseClick('left',810,655,1,20)
+				Sleep(5000)
+				WinClose('Protecion')
+				Sleep(5000)
+				MouseClick('left',364,93,1,20)
+				Sleep(1000)
+				MouseClick('right',364,93,1,20)
+				Sleep(1000)
+				Send('{tab}')
+				Sleep(1000)
+				Send('{tab}')
+				Sleep(1000)
+				Send('{tab}')
+				Sleep(1000)
+				Send('{enter}')
+				Sleep(1000)
+				MouseClick('left',700,222,1,20)
+				Sleep(1000)
+				Send('{tab}')
+				Sleep(1000)
+				Send('{tab}')
+				Sleep(1000)
+				Send('^v')
+				Sleep(2000)
+				Send('{enter}')
+				Sleep(10000)
+				WinClose('WinAuth')
+				Sleep(2000)
+			   EndIf
 
 				If $i=6 Then MouseClick('left',380, 225,1,20)
 				Sleep(2000)
-				Sleep(1000)
 				$x3=0
 				$y3=0
 				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,1)
