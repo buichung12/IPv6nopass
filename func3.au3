@@ -885,6 +885,8 @@ EndFunc
 					WinMove('','',0,0)
 					Sleep(3000)
 					MouseClick('left',50, 300,1,20)
+				    Sleep(3000)
+					MouseClick('left',50, 300,1,20)
 				    Sleep(5000)
 					Send('{enter}')
 					Sleep(5000)
