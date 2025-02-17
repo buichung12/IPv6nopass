@@ -6115,6 +6115,8 @@ EndFunc
 
                If StringLen($Key2fa)>30	Then
 				Sleep(2000)
+				$Key2fa=StringReplace($Key2fa,'|',' ')
+				Sleep(1000)
                 Run('C:\Users\'&@UserName&'\Desktop\WinAuth')
 				Sleep(5000)
 				WinMove('','',0,0)
