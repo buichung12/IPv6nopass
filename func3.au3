@@ -6175,7 +6175,7 @@ EndFunc
 				Sleep(1000)
 				Send('{enter}')
 				Sleep(1000)
-				MouseClick('left',700,222,1,20)
+				MouseClick('left',700,250,1,20)
 				Sleep(1000)
 				Send('{tab}')
 				Sleep(1000)
