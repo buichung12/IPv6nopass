@@ -6177,6 +6177,8 @@ EndFunc
 				Sleep(3000)
 				WinClose('Protecion')
 				Sleep(3000)
+				MouseClick('left',1086,108,1,20)
+				Sleep(3000)
 				MouseClick('left',364,93,1,20)
 				Sleep(1000)
 				MouseClick('right',364,93,1,20)
