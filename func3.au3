@@ -6176,7 +6176,7 @@ EndFunc
 				Sleep(3000)
 				Send('{enter}')
 				Sleep(3000)
-				WinActivate('WinAuth')
+				;WinActivate('WinAuth')
 				MouseClick('left',776,506,1,20)
 				Sleep(3000)
 				MouseClick('left',810,655,1,20)
@@ -6211,7 +6211,7 @@ EndFunc
 				Sleep(2000)
 				WinClose('WinAuth')
 				Sleep(2000)
-				MsgBox(0,0,'ok')
+				;MsgBox(0,0,'ok')
 			   EndIf
 
 				If $i=6 Then MouseClick('left',380, 225,1,20)
