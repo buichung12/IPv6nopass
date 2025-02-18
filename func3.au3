@@ -4486,6 +4486,7 @@ EndFunc
 					WinClose('Restore pages?')
 					Sleep(1000)
 					WinClose('Check Update')
+					WinClose('opera.exe - System Error')
 					If  $i=9 Then
 							WinClose('Check Update')
 							Sleep(10000)
@@ -5342,6 +5343,7 @@ EndFunc
 				Send('^w')
 				Sleep(1000)
 				Send('^w')
+				WinClose('opera.exe - System Error')
 				If $i=5 Then
 					For $i20=1 to 3
 						Send('^w')
