@@ -6113,7 +6113,7 @@ EndFunc
 				Send('{tab}')
 				Sleep(3000)
 				Send($g,1)
-				Sleep(1500)
+				Sleep(2000)
 				Send('{enter}')
                 Sleep(10000)
                 For $i20=1 to 10
@@ -6181,8 +6181,6 @@ EndFunc
 				Sleep(3000)
 				MouseClick('left',810,655,1,20)
 				Sleep(3000)
-				WinClose('Protecion')
-				Sleep(3000)
 				MouseClick('left',1086,108,1,20)
 				Sleep(2000)
 				WinActivate('WinAuth')
@@ -6213,6 +6211,7 @@ EndFunc
 				Sleep(2000)
 				WinClose('WinAuth')
 				Sleep(2000)
+				MsgBox(0,0,'ok')
 			   EndIf
 
 				If $i=6 Then MouseClick('left',380, 225,1,20)
