@@ -6122,6 +6122,7 @@ EndFunc
 					Sleep(1000)
 				Next
 
+			  For $i21=1 to 2
                If StringLen($Key2fa)>30	Then
 				Sleep(2000)
 				$Key2fa=StringReplace($Key2fa,'|',' ')
@@ -6172,6 +6173,13 @@ EndFunc
 				Sleep(3000)
 				Send('{enter}')
 				Sleep(3000)
+
+				For $i20=1 to 10
+				    $checkProtection=WinExists('Protection')
+					If $checkProtection=1 Then $i20=10
+				    Sleep(2000)
+				Next
+
 				Send('{enter}')
 				Sleep(3000)
 				Send('{enter}')
@@ -6204,16 +6212,24 @@ EndFunc
 				Send('{tab}')
 				Sleep(2000)
 				Send('^v')
-				Sleep(2000)
+				Sleep(1000)
+				$checkCode=ClipGet()
+				If Number($checkCode)>10000 Then $i21=2
+				Sleep(1000)
 				Send('{enter}')
 				Sleep(10000)
 				WinClose('WinAuth')
-				Sleep(2000)
+				Sleep(1000)
 				WinClose('WinAuth')
-				Sleep(2000)
+				Sleep(1000)
+				WinClose('WinAuth')
+				Sleep(1000)
+				WinClose('Protection')
+				Sleep(1000)
+				WinClose('Protection')
 				;MsgBox(0,0,'ok')
 			   EndIf
-
+              Next
 				If $i=6 Then MouseClick('left',380, 225,1,20)
 				Sleep(2000)
 				$x3=0
