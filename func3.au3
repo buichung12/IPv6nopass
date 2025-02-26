@@ -586,10 +586,27 @@ EndFunc
 										Sleep(10000)
 
 
+			FileDelete("C:\Users\"&@UserName&"\Downloads\WinAuth.exe")
+			Sleep(1000)
+            $checkWinAuth=FileExists('C:\Users\'&@UserName&'\Desktop\WinAuth.exe')
+            If 	$checkWinAuth=0 Then
+                _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/refs/heads/main/WinAuth.exe"')
+			    Sleep(15000)
+				$checkWinAuth=FileExists('C:\Users\'&@UserName&'\Desktop\WinAuth.exe')
+                    If 	$checkWinAuth=0 Then
+						ProcessClose('chrome.exe')
+						 _GetDOSOutput('start fivefox "https://github.com/buichung12/IPv6nopass/raw/refs/heads/main/WinAuth.exe"')
+						 Sleep(15000)
+					EndIf
+
+            EndIf
+
+
 		    FileDelete("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe")
 			Sleep(1000)
 			FileDelete("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.au3")
 			Sleep(1000)
+
 		    _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/ToolCopyKhoiDongVaChuongTrinhChinh.exe"')
 			Sleep(10000)
 			FileCopy("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe",'C:\Users\'&@UserName&'\Desktop',1)
