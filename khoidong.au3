@@ -32,7 +32,13 @@ HotKeySet("{f9}", "AutoRun")
 				ProcessClose('notepad.exe')
 				Sleep(100)
 				ProcessClose('notepad.exe')
+				Sleep(100)
+				ProcessClose('notepad.exe')
 				Sleep(1000)
+				WinClose('vpsso - Notepad')
+				Sleep(100)
+				WinClose('vpsso - Notepad')
+				Sleep(100)
 
                 $checkinternet=_kiemtraMangInternet()
 				If $checkinternet=0 Then
