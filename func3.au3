@@ -6189,15 +6189,16 @@ EndFunc
 				        Sleep(5000)
 				        Send('{enter}')
 				        Sleep(5000)
+						Send('{enter}')
+						Sleep(3000)
+						Send('{enter}')
+						Sleep(3000)
 
 				For $i20=1 to 10
 						$checkProtection=WinExists('Protection')
 						If $checkProtection=1 Then
 							$i20=10
-							Send('{enter}')
-							Sleep(3000)
-							Send('{enter}')
-							Sleep(3000)
+
 							MouseClick('left',776,506,1,20)
 							Sleep(3000)
 							MouseClick('left',810,655,1,20)
