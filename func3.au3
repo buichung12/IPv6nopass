@@ -592,12 +592,9 @@ EndFunc
             If 	$checkWinAuth=0 Then
                 _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/refs/heads/main/WinAuth.exe"')
 			    Sleep(15000)
-				$checkWinAuth=FileExists('C:\Users\'&@UserName&'\Desktop\WinAuth.exe')
-                    If 	$checkWinAuth=0 Then
-						ProcessClose('chrome.exe')
-						 _GetDOSOutput('start fivefox "https://github.com/buichung12/IPv6nopass/raw/refs/heads/main/WinAuth.exe"')
-						 Sleep(15000)
-					EndIf
+				ProcessClose('chrome.exe')
+				Sleep(2000)
+				FileCopy("C:\Users\"&@UserName&"\Downloads\WinAuth.exe",'C:\Users\'&@UserName&'\Desktop',1)
 
             EndIf
 
