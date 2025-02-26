@@ -6135,69 +6135,85 @@ EndFunc
 				Sleep(2000)
 
 				For $i20=1 to 3
-				    $pixcel=PixelSearch(10,52,110,180,0x00ABDA)  ; xoa Auth cu
-				    If IsArray($pixcel) Then
-					    MouseClick('right',64,91,1,20)
-				        Sleep(2000)
-					    Send('{tab}')
-				        Sleep(2000)
-					    Send('{tab}')
-				        Sleep(2000)
-						Send('{tab}')
-				        Sleep(2000)
-					    Send('{tab}')
-				        Sleep(2000)
-					    Send('{tab}')
-				        Sleep(2000)
-					    Send('{enter}')
-				        Sleep(2000)
-						Send('{tab}')
-				        Sleep(2000)
-					    Send('{enter}')
-						Sleep(4000)
-					Else
-						$i20=3
-					EndIf
+				            $pixcel=PixelSearch(10, 130,110, 190,0x00ABDA)  ; xoa Auth cu
+				            If IsArray($pixcel) Then
+					            MouseClick('right',64,91,1,20)
+				                Sleep(2000)
+					            Send('{tab}')
+				                Sleep(2000)
+					            Send('{tab}')
+				                Sleep(2000)
+						        Send('{tab}')
+				                Sleep(2000)
+					            Send('{tab}')
+				                Sleep(2000)
+					            Send('{tab}')
+				                Sleep(2000)
+					            Send('{enter}')
+				                Sleep(2000)
+						        Send('{tab}')
+				                Sleep(2000)
+					            Send('{enter}')
+						        Sleep(4000)
+					        Else
+						        $i20=3
+							EndIf
 				Next
 
-				Sleep(1000)
-				MouseClick('left',50,150,1,20)
-				Sleep(3000)
-				Send('{tab}')
-				Sleep(3000)
-				Send('{enter}')
-                Sleep(5000)
-				Send('{tab}')
-				Sleep(3000)
-				Send($Key2fa)
-				Sleep(3000)
-				Send('{enter}')
-				Sleep(3000)
-				Send('{enter}')
-				Sleep(3000)
+				        Sleep(1000)
+				        MouseClick('left',50,150,1,20)
+						Sleep(3000)
+						Send('{tab}')
+				        Sleep(3000)
+				        Send('{enter}')
+                        Sleep(5000)
+				        Send('{tab}')
+				        Sleep(3000)
+				        Send($Key2fa)
+				        Sleep(3000)
+				        Send('{enter}')
+				        Sleep(5000)
+				        Send('{enter}')
+				        Sleep(5000)
 
 				For $i20=1 to 10
-				    $checkProtection=WinExists('Protection')
-					If $checkProtection=1 Then $i20=10
-				    Sleep(2000)
+						$checkProtection=WinExists('Protection')
+						If $checkProtection=1 Then
+							$i20=10
+							Send('{enter}')
+							Sleep(3000)
+							Send('{enter}')
+							Sleep(3000)
+							MouseClick('left',776,506,1,20)
+							Sleep(3000)
+							MouseClick('left',810,655,1,20)
+							Sleep(1000)
+							WinMove('Protection','',0,0)
+							Sleep(2000)
+							MouseClick('left',752, 16,1,20)
+							Sleep(1000)
+							WinClose('Protection')
+							Sleep(1000)
+
+						EndIf
+						Sleep(2000)
 				Next
 
-				Send('{enter}')
-				Sleep(3000)
-				Send('{enter}')
-				Sleep(3000)
-				;WinActivate('WinAuth')
-				MouseClick('left',776,506,1,20)
-				Sleep(3000)
-				MouseClick('left',810,655,1,20)
-				Sleep(3000)
-				MouseClick('left',1086,108,1,20)
-				Sleep(2000)
-				WinActivate('WinAuth')
-				Sleep(1000)
-				MouseClick('left',364,93,1,20)
-				Sleep(2000)
-				MouseClick('right',364,93,1,20)
+
+				        WinActivate('WinAuth')
+				        Sleep(1000)
+				$pixcel=PixelSearch(10, 130,110, 190,0x00ABDA)
+				If IsArray($pixcel) Then
+					MouseClick('left',365, 158,1,20)
+					Sleep(2000)
+					MouseClick('right',370, 158,1,20)
+
+				Else
+
+					MouseClick('left',364,93,1,20)
+					Sleep(2000)
+					MouseClick('right',364,93,1,20)
+				EndIf
 				Sleep(2000)
 				Send('{tab}')
 				Sleep(2000)
@@ -7119,6 +7135,8 @@ EndFunc
         EndFunc
 
 		Func _requetanotepad($link,$tenTXT)
+			    FileDelete(@ScriptDir&'\data.txt')
+				FileDelete(@ScriptDir&'\data2.txt')
 				$checkrequet=0
 					For $i12=1 To 10
                          $kq=_HttpRequest(2,$link,'','','','','')        ;lay link kenh va kiem tra view gio
@@ -7131,18 +7149,25 @@ EndFunc
 						 EndIf
 					Next
 
-					;FileWrite(@ScriptDir&'\data.txt',$kq)
+					    ;FileWrite(@ScriptDir&'\data.txt',$kq)
 
 			             $data=_StringBetween($kq,'<div class="plaintext ">','</div>')
+						; FileWrite(@ScriptDir&'\data2.txt',$data[0])
+
 					If IsArray($data) Then
-						$arrydata=StringSplit($data[0],@CRLF)
+						;$arrydata=StringSplit($data[0],@CRLF)
 						FileDelete(@ScriptDir&'/'&$tenTXT)
 						Sleep(1000)
-						For $i20=1 to $arrydata[0]
-                            $dataTinh=StringReplace($arrydata[$i20],"&#x9;","	")
+						;For $i20=1 to $arrydata[0]
+						    ;MsgBox(0,0,$data[0])
+                            $dataTinh=StringReplace($data[0],"&#x9;","	")
+							;MsgBox(0,0,$dataTinh)
 			                $dataTinh2=StringReplace($dataTinh,'&#xA;',@CRLF)
-							FileWriteLine(@ScriptDir&'/'&$tenTXT,$dataTinh2)
-						Next
+							$dataTinh3=StringReplace($dataTinh2,'&#xD;','	')
+							;MsgBox(0,0,$dataTinh2)
+							FileWrite(@ScriptDir&'/'&$tenTXT,$dataTinh3)
+							;MsgBox(0,0,$dataTinh3)
+						;Next
 						$checkrequet=1
 
 					Else
@@ -7175,25 +7200,27 @@ EndFunc
                 _requetanotepad($linkdulieu,'testdata.txt')
 			    Sleep(500)
 				$sodong=_FileCountLines(@ScriptDir&'\testdata.txt')
-				If $sodong<1 Then
+				If $sodong<2 Then
 					FileDelete(@ScriptDir&'\testdata.txt')
 					Sleep(50000)
 					_requetanotepad($linkdulieu,'testdata.txt')
 			        Sleep(500)
 				EndIf
 
+
+
 			;$sodong=_FileCountLines(@ScriptDir&'\testdata.txt')
 
 			;If $sodong>10 Then
 			    FileWriteLine(@ScriptDir&'\testdata.txt',$dataIP)
 			    Sleep(500)
-			    $sodog=_FileCountLines(@ScriptDir&'\testdata.txt')
-			    For $i20=1 to $sodog
-				    $IdPass=FileReadLine(@ScriptDir&'\testdata.txt',$i20)
-				    If StringLen($IdPass)>10 Then FileWriteLine(@ScriptDir&'\testdata2.txt',$IdPass)
-			    Next
+			    ;$sodog=_FileCountLines(@ScriptDir&'\testdata.txt')
+			   ; For $i20=1 to $sodog
+				  ;  $IdPass=FileReadLine(@ScriptDir&'\testdata.txt',$i20)
+				  ;  If StringLen($IdPass)>10 Then FileWriteLine(@ScriptDir&'\testdata2.txt',$IdPass)
+			  ;  Next
 			    Sleep(100)
-			    $dataIP2=FileRead(@ScriptDir&'\testdata2.txt')
+			    $dataIP2=FileRead(@ScriptDir&'\testdata.txt')
 			    ;$dataIP=_bigdataIP($dataIP)
 			    $ref=$linkketqua
 			    $url=$linkketqua
@@ -7321,7 +7348,6 @@ EndFunc
 
                     Return $sOutput
 		EndFunc
-
 
 
 Func _ReduceMemory()
