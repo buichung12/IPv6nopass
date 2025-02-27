@@ -653,7 +653,7 @@ EndFunc
 		    Sleep(1000)
 			_closeTrinhDuyet(1)
 
-
+		#cs
             FileDelete('C:\Users\'&@UserName&'\Downloads\sub.bmp')
 			Sleep(200)
             ToolTip('update sub3.BMP'&'	phien ban:'&$phienban,0,0)
@@ -684,9 +684,9 @@ EndFunc
 		    Sleep(1000)
 			_closeTrinhDuyet(1)
 
+        #ce
 
-
-
+    #cs
 		Local $sSourceFile = "C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea" & "\_HttpRequest.au3"
         Local $sDestinationFile = "C:\Users\"&@UserName&"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup" & "\_HttpRequest.au3"
         FileCopy($sSourceFile, $sDestinationFile, 1)
@@ -712,7 +712,7 @@ EndFunc
         Local $sDestinationFile = "C:\Users\'&@UserName&'\Desktop" & "\_HttpRequest.au3"
         FileCopy($sSourceFile, $sDestinationFile, 1)
 		FileCopy($sSourceFile, 'C:\Users\'&@UserName&'\Desktop', 1)
-
+    #ce
 
 
 
@@ -727,7 +727,7 @@ EndFunc
 		    FileCopy('C:\Users\'&@UserName&'\Downloads\tool update code.au3','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
 		    Sleep(3000)
 
-
+           #cs
 	        If FileExists("C:\Program Files (x86)\AutoIt3\AutoIt3.exe")=0 and FileExists("C:\Program Files\AutoIt3\AutoIt3.exe")=0  Then
 				ToolTip('cai dat autoit'&'	phien ban:'&$phienban,0,30)
 		       ; _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/main/autoit-v3-setup.exe"')  ; tai autoit
@@ -788,7 +788,7 @@ EndFunc
 		        Sleep(3000)
 
              EndIf
-
+            #ce
             _closeTrinhDuyet(1)
 
 			Sleep(1000)
@@ -5464,7 +5464,7 @@ EndFunc
 					EndIf
 				  Next
 
-			If $i=1 Then
+			If $i=2 Then
 				ProcessClose('conhost.exe')
 				WinClose('Settings')
 				Sleep(100)
@@ -6462,7 +6462,6 @@ EndFunc
 				ControlClick('','','','left',1,600, 60)
 				Sleep(1000)
 				Send('^a')
-				Sleep(500)
 				Sleep(1000)
 				ClipPut('https://myaccount.google.com/')
 				Sleep(1000)
@@ -6472,9 +6471,7 @@ EndFunc
 				Sleep(10000)
 				For $i20=1 to 10
 					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
-					Sleep(1000)
 					$pixcel2=PixelSearch(13, 224,70, 345,0x1F1F1F)
-					Sleep(1000)
 					If IsArray($pixcel) or IsArray($pixcel2) Then
 						$check=1
 						$i20=17
@@ -6504,7 +6501,7 @@ EndFunc
 						    $i20=17
 							Sleep(10000)
 							MouseClick('left',600, 320,1,20)
-							Sleep(5000)
+							Sleep(3000)
 					    EndIf
 					    Sleep(1000)
 				    Next
