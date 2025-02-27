@@ -2557,9 +2557,9 @@ EndFunc
                     Sleep(1000)
 
                 $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
-                Sleep(1000)
+                Sleep(100)
 				If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
-				Sleep(1000)
+				Sleep(100)
 				If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
 
 
@@ -2580,11 +2580,11 @@ EndFunc
 					ClipPut('https://www.youtube.com/channel_switcher?next=%2Faccount&feature=settings')
 					Sleep(1000)
 				    Send("^v")
-				    Sleep(2000)
+				    Sleep(200)
 				    Send('{enter}')
-				    Sleep(10000)
+				    Sleep(7000)
 					Send('^0')
-					Sleep(2000)
+					Sleep(200)
 					$checkload=0
 
 					For $i20=1 to 20
@@ -2600,31 +2600,31 @@ EndFunc
 
 					$pixcel=PixelSearch(500,230,800,500,0xBD79FF)    ; check internet
 					If IsArray($pixcel) Then
-						Sleep(1000)
+						Sleep(100)
                         ControlClick($var[$i10][1],'','','left',1,600, 60)
-				        Sleep(2000)
+				        Sleep(1000)
 						ClipPut('https://www.youtube.com/channel_switcher?next=%2Faccount&feature=settings')
 						Send('^v')
-						Sleep(2000)
+						Sleep(1000)
 						Send('{enter}')
 						Sleep(5000)
 						;_dienIpPort($i)
-						Sleep(5000)
+						;Sleep(5000)
 						Send('^0')
 					    Sleep(2000)
 					EndIf
 
 					If $checkload=0 Then
 						ControlClick($var[$i10][1],'','','left',1,600, 60)
-				        Sleep(2000)
+				        Sleep(1000)
 						Send('https://www.youtube.com/channel_switcher?next=%2Faccount&feature=settings')
-						Sleep(2000)
+						Sleep(1000)
 						Send('{enter}')
 						Sleep(5000)
 						;_dienIpPort($i)
-						Sleep(5000)
+						;Sleep(5000)
 						Send('^0')
-					    Sleep(2000)
+					    Sleep(1000)
 
 					EndIf
 
@@ -2655,7 +2655,7 @@ EndFunc
 					If $i=9 Then ControlClick($var[$i10][1],'','','left',1,590, 213)
 					If $i=10 Then ControlClick($var[$i10][1],'','','left',1,500, 180)
 					If $i=10 Then MouseClick('left',500, 190,1,20)
-					Sleep(2000)
+					Sleep(200)
 					If $i=1 Then ControlClick($var[$i10][1],'','','left',1,581, 191)
 					If $i=2 Then ControlClick($var[$i10][1],'','','left',1,594, 182)
 					If $i=3 Then ControlClick($var[$i10][1],'','','left',1,518, 210)
@@ -2678,15 +2678,13 @@ EndFunc
 						       ControlSend($var[$i10][1],'','','{tab}')
 						       Sleep(500)
 					        Next
-
 					        Sleep(1000)
 					        ControlSend($var[$i10][1],'','','{enter}')
-					        Sleep(10000)
 							$i2=2
 							$check=1
 							$i20=2
 					    EndIf
-						Sleep(20000)
+						Sleep(10000)
 					Next
 
 
@@ -2719,9 +2717,9 @@ EndFunc
 
 						For $i23=1 to 5
 					        $sodong=_FileCountLines(@ScriptDir&"\linkkenhchaySUB2.txt")
-							Sleep(500)
+							Sleep(100)
                             $linkkenhtho=FileReadLine(@ScriptDir&"\linkkenhchaySUB2.txt",Random(1,$sodong,1))    ; chu y thay doi
-				            Sleep(1000)
+				            Sleep(100)
 						    ;$kiemtralink=FileReadLine(@ScriptDir&"\linkkenhchaySUB2.tx",1)
 						  If StringLen($linkkenhtho)>20 Then
 
@@ -2733,7 +2731,7 @@ EndFunc
 							    If FileExists(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt")=0 Then  FileWriteLine(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt",'khoi tao')
 							    Sleep(1000)
 						        $sodonglinkdasub=_FileCountLines(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt")
-								Sleep(500)
+								Sleep(100)
 						        For $i22=1 to $sodonglinkdasub
                                     $linkdasub=FileReadLine(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt",$i22)
 									Sleep(100)
@@ -2802,11 +2800,11 @@ EndFunc
 
 
 			  WinSetState('Proxy Client Tinsoft','',@SW_MINIMIZE)
-			  Sleep(1000)
+			  Sleep(100)
 			  $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
-			  Sleep(1000)
+			  Sleep(100)
 		   	  If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
-			  Sleep(1000)
+			  Sleep(100)
 			  If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
 
 
@@ -2837,7 +2835,7 @@ EndFunc
 
 
 					ControlClick($var[$i10][1],'','','left',1,600, 60)
-				    Sleep(2000)
+				    Sleep(1000)
 					ClipPut($linkkenh)
 					Sleep(1000)
 				    Send('^v')
@@ -3972,8 +3970,7 @@ EndFunc
 						EndIf
 					EndIf
 
-					Sleep(5000)
-
+					Sleep(2000)
 					MouseClick('left',600,60,1,20)
 					Sleep(2000)
 					Send('google.com')
@@ -4846,7 +4843,7 @@ EndFunc
 
                     _FakeIPOptionV6($i,$vpsso)
 
-                    Sleep(Random(1000,60000,1))
+                    Sleep(Random(1000,10000,1))
 					WinClose('Server Manager')
 					If $i=1 Then
 						$linkblu="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
@@ -4902,7 +4899,16 @@ EndFunc
 					If $i=6 or 7 Then
 						Send('{enter}')
 					EndIf
-					Sleep(7000)
+                    For $i20=1 to 10
+					    Sleep(500)
+					    $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+                        Sleep(500)
+					    If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
+					    Sleep(500)
+					    If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
+						If $var[0][0]=1 Then $i20=10
+                    Next
+
 
 					WinClose('Install Google Translate extension to translate this page?')
 					WinClose('Restore pages?')
@@ -4911,7 +4917,7 @@ EndFunc
 					WinClose('Default Client')
 					WinClose('Update successful')
 					WinClose('Translated page from Vietnamses?')
-					Sleep(1000)
+					Sleep(100)
 					WinClose('Restore pages?')
 					WinClose('Restore pages')
 					WinClose('Default Client')
@@ -4920,12 +4926,12 @@ EndFunc
 					WinClose('Update successful')
 					WinClose('Bright VPN - Secure Private & Free VPN Proxy is disabled')
 				    WinClose('Remove "Bright VPN - Secure Private & Free VPN Proxy"?')
-					Sleep(1000)
+					Sleep(100)
 					WinClose('Check Update')
 
 					If $i=5 Then
                         WinMove('','',0,0,1366,850)
-						Sleep(2000)
+						Sleep(1000)
 					EndIf
 
 					If  $i=10 Then
@@ -4933,27 +4939,27 @@ EndFunc
 							$pixcel=PixelSearch(430, 623,1013, 764,0x0B57D0)
 					        If IsArray($pixcel) Then
 							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
-							     Sleep(3000)
+							     Sleep(1000)
 							EndIf
 							$pixcel=PixelSearch(430, 623,1013, 764,0x0B57D0)
 					        If IsArray($pixcel) Then
 							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
-							     Sleep(3000)
+							     Sleep(1000)
 							EndIf
 							$pixcel=PixelSearch(430, 623,1013, 764,0x0B57D0)
 					        If IsArray($pixcel) Then
 							     MouseClick('left',$pixcel[0]+5, $pixcel[1]+5,1,20)
-							     Sleep(3000)
+							     Sleep(1000)
 							EndIf
 
 							ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,291, 635)
-		                    Sleep(2000)
+		                    Sleep(1000)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
-							Sleep(2000)
+							Sleep(1000)
 							MouseClick('left',1328,145,1,20)
-							Sleep(3000)
+							Sleep(1000)
 							MouseClick('left',1280,163,1,20)
-							Sleep(2000)
+							Sleep(1000)
 
 					EndIf
 
@@ -4990,21 +4996,21 @@ EndFunc
 
 					If $i=4 Then
 						MouseClick('left',600, 102,1,20)
-						Sleep(2000)
+						Sleep(1000)
 						MouseClick('left',800, 155,1,20)
-						Sleep(2000)
+						Sleep(1000)
 						MouseClick('left',852, 510,1,20)  ;tat thong bao update
-				        Sleep(7000)
+				        Sleep(2000)
 						MouseClick('left',1280,163,1,20)
-						Sleep(2000)
+						Sleep(1000)
 					EndIf
 
 
-					Sleep(1000)
+					Sleep(100)
 					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
-                    Sleep(1000)
+                    Sleep(100)
 					If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
-					Sleep(1000)
+					Sleep(100)
 					If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
 
 
@@ -5016,15 +5022,15 @@ EndFunc
 
 						If $i=2 Then
 						    ControlClick('','','','left',1,528, 202)
-							Sleep(1000)
+							Sleep(100)
 							ControlClick('','','','left',1,789, 266)
-							Sleep(1000)
+							Sleep(100)
 							MouseClick('left',1280,163,1,20)
-							Sleep(2000)
+							Sleep(200)
 					    EndIf
 
 						WinMove($var[$i10][1],'',0,0,1366,850)
-						Sleep(2000)
+						Sleep(1000)
 
 						If  $i=9 Then
 							WinClose('Check Update')
@@ -5063,93 +5069,93 @@ EndFunc
 						If $i=8 Then
 							Sleep(1000)
 							ControlClick($var[$i10][1],'','','left',1,1333, 102)
-							Sleep(1000)
+							Sleep(100)
 							ControlClick($var[$i10][1],'','','left',1,1333, 102)
-							Sleep(1000)
+							Sleep(100)
 							MouseClick('left',1333, 102,1,20)
-							Sleep(1000)
+							Sleep(100)
 							MouseClick('left',1333, 102,1,20)
-							Sleep(1000)
+							Sleep(100)
 							MouseClick('left',1333, 102,1,20)
-							Sleep(2000)
+							Sleep(200)
 							MouseClick('left',1280,163,1,20)
-							Sleep(1000)
+							Sleep(100)
 							MouseClick('left',1230,700,1,20)
-							Sleep(1000)
+							Sleep(100)
 						EndIf
 
 
 						If $i=7 Then
-							Sleep(1000)
+							Sleep(100)
 							ControlClick($var[$i10][1],'','','left',1,505, 200)
-							Sleep(1000)
+							Sleep(100)
 							ControlClick($var[$i10][1],'','','left',1,834, 242)
-							Sleep(1000)
+							Sleep(100)
 							ControlClick($var[$i10][1],'','','left',1,1300, 200)
-							Sleep(1000)
+							Sleep(100)
 							MouseClick('left',1280,163,1,20)
-							Sleep(2000)
+							Sleep(200)
 							MouseClick('left',680,550,1,20)
-							Sleep(2000)
+							Sleep(200)
 						EndIf
 
 					    If $i=6 Then
 							ControlClick($var[$i10][1],'','','left',1,1300, 200)
-							Sleep(1000)
+							Sleep(100)
 							ControlClick($var[$i10][1],'','','left',1,1333, 85); tat thong bao
-					        Sleep(1000)
+					        Sleep(100)
 							ControlClick($var[$i10][1],'','','left',1,1332, 123); tat thong bao
-					        Sleep(1000)
+					        Sleep(100)
 							MouseClick('left',1330, 101,1,20)
-							Sleep(1000)
+							Sleep(100)
 							MouseClick('left',1260,200,1,20)
-							Sleep(1000)
+							Sleep(100)
 							MouseClick('left',1187, 195,1,20)
-							Sleep(1000)
+							Sleep(100)
 							MouseClick('left',1280,163,1,20)
-							Sleep(2000)
+							Sleep(200)
 						EndIf
 
                         If $i=4 Then
 
 							MouseClick('left',600, 102,1,20)
-						    Sleep(2000)
+						    Sleep(200)
 						    MouseClick('left',800, 155,1,20)
-						    Sleep(2000)
+						    Sleep(200)
 						    MouseClick('left',852, 510,1,20)  ;tat thong bao update
-				            Sleep(7000)
+				            Sleep(200)
 						    MouseClick('left',1280,163,1,20)
-						    Sleep(2000)
+						    Sleep(200)
 
 						EndIf
 
 
 						If $i=5 Then
 						   MouseClick('left',1322,99,1,20)
-						   Sleep(2000)
+						   Sleep(200)
 						   MouseClick('left',1280,163,1,20)
-						   Sleep(2000)
+						   Sleep(200)
 					    EndIf
 
 						If $i=3 Then
 							 MouseClick('left',1324,109,1,20)
 						    WinClose('Update successful')
-				            Sleep(2000)
+				            Sleep(200)
 						    WinClose('Bạn có muốn khôi phục trang không?')
 						EndIf
 
 						If $i=2 Then
 							MouseClick('left',1334, 981,1,20)
-							Sleep(1000)
+							Sleep(100)
 							MouseClick('left',1333, 97,1,20)
-						    Sleep(1000)
+						    Sleep(100)
 					        MouseClick('left',1333, 130,1,20)
-						    Sleep(1000)
+						    Sleep(100)
 						    MouseClick('left',1333, 97,1,20)
-						   Sleep(1000)
+						   Sleep(100)
 					       ControlClick($var[$i10][1],'','','left',1,1333, 130)
 						   MouseClick('left',1280,163,1,20)
-							Sleep(2000)
+							Sleep(200)
 						EndIf
 #cs
 						If $i=1 Then
@@ -5184,24 +5190,24 @@ EndFunc
 #ce
 					    If $i=10 Then
 							ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,291, 635)
-		                    Sleep(2000)
+		                    Sleep(200)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
-							Sleep(2000)
+							Sleep(200)
 							MouseClick('left',1300,720,1,20)
-							Sleep(1000)
+							Sleep(100)
 							MouseClick('left',1280,163,1,20)
-							Sleep(2000)
+							Sleep(200)
 							MouseClick('left',1322,114,1,20)
-							Sleep(1000)
+							Sleep(100)
 							MouseClick('left',1317,112,1,20)
-							Sleep(1000)
+							Sleep(100)
 							MouseClick('left',1327, 102,1,20)
-							Sleep(1000)
+							Sleep(100)
 						EndIf
 
 						If $i=1 Then
 						    MouseClick('left',1280,700,1,20)  ;tat thong bao update
-				            Sleep(2000)
+				            Sleep(200)
 					    EndIf
 					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
 					    If $i=8 Then ControlClick($var[$i10][1],'','','left',1,478, 26)    ; tat tab thua
@@ -5245,9 +5251,9 @@ EndFunc
 
 	    Func _closeTrinhDuyet($i)
 
-			    Sleep(1000)
+			    Sleep(100)
 				Send('^w')
-				Sleep(1000)
+				Sleep(100)
 				Send('^w')
 				WinClose('opera.exe - System Error')
 				If $i=5 Then
@@ -5475,9 +5481,9 @@ EndFunc
 				 WinClose('opera.exe - System Error')
 				Sleep(100)
 				WinClose('Đang chạy..., Trình cài đặt Cốc Cốc')
-                Sleep(3000)
+                Sleep(300)
                 ControlClick('Cài đặt bị dừng.','Hủy Cài đặt','[CLASS:Button; INSTANCE:2]')
-				Sleep(1000)
+				Sleep(100)
 				ProcessClose('gAvastBrowser.exe')
                 ProcessClose('gbrowser.exe')
 				ProcessClose('gmsedge.exe')
@@ -5702,7 +5708,11 @@ EndFunc
 				WinClose('Windows Security')
 				Sleep(100)
 				WinClose('Windows Security')
-				WinClose('Windows Security')
+				ProcessClose('CocCocCrashHandler64.exe')
+				Sleep(100)
+				ProcessClose('CocCocCrashHandler.exe')
+				Sleep(100)
+
 
 
 	EndFunc
