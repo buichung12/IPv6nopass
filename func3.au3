@@ -6367,7 +6367,7 @@ EndFunc
                Sleep(3000)
 
 			   If $i=4 Then MouseClick('left',1025, 230,1,20);update pass
-
+            #cs
 				If $x3=0 Then      ; neu khong tim thay anh
 				    MouseClick('left',650,300,1,20)
 					Sleep(2000)
@@ -6395,7 +6395,7 @@ EndFunc
 				      Sleep(7000)
 
 				EndIf
-
+            #ce
 
 				If $i=1 Then MouseClick('left',927, 282,1,20)   ;update pass
 				If $i=2 Then MouseClick('left',1000, 248,1,20);update pass
