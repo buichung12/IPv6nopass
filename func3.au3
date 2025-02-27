@@ -1556,128 +1556,18 @@ EndFunc
 
 				EndIf
 
-
-                $e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
-				If $check=0 Then FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&"	Kiem tra dang nhap")
-
+				$e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)
 
 				If $check=1 Then
 
-					$TrangThaiDangNhap="1"
-				    $e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
-						$cacgiatri=StringSplit($e,'	')
-				    For $i11=1 to $cacgiatri[0]
-					    If IsString($cacgiatri[$i11]) Then FileWriteLine(@ScriptDir&'\Gmailtest.txt',$cacgiatri[$i11])
-						   ;MsgBox(0,0,'ok')
-				    Next
-				    Sleep(1000)
-				    If _FileCountLines(@ScriptDir&'\Gmailtest.txt')>3 Then
-						$f=FileReadLine(@ScriptDir&'\Gmailtest.txt',1)
-						$g=FileReadLine(@ScriptDir&'\Gmailtest.txt',2)
-						$h=FileReadLine(@ScriptDir&'\Gmailtest.txt',3)
-						$sdt=FileReadLine(@ScriptDir&'\Gmailtest.txt',4)
-						$TrangThaiDangNhap=FileReadLine(@ScriptDir&'\Gmailtest.txt',5)
-						Sleep(1000)
-						FileDelete(@ScriptDir&'\Gmailtest.txt')
-				    EndIf
 
 
 
-				EndIf
 
 
-				Sleep(1000)
-				ControlClick('','','','left',1,600, 60)
-				Sleep(1000)
-				Send('^a')
-				Sleep(1000)
-				Send('https://myaccount.google.com/?utm_source=sign_in_no_continue')
-				Sleep(2000)
-				Send('{enter}')
-				Sleep(10000)
-				$check=0
-				For $i20=1 to 10
-					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
-					Sleep(1000)
-					$pixcel2=PixelSearch(18, 130,206, 263,0x0B57D0)
-					Sleep(1000)
-					If IsArray($pixcel) or IsArray($pixcel2) Then
-						    $check=1
-						    $i20=17
-						    $i2=2
-					EndIf
-					Sleep(1000)
-				Next
-
-
-
-				$e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
-				If $check=1 Then
-					Sleep(1000)
-                    WinMove('','',0,0,1366,850)
-					Sleep(1000)
-					For $i21=1 to 7
-						MouseClick('left',600,60,1,20)
-						Sleep(1000)
-						Send('https://myaccount.google.com/notifications?origin=5')
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(6000)
-						For $i20=1 to 5
-					        $pixcel=PixelSearch(10, 99,265, 295,0xC2E7FF)
-					        If IsArray($pixcel) Then
-							   $i20=5
-							EndIf
-							Sleep(1000)
-						Next
-						Sleep(2000)
-
-						$pixcel=PixelSearch(236, 309,988,850,0xB3261E) ; kiem tra bao mat
-						If IsArray($pixcel) Then
-							MouseClick('left',$pixcel[0]+5,$pixcel[1]+45)
-							Sleep(5000)
-							$pixcel=PixelSearch(375, 397,1184, 850,0xB3261E) ; kiem tra bao mat lan 2
-							If IsArray($pixcel) Then
-                                MouseClick('left',$pixcel[0]+5,$pixcel[1]+45)
-							    Sleep(5000)
-							EndIf
-							$pixcel=PixelSearch(401, 622,966, 850,0x1A73EB)
-							If IsArray($pixcel) Then
-							    MouseClick('left',$pixcel[0]+5,$pixcel[1]+5)
-							    Sleep(5000)
-							EndIf
-						Else
-
-							$i21=7
-
-
-						EndIf
-					  Next
-
-					  If IsArray($pixcel) Then $h=$h&'	Kiem tra bao mat'
-
-				    ControlClick('','','','left',1,600, 60)
-					Sleep(1000)
-				    Send('^a')
-				    Sleep(1000)
-				    Send('https://myaccount.google.com/?utm_source=sign_in_no_continue')
-				    Sleep(2000)
-			    	Send('{enter}')
-				    Sleep(15000)
-					$pixcel=PixelSearch(302, 281,1201, 850,0xB3261E)  ; kiem tra bao mat k\ngiem trong
-				    Sleep(1000)
-					$pixcel2=PixelSearch(302, 281,1201, 850,0xB31412)
-				    Sleep(1000)
-					If IsArray($pixcel2) or IsArray($pixcel) Then
-
-					     FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&"	Kiem tra bao mat")
-
-				    EndIf
-
-                Else
-
-					FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&"	Khong The dang nhap")
-
+					FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	DangNhapThanhCong'&'	'&$i)
+				Else
+                    FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	DangNhapThatBai'&'	'&$i)
 				EndIf
 
 
