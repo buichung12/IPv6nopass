@@ -5122,6 +5122,25 @@ EndFunc
 							Sleep(200)
 						EndIf
 
+						If $i=5 Then
+							ControlClick($var[$i10][1],'','','left',1,80, 20)
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(1000)
+							Send('{tab}')
+							Sleep(1000)
+							Send('{enter}')
+							Sleep(2000)
+
+						EndIf
+
+						If $i=5 Then
+						   MouseClick('left',1322,99,1,20)
+						   Sleep(200)
+						   MouseClick('left',1280,163,1,20)
+						   Sleep(200)
+					    EndIf
+
                         If $i=4 Then
 
 							MouseClick('left',600, 102,1,20)
@@ -5136,12 +5155,7 @@ EndFunc
 						EndIf
 
 
-						If $i=5 Then
-						   MouseClick('left',1322,99,1,20)
-						   Sleep(200)
-						   MouseClick('left',1280,163,1,20)
-						   Sleep(200)
-					    EndIf
+
 
 						If $i=3 Then
 							 MouseClick('left',1324,109,1,20)
