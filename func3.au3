@@ -3977,6 +3977,7 @@ EndFunc
 					Sleep(1000)
 					Send('{enter}')
 					Sleep(5000)
+					_MoTaskmgr()
 
 				EndIf
 			  Next
@@ -5518,10 +5519,6 @@ EndFunc
 				Sleep(100)
 				ProcessClose('brave.exe')
 				Sleep(100)
-				ProcessClose('brave.exe')
-				Sleep(100)
-				ProcessClose('brave.exe')
-				Sleep(100)
 				ProcessClose('browser_assistant.exe')
 				Sleep(100)
 				ProcessClose('crashreporter.exe')
@@ -5551,8 +5548,6 @@ EndFunc
 				ProcessClose('browser.exe')
 				Sleep(100)
 				ProcessClose('vivaldi.exe')
-				Sleep(100)
-				ProcessClose('firefox.exe')
 				Sleep(100)
 				ProcessClose('launcher.exe')
 				Sleep(100)
@@ -5612,8 +5607,6 @@ EndFunc
 				Sleep(100)
 				ProcessClose('brave.exe')
 				Sleep(100)
-				ProcessClose('brave.exe')
-				Sleep(100)
 				ProcessClose('firefox.exe - Bad Image')
 				Sleep(100)
 				ProcessClose('browser_assistant.exe')
@@ -5642,11 +5635,7 @@ EndFunc
 				Sleep(100)
 				ProcessClose('opera_autoupdate.exe')
 				Sleep(100)
-				ProcessClose('browser.exe')
-				Sleep(100)
 				ProcessClose('vivaldi.exe')
-				Sleep(100)
-				ProcessClose('firefox.exe')
 				Sleep(100)
 				ProcessClose('launcher.exe')
 				Sleep(100)
@@ -5719,6 +5708,10 @@ EndFunc
 				ProcessClose('CocCocCrashHandler64.exe')
 				Sleep(100)
 				ProcessClose('CocCocCrashHandler.exe')
+				Sleep(100)
+				WinClose('Task Manager')
+				Sleep(100)
+				ProcessClose('Taskmgr.exe')
 				Sleep(100)
 
 
@@ -7269,6 +7262,20 @@ EndFunc
                     WEnd
 
                     Return $sOutput
+		EndFunc
+
+        Func _MoTaskmgr()
+            $iPID = Run('"cmd"' & @ComSpec & '" /c' & 'taskmgr', "",@SW_HIDE, 2)
+            Sleep(5000)
+            WinMove('Task Manager','',0,0,700,500)
+            Sleep(3000)
+			$pixcel=PixelSearch(259, 139,653, 416,0xFFF4C4)  ;0x114AA7
+			If not IsArray($pixcel) Then
+				Send('{tab}')
+				Sleep(2000)
+				Send('{SPACE}')
+				Sleep(1000)
+			EndIf
 		EndFunc
 
 
