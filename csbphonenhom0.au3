@@ -247,7 +247,7 @@ While 1   ; vong tra lai gia tr
                     ProcessClose('Ground.exe')
   Next
 
-                    $profileso=2
+                    $profileso=1
 					$Gmailso =1
 WEnd   ; vong tra lai gia tr
 

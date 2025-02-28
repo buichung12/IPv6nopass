@@ -150,7 +150,7 @@ While 1   ; vong tra lai gia tr
 	            $i6=Mod($vpsso,5)
 				If $i6=0 Then $i6=5
 	        If $i6=1 Then
-				$profileso=2
+				$profileso=1
 				;If $checkprofile=1 Then $profileso=10
 				$i7=20
 			EndIf
@@ -245,7 +245,7 @@ While 1   ; vong tra lai gia tr
                     ProcessClose('Ground.exe')
   Next
 
-                    $profileso=2
+                    $profileso=1
 					$Gmailso =1
 WEnd   ; vong tra lai gia tr
 
