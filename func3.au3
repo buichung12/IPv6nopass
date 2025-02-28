@@ -4953,13 +4953,13 @@ EndFunc
 							EndIf
 
 							ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,291, 635)
-		                    Sleep(1000)
+		                    Sleep(100)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
-							Sleep(1000)
+							Sleep(100)
 							MouseClick('left',1328,145,1,20)
-							Sleep(1000)
+							Sleep(100)
 							MouseClick('left',1280,163,1,20)
-							Sleep(1000)
+							Sleep(100)
 
 					EndIf
 
@@ -4996,13 +4996,13 @@ EndFunc
 
 					If $i=4 Then
 						MouseClick('left',600, 102,1,20)
-						Sleep(1000)
+						Sleep(100)
 						MouseClick('left',800, 155,1,20)
-						Sleep(1000)
+						Sleep(100)
 						MouseClick('left',852, 510,1,20)  ;tat thong bao update
-				        Sleep(2000)
+				        Sleep(200)
 						MouseClick('left',1280,163,1,20)
-						Sleep(1000)
+						Sleep(100)
 					EndIf
 
 
@@ -5067,7 +5067,7 @@ EndFunc
 
 
 						If $i=8 Then
-							Sleep(1000)
+							Sleep(100)
 							ControlClick($var[$i10][1],'','','left',1,1333, 102)
 							Sleep(100)
 							ControlClick($var[$i10][1],'','','left',1,1333, 102)
@@ -5489,9 +5489,17 @@ EndFunc
 				ProcessClose('gmsedge.exe')
 				DirRemove('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Crypto',1)
 				MouseClick('left',1263,887,1,20)
-				Sleep(2000)
+				Sleep(200)
 				MouseMove(1263,830)
-				Sleep(10000)
+				Sleep(100)
+				ProcessClose('BraveSoftware Update.exe')
+				Sleep(100)
+				ProcessClose('BraveSoftware Update (32 bit).exe')
+				Sleep(100)
+				ProcessClose('CocCoc Update.exe')
+				Sleep(100)
+				ProcessClose('CocCoc Update (32 bit).exe')
+				Sleep(100)
 			EndIf
 
 			    WinClose('opera - Bad Image.exe')
