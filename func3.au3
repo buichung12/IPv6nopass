@@ -3971,7 +3971,7 @@ EndFunc
 					EndIf
 
 					Sleep(2000)
-					MouseClick('left',600,60,1,20)
+					ControlClick('','','','left',1,600,60)
 					Sleep(2000)
 					Send('google.com')
 					Sleep(1000)
@@ -4771,9 +4771,16 @@ EndFunc
 
 					;WinClose('csFireFox - 10 sea')
 			        WinClose('Proxy Client Tinsoft')
-			        Sleep(2000)
+			        Sleep(200)
                     WinClose('Server Manager')
+					Sleep(100)
 					ProcessClose('WerFault.exe')
+					Sleep(100)
+					WinClose('Task Manager')
+				    Sleep(100)
+				    ProcessClose('Taskmgr.exe')
+				    Sleep(100)
+
 					$linkblu2=''
 
 					_closeTrinhDuyet($i)
@@ -5395,8 +5402,6 @@ EndFunc
 				Sleep(100)
 				ProcessClose('browser_assistant.exe')
 				Sleep(100)
-				ProcessClose('opera_autoupdate.exe')
-				Sleep(100)
 				ProcessClose('AvastBrowserCrashHandler64.exe')
 				Sleep(100)
 				ProcessClose('AvastBrowserCrashHandler.exe')
@@ -5441,10 +5446,6 @@ EndFunc
 				Sleep(100)
 				ProcessClose('GoogleCrashHandler64.exe')
 				Sleep(100)
-				ProcessClose('GoogleCrashHandler.exe')
-				Sleep(100)
-				ProcessClose('BraveCrashHandler64.exe')
-				Sleep(100)
 				ProcessClose('gseamonkey.exe')
 				Sleep(100)
 				ProcessClose('msedge.exe')
@@ -5454,14 +5455,6 @@ EndFunc
 				ProcessClose('machine.exe')
 				Sleep(100)
 				ProcessClose('CocCocUpdate.exe')
-				Sleep(100)
-				ProcessClose('firefox.exe')
-				Sleep(100)
-				ProcessClose('firefox.exe')
-				Sleep(100)
-				ProcessClose('firefox.exe')
-				Sleep(100)
-				ProcessClose('firefox.exe')
 				Sleep(100)
 				ProcessClose('firefox.exe')
 				Sleep(100)
@@ -5489,7 +5482,8 @@ EndFunc
                 ProcessClose('gbrowser.exe')
 				ProcessClose('gmsedge.exe')
 				DirRemove('C:\Users\'&@UserName&'\AppData\Roaming\Microsoft\Crypto',1)
-				MouseClick('left',1263,887,1,20)
+				Sleep(1000)
+				ControlClick('','','','left',1,1263,887)
 				Sleep(200)
 				MouseMove(1263,830)
 				Sleep(100)
@@ -5583,14 +5577,14 @@ EndFunc
 				Sleep(100)
 				ProcessClose('msedge.exe')
 				Sleep(100)
-				MouseClick("left",1000, 500,1,20)   ; tat update
+				ControlClick('','','',"left",1,1000, 500)   ; tat update
 				Sleep(100)
 				WinClose('Local Area Network (LAN) Settings')
 				Sleep(100)
 				WinClose('Internet Properties')
 				Sleep(100)
 				WinClose('Settings')
-				MouseClick('left',300,455,1,20)   ; thoat loi win
+				;MouseClick('left',300,455,1,20)   ; thoat loi win
 				Sleep(100)
 				WinClose('[class:CabinetWClass]','')
 				Sleep(100)
@@ -5671,14 +5665,14 @@ EndFunc
 				Sleep(100)
 				ProcessClose('msedge.exe')
 				Sleep(100)
-				MouseClick("left",1000, 500,1,20)   ; tat update
+				;MouseClick("left",1000, 500,1,20)   ; tat update
 				Sleep(100)
 				WinClose('Local Area Network (LAN) Settings')
 				Sleep(100)
 				WinClose('Internet Properties')
 				Sleep(100)
 				WinClose('Settings')
-				MouseClick('left',300,455,1,20)   ; thoat loi win
+				;MouseClick('left',300,455,1,20)   ; thoat loi win
 				Sleep(100)
 				WinClose('[class:CabinetWClass]','')
 				Sleep(100)
@@ -5709,12 +5703,6 @@ EndFunc
 				Sleep(100)
 				ProcessClose('CocCocCrashHandler.exe')
 				Sleep(100)
-				WinClose('Task Manager')
-				Sleep(100)
-				ProcessClose('Taskmgr.exe')
-				Sleep(100)
-
-
 
 	EndFunc
 
