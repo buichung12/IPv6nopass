@@ -2554,7 +2554,7 @@ EndFunc
 					WinClose('Server Manager')
 					WinClose('Restore pages')
 				    ProcessClose('WerFault.exe')
-                    Sleep(1000)
+                    Sleep(100)
 
                 $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
                 Sleep(100)
@@ -2794,8 +2794,6 @@ EndFunc
 						  EndIf
 
                         EndIf
-
-
 			  Next
 
 
@@ -2856,14 +2854,14 @@ EndFunc
 				        $y3=0
 						$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\videos.bmp',1,406, 318,831,610,$x3,$y3,1)
 				        If $x3>0 Then
-				         	MouseClick('left',$x3,$y3,1,20)   ; click video
+				         	ControlClick('','','','left',1,$x3,$y3)    ; click video
 					        Sleep(3000)
 							$linkvideo=1
 				        Else
 
 							$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\videos2.bmp',1,406, 318,831, 610,$x3,$y3,1)
 							If $x3>0 Then
-								MouseClick('left',$x3,$y3,1,20)   ; click shorts
+								ControlClick('','','','left',1,$x3,$y3)   ; click shorts
 					            Sleep(3000)
 								$linkvideo=1
 						    EndIf
