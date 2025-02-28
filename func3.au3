@@ -4421,6 +4421,25 @@ EndFunc
 						MouseClick('left',1260,200,1,20)
 						Sleep(1000)
 					EndIf
+
+					If $i=5 Then
+							ControlClick('','','','left',1,66, 26)
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(1000)
+							Send('{tab}')
+							Sleep(1000)
+							Send('{enter}')
+							Sleep(2000)
+							ControlClick('','','','left',1,427, 26)
+							Sleep(2000)
+							ControlClick('','','','left',1,1322,99)
+						    Sleep(100)
+							ControlClick('','','','left',1,1280,163)
+						    Sleep(100)
+
+					EndIf
+
 					If $i=4 Then
 						MouseClick('left',600, 102,1,20)
 						Sleep(2000)
@@ -4962,9 +4981,9 @@ EndFunc
 		                    Sleep(100)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
 							Sleep(100)
-							MouseClick('left',1328,145,1,20)
+							ControlClick('','','','left',1,1328,145)
 							Sleep(100)
-							MouseClick('left',1280,163,1,20)
+							ControlClick('','','','left',1,1280,163)
 							Sleep(100)
 
 					EndIf
@@ -5001,14 +5020,15 @@ EndFunc
 				#ce
 
 					If $i=4 Then
-						MouseClick('left',600, 102,1,20)
+						ControlClick('','','','left',1,600, 102)
 						Sleep(100)
-						MouseClick('left',800, 155,1,20)
+						ControlClick('','','','left',1,800, 155)
 						Sleep(100)
-						MouseClick('left',852, 510,1,20)  ;tat thong bao update
-				        Sleep(200)
-						MouseClick('left',1280,163,1,20)
+						ControlClick('','','','left',1,852, 510)
 						Sleep(100)
+						ControlClick('','','','left',1,1280,163)
+						Sleep(100)
+
 					EndIf
 
 
@@ -5031,8 +5051,9 @@ EndFunc
 							Sleep(100)
 							ControlClick('','','','left',1,789, 266)
 							Sleep(100)
-							MouseClick('left',1280,163,1,20)
-							Sleep(200)
+							ControlClick('','','','left',1,1280,163)
+						    Sleep(100)
+
 					    EndIf
 
 						WinMove($var[$i10][1],'',0,0,1366,850)
@@ -5078,16 +5099,13 @@ EndFunc
 							Sleep(100)
 							ControlClick($var[$i10][1],'','','left',1,1333, 102)
 							Sleep(100)
-							MouseClick('left',1333, 102,1,20)
-							Sleep(100)
-							MouseClick('left',1333, 102,1,20)
-							Sleep(100)
-							MouseClick('left',1333, 102,1,20)
-							Sleep(200)
-							MouseClick('left',1280,163,1,20)
-							Sleep(100)
-							MouseClick('left',1230,700,1,20)
-							Sleep(100)
+							ControlClick('','','','left',1,1333, 102)
+						    Sleep(100)
+							ControlClick('','','','left',1,1280,163)
+						    Sleep(100)
+							ControlClick('','','','left',1,1230,700)
+						    Sleep(100)
+
 						EndIf
 
 
@@ -5099,10 +5117,11 @@ EndFunc
 							Sleep(100)
 							ControlClick($var[$i10][1],'','','left',1,1300, 200)
 							Sleep(100)
-							MouseClick('left',1280,163,1,20)
-							Sleep(200)
-							MouseClick('left',680,550,1,20)
-							Sleep(200)
+							ControlClick('','','','left',1,1280,163)
+						    Sleep(100)
+							ControlClick('','','','left',1,680,550)
+						    Sleep(100)
+
 						EndIf
 
 					    If $i=6 Then
@@ -5112,18 +5131,19 @@ EndFunc
 					        Sleep(100)
 							ControlClick($var[$i10][1],'','','left',1,1332, 123); tat thong bao
 					        Sleep(100)
-							MouseClick('left',1330, 101,1,20)
-							Sleep(100)
-							MouseClick('left',1260,200,1,20)
-							Sleep(100)
-							MouseClick('left',1187, 195,1,20)
-							Sleep(100)
-							MouseClick('left',1280,163,1,20)
-							Sleep(200)
+							ControlClick('','','','left',1,1330, 101)
+						    Sleep(100)
+							ControlClick('','','','left',1,1260,200)
+						    Sleep(100)
+							ControlClick('','','','left',1,1187, 195)
+						    Sleep(100)
+							ControlClick('','','','left',1,1280,163)
+						    Sleep(100)
+
 						EndIf
 
 						If $i=5 Then
-							ControlClick($var[$i10][1],'','','left',1,80, 20)
+							ControlClick($var[$i10][1],'','','left',1,66, 26)
 							Sleep(2000)
 							Send('{tab}')
 							Sleep(1000)
@@ -5131,26 +5151,27 @@ EndFunc
 							Sleep(1000)
 							Send('{enter}')
 							Sleep(2000)
+							ControlClick($var[$i10][1],'','','left',1,427, 26)
+							Sleep(2000)
+							ControlClick('','','','left',1,1322,99)
+						    Sleep(100)
+							ControlClick('','','','left',1,1280,163)
+						    Sleep(100)
 
 						EndIf
 
-						If $i=5 Then
-						   MouseClick('left',1322,99,1,20)
-						   Sleep(200)
-						   MouseClick('left',1280,163,1,20)
-						   Sleep(200)
-					    EndIf
 
                         If $i=4 Then
 
-							MouseClick('left',600, 102,1,20)
-						    Sleep(200)
-						    MouseClick('left',800, 155,1,20)
-						    Sleep(200)
-						    MouseClick('left',852, 510,1,20)  ;tat thong bao update
-				            Sleep(200)
-						    MouseClick('left',1280,163,1,20)
-						    Sleep(200)
+							ControlClick('','','','left',1,600, 102)
+						    Sleep(100)
+							ControlClick('','','','left',1,800, 155)
+						    Sleep(100)
+							ControlClick('','','','left',1,852, 510)
+						    Sleep(100)
+							ControlClick('','','','left',1,1280,163)
+						    Sleep(100)
+
 
 						EndIf
 
@@ -5165,17 +5186,19 @@ EndFunc
 						EndIf
 
 						If $i=2 Then
-							MouseClick('left',1334, 981,1,20)
+							ControlClick('','','','left',1,1334, 981)
+						    Sleep(100)
+							ControlClick('','','','left',1,1333, 97)
+						    Sleep(100)
+							ControlClick('','','','left',1,1333, 130)
+						    Sleep(100)
+							ControlClick('','','','left',1,1280,163)
 							Sleep(100)
-							MouseClick('left',1333, 97,1,20)
+							ControlClick($var[$i10][1],'','','left',1,1333, 130)
 						    Sleep(100)
-					        MouseClick('left',1333, 130,1,20)
+							ControlClick('','','','left',1,1280,163)
 						    Sleep(100)
-						    MouseClick('left',1333, 97,1,20)
-						   Sleep(100)
-					       ControlClick($var[$i10][1],'','','left',1,1333, 130)
-						   MouseClick('left',1280,163,1,20)
-							Sleep(200)
+
 						EndIf
 #cs
 						If $i=1 Then
@@ -5213,16 +5236,16 @@ EndFunc
 		                    Sleep(200)
 		                    ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
 							Sleep(200)
-							MouseClick('left',1300,720,1,20)
-							Sleep(100)
-							MouseClick('left',1280,163,1,20)
-							Sleep(200)
-							MouseClick('left',1322,114,1,20)
-							Sleep(100)
-							MouseClick('left',1317,112,1,20)
-							Sleep(100)
-							MouseClick('left',1327, 102,1,20)
-							Sleep(100)
+							ControlClick('','','','left',1,1300,720)
+						    Sleep(100)
+							ControlClick('','','','left',1,1280,163)
+						    Sleep(100)
+							ControlClick('','','','left',1,1322,114)
+						    Sleep(100)
+							ControlClick('','','','left',1,1317,112)
+						    Sleep(100)
+							ControlClick('','','','left',1,1327, 102)
+						    Sleep(100)
 						EndIf
 
 						If $i=1 Then
