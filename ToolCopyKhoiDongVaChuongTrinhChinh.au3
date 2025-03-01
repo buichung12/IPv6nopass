@@ -120,7 +120,7 @@ $check=0
 				Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\ChromeSetup.exe')
 				Sleep(5000)
 				MouseClick('left',780,460,1,20)
-				Sleep(90000)
+				Sleep(40000)
 				For $i20=1 to 50
 					$pixcel=PixelSearch(600, 150,800, 350,0x1A73E8,5)
 					If IsArray($pixcel) Then                     ; tat trang
@@ -144,7 +144,7 @@ $check=0
 							Send('{enter}')
 				            Sleep(10000)
 					EndIf
-					Sleep(5000)
+					Sleep(2000)
 	            Next
 	            Sleep(2000)
 				WinMove('','',0,0,1366,768)
