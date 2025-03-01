@@ -4805,16 +4805,7 @@ EndFunc
                     WinClose('Server Manager')
 					Sleep(100)
 					ProcessClose('WerFault.exe')
-					Sleep(100)
-					WinClose('Task Manager')
-				    Sleep(100)
-				    ProcessClose('Taskmgr.exe')
-				    Sleep(100)
-
 					$linkblu2=''
-
-					_closeTrinhDuyet($i)
-					Sleep(2000)
 
 					For $i22=1 to 240
 						If Mod($vpsso,5)=1 Then
@@ -4845,6 +4836,12 @@ EndFunc
 
 						Sleep(5000)
 				    Next
+
+					Sleep(100)
+					WinClose('Task Manager')
+				    Sleep(100)
+				    ProcessClose('Taskmgr.exe')
+				    Sleep(100)
 
                 #cs
 					For $i22=1 to 240
