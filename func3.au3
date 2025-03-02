@@ -6208,12 +6208,9 @@ EndFunc
 
 	            WinMove('','',0,0,1366,768)
 				Sleep(2000)
-
-				;_dienIpPort($i)
                 MouseClick('left',1280, 129,1,20)
 			    $check=0
                 MouseClick('left',500, 60,1,20)
-				;If $i=8 Then MouseClick('left',800, 75,1,20)
                 Sleep(2000)
 				Send('^a')
 				Sleep(2000)
@@ -6301,6 +6298,20 @@ EndFunc
 				Sleep(3000)
 				MouseClick('left',1016, 363,1,20)
 				Sleep(2000)
+
+				MouseClick('left',500, 60,1,20)
+                Sleep(2000)
+				Send('^a')
+				Sleep(2000)
+				ClipPut('https://www.youtube.com/account')
+			    Sleep(200)
+			    Send('^v')
+				Sleep(1000)
+				Send('{enter}')
+				Sleep(5000)
+				Send('^0')
+				Sleep(2000)
+
 				MouseClick('left',650,350,1,20)
 				Sleep(3000)
 				Send('{tab}')
