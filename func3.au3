@@ -1436,7 +1436,8 @@ EndFunc
 			Sleep(10000)
 			Send('{enter}')
 			Sleep(90000)
-			_closeTrinhDuyet(1)
+			MouseClick('left',857,520,1,20)
+			_closeTrinhDuyet(2)
 
 
 
