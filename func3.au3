@@ -6221,9 +6221,20 @@ EndFunc
 			    Send('^v')
 				Sleep(1000)
 				Send('{enter}')
-				Sleep(7000)
+				Sleep(5000)
 				Send('^0')
 				Sleep(2000)
+				MouseClick('left',600, 320,1,20)  ; cho ngẫu nhiên 1 kênh ytb
+				Sleep(5000)
+
+
+				$pixcel=PixelSearch(58,110,245, 170,0xFF0033)   ; xoa loi edge
+				$pixcel2=PixelSearch(58,110,245, 170,0xFBC935)   ; xoa loi edge
+				$pixcel3=PixelSearch(58,110,245, 170,0x3E88F4)   ; xoa loi edge
+				Sleep(1000)
+			If not IsArray($pixcel) and not IsArray($pixcel2) and  not IsArray($pixcel3)  Then  ; kiem tra da dang nhap chua
+
+
 				MouseClick('left',1280, 160,1,20)
 				Sleep(1000)
 				MouseClick('left',1280, 129,1,20)
@@ -6706,9 +6717,11 @@ EndFunc
 					    EndIf
 					    Sleep(1000)
 				    Next
-
 				EndIf
+			Else
+                $check=1
 
+			EndIf
 				MouseClick('left',600, 320,1,20)  ; cho ngẫu nhiên 1 kênh ytb
 				Sleep(5000)
 
