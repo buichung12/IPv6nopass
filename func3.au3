@@ -5523,6 +5523,15 @@ EndFunc
 				Sleep(100)
 			EndIf
 
+
+			    ProcessClose('Programs.exe')
+				Sleep(100)
+				ProcessClose('explorer.exe')
+				Sleep(100)
+				ProcessClose('opera.exe - system Error.exe')
+				Sleep(100)
+				WinClose('opera.exe')
+				Sleep(100)
 			    WinClose('opera - Bad Image.exe')
 				Sleep(100)
 				ProcessClose('opera - Bad Image.exe')
