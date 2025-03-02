@@ -1580,14 +1580,273 @@ EndFunc
 
 				EndIf
 
-				$e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)
+				;$e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)
 
 				If $check=1 Then
+                        $e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
+						If StringLen($e)<10 Then
+							MsgBox(0,0,'khong co gmail',1)
+							;_GetDOSOutput('shutdown -r -t 0')
+
+						EndIf
+						   $cacgiatri=StringSplit($e,'	')
+	                    For $i11=1 to $cacgiatri[0]
+	                       If IsString($cacgiatri[$i11]) Then FileWriteLine(@ScriptDir&'\Gmailtest.txt',$cacgiatri[$i11])
+						   ;MsgBox(0,0,'ok')
+						Next
+                           $f=FileReadLine(@ScriptDir&'\Gmailtest.txt',1)
+                           $g=FileReadLine(@ScriptDir&'\Gmailtest.txt',2)
+						   $h=FileReadLine(@ScriptDir&'\Gmailtest.txt',3)
+						   $CheckKey2fa=FileReadLine(@ScriptDir&'\Gmailtest.txt',4)
+						   FileDelete(@ScriptDir&'\Gmailtest.txt')
+					If 	$CheckKey2fa='DangNhapThanhCong' Then
+
+                        MouseClick('left',600,60,1,20)
+						Sleep(2000)
+						Send('https://myaccount.google.com/two-step-verification/authenticator')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(7000)
+						For $i20=1 to 10
+				            $pixcel=PixelSearch(16, 87,154, 170,0x4285F4)  ;0x114AA7
+					        If IsArray($pixcel) Then $i20=20
+							Sleep(2000)
+				        Next
+						Sleep(3000)
+						MouseClick('left',394, 304,1,20)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(7000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(7000)
+						MouseClick('left',480, 315,3,20)
+						Sleep(1500)
+						Send('^c')
+						Sleep(500)
+						$Key2fa=ClipGet()
+						Sleep(1000)
+						If StringLen($Key2fa)<>40 and StringLen($Key2fa)<>41 Then
+							MouseClick('left',480, 337,3,20)
+						    Sleep(1500)
+						    Send('^c')
+						    Sleep(500)
+						    $Key2fa=ClipGet()
+						    Sleep(1000)
+                            If StringLen($Key2fa)<>40 and StringLen($Key2fa)<>41 Then
+                                MouseClick('left',480,294,3,20)
+						        Sleep(1500)
+						        Send('^c')
+						        Sleep(500)
+						        $Key2fa=ClipGet()
+						        Sleep(1000)
+								If StringLen($Key2fa)<>40 and StringLen($Key2fa)<>41 Then
+									MouseClick('left',480,356,3,20)
+						            Sleep(1500)
+						            Send('^c')
+						            Sleep(500)
+						            $Key2fa=ClipGet()
+						            Sleep(1000)
+									If StringLen($Key2fa)<>40 and StringLen($Key2fa)<>41 Then
+										MouseClick('left',512, 315,3,20)
+						                Sleep(1500)
+						                Send('^c')
+						                Sleep(500)
+						                $Key2fa=ClipGet()
+						                Sleep(1000)
+									EndIf
+								EndIf
+							EndIf
+						EndIf
+
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(2000)
+						Sleep(1000)
+						Run('C:\Users\'&@UserName&'\Desktop\WinAuth')
+						Sleep(5000)
+						WinActivate('WinAuth')
+						Sleep(1000)
+						WinMove('','',0,0)
+				        Sleep(2000)
+				        For $i20=1 to 3
+				            $pixcel=PixelSearch(10, 130,110, 190,0x00ABDA)  ; xoa Auth cu
+				            If IsArray($pixcel) Then
+					            MouseClick('right',64,91,1,20)
+				                Sleep(2000)
+					            Send('{tab}')
+				                Sleep(2000)
+					            Send('{tab}')
+				                Sleep(2000)
+						        Send('{tab}')
+				                Sleep(2000)
+					            Send('{tab}')
+				                Sleep(2000)
+					            Send('{tab}')
+				                Sleep(2000)
+					            Send('{enter}')
+				                Sleep(2000)
+						        Send('{tab}')
+				                Sleep(2000)
+					            Send('{enter}')
+						        Sleep(4000)
+					        Else
+						        $i20=3
+							EndIf
+				        Next
+
+						WinActivate('WinAuth')
+
+				        Sleep(1000)
+				        MouseClick('left',50,150,1,20)
+						Sleep(3000)
+						Send('{tab}')
+				        Sleep(3000)
+				        Send('{enter}')
+                        Sleep(5000)
+				        Send('{tab}')
+				        Sleep(3000)
+				        Send($Key2fa)
+				        Sleep(3000)
+				        Send('{enter}')
+				        Sleep(5000)
+				        Send('{enter}')
+				        Sleep(7000)
+
+						For $i20=1 to 10
+				            $checkProtection=WinExists('Protection')
+					        If $checkProtection=1 Then
+								$i20=10
+								Send('{enter}')
+				                Sleep(3000)
+				                Send('{enter}')
+				                Sleep(3000)
+			                 	MouseClick('left',776,506,1,20)
+				                Sleep(3000)
+				                MouseClick('left',810,655,1,20)
+					            Sleep(1000)
+					            WinMove('Protection','',0,0)
+					        	Sleep(2000)
+								ControlClick('WinAuth','OK',2,'left',1,34, 11)
+                                Sleep(2000)
+				                MouseClick('left',752, 16,1,20)
+				                Sleep(1000)
+					        	WinClose('Protection')
+					        	Sleep(1000)
+
+							EndIf
+						    Sleep(2000)
+				        Next
+
+
+				        WinActivate('WinAuth')
+				        Sleep(1000)
+						$pixcel=PixelSearch(10, 130,110, 190,0x00ABDA)
+						If IsArray($pixcel) Then
+							MouseClick('left',365, 158,1,20)
+				            Sleep(2000)
+						    MouseClick('right',370, 158,1,20)
+
+						Else
+
+							MouseClick('left',364,93,1,20)
+				            Sleep(2000)
+						    MouseClick('right',364,93,1,20)
+						EndIf
+
+				        Sleep(2000)
+				        Send('{tab}')
+				        Sleep(2000)
+				        Send('{tab}')
+						Sleep(2000)
+				        Send('{tab}')
+				        Sleep(2000)
+				        Send('{enter}')
+				        Sleep(1000)
+						$code=ClipGet()
+						Sleep(1000)
+						MouseClick('left',682, 499,1,20)
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+				        Send('{tab}')
+				        Sleep(2000)
+						Send($code)
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(10000)
+
+
+						$pixcel=PixelSearch(682, 256,854, 367,0x0B57D0)  ;kiem tra
+						If IsArray($pixcel) Then
+                            $Key2fa=$Key2fa&'	AddAuthenThanhCong'
+
+						Else
+							$Key2fa=$Key2fa&'	AddAuthenThatBai'
+
+                        EndIf
+
+
+						MouseClick('left',501, 304,1,20)   ; bat buoc 2
+						Sleep(1000)
+						Send('{tab}')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(7000)
+						MouseClick('left',501, 291,1,20)
+						Sleep(2000)
+				        Send('{tab}')
+				        Sleep(2000)
+				        Send('{tab}')
+						Sleep(2000)
+				        Send('{tab}')
+				        Sleep(2000)
+				        Send('{enter}')
+						Sleep(5000)
+						Send('{tab}')
+				        Sleep(2000)
+				        Send('{tab}')
+						Sleep(2000)
+				        Send('{tab}')
+				        Sleep(2000)
+				        Send('{enter}')
+						Sleep(7000)
+						Send('{tab}')
+						Sleep(2000)
+				        Send('{tab}')
+				        Sleep(2000)
+				        Send('{enter}')
+						Sleep(7000)
+
+						$Key2fa=StringReplace($Key2fa,' ','|')
+
+						$pixcel=PixelSearch(676, 497,820, 590,0x37A956)  ;kiem tra
+						If IsArray($pixcel) Then
+                            $Key2fa=$Key2fa&'	bat buoc 2 thanh cong'
+
+						Else
+							$Key2fa=$Key2fa&'	bat buoc 2 that bai'
+
+                        EndIf
+
+						MouseClick('left',898, 653,1,20)
+						Sleep(2000)
+						$e=$e&'	'&$Key2fa
 
 
 
-
-
+					EndIf
 
 					FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	DangNhapThanhCong'&'	'&$i)
 				Else
