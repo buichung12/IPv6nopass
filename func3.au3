@@ -1568,7 +1568,7 @@ EndFunc
 				    For $i20=1 to 10
 					    $pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
 					    Sleep(1000)
-					    $pixcel2=PixelSearch(18, 130,206, 263,0x0B57D0)
+					    $pixcel2=PixelSearch(18, 130,206, 263,0x3E88F4)
 					    Sleep(1000)
 					    If IsArray($pixcel) or IsArray($pixcel2) Then
 						    $check=1
@@ -1607,11 +1607,24 @@ EndFunc
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(7000)
+						 $checklink=0
 						For $i20=1 to 10
 				            $pixcel=PixelSearch(16, 87,154, 170,0x4285F4)  ;0x114AA7
-					        If IsArray($pixcel) Then $i20=20
-							Sleep(2000)
+							$pixcel2=PixelSearch(18, 130,206, 263,0x3E88F4)
+					        If IsArray($pixcel) Or IsArray($pixcel2) Then
+								$i20=20
+							     Sleep(2000)
+								 $checklink=1
+							EndIf
 				        Next
+
+						If $checklink=0 Then   ; looix can doi Mat khau
+							Send($g)
+							Sleep(2000)
+							Send('{enter}')
+							Sleep(7000)
+						EndIf
+
 						Sleep(3000)
 						MouseClick('left',394, 304,1,20)
 						Sleep(2000)
@@ -6659,7 +6672,7 @@ EndFunc
 				Sleep(10000)
 				For $i20=1 to 10
 					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
-					$pixcel2=PixelSearch(13, 224,70, 345,0x1F1F1F)
+					$pixcel2=PixelSearch(13, 224,70, 345,0x3E88F4)
 					If IsArray($pixcel) or IsArray($pixcel2) Then
 						$check=1
 						$i20=17
@@ -6680,7 +6693,7 @@ EndFunc
 				    For $i20=1 to 10
 					    $pixcel=PixelSearch(58,110,245, 170,0xFF0033)   ; xoa loi edge
 						$pixcel2=PixelSearch(58,110,245, 170,0xFF0000)   ; xoa loi edge
-						$pixcel3=PixelSearch(58,110,245, 170,0xFF0100)   ; xoa loi edge
+						$pixcel3=PixelSearch(58,110,245, 170,0x3E88F4)   ; xoa loi edge
 
 
 					    Sleep(1000)
@@ -6693,8 +6706,6 @@ EndFunc
 					    EndIf
 					    Sleep(1000)
 				    Next
-
-
 
 				EndIf
 
