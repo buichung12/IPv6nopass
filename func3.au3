@@ -1844,6 +1844,9 @@ EndFunc
 						Sleep(2000)
 						$e=$e&'	'&$Key2fa
 
+                        WinClose('WinAuth')
+				        Sleep(1000)
+
 
 
 					EndIf
