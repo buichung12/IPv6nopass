@@ -1631,7 +1631,7 @@ EndFunc
 						$pixcel=PixelSearch(231,266,390,434,0xFABB05)  ;0x114AA7
 						If IsArray($pixcel) Then
                             MouseClick('left',$pixcel[0],$pixcel[1],1,20)
-							Sleep(1000)
+							Sleep(2000)
 							Send('{tab}')
 							Sleep(2000)
 							Send('{tab}')
@@ -1643,6 +1643,10 @@ EndFunc
 							Send('{enter}')
 							Sleep(7000)
 							Send($g)
+							Sleep(2000)
+							Send('{enter}')
+							Sleep(1000)
+							Send($f)
 							Sleep(2000)
 							Send('{enter}')
 							Sleep(7000)
