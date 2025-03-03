@@ -1608,6 +1608,8 @@ EndFunc
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(7000)
+						WinMove('','',0,0,1366,768)
+				        Sleep(2000)
 						 $checklink=0
 						For $i20=1 to 10
 				            $pixcel=PixelSearch(16, 87,154, 170,0x4285F4)  ;0x114AA7
@@ -1623,9 +1625,38 @@ EndFunc
 							Send($g)
 							Sleep(2000)
 							Send('{enter}')
-							Sleep(7000)
+							Sleep(10000)
 						EndIf
 
+						$pixcel=PixelSearch(231,266,390,434,0xFABB05)  ;0x114AA7
+						If IsArray($pixcel) Then
+                            MouseClick('left',$pixcel[0],$pixcel[1],1,20)
+							Sleep(1000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+							Sleep(7000)
+							Send('{enter}')
+							Sleep(7000)
+							Send($g)
+							Sleep(2000)
+							Send('{enter}')
+							Sleep(7000)
+							Send($f)
+							Sleep(1000)
+							Send('{enter}')
+							Sleep(2000)
+							$check=_LayCodeCuoi($h)
+							If $check=1 Then $e=$e&'	'&"Buichung"&@MDAY&@MON
+							Sleep(5000)
+
+
+						EndIf
+					  If $check=1 Then
 						Sleep(3000)
 						MouseClick('left',394, 304,1,20)
 						Sleep(2000)
@@ -1861,7 +1892,7 @@ EndFunc
                         WinClose('WinAuth')
 				        Sleep(1000)
 
-
+                      EndIf
 
 					EndIf
 
@@ -7598,6 +7629,705 @@ EndFunc
 				Sleep(1000)
 			EndIf
 		EndFunc
+
+
+		Func _LayCodeCuoi($h)
+									$checkcode=1
+									$code=1
+					                Run("C:\Program Files\Google\Chrome\Application\chrome.exe")   ;"C:\Program Files\Google\Chrome\Application\chrome.exe"
+									Sleep(2000)
+									Run("C:\Users\"&@UserName&"\AppData\Local\Google\Chrome\Application\chrome.exe")
+				                    Sleep(3000)
+				                    $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+				                    Sleep(1000)
+				                    If $var[0][0]=0 Then
+				                       Run("C:\Users\"&@UserName&"\AppData\Local\Google\Chrome\Application\chrome.exe")
+					                   Sleep(3000)
+									EndIf
+
+				                    Sleep(7000)
+									WinClose('Install Google Translate extension to translate this page?')
+					                WinClose('Restore pages?')
+					                WinClose('Khôi phục trang')
+					                WinClose('Bạn có muốn khôi phục trang không?')
+				                	Sleep(2000)
+					                WinClose('Default Client')
+					                ProcessClose('WerFault.exe')
+					                Sleep(1000)
+									WinSetState('','',@SW_RESTORE)
+									Sleep(2000)
+									WinMove('','',0,0,1366,768)
+									Sleep(3000)
+									Send('^+n')
+				                    Sleep(4000)
+									WinMove('','',40,40,1366,768)
+									Sleep(3000)
+									MouseClick('left',1334, 19,1,20)
+									Sleep(3000)
+				                    $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+									Sleep(1000)
+				                    For $i10 = 1 to $var[0][0]
+									    If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
+                                             WinMove($var[$i10][1],'',0,0,1366,768)
+				                             Sleep(2000)
+					                    EndIf
+									Next
+				                    Sleep(2000)
+									$check2=_dangnhaplaycodeGmail($h)
+
+                                For $checkcode=1 to 4
+									$code=_laycodeGmailkhoiphuc($checkcode)
+									Sleep(2000)
+									$var = WinList ("[CLASS:MozillaWindowClass]")
+				                    Sleep(1000)
+                                    For $i10 = 1 to $var[0][0]
+					                    If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
+						                    WinActivate(($var[$i10][1]))
+                                        EndIf
+				                    Next
+									Sleep(1000)
+									Send('^a')
+									Sleep(1000)
+									Send('{BACKSPACE}')
+									Sleep(1500)
+									Send($code)
+									Sleep(1000)
+									Send("{enter}")
+									Sleep(7000)
+
+									$pixcel=PixelSearch(643, 321,902, 526,0xB3261E)
+							        If Not IsArray($pixcel) Then
+                                        $checkcode=4
+									EndIf
+
+								Next
+
+									Sleep(10000)
+									Send('+84',1)
+									Sleep(2000)
+									$pixcel=PixelSearch(538, 342,992, 712,0xDB241D)
+							        If IsArray($pixcel) Then
+
+									;	If $funotp=1 Then
+											_VerryGmailfunotp()
+										;Else
+											;_laySDTvaCODELan1()
+										;EndIf
+
+									EndIf
+
+									MouseClick('left',712, 257,1,20)
+							        Sleep(2000)
+									mouseClick('left',800,300,1,20)
+							        Sleep(2000)
+									Send('{tab}')
+									Sleep(1000)
+									Send('{tab}')
+									Sleep(2000)
+									$pixcel=PixelSearch(647, 324,1127, 439,0x0B57D0)
+							        If not IsArray($pixcel) Then
+										Send('{tab}')
+									    Sleep(2000)
+									EndIf
+									Sleep(1000)
+									$g3="Buichung"&@MDAY&@MON
+									Sleep(1000)
+									Send($g3)
+									Sleep(2000)
+									Send("{tab}")
+									Sleep(2000)
+									Send($g3)
+									Sleep(2000)
+									;MsgBox(0,0,'ok')
+
+
+									Send('{enter}')
+									Sleep(7000)
+									MouseClick('left',850, 540,1,20)
+							        Sleep(2000)
+									MouseClick('left',1067, 543,1,20)
+							        Sleep(4000)
+									MouseClick('left',521, 630,1,20)
+							        Sleep(2000)
+
+
+									$pixcel=PixelSearch(441, 443,600, 600,0xDB241E)
+							        If IsArray($pixcel) Then
+							 			_VerryGmailOTPsim()
+									EndIf
+
+
+								MouseClick('left',600, 60,1,20)
+							    Sleep(1000)
+					    	    Send('https://myaccount.google.com/')
+						        Sleep(2000)
+						        Send('{enter}')
+					    	    Sleep(5000)
+						        MouseClick('left',600, 60,1,20)
+					            Sleep(1000)
+						        Send('https://myaccount.google.com/')
+								Sleep(2000)
+				                Send('{enter}')
+								Sleep(5000)
+                                $check=0
+								Sleep(1000)
+						        For $i20=1 to 10
+									$pixcel=PixelSearch(14, 152,294, 250,0xC2E7FF)
+						            Sleep(1000)
+						            $pixcel2=PixelSearch(18, 163,106, 260,0x1F1F1F)
+						            Sleep(1000)
+					                If IsArray($pixcel) or IsArray($pixcel2) Then
+							             $check=1
+						                $i20=17
+							        EndIf
+							        Sleep(1000)
+								Next
+
+
+           Return $check
+
+		EndFunc
+
+        Func _dangnhaplaycodeGmail($h)
+
+				$sodong=_FileCountLines(@ScriptDir&"/gmailkhoiphucCoMatKhau.txt")
+
+				$f2=1
+				$g2=1
+				$h2=1
+
+				For $i20=1 to $sodong
+
+					$gmailkhoiphuc=FileReadLine(@ScriptDir&"/gmailkhoiphucCoMatKhau.txt",$i20)
+					$datakhoiphuc=StringSplit($gmailkhoiphuc,'	')
+					If IsArray($datakhoiphuc) Then
+						$IDgmailkhoiphuc=$datakhoiphuc[1]
+					EndIf
+
+					If $h=$IDgmailkhoiphuc Then
+
+						$f2=$datakhoiphuc[1]
+						$g2=$datakhoiphuc[2]
+						$h2=$datakhoiphuc[3]
+						ExitLoop
+
+					EndIf
+
+				Next
+
+			    $check=0
+
+
+                $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+				Sleep(1000)
+                For $i10 = 1 to $var[0][0]
+					If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
+						WinActivate(($var[$i10][1]))
+                    EndIf
+				Next
+                Sleep(1000)
+                MouseClick('left',600, 60,1,20)
+				Sleep(2000)
+                Send('^a')
+                Sleep(500)
+				Send('https://www.youtube.com/account')
+				Sleep(1000)
+				Send('{enter}')
+				Sleep(7000)
+				MouseClick('left',1280, 129,1,20)
+				Sleep(2000)
+				MouseClick('left',600,300,1,20)
+				Sleep(2000)
+				Send('{tab}')
+				Sleep(2000)
+				Send($f2,1)
+				Sleep(500)
+				Send('{enter}')
+				Sleep(3000)
+				For $i20=1 to 10
+				     $pixcel=PixelSearch(616, 326,1218, 679,0x0B57D0)
+					If IsArray($pixcel) Then $i20=20
+					Sleep(1000)
+				Next
+				Sleep(4000)
+				;ClipPut($g)
+				;Sleep(50)
+				;Send('^v')
+				Send($g2,1)
+				Sleep(500)
+				Send('{enter}')
+                Sleep(2000)
+                For $i20=1 to 10
+				     $pixcel=PixelSearch(616, 326,1218, 679,0x0B57D0)
+					If IsArray($pixcel) Then $i20=20
+					Sleep(1000)
+				Next
+
+				$pixcel=PixelSearch(471, 342,880, 481,0xD93025)   ; check sai mk
+					If IsArray($pixcel) Then $check=2
+
+            If $check<>2 Then
+				MouseClick('left',27, 117,1,20)
+				Sleep(1000)
+				$x3=0
+				$y3=0
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,475, 564,916, 688,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
+					Sleep(1000)
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(1000)
+				      Send($h2)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
+				EndIf
+
+				$x3=0
+				$y3=0
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,475, 564,916, 688,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
+					Sleep(1000)
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(1000)
+				      Send($h2)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
+				EndIf
+
+				$x3=0
+				$y3=0
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,475, 504,916, 688,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
+					Sleep(1000)
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(1000)
+				      Send($h2,1)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
+				EndIf
+
+				$x3=0
+				$y3=0
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,475, 504,916, 688,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
+					Sleep(1000)
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(1000)
+				      Send($h2,1)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
+				EndIf
+
+
+				$x3=0
+				$y3=0
+				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailkhoiphuc2.bmp',1,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
+					Sleep(1000)
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(1000)
+				      Send($h2,1)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
+				EndIf
+
+				$x3=0
+				$y3=0
+				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailhhoiphuc.bmp',1,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
+					Sleep(1000)
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(1000)
+				      Send($h2)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
+				EndIf
+
+				If $x3=0 Then      ; neu khong tim thay anh
+				    MouseClick('left',650,300,1,20)
+					Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
+					Send('{enter}')
+				    Sleep(5000)
+				    For $i20=1 to 10
+				       $pixcel=PixelSearch(616, 326,1218, 679,0x0B57D0)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(1000)
+				      Send($h2)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
+
+				EndIf
+
+
+               Sleep(3000)
+			$pixcel=PixelSearch(453, 399,610,600,0xF7F407)   ;check yeu cau sdt
+
+              If Not IsArray($pixcel) Then
+				$pixcel=PixelSearch(643, 299,762, 393,0x8BC474)   ;check verry
+                If not IsArray($pixcel) Then
+                    ;MouseClick('left',68, 178,1)
+					    Sleep(2000)
+						MouseClick('left',1000, 60,1,20)
+					    Sleep(1000)
+						Send('^a')
+						Sleep(500)
+						Sleep(1000)
+						Send('https://mail.google.com/mail/u/0')
+						Sleep(2000)
+						Send('{enter}')
+						Sleep(5000)
+						For $i20=1 to 10
+				          $pixcel=PixelSearch(52, 99,188, 176,0x34A853)
+						  Sleep(1000)
+					        If IsArray($pixcel) Then
+							    $check=1
+						        $i20=17
+							EndIf
+							Sleep(1000)
+				        Next
+				Else
+					$check=3
+				EndIf
+
+			  Else
+                $check=4
+
+			  EndIf
+			EndIf
+
+			WinClose('Settings')
+
+		Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
+	EndFunc
+
+		Func _laycodeGmailkhoiphuc($checkcode)
+
+		    $code=0
+
+			$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+				Sleep(1000)
+                For $i10 = 1 to $var[0][0]
+					If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
+						WinActivate(($var[$i10][1]))
+                    EndIf
+				Next
+            Sleep(2000)
+			MouseClick('left',600,60,1,20)
+		    Sleep(2000)
+			Send('^a')
+			Sleep(1000)
+			Send("https://mail.google.com/mail/u/0",1)
+			Sleep(2000)
+		    Send('{enter}')
+		    Sleep(7000)
+			For $i20=1 to 20
+				$pixcel=PixelSearch(57, 99,122, 147,0xEA4335)
+				If IsArray($pixcel) Then $i20=20
+				Sleep(1000)
+			Next
+			MouseClick('left',490, 119,1,20)
+		    Sleep(2000)
+			Send('^a')
+			Sleep(1000)
+			If $checkcode=2 Then Send('Mã xác minh Google')   ;Google Verification Code
+            If $checkcode=1 Then Send('Google Verification Code')
+			If $checkcode=3 Then
+				Send('Google')
+		        ;Send('{enter}')
+		        ; Sleep(7000)
+			    ;MouseClick('left',477, 310,1,20)
+		        ;Sleep(5000)
+			EndIf
+			If $checkcode=4 Then
+				Send('Google')
+				Sleep(4000)
+		        Send('{enter}')
+				Sleep(7000)
+			    MouseClick('left',477, 310,1,20)
+		        Sleep(5000)
+			EndIf
+			Sleep(2000)
+			Send('{enter}')
+			Sleep(7000)
+			MouseClick('left',477, 276,1,20)
+		    Sleep(5000)
+			MouseMove(776, 510)
+			Sleep(1000)
+			For $i20=1 to 15
+			   MouseClick('left',1296, 728,1,20)
+			   Sleep(200)
+			Next
+			MouseMove(661, 461)
+			Sleep(500)
+			For $i20=1 to 10
+			    MouseWheel($MOUSE_WHEEL_DOWN,3)
+			    Sleep(100)
+			Next
+			Sleep(2000)
+			MouseClick('left',675, 345,1,20)   ; xoa thu thung râc
+			Sleep(2000)
+			MouseClick('left',705, 650,1,20)   ; xoa thu thung râc
+			Sleep(2000)
+
+			For $i20=1 to 2
+			    If $i20=1 Then MouseClick('left',636, 236,2,20)
+				If $i20=2 Then MouseClick('left',793, 316,2,20)
+			    Sleep(1000)
+			    Send('^c')
+			    Sleep(100)
+			    $code=ClipGet()
+			    Sleep(1000)
+				If StringLen($code)=6 Then
+					$check=2
+					$i20=2
+				EndIf
+			Next
+			Sleep(2000)
+			;MouseClick('left',712, 624,1,20)
+			;Sleep(1000)
+		;	MouseClick('left',433, 174,1,20)
+			;;Sleep(1000)
+		;	MouseClick('left',713, 684,1,20)
+			;Sleep(2000)
+
+		Return $code
+	EndFunc
+
+		Func _VerryGmailfunotp()
+					             $hetsim=0
+							For $icodeve=1 to 10
+								$trangthai=1
+								$kq=_HttpRequest(2,'https://funotp.com/api?action=number&service=google&apikey=xbtmvpw7j48ts0d47jdv2qtweew3p9r4','','','','','')
+								    Sleep(500)
+								    $tachchuoi=StringSplit($kq,",")
+								If IsArray($tachchuoi) Then
+							              $trangthai=StringRight($tachchuoi[1],1)
+										; MsgBox(0,0,$trangthai)
+
+									If $trangthai=0 Then
+							         	$phonetho=StringSplit($tachchuoi[2],'"')
+								        If IsArray($phonetho) Then
+									        $sdt=$phonetho[6]
+										EndIf
+										$tachIDsdt=StringTrimRight($tachchuoi[3],1)
+										$IDsdt=StringRight($tachIDsdt,24)
+
+										;MsgBox(0,0,$sdt)
+										;MsgBox(0,0,$IDsdt)
+										;Sleep(3000)
+
+								        MouseClick('left',664, 272,1)
+								        Sleep(500)
+										Send('{tab}')
+										Sleep(500)
+										Send('{tab}')
+										Sleep(500)
+										Send('{tab}')
+										Sleep(500)
+								        Send('^a')
+								        Sleep(500)
+                                        Send('+',1)
+									    Sleep(500)
+								        Send($sdt)
+								        Sleep(1000)
+								        Send('{enter}')
+								        Sleep(5000)
+									    ;MsgBox(0,0,$IDsdt)
+									EndIf
+									     Sleep(1000)
+								    $pixcel=PixelSearch(689, 348,1145, 506,0xB3261E)
+								    If not IsArray($pixcel) Then
+									       $codekhongve=1
+										   $trangthai=1
+										   $dem=1
+									  For $i20=1 to 100                        ;lay code
+                                            Sleep(1000)
+                                        $laycode=_HttpRequest(2,'https://funotp.com/api?action=code&id='&$IDsdt&'&apikey=xbtmvpw7j48ts0d47jdv2qtweew3p9r4','','','','','')
+
+										;FileDelete(@ScriptDir&'\data.txt')
+                                        ;FileWrite(@ScriptDir&'\data.txt',$laycode)
+										;MsgBox(0,0,'ghi data')
+
+                                            If StringLen($laycode) > 20 Then
+												$tachchuoi=StringSplit($laycode,',')
+												If $tachchuoi[0]>2 Then $trangthai=StringRight($tachchuoi[1],1)
+
+												;MsgBox(0,0,$tachchuoi[1])
+											EndIf
+
+					                        If $trangthai=0 Then
+							                        $codetho=StringSplit($tachchuoi[4],'"')
+							                        $code=$codetho[4]
+
+													;MsgBox(0,0,$codetho[4])
+													;Sleep(3000)
+
+													MouseClick('left',664, 272,1)
+								                    Sleep(500)
+													Send('{tab}')
+										            Sleep(500)
+										            Send('{tab}')
+													Sleep(500)
+													Send($code)
+													Sleep(1000)
+													Send('{enter}')
+													Sleep(7000)
+													$i20=200
+													$icodeve=10
+													$codekhongve=0
+											EndIf
+											Sleep(2000)
+											$dem=$dem+1
+											If $dem=99 Then $icodeve=10
+									  Next
+									  If $codekhongve=1 Then
+												Sleep(1000)
+												MouseClick('left',30, 65,1,20)
+												Sleep(5000)
+									  EndIf
+									Else
+
+									   $icodeve=10
+
+									EndIf
+
+								EndIf
+								Sleep(10000)
+							Next
+
+							Sleep(2000)
+
+                    Return $hetsim
+EndFunc
+
+        Func _VerryGmailOTPsim()
+					$hetsim=0
+							For $icodeve=1 to 20
+								$trangthai=0
+								$kq=_HttpRequest(2,'https://api.viotp.com/request/getv2?token=0c2fdaeeec8747fbb35e644cbaa29d07&serviceId=3','','','','','')
+								    Sleep(500)
+								    $tachchuoi=StringSplit($kq,",")
+								If IsArray($tachchuoi) Then
+							              $trangthai=StringRight($tachchuoi[1],3)
+									If $trangthai=200 Then
+							         	$phonetho=StringSplit($tachchuoi[4],'"')
+								        If IsArray($phonetho) Then
+									        $sdt=$phonetho[6]
+										EndIf
+										$IDsdt=StringRight($tachchuoi[8],9)
+								        MouseClick('left',664, 272,1)
+								        Sleep(500)
+										Send('{tab}')
+										Sleep(500)
+										Send('{tab}')
+										Sleep(500)
+										Send('{tab}')
+										Sleep(500)
+								        Send('^a')
+								        Sleep(500)
+                                        Send('+84',1)
+									    Sleep(500)
+								        Send($sdt)
+								        Sleep(1000)
+								        Send('{enter}')
+								        Sleep(5000)
+									    ;MsgBox(0,0,$IDsdt)
+									EndIf
+									     Sleep(1000)
+								    $pixcel=PixelSearch(422, 365,889, 581,0xD93025)
+								    If not IsArray($pixcel) Then
+									       $codekhongve=1
+										   $trangthai=0
+									  For $i20=1 to 100                        ;lay code
+                                            Sleep(1000)
+                                        $laycode=_HttpRequest(2,'https://api.viotp.com/session/getv2?requestId='&$IDsdt&'&token=0c2fdaeeec8747fbb35e644cbaa29d07','','','','','')
+
+												 $tachchuoi=StringSplit($laycode,",")
+												If $tachchuoi[0]>8 Then $trangthai=StringRight($tachchuoi[9],1)
+					                        If $trangthai=1 Then
+							                       $codetho=StringSplit($tachchuoi[12],'"')
+							                        $code=$codetho[4]
+													MouseClick('left',664, 272,1)
+								                    Sleep(500)
+													Send('{tab}')
+										            Sleep(500)
+										            Send('{tab}')
+													Sleep(500)
+													Send($code)
+													Sleep(1000)
+													Send('{enter}')
+													Sleep(7000)
+													$i20=200
+													$icodeve=20
+													$codekhongve=0
+											EndIf
+											Sleep(1000)
+									  Next
+									  If $codekhongve=1 Then
+												Sleep(1000)
+												MouseClick('left',30, 65,1,20)
+												Sleep(5000)
+									  EndIf
+
+									EndIf
+
+								EndIf
+
+								Sleep(10000)
+							Next
+
+							Sleep(2000)
+
+                    Return $hetsim
+EndFunc
 
 
 Func _ReduceMemory()
