@@ -1643,7 +1643,7 @@ EndFunc
 							Sleep(10000)
 						EndIf
 
-						$pixcel=PixelSearch(231,266,390,434,0xFABB05)  ;0x114AA7
+						$pixcel=PixelSearch(200,200,390,434,0xFABB05)  ;0x114AA7
 						If IsArray($pixcel) Then
 							Sleep(1000)
 							$pixcel=PixelSearch(1016,450,1233,700,0x0B57D0)  ;0x114AA7
@@ -1672,8 +1672,6 @@ EndFunc
 							$check=_LayCodeCuoi($h)
 							If $check=1 Then $e=$e&'	'&"Buichung"&@MDAY&@MON
 							Sleep(5000)
-
-
 						EndIf
 					  If $check=1 Then
 						Sleep(3000)
