@@ -1643,8 +1643,9 @@ EndFunc
 							Sleep(10000)
 						EndIf
 
-						$pixcel=PixelSearch(200,200,390,434,0xFABB05)  ;0x114AA7
-						If IsArray($pixcel) Then
+						$pixcel=PixelSearch(16, 87,154, 170,0x4285F4)  ;0x114AA7
+						$pixcel2=PixelSearch(18, 130,206,190,0x3E88F4)
+						If not IsArray($pixcel) and not IsArray($pixcel2) Then
 							Sleep(1000)
 							MouseMove(500,500)
 							$pixcel=PixelSearch(1016,450,1233,700,0x0B57D0)  ;0x114AA7
