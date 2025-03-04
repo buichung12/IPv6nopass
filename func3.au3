@@ -1673,6 +1673,17 @@ EndFunc
 							Sleep(1000)
 							Send('{enter}')
 							Sleep(3000)
+
+							MouseMove(500,500)
+							$pixcel=PixelSearch(1016,450,1233,700,0x0B57D0)  ;0x114AA7
+                            Sleep(1000)
+                            MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+							Sleep(5000)
+							MouseMove(500,500)
+							$pixcel=PixelSearch(1016,450,1233,700,0x0B57D0)  ;0x114AA7
+                            Sleep(1000)
+                            MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+							Sleep(5000)
 							Send($h)
 							Send('{enter}')
 							Sleep(3000)
