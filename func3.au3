@@ -7777,32 +7777,11 @@ EndFunc
 							        Sleep(15000)
 									WinClose('Save password?')
 
-									;MouseClick('left',596, 275,1,20)
-									;Sleep(1000)
-									;Send('{tab}')
-									;Sleep(1000)
-									;Send('{tab}')
-									;Sleep(1000)
-									;Send('{tab}')
-									;Sleep(1000)
-									;Send($code)
-									;Sleep(1000)
-									;MouseMove(500,500)
-									;$pixcel=PixelSearch(1000,450,1233,700,0x0B57D0)  ;0x114AA7
-                                   ; Sleep(1000)
-                                    ;If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-							        ;Sleep(5000)
-									;$pixcel=PixelSearch(1000,450,1233,700,0x0B57D0)  ;0x114AA7
-                                    ;Sleep(1000)
-									;If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-									;Sleep(5000)
-
-									;Send("{enter}")
-									;Sleep(7000)
 
 									$pixcel=PixelSearch(643, 321,902, 526,0xB3261E)
 							        If Not IsArray($pixcel) Then
                                         $checkcode=4
+										$check=1
 									EndIf
 
 								Next
@@ -7843,7 +7822,6 @@ EndFunc
 									Sleep(2000)
 									Send($g3)
 									Sleep(2000)
-									;MsgBox(0,0,'ok')
 
 									Send('{enter}')
 									Sleep(10000)
