@@ -1651,7 +1651,7 @@ EndFunc
 						If not IsArray($pixcel) and not IsArray($pixcel2) Then
 							Sleep(1000)
 							MouseMove(500,500)
-							$pixcel=PixelSearch(1016,450,1233,700,0x0B57D0)  ;0x114AA7
+							$pixcel=PixelSearch(1000,450,1233,700,0x0B57D0)  ;0x114AA7
                             Sleep(1000)
                             MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							Sleep(5000)
@@ -1673,7 +1673,6 @@ EndFunc
 							Sleep(1000)
 							Send('{enter}')
 							Sleep(3000)
-
 							MouseMove(500,500)
 							$pixcel=PixelSearch(1016,450,1233,700,0x0B57D0)  ;0x114AA7
                             Sleep(1000)
@@ -1684,6 +1683,10 @@ EndFunc
                             Sleep(1000)
                             MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							Sleep(5000)
+							Send($g)
+							Sleep(1000)
+							Send('{enter}')
+							Sleep(3000)
 							Send($h)
 							Send('{enter}')
 							Sleep(3000)
@@ -7710,26 +7713,54 @@ EndFunc
 									Sleep(3000)
 									MouseClick('left',1334, 19,1,20)
 									Sleep(3000)
-				                    WinSetTitle('','','TabChuaCode')
+				                   ; WinSetTitle('','','TabChuaCode')
 									Sleep(1000)
-									WinMove('TabChuaCode','',0,0)
+									;WinMove('TabChuaCode','',0,0)
 				                    Sleep(2000)
 									$check2=_dangnhaplaycodeGmail($h)
 
                                 For $checkcode=1 to 4
 									$code=_laycodeGmailkhoiphuc($checkcode)
 									Sleep(2000)
-									WinSetState('TabChuaCode','',@SW_MINIMIZE)
+									;WinSetState('TabChuaCode','',@SW_MINIMIZE)
 									 ;WinActivate('TabChuaCode','')
+									MouseClick('left',14, 752,1,20)   ; nổi tab chính
+									Sleep(2000)
+									MouseClick('left',596, 275,1,20)
 									Sleep(1000)
-									Send('^a')
+									Send('{tab}')
 									Sleep(1000)
-									Send('{BACKSPACE}')
-									Sleep(1500)
+									Send('{tab}')
+									Sleep(1000)
 									Send($code)
 									Sleep(1000)
-									Send("{enter}")
-									Sleep(7000)
+									MouseMove(500,500)
+									$pixcel=PixelSearch(1000,450,1233,700,0x0B57D0)  ;0x114AA7
+                                    Sleep(1000)
+                                    MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+							        Sleep(5000)
+									MouseClick('left',596, 275,1,20)
+									Sleep(1000)
+									Send('{tab}')
+									Sleep(1000)
+									Send('{tab}')
+									Sleep(1000)
+									Send('{tab}')
+									Sleep(1000)
+									Send($code)
+									Sleep(1000)
+									MouseMove(500,500)
+									$pixcel=PixelSearch(1000,450,1233,700,0x0B57D0)  ;0x114AA7
+                                    Sleep(1000)
+                                    MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+							        Sleep(5000)
+									MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+									Sleep(1000)
+
+
+
+									;Send("{enter}")
+									;Sleep(7000)
 
 									$pixcel=PixelSearch(643, 321,902, 526,0xB3261E)
 							        If Not IsArray($pixcel) Then
@@ -7854,9 +7885,10 @@ EndFunc
 			    $check=0
 
 
-                WinActivate('TabChuaCode','')
+                ;WinActivate('TabChuaCode','')
+				MouseClick('left',1380, 740,1,20)
                 Sleep(1000)
-                MouseClick('left',600, 60,1,20)
+                MouseClick('left',600+40, 60+40,1,20)
 				Sleep(2000)
                 Send('^a')
                 Sleep(500)
@@ -7864,9 +7896,9 @@ EndFunc
 				Sleep(1000)
 				Send('{enter}')
 				Sleep(7000)
-				MouseClick('left',1280, 129,1,20)
+				MouseClick('left',1280+40, 129+40,1,20)
 				Sleep(2000)
-				MouseClick('left',600,300,1,20)
+				MouseClick('left',600+40,300+40,1,20)
 				Sleep(2000)
 				Send('{tab}')
 				Sleep(2000)
@@ -7875,7 +7907,7 @@ EndFunc
 				Send('{enter}')
 				Sleep(3000)
 				For $i20=1 to 10
-				     $pixcel=PixelSearch(616, 326,1218, 679,0x0B57D0)
+				     $pixcel=PixelSearch(616, 326,1218+40, 679+40,0x0B57D0)
 					If IsArray($pixcel) Then $i20=20
 					Sleep(1000)
 				Next
@@ -7888,25 +7920,25 @@ EndFunc
 				Send('{enter}')
                 Sleep(2000)
                 For $i20=1 to 10
-				     $pixcel=PixelSearch(616, 326,1218, 679,0x0B57D0)
+				     $pixcel=PixelSearch(616, 326,1218+40, 679+40,0x0B57D0)
 					If IsArray($pixcel) Then $i20=20
 					Sleep(1000)
 				Next
 
-				$pixcel=PixelSearch(471, 342,880, 481,0xD93025)   ; check sai mk
+				$pixcel=PixelSearch(471, 342,880+40, 481+40,0xD93025)   ; check sai mk
 					If IsArray($pixcel) Then $check=2
 
             If $check<>2 Then
-				MouseClick('left',27, 117,1,20)
+				MouseClick('left',27+40, 117+40,1,20)
 				Sleep(1000)
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,475, 564,916, 688,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,475, 564,916+40, 688+40,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
 					Sleep(1000)
 					For $i20=1 to 20
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+				      $pixcel=PixelSearch(322, 459,1000+40, 527+40,0x1A73E8)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
@@ -7919,7 +7951,7 @@ EndFunc
 
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,475, 564,916, 688,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,475, 564,916+40, 688+40,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
 					Sleep(1000)
@@ -7937,12 +7969,12 @@ EndFunc
 
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,475, 504,916, 688,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,475, 504,916+40, 688+40,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
 					Sleep(1000)
 					For $i20=1 to 20
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+				      $pixcel=PixelSearch(322, 459,1000+40, 527+40,0x1A73E8)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
@@ -7955,12 +7987,12 @@ EndFunc
 
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,475, 504,916, 688,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,475, 504,916+40, 688+40,$x3,$y3,1)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
 					Sleep(1000)
 					For $i20=1 to 20
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+				      $pixcel=PixelSearch(322, 459,1000+40, 527+40,0x1A73E8)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
@@ -8009,7 +8041,7 @@ EndFunc
 				EndIf
 
 				If $x3=0 Then      ; neu khong tim thay anh
-				    MouseClick('left',650,300,1,20)
+				    MouseClick('left',650+40,300+40,1,20)
 					Sleep(2000)
 					Send('{tab}')
 					Sleep(2000)
@@ -8024,7 +8056,7 @@ EndFunc
 					Send('{enter}')
 				    Sleep(5000)
 				    For $i20=1 to 10
-				       $pixcel=PixelSearch(616, 326,1218, 679,0x0B57D0)
+				       $pixcel=PixelSearch(616, 326,1218+40, 679+40,0x0B57D0)
 					  If IsArray($pixcel) Then $i20=20
 					  Sleep(1000)
 					Next
@@ -8038,14 +8070,14 @@ EndFunc
 
 
                Sleep(3000)
-			$pixcel=PixelSearch(453, 399,610,600,0xF7F407)   ;check yeu cau sdt
+			$pixcel=PixelSearch(453, 399,610+40,600+40,0xF7F407)   ;check yeu cau sdt
 
               If Not IsArray($pixcel) Then
-				$pixcel=PixelSearch(643, 299,762, 393,0x8BC474)   ;check verry
+				$pixcel=PixelSearch(643, 299,762+40, 393+40,0x8BC474)   ;check verry
                 If not IsArray($pixcel) Then
                     ;MouseClick('left',68, 178,1)
 					    Sleep(2000)
-						MouseClick('left',1000, 60,1,20)
+						MouseClick('left',1000+40, 60+40,1,20)
 					    Sleep(1000)
 						Send('^a')
 						Sleep(500)
@@ -8055,7 +8087,7 @@ EndFunc
 						Send('{enter}')
 						Sleep(5000)
 						For $i20=1 to 10
-				          $pixcel=PixelSearch(52, 99,188, 176,0x34A853)
+				          $pixcel=PixelSearch(52+40, 99+40,188+40, 176+40,0x34A853)
 						  Sleep(1000)
 					        If IsArray($pixcel) Then
 							    $check=1
@@ -8082,9 +8114,11 @@ EndFunc
 
 		    $code=0
 
-			WinActivate('TabChuaCode','')
+			;WinActivate('TabChuaCode','')
+			MouseClick('left',1380, 740,1,20)
+			Sleep(1000)
             Sleep(2000)
-			MouseClick('left',600,60,1,20)
+			MouseClick('left',600+40,60+40,1,20)
 		    Sleep(2000)
 			Send('^a')
 			Sleep(1000)
@@ -8093,11 +8127,11 @@ EndFunc
 		    Send('{enter}')
 		    Sleep(7000)
 			For $i20=1 to 20
-				$pixcel=PixelSearch(57, 99,122, 147,0xEA4335)
+				$pixcel=PixelSearch(57+40, 99+40,122+40, 147+40,0xEA4335)
 				If IsArray($pixcel) Then $i20=20
 				Sleep(1000)
 			Next
-			MouseClick('left',490, 119,1,20)
+			MouseClick('left',490+40, 119+40,1,20)
 		    Sleep(2000)
 			Send('^a')
 			Sleep(1000)
@@ -8115,35 +8149,35 @@ EndFunc
 				Sleep(4000)
 		        Send('{enter}')
 				Sleep(7000)
-			    MouseClick('left',477, 310,1,20)
+			    MouseClick('left',477+40, 310+40,1,20)
 		        Sleep(5000)
 			EndIf
 			Sleep(2000)
 			Send('{enter}')
 			Sleep(7000)
-			MouseClick('left',477, 276,1,20)
+			MouseClick('left',477+40, 276+40,1,20)
 		    Sleep(5000)
-			MouseMove(776, 510)
+			MouseMove(776+40, 510+40)
 			Sleep(1000)
 			For $i20=1 to 15
-			   MouseClick('left',1296, 728,1,20)
-			   Sleep(200)
+			   MouseClick('left',1336, 765,1,20)   ;da thay doi
+			   Sleep(300)
 			Next
-			MouseMove(661, 461)
+			MouseMove(661+40, 461+40)
 			Sleep(500)
 			For $i20=1 to 10
 			    MouseWheel($MOUSE_WHEEL_DOWN,3)
 			    Sleep(100)
 			Next
 			Sleep(2000)
-			MouseClick('left',675, 345,1,20)   ; xoa thu thung râc
+			MouseClick('left',675+40, 345+40,1,20)   ; xoa thu thung râc
 			Sleep(2000)
-			MouseClick('left',705, 650,1,20)   ; xoa thu thung râc
+			MouseClick('left',705+40, 650+40,1,20)   ; xoa thu thung râc
 			Sleep(2000)
 
 			For $i20=1 to 2
-			    If $i20=1 Then MouseClick('left',636, 236,2,20)
-				If $i20=2 Then MouseClick('left',793, 316,2,20)
+			    If $i20=1 Then MouseClick('left',636+40, 236+40,2,20)
+				If $i20=2 Then MouseClick('left',793+40, 316+40,2,20)
 			    Sleep(1000)
 			    Send('^c')
 			    Sleep(100)
