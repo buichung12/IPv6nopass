@@ -1549,7 +1549,7 @@ EndFunc
 				For $i20=1 to 10
 					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
 					Sleep(1000)
-					$pixcel2=PixelSearch(18, 130,206, 263,0x0B57D0)
+					$pixcel2=PixelSearch(15, 95,206, 263,0x34A853)
 					Sleep(1000)
 					If IsArray($pixcel) or IsArray($pixcel2) Then
 						$check=1
@@ -6322,7 +6322,7 @@ EndFunc
                 Sleep(2000)
 				Send('^a')
 				Sleep(2000)
-				ClipPut('https://www.youtube.com/account')
+				ClipPut('https://myaccount.google.com/')
 			    Sleep(200)
 			    Send('^v')
 				Sleep(1000)
@@ -6330,13 +6330,18 @@ EndFunc
 				Sleep(5000)
 				Send('^0')
 				Sleep(2000)
-				MouseClick('left',600, 320,1,20)  ; cho ngẫu nhiên 1 kênh ytb
 				Sleep(5000)
-
-
+				For $i20=1 to 10
+				    $pixcel=PixelSearch(58,110,245, 170,0xFBBC05)
+					If IsArray($pixcel) Then
+						$i20=10
+					EndIf
+					Sleep(1000)
+				Next
+				Sleep(1000)
 				$pixcel=PixelSearch(58,110,245, 170,0xFF0033)   ; xoa loi edge
-				$pixcel2=PixelSearch(58,110,245, 170,0xFBC935)   ; xoa loi edge
-				$pixcel3=PixelSearch(58,110,245, 170,0x3E88F4)   ; xoa loi edge
+				$pixcel2=PixelSearch(58,110,245, 170,0xFBBC05)   ; xoa loi edge
+				$pixcel3=PixelSearch(58,110,245, 170,0x34A853)   ; xoa loi edge
 				Sleep(1000)
 			If not IsArray($pixcel) and not IsArray($pixcel2) and  not IsArray($pixcel3)  Then  ; kiem tra da dang nhap chua
 
