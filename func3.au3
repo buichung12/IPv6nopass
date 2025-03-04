@@ -5292,6 +5292,7 @@ EndFunc
 
 					WinClose('Install Google Translate extension to translate this page?')
 					WinClose('Restore pages?')
+					WinClose('Save password?')
 					WinClose('Khôi phục trang')
 					WinClose('Bạn có muốn khôi phục trang không?')
 					WinClose('Default Client')
@@ -7739,6 +7740,8 @@ EndFunc
                                     Sleep(1000)
                                     If IsArray($pixcel) Then  MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							        Sleep(10000)
+									WinClose('Save password?')
+
 									;MouseClick('left',596, 275,1,20)
 									;Sleep(1000)
 									;Send('{tab}')
@@ -7785,7 +7788,7 @@ EndFunc
 
 									MouseClick('left',712, 257,1,20)
 							        Sleep(2000)
-									mouseClick('left',800,300,1,20)
+									mouseClick('left',600,300,1,20)
 							        Sleep(2000)
 									Send('{tab}')
 									Sleep(1000)
@@ -7806,7 +7809,6 @@ EndFunc
 									Send($g3)
 									Sleep(2000)
 									;MsgBox(0,0,'ok')
-
 
 									Send('{enter}')
 									Sleep(7000)
@@ -8125,7 +8127,7 @@ EndFunc
 			Send("https://mail.google.com/mail/u/0",1)
 			Sleep(2000)
 		    Send('{enter}')
-		    Sleep(7000)
+		    Sleep(10000)
 			For $i20=1 to 20
 				$pixcel=PixelSearch(57+40, 99+40,122+40, 147+40,0xEA4335)
 				If IsArray($pixcel) Then $i20=20
