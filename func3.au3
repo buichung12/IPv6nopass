@@ -1874,15 +1874,15 @@ EndFunc
 				        Send('{tab}')
 				        Sleep(2000)
 				        Send('{enter}')
-				        Sleep(1000)
+				        Sleep(5000)
 						$code=ClipGet()
 						Sleep(1000)
 						MouseClick('left',682, 499,1,20)
-						Sleep(2000)
+						Sleep(3000)
 						Send('{tab}')
-						Sleep(2000)
+						Sleep(3000)
 				        Send('{tab}')
-				        Sleep(2000)
+				        Sleep(3000)
 						Send($code)
 						Sleep(1000)
 						Send('{enter}')
@@ -7829,33 +7829,19 @@ EndFunc
 									;MsgBox(0,0,'ok')
 
 									Send('{enter}')
-									Sleep(7000)
-									MouseClick('left',850, 540,1,20)
-							        Sleep(2000)
-									MouseClick('left',1067, 543,1,20)
-							        Sleep(4000)
-									MouseClick('left',521, 630,1,20)
-							        Sleep(2000)
+									Sleep(10000)
+									;MouseClick('left',850, 540,1,20)
+							       ; Sleep(2000)
+									;MouseClick('left',1067, 543,1,20)
+							       ; Sleep(4000)
+									;MouseClick('left',521, 630,1,20)
+							       ; Sleep(2000)
+									;$pixcel=PixelSearch(441, 443,600, 600,0xDB241E)
+							       ; If IsArray($pixcel) Then
+							 			;_VerryGmailOTPsim()
+									;EndIf
 
 
-									$pixcel=PixelSearch(441, 443,600, 600,0xDB241E)
-							        If IsArray($pixcel) Then
-							 			_VerryGmailOTPsim()
-									EndIf
-
-
-								MouseClick('left',600, 60,1,20)
-							    Sleep(1000)
-					    	    Send('https://myaccount.google.com/')
-						        Sleep(2000)
-						        Send('{enter}')
-					    	    Sleep(5000)
-						        MouseClick('left',600, 60,1,20)
-					            Sleep(1000)
-						        Send('https://myaccount.google.com/')
-								Sleep(2000)
-				                Send('{enter}')
-								Sleep(5000)
                                 $check=0
 								Sleep(1000)
 						        For $i20=1 to 10
