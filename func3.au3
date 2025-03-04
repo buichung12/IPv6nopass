@@ -1687,7 +1687,7 @@ EndFunc
 							Sleep(1000)
 							Send('{enter}')
 							Sleep(3000)
-							MouseClick('left',617, 264,1,20)
+							MouseClick('left',617, 250,1,20)
 							Sleep(2000)
 							Send('{tab}')
 							Sleep(2000)
@@ -1705,22 +1705,16 @@ EndFunc
 							Sleep(5000)
 						EndIf
 					  If $check=1 Then
-						Sleep(3000)
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('https://myaccount.google.com/two-step-verification/authenticator')
-						Sleep(1000)
-						Send('{enter}')
 						Sleep(10000)
 						For $i20=1 to 10
 							$pixcel=PixelSearch(16, 87,154, 170,0x4285F4)  ;0x114AA7
 						    $pixcel2=PixelSearch(18, 130,206,190,0x3E88F4)
 						    If IsArray($pixcel) Or IsArray($pixcel2) Then $i20=10
-                            Sleep(1000)
+                            Sleep(2000)
 						Next
 
                         Sleep(3000)
-						MouseClick('left',394, 304,1,20)
+						MouseClick('left',394, 277,1,20)
 						Sleep(2000)
 						Send('{tab}')
 						Sleep(2000)
