@@ -1651,17 +1651,17 @@ EndFunc
 						If not IsArray($pixcel) and not IsArray($pixcel2) Then
 							Sleep(1000)
 							MouseMove(500,500)
-							$pixcel=PixelSearch(1000,450,1233,700,0x0B57D0)  ;0x114AA7
+							$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
                             Sleep(1000)
                             If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							Sleep(5000)
 							MouseMove(500,500)
-							$pixcel=PixelSearch(1016,450,1233,700,0x0B57D0)  ;0x114AA7
+							$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
                             Sleep(1000)
                             If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							Sleep(5000)
 							MouseMove(500,500)
-							$pixcel=PixelSearch(1016,450,1233,700,0x0B57D0)  ;0x114AA7
+							$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
                             Sleep(1000)
                             If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							Sleep(5000)
@@ -1674,12 +1674,12 @@ EndFunc
 							Send('{enter}')
 							Sleep(3000)
 							MouseMove(500,500)
-							$pixcel=PixelSearch(1016,450,1233,700,0x0B57D0)  ;0x114AA7
+							$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
                             Sleep(1000)
                             If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							Sleep(5000)
 							MouseMove(500,500)
-							$pixcel=PixelSearch(1016,450,1233,700,0x0B57D0)  ;0x114AA7
+							$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
                             Sleep(1000)
                             If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							Sleep(5000)
@@ -1705,6 +1705,13 @@ EndFunc
 							Sleep(5000)
 						EndIf
 					  If $check=1 Then
+
+						MouseClick('left',600,60,1,20)
+						Sleep(2000)
+						Send('https://myaccount.google.com/two-step-verification/authenticator')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(5000)
 						Sleep(10000)
 						For $i20=1 to 10
 							$pixcel=PixelSearch(16, 87,154, 170,0x4285F4)  ;0x114AA7
@@ -1714,6 +1721,8 @@ EndFunc
 						Next
 
                         Sleep(3000)
+						MouseClick('left',750,500,1,20)
+						Sleep(2000)
 						MouseClick('left',394, 277,1,20)
 						Sleep(2000)
 						Send('{tab}')
@@ -7762,10 +7771,10 @@ EndFunc
 									Send($code)
 									Sleep(1000)
 									MouseMove(500,500)
-									$pixcel=PixelSearch(1000,450,1233,700,0x0B57D0)  ;0x114AA7
+									$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
                                     Sleep(1000)
                                     If IsArray($pixcel) Then  MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-							        Sleep(10000)
+							        Sleep(15000)
 									WinClose('Save password?')
 
 									;MouseClick('left',596, 275,1,20)
