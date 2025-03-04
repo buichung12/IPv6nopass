@@ -7691,27 +7691,17 @@ EndFunc
 									Sleep(3000)
 									MouseClick('left',1334, 19,1,20)
 									Sleep(3000)
-				                    $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+				                    WinSetTitle('','','TabChuaCode')
 									Sleep(1000)
-				                    For $i10 = 1 to $var[0][0]
-									    If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
-                                             WinMove($var[$i10][1],'',0,0,1366,768)
-				                             Sleep(2000)
-					                    EndIf
-									Next
+									WinMove('TabChuaCode','',0,0)
 				                    Sleep(2000)
 									$check2=_dangnhaplaycodeGmail($h)
 
                                 For $checkcode=1 to 4
 									$code=_laycodeGmailkhoiphuc($checkcode)
 									Sleep(2000)
-									$var = WinList ("[CLASS:MozillaWindowClass]")
-				                    Sleep(1000)
-                                    For $i10 = 1 to $var[0][0]
-					                    If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
-						                    WinActivate(($var[$i10][1]))
-                                        EndIf
-				                    Next
+									WinSetState('TabChuaCode','',@SW_MINIMIZE)
+									 ;WinActivate('TabChuaCode','')
 									Sleep(1000)
 									Send('^a')
 									Sleep(1000)
@@ -7845,13 +7835,7 @@ EndFunc
 			    $check=0
 
 
-                $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
-				Sleep(1000)
-                For $i10 = 1 to $var[0][0]
-					If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
-						WinActivate(($var[$i10][1]))
-                    EndIf
-				Next
+                WinActivate('TabChuaCode','')
                 Sleep(1000)
                 MouseClick('left',600, 60,1,20)
 				Sleep(2000)
@@ -8079,13 +8063,7 @@ EndFunc
 
 		    $code=0
 
-			$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
-				Sleep(1000)
-                For $i10 = 1 to $var[0][0]
-					If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
-						WinActivate(($var[$i10][1]))
-                    EndIf
-				Next
+			WinActivate('TabChuaCode','')
             Sleep(2000)
 			MouseClick('left',600,60,1,20)
 		    Sleep(2000)
