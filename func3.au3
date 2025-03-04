@@ -1700,7 +1700,7 @@ EndFunc
                             Sleep(1000)
                             If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							Sleep(3000)
-							$check=_LayCodeCuoi($h)
+							$check=_LayCodeCuoi($h,$i)
 							If $check=1 Then $e=$e&'	'&"Buichung"&@MDAY&@MON
 							Sleep(5000)
 						EndIf
@@ -7699,9 +7699,12 @@ EndFunc
 		EndFunc
 
 
-		Func _LayCodeCuoi($h)
+		Func _LayCodeCuoi($h,$i)
 									$checkcode=1
 									$code=1
+
+
+								If $i<>10 Then
 					                Run("C:\Program Files\Google\Chrome\Application\chrome.exe")   ;"C:\Program Files\Google\Chrome\Application\chrome.exe"
 									Sleep(2000)
 									Run("C:\Users\"&@UserName&"\AppData\Local\Google\Chrome\Application\chrome.exe")
@@ -7712,6 +7715,11 @@ EndFunc
 				                       Run("C:\Users\"&@UserName&"\AppData\Local\Google\Chrome\Application\chrome.exe")
 					                   Sleep(3000)
 									EndIf
+								Else
+									Run('C:\Users\"&@UserName&"\AppData\Local\Chromium\Application\chrome.exe')
+
+								EndIf
+
 
 				                    Sleep(7000)
 									WinClose('Install Google Translate extension to translate this page?')
