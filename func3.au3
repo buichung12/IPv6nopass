@@ -7738,26 +7738,26 @@ EndFunc
 									$pixcel=PixelSearch(1000,450,1233,700,0x0B57D0)  ;0x114AA7
                                     Sleep(1000)
                                     If IsArray($pixcel) Then  MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-							        Sleep(5000)
-									MouseClick('left',596, 275,1,20)
-									Sleep(1000)
-									Send('{tab}')
-									Sleep(1000)
-									Send('{tab}')
-									Sleep(1000)
-									Send('{tab}')
-									Sleep(1000)
-									Send($code)
-									Sleep(1000)
-									MouseMove(500,500)
-									$pixcel=PixelSearch(1000,450,1233,700,0x0B57D0)  ;0x114AA7
-                                    Sleep(1000)
-                                    If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-							        Sleep(5000)
-									$pixcel=PixelSearch(1000,450,1233,700,0x0B57D0)  ;0x114AA7
-                                    Sleep(1000)
-									If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-									Sleep(5000)
+							        Sleep(10000)
+									;MouseClick('left',596, 275,1,20)
+									;Sleep(1000)
+									;Send('{tab}')
+									;Sleep(1000)
+									;Send('{tab}')
+									;Sleep(1000)
+									;Send('{tab}')
+									;Sleep(1000)
+									;Send($code)
+									;Sleep(1000)
+									;MouseMove(500,500)
+									;$pixcel=PixelSearch(1000,450,1233,700,0x0B57D0)  ;0x114AA7
+                                   ; Sleep(1000)
+                                    ;If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+							        ;Sleep(5000)
+									;$pixcel=PixelSearch(1000,450,1233,700,0x0B57D0)  ;0x114AA7
+                                    ;Sleep(1000)
+									;If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+									;Sleep(5000)
 
 									;Send("{enter}")
 									;Sleep(7000)
@@ -7769,19 +7769,19 @@ EndFunc
 
 								Next
 
-									Sleep(10000)
-									Send('+84',1)
-									Sleep(2000)
-									$pixcel=PixelSearch(538, 342,992, 712,0xDB241D)
-							        If IsArray($pixcel) Then
+									;Sleep(10000)
+									;Send('+84',1)
+									;Sleep(2000)
+									;$pixcel=PixelSearch(538, 342,992, 712,0xDB241D)
+							       ; If IsArray($pixcel) Then
 
 									;	If $funotp=1 Then
-											_VerryGmailfunotp()
+										;	_VerryGmailfunotp()
 										;Else
 											;_laySDTvaCODELan1()
 										;EndIf
 
-									EndIf
+								;	EndIf
 
 									MouseClick('left',712, 257,1,20)
 							        Sleep(2000)
