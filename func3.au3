@@ -7842,21 +7842,6 @@ EndFunc
 									;EndIf
 
 
-                                $check=0
-								Sleep(1000)
-						        For $i20=1 to 10
-									$pixcel=PixelSearch(14, 152,294, 250,0xC2E7FF)
-						            Sleep(1000)
-						            $pixcel2=PixelSearch(18, 163,106, 260,0x1F1F1F)
-						            Sleep(1000)
-					                If IsArray($pixcel) or IsArray($pixcel2) Then
-							             $check=1
-						                $i20=17
-							        EndIf
-							        Sleep(1000)
-								Next
-
-
            Return $check
 
 		EndFunc
