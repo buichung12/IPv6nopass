@@ -8131,7 +8131,7 @@ EndFunc
 				If IsArray($pixcel) Then $i20=20
 				Sleep(1000)
 			Next
-			MouseClick('left',490+40, 119+40,1,20)
+			MouseClick('left',440+40, 119+40,1,20)
 		    Sleep(2000)
 			Send('^a')
 			Sleep(1000)
