@@ -1715,7 +1715,7 @@ EndFunc
 						Sleep(10000)
 						For $i20=1 to 10
 							$pixcel=PixelSearch(16, 87,154, 170,0x4285F4)  ;0x114AA7
-						    $pixcel2=PixelSearch(18, 130,206,190,0x3E88F4)
+						    $pixcel2=PixelSearch(18, 130,206,190,0xFBBC05)
 						    If IsArray($pixcel) Or IsArray($pixcel2) Then $i20=10
                             Sleep(2000)
 						Next
