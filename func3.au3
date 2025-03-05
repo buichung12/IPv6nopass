@@ -6806,6 +6806,7 @@ EndFunc
 				Sleep(2000)
 				Send('{enter}')
 				Sleep(10000)
+
 				For $i20=1 to 10
 					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
 					$pixcel2=PixelSearch(13, 224,70, 345,0x3E88F4)
@@ -6826,6 +6827,8 @@ EndFunc
 				    Sleep(2000)
 				    Send('{enter}')
 				    Sleep(10000)
+					MouseClick('left',6000,350,1,20)
+				    Sleep(5000)
 				    For $i20=1 to 10
 					    $pixcel=PixelSearch(58,96,245, 170,0xFF0033)   ; xoa loi edge
 						$pixcel2=PixelSearch(58,96,245, 170,0xFF0000)   ; xoa loi edge
