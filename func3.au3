@@ -7776,7 +7776,17 @@ EndFunc
 									 ;WinActivate('TabChuaCode','')
 									MouseClick('left',14, 752,1,20)   ; nổi tab chính
 									Sleep(2000)
-									MouseClick('left',596, 275,1,20)
+									MouseClick('left',596, 275,1,20)  ;send lần 1
+									Sleep(1000)
+									Send('{tab}')
+									Sleep(1000)
+									Send('{tab}')
+									Sleep(1000)
+									Send($code)
+									Sleep(1000)
+									MouseClick('left',596, 275,1,20)  ;send lần 2
+									Sleep(1000)
+									Send('{tab}')
 									Sleep(1000)
 									Send('{tab}')
 									Sleep(1000)
