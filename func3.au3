@@ -1596,7 +1596,7 @@ EndFunc
 
 				EndIf
 
-				;$e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)
+				$e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)
 
 				If $check=1 Then
                         $e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
@@ -1646,10 +1646,20 @@ EndFunc
 						Sleep(5000)
 
 						If $checklink=0 Then   ; looix can doi Mat khau
+							Send($f)
+							Sleep(1000)
+							MouseMove(500,500)
+						    $pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
+						    Sleep(1000)
+						    If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+						    Sleep(7000)
 							Send($g)
 							Sleep(2000)
-							Send('{enter}')
-							Sleep(10000)
+							MouseMove(500,500)
+						    $pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
+						    Sleep(1000)
+						    If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+						    Sleep(7000)
 						EndIf
 
 						$pixcel=PixelSearch(16, 87,154, 170,0x4285F4)  ;0x114AA7
@@ -7797,7 +7807,11 @@ EndFunc
 									MouseMove(500,500)
 									$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
                                     Sleep(1000)
-                                    If IsArray($pixcel) Then  MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+                                    If IsArray($pixcel) Then
+										MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+									Else
+										MouseClick('left',500,500,1,20)   ; fix lỗi không tìm thấy nut tiếp theo
+									EndIf
 							        Sleep(10000)
 									MouseMove(500,500)
 									$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
