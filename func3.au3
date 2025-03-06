@@ -1640,7 +1640,7 @@ EndFunc
 				        Next
 
 						MouseMove(500,500)
-						$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
+						$pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
 						Sleep(1000)
 						If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 						Sleep(5000)
@@ -1649,14 +1649,14 @@ EndFunc
 							Send($f)
 							Sleep(1000)
 							MouseMove(500,500)
-						    $pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
+						    $pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
 						    Sleep(1000)
 						    If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 						    Sleep(7000)
 							Send($g)
 							Sleep(2000)
 							MouseMove(500,500)
-						    $pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
+						    $pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
 						    Sleep(1000)
 						    If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 						    Sleep(7000)
@@ -1667,17 +1667,17 @@ EndFunc
 						If not IsArray($pixcel) and not IsArray($pixcel2) Then
 							Sleep(1000)
 							MouseMove(500,500)
-							$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
+							$pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
                             Sleep(1000)
                             If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							Sleep(5000)
 							MouseMove(500,500)
-							$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
+							$pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
                             Sleep(1000)
                             If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							Sleep(5000)
 							MouseMove(500,500)
-							$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
+							$pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
                             Sleep(1000)
                             If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							Sleep(5000)
@@ -1690,12 +1690,12 @@ EndFunc
 							Send('{enter}')
 							Sleep(3000)
 							MouseMove(500,500)
-							$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
+							$pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
                             Sleep(1000)
                             If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							Sleep(5000)
 							MouseMove(500,500)
-							$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
+							$pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
                             Sleep(1000)
                             If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							Sleep(5000)
@@ -1712,7 +1712,7 @@ EndFunc
 							Send($h)
 							Sleep(2000)
 							MouseMove(500,500)
-							$pixcel=PixelSearch(1016,450,1233,700,0x0B57D0)  ;0x114AA7
+							$pixcel=PixelSearch(1030,450,1233,700,0x0B57D0)  ;0x114AA7
                             Sleep(1000)
                             If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							Sleep(3000)
@@ -6502,12 +6502,12 @@ EndFunc
 			  $pixcel=PixelSearch(650,330,1150,470,0x7B6CD0)   ; kiem tra gmail co bi canh bao
 			  If IsArray($pixcel) Then
                 MouseMove(500,500)
-				$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
+				$pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
 				Sleep(1000)
 				If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 				Sleep(10000)
 				MouseMove(500,500)
-				$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
+				$pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
 				Sleep(1000)
 				If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 				Sleep(10000)
@@ -7844,7 +7844,7 @@ EndFunc
 									Send($code)
 									Sleep(1000)
 									MouseMove(500,500)
-									$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
+									$pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
                                     Sleep(1000)
                                     If IsArray($pixcel) Then
 										MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
@@ -7853,7 +7853,7 @@ EndFunc
 									EndIf
 							        Sleep(10000)
 									MouseMove(500,500)
-									$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
+									$pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
                                     Sleep(1000)
                                     If IsArray($pixcel) Then  MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							        Sleep(10000)
