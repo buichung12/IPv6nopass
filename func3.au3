@@ -7776,7 +7776,7 @@ EndFunc
 									$code=1
 
 
-								If $i<>10 Then
+								;If $i<>10 Then
 					                Run("C:\Program Files\Google\Chrome\Application\chrome.exe")   ;"C:\Program Files\Google\Chrome\Application\chrome.exe"
 									Sleep(2000)
 									Run("C:\Users\"&@UserName&"\AppData\Local\Google\Chrome\Application\chrome.exe")
@@ -7787,11 +7787,6 @@ EndFunc
 				                       Run("C:\Users\"&@UserName&"\AppData\Local\Google\Chrome\Application\chrome.exe")
 					                   Sleep(3000)
 									EndIf
-								Else
-									Run('C:\Users\"&@UserName&"\AppData\Local\Chromium\Application\chrome.exe')
-
-								EndIf
-
 
 				                    Sleep(7000)
 									WinClose('Install Google Translate extension to translate this page?')
@@ -7810,7 +7805,7 @@ EndFunc
 				                    Sleep(4000)
 									WinMove('','',40,40,1366,768)
 									Sleep(3000)
-									MouseClick('left',1334, 19,1,20)
+									If $i<>10 Then MouseClick('left',1334, 19,1,20)
 									Sleep(3000)
 				                   ; WinSetTitle('','','TabChuaCode')
 									Sleep(1000)
