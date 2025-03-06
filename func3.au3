@@ -6440,8 +6440,16 @@ EndFunc
 				Sleep(5000)
 				Send('^0')
 				Sleep(2000)
+                For $i20=1 to 10
+				    $pixcel=PixelSearch(322, 259,1000, 527,0x0B57D0)
+					If IsArray($pixcel) Then
+						$i20=20
+				        Sleep(1000)
+					EndIf
+					Sleep(1000)
+				Next
 
-				MouseClick('left',650,350,1,20)
+				MouseClick('left',650,280,1,20)
 				Sleep(3000)
 				Send('{tab}')
 				Sleep(2000)
@@ -6490,6 +6498,34 @@ EndFunc
 					If IsArray($pixcel) Then $i20=20
 					Sleep(1000)
 				Next
+
+			  $pixcel=PixelSearch(650,330,1150,470,0x7B6CD0)   ; kiem tra gmail co bi canh bao
+			  If IsArray($pixcel) Then
+                MouseMove(500,500)
+				$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
+				Sleep(1000)
+				If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+				Sleep(10000)
+				MouseMove(500,500)
+				$pixcel=PixelSearch(1000,485,1233,700,0x0B57D0)  ;0x114AA7
+				Sleep(1000)
+				If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+				Sleep(10000)
+				Send($g)
+				Sleep(1000)
+				Send('{enter}')
+				Sleep(10000)
+				Send($h)
+				Sleep(1000)
+				Send('{enter}')
+				Sleep(10000)
+                $check=_LayCodeCuoi($h,$i)
+				If $check=1 Then $e=$e&'	'&"Buichung"&@MDAY&@MON
+				Sleep(5000)
+				FileWrite(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	')
+
+		      EndIf
+
 
 			  For $i21=1 to 2
                If StringLen($Key2fa)>30	Then
@@ -6615,7 +6651,10 @@ EndFunc
 				WinClose('Protection')
 				;MsgBox(0,0,'ok')
 			   EndIf
-              Next
+			  Next
+
+
+
 				If $i=6 Then MouseClick('left',380, 225,1,20)
 				Sleep(2000)
 				$x3=0
