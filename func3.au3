@@ -4894,6 +4894,8 @@ EndFunc
                       #ce
 						MouseClick('left',658, 240,1,20)
 						Sleep(3000)
+						MouseClick('left',658, 240,1,20)
+						Sleep(3000)
 
 						WinClose('Restore pages?')
 					    WinClose('Restore pages')
@@ -5362,6 +5364,10 @@ EndFunc
 				    WinClose('Remove "Bright VPN - Secure Private & Free VPN Proxy"?')
 					Sleep(100)
 					WinClose('Check Update')
+					MouseClick('left',658, 240,1,20)
+					Sleep(3000)
+					MouseClick('left',658, 240,1,20)
+					Sleep(3000)
 
 					If $i=5 Then
                         WinMove('','',0,0,1366,850)
