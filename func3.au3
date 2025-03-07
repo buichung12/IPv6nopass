@@ -1987,7 +1987,7 @@ EndFunc
 				_closeTrinhDuyet($i)
 
 		Next
-
+        Sleep(2000)
 		If $vpsso=1 or $vpsso=6 or $vpsso=11 or $vpsso=16 or $vpsso=21 or $vpsso=26 or $vpsso=31 or $vpsso=36 or $vpsso=41 or $vpsso=46 or $vpsso=51 or $vpsso=56 or $vpsso=61 or $vpsso=66 or $vpsso=71 or $vpsso=76 or $vpsso=81 or $vpsso=86 or $vpsso=91 or $vpsso=99  Then
 
 			$dataIP=FileRead(@ScriptDir&'\KetQuaDangNhap.txt')
@@ -5788,6 +5788,10 @@ EndFunc
 			If $i=2 Then
 				ProcessClose('conhost.exe')
 				WinClose('Settings')
+				Sleep(100)
+				WinClose('WinAuth')
+				Sleep(100)
+				WinClose('Protection')
 				Sleep(100)
 				ProcessClose('launcher.exe')
 				Sleep(100)
