@@ -4801,6 +4801,9 @@ EndFunc
 					Sleep(1000)
 					WinClose('Check Update')
 					WinClose('opera.exe - System Error')
+					If $i=9 Then  WinClose('Check Update')
+
+				#cs
 					If  $i=9 Then
 							WinClose('Check Update')
 							Sleep(1000)
@@ -4812,7 +4815,6 @@ EndFunc
 							Sleep(1000)
 							Send('{enter}')
 							Sleep(2000)
-
 					EndIf
 
 					If $i=6 Then
@@ -4858,7 +4860,7 @@ EndFunc
 						MouseClick('left',1280,700,1,20)  ;tat thong bao update
 				        Sleep(7000)
 					EndIf
-
+                #ce
 
 					Sleep(1000)
 					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
@@ -4874,7 +4876,7 @@ EndFunc
 
 						WinSetState($var[$i10][1],'',@SW_RESTORE)
 						Sleep(1000)
-
+                       #cs
 						If $i=2 Then
 							MouseClick('left',1334, 981,1,20)
 							Sleep(2000)
@@ -4888,12 +4890,17 @@ EndFunc
 							MouseClick('left',1325,112,1,20)  ; tat khoi phuc
 							Sleep(2000)
 					    EndIf
+
+                      #ce
+						MouseClick('left',658, 240,1,20)
+						Sleep(3000)
+
 						WinClose('Restore pages?')
 					    WinClose('Restore pages')
 
 						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(2000)
-
+                    #cs
 						If  $i=10 Then
 							Sleep(2000)
 			            	Send('{tab}')
@@ -5086,7 +5093,7 @@ EndFunc
 						   MouseClick('left',1280,163,1,20)
 							Sleep(2000)
 						EndIf
-#cs
+
 						If $i=1 Then
 							MouseClick('left',880, 113,1,20)  ;tat tanh cong cu
 				            Sleep(1000)
@@ -5113,13 +5120,14 @@ EndFunc
 							MouseClick('left',1285,100,1,20)  ;tat tanh cong cu
 						    Sleep(1000)
 					    EndIf
-#ce
 
 
                         If $i=1 Then
 						    MouseClick('left',1280,700,1,20)  ;tat thong bao update
 				            Sleep(7000)
 					    EndIf
+
+
 
 					    If $i=10 Then
 							ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,291, 635)
@@ -5137,6 +5145,8 @@ EndFunc
 							MouseClick('left',1327, 102,1,20)
 							Sleep(1000)
 						EndIf
+					#ce
+
 					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
 					    If $i=8 Then ControlClick($var[$i10][1],'','','left',1,478, 26)    ; tat tab thua
 					    If $i=7 Then ControlClick($var[$i10][1],'','','left',1,478, 22)    ; tat tab thua
@@ -5444,6 +5454,9 @@ EndFunc
 
 						WinSetState($var[$i10][1],'',@SW_RESTORE)
 						Sleep(1000)
+
+						If $i=9 Then  WinClose('Check Update')
+
 
 						If $i=2 Then
 						    ControlClick('','','','left',1,528, 202)
