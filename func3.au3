@@ -4900,6 +4900,29 @@ EndFunc
 						WinClose('Restore pages?')
 					    WinClose('Restore pages')
 
+						If $i=7 Then
+                            $pixcel=PixelSearch(251, 87,1209, 645,0xFD2D51)
+					        If IsArray($pixcel) Then
+                                MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+								Sleep(2000)
+								Send('{tab}')
+								Sleep(2000)
+								Send('{tab}')
+								Sleep(2000)
+								Send('{SPACE}')
+								Sleep(2000)
+								Send('{tab}')
+								Sleep(2000)
+								Send('{tab}')
+								Sleep(2000)
+								Send('{enter}')
+								Sleep(3000)
+
+                            EndIf
+
+						EndIf
+
+
 						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(2000)
                     #cs
@@ -5148,6 +5171,7 @@ EndFunc
 							Sleep(1000)
 						EndIf
 					#ce
+
 
 					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
 					    If $i=8 Then ControlClick($var[$i10][1],'','','left',1,478, 26)    ; tat tab thua
@@ -6383,7 +6407,7 @@ EndFunc
 				$pixcel3=PixelSearch(58,96,245, 170,0x3E88F4)   ; xoa loi edge
 				Sleep(1000)
 			If not IsArray($pixcel) and not IsArray($pixcel2) and  not IsArray($pixcel3)  Then  ; kiem tra da dang nhap chua
-
+              If StringLen($Key2fa)<30	Then
 
 				MouseClick('left',1280, 160,1,20)
 				Sleep(1000)
@@ -6522,33 +6546,33 @@ EndFunc
 					Sleep(1000)
 				Next
 
-			  $pixcel=PixelSearch(650,330,1150,470,0x7B6CD0)   ; kiem tra gmail co bi canh bao
-			  If IsArray($pixcel) Then
-                MouseMove(500,500)
-				$pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
-				Sleep(1000)
-				If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-				Sleep(10000)
-				MouseMove(500,500)
-				$pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
-				Sleep(1000)
-				If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-				Sleep(10000)
-				Send($g)
-				Sleep(1000)
-				Send('{enter}')
-				Sleep(10000)
-				Send($h)
-				Sleep(1000)
-				Send('{enter}')
-				Sleep(10000)
-                $check=_LayCodeCuoi($h,$i)
-				If $check=1 Then $e=$e&'	'&"Buichung"&@MDAY&@MON
-				Sleep(5000)
-				FileWrite(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	')
+                $pixcel=PixelSearch(650,330,1150,470,0x7B6CD0)   ; kiem tra gmail co bi canh bao
+			    If IsArray($pixcel) Then
+                    MouseMove(500,500)
+				    $pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
+				    Sleep(1000)
+				    If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+				    Sleep(10000)
+				    MouseMove(500,500)
+				    $pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
+				    Sleep(1000)
+				    If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+				    Sleep(10000)
+				    Send($g)
+				    Sleep(1000)
+				    Send('{enter}')
+				    Sleep(10000)
+				    Send($h)
+				    Sleep(1000)
+				    Send('{enter}')
+				    Sleep(10000)
+                    $check=_LayCodeCuoi($h,$i)
+				    If $check=1 Then $e=$e&'	'&"Buichung"&@MDAY&@MON
+				    Sleep(5000)
+				    FileWrite(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	')
 
-		      EndIf
-
+		         EndIf
+              EndIf
 
 			  For $i21=1 to 2
                If StringLen($Key2fa)>30	Then
