@@ -1749,12 +1749,19 @@ EndFunc
                                 Sleep(1000)
                                 If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 
+								Sleep(10000)
+                            $pixcel=PixelSearch(16, 87,154, 170,0x4285F4)  ;0x114AA7
+						    $pixcel2=PixelSearch(18, 130,206,190,0x3E88F4)
 
+							If IsArray($pixcel) Or IsArray($pixcel2) Then
+                                $check=1
+                            Else
+							    Sleep(3000)
+							    $check=_LayCodeCuoi($h,$i)
+							    If $check=1 Then $e=$e&'	'&"Buichung"&@MDAY&@MON
+							    Sleep(5000)
+							EndIf
 
-							Sleep(3000)
-							$check=_LayCodeCuoi($h,$i)
-							If $check=1 Then $e=$e&'	'&"Buichung"&@MDAY&@MON
-							Sleep(5000)
 						EndIf
 					  If $check=1 Then
 
