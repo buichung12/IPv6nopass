@@ -1702,19 +1702,36 @@ EndFunc
 							Send($g)
 							Sleep(1000)
 							Send('{enter}')
-							Sleep(3000)
-							MouseClick('left',617, 250,1,20)
-							Sleep(2000)
-							Send('{tab}')
-							Sleep(2000)
-							Send('{tab}')
-							Sleep(2000)
-							Send($h)
-							Sleep(2000)
-							MouseMove(500,500)
-							$pixcel=PixelSearch(1030,450,1233,700,0x0B57D0)  ;0x114AA7
-                            Sleep(1000)
-                            If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+							Sleep(5000)
+							$checkemailKhoiPhuc=0
+                            $checkemailKhoiPhuc=_KiemTraemailKhoiPhuc()
+                            If $checkemailKhoiPhuc=1 Then
+
+                                Send($h)
+								Sleep(1000)
+								Send('{enter}')
+								Sleep(5000)
+
+							Else
+
+								MouseClick('left',617, 250,1,20)
+							    Sleep(2000)
+							    Send('{tab}')
+							    Sleep(2000)
+							    Send('{tab}')
+							    Sleep(2000)
+							    Send($h)
+							    Sleep(2000)
+							    MouseMove(500,500)
+							    $pixcel=PixelSearch(1030,450,1233,700,0x0B57D0)  ;0x114AA7
+                                Sleep(1000)
+                                If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+
+                            EndIf
+
+
+
+
 							Sleep(3000)
 							$check=_LayCodeCuoi($h,$i)
 							If $check=1 Then $e=$e&'	'&"Buichung"&@MDAY&@MON
@@ -7939,6 +7956,90 @@ EndFunc
 
                     Return $hetsim
 EndFunc
+
+
+        Func _KiemTraemailKhoiPhuc()
+		        $x3=0
+				$y3=0
+				$check=0
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
+					Sleep(10000)
+					$check=1
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+
+				EndIf
+
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
+					Sleep(10000)
+					$check=1
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				EndIf
+
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
+					Sleep(10000)
+					$check=1
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				EndIf
+
+
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
+					Sleep(10000)
+					$check=1
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				EndIf
+
+
+				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailkhoiphuc2.bmp',1,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
+					Sleep(10000)
+					$check=1
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				EndIf
+
+				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailhoiphuc.bmp',1,$x3,$y3,1)
+				If $x3>0 Then
+					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
+					Sleep(10000)
+					$check=1
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				EndIf
+               Sleep(3000)
+
+            Return $check
+		EndFunc
 
 
 Func _ReduceMemory()
