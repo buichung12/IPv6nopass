@@ -3865,7 +3865,7 @@ EndFunc
 					Sleep(1000)
 					Send('{enter}')
 					Sleep(5000)
-					_MoTaskmgr()
+					;_MoTaskmgr()
 
 				EndIf
 			  Next
