@@ -3610,6 +3610,19 @@ EndFunc
                             EndIf
 						EndIf
 
+
+						ControlClick($var[$i10][1],'','','left',1,265, 505) ;sub
+						Sleep(200)
+						ControlClick($var[$i10][1],'','','left',1,265, 440) ;sub
+						Sleep(200)
+						ControlClick($var[$i10][1],'','','left',1,381, 506) ;sub
+						Sleep(200)
+						ControlClick($var[$i10][1],'','','left',1,381, 440) ;sub
+						Sleep(1000)
+
+
+					  If $datalink[0]=4 Then
+
 						Sleep(1000)
                         Send('^t')
 				        Sleep(2000)
@@ -3673,7 +3686,6 @@ EndFunc
 						EndIf
 						Sleep(500)
 
-
 						If $x=0 Then
 							ControlClick($var[$i10][1],'','','left',1,265, 505) ;sub
 						    Sleep(200)
@@ -3684,13 +3696,14 @@ EndFunc
 							ControlClick($var[$i10][1],'','','left',1,381, 440) ;sub
 						    Sleep(1000)
 						EndIf
-
+                      EndIf
 
                     EndIf
 
 					If $linkvideo=3 Then
                         ToolTip("link truc tiep"&'	phien ban:'&$phienban,0,0)
-					    Sleep(5000)
+					    Sleep(2000)
+
 					    For $i20=1 to 10
 				          $pixcel=PixelSearch(76,90,146, 166,0xFF0033)
 						  $pixcel2=PixelSearch(76,90,146, 166,0xFF0000)
@@ -3703,6 +3716,8 @@ EndFunc
 
 						ControlClick($var[$i10][1],'','','left',1,245, 308)  ;tam dung video
 					    Sleep(2000)
+
+
 
 				        Sleep(2000)     ;thoi gian nghi
 						$pixcel=PixelSearch(22, 420,324, 455,0x0F0F0F)         ; sub ytb
@@ -3750,6 +3765,19 @@ EndFunc
                             EndIf
 						EndIf
 
+
+						ControlClick($var[$i10][1],'','','left',1,265, 505) ;sub
+						Sleep(200)
+						ControlClick($var[$i10][1],'','','left',1,265, 440) ;sub
+						Sleep(200)
+						ControlClick($var[$i10][1],'','','left',1,381, 506) ;sub
+						Sleep(200)
+						ControlClick($var[$i10][1],'','','left',1,381, 440) ;sub
+						Sleep(1000)
+
+
+					  If $datalink[0]=4 Then
+
 						Sleep(1000)
                         Send('^t')
 				        Sleep(2000)
@@ -3813,7 +3841,6 @@ EndFunc
 						EndIf
 						Sleep(500)
 
-
 						If $x=0 Then
 							ControlClick($var[$i10][1],'','','left',1,265, 505) ;sub
 						    Sleep(200)
@@ -3824,7 +3851,7 @@ EndFunc
 							ControlClick($var[$i10][1],'','','left',1,381, 440) ;sub
 						    Sleep(1000)
 						EndIf
-
+                      EndIf
 
 
 
