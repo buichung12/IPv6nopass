@@ -5858,16 +5858,7 @@ EndFunc
 				$pixcel3=PixelSearch(58,96,245, 170,0x3E88F4)   ; xoa loi edge
 				Sleep(1000)
 			If not IsArray($pixcel) and not IsArray($pixcel2) and  not IsArray($pixcel3)  Then  ; kiem tra da dang nhap chua
-              If StringLen($Key2fa)<30	Then
-
-				MouseClick('left',1280, 160,1,20)
-				Sleep(1000)
-				MouseClick('left',1280, 129,1,20)
-				Sleep(1000)
-				MouseClick('left',1280, 118,20)
-				Sleep(1000)
-				MouseClick('left',1280, 160,1,20)
-				Sleep(1000)
+                Sleep(1000)
 				MouseClick('left',650,350,1,20)
 				Sleep(1000)
 				Send('{tab}')
@@ -5997,33 +5988,6 @@ EndFunc
 					Sleep(1000)
 				Next
 
-                $pixcel=PixelSearch(650,330,1150,470,0x7B6CD0)   ; kiem tra gmail co bi canh bao
-			    If IsArray($pixcel) Then
-                    MouseMove(500,500)
-				    $pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
-				    Sleep(1000)
-				    If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-				    Sleep(10000)
-				    MouseMove(500,500)
-				    $pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
-				    Sleep(1000)
-				    If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-				    Sleep(10000)
-				    Send($g)
-				    Sleep(1000)
-				    Send('{enter}')
-				    Sleep(10000)
-				    Send($h)
-				    Sleep(1000)
-				    Send('{enter}')
-				    Sleep(10000)
-                    $check=_LayCodeCuoi($h,$i)
-				    If $check=1 Then $e=$e&'	'&"Buichung"&@MDAY&@MON
-				    Sleep(5000)
-				    FileWrite(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	')
-
-		         EndIf
-              EndIf
 
 			  For $i21=1 to 2
                If StringLen($Key2fa)>30	Then
@@ -6149,7 +6113,7 @@ EndFunc
 				WinClose('Protection')
 				;MsgBox(0,0,'ok')
 			   EndIf
-			  Next
+			 Next
 
 
 
