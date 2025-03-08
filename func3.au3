@@ -1716,7 +1716,7 @@ EndFunc
 							Sleep(2000)
 							Send('{tab}')
 							Sleep(2000)
-							Send('{SPACE}')
+							Send('{enter}')
 							Sleep(5000)
 
 
