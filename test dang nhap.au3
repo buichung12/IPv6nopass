@@ -33,7 +33,7 @@ $Label1 = GUICtrlCreateLabel("link group sub", 15, 60, 50, 50)
 ;$group = GUICtrlCreateInput("", 88, 16, 200, 21)        ;link sub 3   https://anotepad.com/notes/rcpdta95
 ;$groupsub = GUICtrlCreateInput("", 88, 60, 200, 21)    ; lick sub 2  https://anotepad.com/notes/4sanp7d2
 $Label2 = GUICtrlCreateLabel("$i so:", 15, 100, 44, 17)
-$tongsosub = GUICtrlCreateInput("12", 88, 100, 200, 21)
+$tongsosub = GUICtrlCreateInput("1", 88, 100, 200, 21)
 $batdau=GUICtrlCreateButton("BAT DAU", 16, 216, 75, 25)
 $Label1 = GUICtrlCreateLabel('vps so: ' , 300, 50, 100, 50)
 $Label2 = GUICtrlCreateLabel("bat dau Gmail so", 300, 90, 100, 60)
@@ -262,17 +262,23 @@ While 1
 							Send($g)
 							Sleep(1000)
 							Send('{enter}')
+							Sleep(7000)
+
+                            MouseClick('left',617, 250,1,20)
+						    Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{SPACE}')
 							Sleep(5000)
-							$checkemailKhoiPhuc=0
-                            $checkemailKhoiPhuc=_KiemTraemailKhoiPhuc()
-                            If $checkemailKhoiPhuc=1 Then
 
-                                Send($h)
-								Sleep(1000)
-								Send('{enter}')
-								Sleep(5000)
-
-							Else
 
 								MouseClick('left',617, 250,1,20)
 							    Sleep(2000)
@@ -286,9 +292,6 @@ While 1
 							    $pixcel=PixelSearch(1030,450,1233,700,0x0B57D0)  ;0x114AA7
                                 Sleep(1000)
                                 If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-
-                            EndIf
-
 
 
 

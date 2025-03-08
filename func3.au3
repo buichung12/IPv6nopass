@@ -1702,17 +1702,23 @@ EndFunc
 							Send($g)
 							Sleep(1000)
 							Send('{enter}')
+							Sleep(7000)
+
+                            MouseClick('left',617, 250,1,20)
+						    Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{SPACE}')
 							Sleep(5000)
-							$checkemailKhoiPhuc=0
-                            $checkemailKhoiPhuc=_KiemTraemailKhoiPhuc()
-                            If $checkemailKhoiPhuc=1 Then
 
-                                Send($h)
-								Sleep(1000)
-								Send('{enter}')
-								Sleep(5000)
-
-							Else
 
 								MouseClick('left',617, 250,1,20)
 							    Sleep(2000)
@@ -1726,9 +1732,6 @@ EndFunc
 							    $pixcel=PixelSearch(1030,450,1233,700,0x0B57D0)  ;0x114AA7
                                 Sleep(1000)
                                 If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-
-                            EndIf
-
 
 
 
