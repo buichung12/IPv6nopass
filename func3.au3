@@ -4447,6 +4447,13 @@ EndFunc
 
 						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(2000)
+
+						If $i=7 Then
+						   MouseClick('left',770,275,1,20)
+						   MouseClick('left',770,265,1,20)
+						EndIf
+
+
                     #cs
 						If  $i=10 Then
 							Sleep(2000)
@@ -4993,6 +5000,8 @@ EndFunc
 					EndIf
 
 
+
+
 					Sleep(100)
 					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
                     Sleep(100)
@@ -5053,6 +5062,11 @@ EndFunc
 
 						EndIf
 
+
+                        If $i=7 Then
+						   MouseClick('left',770,275,1,20)
+						   MouseClick('left',770,265,1,20)
+						EndIf
 
 						If $i=7 Then
 							Sleep(100)
