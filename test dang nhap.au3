@@ -33,7 +33,7 @@ $Label1 = GUICtrlCreateLabel("link group sub", 15, 60, 50, 50)
 ;$group = GUICtrlCreateInput("", 88, 16, 200, 21)        ;link sub 3   https://anotepad.com/notes/rcpdta95
 ;$groupsub = GUICtrlCreateInput("", 88, 60, 200, 21)    ; lick sub 2  https://anotepad.com/notes/4sanp7d2
 $Label2 = GUICtrlCreateLabel("$i so:", 15, 100, 44, 17)
-$tongsosub = GUICtrlCreateInput("1", 88, 100, 200, 21)
+$tongsosub = GUICtrlCreateInput("12", 88, 100, 200, 21)
 $batdau=GUICtrlCreateButton("BAT DAU", 16, 216, 75, 25)
 $Label1 = GUICtrlCreateLabel('vps so: ' , 300, 50, 100, 50)
 $Label2 = GUICtrlCreateLabel("bat dau Gmail so", 300, 90, 100, 60)
@@ -58,9 +58,9 @@ While 1
 		While 1
 			;   $groupkq=GUICtrlRead($group)
 			 ;  $groupkqSub=GUICtrlRead($groupsub)
-			   $tongsoviewkq=GUICtrlRead($tongsosub)
+			   ;$tongsoviewkq=GUICtrlRead($tongsosub)
 			   $vpsso=GUICtrlRead($giatriA)
-			   $iso=GUICtrlRead($giatriB)
+			   $iso=GUICtrlRead($tongsosub)
 			   $profileso=GUICtrlRead($giatriC)
 			   $kiemtratrinhduyet=GUICtrlRead($giatriD)
 			   $trusomaybandau=GUICtrlRead($giatriE)
