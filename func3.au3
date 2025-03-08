@@ -3870,6 +3870,7 @@ EndFunc
 				EndIf
 			  Next
 
+
               FileWriteLine(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt",$linkkenh)
 
 		  ;Next
