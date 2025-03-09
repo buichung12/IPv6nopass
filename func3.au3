@@ -3664,6 +3664,31 @@ EndFunc
 						    	Sleep(1000)
 						    	Send('{enter}')
 						    	Sleep(3000)
+							Else
+
+								$pixcel=PixelSearch(324, 420,387,600,0x0F0F0F)         ; sub ytb
+						        If IsArray($pixcel) Then
+                                    MouseClick('left',$pixcel[0],$pixcel[1],1,20)
+									Sleep(1000)
+						     	    Send('{tab}')
+						    	    Sleep(1000)
+						    	    Send('{tab}')
+						    	    Sleep(1000)
+						    	    Send('{tab}')
+						    	    Sleep(1000)
+						    	    Send('{enter}')
+							        Sleep(2000)
+						    	    MouseClick('left',$pixcel[0],$pixcel[1],1,20)
+						    	    Sleep(1000)
+						     	    Send('{tab}')
+						    	    Sleep(1000)
+						    	    Send('{tab}')
+						    	    Sleep(1000)
+						    	    Send('{enter}')
+						    	    Sleep(3000)
+                            EndIf
+
+
                             EndIf
 						EndIf
 
@@ -3679,7 +3704,6 @@ EndFunc
 						ControlClick($var[$i10][1],'','','left',1,312, 565) ;sub
                         Sleep(200)
 						ControlClick($var[$i10][1],'','','left',1,329, 538) ;sub
-
 						Sleep(1000)
 
 
