@@ -3706,8 +3706,8 @@ EndFunc
 						Sleep(1000)
 
 
-					  If $datalink[0]=4 Then
-                        If $datalink[0]='SubLan2' Then
+					  If $datalink[0]=4 Or Not IsArray($pixcel) Then
+                        If $datalink[0]='SubLan2' Or Not IsArray($pixcel) Then
 						    Sleep(1000)
                             Send('^t')
 				            Sleep(2000)
@@ -3748,14 +3748,14 @@ EndFunc
 
 						    $x=0
 		                    $y=0
-		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,98, 425,397, 549,$x,$y,1,1)
+		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,131, 365,451, 634,$x,$y,1,1)
                             Sleep(500)
 						    If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
 						    EndIf
 
-		                     _ImageSearchArea(@ScriptDir&'\sub2.bmp',1,98, 425,397, 549,$x,$y,1,1)
+		                     _ImageSearchArea(@ScriptDir&'\sub2.bmp',1,131, 365,451, 634,$x,$y,1,1)
                             Sleep(500)
 						    If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
@@ -3763,7 +3763,7 @@ EndFunc
 						    EndIf
 						    Sleep(500)
 
-						    _ImageSearchArea(@ScriptDir&'\sub3.bmp',1,98, 425,397, 549,$x,$y,1,1)
+						    _ImageSearchArea(@ScriptDir&'\sub3.bmp',1,131, 365,451, 634,$x,$y,1,1)
                              Sleep(500)
 					    	If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
@@ -3783,6 +3783,8 @@ EndFunc
 						        ControlClick($var[$i10][1],'','','left',1,312, 565) ;sub
 								Sleep(200)
 						        ControlClick($var[$i10][1],'','','left',1,329, 538) ;sub
+								Sleep(200)
+						        ControlClick($var[$i10][1],'','','left',1,267, 559) ;sub
 						    EndIf
 
 						EndIf
