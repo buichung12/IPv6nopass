@@ -656,14 +656,14 @@ EndFunc
 		    Sleep(1000)
 			_closeTrinhDuyet(1)
 
-		#cs
+
             FileDelete('C:\Users\'&@UserName&'\Downloads\sub.bmp')
 			Sleep(200)
             ToolTip('update sub3.BMP'&'	phien ban:'&$phienban,0,0)
 			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/sub.bmp"')
 			Sleep(10000)
 			Send('^+s')
-			Sleep(10000)
+			Sleep(2000)
 
 			FileDelete('C:\Users\'&@UserName&'\Downloads\sub2.bmp')
 			Sleep(200)
@@ -671,14 +671,14 @@ EndFunc
 			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/sub2.bmp"')
 			Sleep(10000)
 			Send('^+s')
-			Sleep(10000)
+			Sleep(2000)
 			FileDelete('C:\Users\'&@UserName&'\Downloads\sub3.bmp')
 			Sleep(200)
             ToolTip('update sub3.BMP'&'	phien ban:'&$phienban,0,0)
 			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/sub3.bmp"')
 			Sleep(10000)
 			Send('^+s')
-			Sleep(10000)
+			Sleep(5000)
 			FileCopy('C:\Users\'&@UserName&'\Downloads\sub.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
 		    Sleep(1000)
 			FileCopy('C:\Users\'&@UserName&'\Downloads\sub2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
@@ -3652,19 +3652,6 @@ EndFunc
 						    EndIf
 						    Sleep(500)
 							#ce
-
-						ControlClick($var[$i10][1],'','','left',1,265, 505) ;sub
-						Sleep(200)
-						ControlClick($var[$i10][1],'','','left',1,265, 440) ;sub
-						Sleep(200)
-						ControlClick($var[$i10][1],'','','left',1,381, 506) ;sub
-						Sleep(200)
-						ControlClick($var[$i10][1],'','','left',1,381, 440) ;sub
-						Sleep(200)
-						ControlClick($var[$i10][1],'','','left',1,312, 565) ;sub
-                        Sleep(200)
-						ControlClick($var[$i10][1],'','','left',1,329, 538) ;sub
-						Sleep(1000)
 
 
 					  If $datalink[0]=4 Or Not $x=0 Then
