@@ -4449,6 +4449,15 @@ EndFunc
 
 						WinSetState($var[$i10][1],'',@SW_RESTORE)
 						Sleep(1000)
+
+						If $i=7 or $i=9 Then
+                           MouseClick('left',830,240,1,20)
+						   Sleep(2000)
+						   MouseClick('left',830,265,1,20)
+						   Sleep(2000)
+
+						EndIf
+
                        #cs
 						If $i=2 Then
 							MouseClick('left',1334, 981,1,20)
@@ -4975,6 +4984,15 @@ EndFunc
 				    WinClose('Remove "Bright VPN - Secure Private & Free VPN Proxy"?')
 					Sleep(100)
 					WinClose('Check Update')
+
+					If $i=7 or $i=9 Then
+                           MouseClick('left',830,240,1,20)
+						   Sleep(2000)
+						   MouseClick('left',830,265,1,20)
+						   Sleep(2000)
+
+					EndIf
+
 					MouseClick('left',658, 240,1,20)
 					Sleep(3000)
 					MouseClick('left',658, 240,1,20)
