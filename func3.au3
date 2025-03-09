@@ -598,6 +598,9 @@ EndFunc
 
             EndIf
 
+			FileDelete(@ScriptDir&'\gmailkhoiphucCoMatKhau.txt')
+			_requetGooGleDOC('https://docs.google.com/document/d/14wywJJt6GlHEfF3NQ0_Xr7wNrFGChNzvpl_0nZXTlKw/export?format=txt','gmailkhoiphucCoMatKhau.txt')
+
 
 		    FileDelete("C:\Users\"&@UserName&"\Downloads\ToolCopyKhoiDongVaChuongTrinhChinh.exe")
 			Sleep(1000)
@@ -1630,9 +1633,6 @@ EndFunc
 						   $CheckKey2fa=FileReadLine(@ScriptDir&'\Gmailtest.txt',4)
 						   FileDelete(@ScriptDir&'\Gmailtest.txt')
 					If 	$CheckKey2fa='DangNhapThanhCong' Then
-
-						FileDelete(@ScriptDir&'\gmailkhoiphucCoMatKhau.txt')
-                        _requetGooGleDOC('https://docs.google.com/document/d/14wywJJt6GlHEfF3NQ0_Xr7wNrFGChNzvpl_0nZXTlKw/export?format=txt','gmailkhoiphucCoMatKhau.txt')
 
                         MouseClick('left',600,60,1,20)
 						Sleep(2000)
