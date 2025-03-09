@@ -3112,7 +3112,7 @@ EndFunc
 
 					Sleep(8000)
 
-					If $i=1 Then ControlClick($var[$i10][1],'','','left',1,581, 191)
+					If $i=1 Then MouseClick('left',581, 191,1,20)
 					If $i=2 Then ControlClick($var[$i10][1],'','','left',1,594, 182)
 					If $i=3 Then ControlClick($var[$i10][1],'','','left',1,518, 210)
 					If $i=4 Then ControlClick($var[$i10][1],'','','left',1,596, 184)
@@ -3123,8 +3123,8 @@ EndFunc
 					If $i=9 Then ControlClick($var[$i10][1],'','','left',1,590, 213)
 					If $i=10 Then ControlClick($var[$i10][1],'','','left',1,500, 180)
 					If $i=10 Then ControlClick($var[$i10][1],'','','left',1,500, 190)
-					Sleep(200)
-					If $i=1 Then ControlClick($var[$i10][1],'','','left',1,581, 191)
+					Sleep(2000)
+					If $i=1 Then MouseClick('left',700, 191,1,20)
 					If $i=2 Then ControlClick($var[$i10][1],'','','left',1,594, 182)
 					If $i=3 Then ControlClick($var[$i10][1],'','','left',1,518, 210)
 					If $i=4 Then ControlClick($var[$i10][1],'','','left',1,596, 184)
@@ -3136,7 +3136,7 @@ EndFunc
 					If $i=10 Then ControlClick($var[$i10][1],'','','left',1,500, 180)
 					If $i=10 Then ControlClick($var[$i10][1],'','','left',1,500, 190)
 
-					Sleep(2000)
+					Sleep(1000)
                     For $i20=1 to 2
 					    ;$pixcel=PixelSearch(55,110,245, 170,0xFF0033)   ; xoa loi edge
 					    $pixcel2=PixelSearch(545, 347,1151, 744,0x606060)   ; xoa loi edge
