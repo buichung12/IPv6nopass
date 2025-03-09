@@ -3644,7 +3644,7 @@ EndFunc
 							Sleep(3000)
 						Else
 
-							$pixcel=PixelSearch(324, 480,387, 484,0x0F0F0F)         ; sub ytb
+							$pixcel=PixelSearch(324, 420,387,542,0x0F0F0F)         ; sub ytb
 						    If IsArray($pixcel) Then
                                 MouseClick('left',$pixcel[0],$pixcel[1],1,20)
 							    Sleep(1000)
@@ -3675,6 +3675,11 @@ EndFunc
 						ControlClick($var[$i10][1],'','','left',1,381, 506) ;sub
 						Sleep(200)
 						ControlClick($var[$i10][1],'','','left',1,381, 440) ;sub
+						Sleep(200)
+						ControlClick($var[$i10][1],'','','left',1,312, 565) ;sub
+                        Sleep(200)
+						ControlClick($var[$i10][1],'','','left',1,329, 538) ;sub
+
 						Sleep(1000)
 
 
@@ -3746,12 +3751,15 @@ EndFunc
 						    If $x=0 Then
 							    ControlClick($var[$i10][1],'','','left',1,265, 505) ;sub
 						        Sleep(200)
-							    ControlClick($var[$i10][1],'','','left',1,265, 440) ;sub
+					          	ControlClick($var[$i10][1],'','','left',1,265, 440) ;sub
 						        Sleep(200)
-							    ControlClick($var[$i10][1],'','','left',1,381, 506) ;sub
+						        ControlClick($var[$i10][1],'','','left',1,381, 506) ;sub
 						        Sleep(200)
-							    ControlClick($var[$i10][1],'','','left',1,381, 440) ;sub
-						        Sleep(1000)
+						        ControlClick($var[$i10][1],'','','left',1,381, 440) ;sub
+						        Sleep(200)
+						        ControlClick($var[$i10][1],'','','left',1,312, 565) ;sub
+								Sleep(200)
+						        ControlClick($var[$i10][1],'','','left',1,329, 538) ;sub
 						    EndIf
 
 						EndIf
