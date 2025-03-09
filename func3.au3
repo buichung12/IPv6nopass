@@ -3110,32 +3110,31 @@ EndFunc
 				        Sleep(1000)
 					EndIf
 
-
 					Sleep(8000)
 
 					If $i=1 Then ControlClick($var[$i10][1],'','','left',1,581, 191)
 					If $i=2 Then ControlClick($var[$i10][1],'','','left',1,594, 182)
 					If $i=3 Then ControlClick($var[$i10][1],'','','left',1,518, 210)
 					If $i=4 Then ControlClick($var[$i10][1],'','','left',1,596, 184)
-					If $i=5 Then MouseClick('left',506, 200,1,20)
+					If $i=5 Then ControlClick($var[$i10][1],'','','left',1,506, 200)
 					If $i=6 Then ControlClick($var[$i10][1],'','','left',1,503, 177)
 					If $i=7 Then ControlClick($var[$i10][1],'','','left',1,504, 190)
 					If $i=8 Then ControlClick($var[$i10][1],'','','left',1,594, 189)
 					If $i=9 Then ControlClick($var[$i10][1],'','','left',1,590, 213)
 					If $i=10 Then ControlClick($var[$i10][1],'','','left',1,500, 180)
-					If $i=10 Then MouseClick('left',500, 190,1,20)
+					If $i=10 Then ControlClick($var[$i10][1],'','','left',1,500, 190)
 					Sleep(200)
 					If $i=1 Then ControlClick($var[$i10][1],'','','left',1,581, 191)
 					If $i=2 Then ControlClick($var[$i10][1],'','','left',1,594, 182)
 					If $i=3 Then ControlClick($var[$i10][1],'','','left',1,518, 210)
 					If $i=4 Then ControlClick($var[$i10][1],'','','left',1,596, 184)
-					If $i=5 Then MouseClick('left',506, 200,1,20)
+					If $i=5 Then ControlClick($var[$i10][1],'','','left',1,600, 200)
 					If $i=6 Then ControlClick($var[$i10][1],'','','left',1,503, 177)
 					If $i=7 Then ControlClick($var[$i10][1],'','','left',1,504, 190)
 					If $i=8 Then ControlClick($var[$i10][1],'','','left',1,594, 189)
 					If $i=9 Then ControlClick($var[$i10][1],'','','left',1,590, 213)
 					If $i=10 Then ControlClick($var[$i10][1],'','','left',1,500, 180)
-					If $i=10 Then MouseClick('left',500, 190,1,20)
+					If $i=10 Then ControlClick($var[$i10][1],'','','left',1,500, 190)
 
 					Sleep(2000)
                     For $i20=1 to 2
