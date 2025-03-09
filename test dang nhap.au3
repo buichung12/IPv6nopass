@@ -177,9 +177,6 @@ While 1
 						   FileDelete(@ScriptDir&'\Gmailtest.txt')
 					If 	$CheckKey2fa='DangNhapThanhCong' Then
 
-						FileDelete(@ScriptDir&'\gmailkhoiphucCoMatKhau.txt')
-                        _requetGooGleDOC('https://docs.google.com/document/d/14wywJJt6GlHEfF3NQ0_Xr7wNrFGChNzvpl_0nZXTlKw/export?format=txt','gmailkhoiphucCoMatKhau.txt')
-
                         MouseClick('left',600,60,1,20)
 						Sleep(2000)
 						Send('https://myaccount.google.com/two-step-verification/authenticator')
@@ -516,17 +513,6 @@ While 1
 						Send('{enter}')
 						Sleep(10000)
 
-
-						$pixcel=PixelSearch(682, 256,854, 367,0x0B57D0)  ;kiem tra
-						If IsArray($pixcel) Then
-                            $Key2fa=$Key2fa&'	AddAuthenThanhCong'
-
-						Else
-							$Key2fa=$Key2fa&'	AddAuthenThatBai'
-
-                        EndIf
-
-
 						MouseClick('left',501, 304,1,20)   ; bat buoc 2
 						Sleep(1000)
 						Send('{tab}')
@@ -562,10 +548,10 @@ While 1
 
 						$pixcel=PixelSearch(676, 497,820, 590,0x37A956)  ;kiem tra
 						If IsArray($pixcel) Then
-                            $Key2fa=$Key2fa&'	bat buoc 2 thanh cong'
+                            $Key2fa=$Key2fa&'	BatBuoc2ThanhCong'
 
 						Else
-							$Key2fa=$Key2fa&'	bat buoc 2 that bai'
+							$Key2fa=$Key2fa&'	BatBuoc2ThatBai'
 
                         EndIf
 
