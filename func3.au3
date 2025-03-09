@@ -5596,9 +5596,29 @@ EndFunc
 			EndIf
 
 
+
+                    Sleep(1000)
+					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+                    Sleep(1000)
+					If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
+					Sleep(1000)
+					If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
+
+                If $var[0][0]<>0 Then
+					For $i10 = 1 to $var[0][0]
+					    If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
+                            WinClose($var[$i10][1])
+						    Sleep(100)
+                        EndIf
+					Next
+				EndIf
 			    ProcessClose('Programs.exe')
 				Sleep(100)
 				ProcessClose('explorer.exe')
+				Sleep(100)
+				ProcessClose('msedge.exe')
+				Sleep(100)
+				ProcessClose('chrome.exe')
 				Sleep(100)
 				ProcessClose('opera.exe - system Error.exe')
 				Sleep(100)
