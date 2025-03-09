@@ -4499,6 +4499,13 @@ EndFunc
 						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(2000)
 
+						If $i=7 or $i=9 Then
+                           MouseClick('left',830,240,1,20)
+						   Sleep(2000)
+						   MouseClick('left',830,265,1,20)
+						   Sleep(2000)
+
+						EndIf
 						If $i=7 Then
 						   MouseClick('left',770,275,1,20)
 						   MouseClick('left',770,265,1,20)
@@ -5082,6 +5089,14 @@ EndFunc
 
 						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(1000)
+
+						If $i=7 or $i=9 Then
+                           MouseClick('left',830,240,1,20)
+						   Sleep(2000)
+						   MouseClick('left',830,265,1,20)
+						   Sleep(2000)
+
+						EndIf
 
 						If  $i=9 Then
 							WinClose('Check Update')
