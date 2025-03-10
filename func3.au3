@@ -4488,22 +4488,6 @@ EndFunc
 
 						EndIf
 
-                       #cs
-						If $i=2 Then
-							MouseClick('left',1334, 981,1,20)
-							Sleep(2000)
-						    ControlClick('','','','left',1,528, 202)
-							Sleep(2000)
-							ControlClick('','','','left',1,789, 266)
-							Sleep(2000)
-					    EndIf
-
-						If $i=10 Then
-							MouseClick('left',1325,112,1,20)  ; tat khoi phuc
-							Sleep(2000)
-					    EndIf
-
-                      #ce
 						MouseClick('left',658, 240,1,20)
 						Sleep(3000)
 						MouseClick('left',658, 240,1,20)
@@ -4548,6 +4532,9 @@ EndFunc
 						If $i=7 Then
 						   MouseClick('left',770,275,1,20)
 						   MouseClick('left',770,265,1,20)
+						EndIf
+						If $i=1 Then
+						   MouseClick('left',800,120,1,20)
 						EndIf
 
 
@@ -5084,36 +5071,10 @@ EndFunc
 
 					EndIf
 
-                #cs
-					If  $i=9 Then
-							WinClose('Check Update')
-							Sleep(1000)
-							MouseClick('left',805,437,1,20)
-							Sleep(2000)
-							MouseClick('left',844, 317,1,20)
-							Sleep(2000)
-                            ControlClick('','','','left',1,475, 200)
-                            Sleep(2000)
-                            ControlClick('','','','left',1,800, 243)
-	                        Sleep(2000)
-							MouseClick('left',503, 200,1,20)
-							Sleep(2000)
-							MouseClick('left',831, 237,1,20)
-							Sleep(2000)
-							MouseClick('left',1260,208 ,1,20)
-							Sleep(1000)
-							ControlClick('','','','left',1,505, 200)
-							Sleep(2000)
-							ControlClick('','','','left',1,834, 242)
-							Sleep(2000)
-							MouseClick('left',1304,190,1,20)
-							Sleep(2000)
-							MouseClick('left',1338,131,1,20)
-							Sleep(2000)
-							MouseClick('left',1280,163,1,20)
-							Sleep(2000)
-				    EndIf
-				#ce
+                    If $i=1 Then
+						   MouseClick('left',800,120,1,20)
+					EndIf
+
 
 					If $i=4 Then
 						ControlClick('','','','left',1,600, 102)
