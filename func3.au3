@@ -3765,19 +3765,19 @@ EndFunc
 
 						    $x=0
 		                    $y=0
-		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,149, 455,500, 600,$x,$y,1,1)
+		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,149, 455,500, 800,$x,$y,1,1)
                             Sleep(500)
 						    If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
 						    EndIf
-							_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,149, 455,500, 600,$x,$y,1,1)
+							_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,149, 455,500, 800,$x,$y,1,1)
                             Sleep(500)
 						    If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
 						    EndIf
-							_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,149, 455,500, 600,$x,$y,1,1)
+							_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,149, 455,500, 800,$x,$y,1,1)
                             Sleep(500)
 						    If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
@@ -5478,6 +5478,9 @@ EndFunc
 				  Next
 
 			If $i=2 Then
+
+				ProcessClose('OperaSetup.exe')
+				Sleep(100)
 				ProcessClose('conhost.exe')
 				WinClose('Settings')
 				Sleep(100)
