@@ -3652,7 +3652,7 @@ EndFunc
 						    	Sleep(3000)
 							Else
 
-								$pixcel=PixelSearch(26, 421,387,600,0x0F0F0F)         ; sub ytb
+								$pixcel=PixelSearch(26, 421,500,800,0x0F0F0F)         ; sub ytb
 						        If IsArray($pixcel) Then
                                     MouseClick('left',$pixcel[0],$pixcel[1],1,20)
 									Sleep(1000)
