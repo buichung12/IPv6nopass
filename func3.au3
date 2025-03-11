@@ -4533,9 +4533,17 @@ EndFunc
 						   MouseClick('left',770,275,1,20)
 						   MouseClick('left',770,265,1,20)
 						EndIf
+						If $i=7 Then
+						   MouseClick('left',1330,135,1,20)
+						   Sleep(1000)
+						   MouseClick('left',1330,103,1,20)
+						EndIf
 						If $i=1 Then
 						   MouseClick('left',800,120,1,20)
 						EndIf
+						If $i=2 Then
+						   MouseClick('left',1325,106,1,20)
+					    EndIf
 
 
                     #cs
@@ -5029,8 +5037,8 @@ EndFunc
 						   Sleep(2000)
 						   MouseClick('left',830,265,1,20)
 						   Sleep(2000)
-
 					EndIf
+
 
 					MouseClick('left',658, 240,1,20)
 					Sleep(3000)
@@ -5073,6 +5081,9 @@ EndFunc
 
                     If $i=1 Then
 						   MouseClick('left',800,120,1,20)
+					EndIf
+					If $i=2 Then
+						   MouseClick('left',1325,106,1,20)
 					EndIf
 
 
@@ -5126,7 +5137,6 @@ EndFunc
 						   Sleep(2000)
 						   MouseClick('left',830,265,1,20)
 						   Sleep(2000)
-
 						EndIf
 
 						If  $i=9 Then
@@ -5164,6 +5174,12 @@ EndFunc
 						   MouseClick('left',770,275,1,20)
 						   MouseClick('left',770,265,1,20)
 						EndIf
+
+						If $i=7 Then
+						   MouseClick('left',1330,135,1,20)
+						   Sleep(1000)
+						   MouseClick('left',1330,103,1,20)
+					    EndIf
 
 						If $i=7 Then
 							Sleep(100)
