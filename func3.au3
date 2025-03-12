@@ -4520,7 +4520,7 @@ EndFunc
 
 
 						WinMove($var[$i10][1],'',0,0,1366,850)
-						Sleep(2000)
+						Sleep(3000)
 
 						If $i=7 or $i=9 Then
                            MouseClick('left',830,240,1,20)
@@ -4543,6 +4543,9 @@ EndFunc
 						EndIf
 						If $i=2 Then
 						   MouseClick('left',1325,106,1,20)
+						EndIf
+						If $i=3 Then
+						   MouseClick('left',1325,109,1,20)
 					    EndIf
 
 
@@ -5087,6 +5090,7 @@ EndFunc
 					EndIf
 
 
+
 					If $i=4 Then
 						ControlClick('','','','left',1,600, 102)
 						Sleep(100)
@@ -5130,7 +5134,7 @@ EndFunc
 					    EndIf
 
 						WinMove($var[$i10][1],'',0,0,1366,850)
-						Sleep(1000)
+						Sleep(3000)
 
 						If $i=7 or $i=9 Then
                            MouseClick('left',830,240,1,20)
@@ -5251,13 +5255,15 @@ EndFunc
 
 
 						If $i=3 Then
-							 MouseClick('left',1324,109,1,20)
+							MouseClick('left',1324,109,1,20)
 						    WinClose('Update successful')
 				            Sleep(200)
 						    WinClose('Bạn có muốn khôi phục trang không?')
 						EndIf
 
 						If $i=2 Then
+							ControlClick('','','','left',1,1325,106)
+						    Sleep(100)
 							ControlClick('','','','left',1,1334, 981)
 						    Sleep(100)
 							ControlClick('','','','left',1,1333, 97)
