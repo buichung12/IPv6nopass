@@ -891,8 +891,6 @@ EndFunc
 
 			$check=FileExists('C:\Users\'&@UserName&'\AppData\Local\Maxthon\Application\Maxthon.exe')
 
-
-
 			$check=FileExists('C:\portapps\brave-portable\brave-portable.exe')
 			    If $check=0 Then
 				    $i=2
@@ -1784,8 +1782,12 @@ EndFunc
 						Send('https://myaccount.google.com/two-step-verification/authenticator')
 						Sleep(1000)
 						Send('{enter}')
-						Sleep(5000)
 						Sleep(10000)
+						Send($g)
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(10000)
+
 						For $i20=1 to 10
 							$pixcel=PixelSearch(16, 87,154, 170,0x4285F4)  ;0x114AA7
 						    $pixcel2=PixelSearch(18, 130,206,190,0xFBBC05)
