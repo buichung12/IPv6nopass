@@ -1971,6 +1971,10 @@ EndFunc
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(10000)
+						Send($g)
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(10000)
 
 						MouseClick('left',501, 304,1,20)   ; bat buoc 2
 						Sleep(1000)

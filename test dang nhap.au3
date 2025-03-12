@@ -66,7 +66,7 @@ While 1
 			   $trusomaybandau=GUICtrlRead($giatriE)
 
 
-	For $i=$iso to 10
+			For $i=$iso to 10
                 $check=0
 
 				  ToolTip('check dang nhap 	'&$i&'	phien ban:'&$phienban,0,0)
@@ -513,6 +513,10 @@ While 1
 				        Send('{tab}')
 				        Sleep(3000)
 						Send($code)
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(10000)
+						Send($g)
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(10000)
