@@ -66,8 +66,9 @@ While 1
 			   $trusomaybandau=GUICtrlRead($giatriE)
 $vpsso=1
 
-			For $i=$iso to 10
+		For $i=$iso to 10
                 $check=0
+
 				  ToolTip('check dang nhap 	'&$i&'	phien ban:'&$phienban,0,0)
 				_resetMang($i)
 				_FakeIPOptionV6($i,$vpsso)
@@ -553,7 +554,7 @@ $vpsso=1
 
 						$Key2fa=StringReplace($Key2fa,' ','|')
 
-						$pixcel=PixelSearch(676, 497,820, 590,0x37A956)  ;kiem tra
+						$pixcel=PixelSearch(569, 399,940, 673,0x34A853)  ;kiem tra
 						If IsArray($pixcel) Then
                             $Key2fa=$Key2fa&'	BatBuoc2ThanhCong'
 
