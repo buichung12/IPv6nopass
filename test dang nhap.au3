@@ -64,11 +64,10 @@ While 1
 			   $profileso=GUICtrlRead($giatriC)
 			   $kiemtratrinhduyet=GUICtrlRead($giatriD)
 			   $trusomaybandau=GUICtrlRead($giatriE)
-
+$vpsso=1
 
 			For $i=$iso to 10
                 $check=0
-
 				  ToolTip('check dang nhap 	'&$i&'	phien ban:'&$phienban,0,0)
 				_resetMang($i)
 				_FakeIPOptionV6($i,$vpsso)
