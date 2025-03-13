@@ -1523,6 +1523,8 @@ EndFunc
 
 		For $i=1 to 10
                 $check=0
+				FileDelete(@ScriptDir&'\gmailkhoiphucCoMatKhau.txt')
+			   _requetGooGleDOC('https://docs.google.com/document/d/14wywJJt6GlHEfF3NQ0_Xr7wNrFGChNzvpl_0nZXTlKw/export?format=txt','gmailkhoiphucCoMatKhau.txt')
 
 				  ToolTip('check dang nhap 	'&$i&'	phien ban:'&$phienban,0,0)
 				_resetMang($i)
