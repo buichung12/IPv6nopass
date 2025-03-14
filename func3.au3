@@ -7344,7 +7344,7 @@ EndFunc
 
 			;If $sodong>10 Then
 			    FileWriteLine(@ScriptDir&'\testdata.txt',$dataIP)
-			    Sleep(500)
+			    Sleep(2000)
 			    ;$sodog=_FileCountLines(@ScriptDir&'\testdata.txt')
 			   ; For $i20=1 to $sodog
 				  ;  $IdPass=FileReadLine(@ScriptDir&'\testdata.txt',$i20)
