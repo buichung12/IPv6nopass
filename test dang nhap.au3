@@ -39,7 +39,7 @@ $Label1 = GUICtrlCreateLabel('vps so: ' , 300, 50, 100, 50)
 $Label2 = GUICtrlCreateLabel("bat dau Gmail so", 300, 90, 100, 60)
 $giatriA = GUICtrlCreateInput("", 400, 48, 100, 21)
 $giatriB = GUICtrlCreateInput("1", 400, 88, 100, 21)
-$Label3 = GUICtrlCreateLabel("profile ", 300, 130, 100, 30)
+$Label3 = GUICtrlCreateLabel("chay bat buoc 2 ", 300, 130, 100, 30)
 $giatriC = GUICtrlCreateInput("1", 400, 130, 100, 21)
 $Label4 = GUICtrlCreateLabel("kiem tra trinh duyet(1 la co kiem tra)", 300, 165, 100, 30)
 $giatriD = GUICtrlCreateInput("1", 400, 170, 100, 21)
@@ -61,11 +61,11 @@ While 1
 			   ;$tongsoviewkq=GUICtrlRead($tongsosub)
 			   $vpsso=GUICtrlRead($giatriA)
 			   $iso=GUICtrlRead($tongsosub)
-			   $profileso=GUICtrlRead($giatriC)
+			   $chayBatBuoc2=GUICtrlRead($giatriC)
 			   $kiemtratrinhduyet=GUICtrlRead($giatriD)
 			   $trusomaybandau=GUICtrlRead($giatriE)
-$vpsso=1
-
+        $vpsso=1
+    If $chayBatBuoc2=1 Then
 		For $i=$iso to 10
                 $check=0
 				FileDelete(@ScriptDir&'\gmailkhoiphucCoMatKhau.txt')
@@ -614,6 +614,7 @@ $vpsso=1
 
 		Next
         Sleep(2000)
+	EndIf
 		If $vpsso=1 or $vpsso=6 or $vpsso=11 or $vpsso=16 or $vpsso=21 or $vpsso=26 or $vpsso=31 or $vpsso=36 or $vpsso=41 or $vpsso=46 or $vpsso=51 or $vpsso=56 or $vpsso=61 or $vpsso=66 or $vpsso=71 or $vpsso=76 or $vpsso=81 or $vpsso=86 or $vpsso=91 or $vpsso=99  Then
 
 			$dataIP=FileRead(@ScriptDir&'\KetQuaDangNhap.txt')
