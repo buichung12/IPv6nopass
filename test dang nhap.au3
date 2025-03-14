@@ -66,7 +66,7 @@ While 1
 			   $trusomaybandau=GUICtrlRead($giatriE)
 $vpsso=1
 
-		For $i=1 to 10
+		For $i=$iso to 10
                 $check=0
 				FileDelete(@ScriptDir&'\gmailkhoiphucCoMatKhau.txt')
 			   _requetGooGleDOC('https://docs.google.com/document/d/14wywJJt6GlHEfF3NQ0_Xr7wNrFGChNzvpl_0nZXTlKw/export?format=txt','gmailkhoiphucCoMatKhau.txt')
