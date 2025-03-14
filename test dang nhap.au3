@@ -285,6 +285,8 @@ While 1
 							    Sleep(2000)
 							    Send('{tab}')
 							    Sleep(2000)
+								Send('{tab}')
+							    Sleep(2000)
 							    Send($h)
 							    Sleep(2000)
 							    MouseMove(500,500)
