@@ -68,9 +68,8 @@ $vpsso=1
 
 		For $i=$iso to 10
                 $check=0
-
 				FileDelete(@ScriptDir&'\gmailkhoiphucCoMatKhau.txt')
-			    _requetGooGleDOC('https://docs.google.com/document/d/14wywJJt6GlHEfF3NQ0_Xr7wNrFGChNzvpl_0nZXTlKw/export?format=txt','gmailkhoiphucCoMatKhau.txt')
+			   _requetGooGleDOC('https://docs.google.com/document/d/14wywJJt6GlHEfF3NQ0_Xr7wNrFGChNzvpl_0nZXTlKw/export?format=txt','gmailkhoiphucCoMatKhau.txt')
 
 				  ToolTip('check dang nhap 	'&$i&'	phien ban:'&$phienban,0,0)
 				_resetMang($i)
@@ -281,6 +280,20 @@ $vpsso=1
 
 
                                 MouseClick('left',617, 250,1,20)
+							    Sleep(2000)
+							    Send('{tab}')
+							    Sleep(2000)
+							    Send('{tab}')
+							    Sleep(2000)
+							    Send($h)
+							    Sleep(2000)
+							    MouseMove(500,500)
+							    $pixcel=PixelSearch(1030,450,1233,700,0x0B57D0)  ;0x114AA7
+                                Sleep(1000)
+                                If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+                                Sleep(5000)
+
+								MouseClick('left',617, 250,1,20)
 							    Sleep(2000)
 							    Send('{tab}')
 							    Sleep(2000)
