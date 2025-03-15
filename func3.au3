@@ -1937,6 +1937,8 @@ EndFunc
 				        Sleep(3000)
 				        Send('{enter}')
 				        Sleep(5000)
+						Send('{enter}')
+				        Sleep(5000)
 				        Send('{enter}')
 				        Sleep(7000)
 
