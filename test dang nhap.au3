@@ -66,7 +66,7 @@ While 1
 			   $trusomaybandau=GUICtrlRead($giatriE)
         $vpsso=1
     If $chayBatBuoc2=1 Then
-		For $i=$iso to 10
+			For $i=$iso to 10
                 $check=0
 				FileDelete(@ScriptDir&'\gmailkhoiphucCoMatKhau.txt')
 			   _requetGooGleDOC('https://docs.google.com/document/d/14wywJJt6GlHEfF3NQ0_Xr7wNrFGChNzvpl_0nZXTlKw/export?format=txt','gmailkhoiphucCoMatKhau.txt')
@@ -318,7 +318,7 @@ While 1
 							    MouseMove(500,500)
 							    $pixcel=PixelSearch(1030,450,1233,700,0x0B57D0)  ;0x114AA7
                                 Sleep(1000)
-                                If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+                                If IsArray($pixcel) Then Send('{enter}')
 								Sleep(5000)
 
 								MouseClick('left',617, 250,1,20)
@@ -335,11 +335,21 @@ While 1
 							    $pixcel=PixelSearch(1030,450,1233,700,0x0B57D0)  ;0x114AA7
                                 Sleep(1000)
                                 If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-                                Sleep(5000)
+                                Sleep(10000)
 
-								Sleep(10000)
-                            $pixcel=PixelSearch(16, 87,154, 170,0x4285F4)  ;0x114AA7
-						    $pixcel2=PixelSearch(18, 130,206,190,0x3E88F4)
+							MouseClick('left',600,60,1,20)
+							Sleep(2000)
+						    Send('https://myaccount.google.com/two-step-verification/authenticator')
+						    Sleep(1000)
+						    Send('{enter}')
+						    Sleep(10000)
+						    Send($g)
+						    Sleep(1000)
+							Send('{enter}')
+							Sleep(10000)
+
+                            $pixcel=PixelSearch(16, 87,154, 170,0xFEBB07)  ;0x114AA7
+						    $pixcel2=PixelSearch(18, 130,206,190,0x38A751)
 
 							If IsArray($pixcel) Or IsArray($pixcel2) Then
                                 $check=1
@@ -353,16 +363,6 @@ While 1
 						EndIf
 					  If $check=1 Then
 
-						MouseClick('left',600,60,1,20)
-						Sleep(2000)
-						Send('https://myaccount.google.com/two-step-verification/authenticator')
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(10000)
-						Send($g)
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(10000)
 
 						For $i20=1 to 10
 							$pixcel=PixelSearch(16, 87,154, 170,0x4285F4)  ;0x114AA7
@@ -538,11 +538,15 @@ While 1
 						$code=ClipGet()
 						Sleep(1000)
 						MouseClick('left',682, 499,1,20)
-						Sleep(3000)
+						Sleep(1000)
+						MouseClick('left',682, 499,1,20)
+						Sleep(1000)
+						MouseClick('left',682, 499,1,20)
+						Sleep(2000)
 						Send('{tab}')
-						Sleep(3000)
+						Sleep(2000)
 				        Send('{tab}')
-				        Sleep(3000)
+				        Sleep(2000)
 						Send($code)
 						Sleep(1000)
 						Send('{enter}')
