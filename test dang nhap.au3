@@ -627,9 +627,30 @@ While 1
 	EndIf
 		;If $vpsso=1 or $vpsso=6 or $vpsso=11 or $vpsso=16 or $vpsso=21 or $vpsso=26 or $vpsso=31 or $vpsso=36 or $vpsso=41 or $vpsso=46 or $vpsso=51 or $vpsso=56 or $vpsso=61 or $vpsso=66 or $vpsso=71 or $vpsso=76 or $vpsso=81 or $vpsso=86 or $vpsso=91 or $vpsso=99  Then
 
-			$dataIP=FileRead(@ScriptDir&'\KetQuaDangNhap.txt')
-			_postdataIPGmail($dataIP,'https://anotepad.com/note/access/6tfiaiej','https://anotepad.com/notes/6tfiaiej')
-
+             _resetMang(1)
+		    $dataIP=FileRead(@ScriptDir&'\KetQuaDangNhap.txt')
+			Sleep(2000)
+			;_postdataIPGmail($dataIP,'https://anotepad.com/note/access/6tfiaiej','https://anotepad.com/notes/6tfiaiej')
+			$link='https://docs.google.com/document/d/1qHVR9Vg6S3_AgJuPAqKmYHbwWYgtfiPkOjEm05iEMHc/edit?usp=sharing'
+			_postdataGoogleDOC($link)
+			For $i20=1 to 10
+			    $pixcel=PixelSearch(11, 99,179, 197,0x2684FC)
+			    Sleep(1000)
+			    If IsArray($pixcel)  Then
+					$i20=10
+				EndIf
+				Sleep(1000)
+			Next
+			Sleep(2000)
+			Send('{enter}')
+			Sleep(2000)
+			Send('{UP}')
+			Sleep(2000)
+			ClipPut($dataIP)
+			Sleep(2000)
+			Send('^+v')
+			Sleep(10000)
+            _closeTrinhDuyet(1)
 		;EndIf
 
         MsgBox(0,0,'ok')
