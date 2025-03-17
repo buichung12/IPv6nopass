@@ -65,6 +65,8 @@ While 1
 			   $kiemtratrinhduyet=GUICtrlRead($giatriD)
 			   $trusomaybandau=GUICtrlRead($giatriE)
         $vpsso=1
+		ToolTip('dang nhap bat buoc 2',0,0)
+
     If $chayBatBuoc2=1 Then
 		For $i=$iso to 10
                 $check=0
