@@ -1886,6 +1886,8 @@ EndFunc
 							EndIf
 						EndIf
 
+						Sleep(3000)
+						MouseClick('left',700,500,3,20)
 						Sleep(1000)
 						Send('{tab}')
 						Sleep(1000)
@@ -2048,12 +2050,12 @@ EndFunc
 
 						$Key2fa=StringReplace($Key2fa,' ','|')
 
-						$pixcel=PixelSearch(569, 399,940, 673,0x34A853)  ;kiem tra
+						$pixcel=PixelSearch(682, 256,854, 467,0x0B57D0)  ;kiem tra
 						If IsArray($pixcel) Then
-                            $Key2fa=$Key2fa&'	BatBuoc2ThanhCong'
+                            $Key2fa=$Key2fa&'	AddAuthenThanhCong'
 
 						Else
-							$Key2fa=$Key2fa&'	BatBuoc2ThatBai'
+							$Key2fa=$Key2fa&'	AddAuthenThatBai'
 
                         EndIf
 
@@ -2061,8 +2063,7 @@ EndFunc
 						Sleep(2000)
 						$e=$e&'	'&$Key2fa
 
-                        WinClose('WinAuth')
-				        Sleep(1000)
+
 
                       EndIf
 
@@ -6293,6 +6294,8 @@ EndFunc
 				Sleep(1000)
                 Run('C:\Users\'&@UserName&'\Desktop\WinAuth')
 				Sleep(5000)
+				WinActivate('WinAuth')
+				        Sleep(1000)
 				WinMove('','',0,0)
 				Sleep(2000)
 
@@ -6399,19 +6402,9 @@ EndFunc
 				Sleep(1000)
 				Send('{enter}')
 				Sleep(10000)
-				WinClose('WinAuth')
-				Sleep(1000)
-				WinClose('WinAuth')
-				Sleep(1000)
-				WinClose('WinAuth')
-				Sleep(1000)
-				WinClose('Protection')
-				Sleep(1000)
-				WinClose('Protection')
 				;MsgBox(0,0,'ok')
 			   EndIf
-			 Next
-
+			  Next
 
 
 				If $i=6 Then MouseClick('left',380, 225,1,20)
@@ -6516,6 +6509,38 @@ EndFunc
 				      Sleep(7000)
 				EndIf
                Sleep(3000)
+
+			    If $x3=0 Then
+                  If StringLen($Key2fa)<30	Then
+					MouseClick('left',523, 262,1,20)    ; click Email khoi phuc
+					Sleep(1000)
+					Send('{tab}')
+					Sleep(1000)
+					Send('{tab}')
+					Sleep(1000)
+					Send('{tab}')
+					Sleep(1000)
+					Send('{tab}')
+					Sleep(1000)
+					Send('{tab}')
+					Sleep(1000)
+					Send('{enter}')
+					Sleep(5000)
+
+					For $i20=1 to 20
+				      $pixcel=PixelSearch(322, 459,1000, 527,0x1A73E8)
+					  If IsArray($pixcel) Then $i20=20
+					  Sleep(1000)
+					Next
+				      Sleep(1000)
+				      Send($h)
+				      Sleep(500)
+				      Send('{enter}')
+				      Sleep(7000)
+
+				  EndIf
+				EndIf
+
 
 			   If $i=4 Then MouseClick('left',1025, 230,1,20);update pass
             #cs

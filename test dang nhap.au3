@@ -433,6 +433,8 @@ While 1
 							EndIf
 						EndIf
 
+						Sleep(3000)
+						MouseClick('left',700,500,3,20)
 						Sleep(1000)
 						Send('{tab}')
 						Sleep(1000)
@@ -595,12 +597,12 @@ While 1
 
 						$Key2fa=StringReplace($Key2fa,' ','|')
 
-						$pixcel=PixelSearch(569, 399,940, 673,0x34A853)  ;kiem tra
+						$pixcel=PixelSearch(682, 256,854, 467,0x0B57D0)  ;kiem tra
 						If IsArray($pixcel) Then
-                            $Key2fa=$Key2fa&'	BatBuoc2ThanhCong'
+                            $Key2fa=$Key2fa&'	AddAuthenThanhCong'
 
 						Else
-							$Key2fa=$Key2fa&'	BatBuoc2ThatBai'
+							$Key2fa=$Key2fa&'	AddAuthenThatBai'
 
                         EndIf
 
@@ -608,7 +610,7 @@ While 1
 						Sleep(2000)
 						$e=$e&'	'&$Key2fa
 
-                        WinClose('WinAuth')
+
 				        Sleep(1000)
 
                       EndIf
