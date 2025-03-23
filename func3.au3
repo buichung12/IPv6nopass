@@ -1738,6 +1738,8 @@ EndFunc
 							    Sleep(2000)
 							    Send('{tab}')
 							    Sleep(2000)
+								Send('{tab}')
+							    Sleep(2000)
 							    Send('{tab}')
 							    Sleep(2000)
 							    Send($h)
