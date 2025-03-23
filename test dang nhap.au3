@@ -278,12 +278,22 @@ While 1
 							Send('{tab}')
 							Sleep(2000)
 							Send('{enter}')
+							Sleep(7000)
+
+							Send($h)
+							Sleep(2000)
+							MouseMove(500,500)
+							$pixcel=PixelSearch(1030,450,1233,700,0x0B57D0)  ;0x114AA7
+							Sleep(1000)
+							If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
 							Sleep(5000)
 
 
                                 MouseClick('left',617, 250,1,20)
 							    Sleep(2000)
 							    Send('{tab}')
+							    Sleep(2000)
+								Send('{tab}')
 							    Sleep(2000)
 							    Send('{tab}')
 							    Sleep(2000)
@@ -597,7 +607,7 @@ While 1
 
 						$Key2fa=StringReplace($Key2fa,' ','|')
 
-						$pixcel=PixelSearch(682, 256,854, 467,0x0B57D0)  ;kiem tra
+						$pixcel=PixelSearch(682, 256,954, 467,0x0B57D0)  ;kiem tra
 						If IsArray($pixcel) Then
                             $Key2fa=$Key2fa&'	AddAuthenThanhCong'
 
@@ -611,7 +621,6 @@ While 1
 						$e=$e&'	'&$Key2fa
 
 
-				        Sleep(1000)
 
                       EndIf
 
