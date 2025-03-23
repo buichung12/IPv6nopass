@@ -2050,7 +2050,7 @@ EndFunc
 
 						$Key2fa=StringReplace($Key2fa,' ','|')
 
-						$pixcel=PixelSearch(682, 256,854, 467,0x0B57D0)  ;kiem tra
+						$pixcel=PixelSearch(682, 256,954, 467,0x0B57D0)  ;kiem tra
 						If IsArray($pixcel) Then
                             $Key2fa=$Key2fa&'	AddAuthenThanhCong'
 
@@ -5482,6 +5482,9 @@ EndFunc
 					If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
 						ControlSend($var[$i10][1],'','','^w')
 						Sleep(100)
+						WinClose($var[$i10][1])
+
+						Sleep(100)
 					EndIf
 				  Next
 				Next
@@ -5499,6 +5502,7 @@ EndFunc
 				        Sleep(100)
 						ProcessClose('Windows Security.exe')
 				        Sleep(100)
+						WinClose($var[$i10][1])
 					EndIf
 				Next
 				$var = WinList ("[CLASS:MozillaWindowClass]")                                                       ;x󡠴o஠b? tap
@@ -5510,6 +5514,8 @@ EndFunc
 				        Sleep(100)
 						ProcessClose('brave.exe')
 				        Sleep(100)
+						Sleep(100)
+						WinClose($var[$i10][1])
 					EndIf
 				Next
 				$a = WinExists('Google Chrome')                                                    ;x󡠴o஠b? tap
