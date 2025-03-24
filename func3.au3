@@ -7753,6 +7753,7 @@ EndFunc
 						$f2=$datakhoiphuc[1]
 						$g2=$datakhoiphuc[2]
 						$h2=$datakhoiphuc[3]
+						$Key2fa=$datakhoiphuc[4]
 						ExitLoop
 
 					EndIf
@@ -7960,7 +7961,7 @@ EndFunc
                 $check=4
 
 			  EndIf
-			EndIf
+
 
 			WinClose('Settings')
 
