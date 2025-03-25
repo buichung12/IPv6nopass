@@ -5571,6 +5571,12 @@ EndFunc
 						Sleep(100)
 					EndIf
 				  Next
+			If $i=10 Then
+			    WinClose('WinAuth')
+				Sleep(100)
+				ProcessClose('WinAuth.exe')
+				Sleep(100)
+			EndIf
 
 			If $i=2 Then
 
