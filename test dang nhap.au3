@@ -68,11 +68,13 @@ While 1
 		ToolTip('dang nhap bat buoc 2',0,0)
 
     If $chayBatBuoc2=1 Then
+		    $checkDieuKiengmailkhoiphucCoMatKhau=0
+			FileDelete(@ScriptDir&'\KetQuaDangNhap.txt') ;up ket qua dang nhap
+			FileDelete(@ScriptDir&'\gmailkhoiphucCoMatKhau.txt')
+			_requetGooGleDOC('https://docs.google.com/document/d/14wywJJt6GlHEfF3NQ0_Xr7wNrFGChNzvpl_0nZXTlKw/export?format=txt','gmailkhoiphucCoMatKhau.txt')
+
 		For $i=$iso to 10
                 $check=0
-				FileDelete(@ScriptDir&'\gmailkhoiphucCoMatKhau.txt')
-			   _requetGooGleDOC('https://docs.google.com/document/d/14wywJJt6GlHEfF3NQ0_Xr7wNrFGChNzvpl_0nZXTlKw/export?format=txt','gmailkhoiphucCoMatKhau.txt')
-
 				  ToolTip('check dang nhap 	'&$i&'	phien ban:'&$phienban,0,0)
 				_resetMang($i)
 				_FakeIPOptionV6($i,$vpsso)
@@ -357,10 +359,17 @@ While 1
 							If IsArray($pixcel) Or IsArray($pixcel2) Then
                                 $check=1
                             Else
-							    Sleep(3000)
-							    $check=_LayCodeCuoi($h,$i)
-							    If $check=1 Then $e=$e&'	'&"Buichung"&@MDAY&@MON
-							    Sleep(5000)
+
+                                FileDelete(@ScriptDir&'\KiemTraDieuKiengmailkhoiphucCoMatKhau.txt')
+                                _requetGooGleDOC('https://docs.google.com/document/d/1YdXjdQxDVL5wvx774pQ_npe4GIcRdbBJYmJor96K8f0/export?format=txt','KiemTraDieuKiengmailkhoiphucCoMatKhau.txt')
+								$checkDieuKiengmailkhoiphucCoMatKhau=FileReadLine(@ScriptDir&'\KiemTraDieuKiengmailkhoiphucCoMatKhau.txt',1)
+								If $checkDieuKiengmailkhoiphucCoMatKhau=1 Then
+							        Sleep(3000)
+							        $check=_LayCodeCuoi($h,$i)
+							        If $check=1 Then $e=$e&'	'&"Buichung"&@MDAY&@MON
+							        Sleep(5000)
+                                EndIf
+
 							EndIf
 
 						EndIf
@@ -609,7 +618,6 @@ While 1
 						Sleep(100)
 						$Key2fa=StringReplace($Key2fa,@CRLF,'')
                         Sleep(100)
-
 						$pixcel=PixelSearch(682, 256,954, 467,0x0B57D0)  ;kiem tra
 						If IsArray($pixcel) Then
                             $Key2fa=$Key2fa&'	AddAuthenThanhCong'
