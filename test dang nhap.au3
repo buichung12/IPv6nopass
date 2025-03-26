@@ -606,6 +606,9 @@ While 1
 						Sleep(7000)
 
 						$Key2fa=StringReplace($Key2fa,' ','|')
+						Sleep(100)
+						$Key2fa=StringReplace($Key2fa,@CRLF,'')
+                        Sleep(100)
 
 						$pixcel=PixelSearch(682, 256,954, 467,0x0B57D0)  ;kiem tra
 						If IsArray($pixcel) Then
