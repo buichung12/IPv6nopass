@@ -139,7 +139,7 @@ While 1
 				$checkprofile=1
 While 1   ; vong tra lai gia tr
 
-					FileDelete(@ScriptDir&'\Gmail.txt')
+				;	FileDelete(@ScriptDir&'\Gmail.txt')
 				FileDelete(@ScriptDir&'\Gmailtho.txt')
 
 

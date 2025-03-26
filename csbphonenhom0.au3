@@ -145,7 +145,7 @@ While 1
 				$kiemtratrinhduyet2=1
 				$checkprofile=1
 While 1   ; vong tra lai gia tr
-	            FileDelete(@ScriptDir&'\Gmail.txt')
+	           ; FileDelete(@ScriptDir&'\Gmail.txt')
 				FileDelete(@ScriptDir&'\Gmailtho.txt')
 
 	            $i6=Mod($vpsso,5)
