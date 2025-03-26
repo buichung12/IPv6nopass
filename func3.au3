@@ -1522,16 +1522,22 @@ EndFunc
 			FileDelete(@ScriptDir&'\KetQuaDangNhap.txt') ;up ket qua dang nhap
 			FileDelete(@ScriptDir&'\gmailkhoiphucCoMatKhau.txt')
 			_requetGooGleDOC('https://docs.google.com/document/d/14wywJJt6GlHEfF3NQ0_Xr7wNrFGChNzvpl_0nZXTlKw/export?format=txt','gmailkhoiphucCoMatKhau.txt')
+			 FileDelete(@ScriptDir&'\KiemTraDieuKiengmailkhoiphucCoMatKhau.txt')
+			_requetGooGleDOC('https://docs.google.com/document/d/1YdXjdQxDVL5wvx774pQ_npe4GIcRdbBJYmJor96K8f0/export?format=txt','KiemTraDieuKiengmailkhoiphucCoMatKhau.txt')
+			$checkDieuKiengmailkhoiphucCoMatKhau=FileReadLine(@ScriptDir&'\KiemTraDieuKiengmailkhoiphucCoMatKhau.txt',1)
 
-		For $i=1 to 10
+		    For $i=1 to 10
                 $check=0
 				  ToolTip('check dang nhap 	'&$i&'	phien ban:'&$phienban,0,0)
+
+
 				_resetMang($i)
-				_FakeIPOptionV6($i,$vpsso)
+				If $checkDieuKiengmailkhoiphucCoMatKhau=0 Then _FakeIPOptionV6($i,$vpsso)
 				_khoidongFireFox($i)
 
 				WinSetState('Windows Security','',@SW_HIDE)
-				_loginGmail($i)
+
+				If $checkDieuKiengmailkhoiphucCoMatKhau=0 Then _loginGmail($i)
 
 				ControlClick('','','','left',1,600, 60)
 				Sleep(1000)
@@ -1583,10 +1589,10 @@ EndFunc
 
 					_closeTrinhDuyet($i)
 					_resetMang($i)
-					_FakeIPOptionV6($i,$vpsso)
+					If $checkDieuKiengmailkhoiphucCoMatKhau=0 Then _FakeIPOptionV6($i,$vpsso)
 					_khoidongFireFox($i)
 
-                    _loginGmail($i)
+                    If $checkDieuKiengmailkhoiphucCoMatKhau=0 Then _loginGmail($i)
 
 					ControlClick('','','','left',1,600, 60)
 				    Sleep(1000)
@@ -2092,11 +2098,9 @@ EndFunc
                     FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	DangNhapThatBai'&'	'&$i)
 				EndIf
 
-
-
 				_closeTrinhDuyet($i)
 
-		Next
+		    Next
         Sleep(2000)
 
         If $checkDieuKiengmailkhoiphucCoMatKhau=0 Then
