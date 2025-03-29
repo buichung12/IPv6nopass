@@ -1570,10 +1570,12 @@ EndFunc
 				Sleep(10000)
 				For $i20=1 to 10
 					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
-					Sleep(1000)
+					Sleep(500)
 					$pixcel2=PixelSearch(15, 95,206, 263,0x34A853)
-					Sleep(1000)
-					If IsArray($pixcel) or IsArray($pixcel2) Then
+					Sleep(500)
+					$pixcel3=PixelSearch(18, 130,206, 263,0xC3E7FF)
+					Sleep(500)
+					If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
 						$check=1
 						$i20=17
 						$i2=2
@@ -1657,7 +1659,7 @@ EndFunc
 								 $checklink=1
 							EndIf
 				        Next
-
+                      If $checklink=0 Then
 						MouseMove(500,500)
 						$pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
 						Sleep(1000)
@@ -1825,30 +1827,47 @@ EndFunc
 							    $pixcel=PixelSearch(1030,450,1233,700,0x0B57D0)  ;0x114AA7
                                 Sleep(1000)
                                 If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-                                Sleep(15000)
+                                Sleep(7000)
 
+								Send('^t')
+								Sleep(2000)
+								MouseClick('left',600,60,1,20)
+						        Sleep(2000)
+						        Send('https://myaccount.google.com/two-step-verification/authenticator')
+					          	Sleep(1000)
+						        Send('{enter}')
+						        Sleep(7000)
+						        WinMove('','',0,0,1366,768)
+				                Sleep(2000)
+						        $checklink2=0
+						        For $i20=1 to 10
+				                    $pixcel=PixelSearch(16, 87,154, 170,0x4285F4)  ;0x114AA7
+							        $pixcel2=PixelSearch(18, 130,206,190,0x3E88F4)
+					                If IsArray($pixcel) Or IsArray($pixcel2) Then
+								        $i20=20
+							            Sleep(2000)
+								        $checklink2=1
+							        EndIf
+				                 Next
 
+                                If $checklink2=0  Then
+									Send('^w')
+									Sleep(2000)
+                                    FileDelete(@ScriptDir&'\KiemTraDieuKiengmailkhoiphucCoMatKhau.txt')
+                                    _requetGooGleDOC('https://docs.google.com/document/d/1YdXjdQxDVL5wvx774pQ_npe4GIcRdbBJYmJor96K8f0/export?format=txt','KiemTraDieuKiengmailkhoiphucCoMatKhau.txt')
+								    $checkDieuKiengmailkhoiphucCoMatKhau=FileReadLine(@ScriptDir&'\KiemTraDieuKiengmailkhoiphucCoMatKhau.txt',1)
+								    If $checkDieuKiengmailkhoiphucCoMatKhau=1 Then
+							            Sleep(3000)
+							            $check=_LayCodeCuoi($h,$i)
+							            If $check=1 Then $e=$e&'	'&"Buichung"&@MDAY&@MON
+							            Sleep(5000)
+                                    EndIf
 
-                            $pixcel=PixelSearch(16, 87,154, 170,0xFEBB07)  ;0x114AA7
-						    $pixcel2=PixelSearch(18, 130,206,190,0x38A751)
-
-							If IsArray($pixcel) Or IsArray($pixcel2) Then
-                                $check=1
-                            Else
-
-                                FileDelete(@ScriptDir&'\KiemTraDieuKiengmailkhoiphucCoMatKhau.txt')
-                                _requetGooGleDOC('https://docs.google.com/document/d/1YdXjdQxDVL5wvx774pQ_npe4GIcRdbBJYmJor96K8f0/export?format=txt','KiemTraDieuKiengmailkhoiphucCoMatKhau.txt')
-								$checkDieuKiengmailkhoiphucCoMatKhau=FileReadLine(@ScriptDir&'\KiemTraDieuKiengmailkhoiphucCoMatKhau.txt',1)
-								If $checkDieuKiengmailkhoiphucCoMatKhau=1 Then
-							        Sleep(3000)
-							        $check=_LayCodeCuoi($h,$i)
-							        If $check=1 Then $e=$e&'	'&"Buichung"&@MDAY&@MON
-							        Sleep(5000)
-                                EndIf
-
-							EndIf
+							    EndIf
 
 						EndIf
+					  EndIf
+
 					  If $check=1 Then
 
 						MouseClick('left',600,60,1,20)
@@ -4506,10 +4525,7 @@ EndFunc
 					If $i=10 Then $linkblu="C:\Program Files\Google\Chrome\Application\chrome.exe"
 					Sleep(2000)
 					Run( $linkblu,'')
-					Sleep(2000)
-					Run( $linkblu2,'')
-	                Sleep(5000)
-
+					Sleep(5000)
                     Sleep(100)
 					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
                     Sleep(100)
@@ -4520,16 +4536,16 @@ EndFunc
 
 					If $var[0][0] = 0 Then
 	                    If $i=1 Then
-						    $linkblu='C:\Program Files\Microsoft\Edge\Application\msedge.exe'
-						    Run( $linkblu,'')
+						    ;$linkblu='C:\Program Files\Microsoft\Edge\Application\msedge.exe'
+						    Run( $linkblu2,'')
 					    EndIf
 					    If $i=7 Then
-						    $linkblu='C:\Program Files\Mozilla Firefox\firefox.exe'
-						    Run( $linkblu,'')
+						    ;$linkblu='C:\Program Files\Mozilla Firefox\firefox.exe'
+						    Run( $linkblu2,'')
 					    EndIf
 					    If $i=6 Then
-						    $linkblu="C:\Users\"&@UserName&"\AppData\Local\Google\Chrome\Application\chrome.exe"
-		        	        Run( $linkblu,'')
+						    ;$linkblu="C:\Users\"&@UserName&"\AppData\Local\Google\Chrome\Application\chrome.exe"
+		        	        Run( $linkblu2,'')
 					    EndIf
 
 					    Sleep(8000)
@@ -6228,7 +6244,7 @@ EndFunc
 
 	            WinMove('','',0,0,1366,768)
 				Sleep(2000)
-                MouseClick('left',1280, 129,1,20)
+                ;MouseClick('left',1280, 129,1,20)
 			    $check=0
                 MouseClick('left',500, 60,1,20)
                 Sleep(2000)
