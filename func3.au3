@@ -1091,46 +1091,67 @@ EndFunc
             EndIf
 
 
-			 $check=FileExists('C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\opera.exe')
+			 $check=FileExists('C:\Users\'&@UserName&'\Desktop\GoogleChromePortable\GoogleChromePortable.exe')
 			If $check=0 Then
 				$i=5
-                Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\OperaSetup.exe')
-				Sleep(10000)
-				MouseClick('left',780,460,1,20)
-				Sleep(10000)
-				MouseClick('left',958,587,1,20)
-				Sleep(10000)
-				MouseClick('left',494,591,1,20)
-				Sleep(10000)
-				MouseClick('left',950,595,1,20)
+				_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/refs/heads/main/GoogleChromePortable_134.0.6998.166_online.paf.exe"')
+			    Sleep(15000)
+		     	FileCopy("C:\Users\"&@UserName&"\Downloads\GoogleChromePortable_134.0.6998.166_online.paf.exe",'C:\Users\'&@UserName&'\Desktop',1)
+		        Sleep(2000)
+				Run('C:\Users\'&@UserName&'Desktop\GoogleChromePortable_134.0.6998.166_online.paf.exe')
+				Sleep(5000)
+                Send('{tab}')
 				Sleep(2000)
-				MouseClick('left',610,592,1,20)
+				Send('{tab}')
 				Sleep(2000)
-				MouseClick('left',610,592,1,20)
+				Send('{tab}')
 				Sleep(2000)
-				MouseClick('left',610,592,1,20)
+				Send('{tab}')
 				Sleep(2000)
-				MouseClick('left',610,592,1,20)
-				Sleep(2000)
-				MouseClick('left',610,592,1,20)
-				Sleep(2000)
-				MouseClick('left',610,592,1,20)
-				Sleep(10000)
 				Send('{enter}')
-				;ControlClick('Opera Installer','Install','[CLASS:Button; INSTANCE:6]','left',1,50, 16)
-				Sleep(120000)
+				Sleep(5000)
+				Send('{enter}')
+				Sleep(3000)
+				Send('{enter}')
+				Sleep(3000)
+				Send('{enter}')
+				Sleep(3000)
+				Send('{enter}')
+				Sleep(3000)
+				Send('{enter}')
+				Sleep(60000)
+				Send('{enter}')
+				Sleep(5000)
+				_closeTrinhDuyet($i)
+
+				Run('C:\Users\'&@UserName&'\Desktop\GoogleChromePortable\GoogleChromePortable.exe')
+				Sleep(5000)
 				For $i20=1 to 50
-					$checktd= WinExists('[class:Chrome_WidgetWin_1]')
-					Sleep(1000)
-					If $checktd=1 Then $i20=50
-					$checktd= WinExists('Speed Dial - Opera')
+					$pixcel=PixelSearch(600, 150,800, 350,0x1A73E8,5)
+					If IsArray($pixcel) Then                     ; tat trang
+						    Sleep(1000)
+							MouseClick('left',$pixcel[0],$pixcel[1],20)
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+				            Sleep(5000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+				            Sleep(10000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{tab}')
+							Sleep(2000)
+							Send('{enter}')
+				            Sleep(10000)
+					EndIf
 					Sleep(2000)
-					If $checktd=1 Then $i20=50
-				Next
-				WinClose('Setting')
-				Sleep(2000)
-				WinMove('','',0,0,1366,768)
-				Sleep(1000)
+	            Next
+
 				_closeTrinhDuyet($i)
 				Sleep(10000)
 
@@ -1138,35 +1159,7 @@ EndFunc
 				$check15=1
             EndIf
 
-			 $check=FileExists('C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\opera.exe')
-			If $check=0 Then
-				$i=5
-                Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\OperaSetup.exe')
-				Sleep(10000)
-				MouseClick('left',780,460,1,20)
-				Sleep(5000)
-				MouseClick('left',958,587,1,20)
-				Sleep(5000)
-				Send('{enter}')
-				;ControlClick('Opera Installer','Install','[CLASS:Button; INSTANCE:6]','left',1,50, 16)
-				Sleep(120000)
-				For $i20=1 to 50
-					$checktd= WinExists('[class:Chrome_WidgetWin_1]')
-					Sleep(1000)
-					If $checktd=1 Then $i20=50
-					$checktd= WinExists('Speed Dial - Opera')
-					Sleep(2000)
-					If $checktd=1 Then $i20=50
-				Next
-				WinClose('Setting')
-				Sleep(2000)
-				WinMove('','',0,0,1366,768)
-				Sleep(1000)
-				_closeTrinhDuyet($i)
 
-			Else
-				$check15=1
-            EndIf
 
                  $check=FileExists('C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe')
 				 $check1=FileExists('C:\Program Files\Microsoft\Edge\Application\msedge.exe')
@@ -1433,43 +1426,6 @@ EndFunc
 
 			_closeTrinhDuyet(1)
 
-				$linkblu='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\launcher.exe'
-				$linkblu2='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\opera.exe'
-				Sleep(1000)
-				Run( $linkblu,'')
-				Sleep(2000)
-				Run( $linkblu2,'')
-				Sleep(10000)
-                Sleep(1000)
-				$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
-				Sleep(1000)
-				If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
-				Sleep(1000)
-				If $var[0][0]=0 Then
-
-			        Run('C:\Users\'&@UserName&'\Desktop\trinh duyet\OperaSetup.exe')
-			        Sleep(10000)
-			        Send('{enter}')
-			        Sleep(90000)
-			        MouseClick('left',857,520,1,20)
-			        Sleep(1000)
-			        MouseClick('left',857,520,1,20)
-			        Sleep(1000)
-			        MouseClick('left',857,520,1,20)
-			        Sleep(1000)
-			        MouseClick('left',857,520,1,20)
-			        Sleep(1000)
-			        MouseClick('left',857,520,1,20)
-			        Sleep(1000)
-			        MouseClick('left',857,520,1,20)
-			        Sleep(1000)
-			        MouseClick('left',857,520,1,20)
-				    Sleep(1000)
-			        MouseClick('left',857,520,1,20)
-			        Sleep(1000)
-				EndIf
-			    _closeTrinhDuyet(2)
-
 
           	$check=FileExists('C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe')
 				If $check=0 Then MsgBox(0,0,'chua cai dat duoc edge 1',6)
@@ -1484,7 +1440,7 @@ EndFunc
 				If $check=0 Then MsgBox(0,0,'chua cai dat duoc brave por 4',6)
 
 				$check=FileExists('C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\launcher.exe')
-				If $check=0 Then MsgBox(0,0,'chua cai dat duoc opera 5',6)
+				If $check=0 Then MsgBox(0,0,'chua cai dat duoc google offline 5',6)
 
 				$check=FileExists("C:\Users\"&@UserName&"\Desktop\trinh duyet\FirefoxPortable\FirefoxPortable.exe")
 				If $check=0 Then MsgBox(0,0,'chua cai dat duoc firefox por 6',6)
@@ -4506,8 +4462,8 @@ EndFunc
 					If $i=4 Then $linkblu='C:\portapps\brave-portable\brave-portable.exe'
 					;If $i=4 Then $linkblu='C:\Program Files (x86)\AVAST Software\Browser\Application\AvastBrowser.exe'
 					If $i=5 Then
-						$linkblu='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\launcher.exe'
-						$linkblu2='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\opera.exe'
+						$linkblu=('C:\Users\'&@UserName&'\Desktop\GoogleChromePortable\GoogleChromePortable.exe')
+						;$linkblu2='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\opera.exe'
 					EndIf
 					;If $i=5 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Yandex\YandexBrowser\Application\browser.exe'
 					If $i=6 Then $linkblu="C:\Users\"&@UserName&"\Desktop\trinh duyet\FirefoxPortable\FirefoxPortable.exe"
@@ -5117,8 +5073,8 @@ EndFunc
 					If $i=4 Then $linkblu='C:\portapps\brave-portable\brave-portable.exe'
 					;If $i=4 Then $linkblu='C:\Program Files (x86)\AVAST Software\Browser\Application\AvastBrowser.exe'
 					If $i=5 Then
-						$linkblu='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\launcher.exe'
-						$linkblu2='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\opera.exe'
+						$linkblu=('C:\Users\'&@UserName&'\Desktop\GoogleChromePortable\GoogleChromePortable.exe')
+						;$linkblu2='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\opera.exe'
 					EndIf
 					;If $i=5 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Yandex\YandexBrowser\Application\browser.exe'
 					If $i=6 Then $linkblu="C:\Users\"&@UserName&"\Desktop\trinh duyet\FirefoxPortable\FirefoxPortable.exe"
