@@ -1096,9 +1096,15 @@ EndFunc
 				$i=5
 				_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/refs/heads/main/GoogleChromePortable_134.0.6998.166_online.paf.exe"')
 			    Sleep(15000)
+
+				If FileExists('C:\Users\"&@UserName&"\Downloads\GoogleChromePortable_134.0.6998.166_online.paf.exe')=0 Then
+					_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/raw/refs/heads/main/GoogleChromePortable_134.0.6998.166_online.paf.exe"')
+					Sleep(15000)
+				EndIf
+
 		     	FileCopy("C:\Users\"&@UserName&"\Downloads\GoogleChromePortable_134.0.6998.166_online.paf.exe",'C:\Users\'&@UserName&'\Desktop',1)
 		        Sleep(2000)
-				Run('C:\Users\'&@UserName&'Desktop\GoogleChromePortable_134.0.6998.166_online.paf.exe')
+				Run('C:\Users\'&@UserName&'\Desktop\GoogleChromePortable_134.0.6998.166_online.paf.exe')
 				Sleep(5000)
                 Send('{tab}')
 				Sleep(2000)
