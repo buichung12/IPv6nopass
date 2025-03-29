@@ -5181,10 +5181,12 @@ EndFunc
 					EndIf
 
 
-					MouseClick('left',658, 240,1,20)
-					Sleep(3000)
-					MouseClick('left',658, 240,1,20)
-					Sleep(3000)
+					 If $i<>1 Then
+						    MouseClick('left',658, 240,1,20)
+						    Sleep(3000)
+						    MouseClick('left',658, 240,1,20)
+						    Sleep(3000)
+					EndIf
 
 					If $i=5 Then
                         WinMove('','',0,0,1366,850)
