@@ -4455,6 +4455,12 @@ EndFunc
 					$linkblu2=''
 
                     WinClose('Proxy Client Tinsoft')
+
+					MouseClick('left',1366,10,1,20)
+					Sleep(1000)
+					MouseClick('left',1366,10,1,20)
+					Sleep(1000)
+
 					If $i=1 Then
 						$linkblu="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 						$linkblu2="C:\Program Files\Microsoft\Edge\Application\msedge.exe"
@@ -5001,7 +5007,6 @@ EndFunc
 	    Func _khoidongFireFox2($i,$vpsso)
 			        $dangnhap=0
 			        WinClose('trinh duyet')
-
 					;WinClose('csFireFox - 10 sea')
 			        WinClose('Proxy Client Tinsoft')
 			        Sleep(200)
@@ -5080,6 +5085,11 @@ EndFunc
 
 
                     _FakeIPOptionV6($i,$vpsso)
+
+					MouseClick('left',1366,10,1,20)
+					Sleep(1000)
+					MouseClick('left',1366,10,1,20)
+					Sleep(1000)
 
                     Sleep(Random(1000,10000,1))
 					WinClose('Server Manager')
@@ -5188,7 +5198,6 @@ EndFunc
 					    EndIf
 
                     EndIf
-
 
 					WinClose('Install Google Translate extension to translate this page?')
 					WinClose('Restore pages?')
