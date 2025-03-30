@@ -4488,14 +4488,12 @@ EndFunc
 					Sleep(2000)
 					Run( $linkblu,'')
 					Sleep(5000)
-                    Sleep(100)
+
 					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
                     Sleep(100)
 					If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
 					Sleep(100)
 					If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
-
-
 					If $var[0][0] = 0 Then
 	                    If $i=1 Then
 						    ;$linkblu='C:\Program Files\Microsoft\Edge\Application\msedge.exe'
@@ -4515,6 +4513,28 @@ EndFunc
 						    Send('{enter}')
 						EndIf
                     EndIf
+
+					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+                    Sleep(100)
+					If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
+					Sleep(100)
+					If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
+					If $var[0][0] = 0 Then
+	                    If $i=1 Then
+						    _closeTrinhDuyet($i)
+							MouseClick('left',500,500,1,20)
+							Sleep(200)
+							Send('Microsoft Edge')
+							Sleep(2000)
+							Send('{enter}')
+							Sleep(5000)
+
+					    EndIf
+
+                    EndIf
+
+
+
 					Sleep(7000)
 					WinClose('Install Google Translate extension to translate this page?')
 					WinClose('Restore pages?')
@@ -4674,9 +4694,6 @@ EndFunc
 						If $i=1 Then
 							MouseClick('left',300,650,1,20)
 							Sleep(3000)
-
-
-
 						    MouseClick('left',800,120,1,20)
 						EndIf
 						If $i=2 Then
@@ -5068,8 +5085,7 @@ EndFunc
 					WinClose('Server Manager')
 					If $i=1 Then
 						$linkblu="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-
-						;$linkblu2="C:\Program Files\Microsoft\Edge\Application\msedge.exe"
+						$linkblu2="C:\Program Files\Microsoft\Edge\Application\msedge.exe"
 					EndIf
 					If $i=2 Then $linkblu="C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
 					;If $i=3 Then $linkblu='C:\Users\'&@UserName&'\AppData\Local\Maxthon\Application\Maxthon.exe'
@@ -5100,17 +5116,31 @@ EndFunc
 
 					Sleep(1000)
 					Run( $linkblu,'')
-					Sleep(2000)
+					Sleep(5000)
 
-					Sleep(100)
 					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
                     Sleep(100)
 					If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
 					Sleep(100)
 					If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
 					If $var[0][0] = 0 Then
-	                    Run( $linkblu2,'')
-					    Sleep(5000)
+	                    If $i=1 Then
+						    ;$linkblu='C:\Program Files\Microsoft\Edge\Application\msedge.exe'
+						    Run( $linkblu2,'')
+					    EndIf
+					    If $i=7 Then
+						    ;$linkblu='C:\Program Files\Mozilla Firefox\firefox.exe'
+						    Run( $linkblu2,'')
+					    EndIf
+					    If $i=6 Then
+						    ;$linkblu="C:\Users\"&@UserName&"\AppData\Local\Google\Chrome\Application\chrome.exe"
+		        	        Run( $linkblu2,'')
+					    EndIf
+
+					    Sleep(8000)
+						If $i=6 or 7 Then
+						    Send('{enter}')
+						EndIf
                     EndIf
 
                     Sleep(100)
@@ -5119,7 +5149,6 @@ EndFunc
 					If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
 					Sleep(100)
 					If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
-
 
 					If $var[0][0] = 0 Then
 	                    If $i=1 Then
@@ -5141,16 +5170,24 @@ EndFunc
 						EndIf
                     EndIf
 
+					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
+                    Sleep(100)
+					If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
+					Sleep(100)
+					If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
+					If $var[0][0] = 0 Then
+	                    If $i=1 Then
+						    _closeTrinhDuyet($i)
+							MouseClick('left',500,500,1,20)
+							Sleep(200)
+							Send('Microsoft Edge')
+							Sleep(2000)
+							Send('{enter}')
+							Sleep(5000)
 
-                    For $i20=1 to 10
-					    Sleep(500)
-					    $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
-                        Sleep(500)
-					    If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
-					    Sleep(500)
-					    If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
-						If $var[0][0]=1 Then $i20=10
-                    Next
+					    EndIf
+
+                    EndIf
 
 
 					WinClose('Install Google Translate extension to translate this page?')
