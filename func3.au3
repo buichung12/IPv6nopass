@@ -4652,6 +4652,19 @@ EndFunc
 						    Sleep(3000)
 						EndIf
 
+						If  $i=10 or $i=5 Then
+                           MouseClick('left',500,500,1,20)
+						   Sleep(2000)
+						   Send('{tab}')
+						   Sleep(2000)
+						   Send('{tab}')
+						   Sleep(2000)
+						   Send('{tab}')
+						   Sleep(2000)
+						   Send('{enter}')
+						   Sleep(3000)
+						EndIf
+
 						WinClose('Restore pages?')
 					    WinClose('Restore pages')
 
