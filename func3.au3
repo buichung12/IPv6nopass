@@ -4460,6 +4460,8 @@ EndFunc
 					Sleep(1000)
 					MouseClick('left',1366,10,1,20)
 					Sleep(1000)
+					$checkDieuKiengmailkhoiphucCoMatKhau=0
+					$checkDieuKiengmailkhoiphucCoMatKhau=FileReadLine(@ScriptDir&'\KiemTraDieuKiengmailkhoiphucCoMatKhau.txt',1)
 
 					If $i=1 Then
 						$linkblu="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
@@ -4491,6 +4493,13 @@ EndFunc
 					EndIf
 					;If $i=10 Then $linkblu="C:\Program Files (x86)\Globus\PrivacyBrowser\GlobusPrivacyBrowser.exe"
 					If $i=10 Then $linkblu="C:\Program Files\Google\Chrome\Application\chrome.exe"
+
+					If $checkDieuKiengmailkhoiphucCoMatKhau=1 Then
+					    If $i=5 Then
+						;$linkblu=('C:\Users\'&@UserName&'\Desktop\GoogleChromePortable\GoogleChromePortable.exe')
+						$linkblu='C:\Users\'&@UserName&'\AppData\Local\Programs\Opera\opera.exe'
+						EndIf
+					EndIf
 					Sleep(2000)
 					Run( $linkblu,'')
 					Sleep(5000)
