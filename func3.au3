@@ -2057,6 +2057,15 @@ EndFunc
 						Send('{enter}')
 						Sleep(10000)
 
+						$pixcel=PixelSearch(682, 256,854, 367,0x0B57D0)  ;kiem tra
+						If IsArray($pixcel) Then
+                            $Key2fa=$Key2fa&'	AddAuthenThanhCong'
+
+						Else
+							$Key2fa=$Key2fa&'	AddAuthenThatBai'
+
+                        EndIf
+
 						MouseClick('left',501, 304,1,20)   ; bat buoc 2
 						Sleep(1000)
 						Send('{tab}')
@@ -2094,10 +2103,10 @@ EndFunc
                         Sleep(100)
 						$pixcel=PixelSearch(682, 256,954, 467,0x0B57D0)  ;kiem tra
 						If IsArray($pixcel) Then
-                            $Key2fa=$Key2fa&'	AddAuthenThanhCong'
+                            $Key2fa=$Key2fa&'	BatBuoc2ThanhCong'
 
 						Else
-							$Key2fa=$Key2fa&'	AddAuthenThatBai'
+							$Key2fa=$Key2fa&'	BatBuoc2ThatBai'
 
                         EndIf
 
