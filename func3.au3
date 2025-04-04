@@ -3579,7 +3579,7 @@ EndFunc
 							Sleep(5000)
 						EndIf
 
-						MouseClick('left',242, 190,1,20)
+						MouseClick('left',52, 170,1,20)
 						Sleep(1000)
 						Send('{tab}')
 						Sleep(1000)
@@ -3591,7 +3591,7 @@ EndFunc
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(3000)
-						MouseClick('left',242, 190,1,20)
+						MouseClick('left',52, 170,1,20)
 						Sleep(1000)
 						Send('{tab}')
 						Sleep(1000)
@@ -3601,7 +3601,7 @@ EndFunc
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(3000)
-						MouseClick('left',242, 190,1,20)
+						MouseClick('left',52, 170,1,20)
 						Sleep(1000)
 						Send('{tab}')
 						Sleep(1000)
