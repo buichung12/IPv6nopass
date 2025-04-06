@@ -672,10 +672,17 @@ EndFunc
 			Sleep(10000)
 			Send('^+s')
 			Sleep(2000)
-			FileDelete('C:\Users\'&@UserName&'\Downloads\sub3.bmp')
+			FileDelete('C:\Users\'&@UserName&'\Downloads\sub.bmp')
 			Sleep(200)
             ToolTip('update sub3.BMP'&'	phien ban:'&$phienban,0,0)
-			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/sub3.bmp"')
+			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/sub.bmp"')
+			Sleep(10000)
+			Send('^+s')
+			Sleep(5000)
+			FileDelete('C:\Users\'&@UserName&'\Downloads\sub2.bmp')
+			Sleep(200)
+            ToolTip('update sub3.BMP'&'	phien ban:'&$phienban,0,0)
+			_GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/sub2.bmp"')
 			Sleep(10000)
 			Send('^+s')
 			Sleep(5000)
@@ -683,7 +690,9 @@ EndFunc
 		    Sleep(1000)
 			FileCopy('C:\Users\'&@UserName&'\Downloads\sub2.png','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
 		    Sleep(1000)
-			FileCopy('C:\Users\'&@UserName&'\Downloads\sub3.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+			FileCopy('C:\Users\'&@UserName&'\Downloads\sub.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
+		    Sleep(1000)
+			FileCopy('C:\Users\'&@UserName&'\Downloads\sub2.bmp','C:\Users\'&@UserName&'\Desktop\csFireFox - 10 sea',1)
 		    Sleep(1000)
 			_closeTrinhDuyet(1)
 
@@ -3758,37 +3767,37 @@ EndFunc
 
 							$x=0
 		                    $y=0
-		                    _ImageSearchArea(@ScriptDir&'\sub.png',1,100, 576,476, 654,$x,$y,50)
+		                    _ImageSearchArea(@ScriptDir&'\sub.png',1,100, 576,476, 654,$x,$y,100)
                             Sleep(500)
 						    If $x>0 Then
 							    MouseClick('left',$x,$y-10,1,20)
 							    Sleep(5000)
 							Else
-								_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 525,476, 654,$x,$y,50)
+								_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 525,476, 654,$x,$y,100)
                                 Sleep(500)
 								If $x>0 Then
 							        MouseClick('left',$x,$y-10,1,20)
 							        Sleep(5000)
 								Else
-									_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 475,476, 654,$x,$y,50)
+									_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 475,476, 654,$x,$y,100)
                                     Sleep(500)
 						            If $x>0 Then
 							            MouseClick('left',$x,$y-10,1,20)
 									    Sleep(5000)
 									Else
-										_ImageSearchArea(@ScriptDir&'\sub.png',1,100,475,468, 776,$x,$y,50)
+										_ImageSearchArea(@ScriptDir&'\sub.png',1,100,475,468, 776,$x,$y,100)
                                         Sleep(500)
 						                If $x>0 Then
 							                MouseClick('left',$x,$y-10,1,20)
 											Sleep(5000)
 										Else
-											_ImageSearchArea(@ScriptDir&'\sub2.png',1,100,525,470, 785,$x,$y,50)
+											_ImageSearchArea(@ScriptDir&'\sub2.png',1,100,525,470, 785,$x,$y,100)
                                             Sleep(500)
 						                    If $x>0 Then
 							                    MouseClick('left',$x,$y+10,1,20)
 							                    Sleep(5000)
 											Else
-												_ImageSearchArea(@ScriptDir&'\sub2.png',1,132,475,479, 731,$x,$y,50)
+												_ImageSearchArea(@ScriptDir&'\sub2.png',1,132,475,479, 731,$x,$y,100)
                                                 Sleep(500)
 								                If $x>0 Then
 													MouseClick('left',$x,$y+10,1,20)
