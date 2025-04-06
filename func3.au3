@@ -3754,37 +3754,37 @@ EndFunc
 
 							$x=0
 		                    $y=0
-		                    _ImageSearchArea(@ScriptDir&'\sub.png',1,100, 623,482, 724,$x,$y,1,1)
+		                    _ImageSearchArea(@ScriptDir&'\sub.png',1,100, 576,476, 654,$x,$y,1,1)
                             Sleep(500)
 						    If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
 							Else
-								_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 570,479, 659,$x,$y,1,1)
+								_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 525,476, 654,$x,$y,1,1)
                                 Sleep(500)
 								If $x>0 Then
 							        MouseClick('left',$x,$y,1,20)
 							        Sleep(5000)
 								Else
-									_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 528,476, 619,$x,$y,1,1)
+									_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 475,476, 654,$x,$y,1,1)
                                     Sleep(500)
 						            If $x>0 Then
 							            MouseClick('left',$x,$y,1,20)
 									    Sleep(5000)
 									Else
-										_ImageSearchArea(@ScriptDir&'\sub.png',1,100,486,478, 624,$x,$y,1,1)
+										_ImageSearchArea(@ScriptDir&'\sub.png',1,100,475,468, 776,$x,$y,1,1)
                                         Sleep(500)
 						                If $x>0 Then
 							                MouseClick('left',$x,$y,1,20)
 											Sleep(5000)
 										Else
-											_ImageSearchArea(@ScriptDir&'\sub2.png',1,100,333,470, 785,$x,$y,1,1)
+											_ImageSearchArea(@ScriptDir&'\sub2.png',1,100,525,470, 785,$x,$y,1,1)
                                             Sleep(500)
 						                    If $x>0 Then
 							                    MouseClick('left',$x,$y,1,20)
 							                    Sleep(5000)
 											Else
-												_ImageSearchArea(@ScriptDir&'\sub2.png',1,132, 486,479, 731,$x,$y,1,1)
+												_ImageSearchArea(@ScriptDir&'\sub2.png',1,132,475,479, 731,$x,$y,1,1)
                                                 Sleep(500)
 								                If $x>0 Then
 													MouseClick('left',$x,$y,1,20)
