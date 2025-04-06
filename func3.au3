@@ -3751,7 +3751,140 @@ EndFunc
 						ControlClick($var[$i10][1],'','','left',1,245, 308)  ;tam dung video
 					    Sleep(3000)
 
-						Sleep(2000)     ;thoi gian nghi
+
+							$x=0
+		                    $y=0
+		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,100, 623,482, 724,$x,$y,1,1)
+                            Sleep(500)
+						    If $x>0 Then
+							    MouseClick('left',$x,$y,1,20)
+							    Sleep(5000)
+							Else
+								_ImageSearchArea(@ScriptDir&'\sub.bmp',1,100, 570,479, 659,$x,$y,1,1)
+                                Sleep(500)
+								If $x>0 Then
+							        MouseClick('left',$x,$y,1,20)
+							        Sleep(5000)
+								Else
+									_ImageSearchArea(@ScriptDir&'\sub.bmp',1,100, 528,476, 619,$x,$y,1,1)
+                                    Sleep(500)
+						            If $x>0 Then
+							            MouseClick('left',$x,$y,1,20)
+									    Sleep(5000)
+									Else
+										_ImageSearchArea(@ScriptDir&'\sub.bmp',1,100,486,478, 624,$x,$y,1,1)
+                                        Sleep(500)
+						                If $x>0 Then
+							                MouseClick('left',$x,$y,1,20)
+											Sleep(5000)
+										Else
+											_ImageSearchArea(@ScriptDir&'\sub.bmp',1,100,333,470, 785,$x,$y,1,1)
+                                            Sleep(500)
+						                    If $x>0 Then
+							                    MouseClick('left',$x,$y,1,20)
+							                    Sleep(5000)
+											Else
+												_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,132, 486,479, 731,$x,$y,1,1)
+                                                Sleep(500)
+								                If $x>0 Then
+													MouseClick('left',$x,$y,1,20)
+							                        Sleep(5000)
+								                EndIf
+
+											EndIf
+
+						                    EndIf
+						            EndIf
+
+
+						        EndIf
+
+						    EndIf
+
+
+						ControlClick($var[$i10][1],'','','left',1,265, 505) ;sub
+						Sleep(200)
+						ControlClick($var[$i10][1],'','','left',1,265, 440) ;sub
+						Sleep(200)
+						ControlClick($var[$i10][1],'','','left',1,381, 506) ;sub
+						Sleep(200)
+						ControlClick($var[$i10][1],'','','left',1,381, 440) ;sub
+						Sleep(200)
+						ControlClick($var[$i10][1],'','','left',1,312, 565) ;sub
+						Sleep(200)
+						ControlClick($var[$i10][1],'','','left',1,329, 538) ;sub
+						Sleep(200)
+						ControlClick($var[$i10][1],'','','left',1,267, 559) ;sub
+						Sleep(200)
+						ControlClick($var[$i10][1],'','','left',1,300, 571) ;sub
+
+							#cs
+							_ImageSearchArea(@ScriptDir&'\sub.bmp',1,170, 365,450, 650,$x,$y,1,1)
+                            Sleep(500)
+						    If $x>0 Then
+							    MouseClick('left',$x,$y,1,20)
+							    Sleep(5000)
+						    EndIf
+
+		                     _ImageSearchArea(@ScriptDir&'\sub2.bmp',1,170, 365,451, 650,$x,$y,1,1)
+                            Sleep(500)
+						    If $x>0 Then
+							    MouseClick('left',$x,$y,1,20)
+							    Sleep(5000)
+						    EndIf
+						    Sleep(500)
+
+						    _ImageSearchArea(@ScriptDir&'\sub3.bmp',1,170, 365,451,650,$x,$y,1,1)
+                             Sleep(500)
+					    	If $x>0 Then
+							    MouseClick('left',$x,$y,1,20)
+							    Sleep(5000)
+						    EndIf
+						    Sleep(500)
+							#ce
+
+
+					  If $datalink[0]=4 Or not IsArray($pixcel) Then
+                        If $datalink[0]='SubLan2' Or not IsArray($pixcel) Then
+						    Sleep(1000)
+                            Send('^t')
+				            Sleep(2000)
+						    ClipPut($linkkenh)
+					        Sleep(1000)
+				            Send('^v')
+						    Sleep(2000)
+						    Send('{enter}')
+						    Sleep(10000)
+						    ToolTip("link video"&'	phien ban:'&$phienban,0,0)
+                            Sleep(1000)
+						    MouseMove(236, 317)
+						    Sleep(1000)
+						    For $i20=1 to Random(2,20,1)
+						       MouseWheel($MOUSE_WHEEL_DOWN,1)
+						       Sleep(500)
+						    Next
+						    Sleep(2000)
+						    ControlClick($var[$i10][1],'','','left',1,249, 273)  ;xem video
+					        Sleep(50)
+						    ControlClick($var[$i10][1],'','','left',1,240, 478)  ;xem video
+					        Sleep(50)
+						    ControlClick($var[$i10][1],'','','left',1,243, 625)  ;xem video
+					        Sleep(50)
+					        Sleep(7000)
+					        For $i20=1 to 10
+				               $pixcel=PixelSearch(76,90,146, 166,0xFF0033)
+						       $pixcel2=PixelSearch(76,90,146, 166,0xFF0000)
+						       $pixcel3=PixelSearch(76,90,146, 166,0xFF0100)
+					           If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
+							      $i20=20
+						        EndIf
+						       Sleep(1000)
+						     Next
+
+						     ControlClick($var[$i10][1],'','','left',1,245, 308)  ;tam dung video
+                            Sleep(3000)
+
+                        Sleep(2000)     ;thoi gian nghi
 						$pixcel=PixelSearch(26, 421,159, 540,0x0F0F0F)         ; sub ytb
 						If IsArray($pixcel) Then
 							MouseClick('left',$pixcel[0],$pixcel[1],1,20)
@@ -3821,113 +3954,6 @@ EndFunc
 
                             EndIf
 						EndIf
-
-						ControlClick($var[$i10][1],'','','left',1,265, 505) ;sub
-						Sleep(200)
-						ControlClick($var[$i10][1],'','','left',1,265, 440) ;sub
-						Sleep(200)
-						ControlClick($var[$i10][1],'','','left',1,381, 506) ;sub
-						Sleep(200)
-						ControlClick($var[$i10][1],'','','left',1,381, 440) ;sub
-						Sleep(200)
-						ControlClick($var[$i10][1],'','','left',1,312, 565) ;sub
-						Sleep(200)
-						ControlClick($var[$i10][1],'','','left',1,329, 538) ;sub
-						Sleep(200)
-						ControlClick($var[$i10][1],'','','left',1,267, 559) ;sub
-						Sleep(200)
-						ControlClick($var[$i10][1],'','','left',1,300, 571) ;sub
-
-
-
-							#cs
-							_ImageSearchArea(@ScriptDir&'\sub.bmp',1,170, 365,450, 650,$x,$y,1,1)
-                            Sleep(500)
-						    If $x>0 Then
-							    MouseClick('left',$x,$y,1,20)
-							    Sleep(5000)
-						    EndIf
-
-		                     _ImageSearchArea(@ScriptDir&'\sub2.bmp',1,170, 365,451, 650,$x,$y,1,1)
-                            Sleep(500)
-						    If $x>0 Then
-							    MouseClick('left',$x,$y,1,20)
-							    Sleep(5000)
-						    EndIf
-						    Sleep(500)
-
-						    _ImageSearchArea(@ScriptDir&'\sub3.bmp',1,170, 365,451,650,$x,$y,1,1)
-                             Sleep(500)
-					    	If $x>0 Then
-							    MouseClick('left',$x,$y,1,20)
-							    Sleep(5000)
-						    EndIf
-						    Sleep(500)
-							#ce
-
-
-					  If $datalink[0]=4 Or not IsArray($pixcel) Then
-                        If $datalink[0]='SubLan2' Or not IsArray($pixcel) Then
-						    Sleep(1000)
-                            Send('^t')
-				            Sleep(2000)
-						    ClipPut($linkkenh)
-					        Sleep(1000)
-				            Send('^v')
-						    Sleep(2000)
-						    Send('{enter}')
-						    Sleep(10000)
-						    ToolTip("link video"&'	phien ban:'&$phienban,0,0)
-                            Sleep(1000)
-						    MouseMove(236, 317)
-						    Sleep(1000)
-						    For $i20=1 to Random(2,20,1)
-						       MouseWheel($MOUSE_WHEEL_DOWN,1)
-						       Sleep(500)
-						    Next
-						    Sleep(2000)
-						    ControlClick($var[$i10][1],'','','left',1,249, 273)  ;xem video
-					        Sleep(50)
-						    ControlClick($var[$i10][1],'','','left',1,240, 478)  ;xem video
-					        Sleep(50)
-						    ControlClick($var[$i10][1],'','','left',1,243, 625)  ;xem video
-					        Sleep(50)
-					        Sleep(7000)
-					        For $i20=1 to 10
-				               $pixcel=PixelSearch(76,90,146, 166,0xFF0033)
-						       $pixcel2=PixelSearch(76,90,146, 166,0xFF0000)
-						       $pixcel3=PixelSearch(76,90,146, 166,0xFF0100)
-					           If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
-							      $i20=20
-						        EndIf
-						       Sleep(1000)
-						     Next
-
-						     ControlClick($var[$i10][1],'','','left',1,245, 308)  ;tam dung video
-                            Sleep(3000)
-
-
-						    $x=0
-		                    $y=0
-		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,149, 455,500, 800,$x,$y,1,1)
-                            Sleep(500)
-						    If $x>0 Then
-							    MouseClick('left',$x,$y,1,20)
-							    Sleep(5000)
-						    EndIf
-							_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,149, 455,500, 800,$x,$y,1,1)
-                            Sleep(500)
-						    If $x>0 Then
-							    MouseClick('left',$x,$y,1,20)
-							    Sleep(5000)
-						    EndIf
-							_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,149, 455,500, 800,$x,$y,1,1)
-                            Sleep(500)
-						    If $x>0 Then
-							    MouseClick('left',$x,$y,1,20)
-							    Sleep(5000)
-						    EndIf
-
 
 
 						ControlClick($var[$i10][1],'','','left',1,265, 505) ;sub
