@@ -3453,14 +3453,14 @@ EndFunc
 
 						$x3=0
 				        $y3=0
-						$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\videos.bmp',1,406, 318,831,610,$x3,$y3,1)
+						$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\videos.bmp',1,406, 318,831,610,$x3,$y3,50)
 				        If $x3>0 Then
 				         	ControlClick('','','','left',1,$x3,$y3)    ; click video
 					        Sleep(3000)
 							$linkvideo=1
 				        Else
 
-							$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\videos2.bmp',1,406, 318,831, 610,$x3,$y3,1)
+							$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\videos2.bmp',1,406, 318,831, 610,$x3,$y3,50)
 							If $x3>0 Then
 								ControlClick('','','','left',1,$x3,$y3)   ; click shorts
 					            Sleep(3000)
@@ -3530,7 +3530,7 @@ EndFunc
 
 						$x=0
 		                $y=0
-		                _ImageSearchArea(@ScriptDir&'\sub.png',1,183, 245,467, 509,$x,$y,1,1)
+		                _ImageSearchArea(@ScriptDir&'\sub.png',1,183, 245,467, 509,$x,$y,50)
 
 						If $x>0 Then
 							MouseClick('left',$x,$y-10,1,20)
@@ -3539,7 +3539,7 @@ EndFunc
 						$x=0
 		                $y=0
 
-						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,183, 245,467, 509,$x,$y,1,1)
+						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,183, 245,467, 509,$x,$y,50)
 						If $x>0 Then
 							    MouseClick('left',$x,$y+10,1,20)
 							    Sleep(5000)
@@ -3548,7 +3548,7 @@ EndFunc
 		                $y=0
 
 
-						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,183, 245,467, 509,$x,$y,1,1)
+						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,183, 245,467, 509,$x,$y,50)
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
 							Sleep(5000)
@@ -3556,7 +3556,7 @@ EndFunc
 						$x=0
 		                $y=0
 
-		                _ImageSearchArea(@ScriptDir&'\sub.png',1,183, 245,467, 509,$x,$y,1,1)
+		                _ImageSearchArea(@ScriptDir&'\sub.png',1,183, 245,467, 509,$x,$y,50)
 
 						If $x>0 Then
 							MouseClick('left',$x,$y-10,1,20)
@@ -3565,7 +3565,7 @@ EndFunc
 						$x=0
 		                $y=0
 
-						_ImageSearchArea(@ScriptDir&'\sub2.png',1,183, 245,467, 509,$x,$y,1,1)
+						_ImageSearchArea(@ScriptDir&'\sub2.png',1,183, 245,467, 509,$x,$y,50)
 						If $x>0 Then
 							    MouseClick('left',$x,$y+10,1,20)
 							    Sleep(5000)
@@ -3573,7 +3573,7 @@ EndFunc
 						$x=0
 		                $y=0
 
-						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,183, 245,467, 509,$x,$y,1,1)
+						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,183, 245,467, 509,$x,$y,50)
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
 							Sleep(5000)
@@ -3591,7 +3591,7 @@ EndFunc
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(3000)
-						;MouseClick('left',355, 664,1,20)
+						MouseClick('left',460, 515,1,20)
 						Sleep(1000)
 						MouseClick('left',52, 170,1,20)
 						Sleep(1000)
@@ -3603,7 +3603,7 @@ EndFunc
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(3000)
-						;MouseClick('left',355, 664,1,20)
+						MouseClick('left',460, 515,1,20)
 						Sleep(1000)
 						MouseClick('left',52, 170,1,20)
 						Sleep(1000)
@@ -3758,37 +3758,37 @@ EndFunc
 
 							$x=0
 		                    $y=0
-		                    _ImageSearchArea(@ScriptDir&'\sub.png',1,100, 576,476, 654,$x,$y,1,1)
+		                    _ImageSearchArea(@ScriptDir&'\sub.png',1,100, 576,476, 654,$x,$y,50)
                             Sleep(500)
 						    If $x>0 Then
 							    MouseClick('left',$x,$y-10,1,20)
 							    Sleep(5000)
 							Else
-								_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 525,476, 654,$x,$y,1,1)
+								_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 525,476, 654,$x,$y,50)
                                 Sleep(500)
 								If $x>0 Then
 							        MouseClick('left',$x,$y-10,1,20)
 							        Sleep(5000)
 								Else
-									_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 475,476, 654,$x,$y,1,1)
+									_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 475,476, 654,$x,$y,50)
                                     Sleep(500)
 						            If $x>0 Then
 							            MouseClick('left',$x,$y-10,1,20)
 									    Sleep(5000)
 									Else
-										_ImageSearchArea(@ScriptDir&'\sub.png',1,100,475,468, 776,$x,$y,1,1)
+										_ImageSearchArea(@ScriptDir&'\sub.png',1,100,475,468, 776,$x,$y,50)
                                         Sleep(500)
 						                If $x>0 Then
 							                MouseClick('left',$x,$y-10,1,20)
 											Sleep(5000)
 										Else
-											_ImageSearchArea(@ScriptDir&'\sub2.png',1,100,525,470, 785,$x,$y,1,1)
+											_ImageSearchArea(@ScriptDir&'\sub2.png',1,100,525,470, 785,$x,$y,50)
                                             Sleep(500)
 						                    If $x>0 Then
 							                    MouseClick('left',$x,$y+10,1,20)
 							                    Sleep(5000)
 											Else
-												_ImageSearchArea(@ScriptDir&'\sub2.png',1,132,475,479, 731,$x,$y,1,1)
+												_ImageSearchArea(@ScriptDir&'\sub2.png',1,132,475,479, 731,$x,$y,50)
                                                 Sleep(500)
 								                If $x>0 Then
 													MouseClick('left',$x,$y+10,1,20)
@@ -4099,14 +4099,14 @@ EndFunc
 
 						    $x=0
 		                    $y=0
-		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,98, 425,397, 549,$x,$y,1,1)
+		                    _ImageSearchArea(@ScriptDir&'\sub.bmp',1,98, 425,397, 549,$x,$y,50)
                             Sleep(500)
 						    If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
 							    Sleep(5000)
 						    EndIf
 
-		                     _ImageSearchArea(@ScriptDir&'\sub2.bmp',1,98, 425,397, 549,$x,$y,1,1)
+		                     _ImageSearchArea(@ScriptDir&'\sub2.bmp',1,98, 425,397, 549,$x,$y,50)
                             Sleep(500)
 						    If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
@@ -4114,7 +4114,7 @@ EndFunc
 						    EndIf
 						    Sleep(500)
 
-						    _ImageSearchArea(@ScriptDir&'\sub3.bmp',1,98, 425,397, 549,$x,$y,1,1)
+						    _ImageSearchArea(@ScriptDir&'\sub3.bmp',1,98, 425,397, 549,$x,$y,50)
                              Sleep(500)
 					    	If $x>0 Then
 							    MouseClick('left',$x,$y,1,20)
@@ -6607,7 +6607,7 @@ EndFunc
 				Sleep(2000)
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
 					Sleep(10000)
@@ -6623,7 +6623,7 @@ EndFunc
 				      Sleep(7000)
 				EndIf
 
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
 					Sleep(10000)
@@ -6639,7 +6639,7 @@ EndFunc
 				      Sleep(7000)
 				EndIf
 
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
 					Sleep(10000)
@@ -6656,7 +6656,7 @@ EndFunc
 				EndIf
 
 
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
 					Sleep(10000)
@@ -6673,7 +6673,7 @@ EndFunc
 				EndIf
 
 
-				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailkhoiphuc2.bmp',1,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailkhoiphuc2.bmp',1,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
 					Sleep(10000)
@@ -6689,7 +6689,7 @@ EndFunc
 				      Sleep(7000)
 				EndIf
 
-				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailhoiphuc.bmp',1,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailhoiphuc.bmp',1,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
 					Sleep(10000)
@@ -7041,7 +7041,7 @@ EndFunc
 				Sleep(1000)
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
 					Sleep(10000)
@@ -7059,7 +7059,7 @@ EndFunc
 
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
 					Sleep(10000)
@@ -7077,7 +7077,7 @@ EndFunc
 
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
 					Sleep(10000)
@@ -7095,7 +7095,7 @@ EndFunc
 
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
 					Sleep(10000)
@@ -7114,7 +7114,7 @@ EndFunc
 
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailkhoiphuc2.bmp',1,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailkhoiphuc2.bmp',1,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
 					Sleep(10000)
@@ -7132,7 +7132,7 @@ EndFunc
 
 				$x3=0
 				$y3=0
-				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailhoiphuc.bmp',1,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailhoiphuc.bmp',1,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
 					Sleep(10000)
@@ -8433,7 +8433,7 @@ EndFunc
 		        $x3=0
 				$y3=0
 				$check=0
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
 					Sleep(10000)
@@ -8446,7 +8446,7 @@ EndFunc
 
 				EndIf
 
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailhhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
 					Sleep(10000)
@@ -8458,7 +8458,7 @@ EndFunc
 					Next
 				EndIf
 
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc2.bmp',1,409, 506,775, 708,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
 					Sleep(10000)
@@ -8471,7 +8471,7 @@ EndFunc
 				EndIf
 
 
-				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearchArea(@ScriptDir&'\emailkhoiphuc.bmp',1,409, 506,775, 708,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
 					Sleep(10000)
@@ -8484,7 +8484,7 @@ EndFunc
 				EndIf
 
 
-				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailkhoiphuc2.bmp',1,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailkhoiphuc2.bmp',1,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)   ; click Email khoi phuc
 					Sleep(10000)
@@ -8496,7 +8496,7 @@ EndFunc
 					Next
 				EndIf
 
-				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailhoiphuc.bmp',1,$x3,$y3,1)
+				$emailkhoiphuc=_ImageSearch(@ScriptDir&'\emailhoiphuc.bmp',1,$x3,$y3,50)
 				If $x3>0 Then
 					MouseClick('left',$x3,$y3,1,20)    ; click Email khoi phuc
 					Sleep(10000)
