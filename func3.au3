@@ -3530,10 +3530,10 @@ EndFunc
 
 						$x=0
 		                $y=0
-		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,183, 245,467, 509,$x,$y,1,1)
+		                _ImageSearchArea(@ScriptDir&'\sub.png',1,183, 245,467, 509,$x,$y,1,1)
 
 						If $x>0 Then
-							MouseClick('left',$x,$y,1,20)
+							MouseClick('left',$x,$y-10,1,20)
 							Sleep(10000)
 						EndIf
 						$x=0
@@ -3541,7 +3541,7 @@ EndFunc
 
 						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,183, 245,467, 509,$x,$y,1,1)
 						If $x>0 Then
-							    MouseClick('left',$x,$y,1,20)
+							    MouseClick('left',$x,$y+10,1,20)
 							    Sleep(5000)
 						EndIf
 						$x=0
@@ -3556,18 +3556,18 @@ EndFunc
 						$x=0
 		                $y=0
 
-		                _ImageSearchArea(@ScriptDir&'\sub.bmp',1,183, 245,467, 509,$x,$y,1,1)
+		                _ImageSearchArea(@ScriptDir&'\sub.png',1,183, 245,467, 509,$x,$y,1,1)
 
 						If $x>0 Then
-							MouseClick('left',$x,$y,1,20)
+							MouseClick('left',$x,$y-10,1,20)
 							Sleep(10000)
 						EndIf
 						$x=0
 		                $y=0
 
-						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,183, 245,467, 509,$x,$y,1,1)
+						_ImageSearchArea(@ScriptDir&'\sub2.png',1,183, 245,467, 509,$x,$y,1,1)
 						If $x>0 Then
-							    MouseClick('left',$x,$y,1,20)
+							    MouseClick('left',$x,$y+10,1,20)
 							    Sleep(5000)
 						EndIf
 						$x=0
@@ -3591,7 +3591,7 @@ EndFunc
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(3000)
-						MouseClick('left',355, 664,1,20)
+						;MouseClick('left',355, 664,1,20)
 						Sleep(1000)
 						MouseClick('left',52, 170,1,20)
 						Sleep(1000)
@@ -3603,7 +3603,7 @@ EndFunc
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(3000)
-						MouseClick('left',355, 664,1,20)
+						;MouseClick('left',355, 664,1,20)
 						Sleep(1000)
 						MouseClick('left',52, 170,1,20)
 						Sleep(1000)
@@ -3761,37 +3761,37 @@ EndFunc
 		                    _ImageSearchArea(@ScriptDir&'\sub.png',1,100, 576,476, 654,$x,$y,1,1)
                             Sleep(500)
 						    If $x>0 Then
-							    MouseClick('left',$x,$y,1,20)
+							    MouseClick('left',$x,$y-10,1,20)
 							    Sleep(5000)
 							Else
 								_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 525,476, 654,$x,$y,1,1)
                                 Sleep(500)
 								If $x>0 Then
-							        MouseClick('left',$x,$y,1,20)
+							        MouseClick('left',$x,$y-10,1,20)
 							        Sleep(5000)
 								Else
 									_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 475,476, 654,$x,$y,1,1)
                                     Sleep(500)
 						            If $x>0 Then
-							            MouseClick('left',$x,$y,1,20)
+							            MouseClick('left',$x,$y-10,1,20)
 									    Sleep(5000)
 									Else
 										_ImageSearchArea(@ScriptDir&'\sub.png',1,100,475,468, 776,$x,$y,1,1)
                                         Sleep(500)
 						                If $x>0 Then
-							                MouseClick('left',$x,$y,1,20)
+							                MouseClick('left',$x,$y-10,1,20)
 											Sleep(5000)
 										Else
 											_ImageSearchArea(@ScriptDir&'\sub2.png',1,100,525,470, 785,$x,$y,1,1)
                                             Sleep(500)
 						                    If $x>0 Then
-							                    MouseClick('left',$x,$y,1,20)
+							                    MouseClick('left',$x,$y+10,1,20)
 							                    Sleep(5000)
 											Else
 												_ImageSearchArea(@ScriptDir&'\sub2.png',1,132,475,479, 731,$x,$y,1,1)
                                                 Sleep(500)
 								                If $x>0 Then
-													MouseClick('left',$x,$y,1,20)
+													MouseClick('left',$x,$y+10,1,20)
 							                        Sleep(5000)
 								                EndIf
 
