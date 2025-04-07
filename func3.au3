@@ -3835,7 +3835,7 @@ EndFunc
 
 
 
-						If $x>0 Then ToolTip("đã tìm thấy ảnh sub",0,0)
+						;If $x>0 Then ToolTip("đã tìm thấy ảnh sub",0,0)
 						Sleep(2000)
 						ControlClick($var[$i10][1],'','','left',1,265, 505) ;sub
 						Sleep(200)
