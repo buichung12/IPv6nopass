@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.41'
+$phienban='1.0.42'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -1593,7 +1593,7 @@ EndFunc
 
 				$e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)
 
-				If $check=1 Then
+				If $check=1 and $checkDieuKiengmailkhoiphucCoMatKhau=1 Then   ; dieu kien tam thoi
                         $e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
 						If StringLen($e)<10 Then
 							MsgBox(0,0,'khong co gmail',1)
@@ -3539,7 +3539,7 @@ EndFunc
 
 						$x=0
 		                $y=0
-		                _ImageSearchArea(@ScriptDir&'\sub.png',1,183, 245,467, 509,$x,$y,50)
+		                _ImageSearchArea(@ScriptDir&'\sub.png',1,183, 245,467, 509,$x,$y,100,0)
 
 						If $x>0 Then
 							MouseClick('left',$x,$y-10,1,20)
@@ -3548,7 +3548,7 @@ EndFunc
 						$x=0
 		                $y=0
 
-						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,183, 245,467, 509,$x,$y,50)
+						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,183, 245,467, 509,$x,$y,100,0)
 						If $x>0 Then
 							    MouseClick('left',$x,$y+10,1,20)
 							    Sleep(5000)
@@ -3557,7 +3557,7 @@ EndFunc
 		                $y=0
 
 
-						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,183, 245,467, 509,$x,$y,50)
+						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,183, 245,467, 509,$x,$y,100,0)
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
 							Sleep(5000)
@@ -3565,7 +3565,7 @@ EndFunc
 						$x=0
 		                $y=0
 
-		                _ImageSearchArea(@ScriptDir&'\sub.png',1,183, 245,467, 509,$x,$y,50)
+		                _ImageSearchArea(@ScriptDir&'\sub.png',1,183, 245,467, 509,$x,$y,100,0)
 
 						If $x>0 Then
 							MouseClick('left',$x,$y-10,1,20)
@@ -3574,7 +3574,7 @@ EndFunc
 						$x=0
 		                $y=0
 
-						_ImageSearchArea(@ScriptDir&'\sub2.png',1,183, 245,467, 509,$x,$y,50)
+						_ImageSearchArea(@ScriptDir&'\sub2.png',1,183, 245,467, 509,$x,$y,100,0)
 						If $x>0 Then
 							    MouseClick('left',$x,$y+10,1,20)
 							    Sleep(5000)
@@ -3582,7 +3582,7 @@ EndFunc
 						$x=0
 		                $y=0
 
-						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,183, 245,467, 509,$x,$y,50)
+						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,183, 245,467, 509,$x,$y,100,0)
 						If $x>0 Then
 							MouseClick('left',$x,$y,1,20)
 							Sleep(5000)
@@ -3767,37 +3767,37 @@ EndFunc
 
 							$x=0
 		                    $y=0
-		                    _ImageSearchArea(@ScriptDir&'\sub.png',1,100, 576,476, 654,$x,$y,100)
+		                    _ImageSearchArea(@ScriptDir&'\sub.png',1,100, 576,476, 654,$x,$y,100,0)
                             Sleep(500)
 						    If $x>0 Then
 							    MouseClick('left',$x,$y-10,1,20)
 							    Sleep(5000)
 							Else
-								_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 525,476, 654,$x,$y,100)
+								_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 525,476, 654,$x,$y,100,0)
                                 Sleep(500)
 								If $x>0 Then
 							        MouseClick('left',$x,$y-10,1,20)
 							        Sleep(5000)
 								Else
-									_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 475,476, 654,$x,$y,100)
+									_ImageSearchArea(@ScriptDir&'\sub.png',1,100, 475,476, 654,$x,$y,100,0)
                                     Sleep(500)
 						            If $x>0 Then
 							            MouseClick('left',$x,$y-10,1,20)
 									    Sleep(5000)
 									Else
-										_ImageSearchArea(@ScriptDir&'\sub.png',1,100,475,468, 776,$x,$y,100)
+										_ImageSearchArea(@ScriptDir&'\sub.png',1,100,475,468, 776,$x,$y,100,0)
                                         Sleep(500)
 						                If $x>0 Then
 							                MouseClick('left',$x,$y-10,1,20)
 											Sleep(5000)
 										Else
-											_ImageSearchArea(@ScriptDir&'\sub2.png',1,100,525,470, 785,$x,$y,100)
+											_ImageSearchArea(@ScriptDir&'\sub2.png',1,100,525,470, 785,$x,$y,100,0)
                                             Sleep(500)
 						                    If $x>0 Then
 							                    MouseClick('left',$x,$y+10,1,20)
 							                    Sleep(5000)
 											Else
-												_ImageSearchArea(@ScriptDir&'\sub2.png',1,132,475,479, 731,$x,$y,100)
+												_ImageSearchArea(@ScriptDir&'\sub2.png',1,132,475,479, 731,$x,$y,100,0)
                                                 Sleep(500)
 								                If $x>0 Then
 													MouseClick('left',$x,$y+10,1,20)
