@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.43'
+$phienban='1.0.44'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -3588,7 +3588,7 @@ EndFunc
 							Sleep(5000)
 						EndIf
 
-						MouseClick('left',52, 170,1,20)
+						MouseClick('left',152, 170,1,20)
 						Sleep(1000)
 						Send('{tab}')
 						Sleep(1000)
@@ -3602,7 +3602,7 @@ EndFunc
 						Sleep(3000)
 						MouseClick('left',460, 515,1,20)
 						Sleep(1000)
-						MouseClick('left',52, 170,1,20)
+						MouseClick('left',152, 170,1,20)
 						Sleep(1000)
 						Send('{tab}')
 						Sleep(1000)
@@ -3614,7 +3614,7 @@ EndFunc
 						Sleep(3000)
 						MouseClick('left',460, 515,1,20)
 						Sleep(1000)
-						MouseClick('left',52, 170,1,20)
+						MouseClick('left',152, 170,1,20)
 						Sleep(1000)
 						Send('{tab}')
 						Sleep(1000)
