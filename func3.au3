@@ -1611,7 +1611,6 @@ EndFunc
 						   $CheckKey2fa=FileReadLine(@ScriptDir&'\Gmailtest.txt',4)
 						   FileDelete(@ScriptDir&'\Gmailtest.txt')
 					If 	$CheckKey2fa='DangNhapThanhCong' Then
-
                         MouseClick('left',600,60,1,20)
 						Sleep(2000)
 						Send('https://myaccount.google.com/two-step-verification/authenticator')
@@ -3185,7 +3184,18 @@ EndFunc
 					EndIf
 					WinClose('Restore pages')
 
-					Sleep(1000)
+                    For $i20=1 to 10
+					        $pixcel=PixelSearch(52, 100,245, 170,0xFF0033)   ; xoa loi edge
+							$pixcel2=PixelSearch(52, 100,245, 170,0xFF0000)   ; xoa loi edge
+							$pixcel3=PixelSearch(52, 100,245, 170,0xFF0100)   ; xoa loi edge
+					    If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
+						    $i20=20
+							$checkload=1
+						EndIf
+				        Sleep(1000)
+					Next
+
+					Sleep(3000)
 				    MouseClick('left',600, 60,1,20)
 				    Sleep(2000)
 					ClipPut('https://www.youtube.com/channel_switcher?next=%2Faccount&feature=settings')
@@ -3764,7 +3774,7 @@ EndFunc
 						ControlClick($var[$i10][1],'','','left',1,245, 308)  ;tam dung video
 
 						Sleep(3000)     ;thoi gian nghi
-						$pixcel=PixelSearch(18,412,41,726,0x0F0F0F)         ; sub ytb
+						$pixcel=PixelSearch(18,485,41,726,0x0F0F0F)         ; sub ytb
 						If IsArray($pixcel) Then
 							MouseClick('left',$pixcel[0],$pixcel[1],1,20)
 							Sleep(1000)
@@ -3785,6 +3795,27 @@ EndFunc
 							Send('{enter}')
 							Sleep(3000)
 						Else
+							   $pixcel=PixelSearch(18,412,41,726,0x0F0F0F)         ; sub ytb
+						  If IsArray($pixcel) Then
+							MouseClick('left',$pixcel[0],$pixcel[1],1,20)
+							Sleep(1000)
+							Send('{tab}')
+							Sleep(1000)
+							Send('{tab}')
+							Sleep(1000)
+							Send('{tab}')
+							Sleep(1000)
+							Send('{enter}')
+							Sleep(2000)
+							MouseClick('left',$pixcel[0],$pixcel[1],1,20)
+							Sleep(1000)
+							Send('{tab}')
+							Sleep(1000)
+							Send('{tab}')
+							Sleep(1000)
+							Send('{enter}')
+							Sleep(3000)
+						  Else
 
 							$pixcel=PixelSearch(23, 491,471, 577,0x0F0F0F)         ; sub ytb
 						    If IsArray($pixcel) Then
@@ -3831,6 +3862,7 @@ EndFunc
                                 EndIf
 
                             EndIf
+						  EndIf
 						EndIf
 
 
@@ -4699,6 +4731,8 @@ EndFunc
 						   Sleep(2000)
 						   MouseClick('left',830,265,1,20)
 						   Sleep(2000)
+						   MouseClick('left',830,285,1,20)
+						   Sleep(2000)
 
 						EndIf
                         If $i<>1 Then
@@ -5299,6 +5333,8 @@ EndFunc
                            MouseClick('left',830,240,1,20)
 						   Sleep(2000)
 						   MouseClick('left',830,265,1,20)
+						   Sleep(2000)
+						   MouseClick('left',830,285,1,20)
 						   Sleep(2000)
 					EndIf
 
