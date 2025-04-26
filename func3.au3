@@ -1871,13 +1871,9 @@ EndFunc
 						Send('{tab}')
 						Sleep(2000)
 						Send('{enter}')
-						Sleep(7000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(7000)
+						Sleep(5000)
+						MouseClick('left',668, 501,1,20)
+						Sleep(5000)
 						MouseClick('left',480, 315,3,20)
 						Sleep(1500)
 						Send('^c')
@@ -1918,13 +1914,15 @@ EndFunc
 						EndIf
 
 						Sleep(3000)
-						MouseClick('left',700,500,3,20)
-						Sleep(1000)
-						Send('{tab}')
-						Sleep(1000)
-						Send('{enter}')
+						MouseClick('left',895, 641,3,20)
 						Sleep(2000)
-						Sleep(1000)
+						MouseClick('left',895, 641,3,20)
+						Sleep(2000)
+						MouseClick('left',896, 668,3,20)
+						Sleep(2000)
+						MouseClick('left',896, 668,3,20)
+						Sleep(2000)
+
 						Run('C:\Users\'&@UserName&'\Desktop\WinAuth')
 						Sleep(5000)
 						WinActivate('WinAuth')
@@ -2065,6 +2063,11 @@ EndFunc
 						Send('{enter}')
 						Sleep(10000)
 
+						$Key2fa=StringReplace($Key2fa,' ','|')
+						Sleep(100)
+						$Key2fa=StringReplace($Key2fa,@CRLF,'')
+                        Sleep(100)
+
 						$pixcel=PixelSearch(682, 256,854, 367,0x0B57D0)  ;kiem tra
 						If IsArray($pixcel) Then
                             $Key2fa=$Key2fa&'	AddAuthenThanhCong'
@@ -2074,12 +2077,22 @@ EndFunc
 
                         EndIf
 
+
+
 						MouseClick('left',501, 304,1,20)   ; bat buoc 2
 						Sleep(1000)
 						Send('{tab}')
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(7000)
+
+						Send($g)
+						Sleep(1000)
+						$pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
+						Sleep(1000)
+						If IsArray($pixcel) Then MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
+						Sleep(8000)
+
 						MouseClick('left',501, 291,1,20)
 						Sleep(2000)
 				        Send('{tab}')
@@ -2104,11 +2117,6 @@ EndFunc
 				        Sleep(2000)
 				        Send('{enter}')
 						Sleep(7000)
-
-						$Key2fa=StringReplace($Key2fa,' ','|')
-						Sleep(100)
-						$Key2fa=StringReplace($Key2fa,@CRLF,'')
-                        Sleep(100)
 						$pixcel=PixelSearch(682, 256,954, 467,0x0B57D0)  ;kiem tra
 						If IsArray($pixcel) Then
                             $Key2fa=$Key2fa&'	BatBuoc2ThanhCong'
