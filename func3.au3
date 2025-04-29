@@ -1517,6 +1517,8 @@ EndFunc
 				Sleep(1000)
 				Send('https://myaccount.google.com/')
 				Sleep(2000)
+				Send('?'&'fgbfasdhdfgf'&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1)))
+				Sleep(2000)
 				Send('{enter}')
 				Sleep(5000)
 
@@ -1536,6 +1538,8 @@ EndFunc
 				Sleep(500)
 				Sleep(1000)
 				Send('https://myaccount.google.com/')
+				Sleep(2000)
+				Send('?'&'fgbfasdhdfgf'&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1)))
 				Sleep(2000)
 				Send('{enter}')
 				Sleep(10000)
@@ -1575,6 +1579,8 @@ EndFunc
 				    Sleep(1000)
 				    Send('https://myaccount.google.com/')
 				    Sleep(2000)
+					Send('?'&'fgbfasdhdfgf'&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1)))
+					Sleep(2000)
 				    Send('{enter}')
 				    Sleep(10000)
 				    For $i20=1 to 10
