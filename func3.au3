@@ -1501,6 +1501,23 @@ EndFunc
                 $check=0
 				  ToolTip('check dang nhap 	'&$i&'	phien ban:'&$phienban,0,0)
 
+				  $e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
+						If StringLen($e)<10 Then
+							MsgBox(0,0,'khong co gmail',1)
+							;_GetDOSOutput('shutdown -r -t 0')
+
+						EndIf
+						   $cacgiatri=StringSplit($e,'	')
+	                    For $i11=1 to $cacgiatri[0]
+	                       If IsString($cacgiatri[$i11]) Then FileWriteLine(@ScriptDir&'\Gmailtest.txt',$cacgiatri[$i11])
+						   ;MsgBox(0,0,'ok')
+						Next
+                           $f=FileReadLine(@ScriptDir&'\Gmailtest.txt',1)
+                           $g=FileReadLine(@ScriptDir&'\Gmailtest.txt',2)
+						   $h=FileReadLine(@ScriptDir&'\Gmailtest.txt',3)
+						   $CheckKey2fa=FileReadLine(@ScriptDir&'\Gmailtest.txt',4)
+						   FileDelete(@ScriptDir&'\Gmailtest.txt')
+
 
 				_resetMang($i)
 				If $checkDieuKiengmailkhoiphucCoMatKhau=0 Then _FakeIPOptionV6($i,$vpsso)
@@ -1521,6 +1538,10 @@ EndFunc
 				Sleep(2000)
 				Send('{enter}')
 				Sleep(5000)
+				Send($g)
+				Sleep(1000)
+				Send('{enter}')
+				Sleep(7000)
 
 				If $i=1 Then
 					$pixcel=PixelSearch(18, 125,47, 153,0xFF0000)   ; xoa loi edge
@@ -1543,6 +1564,10 @@ EndFunc
 				Sleep(2000)
 				Send('{enter}')
 				Sleep(10000)
+				Send($g)
+				Sleep(1000)
+				Send('{enter}')
+				Sleep(7000)
 
 				For $i20=1 to 10
 					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
@@ -1583,6 +1608,11 @@ EndFunc
 					Sleep(2000)
 				    Send('{enter}')
 				    Sleep(10000)
+					Send($g)
+					Sleep(1000)
+					Send('{enter}')
+					Sleep(7000)
+
 				    For $i20=1 to 10
 					    $pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
 					    Sleep(1000)
