@@ -1622,13 +1622,34 @@ EndFunc
 						 $checklink=0
 						For $i20=1 to 10
 				            $pixcel=PixelSearch(16, 87,154, 170,0x4285F4)  ;0x114AA7
-							$pixcel2=PixelSearch(18, 130,206,190,0x3E88F4)
+							$pixcel2=PixelSearch(18, 130,206,190,0xFBBC05)
 					        If IsArray($pixcel) Or IsArray($pixcel2) Then
 								$i20=20
 							     Sleep(2000)
 								 $checklink=1
 							EndIf
+							Sleep(1000)
 				        Next
+
+						Sleep(5000)
+						Send($g)
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(7000)
+
+						For $i20=1 to 10
+				            $pixcel=PixelSearch(16, 87,154, 170,0x4285F4)  ;0x114AA7
+							$pixcel2=PixelSearch(18, 130,206,190,0xFBBC05)
+					        If IsArray($pixcel) Or IsArray($pixcel2) Then
+								$i20=20
+							     Sleep(2000)
+								 $checklink=1
+							EndIf
+							Sleep(1000)
+				        Next
+
+
+
                       If $checklink=0 Then
 						MouseMove(500,500)
 						$pixcel=PixelSearch(1030,485,1233,700,0x0B57D0)  ;0x114AA7
@@ -1849,7 +1870,13 @@ EndFunc
 						Send($g)
 						Sleep(1000)
 						Send('{enter}')
-						Sleep(10000)
+						Sleep(5000)
+						MouseClick('left',600,60,1,20)
+						Sleep(2000)
+						Send('https://myaccount.google.com/two-step-verification/authenticator')
+						Sleep(1000)
+						Send('{enter}')
+						Sleep(7000)
 
 
 						For $i20=1 to 10
@@ -1872,8 +1899,13 @@ EndFunc
 						Sleep(2000)
 						Send('{enter}')
 						Sleep(5000)
-						MouseClick('left',668, 501,1,20)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{tab}')
+						Sleep(2000)
+						Send('{enter}')
 						Sleep(5000)
+
 						MouseClick('left',480, 315,3,20)
 						Sleep(1500)
 						Send('^c')
@@ -1914,13 +1946,13 @@ EndFunc
 						EndIf
 
 						Sleep(3000)
-						MouseClick('left',895, 641,3,20)
+						MouseClick('left',895, 641,1,20)
 						Sleep(2000)
-						MouseClick('left',895, 641,3,20)
+						MouseClick('left',895, 641,1,20)
 						Sleep(2000)
-						MouseClick('left',896, 668,3,20)
+						MouseClick('left',896, 668,1,20)
 						Sleep(2000)
-						MouseClick('left',896, 668,3,20)
+						MouseClick('left',896, 668,1,20)
 						Sleep(2000)
 
 						Run('C:\Users\'&@UserName&'\Desktop\WinAuth')
@@ -2044,16 +2076,10 @@ EndFunc
 				        Sleep(5000)
 						$code=ClipGet()
 						Sleep(1000)
-						MouseClick('left',682, 499,1,20)
+						MouseClick('left',743, 313,1,20)
 						Sleep(1000)
-						MouseClick('left',682, 499,1,20)
+						MouseClick('left',743, 313,1,20)
 						Sleep(1000)
-						MouseClick('left',682, 499,1,20)
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-				        Send('{tab}')
-				        Sleep(2000)
 						Send($code)
 						Sleep(1000)
 						Send('{enter}')
@@ -5959,6 +5985,8 @@ EndFunc
                         EndIf
 					Next
 				EndIf
+				ProcessClose('firefox.exe - Bad Image')
+				Sleep(100)
 			    ProcessClose('Programs.exe')
 				Sleep(100)
 				ProcessClose('explorer.exe')
