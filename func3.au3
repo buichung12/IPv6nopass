@@ -1539,6 +1539,7 @@ EndFunc
 				Sleep(2000)
 				Send('{enter}')
 				Sleep(10000)
+
 				For $i20=1 to 10
 					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
 					Sleep(500)
