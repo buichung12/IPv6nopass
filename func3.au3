@@ -556,7 +556,10 @@ EndFunc
 		    FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
 		    Sleep(1000)
             For $i20=1 to 2
-		         _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
+
+		        $i20=1 Then _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
+				$i20=2 Then _GetDOSOutput('start chrome "https://drive.usercontent.google.com/u/0/uc?id=1EHYwiVfwBzSppv3jvcTc6srFKrapLowN&export=download"')
+
                 Sleep(7000)
 		        Send('{enter}')
 		        Sleep(8000)
