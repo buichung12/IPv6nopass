@@ -559,7 +559,7 @@ EndFunc
             For $i20=1 to 2
 
 		        if  $i20=1 Then _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
-				if $i20=2 Then _GetDOSOutput('start chrome "https://drive.usercontent.google.com/u/0/uc?id=1EHYwiVfwBzSppv3jvcTc6srFKrapLowN&export=download"')
+				if  $i20=2 Then _GetDOSOutput('start chrome "https://drive.usercontent.google.com/u/0/uc?id=1EHYwiVfwBzSppv3jvcTc6srFKrapLowN&export=download"')
 
                 Sleep(7000)
 		        Send('{enter}')
@@ -3025,57 +3025,6 @@ EndFunc
 						    Sleep(1000)
 						Next
 
-						$x=0
-		                $y=0
-		                _ImageSearchArea(@ScriptDir&'\sub.png',1,183, 245,467, 509,$x,$y,100,0)
-
-						If $x>0 Then
-							MouseClick('left',$x,$y-10,1,20)
-							Sleep(10000)
-						EndIf
-						$x=0
-		                $y=0
-
-						_ImageSearchArea(@ScriptDir&'\sub2.bmp',1,183, 245,467, 509,$x,$y,100,0)
-						If $x>0 Then
-							    MouseClick('left',$x,$y+10,1,20)
-							    Sleep(5000)
-						EndIf
-						$x=0
-		                $y=0
-
-
-						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,183, 245,467, 509,$x,$y,100,0)
-						If $x>0 Then
-							MouseClick('left',$x,$y,1,20)
-							Sleep(5000)
-						EndIf
-						$x=0
-		                $y=0
-
-		                _ImageSearchArea(@ScriptDir&'\sub.png',1,183, 245,467, 509,$x,$y,100,0)
-
-						If $x>0 Then
-							MouseClick('left',$x,$y-10,1,20)
-							Sleep(10000)
-						EndIf
-						$x=0
-		                $y=0
-
-						_ImageSearchArea(@ScriptDir&'\sub2.png',1,183, 245,467, 509,$x,$y,100,0)
-						If $x>0 Then
-							    MouseClick('left',$x,$y+10,1,20)
-							    Sleep(5000)
-						EndIf
-						$x=0
-		                $y=0
-
-						_ImageSearchArea(@ScriptDir&'\sub3.bmp',1,183, 245,467, 509,$x,$y,100,0)
-						If $x>0 Then
-							MouseClick('left',$x,$y,1,20)
-							Sleep(5000)
-						EndIf
-
 						MouseClick('left',152, 170,1,20)
 						Sleep(1000)
 						Send('{tab}')
@@ -3089,9 +3038,9 @@ EndFunc
 						Send('{enter}')
 						Sleep(3000)
 						MouseClick('left',247, 176,1,20)
-						Sleep(1000)
+						Sleep(3000)
 						MouseClick('left',152, 170,1,20)
-						Sleep(1000)
+						Sleep(3000)
 						Send('{tab}')
 						Sleep(1000)
 						Send('{tab}')
@@ -3101,9 +3050,9 @@ EndFunc
 						Send('{enter}')
 						Sleep(3000)
 						MouseClick('left',247, 176,1,20)
-						Sleep(1000)
+						Sleep(3000)
 						MouseClick('left',152, 170,1,20)
-						Sleep(1000)
+						Sleep(3000)
 						Send('{tab}')
 						Sleep(1000)
 						Send('{tab}')
