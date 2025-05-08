@@ -2928,6 +2928,9 @@ EndFunc
 				    If $checklink='watch' Then
 					    $linkvideo=3
 			    	EndIf
+					If $checklink='tion=1' Then
+					    $linkvideo=4
+				    EndIf
 
 
 					ControlClick($var[$i10][1],'','','left',1,600, 60)
@@ -3614,6 +3617,18 @@ EndFunc
 
 
 					EndIf
+
+                    If $linkvideo=4 Then
+						Sleep(5000)
+						Send('{tab}')
+						Sleep(3000)
+						Send('{tab}')
+						Sleep(3000)
+						Send('{enter}')
+						Sleep(5000)
+					EndIf
+
+
 
                     WinMove('','',0,0,1366,800)
 					Sleep(2000)
