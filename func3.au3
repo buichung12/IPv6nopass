@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.45'
+$phienban='1.0.46'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -2930,6 +2930,7 @@ EndFunc
 			    	EndIf
 					If $checklink='tion=1' Then
 					    $linkvideo=4
+
 				    EndIf
 
 
@@ -2948,6 +2949,15 @@ EndFunc
                     WinClose('Manik Ahmed - YouTube - Vivaldi')
 				    WinClose('Restore pages?')
 				    Sleep(1000)
+					If $linkvideo=4 Then
+						Sleep(5000)
+						Send('{tab}')
+						Sleep(3000)
+						Send('{tab}')
+						Sleep(3000)
+						Send('{enter}')
+						Sleep(5000)
+					EndIf
 
 					If $linkvideo=5 or $linkvideo=0 Then
 
