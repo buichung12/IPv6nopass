@@ -557,6 +557,7 @@ EndFunc
 		    FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
 		    Sleep(1000)
             For $i20=1 to 2
+				FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
 
 		        if  $i20=1 Then _GetDOSOutput('start chrome "https://github.com/buichung12/IPv6nopass/blob/main/func3.au3"')
 				if  $i20=2 Then _GetDOSOutput('start chrome "https://drive.usercontent.google.com/u/0/uc?id=1EHYwiVfwBzSppv3jvcTc6srFKrapLowN&export=download"')
@@ -567,7 +568,7 @@ EndFunc
 		        Send('^+s')
 		        Sleep(15000)
 				FileCopy("C:\Users\"&@UserName&"\Downloads\func3.au3","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea", 1)
-				If FileExists("C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea\func3.au3")=1 Then $i20=3
+				If FileExists('C:\Users\'&@UserName&'\Downloads\func3.au3')=1 Then $i20=3
 		         Sleep(2000)
 			Next
 
