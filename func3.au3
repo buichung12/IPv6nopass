@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.46'
+$phienban='1.0.47'
 #cs
 _caidatOmni()
  _FakeIPPC()
@@ -3224,7 +3224,7 @@ EndFunc
 						ControlClick($var[$i10][1],'','','left',1,245, 308)  ;tam dung video
 
 						Sleep(3000)     ;thoi gian nghi
-						$pixcel=PixelSearch(18,485,41,726,0x0F0F0F)         ; sub ytb
+						$pixcel=PixelSearch(18,485,41,550,0x0F0F0F)         ; sub ytb
 						If IsArray($pixcel) Then
 							MouseClick('left',$pixcel[0],$pixcel[1],1,20)
 							Sleep(1000)
@@ -3245,7 +3245,7 @@ EndFunc
 							Send('{enter}')
 							Sleep(3000)
 						Else
-							   $pixcel=PixelSearch(18,412,41,726,0x0F0F0F)         ; sub ytb
+							   $pixcel=PixelSearch(18,412,41,550,0x0F0F0F)         ; sub ytb
 						  If IsArray($pixcel) Then
 							MouseClick('left',$pixcel[0],$pixcel[1],1,20)
 							Sleep(1000)
@@ -3267,7 +3267,7 @@ EndFunc
 							Sleep(3000)
 						  Else
 
-							$pixcel=PixelSearch(23, 491,471, 577,0x0F0F0F)         ; sub ytb
+							$pixcel=PixelSearch(23, 491,41, 777,0x0F0F0F)         ; sub ytb
 						    If IsArray($pixcel) Then
                                 MouseClick('left',$pixcel[0],$pixcel[1],1,20)
 							    Sleep(1000)
