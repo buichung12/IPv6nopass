@@ -2911,7 +2911,7 @@ EndFunc
 
 				    Sleep(Random(1000,3000,1))
 
-					$linkvideo=5
+					$linkvideo=0
 
 					$checklink=StringRight($linkkenh,6)
 				    If $checklink='videos' or $checklink='treams' Then
@@ -5825,6 +5825,34 @@ EndFunc
 				Sleep(2000)
                 ;MouseClick('left',1280, 129,1,20)
 			    $check=0
+
+				If $i=8 Then
+
+                    MouseClick('left',133, 62,1,20)
+                    Sleep(2000)
+					MouseClick('left',206, 188,1,20)
+                    Sleep(2000)
+					MouseClick('left',793, 139,1,20)
+                    Sleep(2000)
+					MouseClick('left',633, 566,1,20)
+                    Sleep(2000)
+					MouseClick('left',527, 243,1,20)
+                    Sleep(2000)
+					MouseClick('left',633, 566,1,20)
+                    Sleep(2000)
+					MouseClick('left',533, 264,1,20)
+                    Sleep(2000)
+					MouseClick('left',633, 566,1,20)
+                    Sleep(2000)
+					MouseClick('left',532, 285,1,20)
+                    Sleep(2000)
+					MouseClick('left',633, 566,1,20)
+                    Sleep(2000)
+					MouseClick('left',857, 566,1,20)
+                    Sleep(2000)
+
+				EndIf
+
                 MouseClick('left',500, 60,1,20)
                 Sleep(2000)
 				Send('^a')
