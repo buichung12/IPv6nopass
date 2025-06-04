@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.48'
+$phienban='1.0.49'
 
     Func _LayGmail($vpsso)
 				If 0<$vpsso and $vpsso<6 Then
@@ -280,7 +280,7 @@ $phienban='1.0.48'
                     $pixcel=PixelSearch(818, 464,1290, 743,0x2CC294)   ; xoa loi edge
 					If IsArray($pixcel) Then
                         Sleep(2000)
-						MouseClick('left',$pixcel[0],$pixcel[1],1,20)
+						MouseClick('left',$pixcel[0]+5,$pixcel[1],1,20)
 						Sleep(5000)
 					EndIf
 
@@ -292,7 +292,7 @@ $phienban='1.0.48'
                     $pixcel=PixelSearch(818, 464,1290, 743,0x2CC294)   ; xoa loi edge
 					If IsArray($pixcel) Then
                         Sleep(2000)
-						MouseClick('left',$pixcel[0],$pixcel[1],1,20)
+						MouseClick('left',$pixcel[0]+5,$pixcel[1],1,20)
 						Sleep(5000)
 					EndIf
 
