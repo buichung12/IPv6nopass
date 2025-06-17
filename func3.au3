@@ -259,12 +259,6 @@ $phienban='1.0.50'
 			ToolTip('Xoa DaTa trinh duyet'&'	phien ban:'&$phienban,0,0)
 
             $TrangThaiDangNhap='1'
-			_requetGooGleDOC('https://docs.google.com/document/d/1yzcRSbBRVzByEp7UKusrhl_AMQZATzRzcrk-eAhKS6w/export?format=txt','checkxoadatatrinhduyet.txt')
-			Sleep(1000)
-			$checkxoadatatrinhduyet=FileReadLine(@ScriptDir&'\checkxoadatatrinhduyet.txt',1)
-			If $checkxoadatatrinhduyet=1 Then
-                _XoaDaTaTrinhDuyet($i)
-			EndIf
 
 		    _resetMang(1)
 		    FileDelete('C:\Users\'&@UserName&'\Downloads\func3.au3')
@@ -1315,6 +1309,12 @@ $phienban='1.0.50'
 			Sleep(1000)
 			MouseClick('left',577, 599,1,20)
 			Sleep(5000)
+			MouseClick('left',600, 60,1,20)
+			Sleep(2000)
+			Send('https://accounts.google.com/Logout')
+			Sleep(1000)
+			Send('{enter}')
+			Sleep(3000)
 
 		EndIf
 
@@ -1343,6 +1343,12 @@ $phienban='1.0.50'
 			Sleep(2000)
 			MouseClick('left',872, 650,1,20)
 			Sleep(4000)
+			MouseClick('left',600, 60,1,20)
+			Sleep(2000)
+			Send('https://accounts.google.com/Logout')
+			Sleep(1000)
+			Send('{enter}')
+			Sleep(3000)
 
 		EndIf
 
@@ -1367,6 +1373,12 @@ $phienban='1.0.50'
 			Sleep(2000)
 			MouseClick('left',846, 629,1,20)
 			Sleep(4000)
+			MouseClick('left',600, 60,1,20)
+			Sleep(2000)
+			Send('https://accounts.google.com/Logout')
+			Sleep(1000)
+			Send('{enter}')
+			Sleep(3000)
 
 		EndIf
 
@@ -1393,6 +1405,12 @@ $phienban='1.0.50'
 			Sleep(2000)
 			MouseClick('left',870, 626,1,20)
 			Sleep(4000)
+			MouseClick('left',600, 60,1,20)
+			Sleep(2000)
+			Send('https://accounts.google.com/Logout')
+			Sleep(1000)
+			Send('{enter}')
+			Sleep(3000)
 
 		EndIf
 
@@ -1419,6 +1437,12 @@ $phienban='1.0.50'
 			Sleep(2000)
 			MouseClick('left',868, 627,1,20)
 			Sleep(4000)
+			MouseClick('left',600, 60,1,20)
+			Sleep(2000)
+			Send('https://accounts.google.com/Logout')
+			Sleep(1000)
+			Send('{enter}')
+			Sleep(3000)
 
 		EndIf
 
@@ -1439,6 +1463,12 @@ $phienban='1.0.50'
 			Sleep(3000)
 			MouseClick('left',750, 648,1,20)
 			Sleep(4000)
+			MouseClick('left',600, 60,1,20)
+			Sleep(2000)
+			Send('https://accounts.google.com/Logout')
+			Sleep(1000)
+			Send('{enter}')
+			Sleep(3000)
 
 		EndIf
 
@@ -1463,6 +1493,12 @@ $phienban='1.0.50'
 			Sleep(2000)
 			MouseClick('left',772, 517,1,20)
 			Sleep(4000)
+			MouseClick('left',600, 60,1,20)
+			Sleep(2000)
+			Send('https://accounts.google.com/Logout')
+			Sleep(1000)
+			Send('{enter}')
+			Sleep(3000)
 
 		EndIf
 
@@ -1489,6 +1525,12 @@ $phienban='1.0.50'
 			Sleep(2000)
 			MouseClick('left',872, 629,1,20)
 			Sleep(4000)
+			MouseClick('left',600, 60,1,20)
+			Sleep(2000)
+			Send('https://accounts.google.com/Logout')
+			Sleep(1000)
+			Send('{enter}')
+			Sleep(3000)
 
 		EndIf
 
