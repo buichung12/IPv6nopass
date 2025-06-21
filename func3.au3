@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.50'
+$phienban='1.0.51'
 
     Func _LayGmail($vpsso)
 				If 0<$vpsso and $vpsso<6 Then
@@ -6488,9 +6488,6 @@ $phienban='1.0.50'
 
 			Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
         EndFunc
-
-
-
 
         Func _loginGmailToday($i)
 	                       ToolTip('dang nhap Gmail so:'&$i&'	phien ban:'&$phienban,0,0)
