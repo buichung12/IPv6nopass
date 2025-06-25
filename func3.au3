@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.51'
+$phienban='1.0.52'
 
     Func _LayGmail($vpsso)
 				If 0<$vpsso and $vpsso<6 Then
@@ -1170,38 +1170,49 @@ $phienban='1.0.51'
 					_FakeIPOptionV6($i,$vpsso)
 					_khoidongFireFox($i)
 					_XoaDaTaTrinhDuyet($i)
-                    _loginGmail($i)
-
-					ControlClick('','','','left',1,600, 60)
+				    ControlClick('','','','left',1,600, 60)
 				    Sleep(1000)
 				    Send('^a')
 				    Sleep(500)
 				    Sleep(1000)
-				    Send('https://myaccount.google.com/')
-				    Sleep(2000)
-					Send('?'&'fgbfasdhdfgf'&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1)))
-					Sleep(2000)
-				    Send('{enter}')
-				    Sleep(10000)
-					Send($g)
-				    Sleep(1000)
-				    Send('{enter}')
-				    Sleep(7000)
+				    Send('google.com')
+				    Sleep(15000)
+                    $pixcel=PixelSearch(541, 142,897, 350,0xEA4335)
+			        Sleep(1000)
+			        If IsArray($pixcel)  Then
+                        _loginGmailLinkOutlog($i)
+					    ControlClick('','','','left',1,600, 60)
+				        Sleep(1000)
+				        Send('^a')
+				        Sleep(500)
+				        Sleep(1000)
+				        Send('https://myaccount.google.com/')
+				        Sleep(2000)
+					    Send('?'&'fgbfasdhdfgf'&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1)))
+					    Sleep(2000)
+				        Send('{enter}')
+				        Sleep(10000)
+					    Send($g)
+				        Sleep(1000)
+				        Send('{enter}')
+				        Sleep(7000)
 
-				    For $i20=1 to 10
-					    $pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
-					    Sleep(500)
-					    $pixcel2=PixelSearch(17, 98,73, 207,0x001D35)
-					    Sleep(500)
-					    $pixcel3=PixelSearch(18, 130,206, 263,0xC3E7FF)
-					    Sleep(500)
-					    If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
-						    $check=1
-						    $i20=17
-						    $i2=2
-					    EndIf
-						    Sleep(1000)
-				    Next
+				        For $i20=1 to 10
+					        $pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
+					        Sleep(500)
+					        $pixcel2=PixelSearch(17, 98,73, 207,0x001D35)
+					        Sleep(500)
+					        $pixcel3=PixelSearch(18, 130,206, 263,0xC3E7FF)
+					        Sleep(500)
+					        If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
+						       $check=1
+						       $i20=17
+						       $i2=2
+					        EndIf
+						      Sleep(1000)
+						Next
+					EndIf
+
 
 				EndIf
 
@@ -3653,6 +3664,8 @@ $phienban='1.0.51'
 							Sleep(2000)
 							Send('{enter}')
 							Sleep(2000)
+							ControlClick('','','','left',1,1327,98)
+						    Sleep(100)
 						EndIf
 
 						If  $i=10 or $i=5 Then
@@ -3723,6 +3736,14 @@ $phienban='1.0.51'
 						EndIf
 						If $i=3 Then
 						   MouseClick('left',1325,109,1,20)
+						   Sleep(2000)
+						   MouseClick('left',1325,140,1,20)
+						   Sleep(2000)
+						EndIf
+						If $i=4 Then
+						   ControlClick('','','','left',1,1327,98)
+						    Sleep(100)
+						   Sleep(2000)
 					    EndIf
 
 
@@ -4304,6 +4325,8 @@ $phienban='1.0.51'
 						Sleep(100)
 						ControlClick('','','','left',1,1280,163)
 						Sleep(100)
+						ControlClick('','','','left',1,1327,98)
+						Sleep(100)
 
 					EndIf
 
@@ -4451,6 +4474,8 @@ $phienban='1.0.51'
 						    Sleep(100)
 							ControlClick('','','','left',1,1280,163)
 						    Sleep(100)
+							ControlClick('','','','left',1,1327,98)
+						    Sleep(100)
 
 
 						EndIf
@@ -4463,6 +4488,8 @@ $phienban='1.0.51'
 						    WinClose('Update successful')
 				            Sleep(200)
 						    WinClose('Bạn có muốn khôi phục trang không?')
+							MouseClick('left',1325,140,1,20)
+						    Sleep(2000)
 						EndIf
 
 						If $i=2 Then
