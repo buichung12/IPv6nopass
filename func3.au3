@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.53'
+$phienban='1.0.54'
 
     Func _LayGmail($vpsso)
 				If 0<$vpsso and $vpsso<6 Then
