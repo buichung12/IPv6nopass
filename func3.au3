@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.54'
+$phienban='1.0.55'
 
     Func _LayGmail($vpsso)
 				If 0<$vpsso and $vpsso<6 Then
@@ -1545,6 +1545,46 @@ $phienban='1.0.54'
 
 		EndIf
 
+		If $i=8 Then
+			Send('^+{DELETE}')
+			Sleep(5000)
+			MouseClick('left',803, 252,1,20)
+			Sleep(2000)
+			MouseClick('left',607, 301,1,20)
+			Sleep(2000)
+			Send('{DOWN}')
+			Sleep(1000)
+			Send('{DOWN}')
+			Sleep(1000)
+			Send('{DOWN}')
+			Sleep(1000)
+			Send('{DOWN}')
+			Sleep(1000)
+			Send('{enter}')
+			Sleep(3000)
+			MouseClick('left',930, 565,1,20)
+			Sleep(2000)
+			$pixcel=PixelSearch(435, 497,435, 497,0x1A73E8)   ; xoa loi edge
+			If not IsArray($pixcel) Then
+                MouseClick('left',453, 515,1,20)
+			    Sleep(2000)
+			EndIf
+			$pixcel=PixelSearch(433, 543,475, 581,0x1A73E8)   ; xoa loi edge
+			If not IsArray($pixcel) Then
+                MouseClick('left',454, 562,1,20)
+			    Sleep(2000)
+			EndIf
+
+			MouseClick('left',875, 630,1,20)
+			Sleep(2000)
+			MouseClick('left',600, 60,1,20)
+			Sleep(2000)
+			Send('https://accounts.google.com/Logout')
+			Sleep(1000)
+			Send('{enter}')
+			Sleep(3000)
+
+		EndIf
 
 
 

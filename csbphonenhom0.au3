@@ -98,8 +98,10 @@ While 1
 					    Sleep(100)
 					Next
 
-					 $check=_FileCountLines(@ScriptDir&"\Keytinsoft2.txt")
-					If $check >8 Then $i21=3
+					$check=_FileCountLines(@ScriptDir&"\Keytinsoft2.txt")
+					$check2=FileReadLine(@ScriptDir&"\Keytinsoft2.txt",2)
+					$check3=StringLen($check2)
+				    If $check >8 And $check3>10 Then $i21=3
 
 				Next
 
@@ -127,7 +129,9 @@ While 1
 					Next
 
 					 $check=_FileCountLines(@ScriptDir&"\Keytinsoft4.txt")
-					If $check >8 Then $i21=3
+					$check2=FileReadLine(@ScriptDir&"\Keytinsoft4.txt",2)
+					$check3=StringLen($check2)
+				    If $check >8 And $check3>10 Then $i21=3
 
 				Next
 
