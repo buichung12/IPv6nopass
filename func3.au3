@@ -1169,7 +1169,6 @@ $phienban='1.0.56'
 					_resetMang($i)
 					_FakeIPOptionV6($i,$vpsso)
 					_khoidongFireFox($i)
-					_XoaDaTaTrinhDuyet($i)
 				    ControlClick('','','','left',1,600, 60)
 				    Sleep(1000)
 				    Send('^a')
@@ -1212,6 +1211,8 @@ $phienban='1.0.56'
 						      Sleep(1000)
 						Next
 					EndIf
+
+					_XoaDaTaTrinhDuyet($i)
 
 
 				EndIf
