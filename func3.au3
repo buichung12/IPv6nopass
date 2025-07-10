@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.58'
+$phienban='1.0.59'
 
     Func _LayGmail($vpsso)
 				If 0<$vpsso and $vpsso<6 Then
@@ -1147,13 +1147,9 @@ $phienban='1.0.58'
 				Sleep(7000)
 
 				For $i20=1 to 10
-					$pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
+					$pixcel=PixelSearch(70, 140,310, 275,0xC2E7FF)
 					Sleep(500)
-					$pixcel2=PixelSearch(18, 130,200, 263,0x001D35)
-					Sleep(500)
-					$pixcel3=PixelSearch(18, 130,206, 263,0xC3E7FF)
-					Sleep(500)
-					If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
+					If IsArray($pixcel) Then
 						$check=1
 						$i20=17
 						$i2=2
@@ -1200,13 +1196,9 @@ $phienban='1.0.58'
 				        Sleep(7000)
 
 				        For $i20=1 to 10
-					        $pixcel=PixelSearch(18, 130,206, 263,0xC2E7FF)
+					        $pixcel=PixelSearch(70, 140,310, 275,0xC2E7FF)
 					        Sleep(500)
-					        $pixcel2=PixelSearch(18, 130,200, 263,0x001D35)
-					        Sleep(500)
-					        $pixcel3=PixelSearch(18, 130,206, 263,0xC3E7FF)
-					        Sleep(500)
-					        If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
+					        If IsArray($pixcel) Then
 						       $check=1
 						       $i20=17
 						       $i2=2
@@ -1220,7 +1212,6 @@ $phienban='1.0.58'
 				$e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)
 
 				If $check=1 Then   ; dieu kien tam thoi
-
 					FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	DangNhapThanhCong'&'	'&$i)
 				Else
                     FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	DangNhapThatBai'&'	'&$i)
@@ -5549,6 +5540,11 @@ $phienban='1.0.58'
 					EndIf
 					Sleep(1000)
 				Next
+				Sleep(2000)
+				MouseClick('left',970,470,1,20)
+				Sleep(7000)
+				MouseClick('left',970,430,1,20)
+				Sleep(7000)
 
 				MouseClick('left',650,280,1,20)
 				Sleep(3000)
@@ -5965,13 +5961,14 @@ $phienban='1.0.58'
 				Sleep(10000)
 
 				For $i20=1 to 10
-					$pixcel=PixelSearch(18, 163,292, 246,0xC2E7FF)
-					$pixcel2=PixelSearch(13, 224,70, 345,0x3E88F4)
-					If IsArray($pixcel) or IsArray($pixcel2) Then
-						$check=1
-						$i20=17
-					EndIf
-					Sleep(1000)
+					        $pixcel=PixelSearch(70, 140,310, 275,0xC2E7FF)
+					        Sleep(500)
+					        If IsArray($pixcel) Then
+						       $check=1
+						       $i20=17
+						       $i2=2
+					        EndIf
+						      Sleep(1000)
 				Next
 				If $check=0 Then
 				    ControlClick('','','','left',1,600, 60)
@@ -5984,24 +5981,18 @@ $phienban='1.0.58'
 				    Sleep(2000)
 				    Send('{enter}')
 				    Sleep(10000)
-					MouseClick('left',6000,350,1,20)
+					MouseClick('left',600,350,1,20)
 				    Sleep(5000)
 				    For $i20=1 to 10
-					    $pixcel=PixelSearch(58,96,245, 170,0xFF0033)   ; xoa loi edge
-						$pixcel2=PixelSearch(58,96,245, 170,0xFF0000)   ; xoa loi edge
-						$pixcel3=PixelSearch(58,96,245, 170,0x3E88F4)   ; xoa loi edge
-
-
-					    Sleep(1000)
-					    If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3)  Then
-						    $check=1
-						    $i20=17
-							Sleep(10000)
-							MouseClick('left',600, 320,1,20)
-							Sleep(3000)
-					    EndIf
-					    Sleep(1000)
-				    Next
+					        $pixcel=PixelSearch(70, 140,310, 275,0xC2E7FF)
+					        Sleep(500)
+					        If IsArray($pixcel) Then
+						       $check=1
+						       $i20=17
+						       $i2=2
+					        EndIf
+						      Sleep(1000)
+					Next
 				EndIf
 			Else
                 $check=1
