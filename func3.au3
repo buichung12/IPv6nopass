@@ -5605,8 +5605,8 @@ $phienban='1.0.59'
                 Run('C:\Users\'&@UserName&'\Desktop\WinAuth')
 				Sleep(5000)
 				WinActivate('WinAuth')
-				        Sleep(1000)
-				WinMove('','',0,0)
+				Sleep(1000)
+				WinMove('','',0,0,415,250)
 				Sleep(2000)
 
 				For $i20=1 to 3
