@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.60'
+$phienban='1.0.59'
 
     Func _LayGmail($vpsso)
 				If 0<$vpsso and $vpsso<6 Then
@@ -298,6 +298,7 @@ $phienban='1.0.60'
 		        Send('^+s')
 		        Sleep(15000)
 				FileCopy("C:\Users\"&@UserName&"\Downloads\func3.au3","C:\Users\"&@UserName&"\Desktop\csFireFox - 10 sea", 1)
+				Sleep(1000)
 				If FileExists('C:\Users\'&@UserName&'\Downloads\func3.au3')=1 Then $i20=4
 		         Sleep(2000)
 
