@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.59'
+$phienban='1.0.60'
 
     Func _LayGmail($vpsso)
 				If 0<$vpsso and $vpsso<6 Then
@@ -1103,8 +1103,8 @@ $phienban='1.0.59'
 
 				WinSetState('Windows Security','',@SW_HIDE)
 
-                _loginGmail($i)
-
+                $check=_loginGmail($i)
+               If $check=0 Then
 				ControlClick('','','','left',1,600, 60)
 				Sleep(1000)
 				Send('^a')
@@ -1122,7 +1122,7 @@ $phienban='1.0.59'
 				Sleep(7000)
 
 				If $i=1 Then
-					$pixcel=PixelSearch(18, 125,47, 153,0xFF0000)   ; xoa loi edge
+					$pixcel=PixelSearch(19, 158,227, 249,0xC2E7FF)   ; xoa loi edge
 					    If IsArray($pixcel) Then
 						    Sleep(2000)
 							Send('^+,')
@@ -1148,7 +1148,7 @@ $phienban='1.0.59'
 				Sleep(7000)
 
 				For $i20=1 to 10
-					$pixcel=PixelSearch(70, 140,310, 275,0xC2E7FF)
+					$pixcel=PixelSearch(19, 158,227, 249,0xC2E7FF)
 					Sleep(500)
 					If IsArray($pixcel) Then
 						$check=1
@@ -1157,7 +1157,7 @@ $phienban='1.0.59'
 					EndIf
 						Sleep(1000)
 				Next
-
+               EndIf
 				;MsgBox(0,0,$check)
 
                 $check2=1
@@ -1197,7 +1197,7 @@ $phienban='1.0.59'
 				        Sleep(7000)
 
 				        For $i20=1 to 10
-					        $pixcel=PixelSearch(70, 140,310, 275,0xC2E7FF)
+							$pixcel=PixelSearch(19, 158,227, 249,0xC2E7FF)
 					        Sleep(500)
 					        If IsArray($pixcel) Then
 						       $check=1
@@ -4154,6 +4154,13 @@ $phienban='1.0.59'
 					ProcessClose('WerFault.exe')
 					$linkblu2=''
 
+
+					Sleep(Random(1,180000,1))
+
+				For $i20=1 to 22
+					MsgBox(0,0,'chờ khởi động:'&$i&'	'&$vpsso&'	số phút:'&$i20,60)
+                Next
+                #cs
 					For $i22=1 to 240
 						If Mod($vpsso,5)=1 Then
 						    If @MIN=1 or @MIN=11 or @MIN=21  or @MIN=31 or @MIN=41 or @MIN=51  Then
@@ -4180,9 +4187,10 @@ $phienban='1.0.59'
 							    $i22=240
 							EndIf
 						EndIf
-
 						Sleep(5000)
 				    Next
+				#ce
+
 
 					Sleep(100)
 					WinClose('Task Manager')
@@ -4222,14 +4230,11 @@ $phienban='1.0.59'
 				    Next
 				#ce
 
-
                     _FakeIPOptionV6($i,$vpsso)
-
 					MouseClick('left',1366,10,1,20)
 					Sleep(1000)
 					MouseClick('left',1366,10,1,20)
 					Sleep(1000)
-
                     Sleep(Random(1000,10000,1))
 					WinClose('Server Manager')
 					If $i=1 Then
@@ -5962,7 +5967,8 @@ $phienban='1.0.59'
 				Sleep(10000)
 
 				For $i20=1 to 10
-					        $pixcel=PixelSearch(70, 140,310, 275,0xC2E7FF)
+					        $pixcel=PixelSearch(70, 140,240, 250,0xC2E7FF)
+							;$pixcel=PixelSearch(70, 140,310, 275,0xC2E7FF)
 					        Sleep(500)
 					        If IsArray($pixcel) Then
 						       $check=1
@@ -5985,7 +5991,7 @@ $phienban='1.0.59'
 					MouseClick('left',600,350,1,20)
 				    Sleep(5000)
 				    For $i20=1 to 10
-					        $pixcel=PixelSearch(70, 140,310, 275,0xC2E7FF)
+					        $pixcel=PixelSearch(67, 98,241, 207,0xFF0033)
 					        Sleep(500)
 					        If IsArray($pixcel) Then
 						       $check=1
@@ -6407,8 +6413,6 @@ $phienban='1.0.59'
 				Sleep(1000)
 			EndIf
 		EndFunc
-
-
 
         Func _KiemTraemailKhoiPhuc()
 		        $x3=0
