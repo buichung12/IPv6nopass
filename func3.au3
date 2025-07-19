@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.60'
+$phienban='1.0.61'
 
     Func _LayGmail($vpsso)
 				If 0<$vpsso and $vpsso<6 Then
@@ -1848,6 +1848,9 @@ $phienban='1.0.60'
 							  $icheck=2
 						EndIf
 
+
+
+
 				        Sleep(100)
 				        WinClose('Authentication Required - Mozilla Firefox')
 				        Sleep(100)
@@ -1857,6 +1860,7 @@ $phienban='1.0.60'
 						Sleep(1000)
 						WinClose('Settings')
 
+                        _resetMang(1)   ; bản 1.1.60
 
 				Next
 			Return $check
@@ -2785,6 +2789,8 @@ $phienban='1.0.60'
 						   EndIf
 						   Sleep(1000)
 						Next
+
+						Sleep(5000)
 
 						ControlClick($var[$i10][1],'','','left',1,245, 308)  ;tam dung video
 
@@ -4157,8 +4163,8 @@ $phienban='1.0.60'
 
 					Sleep(Random(1,180000,1))
 
-				For $i20=1 to 22
-					MsgBox(0,0,'chờ khởi động:'&$i&'	'&$vpsso&'	số phút:'&$i20,60)
+				For $i20=1 to 24
+					MsgBox(0,0,'chờ khởi động:'&$i&'	'&$vpsso&'	số phút:'&$i20,60)  ;bản 1.1.60
                 Next
                 #cs
 					For $i22=1 to 240
@@ -4190,7 +4196,6 @@ $phienban='1.0.60'
 						Sleep(5000)
 				    Next
 				#ce
-
 
 					Sleep(100)
 					WinClose('Task Manager')
@@ -6010,7 +6015,6 @@ $phienban='1.0.60'
 
 			Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
         EndFunc
-
 
         Func _resetMang($i)
 					ProcessClose('Proxy Client Tinsoft.exe')
