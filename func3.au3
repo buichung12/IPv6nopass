@@ -13,9 +13,13 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.61'
+$phienban='1.0.62'
 
     Func _LayGmail($vpsso)
+
+
+                $sodu=Int($vpsso/5)				;bản 1.1.60
+				MsgBox(0,0,'chờ tác gamil:'&$vpsso,$sodu*20*60) ;bản 1.1.60
 				If 0<$vpsso and $vpsso<6 Then
 					For $i20=1 to 10
 					   $Gmailtho=FileReadLine(@ScriptDir&'\Gmailtho.txt',$i20)
