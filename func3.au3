@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.63'
+$phienban='1.0.64'
 
     Func _LayGmail($vpsso)
 
@@ -2389,7 +2389,7 @@ $phienban='1.0.63'
 
 			  For $i21=1 to 7
 
-						For $i23=1 to 5
+						For $i23=1 to 15
 					        $sodong=_FileCountLines(@ScriptDir&"\linkkenhchaySUB2.txt")
 							Sleep(100)
                             $linkkenhtho=FileReadLine(@ScriptDir&"\linkkenhchaySUB2.txt",Random(1,$sodong,1))    ; chu y thay doi
@@ -2402,12 +2402,12 @@ $phienban='1.0.63'
 								Sleep(100)
 				                If IsArray($datalink) Then $linkkenh=$datalink[1]
 								Sleep(100)
-							    If FileExists(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt")=0 Then  FileWriteLine(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt",'khoi tao')
+							    If FileExists(@ScriptDir&"\LinkDaSub.txt")=0 Then  FileWriteLine(@ScriptDir&"\LinkDaSub.txt",'khoi tao')
 							    Sleep(1000)
-						        $sodonglinkdasub=_FileCountLines(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt")
+						        $sodonglinkdasub=_FileCountLines(@ScriptDir&"\LinkDaSub.txt")
 								Sleep(100)
-						        For $i22=1 to $sodonglinkdasub
-                                    $linkdasub=FileReadLine(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt",$i22)
+						        For $i22=$sodonglinkdasub-15 to $sodonglinkdasub
+                                    $linkdasub=FileReadLine(@ScriptDir&"\LinkDaSub.txt",$i22)
 									Sleep(100)
                                     If $linkkenh=$linkdasub Then
 								        $i22=$sodonglinkdasub
@@ -2415,7 +2415,7 @@ $phienban='1.0.63'
 						        Next
 								Sleep(100)
 						        If $linkkenh <> $linkdasub Then
-							        $i23=5
+							        $i23=15
 						        EndIf
 						    EndIf
 						  Else
@@ -3232,7 +3232,7 @@ $phienban='1.0.63'
 			  Next
 
 
-              FileWriteLine(@ScriptDir&"\LinkDaSub"&$i&$i5&".txt",$linkkenh)
+              FileWriteLine(@ScriptDir&"\LinkDaSub.txt",$linkkenh)
 
 		  ;Next
 
@@ -4165,9 +4165,18 @@ $phienban='1.0.63'
 					Sleep(100)
 					ProcessClose('WerFault.exe')
 					$linkblu2=''
-
-
+                    $link=''
+					 $nhomkenh=Int(($vpsso-1)/10)
 					Sleep(Random(1,180000,1))
+
+                If $i=1 Then
+
+				    If $vpsso=1 or $vpsso=2 or $vpsso=3 or $vpsso=4 or $vpsso=5 Then _requetGooGleDOC('https://docs.google.com/document/d/1ovARvIbwSXide3zh42IbuWuGmgu8NW4HaFiwh2LJaOM/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					If $vpsso=6 or $vpsso=7 or $vpsso=8 or $vpsso=9 or $vpsso=10 Then _requetGooGleDOC('https://docs.google.com/document/d/1W7_gFyfDBhRYkCJw5v1hukJu5PwKpy2brANwWX-wHQQ/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					If $vpsso=11 or $vpsso=12 or $vpsso=13 or $vpsso=14 or $vpsso=15 Then _requetGooGleDOC('https://docs.google.com/document/d/1YxkIOCzSPpev_oWRnKGDyASf1SCxH_-IoWEAI_yYCXs/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					If $vpsso=16 or $vpsso=17 or $vpsso=18 or $vpsso=19 or $vpsso=20 Then _requetGooGleDOC('https://docs.google.com/document/d/1PTxYeX31wdMOaCiLBfPLuhNISjlLAHQpRleIRfAByiE/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+
+                EndIf
 
 				For $i20=1 to 24
 					MsgBox(0,0,'chờ khởi động:'&$i&'	'&$vpsso&'	số phút:'&$i20,60)  ;bản 1.1.60
@@ -5301,19 +5310,9 @@ $phienban='1.0.63'
 
 						For $i=1 to $sodong
 	                         $data=FileReadLine(@ScriptDir&"\data.txt",$i)
-	                         $arry=StringSplit($data,' ')
-                            If IsArray($arry) Then
-		                        For $i20=1 to $arry[0]
-			                        If StringLen($arry[$i20])>1 or IsInt($arry[$i20]) Then
-				                        FileWrite(@ScriptDir&'\'&$tenTXT,$arry[$i20]&"	")
-										;FileWrite(@ScriptDir&'\'&$tenTXT,"	")
-										;MsgBox(0,0,'ok')
-			                        EndIf
-		                        Next
-
-								FileWriteLine(@ScriptDir&'\'&$tenTXT,"	")
-
-                            EndIf
+	                         ;$arry=StringSplit($data,' ')
+                            $data= StringRegExpReplace($data, " +", Chr(9))
+							FileWriteLine(@ScriptDir&'\'&$tenTXT,$data)
 						Next
 
 					    ;FileWriteLine(@ScriptDir&'/'&$tenTXT,$kq)
