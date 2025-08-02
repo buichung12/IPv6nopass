@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.71'
+$phienban='1.0.72'
 
     Func _LayGmail($vpsso)
 
@@ -6095,8 +6095,25 @@ $phienban='1.0.71'
 						Sleep(2000)
 						Send('{enter}')
 						Sleep(8000)
+						MouseClick('left',904, 505,1,20)
+						Sleep(2000)
+						MouseClick('left',922, 505,1,20)
+						Sleep(2000)
+						MouseClick('left',907, 545,1,20)
+						Sleep(2000)
+						MouseClick('left',922, 545,1,20)
+						Sleep(2000)
 
-						Send($g)
+
+						MouseClick('left',920, 234,1,20)
+				        Sleep(2000)
+				     	MouseClick('left',470, 287,1,20)
+				        Sleep(2000)
+					    Send('{tab}')
+					    Sleep(2000)
+					    Send('{tab}')
+					    Sleep(2000)
+					    Send($g)
 						Sleep(2000)
 						Send('{enter}')
 						Sleep(7000)
@@ -6189,6 +6206,11 @@ $phienban='1.0.71'
 				       Sleep(2000)
 				       Send('{enter}')
 				       Sleep(10000)
+					   Send($g)
+				    	Sleep(2000)
+						Send('{enter}')
+					    Sleep(10000)
+
 				       For $i20=1 to 10
 					        $pixcel=PixelSearch(296, 341,698, 806,0xDB241E)
 					        Sleep(500)
