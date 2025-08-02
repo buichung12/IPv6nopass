@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.65'
+$phienban='1.0.66'
 
     Func _LayGmail($vpsso)
 
@@ -1230,8 +1230,7 @@ $phienban='1.0.65'
         Sleep(2000)
 
 
-		    If $vpsso=1 or $vpsso=6 or $vpsso=11 or $vpsso=16 or $vpsso=21 or $vpsso=26 or $vpsso=31 or $vpsso=36 or $vpsso=41 or $vpsso=46 or $vpsso=51 or $vpsso=56 or $vpsso=61 or $vpsso=66 or $vpsso=71 or $vpsso=76 or $vpsso=81 or $vpsso=86 or $vpsso=91 or $vpsso=99  Then
-			    $dataIP=FileRead(@ScriptDir&'\KetQuaDangNhap.txt')
+	           $dataIP=FileRead(@ScriptDir&'\KetQuaDangNhap.txt')
 			    Sleep(2000)
 			    _resetMang(1)
 			    $link='https://docs.google.com/document/d/1qHVR9Vg6S3_AgJuPAqKmYHbwWYgtfiPkOjEm05iEMHc/edit?usp=sharing'
@@ -1254,7 +1253,7 @@ $phienban='1.0.65'
 			    Send('^+v')
 			    Sleep(10000)
                 _closeTrinhDuyet(1)
-		    EndIf
+
 
 
 		Return 	$check4
@@ -6019,7 +6018,7 @@ $phienban='1.0.65'
 					MouseClick('left',600,350,1,20)
 				    Sleep(5000)
 				    For $i20=1 to 10
-					        $pixcel=PixelSearch(67, 98,241, 207,0xFF0033)
+					        $pixcel=PixelSearch(211, 189,490, 354,0x34A853)
 					        Sleep(500)
 					        If IsArray($pixcel) Then
 						       $check=1
@@ -6058,6 +6057,12 @@ $phienban='1.0.65'
 						      Sleep(1000)
 					Next
 
+                    ControlClick('','','','left',1,600, 60)
+				    Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
+					Send('{tab}')
+					Sleep(2000)
 					Send($g)
 					Sleep(1000)
 					Send('{enter}')
@@ -6066,7 +6071,7 @@ $phienban='1.0.65'
 					$pixcel=PixelSearch(296, 341,698, 706,0xDB241E)
 					Sleep(500)
 					If not IsArray($pixcel) Then
-						MouseClick('left',612, 257,1,20)
+						MouseClick('left',901, 285,1,20)
 				        Sleep(2000)
 						Send('{tab}')
 						Sleep(1000)
@@ -6088,12 +6093,18 @@ $phienban='1.0.65'
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(5000)
+						ControlClick('','','','left',1,600, 60)
+				        Sleep(2000)
+					    Send('{tab}')
+					    Sleep(2000)
+					    Send('{tab}')
+					    Sleep(2000)
 						Send($g)
 				    	Sleep(1000)
 						Send('{enter}')
 					    Sleep(10000)
 
-						MouseClick('left',612, 257,1,20)
+						MouseClick('left',901, 285,1,20)
 				        Sleep(2000)
 						Send('{tab}')
 						Sleep(1000)
