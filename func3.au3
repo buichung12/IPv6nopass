@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.68'
+$phienban='1.0.69'
 
     Func _LayGmail($vpsso)
 
@@ -1253,6 +1253,8 @@ $phienban='1.0.68'
 			    Send('^+v')
 			    Sleep(10000)
                 _closeTrinhDuyet(1)
+
+				MsgBox(0,0,'add sdt xong')
 
 
 
@@ -6034,10 +6036,10 @@ $phienban='1.0.68'
                 $check=1
 
 			EndIf
-				MouseClick('left',600, 320,1,20)  ; cho ngẫu nhiên 1 kênh ytb
-				Sleep(5000)
+				     MouseClick('left',600, 320,1,20)  ; cho ngẫu nhiên 1 kênh ytb
+				     Sleep(5000)
 
-
+				For $i22=1 to 3
 				    ControlClick('','','','left',1,600, 60)
 				    Sleep(1000)
 				    Send('^a')
@@ -6073,7 +6075,7 @@ $phienban='1.0.68'
 					$pixcel=PixelSearch(296, 341,698, 706,0xDB241E)
 					Sleep(500)
 					If not IsArray($pixcel) Then
-						MouseClick('left',694, 286,1,20)
+						MouseClick('left',800, 286,1,20)
 				        Sleep(2000)
 						Send('{tab}')
 						Sleep(2000)
@@ -6110,7 +6112,7 @@ $phienban='1.0.68'
 						Send('{enter}')
 					    Sleep(15000)
 
-						MouseClick('left',694, 286,1,20)
+						MouseClick('left',800, 286,1,20)
 				        Sleep(2000)
 						Send('{tab}')
 						Sleep(2000)
@@ -6138,26 +6140,34 @@ $phienban='1.0.68'
 						Sleep(5000)
 
 
-					ControlClick('','','','left',1,600, 60)
-				    Sleep(1000)
-				    Send('^a')
-				    Sleep(1000)
-				    ClipPut('https://myaccount.google.com/signinoptions/rescuephone?')
-				    Sleep(1000)
-				    Send('^v')
-				    Sleep(2000)
-				    Send('{enter}')
-				    Sleep(10000)
-				    For $i20=1 to 10
-					        $pixcel=PixelSearch(67, 98,241, 207,0xFF0033)
+					   ControlClick('','','','left',1,600, 60)
+				       Sleep(1000)
+				       Send('^a')
+				       Sleep(1000)
+				       ClipPut('https://myaccount.google.com/signinoptions/rescuephone?')
+				       Sleep(1000)
+				       Send('^v')
+				       Sleep(2000)
+				       Send('{enter}')
+				       Sleep(10000)
+				       For $i20=1 to 10
+					        $pixcel=PixelSearch(296, 341,698, 706,0xDB241E)
+					        Sleep(500)
 					        Sleep(500)
 					        If IsArray($pixcel) Then
 						       $check=1
 						       $i20=17
-						       $i2=2
+						       $i22=3
+
+							Else
+
+
 					        EndIf
 						      Sleep(1000)
-					Next
+					   Next
+					EndIf
+
+				Next
 
 					Send($g)
 					Sleep(1000)
@@ -6176,7 +6186,7 @@ $phienban='1.0.68'
 
 
 
-					EndIf
+
 
 
 
