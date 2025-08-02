@@ -6057,7 +6057,7 @@ $phienban='1.0.66'
 						      Sleep(1000)
 					Next
 
-                    ControlClick('','','','left',1,600, 60)
+                    ControlClick('','','','left',1,785, 222)
 				    Sleep(2000)
 					Send('{tab}')
 					Sleep(2000)
@@ -6093,7 +6093,7 @@ $phienban='1.0.66'
 						Sleep(1000)
 						Send('{enter}')
 						Sleep(5000)
-						ControlClick('','','','left',1,600, 60)
+						ControlClick('','','','left',1,785, 222)
 				        Sleep(2000)
 					    Send('{tab}')
 					    Sleep(2000)
