@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.69'
+$phienban='1.0.70'
 
     Func _LayGmail($vpsso)
 
@@ -5585,8 +5585,6 @@ $phienban='1.0.69'
 				Sleep(3000)
 				Send('{tab}')
 				Sleep(2000)
-				Send('{tab}')
-				Sleep(2000)
 				Send($f,1)
 				Sleep(1500)
 				Send('{enter}')
@@ -6054,9 +6052,7 @@ $phienban='1.0.69'
 					        $pixcel=PixelSearch(67, 98,241, 207,0xFF0033)
 					        Sleep(500)
 					        If IsArray($pixcel) Then
-						       $check=1
-						       $i20=17
-						       $i2=2
+								$i20=10
 					        EndIf
 						      Sleep(1000)
 					Next
@@ -6072,7 +6068,7 @@ $phienban='1.0.69'
 					Send('{enter}')
 					Sleep(15000)
 
-					$pixcel=PixelSearch(296, 341,698, 706,0xDB241E)
+					$pixcel=PixelSearch(296, 341,698, 806,0xDB241E)
 					Sleep(500)
 					If not IsArray($pixcel) Then
 						MouseClick('left',800, 286,1,20)
@@ -6097,9 +6093,11 @@ $phienban='1.0.69'
 						Sleep(2000)
 						Send('{enter}')
 						Sleep(8000)
-						Send('{tab}')
+						MouseClick('left',904, 505,1,20)
 						Sleep(2000)
-						Send('{enter}')
+						MouseClick('left',907, 545,1,20)
+						Sleep(2000)
+						MouseClick('left',906, 607,1,20)
 						Sleep(7000)
 						ControlClick('','','','left',1,746, 244)
 				        Sleep(2000)
@@ -6151,7 +6149,7 @@ $phienban='1.0.69'
 				       Send('{enter}')
 				       Sleep(10000)
 				       For $i20=1 to 10
-					        $pixcel=PixelSearch(296, 341,698, 706,0xDB241E)
+					        $pixcel=PixelSearch(296, 341,698, 806,0xDB241E)
 					        Sleep(500)
 					        Sleep(500)
 					        If IsArray($pixcel) Then
