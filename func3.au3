@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.74'
+$phienban='1.0.75'
 
     Func _LayGmail($vpsso)
 
@@ -5435,6 +5435,89 @@ $phienban='1.0.74'
 						   $SDT=FileReadLine(@ScriptDir&'\Gmailtest.txt',5)
 						   FileDelete(@ScriptDir&'\Gmailtest.txt')
 
+
+               If StringLen($Key2fa)>30	Then
+				Sleep(2000)
+				$Key2fa=StringReplace($Key2fa,'|',' ')
+				Sleep(1000)
+                Run('C:\Users\'&@UserName&'\Desktop\WinAuth')
+				Sleep(5000)
+				WinActivate('WinAuth')
+				Sleep(1000)
+				WinMove('','',0,0,415,250)
+				Sleep(2000)
+
+				For $i20=1 to 3
+				            $pixcel=PixelSearch(10, 130,110, 190,0x00ABDA)  ; xoa Auth cu
+				            If IsArray($pixcel) Then
+					            MouseClick('right',64,91,1,20)
+				                Sleep(2000)
+					            Send('{tab}')
+				                Sleep(2000)
+					            Send('{tab}')
+				                Sleep(2000)
+						        Send('{tab}')
+				                Sleep(2000)
+					            Send('{tab}')
+				                Sleep(2000)
+					            Send('{tab}')
+				                Sleep(2000)
+					            Send('{enter}')
+				                Sleep(2000)
+						        Send('{tab}')
+				                Sleep(2000)
+					            Send('{enter}')
+						        Sleep(4000)
+					        Else
+						        $i20=3
+							EndIf
+				Next
+
+				        Sleep(1000)
+				        MouseClick('left',50,150,1,20)
+						Sleep(3000)
+						Send('{tab}')
+				        Sleep(3000)
+				        Send('{enter}')
+                        Sleep(5000)
+				        Send('{tab}')
+				        Sleep(3000)
+				        Send($Key2fa)
+				        Sleep(3000)
+				        Send('{enter}')
+				        Sleep(5000)
+				        Send('{enter}')
+				        Sleep(5000)
+						Send('{enter}')
+						Sleep(3000)
+						Send('{enter}')
+						Sleep(3000)
+
+				For $i20=1 to 10
+						$checkProtection=WinExists('Protection')
+						If $checkProtection=1 Then
+							$i20=10
+
+							MouseClick('left',776,506,1,20)
+							Sleep(3000)
+							MouseClick('left',810,655,1,20)
+							Sleep(1000)
+							WinMove('Protection','',0,0)
+							Sleep(2000)
+							MouseClick('left',752, 16,1,20)
+							Sleep(1000)
+							WinClose('Protection')
+							Sleep(1000)
+
+						EndIf
+						Sleep(2000)
+				Next
+
+              EndIf
+
+
+
+
 				WinClose('Restore pages?')
 				WinClose('Restore pages')
 
@@ -5892,35 +5975,6 @@ $phienban='1.0.74'
 
 
 			   If $i=4 Then MouseClick('left',1025, 230,1,20);update pass
-            #cs
-				If $x3=0 Then      ; neu khong tim thay anh
-				    MouseClick('left',650,300,1,20)
-					Sleep(2000)
-					Send('{tab}')
-					Sleep(2000)
-					Send('{tab}')
-					Sleep(2000)
-					Send('{tab}')
-					Sleep(2000)
-					Send('{tab}')
-					Sleep(2000)
-					Send('{tab}')
-					Sleep(2000)
-					Send('{enter}')
-				    Sleep(10000)
-				    For $i20=1 to 20
-				      $pixcel=PixelSearch(322, 459,1000, 527,0x0B57D0)
-					  If IsArray($pixcel) Then $i20=20
-					  Sleep(1000)
-					Next
-				      Sleep(3000)
-				      Send($h)
-				      Sleep(500)
-				      Send('{enter}')
-				      Sleep(7000)
-
-				EndIf
-            #ce
 
 				If $i=1 Then MouseClick('left',927, 282,1,20)   ;update pass
 				If $i=2 Then MouseClick('left',1000, 248,1,20);update pass
@@ -6037,207 +6091,382 @@ $phienban='1.0.74'
 				     MouseClick('left',600, 320,1,20)  ; cho ngẫu nhiên 1 kênh ytb
 				     Sleep(5000)
 
-				For $i22=1 to 3
-				    ControlClick('','','','left',1,600, 60)
-				    Sleep(1000)
-				    Send('^a')
-				    Sleep(1000)
-				    ClipPut('https://myaccount.google.com/signinoptions/rescuephone?')
-				    Sleep(1000)
-				    Send('^v')
-				    Sleep(2000)
-				    Send('{enter}')
-				    Sleep(12000)
-				    For $i20=1 to 10
-					        $pixcel=PixelSearch(67, 98,241, 207,0xFF0033)
-					        Sleep(500)
-					        If IsArray($pixcel) Then
-								$i20=10
-					        EndIf
-						      Sleep(1000)
-					Next
-                    Sleep(2000)
-                     MouseClick('left',920, 234,1,20)
-				    Sleep(2000)
-					MouseClick('left',470, 287,1,20)
-				    Sleep(2000)
-					Send('{tab}')
-					Sleep(2000)
-					Send('{tab}')
-					Sleep(2000)
-					Send($g)
-					Sleep(1000)
-					Send('{enter}')
-					Sleep(15000)
+						$checkSDT=0
+						For $i22=1 to 2
+				            MouseClick('left',600, 60,1,20)
+				            Sleep(1000)
+							Send('^a')
+				            Sleep(1000)
+				            ClipPut('https://myaccount.google.com/signinoptions/rescuephone?')
+							Sleep(1000)
+				            Send('^v')
+				            Sleep(2000)
+				            Send('{enter}')
+				            Sleep(7000)
+				            For $i20=1 to 10
+					            $pixcel=PixelSearch(67, 98,241, 207,0xFF0033)
+					            Sleep(500)
+					            If IsArray($pixcel) Then
+								    $i20=10
+					            EndIf
+						        Sleep(1000)
+					        Next
+                            Sleep(2000)
+                            MouseClick('left',920, 234,1,20)
+				            Sleep(2000)
+					        MouseClick('left',470, 287,1,20)
+				            Sleep(2000)
+					        Send('{tab}')
+					        Sleep(2000)
+					        Send('{tab}')
+					        Sleep(2000)
+					        Send($g)
+					        Sleep(1000)
+					        Send('{enter}')
+					        Sleep(10000)
 
-					$pixcel=PixelSearch(296, 341,698, 806,0xDB241E)
-					Sleep(500)
-					If not IsArray($pixcel) Then
-						MouseClick('left',720, 300,1,20)
-				        Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(7000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('+84',1)
-						Sleep(3000)
-						Send($SDT)
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(8000)
-						Sleep(2000)
-						Send($g)
-				    	Sleep(2000)
-						Send('{enter}')
-					    Sleep(10000)
+							WinActivate('WinAuth')
+				            Sleep(1000)
+				            $pixcel=PixelSearch(10, 130,110, 190,0x00ABDA)
+				            If IsArray($pixcel) Then
+					            MouseClick('left',365, 158,1,20)
+					            Sleep(1000)
+					            MouseClick('right',370, 158,1,20)
+				            Else
 
-						MouseClick('left',720, 300,1,20)
-				        Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(7000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('+84',1)
-						Sleep(3000)
-						Send($SDT)
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(5000)
-						Send('{tab}')
-						Sleep(2000)
-						Send('{enter}')
-						Sleep(8000)
+					            MouseClick('left',364,93,1,20)
+					            Sleep(1000)
+								MouseClick('right',364,93,1,20)
+				            EndIf
+				            Sleep(1000)
+				            Send('{tab}')
+				            Sleep(1000)
+				            Send('{tab}')
+				            Sleep(1000)
+				            Send('{tab}')
+				            Sleep(1000)
+				            Send('{enter}')
+				            Sleep(300)
+				            $code=ClipGet()
+				            Sleep(1000)
+							MouseClick('left',400, 300,1,20)
+				            Sleep(1000)
+				            Send('{tab}')
+				            Sleep(1000)
+				            Send('{tab}')
+				            Sleep(1000)
+				            Send($code)
+							Sleep(1000)
+				            Send('{enter}')
+				            Sleep(10000)
 
-						ControlClick('','','','left',1,600, 60)
-				        Sleep(1000)
-				        Send('^a')
-				        Sleep(1000)
-				        ClipPut('https://myaccount.google.com/signinoptions/rescuephone?')
-				        Sleep(1000)
-				        Send('^v')
-				        Sleep(2000)
-				        Send('{enter}')
-				        Sleep(12000)
-						 MouseClick('left',920, 234,1,20)
-				        Sleep(2000)
-					    MouseClick('left',470, 287,1,20)
-				        Sleep(2000)
-					    Send('{tab}')
-					    Sleep(2000)
-					    Send('{tab}')
-					    Sleep(2000)
+
+								MouseClick('left',720, 300,1,20)
+				                Sleep(2000)
+						        Send('{tab}')
+						        Sleep(2000)
+						        Send('{tab}')
+						        Sleep(2000)
+						        Send('{enter}')
+						        Sleep(7000)
+						        Send('{tab}')
+						        Sleep(2000)
+						        Send('+84',1)
+						        Sleep(3000)
+						        Send($SDT)
+						        Sleep(2000)
+						        Send('{tab}')
+								Sleep(2000)
+						        Send('{tab}')
+						        Sleep(2000)
+						        Send('{tab}')
+						        Sleep(2000)
+						        Send('{enter}')
+						        Sleep(6000)
+								Send('{enter}')
+						        Sleep(6000)
+								$pixcel=PixelSearch(239, 210,322, 282,0xFABB05)
+					            Sleep(500)
+								If IsArray($pixcel) Then
+									MouseClick('left',480, 240,1,20)
+				                    Sleep(2000)
+									Send('{tab}')
+						            Sleep(2000)
+									Send('{tab}')
+						            Sleep(2000)
+						            Send('{enter}')
+						            Sleep(5000)
+						            Send($g)
+				    	            Sleep(2000)
+						            Send('{enter}')
+					                Sleep(10000)
+									WinActivate('WinAuth')
+				                    Sleep(1000)
+				                    $pixcel=PixelSearch(10, 130,110, 190,0x00ABDA)
+				                    If IsArray($pixcel) Then
+										MouseClick('left',365, 158,1,20)
+					                    Sleep(1000)
+										MouseClick('right',370, 158,1,20)
+				                    Else
+
+					                    MouseClick('left',364,93,1,20)
+					                    Sleep(1000)
+										MouseClick('right',364,93,1,20)
+				                    EndIf
+				                    Sleep(1000)
+				                    Send('{tab}')
+				                    Sleep(1000)
+									Send('{tab}')
+				                    Sleep(1000)
+				                    Send('{tab}')
+				                    Sleep(1000)
+				                    Send('{enter}')
+				                    Sleep(300)
+				                    $code=ClipGet()
+				                    Sleep(1000)
+									MouseClick('left',400, 300,1,20)
+				                    Sleep(1000)
+				                    Send('{tab}')
+				                    Sleep(1000)
+				                    Send('{tab}')
+				                    Sleep(1000)
+				                    Send($code)
+						         	Sleep(1000)
+				                    Send('{enter}')
+				                    Sleep(10000)
+								Else
+									 Send('{tab}')
+						             Sleep(2000)
+						             Send('{enter}')
+						             Sleep(6000)
+
+								EndIf
+
+								$pixcel=PixelSearch(415, 396,519, 508,0xDB231E)
+					            Sleep(500)
+								If IsArray($pixcel) Then
+                                    MouseClick('left',664, 321,1,20)
+				                    Sleep(1000)
+				                    Send('{tab}')
+				                    Sleep(1000)
+				                    Send('{tab}')
+				                    Sleep(1000)
+									Send('+84',1)
+						            Sleep(3000)
+						            Send($SDT)
+						            Sleep(2000)
+									Send('{tab}')
+				                    Sleep(1000)
+				                    Send('{tab}')
+				                    Sleep(1000)
+									Send('{enter}')
+									Sleep(6000)
+									$checkSDT=1
+									$i22=2
+
+								EndIf
+
+                            If $i22=1 Then
+						        MouseClick('left',720, 300,1,20)
+				                Sleep(2000)
+						        Send('{tab}')
+						        Sleep(2000)
+						        Send('{tab}')
+								Sleep(2000)
+						        Send('{enter}')
+						        Sleep(7000)
+						        Send('{tab}')
+						        Sleep(2000)
+						        Send('+84',1)
+						        Sleep(3000)
+						        Send($SDT)
+						        Sleep(2000)
+						        Send('{tab}')
+						        Sleep(2000)
+						        Send('{tab}')
+								Sleep(2000)
+						        Send('{tab}')
+						        Sleep(2000)
+						        Send('{enter}')
+						        Sleep(5000)
+						        Send('{tab}')
+						        Sleep(2000)
+						        Send('{enter}')
+						        Sleep(8000)
+
+						        ControlClick('','','','left',1,600, 60)
+				                Sleep(1000)
+				                Send('^a')
+								Sleep(1000)
+				                ClipPut('https://myaccount.google.com/signinoptions/rescuephone?')
+				                Sleep(1000)
+				                Send('^v')
+				                Sleep(2000)
+				                Send('{enter}')
+				                Sleep(12000)
+						        MouseClick('left',920, 234,1,20)
+				                Sleep(2000)
+					            MouseClick('left',470, 287,1,20)
+				                Sleep(2000)
+					            Send('{tab}')
+					            Sleep(2000)
+					            Send('{tab}')
+					            Sleep(2000)
+					            Send($g)
+					            Sleep(1000)
+					            Send('{enter}')
+					            Sleep(10000)
+								WinActivate('WinAuth')
+				                    Sleep(1000)
+				                    $pixcel=PixelSearch(10, 130,110, 190,0x00ABDA)
+				                    If IsArray($pixcel) Then
+										MouseClick('left',365, 158,1,20)
+					                    Sleep(1000)
+										MouseClick('right',370, 158,1,20)
+				                    Else
+
+					                    MouseClick('left',364,93,1,20)
+					                    Sleep(1000)
+										MouseClick('right',364,93,1,20)
+				                    EndIf
+				                    Sleep(1000)
+				                    Send('{tab}')
+				                    Sleep(1000)
+									Send('{tab}')
+				                    Sleep(1000)
+				                    Send('{tab}')
+				                    Sleep(1000)
+				                    Send('{enter}')
+				                    Sleep(300)
+				                    $code=ClipGet()
+				                    Sleep(1000)
+									MouseClick('left',400, 300,1,20)
+				                    Sleep(1000)
+				                    Send('{tab}')
+				                    Sleep(1000)
+				                    Send('{tab}')
+				                    Sleep(1000)
+				                    Send($code)
+						         	Sleep(1000)
+				                    Send('{enter}')
+				                    Sleep(10000)
+					         	$pixcel=PixelSearch(296, 341,698, 806,0xDB241E)
+					            Sleep(500)
+					            If not IsArray($pixcel) Then
+						            MouseClick('left',720, 300,1,20)
+				                    Sleep(2000)
+						            Send('{tab}')
+						            Sleep(2000)
+						            Send('{tab}')
+						            Sleep(2000)
+						            Send('{enter}')
+						            Sleep(7000)
+						            Send('{tab}')
+						            Sleep(2000)
+						            Send('+84',1)
+						            Sleep(3000)
+						            Send($SDT)
+						            Sleep(2000)
+									Send('{tab}')
+						            Sleep(2000)
+									Send('{tab}')
+						            Sleep(2000)
+						            Send('{tab}')
+						            Sleep(2000)
+						            Send('{enter}')
+						            Sleep(5000)
+							        Send('{tab}')
+						            Sleep(2000)
+						            Send('{enter}')
+							        Sleep(2000)
+
+                                EndIf
+
+								ControlClick('','','','left',1,600, 60)
+				                Sleep(1000)
+				                Send('^a')
+				                Sleep(1000)
+				                ClipPut('https://myaccount.google.com/signinoptions/rescuephone?')
+				                Sleep(1000)
+				                Send('^v')
+				                Sleep(2000)
+				                Send('{enter}')
+				                Sleep(10000)
+					            Send($g)
+								Sleep(2000)
+						        Send('{enter}')
+					            Sleep(10000)
+								WinActivate('WinAuth')
+				                    Sleep(1000)
+				                    $pixcel=PixelSearch(10, 130,110, 190,0x00ABDA)
+				                    If IsArray($pixcel) Then
+										MouseClick('left',365, 158,1,20)
+					                    Sleep(1000)
+										MouseClick('right',370, 158,1,20)
+				                    Else
+
+					                    MouseClick('left',364,93,1,20)
+					                    Sleep(1000)
+										MouseClick('right',364,93,1,20)
+				                    EndIf
+				                    Sleep(1000)
+				                    Send('{tab}')
+				                    Sleep(1000)
+									Send('{tab}')
+				                    Sleep(1000)
+				                    Send('{tab}')
+				                    Sleep(1000)
+				                    Send('{enter}')
+				                    Sleep(300)
+				                    $code=ClipGet()
+				                    Sleep(1000)
+									MouseClick('left',400, 300,1,20)
+				                    Sleep(1000)
+				                    Send('{tab}')
+				                    Sleep(1000)
+				                    Send('{tab}')
+				                    Sleep(1000)
+				                    Send($code)
+						         	Sleep(1000)
+				                    Send('{enter}')
+				                    Sleep(10000)
+
+
+				                For $i20=1 to 10
+					                $pixcel=PixelSearch(296, 341,698, 806,0xDB241E)
+					                Sleep(500)
+					                Sleep(500)
+					                If IsArray($pixcel) Then
+						                $checkSDT=1
+						                $i20=17
+						                $i22=3
+
+							        Else
+
+
+									EndIf
+						            Sleep(1000)
+					            Next
+
+							EndIf
+
+
+				        Next
+
 					    Send($g)
 					    Sleep(1000)
 					    Send('{enter}')
-					    Sleep(15000)
-						$pixcel=PixelSearch(296, 341,698, 806,0xDB241E)
-					    Sleep(500)
-					    If not IsArray($pixcel) Then
-						    MouseClick('left',720, 300,1,20)
-				            Sleep(2000)
-						    Send('{tab}')
-						    Sleep(2000)
-						    Send('{tab}')
-						    Sleep(2000)
-						    Send('{enter}')
-						    Sleep(7000)
-						    Send('{tab}')
-						    Sleep(2000)
-						    Send('+84',1)
-						    Sleep(3000)
-						    Send($SDT)
-						    Sleep(2000)
-						    Send('{tab}')
-						    Sleep(2000)
-						    Send('{tab}')
-						    Sleep(2000)
-						    Send('{tab}')
-						    Sleep(2000)
-						    Send('{enter}')
-						    Sleep(5000)
-							Send('{tab}')
-						    Sleep(2000)
-						    Send('{enter}')
-							Sleep(2000)
-
-                        EndIf
-
-					   ControlClick('','','','left',1,600, 60)
-				       Sleep(1000)
-				       Send('^a')
-				       Sleep(1000)
-				       ClipPut('https://myaccount.google.com/signinoptions/rescuephone?')
-				       Sleep(1000)
-				       Send('^v')
-				       Sleep(2000)
-				       Send('{enter}')
-				       Sleep(10000)
-					   Send($g)
-				    	Sleep(2000)
-						Send('{enter}')
 					    Sleep(10000)
 
-				       For $i20=1 to 10
-					        $pixcel=PixelSearch(296, 341,698, 806,0xDB241E)
-					        Sleep(500)
-					        Sleep(500)
-					        If IsArray($pixcel) Then
-						       $check=1
-						       $i20=17
-						       $i22=3
-
-							Else
-
-
-					        EndIf
-						      Sleep(1000)
-					   Next
-					EndIf
-
-				Next
-
-					Send($g)
-					Sleep(1000)
-					Send('{enter}')
-					Sleep(10000)
-
-						$pixcel=PixelSearch(296, 341,698, 706,0xDB241E)
-					    Sleep(500)
-					    If IsArray($pixcel) Then
+					    If $checkSDT=1 Then
+							$SDT=$SDT&'	add SDT Thành Công'
                             FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thành Công'&'	'&$i)
 
 						Else
+							$SDT=$SDT&'	add SDT Thất Bại'
 							FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thất Bại'&'	'&$i)
 
 						EndIf
-
-
-
-
-
-
-
-
 
 
 			Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
