@@ -6091,8 +6091,8 @@ $phienban='1.0.75'
 				     MouseClick('left',600, 320,1,20)  ; cho ngẫu nhiên 1 kênh ytb
 				     Sleep(5000)
 
-						$checkSDT=0
-						For $i22=1 to 2
+						 $checkSDT=0
+						For $i23=1 to 2
 				            MouseClick('left',600, 60,1,20)
 				            Sleep(1000)
 							Send('^a')
@@ -6262,11 +6262,11 @@ $phienban='1.0.75'
 									Send('{enter}')
 									Sleep(6000)
 									$checkSDT=1
-									$i22=2
+									$i23=2
 
 								EndIf
 
-                            If $i22=1 Then
+                            If $checkSDT=0 Then
 						        MouseClick('left',720, 300,1,20)
 				                Sleep(2000)
 						        Send('{tab}')
@@ -6467,6 +6467,7 @@ $phienban='1.0.75'
 							FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thất Bại'&'	'&$i)
 
 						EndIf
+
 
 
 			Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
