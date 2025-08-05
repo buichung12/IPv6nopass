@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.75'
+$phienban='1.0.76'
 
     Func _LayGmail($vpsso)
 
@@ -5521,8 +5521,6 @@ $phienban='1.0.75'
 				WinClose('Restore pages?')
 				WinClose('Restore pages')
 
-	            WinMove('','',0,0,1366,768)
-				Sleep(2000)
                 ;MouseClick('left',1280, 129,1,20)
 			    $check=0
 
@@ -5636,6 +5634,10 @@ $phienban='1.0.75'
 				MouseClick('left',1280,120,1,20)  ;tat thong bao update
 				Sleep(3000)
 				MouseClick('left',1016, 363,1,20)
+				Sleep(2000)
+
+
+				WinMove('','',0,0,1366,768)
 				Sleep(2000)
 
 				MouseClick('left',500, 60,1,20)
