@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.76'
+$phienban='1.0.77'
 
     Func _LayGmail($vpsso)
 
@@ -6093,7 +6093,7 @@ $phienban='1.0.76'
 				     MouseClick('left',600, 320,1,20)  ; cho ngẫu nhiên 1 kênh ytb
 				     Sleep(5000)
 
-						 $checkSDT=0
+					     $checkSDT=0
 						For $i23=1 to 2
 				            MouseClick('left',600, 60,1,20)
 				            Sleep(1000)
@@ -6244,28 +6244,37 @@ $phienban='1.0.76'
 
 								EndIf
 
-								$pixcel=PixelSearch(415, 396,519, 508,0xDB231E)
+								$pixcel=PixelSearch(340, 377,432, 467,0xDB241E)
 					            Sleep(500)
-								If IsArray($pixcel) Then
-                                    MouseClick('left',664, 321,1,20)
-				                    Sleep(1000)
-				                    Send('{tab}')
-				                    Sleep(1000)
-				                    Send('{tab}')
-				                    Sleep(1000)
-									Send('+84',1)
+								If not IsArray($pixcel) Then
+                                    MouseClick('left',720, 300,1,20)
+				                    Sleep(2000)
+						            Send('{tab}')
+						            Sleep(2000)
+						            Send('{tab}')
+						            Sleep(2000)
+						            Send('{enter}')
+						            Sleep(7000)
+						            Send('{tab}')
+						            Sleep(2000)
+						            Send('+84',1)
 						            Sleep(3000)
 						            Send($SDT)
 						            Sleep(2000)
-									Send('{tab}')
-				                    Sleep(1000)
-				                    Send('{tab}')
-				                    Sleep(1000)
-									Send('{enter}')
-									Sleep(6000)
+						            Send('{tab}')
+								    Sleep(2000)
+						            Send('{tab}')
+						            Sleep(2000)
+						            Send('{tab}')
+						            Sleep(2000)
+						            Send('{enter}')
+						            Sleep(6000)
+								    Send('{enter}')
+						            Sleep(6000)
+
+								Else
 									$checkSDT=1
 									$i23=2
-
 								EndIf
 
                             If $checkSDT=0 Then
@@ -6442,9 +6451,7 @@ $phienban='1.0.76'
 						                $checkSDT=1
 						                $i20=17
 						                $i22=3
-
 							        Else
-
 
 									EndIf
 						            Sleep(1000)
