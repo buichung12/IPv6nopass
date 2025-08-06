@@ -1,4 +1,4 @@
-#include <func3.au3>
+﻿#include <func3.au3>
 #RequireAdmin
 #include <ImageSearch.au3>
 #include <MsgBoxConstants.au3>
@@ -65,16 +65,12 @@ While 1
 				FileDelete(@ScriptDir&'\Gmail.txt')
 				FileDelete(@ScriptDir&'\Gmailtho.txt')
 
-				_CheckUpdateToolupdate('https://docs.google.com/document/d/1U-ygJ4ghdNsqzzvd73tFEhVHYwVXR4apvWNTzhS_klw/export?format=txt')
-				_CheckUpdateToolupdate('https://docs.google.com/document/d/1Bp2Dfajh16hcjmhgR1GR4Fmqu3KZJMC-7jdfqUR4c08/export?format=txt')  ;update sub
-				_CheckUpdateToolupdate('https://docs.google.com/document/d/1PStUUV13AuRmTXwykdKNy4iEaeW3gktWXn56zrUehfQ/export?format=txt')  ;update sub 2
 
-
-				$checkrequet=_requetGooGleDOC('https://docs.google.com/document/d/1gAGMJMKIIqJaA8TkoHWHreKaF_cGFZ_cU9dLu537RNM/export?format=txt','Gmailtho.txt')
-				$checkgmail=FileReadLine(@ScriptDir&'\Gmailtho.txt',1)
+				$checkrequet=_requetGooGleDOC('https://docs.google.com/document/d/1gAGMJMKIIqJaA8TkoHWHreKaF_cGFZ_cU9dLu537RNM/export?format=txt','Gmail.txt')
+				$checkgmail=FileReadLine(@ScriptDir&'\Gmail.txt',1)
 				If StringLen($checkgmail)<10 Then
 					Sleep(60000)
-					$checkrequet=_requetGooGleDOC('https://docs.google.com/document/d/1gAGMJMKIIqJaA8TkoHWHreKaF_cGFZ_cU9dLu537RNM/export?format=txt','Gmailtho.txt')
+					$checkrequet=_requetGooGleDOC('https://docs.google.com/document/d/1gAGMJMKIIqJaA8TkoHWHreKaF_cGFZ_cU9dLu537RNM/export?format=txt','Gmail.txt')
 				EndIf
 				_LayGmail($vpsso)
 
@@ -148,42 +144,18 @@ While 1
 				Sleep(1000)
 				$kiemtratrinhduyet2=1
 				$checkprofile=1
+
+				For $i20=1 to Random(2,20,1)
+					        MsgBox(0,0,'chờ khởi động:'&$i&'	'&$vpsso&'	 phút:'&$i20,60)  ;b?n 1.1.60
+				Next
+
 While 1   ; vong tra lai gia tr
 	           ; FileDelete(@ScriptDir&'\Gmail.txt')
-				FileDelete(@ScriptDir&'\Gmailtho.txt')
-
-	            $i6=Mod($vpsso,5)
-				If $i6=0 Then $i6=5
-	        If $i6=1 Then
-				$profileso=1
-				;If $checkprofile=1 Then $profileso=10
-				$i7=20
-			EndIf
-			If $i6=2 Then
-				$profileso=21
-				;If $checkprofile=1 Then $profileso=30
-				$i7=40
-			EndIf
-			If $i6=3 Then
-				$profileso=41
-				;If $checkprofile=1 Then $profileso=50
-				$i7=60
-			EndIf
-			If $i6=4 Then
-				$profileso=61
-				;If $checkprofile=1 Then $profileso=70
-				$i7=80
-			EndIf
-			If $i6=5 Then
-				$profileso=81
-				;If $checkprofile=1 Then $profileso=90
-				$i7=100
-			EndIf
-
+			FileDelete(@ScriptDir&'\Gmailtho.txt')
 			$checkprofile=0    ; de profile dau tien random conf lan sau bang 1
 
 
- For $i5=$profileso to $i7
+ For $i5=1 to 95
 	            HotKeySet("{esc}", "_Exit")
 
                 FileDelete(@ScriptDir&'\linkkenhchaySUB.txt')
@@ -199,60 +171,26 @@ While 1   ; vong tra lai gia tr
 
                 _CapNhatPhienBan()
 
-				_requetGooGleDOC('https://docs.google.com/document/d/1ovARvIbwSXide3zh42IbuWuGmgu8NW4HaFiwh2LJaOM/export?format=txt','linkkenhchaySUB2.txt')
+				ToolTip('KenhSo:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 0'&'	vpsso:'&$vpsso&'	phien ban:'&$phienban,0,0)
 
 
-				For $i20=1 to 10
-                    $linkkenh=FileReadLine(@ScriptDir&'\linkkenhchaySUB2.txt',$nhomkenh*10+$i20)
-					Sleep(100)
-					FileWriteLine(@ScriptDir&'\linkkenhchaySUB.txt',$linkkenh)
-					Sleep(100)
-			    Next
+				_khoidongFireFox2($i5,$vpsso)
+				$checkchonprofile=_chonProFileFFv6($i5,$i,$vpsso)
 
+				If 	$checkchonprofile=1 Then
+					_subIpv6($vpsso,$i,$i5)
+				EndIf
 
+			    _closeTrinhDuyet($i)
 
-	           $thoigianDau=0
-	  For $i=$Gmailso To 10
-                 ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 0'&'	vpsso:'&$vpsso&'	phien ban:'&$phienban,0,0)
-				$checkTG=1
-                 $checkchonprofile=0
-            ;If $i<>5 Then
-				; $idangnhap=_khoidongFireaFox2($i,$vpsso)
-				 ;$check=_FakeIPOptionV6($i,$vpsso)
-
-				;If $check=1 Then
-						ToolTip('profile:'&$i5&'	 BLU so:'&$i&'	vongxoay:'&$vongxoaytho&'	nhom kenh:'&$nhomkenh&'	cummay 0'&'	vpsso:'&$vpsso&'	phien ban:'&$phienban,0,0)
-						_khoidongFireFox2($i,$vpsso)
-					    $checkchonprofile=_chonProFileFFv6($i5,$i,$vpsso)
-                        $ThuTukenh=$i+$vongxoaytho
-				        If $ThuTukenh=11 Then $ThuTukenh=1
-						If $ThuTukenh=12 Then $ThuTukenh=2
-				        If $ThuTukenh=13 Then $ThuTukenh=3
-				        If $ThuTukenh=14 Then $ThuTukenh=4
-				        If $ThuTukenh=15 Then $ThuTukenh=5
-				        If $ThuTukenh=16 Then $ThuTukenh=6
-				        If $ThuTukenh=17 Then $ThuTukenh=7
-				        If $ThuTukenh=18 Then $ThuTukenh=8
-				        If $ThuTukenh=19 Then $ThuTukenh=9
-				        If $ThuTukenh=20 Then $ThuTukenh=10
-
-			            If 	$checkchonprofile=1 Then
-							_subIpv6($ThuTukenh,$vpsso,$i,$i5)
-						EndIf
-
-						_closeTrinhDuyet($i)
-
-				;EndIf
-			;EndIf
-
-	  Next     ;ket thuc vong xem cac kenh phu
+				For $i20=1 to 60
+					MsgBox(0,0,'chờ khởi động:'&$i&'	'&$vpsso&'	 phút:'&$i20,60)  ;b?n 1.1.60
+				Next
 
 					$Gmailso=1
                     ProcessClose('Ground.exe')
   Next
 
-                    $profileso=1
-					$Gmailso =1
 WEnd   ; vong tra lai gia tr
 
 
