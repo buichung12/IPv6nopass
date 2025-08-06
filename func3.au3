@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.79'
+$phienban='1.0.80'
 
     Func _ThemSDT($SDT)
 
@@ -2554,7 +2554,7 @@ $phienban='1.0.79'
 							    Sleep(1000)
 						        $sodonglinkdasub=_FileCountLines(@ScriptDir&"\LinkDaSub.txt")
 								Sleep(100)
-						        For $i22=$sodonglinkdasub-15 to $sodonglinkdasub
+						        For $i22=$sodonglinkdasub-5 to $sodonglinkdasub
                                     $linkdasub=FileReadLine(@ScriptDir&"\LinkDaSub.txt",$i22)
 									Sleep(100)
                                     If $linkkenh=$linkdasub Then
