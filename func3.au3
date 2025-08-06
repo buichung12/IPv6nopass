@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.78'
+$phienban='1.0.79'
 
     Func _ThemSDT($SDT)
 
@@ -45,7 +45,87 @@ $phienban='1.0.78'
 						        Sleep(6000)
 	EndFunc
 
-    Func _LayMaAuthen()
+    Func _LayMaAuthen($Key2fa)
+
+			If StringLen($Key2fa)>30	Then
+				Sleep(2000)
+				$Key2fa=StringReplace($Key2fa,'|',' ')
+				Sleep(1000)
+                Run('C:\Users\'&@UserName&'\Desktop\WinAuth')
+				Sleep(5000)
+				WinActivate('WinAuth')
+				Sleep(1000)
+				WinMove('','',0,0,415,250)
+				Sleep(2000)
+
+				For $i20=1 to 3
+				            $pixcel=PixelSearch(10, 130,110, 190,0x00ABDA)  ; xoa Auth cu
+				            If IsArray($pixcel) Then
+					            MouseClick('right',64,91,1,20)
+				                Sleep(2000)
+					            Send('{tab}')
+				                Sleep(2000)
+					            Send('{tab}')
+				                Sleep(2000)
+						        Send('{tab}')
+				                Sleep(2000)
+					            Send('{tab}')
+				                Sleep(2000)
+					            Send('{tab}')
+				                Sleep(2000)
+					            Send('{enter}')
+				                Sleep(2000)
+						        Send('{tab}')
+				                Sleep(2000)
+					            Send('{enter}')
+						        Sleep(4000)
+					        Else
+						        $i20=3
+							EndIf
+				Next
+
+				        Sleep(1000)
+				        MouseClick('left',50,150,1,20)
+						Sleep(3000)
+						Send('{tab}')
+				        Sleep(3000)
+				        Send('{enter}')
+                        Sleep(5000)
+				        Send('{tab}')
+				        Sleep(3000)
+				        Send($Key2fa)
+				        Sleep(3000)
+				        Send('{enter}')
+				        Sleep(5000)
+				        Send('{enter}')
+				        Sleep(5000)
+						Send('{enter}')
+						Sleep(3000)
+						Send('{enter}')
+						Sleep(3000)
+
+				For $i20=1 to 10
+						$checkProtection=WinExists('Protection')
+						If $checkProtection=1 Then
+							$i20=10
+
+							MouseClick('left',776,506,1,20)
+							Sleep(3000)
+							MouseClick('left',810,655,1,20)
+							Sleep(1000)
+							WinMove('Protection','',0,0)
+							Sleep(2000)
+							MouseClick('left',752, 16,1,20)
+							Sleep(1000)
+							WinClose('Protection')
+							Sleep(1000)
+
+						EndIf
+						Sleep(2000)
+				Next
+
+              EndIf
+
 		                    WinActivate('WinAuth')
 				            Sleep(1000)
 				            $pixcel=PixelSearch(10, 130,110, 190,0x00ABDA)
@@ -5505,88 +5585,6 @@ $phienban='1.0.78'
 						   FileDelete(@ScriptDir&'\Gmailtest.txt')
 
 
-               If StringLen($Key2fa)>30	Then
-				Sleep(2000)
-				$Key2fa=StringReplace($Key2fa,'|',' ')
-				Sleep(1000)
-                Run('C:\Users\'&@UserName&'\Desktop\WinAuth')
-				Sleep(5000)
-				WinActivate('WinAuth')
-				Sleep(1000)
-				WinMove('','',0,0,415,250)
-				Sleep(2000)
-
-				For $i20=1 to 3
-				            $pixcel=PixelSearch(10, 130,110, 190,0x00ABDA)  ; xoa Auth cu
-				            If IsArray($pixcel) Then
-					            MouseClick('right',64,91,1,20)
-				                Sleep(2000)
-					            Send('{tab}')
-				                Sleep(2000)
-					            Send('{tab}')
-				                Sleep(2000)
-						        Send('{tab}')
-				                Sleep(2000)
-					            Send('{tab}')
-				                Sleep(2000)
-					            Send('{tab}')
-				                Sleep(2000)
-					            Send('{enter}')
-				                Sleep(2000)
-						        Send('{tab}')
-				                Sleep(2000)
-					            Send('{enter}')
-						        Sleep(4000)
-					        Else
-						        $i20=3
-							EndIf
-				Next
-
-				        Sleep(1000)
-				        MouseClick('left',50,150,1,20)
-						Sleep(3000)
-						Send('{tab}')
-				        Sleep(3000)
-				        Send('{enter}')
-                        Sleep(5000)
-				        Send('{tab}')
-				        Sleep(3000)
-				        Send($Key2fa)
-				        Sleep(3000)
-				        Send('{enter}')
-				        Sleep(5000)
-				        Send('{enter}')
-				        Sleep(5000)
-						Send('{enter}')
-						Sleep(3000)
-						Send('{enter}')
-						Sleep(3000)
-
-				For $i20=1 to 10
-						$checkProtection=WinExists('Protection')
-						If $checkProtection=1 Then
-							$i20=10
-
-							MouseClick('left',776,506,1,20)
-							Sleep(3000)
-							MouseClick('left',810,655,1,20)
-							Sleep(1000)
-							WinMove('Protection','',0,0)
-							Sleep(2000)
-							MouseClick('left',752, 16,1,20)
-							Sleep(1000)
-							WinClose('Protection')
-							Sleep(1000)
-
-						EndIf
-						Sleep(2000)
-				Next
-
-              EndIf
-
-
-
-
 				WinClose('Restore pages?')
 				WinClose('Restore pages')
 
@@ -6209,7 +6207,7 @@ $phienban='1.0.78'
 					            Sleep(10000)
                             EndIf
 							If StringInStr($link, "totp") Then
-                                _LayMaAuthen()
+                                _LayMaAuthen($Key2fa)
                             EndIf
 							If StringInStr($link, "rescuephone") Then
                                 _ThemSDT($SDT)
