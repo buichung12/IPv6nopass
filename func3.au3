@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.82'
+$phienban='1.0.83'
 
     Func _ThemSDT($SDT)
 
@@ -43,6 +43,42 @@ $phienban='1.0.82'
 						        Sleep(2000)
 						        Send('{enter}')
 						        Sleep(6000)
+	EndFunc
+	Func _ThemSDT2($SDT)
+
+								MouseClick('left',629, 283,1,20)
+				                Sleep(2000)
+						        Send('{tab}')
+						        Sleep(2000)
+						        Send('{tab}')
+						        Sleep(2000)
+								Send('{tab}')
+						        Sleep(2000)
+								Send('{tab}')
+						        Sleep(2000)
+								Send('{tab}')
+						        Sleep(2000)
+						        Send('{enter}')
+						        Sleep(4000)
+						        Send('+84',1)
+						        Sleep(3000)
+						        Send($SDT,1)
+						        Sleep(2000)
+								Sleep(2000)
+								Send('{tab}')
+						        Sleep(2000)
+								Send('{tab}')
+						        Sleep(2000)
+						        Send('{enter}')
+						        Sleep(6000)
+								$pixcel=PixelSearch(238, 587,533, 728,0xF09D00)
+							Sleep(500)
+							If not IsArray($pixcel) Then
+								$checkSDT=1
+                            EndIf
+
+			Return 	$checkSDT
+
 	EndFunc
 
     Func _LayMaAuthen($Key2fa)
@@ -5611,13 +5647,13 @@ $phienban='1.0.82'
 				     MouseClick('left',600, 320,1,20)  ; cho ngẫu nhiên 1 kênh ytb
 				     Sleep(5000)
 
-					  $checkSDT=0
+					   $checkSDT=0
 					  For $i23=1 to 2
 				            MouseClick('left',600, 60,1,20)
 				            Sleep(1000)
 							Send('^a')
 				            Sleep(1000)
-				            ClipPut('https://myaccount.google.com/signinoptions/rescuephone?')
+				            ClipPut('https://myaccount.google.com/signinoptions/recoveryoptions?')
 							Sleep(1000)
 				            Send('^v')
 				            Sleep(2000)
@@ -5633,7 +5669,10 @@ $phienban='1.0.82'
 					        Next
 						For $i24=1 to 10
                           If $checkSDT=0 Then
+							  $check=0
 							MouseClick('left',480, 22,1,20)
+                            Sleep(2000)
+							MouseClick('left',495, 22,1,20)
                             Sleep(2000)
                             MouseClick('left',600, 60,1,20)
 				            Sleep(1000)
@@ -5662,8 +5701,15 @@ $phienban='1.0.82'
                             EndIf
 							If StringInStr($link, "rescuephone") Then
                                 _ThemSDT($SDT)
-
                             EndIf
+							If StringInStr($link, "recoveryoptions") Then
+                                $check=_ThemSDT2($SDT)
+                            EndIf
+							If $check=1 Then
+                                $checkSDT=1
+								$i23=2
+								$i24=10
+							EndIf
 							Sleep(6000)
 							$pixcel=PixelSearch(297, 247,538, 630,0xDB231E)
 							Sleep(500)
