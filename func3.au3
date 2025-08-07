@@ -449,7 +449,7 @@ $phienban='1.0.85'
 				if  $i21=3 Then
                     _GetDOSOutput('start chrome "https://mega.nz/file/js4U1QhB#WxPscJD1z71PYmEKAa7BDCHJ9r7boRtPlhh7MaEvQXY"')
 					Sleep(15000)
-                    $pixcel=PixelSearch(818, 464,1290, 743,0x2CC294)   ; xoa loi edge
+                    $pixcel=PixelSearch(818, 464,1290, 743,0x2AC091)   ; xoa loi edge
 					If IsArray($pixcel) Then
                         Sleep(2000)
 						MouseClick('left',$pixcel[0]+5,$pixcel[1],1,20)
@@ -461,7 +461,7 @@ $phienban='1.0.85'
 				if  $i21=4 Then
 					_GetDOSOutput('start chrome "https://mega.nz/file/FMxXmCqb#xqbX3IXIweIEE7K4smO0LUfk0BEtImTRMV2v_tf1D_0"')
 					Sleep(15000)
-                    $pixcel=PixelSearch(818, 464,1290, 743,0x2CC294)   ; xoa loi edge
+                    $pixcel=PixelSearch(818, 464,1290, 743,0x2AC091)   ; xoa loi edge
 					If IsArray($pixcel) Then
                         Sleep(2000)
 						MouseClick('left',$pixcel[0]+5,$pixcel[1],1,20)
@@ -2764,11 +2764,8 @@ $phienban='1.0.85'
 					EndIf
 
 				    Sleep(3000)     ;thoi gian nghi
-
-
 					WinMove('','',0,0,500,800)  ; thu nho tap
 					Sleep(2000)
-
 
 					If $linkvideo=0 Then
                          ToolTip("link trang chu"&'	phien ban:'&$phienban,0,0)
