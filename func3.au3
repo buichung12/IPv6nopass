@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.81'
+$phienban='1.0.82'
 
     Func _ThemSDT($SDT)
 
@@ -355,7 +355,7 @@ $phienban='1.0.81'
             $vpsso=Random(1,100,1)
 		    Sleep(2000)
 			$check=0
-            _khoidongFireFox($i)
+            _khoidongFireFox()
 			_loginGmail($i)
 			$check=_chonProFileFFv6($i5,$i,$vpsso)
 		    Sleep(2000)
@@ -1256,7 +1256,7 @@ $phienban='1.0.81'
 
 				_resetMang($i)
 				;_FakeIPOptionV6($i,$vpsso)
-				_khoidongFireFox($i)
+				_khoidongFireFox()
 
 				WinSetState('Windows Security','',@SW_HIDE)
 
@@ -1324,7 +1324,7 @@ $phienban='1.0.81'
 					_closeTrinhDuyet($i)
 					_resetMang($i)
 					;_FakeIPOptionV6($i,$vpsso)
-					_khoidongFireFox($i)
+					_khoidongFireFox()
 				    ControlClick('','','','left',1,600, 60)
 				    Sleep(1000)
 				    Send('^a')
@@ -3706,7 +3706,7 @@ $phienban='1.0.81'
 
 	    EndFunc
 
-	    Func _khoidongFireFox($i)
+	    Func _khoidongFireFox()
 			        $dangnhap=0
 
 			        WinClose('trinh duyet')
@@ -3716,7 +3716,6 @@ $phienban='1.0.81'
 					Sleep(1000)
                     WinClose('Server Manager')
 					Sleep(2000)
-					$linkblu2=''
 
                     WinClose('Proxy Client Tinsoft')
 
@@ -3725,7 +3724,7 @@ $phienban='1.0.81'
 					MouseClick('left',1366,10,1,20)
 					Sleep(1000)
 
-					If $i=1 Then $linkblu="C:\Program Files\Google\Chrome\Application\chrome.exe"
+					$linkblu="C:\Program Files\Google\Chrome\Application\chrome.exe"
 
 					Sleep(2000)
 					Run( $linkblu,'')
@@ -3735,32 +3734,14 @@ $phienban='1.0.81'
                     Sleep(100)
 					If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
 					Sleep(100)
-					If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
 					If $var[0][0] = 0 Then
-	                    If $i=1 Then
-						    ;$linkblu='C:\Program Files\Microsoft\Edge\Application\msedge.exe'
-						    Run( $linkblu2,'')
-					    EndIf
-					    If $i=7 Then
-						    ;$linkblu='C:\Program Files\Mozilla Firefox\firefox.exe'
-						    Run( $linkblu2,'')
-					    EndIf
-					    If $i=6 Then
-						    ;$linkblu="C:\Users\"&@UserName&"\AppData\Local\Google\Chrome\Application\chrome.exe"
-		        	        Run( $linkblu2,'')
-					    EndIf
 
-					    Sleep(8000)
-						If $i=6 or 7 Then
-						    Send('{enter}')
-						EndIf
                     EndIf
 
 					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
                     Sleep(100)
 					If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
 					Sleep(100)
-					If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
 
 					WinClose('Install Google Translate extension to translate this page?')
 					WinClose('Restore pages?')
@@ -3847,8 +3828,6 @@ $phienban='1.0.81'
                     Sleep(1000)
 					If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
 					Sleep(1000)
-					If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
-
 
 				  If $var[0][0]<>0 Then
 					For $i10 = 1 to $var[0][0]
@@ -3857,32 +3836,6 @@ $phienban='1.0.81'
 						WinSetState($var[$i10][1],'',@SW_RESTORE)
 						Sleep(1000)
 
-						If $i=7 or $i=9 Then
-                           MouseClick('left',830,240,1,20)
-						   Sleep(2000)
-						   MouseClick('left',830,265,1,20)
-						   Sleep(2000)
-						   MouseClick('left',830,285,1,20)
-						   Sleep(2000)
-
-						EndIf
-                        If $i<>1 Then
-						    MouseClick('left',658, 240,1,20)
-						    Sleep(3000)
-						    MouseClick('left',658, 240,1,20)
-						    Sleep(3000)
-						EndIf
-
-						 If $i=4 Then
-						    Send('{tab}')
-							Sleep(2000)
-							Send('{enter}')
-							Sleep(2000)
-							ControlClick('','','','left',1,1327,98)
-						    Sleep(100)
-						EndIf
-
-						If  $i=10 or $i=5 Then
                            MouseClick('left',500,500,1,20)
 						   Sleep(2000)
 						   Send('{tab}')
@@ -3893,72 +3846,12 @@ $phienban='1.0.81'
 						   Sleep(2000)
 						   Send('{enter}')
 						   Sleep(3000)
-						EndIf
 
 						WinClose('Restore pages?')
 					    WinClose('Restore pages')
 
-						If $i=7 Then
-                            $pixcel=PixelSearch(251, 87,1209, 645,0xFD2D51)
-					        If IsArray($pixcel) Then
-                                MouseClick('left',$pixcel[0]+5,$pixcel[1]+5,1,20)
-								Sleep(2000)
-								Send('{tab}')
-								Sleep(2000)
-								Send('{tab}')
-								Sleep(2000)
-								Send('{SPACE}')
-								Sleep(2000)
-								Send('{tab}')
-								Sleep(2000)
-								Send('{tab}')
-								Sleep(2000)
-								Send('{enter}')
-								Sleep(3000)
-
-                            EndIf
-
-						EndIf
-
-
 						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(3000)
-
-						If $i=7 or $i=9 Then
-                           MouseClick('left',830,240,1,20)
-						   Sleep(2000)
-						   MouseClick('left',830,265,1,20)
-						   Sleep(2000)
-
-						EndIf
-						If $i=7 Then
-						   MouseClick('left',770,275,1,20)
-						   MouseClick('left',770,265,1,20)
-						EndIf
-						If $i=7 Then
-						   MouseClick('left',1330,135,1,20)
-						   Sleep(1000)
-						   MouseClick('left',1330,103,1,20)
-						EndIf
-						If $i=1 Then
-							MouseClick('left',300,650,1,20)
-							Sleep(3000)
-						    MouseClick('left',800,120,1,20)
-						EndIf
-						If $i=2 Then
-						   MouseClick('left',1325,106,1,20)
-						EndIf
-						If $i=3 Then
-						   MouseClick('left',1325,109,1,20)
-						   Sleep(2000)
-						   MouseClick('left',1325,140,1,20)
-						   Sleep(2000)
-						EndIf
-						If $i=4 Then
-						   ControlClick('','','','left',1,1327,98)
-						    Sleep(100)
-						   Sleep(2000)
-					    EndIf
 
 
                     #cs
@@ -4208,36 +4101,6 @@ $phienban='1.0.81'
 						EndIf
 					#ce
 
-
-					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
-					    If $i=8 Then ControlClick($var[$i10][1],'','','left',1,478, 26)    ; tat tab thua
-					    If $i=7 Then ControlClick($var[$i10][1],'','','left',1,478, 22)    ; tat tab thua
-					    If $i=6 Then ControlClick($var[$i10][1],'','','left',1,479, 26)    ; tat tab thua
-					    If $i=5 Then ControlClick($var[$i10][1],'','','left',1,426, 30)    ; tat tab thua
-					    If $i=4 Then ControlClick($var[$i10][1],'','','left',1,479, 25)    ; tat tab thua
-					    If $i=3 Then ControlClick($var[$i10][1],'','','left',1,573, 25)    ; tat tab thua
-					    If $i=2 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
-					    If $i=1 Then ControlClick($var[$i10][1],'','','left',1,427, 26)    ; tat tab thua
-                        If $i=1 Then ControlClick($var[$i10][1],'','','left',1,512, 27)   ; tat thong bao
-					    Sleep(1000)
-					   ; If $i=10 Then ControlClick($var[$i10][1],'','','left',1,389, 33)    ; tat tab thua
-					    If $i=9 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
-					    If $i=8 Then ControlClick($var[$i10][1],'','','left',1,478, 26)    ; tat tab thua
-					    If $i=7 Then ControlClick($var[$i10][1],'','','left',1,478, 22)    ; tat tab thua
-					    If $i=6 Then ControlClick($var[$i10][1],'','','left',1,479, 26)    ; tat tab thua
-					    If $i=5 Then ControlClick($var[$i10][1],'','','left',1,426, 30)    ; tat tab thua
-						Sleep(1000)
-						If $i=5 Then ControlClick($var[$i10][1],'','','left',1,426, 30)    ; tat tab thua
-						Sleep(1000)
-						If $i=5 Then ControlClick($var[$i10][1],'','','left',1,426, 30)    ; tat tab thua
-						Sleep(1000)
-						If $i=5 Then ControlClick($var[$i10][1],'','','left',1,426, 30)    ; tat tab thua
-						Sleep(1000)
-					    If $i=4 Then ControlClick($var[$i10][1],'','','left',1,479, 25)    ; tat tab thua
-					    If $i=3 Then ControlClick($var[$i10][1],'','','left',1,573, 25)    ; tat tab thua
-					    If $i=2 Then ControlClick($var[$i10][1],'','','left',1,478, 23)    ; tat tab thua
-					    If $i=1 Then ControlClick($var[$i10][1],'','','left',1,427, 26)    ; tat tab thua
-                        If $i=1 Then ControlClick($var[$i10][1],'','','left',1,512, 27)   ; tat thong bao
 					    Sleep(1000)
                       EndIf
 					Next
@@ -6095,7 +5958,7 @@ $phienban='1.0.81'
         EndFunc
 
         Func _postdataGoogleDOC($link)
-			_khoidongFireFox(10)
+			_khoidongFireFox()
 			Sleep(5000)
 			MouseClick('left',600,60,1,20)
 			Sleep(2000)
