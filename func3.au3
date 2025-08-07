@@ -46,7 +46,7 @@ $phienban='1.0.85'
 	EndFunc
 	Func _ThemSDT2($SDT)
                 $checkSDT=0
-								MouseClick('left',629, 283,1,20)
+								MouseClick('left',500, 260,1,20)
 				                Sleep(2000)
 						        Send('{tab}')
 						        Sleep(2000)
