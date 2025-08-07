@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.83'
+$phienban='1.0.84'
 
     Func _ThemSDT($SDT)
 
@@ -385,21 +385,6 @@ $phienban='1.0.83'
 				EndIf
 	EndFunc
 
-    Func _LayIDvaDangnhap($i5,$i)
-		;For $icheck2=1 to 2
-			ToolTip('Gmailso:'&$i&'	phien ban:'&$phienban,0,0)
-            $vpsso=Random(1,100,1)
-		    Sleep(2000)
-			$check=0
-            _khoidongFireFox()
-			_loginGmail($i)
-			$check=_chonProFileFFv6($i5,$i,$vpsso)
-		    Sleep(2000)
-			If $check=1 Then $icheck2=2
-			_closeTrinhDuyet($i)
-		;Next
-			Return $check
-	EndFunc
 
     Func _CapNhatPhienBan()
 
@@ -1296,7 +1281,7 @@ $phienban='1.0.83'
 
 				WinSetState('Windows Security','',@SW_HIDE)
 
-                $check=_loginGmail($i)
+                $check=_loginGmail($vpsso)
                If $check=0 Then
 				ControlClick('','','','left',1,600, 60)
 				Sleep(1000)
@@ -1372,7 +1357,7 @@ $phienban='1.0.83'
 			        Sleep(1000)
 			        If IsArray($pixcel)  Then
                         ;_XoaDaTaTrinhDuyet($i)
-						_loginGmail($i)
+						_loginGmail($vpsso)
 					    ControlClick('','','','left',1,600, 60)
 				        Sleep(1000)
 				        Send('^a')
@@ -5051,9 +5036,9 @@ $phienban='1.0.83'
 
 		EndFunc
 
-        Func _loginGmail($i)
-	                       ToolTip('dang nhap Gmail so:'&$i&'	phien ban:'&$phienban,0,0)
-						   $e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)    ;l?y ID , pass, mail kh𩠰h?c
+        Func _loginGmail($vpsso)
+	                       ToolTip('dang nhap Gmail so:'&$vpsso&'	phien ban:'&$phienban,0,0)
+						   $e=FileReadLine(@ScriptDir&'\Gmail.txt',$vpsso)    ;l?y ID , pass, mail kh𩠰h?c
 						   If StringLen($e)<10 Then
 							   MsgBox(0,0,'khong co gmail',1)
 							   _GetDOSOutput('shutdown -r -t 0')
@@ -5077,33 +5062,6 @@ $phienban='1.0.83'
 
                 ;MouseClick('left',1280, 129,1,20)
 			    $check=0
-
-				If $i=8 Then
-
-                    MouseClick('left',133, 62,1,20)
-                    Sleep(2000)
-					MouseClick('left',206, 188,1,20)
-                    Sleep(2000)
-					MouseClick('left',793, 139,1,20)
-                    Sleep(2000)
-					MouseClick('left',633, 566,1,20)
-                    Sleep(2000)
-					MouseClick('left',527, 243,1,20)
-                    Sleep(2000)
-					MouseClick('left',633, 566,1,20)
-                    Sleep(2000)
-					MouseClick('left',533, 264,1,20)
-                    Sleep(2000)
-					MouseClick('left',633, 566,1,20)
-                    Sleep(2000)
-					MouseClick('left',532, 285,1,20)
-                    Sleep(2000)
-					MouseClick('left',633, 566,1,20)
-                    Sleep(2000)
-					MouseClick('left',857, 566,1,20)
-                    Sleep(2000)
-
-				EndIf
 
                 MouseClick('left',500, 60,1,20)
                 Sleep(2000)
@@ -5162,26 +5120,9 @@ $phienban='1.0.83'
 				EndIf
 				Sleep(1000)
 
-				If $i=2 Or $i=4 Then                      ; loi khong load duoc trinh duyet brive
-				    MouseClick('left',850, 273,1,20)
-					Sleep(2000)
-				EndIf
-				If $i=6  Then
-				    MouseClick('left',990,110,1,20)
-					Sleep(7000)
-                EndIf
-				If $i=9  Then
-				    MouseClick('left',933,150,1,20)
-					Sleep(7000)
-                EndIf
-				If $i=10 or $i=8  Then
-				    MouseClick('left',1039,155,1,20)
-					Sleep(7000)
-                EndIf
-				If $i=1  Then
-				    MouseClick('left',650,270,1,20)
-					Sleep(7000)
-                EndIf
+				MouseClick('left',1039,155,1,20)
+				Sleep(7000)
+
 
 				MouseClick('left',1280,163,1,20)  ;tat thong bao update
 				Sleep(2000)
@@ -5394,8 +5335,6 @@ $phienban='1.0.83'
 			   EndIf
 			  Next
 
-
-				If $i=6 Then MouseClick('left',380, 225,1,20)
 				Sleep(2000)
 				$x3=0
 				$y3=0
@@ -5530,61 +5469,10 @@ $phienban='1.0.83'
 				EndIf
 
 
-			   If $i=4 Then MouseClick('left',1025, 230,1,20);update pass
-
-				If $i=1 Then MouseClick('left',927, 282,1,20)   ;update pass
-				If $i=2 Then MouseClick('left',1000, 248,1,20);update pass
-				If $i=2 Then MouseClick('left',980, 262,1,20);update pass
-				If $i=3 Then MouseClick('left',816, 266,1,20);update pass
-				If $i=3 Then MouseClick('left',816, 243,1,20);update pass
-				If $i=4 Then MouseClick('left',1025, 230,1,20);update pass
-				If $i=5 Then
-					Sleep(10000)
-					MouseClick('left',1277, 104,1,20)
-				EndIf
-
-				If $i=6 Then MouseClick('left',582, 304 ,1,20);update pass
-				If $i=7 Then MouseClick('left',757, 436,1,20);update pass
-				;If $i=8 Then MouseClick('left',757, 436,1,20)
-				If $i=9 Then MouseClick('left',430, 343,1,20);update pass
-				If $i=9 Then MouseClick('left',460, 343,1,20);update pass
-				Sleep(1000)
-				If $i=9 Then MouseClick('left',656, 434,1,20);update pass
-				If $i=10 Then MouseClick('left',456, 344,1,20);update pass
-                Sleep(2000)
-				If $i=1 Then MouseClick('left',936, 312,1,20)
-				If $i=2 Then MouseClick('left',980, 248,1,20)
-				If $i=3 Then MouseClick('left',823, 262,1,20)
-				If $i=4 Then MouseClick('left',1030, 228,1,20)
-				If $i=5 Then MouseClick('left',1219, 101,1,20)
-				If $i=6 Then MouseClick('left',390,224 ,1,20)
-				If $i=7 Then MouseClick('left',555,340,1,20)
-				If $i=9 Then MouseClick('left',456, 344,1,20)  ;luu mat khau $1
-
-                Sleep(2000)
-				If $i=1 Then MouseClick('left',931, 240,1,20)  ;luu mat khau $1
-				If $i=2 Then MouseClick('left',1000, 229,1,20)  ;luu mat khau $1
-				If $i=2 Then MouseClick('left',980, 262,1,20);update pass
-				If $i=3 Then MouseClick('left',1193, 347,1,20)  ;luu mat khau $1
-				If $i=4 Then MouseClick('left',1099, 341,1,20)  ;luu mat khau $1
-				If $i=5 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
-				If $i=10 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
-				If $i=9 Then MouseClick('left',385, 320,1,20)  ;luu mat khau $1
-				Sleep(1000)
-
-				If $i=1 Then MouseClick('left',929, 235,1,20)  ;luu mat khau $1
-				If $i=2 Then MouseClick('left',1027, 229,1,20)  ;luu mat khau $1
-				If $i=3 Then MouseClick('left',1193, 347,1,20)  ;luu mat khau $1
-				If $i=4 Then MouseClick('left',1099, 341,1,20)  ;luu mat khau $1
-				If $i=5 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
-				If $i=5 Then MouseClick('left',1190, 101,1,20)  ;luu mat khau $1
-				If $i=10 Then MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
-				If $i=9 Then MouseClick('left',385, 320,1,20)  ;luu mat khau $1
+				MouseClick('left',456, 344,1,20);update pass
+				MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
+				MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
 				Sleep(2000)
-				If $i=4 Then MouseClick('left',1036, 226,1,20)
-				;If $i=5 Then MouseClick('left',850,60,1,20)
-
-
 				$pixcel=PixelSearch(715, 497,973, 752,0x0B57D0)
 				If IsArray($pixcel) Then
 					$i20=20
@@ -5727,11 +5615,11 @@ $phienban='1.0.83'
 
 					    If $checkSDT=1 Then
 							$SDT=$SDT&'	add SDT Thành Công'
-                            FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thành Công'&'	'&$i)
+                            FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thành Công'&'	'&$vpsso)
 
 						Else
 							$SDT=$SDT&'	add SDT Thất Bại'
-							FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thất Bại'&'	'&$i)
+							FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thất Bại'&'	'&$vpsso)
 
 						EndIf
 
