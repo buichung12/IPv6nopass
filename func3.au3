@@ -1282,63 +1282,6 @@ $phienban='1.0.88'
 				WinSetState('Windows Security','',@SW_HIDE)
 
                 $check=_loginGmail($vpsso)
-               If $check=0 Then
-				ControlClick('','','','left',1,600, 60)
-				Sleep(1000)
-				Send('^a')
-				Sleep(500)
-				Sleep(1000)
-				Send('https://myaccount.google.com/')
-				Sleep(2000)
-				Send('?'&'fgbfasdhdfgf'&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1)))
-				Sleep(2000)
-				Send('{enter}')
-				Sleep(5000)
-				Send($g)
-				Sleep(1000)
-				Send('{enter}')
-				Sleep(7000)
-
-				If $i=1 Then
-					$pixcel=PixelSearch(19, 158,227, 249,0xC2E7FF)   ; xoa loi edge
-					    If IsArray($pixcel) Then
-						    Sleep(2000)
-							Send('^+,')
-							Sleep(1000)
-						EndIf
-				        Sleep(1000)
-				EndIf
-				Sleep(2000)
-				ControlClick('','','','left',1,600, 60)
-				Sleep(1000)
-				Send('^a')
-				Sleep(500)
-				Sleep(1000)
-				Send('https://myaccount.google.com/')
-				Sleep(2000)
-				Send('?'&'fgbfasdhdfgf'&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1)))
-				Sleep(2000)
-				Send('{enter}')
-				Sleep(10000)
-				Send($g)
-				Sleep(1000)
-				Send('{enter}')
-				Sleep(7000)
-
-				For $i20=1 to 10
-					$pixcel=PixelSearch(19, 158,227, 249,0xC2E7FF)
-					Sleep(500)
-					If IsArray($pixcel) Then
-						$check=1
-						$i20=17
-						$i2=2
-					EndIf
-						Sleep(1000)
-				Next
-               EndIf
-				;MsgBox(0,0,$check)
-
-                $check2=1
 
 				If $check=0 Then
 
@@ -1346,47 +1289,8 @@ $phienban='1.0.88'
 					_resetMang($i)
 					;_FakeIPOptionV6($i,$vpsso)
 					_khoidongFireFox()
-				    ControlClick('','','','left',1,600, 60)
-				    Sleep(1000)
-				    Send('^a')
-				    Sleep(500)
-				    Sleep(1000)
-				    Send('google.com')
-				    Sleep(15000)
-                    $pixcel=PixelSearch(541, 142,897, 350,0xEA4335)
-			        Sleep(1000)
-			        If IsArray($pixcel)  Then
                         ;_XoaDaTaTrinhDuyet($i)
-						_loginGmail($vpsso)
-					    ControlClick('','','','left',1,600, 60)
-				        Sleep(1000)
-				        Send('^a')
-				        Sleep(500)
-				        Sleep(1000)
-				        Send('https://myaccount.google.com/')
-				        Sleep(2000)
-					    Send('?'&'fgbfasdhdfgf'&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1))&Chr(Random(56,90,1)))
-					    Sleep(2000)
-				        Send('{enter}')
-				        Sleep(10000)
-					    Send($g)
-				        Sleep(1000)
-				        Send('{enter}')
-				        Sleep(7000)
-
-				        For $i20=1 to 10
-							$pixcel=PixelSearch(19, 158,227, 249,0xC2E7FF)
-					        Sleep(500)
-					        If IsArray($pixcel) Then
-						       $check=1
-						       $i20=17
-						       $i2=2
-					        EndIf
-						      Sleep(1000)
-						Next
-					EndIf
-
-				EndIf
+					_loginGmail($vpsso)
 
 				$e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)
 
