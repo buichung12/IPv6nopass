@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.86'
+$phienban='1.0.88'
 
     Func _ThemSDT($SDT)
 
@@ -91,7 +91,7 @@ $phienban='1.0.86'
 				Sleep(5000)
 				WinActivate('WinAuth')
 				Sleep(1000)
-				WinMove('','',0,0,415,250)
+				WinMove('WinAuth','',0,0,415,250)
 				Sleep(2000)
 
 				For $i20=1 to 3
@@ -5325,7 +5325,7 @@ $phienban='1.0.86'
 				Sleep(5000)
 				WinActivate('WinAuth')
 				Sleep(1000)
-				WinMove('','',0,0,415,250)
+				WinMove('WinAuth','',0,0,415,250)
 				Sleep(2000)
 
 				For $i20=1 to 3
@@ -5598,8 +5598,7 @@ $phienban='1.0.86'
 				Sleep(10000)
 
 				For $i20=1 to 10
-					        $pixcel=PixelSearch(70, 140,240, 250,0xC2E7FF)
-							;$pixcel=PixelSearch(70, 140,310, 275,0xC2E7FF)
+					        $pixcel=PixelSearch(156, 164,292, 229,0xC2E7FF)
 					        Sleep(500)
 					        If IsArray($pixcel) Then
 						       $check=1
@@ -5622,9 +5621,11 @@ $phienban='1.0.86'
 					MouseClick('left',600,350,1,20)
 				    Sleep(5000)
 				    For $i20=1 to 10
-					        $pixcel=PixelSearch(211, 189,490, 354,0x34A853)
+							$pixcel=PixelSearch(52, 100,245, 170,0xFF0033)   ; xoa loi edge
+							$pixcel2=PixelSearch(52, 100,245, 170,0xFF0000)   ; xoa loi edge
+							$pixcel3=PixelSearch(52, 100,245, 170,0xFF0100)   ; xoa loi edge
 					        Sleep(500)
-					        If IsArray($pixcel) Then
+					        If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
 						       $check=1
 						       $i20=17
 						       $i2=2
