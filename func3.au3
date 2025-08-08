@@ -5062,7 +5062,9 @@ $phienban='1.0.89'
 				Sleep(1000)
 				$IDcu=ClipGet()
 				Sleep(1000)
-				If $IDcu<>$f Then
+				$IDcuDaTach=StringLeft($IDcu,6)
+				$fDaTach=StringLeft($f,6)
+				If $IDcuDaTach<>$fDaTach Then
                     _XoaDaTaTrinhDuyet(10)
 				EndIf
 
