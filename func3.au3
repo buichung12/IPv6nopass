@@ -1317,6 +1317,8 @@ $phienban='1.0.90'
 				    EndIf
 				    Sleep(1000)
 			    Next
+				Sleep(2000)
+				MouseClick('left',374, 332,1,20)
 			    Sleep(2000)
 			    Send('{enter}')
 			    Sleep(2000)
