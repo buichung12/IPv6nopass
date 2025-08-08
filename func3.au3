@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.85'
+$phienban='1.0.86'
 
     Func _ThemSDT($SDT)
 
@@ -1785,7 +1785,7 @@ $phienban='1.0.85'
 			Sleep(1000)
 			Send('{tab}')
 			Sleep(1000)
-			Send('{SPACE}')
+			Send('{enter}')
 			Sleep(5000)
 
 			MouseClick('left',600, 60,1,20)
@@ -1834,8 +1834,6 @@ $phienban='1.0.85'
 			Send('{tab}')
 			Sleep(1000)
 			Send('{SPACE}')
-			Sleep(1000)
-			Send('{tab}')
 			Sleep(1000)
 			Send('{tab}')
 			Sleep(1000)
