@@ -5060,6 +5060,41 @@ $phienban='1.0.85'
                 ;MouseClick('left',1280, 129,1,20)
 			    $check=0
 
+
+				;kiểm tra có đúng gmail
+				MouseClick('left',500, 60,1,20)
+                Sleep(2000)
+				Send('^a')
+				Sleep(2000)
+				ClipPut('https://myaccount.google.com/')
+			    Sleep(200)
+			    Send('^v')
+				Sleep(1000)
+				Send('{enter}')
+				Sleep(5000)
+				Send('^0')
+				Sleep(5000)
+				For $i20=1 to 10
+				    $pixcel=PixelSearch(151, 165,295, 239,0xC2E7FF)
+					If IsArray($pixcel) Then
+						$i20=10
+					EndIf
+					Sleep(1000)
+				Next
+				Sleep(3000)
+				MouseClick('left',1309, 119,1,20)
+                Sleep(2000)
+				MouseClick('left',1105, 188,3,20)
+                Sleep(2000)
+				Send('^c')
+				Sleep(1000)
+				$IDcu=ClipGet()
+				Sleep(1000)
+				If $IDcu<>$f Then
+                    _XoaDaTaTrinhDuyet(10)
+				EndIf
+
+
                 MouseClick('left',500, 60,1,20)
                 Sleep(2000)
 				Send('^a')
@@ -5085,6 +5120,8 @@ $phienban='1.0.85'
 				$pixcel2=PixelSearch(58,96,245, 170,0xFF0000)   ; xoa loi edge
 				$pixcel3=PixelSearch(58,96,245, 170,0x3E88F4)   ; xoa loi edge
 				Sleep(1000)
+
+
 			If not IsArray($pixcel) and not IsArray($pixcel2) and  not IsArray($pixcel3)  Then  ; kiem tra da dang nhap chua
                 Sleep(1000)
 				MouseClick('left',650,350,1,20)
