@@ -5538,8 +5538,6 @@ $phienban='1.0.88'
 				     MouseClick('left',600, 320,1,20)  ; cho ngẫu nhiên 1 kênh ytb
 				     Sleep(5000)
 
-					  MsgBox(0,0,$check)
-
 					   $checkSDT=0
 					  For $i23=1 to 2
 				            MouseClick('left',600, 60,1,20)
@@ -5562,7 +5560,7 @@ $phienban='1.0.88'
 					        Next
 						For $i24=1 to 10
                           If $checkSDT=0 Then
-							  $check=0
+							  $checkSDT2=0
 							MouseClick('left',480, 22,1,20)
                             Sleep(2000)
 							MouseClick('left',495, 22,1,20)
@@ -5596,9 +5594,9 @@ $phienban='1.0.88'
                                 _ThemSDT($SDT)
                             EndIf
 							If StringInStr($link, "recoveryoptions") Then
-                                $check=_ThemSDT2($SDT)
+                                $checkSDT2=_ThemSDT2($SDT)
                             EndIf
-							If $check=1 Then
+							If $checkSDT2=1 Then
                                 $checkSDT=1
 								$i23=2
 								$i24=10
@@ -5629,7 +5627,6 @@ $phienban='1.0.88'
 
 						EndIf
 
-                    MsgBox(0,0,$check)
 
 			Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
         EndFunc
