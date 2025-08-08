@@ -1253,7 +1253,6 @@ $phienban='1.0.88'
 			FileDelete(@ScriptDir&'\gmailkhoiphucCoMatKhau.txt')
 			_requetGooGleDOC('https://docs.google.com/document/d/14wywJJt6GlHEfF3NQ0_Xr7wNrFGChNzvpl_0nZXTlKw/export?format=txt','gmailkhoiphucCoMatKhau.txt')
 
-		    For $i=1 to 1
                 $check=0
 				  ToolTip('check dang nhap 	'&$i&'	phien ban:'&$phienban,0,0)
 
@@ -1291,7 +1290,7 @@ $phienban='1.0.88'
 					_khoidongFireFox()
                         ;_XoaDaTaTrinhDuyet($i)
 					_loginGmail($vpsso)
-
+                EndIf
 				$e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)
 
 				If $check=1 Then   ; dieu kien tam thoi
@@ -1302,7 +1301,6 @@ $phienban='1.0.88'
 
 				_closeTrinhDuyet($i)
 
-		    Next
         Sleep(2000)
 
 
