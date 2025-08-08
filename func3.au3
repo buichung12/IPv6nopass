@@ -5131,7 +5131,6 @@ $phienban='1.0.90'
 				MouseClick('left',1039,155,1,20)
 				Sleep(7000)
 
-
 				MouseClick('left',1280,163,1,20)  ;tat thong bao update
 				Sleep(2000)
 				MouseClick('left',1280,120,1,20)  ;tat thong bao update
@@ -5472,7 +5471,7 @@ $phienban='1.0.90'
 				  EndIf
 				EndIf
 
-
+                MouseClick('left',665, 338,1,20); chon profile
 				MouseClick('left',456, 344,1,20);update pass
 				MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
 				MouseClick('left',1219, 101,1,20)  ;luu mat khau $1
