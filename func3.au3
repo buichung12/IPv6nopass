@@ -5162,10 +5162,6 @@ $phienban='1.0.88'
 					Sleep(1000)
 				Next
 				Sleep(2000)
-				MouseClick('left',970,470,1,20)
-				Sleep(7000)
-				MouseClick('left',970,430,1,20)
-				Sleep(7000)
 
 				MouseClick('left',650,280,1,20)
 				Sleep(3000)
