@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.89'
+$phienban='1.0.90'
 
     Func _ThemSDT($SDT)
 
@@ -5588,15 +5588,55 @@ $phienban='1.0.89'
 					            Sleep(1000)
 					            Send('{enter}')
 					            Sleep(10000)
+								MouseClick('left',600, 60,1,20)
+				                Sleep(1000)
+							    Send('^a')
+							    Sleep(1000)
+							    Send('^c')
+							    Sleep(200)
+							    $link=ClipGet()
+                                Sleep(1000)
+							    MouseClick('left',1312, 565,1,20)
+				                Sleep(1000)
                             EndIf
 							If StringInStr($link, "totp") Then
                                 _LayMaAuthen($Key2fa)
+								MouseClick('left',600, 60,1,20)
+				                Sleep(1000)
+							    Send('^a')
+							    Sleep(1000)
+							    Send('^c')
+							    Sleep(200)
+							    $link=ClipGet()
+                                Sleep(1000)
+							    MouseClick('left',1312, 565,1,20)
+				                Sleep(1000)
                             EndIf
 							If StringInStr($link, "rescuephone") Then
                                 _ThemSDT($SDT)
+								MouseClick('left',600, 60,1,20)
+				                Sleep(1000)
+							    Send('^a')
+							    Sleep(1000)
+							    Send('^c')
+							    Sleep(200)
+							    $link=ClipGet()
+                                Sleep(1000)
+							    MouseClick('left',1312, 565,1,20)
+				                Sleep(1000)
                             EndIf
 							If StringInStr($link, "recoveryoptions") Then
                                 $checkSDT2=_ThemSDT2($SDT)
+								MouseClick('left',600, 60,1,20)
+				                Sleep(1000)
+							    Send('^a')
+							    Sleep(1000)
+							    Send('^c')
+							    Sleep(200)
+							    $link=ClipGet()
+                                Sleep(1000)
+							    MouseClick('left',1312, 565,1,20)
+				                Sleep(1000)
                             EndIf
 							If $checkSDT2=1 Then
                                 $checkSDT=1
