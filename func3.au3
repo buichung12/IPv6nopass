@@ -5538,6 +5538,8 @@ $phienban='1.0.88'
 				     MouseClick('left',600, 320,1,20)  ; cho ngẫu nhiên 1 kênh ytb
 				     Sleep(5000)
 
+					  MsgBox(0,0,$check)
+
 					   $checkSDT=0
 					  For $i23=1 to 2
 				            MouseClick('left',600, 60,1,20)
@@ -5616,6 +5618,7 @@ $phienban='1.0.88'
 
 					  Next
 
+
 					    If $checkSDT=1 Then
 							$SDT=$SDT&'	add SDT Thành Công'
                             FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thành Công'&'	'&$vpsso)
@@ -5626,6 +5629,7 @@ $phienban='1.0.88'
 
 						EndIf
 
+                    MsgBox(0,0,$check)
 
 			Return $check    ;;return 1 la ok. 0 la that bai   , 2 la bi verry
         EndFunc
