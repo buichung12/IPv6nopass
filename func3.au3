@@ -5227,6 +5227,8 @@ $phienban='1.0.90'
 				WinActivate('WinAuth')
 				Sleep(1000)
 				WinMove('WinAuth','',0,0,415,250)
+				Sleep(1000)
+				If $i21=2 Then WinMove('WinAuth','',0,0,615,250)
 				Sleep(2000)
 
 				For $i20=1 to 3
