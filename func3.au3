@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.91'
+$phienban='1.0.92'
 
     Func _ThemSDT($SDT)
 
@@ -5253,7 +5253,7 @@ $phienban='1.0.91'
 					            Send('{enter}')
 						        Sleep(4000)
 					        Else
-						        $i20=30
+						        $i20=35
 							EndIf
 				Next
 
