@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.90'
+$phienban='1.0.91'
 
     Func _ThemSDT($SDT)
 
@@ -5231,7 +5231,7 @@ $phienban='1.0.90'
 				If $i21=2 Then WinMove('WinAuth','',0,0,615,250)
 				Sleep(2000)
 
-				For $i20=1 to 3
+				For $i20=1 to 35
 				            $pixcel=PixelSearch(10, 130,110, 190,0x00ABDA)  ; xoa Auth cu
 				            If IsArray($pixcel) Then
 					            MouseClick('right',64,91,1,20)
@@ -5253,7 +5253,7 @@ $phienban='1.0.90'
 					            Send('{enter}')
 						        Sleep(4000)
 					        Else
-						        $i20=3
+						        $i20=30
 							EndIf
 				Next
 
