@@ -1291,12 +1291,12 @@ $phienban='1.0.92'
                         ;_XoaDaTaTrinhDuyet($i)
 					_loginGmail($vpsso)
                 EndIf
-				$e=FileReadLine(@ScriptDir&'\Gmail.txt',$i)
+				$e=FileReadLine(@ScriptDir&'\Gmail.txt',$vpsso)
 
 				If $check=1 Then   ; dieu kien tam thoi
-					FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	DangNhapThanhCong'&'	'&$i)
+					FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	DangNhapThanhCong'&'	'&$vpsso)
 				Else
-                    FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	DangNhapThatBai'&'	'&$i)
+                    FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	DangNhapThatBai'&'	'&$vpsso)
 				EndIf
 
 				_closeTrinhDuyet($i)
