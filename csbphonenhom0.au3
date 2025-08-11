@@ -135,7 +135,7 @@ While 1
 				If $check < 8 Then _GetDOSOutput('shutdown -s -t 0')
 
 
-				If $kiemtratrinhduyet=1 Then $checkUC=_kiemtratrinhduyet($i5,$i,$vpsso,$trusomaybandau)
+				If $kiemtratrinhduyet=1 Then $checkUC=_kiemtratrinhduyet($i5,$vpsso,$trusomaybandau)
 				If $vpsso='' Then
 					MsgBox(0,0,'loi khong dien so may')
 					Exit
@@ -146,7 +146,7 @@ While 1
 				$checkprofile=1
 
 				For $i20=1 to Random(2,20,1)
-					        MsgBox(0,0,'chờ khởi động:'&$i&'	'&$vpsso&'	 phút:'&$i20,60)  ;b?n 1.1.60
+					  MsgBox(0,0,'chờ khởi động:'&$vpsso&'	 phút:'&$i20,60)  ;b?n 1.1.60
 				Next
 
 While 1   ; vong tra lai gia tr
@@ -175,7 +175,7 @@ While 1   ; vong tra lai gia tr
 
 
 				_khoidongFireFox2($i5,$vpsso)
-				$checkchonprofile=_chonProFileFFv6($i5,$i,$vpsso)
+				$checkchonprofile=_chonProFileFFv6($i5,$vpsso)
 
 				If 	$checkchonprofile=1 Then
 					_subIpv6($vpsso,$i,$i5)
@@ -184,7 +184,7 @@ While 1   ; vong tra lai gia tr
 			    _closeTrinhDuyet($i)
 
 				For $i20=1 to 60
-					MsgBox(0,0,'chờ khởi động:'&$i&'	'&$vpsso&'	 phút:'&$i20,60)  ;b?n 1.1.60
+					MsgBox(0,0,'chờ khởi động:'&$vpsso&'	 phút:'&$i20,60)  ;b?n 1.1.60
 				Next
 
 					$Gmailso=1
