@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.92'
+$phienban='1.0.93'
 
     Func _ThemSDT($SDT)
 
@@ -2760,6 +2760,15 @@ $phienban='1.0.92'
 							Sleep(2000)
                         EndIf
 
+						$x=0
+						$y=0
+                        _ImageSearchArea(@ScriptDir&'\sub3.bmp',1,15, 138,497, 774,$x,$y,1,50)
+                            Sleep(500)
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(5000)
+						EndIf
+
 
                         Sleep(2000)
 						MouseClick('left',152, 170,1,20)
@@ -2938,6 +2947,24 @@ $phienban='1.0.92'
 						Sleep(5000)
 
 						ControlClick($var[$i10][1],'','','left',1,245, 308)  ;tam dung video
+
+                        $x=0
+						$y=0
+                        _ImageSearchArea(@ScriptDir&'\sub.bmp',1,19, 140,495, 774,$x,$y,1,50)
+                            Sleep(500)
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(5000)
+						EndIf
+
+						$x=0
+						$y=0
+                        _ImageSearchArea(@ScriptDir&'\sub2.bmp',1,19, 140,495, 774,$x,$y,1,50)
+                            Sleep(500)
+						If $x>0 Then
+							MouseClick('left',$x,$y,1,20)
+							Sleep(5000)
+						EndIf
 
 						Sleep(3000)     ;thoi gian nghi
 						$pixcel=PixelSearch(18,485,41,550,0x0F0F0F)         ; sub ytb
