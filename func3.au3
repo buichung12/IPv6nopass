@@ -83,7 +83,7 @@ $phienban='1.0.93'
 
     Func _LayMaAuthen($Key2fa)
 
-			If StringLen($Key2fa)>30	Then
+			If StringLen($Key2fa)>30 Then
 				Sleep(2000)
 				$Key2fa=StringReplace($Key2fa,'|',' ')
 				Sleep(1000)
@@ -160,7 +160,7 @@ $phienban='1.0.93'
 						Sleep(2000)
 				Next
 
-              EndIf
+			EndIf
 
 		                    WinActivate('WinAuth')
 				            Sleep(1000)
@@ -423,7 +423,7 @@ $phienban='1.0.93'
 				Sleep(10000)
 	EndFunc
 
-    Func _kiemtratrinhduyet($i5,$i,$vpsso,$trusomaybandau)
+    Func _kiemtratrinhduyet($i5,$vpsso,$trusomaybandau)
 
 		$chochay=$vpsso-$trusomaybandau
             If $chochay<>0 Then
@@ -449,7 +449,7 @@ $phienban='1.0.93'
 				if  $i21=3 Then
                     _GetDOSOutput('start chrome "https://mega.nz/file/js4U1QhB#WxPscJD1z71PYmEKAa7BDCHJ9r7boRtPlhh7MaEvQXY"')
 					Sleep(15000)
-                    $pixcel=PixelSearch(818, 464,1290, 743,0x2AC091)   ; xoa loi edge
+                    $pixcel=PixelSearch(718, 364,1290, 743,0x2AC091)   ; xoa loi edge
 					If IsArray($pixcel) Then
                         Sleep(2000)
 						MouseClick('left',$pixcel[0]+5,$pixcel[1],1,20)
@@ -461,7 +461,7 @@ $phienban='1.0.93'
 				if  $i21=4 Then
 					_GetDOSOutput('start chrome "https://mega.nz/file/FMxXmCqb#xqbX3IXIweIEE7K4smO0LUfk0BEtImTRMV2v_tf1D_0"')
 					Sleep(15000)
-                    $pixcel=PixelSearch(818, 464,1290, 743,0x2AC091)   ; xoa loi edge
+                    $pixcel=PixelSearch(718, 364,1290, 743,0x2AC091)   ; xoa loi edge
 					If IsArray($pixcel) Then
                         Sleep(2000)
 						MouseClick('left',$pixcel[0]+5,$pixcel[1],1,20)
@@ -2340,35 +2340,9 @@ $phienban='1.0.93'
 
 		EndFunc
 #ce
-		Func _chonProFileFFv6($i5,$i,$vpsso)
+		Func _chonProFileFFv6($i5,$vpsso)
                 $check=0
-	           ; $check2=0
-               WinSetState('Windows Security','',@SW_HIDE)
-			 ;  _dienIpPort($i)
 
-				ProcessClose('WerFault.exe')
-          For $i2=1 TO 2
-					WinClose('Server Manager')
-					WinClose('Restore pages')
-				    ProcessClose('WerFault.exe')
-                    Sleep(100)
-
-                $var = WinList ("[CLASS:Chrome_WidgetWin_1]")
-                Sleep(100)
-				If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
-				Sleep(100)
-				If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
-
-
-			For $i10 = 1 to $var[0][0]
-			    If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
-
-					If $i=5 Then
-						ControlClick($var[$i10][1],'','','left',1,426, 30)    ; tat tab thua
-						Sleep(1000)
-						ControlClick($var[$i10][1],'','','left',1,426, 30)    ; tat tab thua
-						Sleep(1000)
-					EndIf
 					WinClose('Restore pages')
 
                     For $i20=1 to 10
@@ -2395,15 +2369,6 @@ $phienban='1.0.93'
 					Sleep(200)
 					$checkload=0
 
-					If $i=6 or $i=7 Then
-                       MouseClick('left',421, 103,1,20)
-				       Sleep(1000)
-					   MouseClick('left',363, 120,1,20)
-				       Sleep(1000)
-					EndIf
-
-
-
 					For $i20=1 to 20
 					        $pixcel=PixelSearch(58,110,245, 170,0xFF0033)   ; xoa loi edge
 							$pixcel2=PixelSearch(58,110,245, 170,0xFF0000)   ; xoa loi edge
@@ -2415,98 +2380,22 @@ $phienban='1.0.93'
 				        Sleep(1000)
 					Next
 
-					$pixcel=PixelSearch(500,230,800,500,0xBD79FF)    ; check internet
-					If IsArray($pixcel) Then
-						Sleep(100)
-                        ControlClick($var[$i10][1],'','','left',1,600, 60)
-				        Sleep(1000)
-						ClipPut('https://www.youtube.com/channel_switcher?next=%2Faccount&feature=settings')
-						Send('^v')
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(5000)
-						;_dienIpPort($i)
-						;Sleep(5000)
-						Send('^0')
-					    Sleep(2000)
-					EndIf
-
-					If $checkload=0 Then
-						ControlClick($var[$i10][1],'','','left',1,600, 60)
-				        Sleep(1000)
-						Send('https://www.youtube.com/channel_switcher?next=%2Faccount&feature=settings')
-						Sleep(1000)
-						Send('{enter}')
-						Sleep(5000)
-						;_dienIpPort($i)
-						;Sleep(5000)
-						Send('^0')
-					    Sleep(1000)
-
-					EndIf
-
-
-					If $i=1 Then
-							$pixcel=PixelSearch(20, 130,40, 245,0xFF0033)   ; xoa loi edge
-							$pixcel2=PixelSearch(20, 130,40, 245,0xFF0000)   ; xoa loi edge
-							$pixcel3=PixelSearch(20, 130,40, 245,0xFF0100)   ; xoa loi edge
-					    If IsArray($pixcel) or IsArray($pixcel2) or IsArray($pixcel3) Then
-						    Sleep(2000)
-							Send('^+,')
-							Sleep(1000)
-						EndIf
-				        Sleep(1000)
-					EndIf
 
 					Sleep(8000)
-
-					If $i=1 Then MouseClick('left',581, 191,1,20)
-					If $i=2 Then ControlClick($var[$i10][1],'','','left',1,594, 182)
-					If $i=3 Then ControlClick($var[$i10][1],'','','left',1,518, 210)
-					If $i=4 Then ControlClick($var[$i10][1],'','','left',1,596, 184)
-					If $i=5 Then ControlClick($var[$i10][1],'','','left',1,506, 200)
-					If $i=6 Then ControlClick($var[$i10][1],'','','left',1,503, 177)
-					If $i=7 Then ControlClick($var[$i10][1],'','','left',1,504, 190)
-					If $i=8 Then ControlClick($var[$i10][1],'','','left',1,594, 189)
-					If $i=9 Then ControlClick($var[$i10][1],'','','left',1,590, 213)
-					If $i=10 Then ControlClick($var[$i10][1],'','','left',1,500, 180)
-					If $i=10 Then ControlClick($var[$i10][1],'','','left',1,500, 190)
+                    ControlClick('','','','left',1,500, 180)
+					ControlClick('','','','left',1,500, 190)
 					Sleep(2000)
-					If $i=1 Then MouseClick('left',700, 191,1,20)
-					If $i=2 Then ControlClick($var[$i10][1],'','','left',1,594, 182)
-					If $i=3 Then ControlClick($var[$i10][1],'','','left',1,518, 210)
-					If $i=4 Then ControlClick($var[$i10][1],'','','left',1,596, 184)
-					If $i=5 Then ControlClick($var[$i10][1],'','','left',1,600, 200)
-					If $i=6 Then ControlClick($var[$i10][1],'','','left',1,503, 177)
-					If $i=7 Then ControlClick($var[$i10][1],'','','left',1,504, 190)
-					If $i=8 Then ControlClick($var[$i10][1],'','','left',1,594, 189)
-					If $i=9 Then ControlClick($var[$i10][1],'','','left',1,590, 213)
-					If $i=10 Then ControlClick($var[$i10][1],'','','left',1,500, 180)
-					If $i=10 Then ControlClick($var[$i10][1],'','','left',1,500, 190)
+					ControlClick('','','','left',1,500, 180)
+					ControlClick('','','','left',1,500, 190)
 
-					Sleep(1000)
-                    For $i20=1 to 2
-					    ;$pixcel=PixelSearch(55,110,245, 170,0xFF0033)   ; xoa loi edge
-					    $pixcel2=PixelSearch(545, 347,1151, 744,0x606060)   ; xoa loi edge
-					    If IsArray($pixcel2) Then
-						    Sleep(4000)
-					        For $i20=1 to $i5+2
-						       ControlSend($var[$i10][1],'','','{tab}')
-						       Sleep(500)
-					        Next
-					        Sleep(1000)
-					        ControlSend($var[$i10][1],'','','{enter}')
-							$i2=2
-							$check=1
-							$i20=2
-					    EndIf
-						Sleep(10000)
+					Sleep(4000)
+					For $i20=1 to $i5+2
+						ControlSend('','','','{tab}')
+						Sleep(500)
 					Next
-
-
-				EndIf
-			Next
-          Next
+					Sleep(1000)
+					ControlSend('','','','{enter}')
+                    $check=1
 
 		   Return $check
         EndFunc
@@ -4173,37 +4062,33 @@ $phienban='1.0.93'
 					If $vpsso=18 Then _requetGooGleDOC('https://docs.google.com/document/d/1rH9MjZm5881K6cD8uNbfi-ox9mgyeLyQMCgwTOHrw1M/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
 					If $vpsso=19 Then _requetGooGleDOC('https://docs.google.com/document/d/1up0UWnvQzHSgH8z6ioimAgkBKSSyOZsm5kCeJM5XTqY/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
 					If $vpsso=20 Then _requetGooGleDOC('https://docs.google.com/document/d/1GooBX9jn6YXWEcT3ogWCRNVQvBIU9yjnxXujEZj5ahs/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+
+					If FileExists(@ScriptDir&'\linkkenhchaySUB2.txt')=0 Then
+                        Sleep(600000)
+						If $vpsso=1  Then _requetGooGleDOC('https://docs.google.com/document/d/1ovARvIbwSXide3zh42IbuWuGmgu8NW4HaFiwh2LJaOM/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=2 Then _requetGooGleDOC('https://docs.google.com/document/d/1W7_gFyfDBhRYkCJw5v1hukJu5PwKpy2brANwWX-wHQQ/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=3 Then _requetGooGleDOC('https://docs.google.com/document/d/1YxkIOCzSPpev_oWRnKGDyASf1SCxH_-IoWEAI_yYCXs/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=4 Then _requetGooGleDOC('https://docs.google.com/document/d/1PTxYeX31wdMOaCiLBfPLuhNISjlLAHQpRleIRfAByiE/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=5 Then _requetGooGleDOC('https://docs.google.com/document/d/1hjCOmYyFbTyV7d21LSfG27_sNAB_7U5ueMdLTACq1XQ/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=6 Then _requetGooGleDOC('https://docs.google.com/document/d/1hkV92YBc3trV9o5feO3j0qPSj67ZQru0ILE1Uvezd28/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=7 Then _requetGooGleDOC('https://docs.google.com/document/d/1xeBxK9evfG5CbXoUJXFCR2KJGev8Hwt7h4HvjLb4WvU/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=8 Then _requetGooGleDOC('https://docs.google.com/document/d/18ZsgvrdzrHgE3Oq3qOG-b2aL-iryKiRttZHBjx6ufzQ/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=9 Then _requetGooGleDOC('https://docs.google.com/document/d/1DvKg_sh07GuIfR9bb2eiIlaRCvSfy1_Fn1BqZEpjcVc/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=10 Then _requetGooGleDOC('https://docs.google.com/document/d/1hmq3luKvvH1XrdXm6yjDH3ZgdiTM3vSyTXFrfOScn0Y/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=11 Then _requetGooGleDOC('https://docs.google.com/document/d/1maWaSxFvinrWR8OeCjMj0LJXpYcrJ6zRwLcqo6TpSFo/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=12 Then _requetGooGleDOC('https://docs.google.com/document/d/1IOc72x-SKn44ScD_Zl1OmopcJCVbVWfkWMM9GS9n8_w/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=13 Then _requetGooGleDOC('https://docs.google.com/document/d/1XkICV-XHosJJKaI0LMnaGv5ADSaVlKFEIMHZA-ki_y8/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=14 Then _requetGooGleDOC('https://docs.google.com/document/d/1NouelZRdWT2OTD5Ci11rEXfMaqJaLHbvECbjLJywFYQ/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=15 Then _requetGooGleDOC('https://docs.google.com/document/d/1nUwnzj9kIbFCkf1fvZJd4AxfutU089MPoLfTYXRujlY/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=16 Then _requetGooGleDOC('https://docs.google.com/document/d/1g73norj6H-BuhXshRT-CEkYKFdT9o4Uknk_SdI07J-E/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=17 Then _requetGooGleDOC('https://docs.google.com/document/d/1L-yTHvqBO531COCIxolgdr6YF3LeLDeZ0Ti9TQjpG2M/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=18 Then _requetGooGleDOC('https://docs.google.com/document/d/1rH9MjZm5881K6cD8uNbfi-ox9mgyeLyQMCgwTOHrw1M/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=19 Then _requetGooGleDOC('https://docs.google.com/document/d/1up0UWnvQzHSgH8z6ioimAgkBKSSyOZsm5kCeJM5XTqY/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+					    If $vpsso=20 Then _requetGooGleDOC('https://docs.google.com/document/d/1GooBX9jn6YXWEcT3ogWCRNVQvBIU9yjnxXujEZj5ahs/export?format=txt','linkkenhchaySUB2.txt')                       ;bản 1.1.60
+
+					EndIf
+
                 EndIf
-                #cs
-					For $i22=1 to 240
-						If Mod($vpsso,5)=1 Then
-						    If @MIN=1 or @MIN=11 or @MIN=21  or @MIN=31 or @MIN=41 or @MIN=51  Then
-							    $i22=240
-							EndIf
-						EndIf
-						If Mod($vpsso,5)=2 Then
-						    If @MIN=3 or @MIN=13 or @MIN=23 or @MIN=33 or @MIN=43 or @MIN=53  Then
-							    $i22=240
-							EndIf
-						EndIf
-						If Mod($vpsso,5)=3 Then
-						    If @MIN=5 or @MIN=15 or @MIN=25 or @MIN=35 or @MIN=45 or @MIN=55 Then
-							    $i22=240
-							EndIf
-						EndIf
-						If Mod($vpsso,5)=4 Then
-						    If @MIN=7 or @MIN=17 or @MIN=27 or @MIN=37 or @MIN=47 or @MIN=57 Then
-							    $i22=240
-							EndIf
-						EndIf
-						If Mod($vpsso,5)=0 Then
-						    If @MIN=9 or @MIN=19 or @MIN=29 or @MIN=39 or @MIN=49 or @MIN=59 Then
-							    $i22=240
-							EndIf
-						EndIf
-						Sleep(5000)
-				    Next
-				#ce
 
 					Sleep(100)
 					WinClose('Task Manager')
@@ -4211,39 +4096,6 @@ $phienban='1.0.93'
 				    ProcessClose('Taskmgr.exe')
 				    Sleep(100)
 
-                #cs
-					For $i22=1 to 240
-						If Mod($vpsso,5)=1 Then
-						    If @MIN=1 or @MIN=6 or @MIN=11 or @MIN=16 or @MIN=21 or @MIN=26 or @MIN=31 or @MIN=36 or @MIN=41 or @MIN=46 or @MIN=51 or @MIN=56   Then
-							    $i22=240
-							EndIf
-						EndIf
-						If Mod($vpsso,5)=2 Then
-						    If @MIN=2 or @MIN=7 or @MIN=12 or @MIN=17 or @MIN=22 or @MIN=27 or @MIN=32 or @MIN=37 or @MIN=42 or @MIN=47 or @MIN=52 or @MIN=57  Then
-							    $i22=240
-							EndIf
-						EndIf
-						If Mod($vpsso,5)=3 Then
-						    If @MIN=3 or @MIN=8 or @MIN=13 or @MIN=18 or @MIN=23 or @MIN=28 or @MIN=33 or @MIN=38 or @MIN=43 or @MIN=48 or @MIN=53 or @MIN=58 Then
-							    $i22=240
-							EndIf
-						EndIf
-						If Mod($vpsso,5)=4 Then
-						    If @MIN=4 or @MIN=9 or @MIN=14 or @MIN=19 or @MIN=24 or @MIN=29 or @MIN=34 or @MIN=39 or @MIN=44 or @MIN=49 or @MIN=54 or @MIN=59 Then
-							    $i22=240
-							EndIf
-						EndIf
-						If Mod($vpsso,5)=0 Then
-						    If @MIN=5 or @MIN=10 or @MIN=15 or @MIN=20 or @MIN=25 or @MIN=30 or @MIN=35 or @MIN=40 or @MIN=45 or @MIN=50 or @MIN=55 or @MIN=0 Then
-							    $i22=240
-							EndIf
-						EndIf
-
-						Sleep(5000)
-				    Next
-				#ce
-
-                    ;_FakeIPOptionV6($i5,$vpsso)
 					MouseClick('left',1366,10,1,20)
 					Sleep(1000)
 					MouseClick('left',1366,10,1,20)
@@ -4252,7 +4104,6 @@ $phienban='1.0.93'
 					WinClose('Server Manager')
 
 					$linkblu="C:\Program Files\Google\Chrome\Application\chrome.exe"
-
 					Sleep(1000)
 					Run( $linkblu,'')
 					Sleep(5000)
@@ -4324,8 +4175,6 @@ $phienban='1.0.93'
 						WinMove($var[$i10][1],'',0,0,1366,850)
 						Sleep(3000)
 
-						ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,291, 635)
-						Sleep(200)
 						ControlClick('','Chrome Legacy Window','[CLASS:Chrome_RenderWidgetHostHWND; INSTANCE:1]','left',1,462, 637)
 						Sleep(200)
 						ControlClick('','','','left',1,1300,720)
@@ -4338,8 +4187,6 @@ $phienban='1.0.93'
 						Sleep(100)
 						ControlClick('','','','left',1,1327, 102)
 						Sleep(100)
-
-
 
                      EndIf
 					Next
@@ -4371,21 +4218,7 @@ $phienban='1.0.93'
 				Sleep(100)
 				Send('^w')
 				WinClose('opera.exe - System Error')
-				If $i=5 Then
-					For $i20=1 to 3
-						Send('^w')
-						Sleep(100)
-					Next
-				EndIf
-				If $i=4 Then
-					For $i20=1 to 3
-						Send('^w')
-						Sleep(100)
-					Next
-				EndIf
 
-				If $i=5 Then ControlClick('','','','left',1,428, 27)    ; tat tab thua
-				Sleep(100)
 				For $i20=1 to 3
 					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
 				  For $i10 = 1 to $var[0][0]
@@ -4482,14 +4315,12 @@ $phienban='1.0.93'
 						Sleep(100)
 					EndIf
 				  Next
-			If $i=10 Then
+
 			    WinClose('WinAuth')
 				Sleep(100)
 				ProcessClose('WinAuth.exe')
 				Sleep(100)
-			EndIf
 
-			If $i=2 Then
 
 				ProcessClose('OperaSetup.exe')
 				Sleep(100)
@@ -4628,25 +4459,7 @@ $phienban='1.0.93'
 				Sleep(100)
 				ProcessClose('CocCoc Update (32 bit).exe')
 				Sleep(100)
-			EndIf
 
-
-
-                    Sleep(1000)
-					$var = WinList ("[CLASS:Chrome_WidgetWin_1]")
-                    Sleep(1000)
-					If $var[0][0]=0 Then $var = WinList ("[CLASS:MozillaWindowClass]")
-					Sleep(1000)
-					If $i=9 Then $var = WinList ("[CLASS:FlashPeakWindowClass]")
-
-                If $var[0][0]<>0 Then
-					For $i10 = 1 to $var[0][0]
-					    If BitAnd (WinGetState ($var[$i10][1]), 2) And $var[$i10][0] <> "" Then
-                            WinClose($var[$i10][1])
-						    Sleep(100)
-                        EndIf
-					Next
-				EndIf
 				ProcessClose('firefox.exe - Bad Image')
 				Sleep(100)
 				ProcessClose('WinAuth.exe')
@@ -5627,7 +5440,7 @@ $phienban='1.0.93'
 					            Sleep(10000)
                             EndIf
 							If StringInStr($link, "totp") Then
-                                _LayMaAuthen()
+                                _LayMaAuthen($Key2fa)
                             EndIf
 							If StringInStr($link, "rescuephone") Then
                                 _ThemSDT($SDT)
@@ -5657,11 +5470,11 @@ $phienban='1.0.93'
 
 					    If $checkSDT=1 Then
 							$SDT=$SDT&'	add SDT Thành Công'
-                            FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thành Công'&'	'&$i)
+                            FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thành Công'&'	'&$vpsso)
 
 						Else
 							$SDT=$SDT&'	add SDT Thất Bại'
-							FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thất Bại'&'	'&$i)
+							FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thất Bại'&'	'&$vpsso)
 
 						EndIf
 
