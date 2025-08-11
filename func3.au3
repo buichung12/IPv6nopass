@@ -5570,7 +5570,7 @@ $phienban='1.0.93'
 				     MouseClick('left',600, 320,1,20)  ; cho ngẫu nhiên 1 kênh ytb
 				     Sleep(5000)
 
-					   $checkSDT=0
+					    $checkSDT=0
 					  For $i23=1 to 2
 				            MouseClick('left',600, 60,1,20)
 				            Sleep(1000)
@@ -5590,9 +5590,16 @@ $phienban='1.0.93'
 					            EndIf
 						        Sleep(1000)
 					        Next
+
+						$pixcel=PixelSearch(205, 567,369, 700,0xF09D00)
+							Sleep(500)
+						If IsArray($pixcel) Then
+							$checkSDT=1
+						EndIf
+
 						For $i24=1 to 10
                           If $checkSDT=0 Then
-							  $checkSDT2=0
+							  $check=0
 							MouseClick('left',480, 22,1,20)
                             Sleep(2000)
 							MouseClick('left',495, 22,1,20)
@@ -5618,57 +5625,17 @@ $phienban='1.0.93'
 					            Sleep(1000)
 					            Send('{enter}')
 					            Sleep(10000)
-								MouseClick('left',600, 60,1,20)
-				                Sleep(1000)
-							    Send('^a')
-							    Sleep(1000)
-							    Send('^c')
-							    Sleep(200)
-							    $link=ClipGet()
-                                Sleep(1000)
-							    MouseClick('left',1312, 565,1,20)
-				                Sleep(1000)
                             EndIf
 							If StringInStr($link, "totp") Then
-                                _LayMaAuthen($Key2fa)
-								MouseClick('left',600, 60,1,20)
-				                Sleep(1000)
-							    Send('^a')
-							    Sleep(1000)
-							    Send('^c')
-							    Sleep(200)
-							    $link=ClipGet()
-                                Sleep(1000)
-							    MouseClick('left',1312, 565,1,20)
-				                Sleep(1000)
+                                _LayMaAuthen()
                             EndIf
 							If StringInStr($link, "rescuephone") Then
                                 _ThemSDT($SDT)
-								MouseClick('left',600, 60,1,20)
-				                Sleep(1000)
-							    Send('^a')
-							    Sleep(1000)
-							    Send('^c')
-							    Sleep(200)
-							    $link=ClipGet()
-                                Sleep(1000)
-							    MouseClick('left',1312, 565,1,20)
-				                Sleep(1000)
                             EndIf
 							If StringInStr($link, "recoveryoptions") Then
-                                $checkSDT2=_ThemSDT2($SDT)
-								MouseClick('left',600, 60,1,20)
-				                Sleep(1000)
-							    Send('^a')
-							    Sleep(1000)
-							    Send('^c')
-							    Sleep(200)
-							    $link=ClipGet()
-                                Sleep(1000)
-							    MouseClick('left',1312, 565,1,20)
-				                Sleep(1000)
+                                $check=_ThemSDT2($SDT)
                             EndIf
-							If $checkSDT2=1 Then
+							If $check=1 Then
                                 $checkSDT=1
 								$i23=2
 								$i24=10
@@ -5688,14 +5655,13 @@ $phienban='1.0.93'
 
 					  Next
 
-
 					    If $checkSDT=1 Then
 							$SDT=$SDT&'	add SDT Thành Công'
-                            FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thành Công'&'	'&$vpsso)
+                            FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thành Công'&'	'&$i)
 
 						Else
 							$SDT=$SDT&'	add SDT Thất Bại'
-							FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thất Bại'&'	'&$vpsso)
+							FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thất Bại'&'	'&$i)
 
 						EndIf
 
