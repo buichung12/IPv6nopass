@@ -5057,7 +5057,7 @@ $phienban='1.0.93'
 				Next
 
 
-			  For $i21=1 to 2
+			  For $i21=1 to 3
                If StringLen($Key2fa)>30	Then
 				Sleep(2000)
 				$Key2fa=StringReplace($Key2fa,'|',' ')
@@ -5066,9 +5066,11 @@ $phienban='1.0.93'
 				Sleep(5000)
 				WinActivate('WinAuth')
 				Sleep(1000)
-				WinMove('WinAuth','',0,0,415,250)
+				WinMove('','',0,0)
 				Sleep(1000)
-				If $i21=2 Then WinMove('WinAuth','',0,0,615,250)
+				If $i21=2 Then WinMove('WinAuth','',0,0,415,250)
+				Sleep(1000)
+				If $i21=3 Then WinMove('WinAuth','',0,0,615,250)
 				Sleep(2000)
 
 				For $i20=1 to 35
@@ -5170,7 +5172,7 @@ $phienban='1.0.93'
 				Send('^v')
 				Sleep(500)
 				$checkCode=ClipGet()
-				If Number($checkCode)>10000 Then $i21=2
+				If Number($checkCode)>10000 Then $i21=3
 				Sleep(500)
 				Send('{enter}')
 				Sleep(10000)
@@ -5412,7 +5414,7 @@ $phienban='1.0.93'
 
 						For $i24=1 to 10
                           If $checkSDT=0 Then
-							  $check=0
+							  $check2=0
 							MouseClick('left',480, 22,1,20)
                             Sleep(2000)
 							MouseClick('left',495, 22,1,20)
@@ -5446,21 +5448,15 @@ $phienban='1.0.93'
                                 _ThemSDT($SDT)
                             EndIf
 							If StringInStr($link, "recoveryoptions") Then
-                                $check=_ThemSDT2($SDT)
+                                $check2=_ThemSDT2($SDT)
                             EndIf
-							If $check=1 Then
+							If $check2=1 Then
                                 $checkSDT=1
 								$i23=2
 								$i24=10
 							EndIf
 							Sleep(6000)
-							$pixcel=PixelSearch(297, 247,538, 630,0xDB231E)
-							Sleep(500)
-							If IsArray($pixcel) Then
-								$checkSDT=1
-								$i23=2
-								$i24=10
-                            EndIf
+
 
 
 						  EndIf
