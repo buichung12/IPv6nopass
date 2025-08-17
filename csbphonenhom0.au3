@@ -141,6 +141,8 @@ While 1
 					Exit
                 EndIf
 
+				;MsgBox(0,0,'ok')
+
 				Sleep(1000)
 				$kiemtratrinhduyet2=1
 				$checkprofile=1
