@@ -13,7 +13,7 @@
 #include <String.au3>
 #include <FileConstants.au3>
 Opt("SendKeyDelay",30)
-$phienban='1.0.95'
+$phienban='1.0.96'
 
     Func _ThemSDT($SDT)
 
@@ -2421,9 +2421,24 @@ $phienban='1.0.95'
 			  For $i21=1 to 7
 
 						For $i23=1 to 15
+							If FileExists(@ScriptDir&"\STT.txt")=0 Then  FileWriteLine(@ScriptDir&"\STT.txt",'1')
+							Sleep(2000)
 					        $sodong=_FileCountLines(@ScriptDir&"\linkkenhchaySUB2.txt")
+							$sodongSTT=_FileCountLines(@ScriptDir&"\STT.txt")
+							$GiaTriCuoiSTT=FileReadLine(@ScriptDir&"\STT.txt",$sodongSTT)
+							$GiaTriCuoiSTT=Number($GiaTriCuoiSTT)
+							$sodong=Number($sodong)
+							$sodongSTT=Number($sodongSTT)
+							If $GiaTriCuoiSTT >= $sodong Then
+								$STT=1
+
+							Else
+								$STT=$GiaTriCuoiSTT+1
+
+							EndIf
 							Sleep(100)
-                            $linkkenhtho=FileReadLine(@ScriptDir&"\linkkenhchaySUB2.txt",Random(1,$sodong,1))    ; chu y thay doi
+
+                            $linkkenhtho=FileReadLine(@ScriptDir&"\linkkenhchaySUB2.txt",$STT)    ; chu y thay doi
 				            Sleep(100)
 						    ;$kiemtralink=FileReadLine(@ScriptDir&"\linkkenhchaySUB2.tx",1)
 						  If StringLen($linkkenhtho)>20 Then
@@ -2433,21 +2448,23 @@ $phienban='1.0.95'
 								Sleep(100)
 				                If IsArray($datalink) Then $linkkenh=$datalink[1]
 								Sleep(100)
-							    If FileExists(@ScriptDir&"\LinkDaSub.txt")=0 Then  FileWriteLine(@ScriptDir&"\LinkDaSub.txt",'khoi tao')
-							    Sleep(1000)
-						        $sodonglinkdasub=_FileCountLines(@ScriptDir&"\LinkDaSub.txt")
-								Sleep(100)
-						        For $i22=$sodonglinkdasub-12 to $sodonglinkdasub
-                                    $linkdasub=FileReadLine(@ScriptDir&"\LinkDaSub.txt",$i22)
-									Sleep(100)
-                                    If $linkkenh=$linkdasub Then
-								        $i22=$sodonglinkdasub
-							        EndIf
-						        Next
-								Sleep(100)
-						        If $linkkenh <> $linkdasub Then
-							        $i23=15
-						        EndIf
+
+
+							  ;  If FileExists(@ScriptDir&"\LinkDaSub.txt")=0 Then  FileWriteLine(@ScriptDir&"\LinkDaSub.txt",'khoi tao')
+							  ;  Sleep(1000)
+						      ;  $sodonglinkdasub=_FileCountLines(@ScriptDir&"\LinkDaSub.txt")
+								;Sleep(100)
+						       ; For $i22=$sodonglinkdasub-12 to $sodonglinkdasub
+                                   ; $linkdasub=FileReadLine(@ScriptDir&"\LinkDaSub.txt",$i22)
+									;Sleep(100)
+                                   ; If $linkkenh=$linkdasub Then
+								    ;    $i22=$sodonglinkdasub
+							       ; EndIf
+						       ; Next
+								;Sleep(100)
+						       ; If $linkkenh <> $linkdasub Then
+							    ;    $i23=15
+						        ;EndIf
 						    EndIf
 						  Else
 							;$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
@@ -2457,6 +2474,11 @@ $phienban='1.0.95'
 						  EndIf
 
 						Next
+
+
+						FileWriteLine(@ScriptDir&"\STT.txt",$STT)
+
+
 
 
 
@@ -2481,21 +2503,6 @@ $phienban='1.0.95'
 								    $sosub5=$sosub2
 							    EndIf
                             EndIf
-						  EndIf
-
-
-						  If $datalink[0]>2 Then
-								If $sosub5<1000 Then $datalink[2]=$datalink[2]+100
-							    If $sosub5<50000 AND $sosub5>=1000  Then $datalink[2]=$datalink[2]+200
-                                If $sosub5<100000 AND $sosub5>=50000  Then $datalink[2]=$datalink[2]+300
-						        If $sosub5>=100000  Then $datalink[2]=$datalink[2]+1000
-						        If $sosub5< $datalink[2]+$datalink[3] Then
-								    $linkkenh=$datalink[1]
-									$i21=7
-						        Else
-									;$sodonglinkkenhto=_FileCountLines(@ScriptDir&'\linkkenhto.txt')
-                                   ; $linkkenh=FileReadLine(@ScriptDir&'\linkkenhto.txt',Random(2,$sodonglinkkenhto,1))
-						        EndIf
 						  EndIf
 
                         EndIf
