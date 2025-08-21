@@ -5471,6 +5471,127 @@ $phienban='1.0.96'
 
 					  Next
 
+
+					    $checkSDT2=0
+					  For $i23=1 to 2
+				            MouseClick('left',600, 60,1,20)
+				            Sleep(1000)
+							Send('^a')
+				            Sleep(1000)
+				            ClipPut('https://myaccount.google.com/two-step-verification/phone-numbers?')
+							Sleep(1000)
+				            Send('^v')
+				            Sleep(2000)
+				            Send('{enter}')
+				            Sleep(7000)
+				            For $i20=1 to 10
+					            $pixcel=PixelSearch(67, 98,241, 207,0xFF0033)
+					            Sleep(500)
+					            If IsArray($pixcel) Then
+								    $i20=10
+					            EndIf
+						        Sleep(1000)
+					        Next
+
+						$pixcel=PixelSearch(262, 364,395, 460,0xDB241E)
+							Sleep(500)
+						If IsArray($pixcel) Then
+							$checkSDT2=1
+						EndIf
+
+						For $i24=1 to 10
+                          If $checkSDT2=0 Then
+							  $check=0
+							MouseClick('left',480, 22,1,20)
+                            Sleep(2000)
+							MouseClick('left',495, 22,1,20)
+                            Sleep(2000)
+                            MouseClick('left',600, 60,1,20)
+				            Sleep(1000)
+							Send('^a')
+							Sleep(1000)
+							Send('^c')
+							Sleep(200)
+							$link=ClipGet()
+                            Sleep(1000)
+							MouseClick('left',1312, 565,1,20)
+				            Sleep(1000)
+                            If StringInStr($link, "pwd") Then
+                                MouseClick('left',470, 287,1,20)
+				                Sleep(2000)
+					            Send('{tab}')
+					            Sleep(2000)
+					            Send('{tab}')
+					            Sleep(2000)
+					            Send($g,1)
+					            Sleep(1000)
+					            Send('{enter}')
+					            Sleep(10000)
+                            EndIf
+							If StringInStr($link, "totp") Then
+                                _LayMaAuthen($Key2fa)
+                            EndIf
+							If StringInStr($link, "rescuephone") Then
+                                _ThemSDT($SDT)
+                            EndIf
+							If StringInStr($link, "recoveryoptions") Then
+                                $check=_ThemSDT2($SDT)
+                            EndIf
+							If StringInStr($link, "phone-numbers") Then
+                                MouseClick('left',381, 268,1,20)
+				                Sleep(2000)
+								Send('{tab}')
+								Sleep(2000)
+								Send('{enter}')
+								Sleep(4000)
+								Send('{tab}')
+								Sleep(2000)
+								Send('+84',1)
+								Sleep(1000)
+								Send($SDT)
+								Sleep(2000)
+								Send('{tab}')
+								Sleep(2000)
+								Send('{tab}')
+								Sleep(2000)
+								Send('{tab}')
+								Sleep(2000)
+								;Send('{tab}')
+								;Sleep(2000)
+								Send('{enter}')
+								Sleep(2000)
+								Send('{tab}')
+								Sleep(2000)
+								Send('{enter}')
+								Sleep(5000)
+
+
+                            EndIf
+							Sleep(3000)
+							$pixcel=PixelSearch(262, 364,395, 460,0xDB241E)
+							Sleep(500)
+							If IsArray($pixcel) Then
+								$checkSDT2=1
+								$i23=2
+								$i24=10
+                            EndIf
+
+
+						  EndIf
+						Next
+
+					  Next
+
+					    If $checkSDT2=1 Then
+							$SDT=$SDT&'	add SDT Khoi Phuc Thành Công'
+                            FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Khoi Phuc Thành Công'&'	'&$vpsso)
+
+						Else
+							$SDT=$SDT&'	add SDT Khoi Phuc Thất Bại'
+							FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add Khoi Phuc Thất Bại'&'	'&$vpsso)
+
+						EndIf
+
 					    If $checkSDT=1 Then
 							$SDT=$SDT&'	add SDT Thành Công'
                             FileWriteLine(@ScriptDir&'\KetQuaDangNhap.txt',$e&'	add SDT Thành Công'&'	'&$vpsso)
