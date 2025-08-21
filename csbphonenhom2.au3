@@ -151,9 +151,9 @@ While 1   ; vong tra lai gia tr
 	           ; FileDelete(@ScriptDir&'\Gmail.txt')
 			FileDelete(@ScriptDir&'\Gmailtho.txt')
 			$checkprofile=0    ; de profile dau tien random conf lan sau bang 1
+            $i20=Random(1,20,1)
 
-
- For $i5=1 to 95
+ For $i5=$i20 to 95
 	            HotKeySet("{esc}", "_Exit")
 
                 FileDelete(@ScriptDir&'\linkkenhchaySUB.txt')
@@ -168,6 +168,8 @@ While 1   ; vong tra lai gia tr
 				Sleep(1000)
 
                 _CapNhatPhienBan()
+
+				ToolTip('KenhSo:'&$i5&'	cummay 2'&'	vpsso:'&$vpsso,0,0)
 
 				_khoidongFireFox2($i5,$vpsso)
 				$checkchonprofile=_chonProFileFFv6($i5,$vpsso)

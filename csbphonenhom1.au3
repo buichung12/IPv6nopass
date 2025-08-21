@@ -151,9 +151,9 @@ While 1   ; vong tra lai gia tr
 	           ; FileDelete(@ScriptDir&'\Gmail.txt')
 			FileDelete(@ScriptDir&'\Gmailtho.txt')
 			$checkprofile=0    ; de profile dau tien random conf lan sau bang 1
+            $i20=Random(1,20,1)
 
-
- For $i5=1 to 95
+ For $i5=$i20 to 95
 	            HotKeySet("{esc}", "_Exit")
 
                 FileDelete(@ScriptDir&'\linkkenhchaySUB.txt')
